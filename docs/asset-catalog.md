@@ -82,6 +82,18 @@ Todas servidas con `next/image` (AVIF/WebP) vía `components/ui/Media.tsx`.
 | Industria Recintos Fiscales hero | `recintos/torre-control.png` | PdfEbook `recintos-ch4-torre-control.png` |
 | (reserva recintos) | `recintos/geocerca-puerto.jpg` | PdfEbook `geodot-geocerca-puerto.jpg` |
 
+## Verticales — hero + context por industria (variedad visual)
+> Cada slug de `/industrias/<slug>` usa un **hero** (full-bleed) + un **context** (banda editorial in-page) con un escenario distinto, según la propuesta comercial real. Servidos vía `next/image` desde `public/images/industries/<slug>/`. Todos ≤500KB (resize `sips -Z 1920/1600`; PNG fotográficos → jpg).
+
+| Industria (slug) | Escenario / propuesta | hero → `industries/<slug>/` | context → `industries/<slug>/` | Fuentes |
+|------------------|-----------------------|------------------------------|--------------------------------|---------|
+| `bebidas` | Distribución (Makvig — abarrotes) | `bebidas/hero.jpg` (camiones reparto) | `bebidas/context.jpg` (iWMS almacén) | PdfEbook `makvig-ch5-itms.jpg`, `makvig-ch3-iwms.jpg` |
+| `alimentos` | Flota pesquera + frío (Mazardina) | `alimentos/hero.jpg` (buque / mar) | `alimentos/context.jpg` (torre de control flota) | PdfEbook `mazardina/mazardina-atlantico-sur.jpg`, `mazardina-ch4-torre.jpg` |
+| `gobierno-residuos` | Sostenibilidad / residuos | `gobierno-residuos/hero.jpg` (sustentabilidad) | `gobierno-residuos/context.jpg` (flota) | `presentaciones/assets/mundial-fanfest/hero-mundial-2026-sustentable.png` (→jpg), PdfEbook `gruas-laguna-ch3-flota.jpg` |
+| `3pl` | Renta de montacargas / patio (Gruas Laguna) | `3pl/hero.jpg` (patio montacargas) | `3pl/context.jpg` (entrega) | PdfEbook `gruas-laguna-ch1-patio.jpg`, `gruas-laguna-ch4-entrega.jpg` |
+| `healthcare` | Pharma cadena de frío (Megafarmacia) | `healthcare/hero.png` (red cadena de frío MX) | `healthcare/context.jpg` (operario tablet) | `presentaciones/assets/megafarmacia/Cold_chain_network_stages...png`, `cold-chain/operario-tablet.jpg` |
+| `recintos-fiscales` | Aduanas / recintos (Camili / HIMEX / FINSA) | `recintos-fiscales/hero.png` (torre de control) | `recintos-fiscales/context.jpg` (geocerca puerto — aduana marítima) | `recintos/torre-control.png`, PdfEbook `geodot-geocerca-puerto.jpg` |
+
 ## TODO al consumir
 - [ ] Copiar la imagen elegida a `public/images/<cat>/` (no referenciar fuera del repo).
 - [ ] Servir con `next/image` (lazy, sized, AVIF/WebP) para PSI.
