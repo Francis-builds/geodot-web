@@ -178,20 +178,20 @@
   "modules": {
     "wms": {
       "name": "WMS",
-      "tagline": "Control total de tu inventario",
+      "tagline": "Inventario exacto al 99.9%, sin sorpresas",
       "eyebrow": "Plataforma",
       "title": "Gestión de Almacenes",
       "titleAccent": "con IA",
-      "subtitle": "El WMS de Geodot va más allá de los ERPs tradicionales. Trazabilidad completa hasta el último pack, FIFO/FEFO automático y optimización de picking con IA.",
+      "subtitle": "El WMS de Geodot ve lo que tu ERP no ve: cada pack, cada lote, cada fecha de vencimiento. FEFO automático, vida útil por cliente y picking optimizado con IA para que dejen de rechazarte.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
-        "title": "Tu almacén esconde ineficiencias costosas",
+        "title": "Tu almacén pierde dinero donde no estás mirando",
         "points": [
-          "Producto vencido: descubres productos caducados cuando ya es tarde.",
-          "Picking lento: operarios recorren el almacén sin una ruta optimizada.",
-          "Stock fantasma: el sistema dice una cosa y la realidad otra.",
-          "Rechazos de clientes: entregas producto con poca vida útil restante.",
-          "Sin trazabilidad: no sabes qué lote entregaste a cada cliente."
+          "Producto vencido: te enterás de la caducidad cuando ya no podés venderlo.",
+          "Picking lento: tus operarios caminan de más sin una ruta optimizada.",
+          "Stock fantasma: el sistema dice una cosa y el piso dice otra.",
+          "Rechazos de clientes: despachás producto con poca vida útil y te lo devuelven.",
+          "Sin trazabilidad: no sabés qué lote le entregaste a cada cliente."
         ],
         "stats": [
           {
@@ -209,11 +209,11 @@
         ]
       },
       "solution": {
-        "title": "Un WMS que ve lo que otros sistemas no pueden",
+        "title": "Un WMS que controla cada pack, no solo cada tarima",
         "steps": [
           {
             "title": "Ubicaciones inteligentes",
-            "description": "Estructura multinivel con visualización 3D. El sistema sugiere dónde almacenar cada producto según sus capacidades."
+            "description": "Estructura multinivel con visualización 3D. El sistema te dice dónde guardar cada producto según su rotación y capacidades."
           },
           {
             "title": "Trazabilidad completa",
@@ -221,11 +221,11 @@
           },
           {
             "title": "FIFO/FEFO automático",
-            "description": "Reglas configurables y vida útil por cliente. Bloquea el despacho de producto próximo a vencer antes de que sea un problema."
+            "description": "Reglas configurables y vida útil por cliente (ej. Carrefour 83%). Bloquea el despacho de producto próximo a vencer antes de que sea un rechazo."
           },
           {
             "title": "Picking optimizado",
-            "description": "El mismo motor de ruteo aplicado al almacén. Reorganización nocturna con IA y guías paso a paso para operarios."
+            "description": "El mismo motor de ruteo, aplicado dentro del almacén. Reorganización nocturna con IA y guías paso a paso para tus operarios."
           }
         ]
       },
@@ -252,8 +252,8 @@
         }
       ],
       "cta": {
-        "title": "¿Listo para tomar control de tu almacén?",
-        "subtitle": "Agendá una demo y te mostramos el WMS con tus propios SKUs.",
+        "title": "Tomá el control de tu almacén, hasta el último pack",
+        "subtitle": "Agendá una demo y te mostramos el WMS funcionando con tus propios SKUs.",
         "button": "Agendar Demo"
       }
     },
@@ -263,16 +263,16 @@
       "eyebrow": "Plataforma",
       "title": "Gestión de Transporte",
       "titleAccent": "en tiempo real",
-      "subtitle": "Gestioná toda tu operación de transporte desde una sola plataforma. Tracking en vivo, documentación al día y costos optimizados para flota propia y tercerizada.",
+      "subtitle": "Gestioná flota propia y tercerizada desde una sola pantalla. Tracking en vivo, documentación al día, liquidación automática y costos atribuidos a cada ruta y cliente.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "El transporte es tu mayor costo y tu mayor punto ciego",
         "points": [
-          "Sin visibilidad: no sabes dónde están tus camiones en tiempo real.",
-          "Terceros sin control: transportistas que operan como quieren.",
+          "Sin visibilidad: no sabés dónde están tus camiones ahora mismo.",
+          "Terceros sin control: transportistas que operan a su manera.",
           "Documentación vencida: permisos y licencias que expiran sin aviso.",
-          "Costos opacos: no puedes atribuir costos a rutas o clientes.",
-          "Comunicación manual: llamadas y WhatsApp para coordinar todo."
+          "Costos opacos: no podés saber cuánto te cuesta cada ruta o cliente.",
+          "Coordinación manual: llamadas y WhatsApp para mover cada camión."
         ],
         "stats": [
           {
@@ -294,11 +294,11 @@
         "steps": [
           {
             "title": "Tracking en vivo",
-            "description": "GPS continuo posición a posición, geocercas y medición automática del tiempo en cada cliente."
+            "description": "Posición a posición en el mapa, geocercas por cliente y medición automática del tiempo real que pasa cada camión en cada parada."
           },
           {
             "title": "Flota unificada",
-            "description": "Propia y tercerizada en la misma vista. Portal de transportistas con workflows de aprobación y visibilidad compartida."
+            "description": "Flota propia y tercerizada en la misma vista. Portal de transportistas con workflows de aprobación y visibilidad compartida."
           },
           {
             "title": "Documentación y mantenimiento",
@@ -333,27 +333,27 @@
         }
       ],
       "cta": {
-        "title": "¿Listo para tomar control de tu transporte?",
-        "subtitle": "Agendá una demo y unificá tu flota propia y tercerizada en una sola vista.",
+        "title": "Poné tu flota completa bajo control",
+        "subtitle": "Agendá una demo y unificá flota propia y tercerizada en una sola pantalla.",
         "button": "Agendar Demo"
       }
     },
     "paletizado": {
       "name": "Paletizado Inteligente",
-      "tagline": "Carga al 100%, sin margen de seguridad",
+      "tagline": "De 85% a 99% de carga, sin margen de seguridad",
       "eyebrow": "Plataforma",
       "title": "Paletizado",
       "titleAccent": "Inteligente",
-      "subtitle": "El único sistema que calcula el paletizado en tiempo real mientras rutea. Sabe exactamente qué entra en cada camión antes de que salga.",
+      "subtitle": "El único sistema que calcula el paletizado mientras rutea. Sabe exactamente qué entra en cada camión antes de que salga, para que cargues al 100% sin miedo a que no entre.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
-        "title": "El 15% de tus camiones viaja vacío",
+        "title": "1 de cada 7 camiones viaja con espacio vacío",
         "points": [
-          "Margen de seguridad: cargas al 85% \"por las dudas\" de que no entre.",
-          "Reglas en la cabeza: el paletizador experto sabe, pero no el sistema.",
-          "Daños en tránsito: productos mal apilados que llegan dañados.",
+          "Margen de seguridad: cargás al 85% \"por las dudas\" de que no entre.",
+          "Reglas en la cabeza: el paletizador experto sabe, pero el sistema no.",
+          "Daños en tránsito: productos mal apilados que llegan rotos.",
           "Picking lento: operarios sin guía clara de cómo armar cada pallet.",
-          "Rechazos por carga: el cliente recibe producto aplastado."
+          "Rechazos por carga: el cliente recibe producto aplastado y lo devuelve."
         ],
         "stats": [
           {
@@ -375,7 +375,7 @@
         "steps": [
           {
             "title": "+300 parámetros",
-            "description": "Dimensiones, peso, apilabilidad, fragilidad, temperatura y compatibilidad de cada producto en cada cálculo."
+            "description": "Dimensiones, peso, apilabilidad, fragilidad, temperatura y compatibilidad de cada producto, calculados en cada carga."
           },
           {
             "title": "Reglas inteligentes",
@@ -383,7 +383,7 @@
           },
           {
             "title": "Recálculo simultáneo",
-            "description": "Cada vez que agregas un pedido a una ruta, el sistema recalcula si realmente entra y alerta antes de que sea un problema."
+            "description": "Cada vez que sumás un pedido a una ruta, el sistema recalcula si realmente entra y te avisa antes de que el camión salga mal cargado."
           },
           {
             "title": "Guías de armado visual",
@@ -414,8 +414,8 @@
         }
       ],
       "cta": {
-        "title": "¿Cuántos camiones extra estás enviando?",
-        "subtitle": "Agendá una demo y calculamos tu ahorro con paletizado simultáneo al ruteo.",
+        "title": "¿Cuántos camiones de más estás pagando cada semana?",
+        "subtitle": "Agendá una demo y calculamos tu ahorro con paletizado y ruteo simultáneos.",
         "button": "Agendar Demo"
       }
     },
@@ -425,16 +425,16 @@
       "eyebrow": "Plataforma",
       "title": "Torre de Control",
       "titleAccent": "en tiempo real",
-      "subtitle": "Centro de comando para monitorear, analizar y actuar sobre toda tu cadena logística. Desde el almacén hasta la última entrega.",
+      "subtitle": "Un solo tablero para ver, anticipar y actuar sobre toda tu cadena, del almacén a la última entrega. Lo que antes descubrías por una queja, ahora lo resolvés antes de que pase.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
-        "title": "Operas a ciegas hasta que es demasiado tarde",
+        "title": "Operás a ciegas hasta que ya es tarde para reaccionar",
         "points": [
-          "Información fragmentada: cada sistema tiene su propia vista.",
-          "Reacción tardía: te enteras de los problemas cuando ya impactaron.",
-          "Sin métricas claras: no sabes qué está funcionando y qué no.",
-          "Reportes manuales: horas compilando Excel para la gerencia.",
-          "Clientes en la oscuridad: no pueden ver el estado de sus pedidos."
+          "Información fragmentada: cada sistema muestra su propio pedazo.",
+          "Reacción tardía: te enterás de los problemas cuando ya impactaron.",
+          "Sin métricas claras: no sabés qué está funcionando y qué no.",
+          "Reportes manuales: horas armando Excel para la gerencia.",
+          "Clientes a oscuras: no pueden ver el estado de sus pedidos."
         ],
         "stats": [
           {
@@ -452,7 +452,7 @@
         ]
       },
       "solution": {
-        "title": "Un solo lugar para ver todo",
+        "title": "Toda tu operación en una sola pantalla",
         "steps": [
           {
             "title": "Dashboard en vivo",
@@ -464,7 +464,7 @@
           },
           {
             "title": "IA predictiva",
-            "description": "Predicción de demoras antes de que ocurran, detección de anomalías y sugerencias de optimización que aprenden de cada entrega."
+            "description": "Predice demoras antes de que ocurran, detecta anomalías y sugiere optimizaciones que aprenden de cada entrega."
           },
           {
             "title": "Portal de clientes",
@@ -495,7 +495,7 @@
         }
       ],
       "cta": {
-        "title": "¿Cuánto te cuesta operar sin visibilidad?",
+        "title": "¿Cuánto te cuesta cada incidente que descubrís tarde?",
         "subtitle": "Agendá una demo y unificá WMS, TMS, Ruteo y Paletizado en un solo tablero.",
         "button": "Agendar Demo"
       }
