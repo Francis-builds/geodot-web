@@ -1,7 +1,9 @@
 import { ReactNode } from "react";
 import { Container } from "./Container";
+import { Reveal } from "./Reveal";
 
 type Tone = "base" | "subtle" | "dark";
+type Texture = "none" | "dotgrid" | "glow";
 
 const TONE: Record<Tone, string> = {
   base: "bg-white text-navy-900",
@@ -10,32 +12,53 @@ const TONE: Record<Tone, string> = {
 };
 
 export function Section({
-  children, id, tone = "base", className = "",
-}: { children: ReactNode; id?: string; tone?: Tone; className?: string }) {
+  children, id, tone = "base", texture = "none", className = "",
+}: {
+  children: ReactNode; id?: string; tone?: Tone; texture?: Texture; className?: string;
+}) {
+  const dark = tone === "dark";
   return (
-    <section id={id} className={`relative overflow-hidden py-20 md:py-24 ${TONE[tone]} ${className}`}>
-      <Container>{children}</Container>
+    <section id={id} className={`relative isolate overflow-hidden py-20 md:py-24 ${TONE[tone]} ${className}`}>
+      {dark && texture !== "none" && (
+        <>
+          <div aria-hidden className="absolute inset-0 bg-dotgrid bg-dotgrid-fade text-white/[0.06]" />
+          {texture === "glow" && (
+            <>
+              <div aria-hidden className="absolute inset-0 glow-teal" style={{ ["--gx" as string]: "82%", ["--gy" as string]: "12%" }} />
+              <div aria-hidden className="absolute inset-0 glow-magenta" style={{ ["--gx" as string]: "8%", ["--gy" as string]: "92%" }} />
+            </>
+          )}
+        </>
+      )}
+      <Container className="relative z-[1]">{children}</Container>
     </section>
   );
 }
 
 export function SectionHeader({
-  eyebrow, title, titleAccent, description, align = "center",
+  eyebrow, title, titleAccent, description, align = "center", accentGradient = false, tone = "base",
 }: {
-  eyebrow?: string; title: string; titleAccent?: string; description?: string; align?: "left" | "center";
+  eyebrow?: string; title: string; titleAccent?: string; description?: string;
+  align?: "left" | "center"; accentGradient?: boolean; tone?: Tone;
 }) {
+  const dark = tone === "dark";
   const alignment = align === "center" ? "mx-auto text-center" : "text-left";
+  const accentClass = accentGradient
+    ? "text-gradient-brand"
+    : dark ? "text-teal-400" : "text-teal-500";
   return (
-    <div className={`mb-12 max-w-3xl ${alignment}`}>
+    <Reveal direction="up" className={`mb-12 max-w-3xl ${alignment}`}>
       {eyebrow && (
-        <span className="mb-4 inline-block text-overline font-semibold uppercase tracking-wide text-teal-700">
+        <span className={`eyebrow-dot mb-4 inline-block text-overline font-semibold uppercase tracking-wide ${dark ? "text-teal-300" : "text-teal-700"}`}>
           {eyebrow}
         </span>
       )}
-      <h2 className="text-heading-xl md:text-display-lg font-semibold text-[color:inherit]">
-        {title} {titleAccent && <span className="text-teal-500">{titleAccent}</span>}
+      <h2 className="text-heading-xl md:text-display-lg font-semibold leading-[1.08] tracking-[-0.01em] text-[color:inherit]">
+        {title} {titleAccent && <span className={accentClass}>{titleAccent}</span>}
       </h2>
-      {description && <p className="mt-4 text-body-lg text-navy-600">{description}</p>}
-    </div>
+      {description && (
+        <p className={`mt-4 text-body-lg ${dark ? "text-navy-200" : "text-navy-600"}`}>{description}</p>
+      )}
+    </Reveal>
   );
 }

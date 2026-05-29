@@ -476,7 +476,8 @@
         "subtitle": "Agendá una demo y unificá WMS, TMS, Ruteo y Paletizado en un solo tablero.",
         "button": "Agendar Demo"
       }
-    }
+    },
+    "explore": "Explorar"
   },
   "industries": {
     "bebidas": {
