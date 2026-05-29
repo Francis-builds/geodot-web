@@ -19,6 +19,7 @@ export function Footer() {
           <h3 className="mb-3 text-overline uppercase tracking-wide text-navy-400">{t("company")}</h3>
           <Link href="/nosotros" className="block text-body-sm hover:text-teal-300">{t("about")}</Link>
           <Link href="/casos-exito" className="block text-body-sm hover:text-teal-300">{t("cases")}</Link>
+          <Link href="/recursos" className="block text-body-sm hover:text-teal-300">{t("resources")}</Link>
         </div>
         <div>
           <h3 className="mb-3 text-overline uppercase tracking-wide text-navy-400">{t("contact")}</h3>

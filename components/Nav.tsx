@@ -13,6 +13,7 @@ export function Nav() {
     { href: "/plataforma", label: t("plataforma") },
     { href: "/industrias/bebidas", label: t("industrias") },
     { href: "/casos-exito", label: t("casos") },
+    { href: "/recursos", label: t("recursos") },
     { href: "/nosotros", label: t("nosotros") },
   ];
   return (

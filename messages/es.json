@@ -9,6 +9,7 @@
     "plataforma": "Plataforma",
     "industrias": "Industrias",
     "casos": "Casos de éxito",
+    "recursos": "Recursos",
     "nosotros": "Nosotros",
     "cta": "Agendar Demo"
   },
@@ -19,9 +20,29 @@
     "company": "Empresa",
     "about": "Nosotros",
     "cases": "Casos de éxito",
+    "resources": "Recursos",
     "contact": "Contacto",
     "demo": "Agendar demo",
     "rights": "© 2026 Geodot. Todos los derechos reservados."
+  },
+  "blog": {
+    "hero": {
+      "eyebrow": "Recursos",
+      "title": "Ideas para una logística",
+      "titleAccent": "más inteligente",
+      "subtitle": "Guías, casos y perspectivas sobre WMS, transporte, cadena de frío y trazabilidad aduanera.",
+      "cta": "Agendar demo"
+    },
+    "readingMin": "min de lectura",
+    "empty": {
+      "title": "Pronto publicaremos nuevos recursos",
+      "subtitle": "Estamos preparando guías y casos prácticos. Volvé pronto."
+    },
+    "cta": {
+      "title": "Llevá estas ideas a tu operación",
+      "subtitle": "Te mostramos cómo Geodot conecta cada punto de tu cadena logística.",
+      "button": "Agendar demo"
+    }
   },
   "contact": {
     "title": "Agendá tu demo",

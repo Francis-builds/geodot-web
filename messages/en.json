@@ -9,6 +9,7 @@
     "plataforma": "Platform",
     "industrias": "Industries",
     "casos": "Case studies",
+    "recursos": "Resources",
     "nosotros": "About",
     "cta": "Book a Demo"
   },
@@ -19,9 +20,29 @@
     "company": "Company",
     "about": "About",
     "cases": "Case studies",
+    "resources": "Resources",
     "contact": "Contact",
     "demo": "Book a demo",
     "rights": "© 2026 Geodot. All rights reserved."
+  },
+  "blog": {
+    "hero": {
+      "eyebrow": "Resources",
+      "title": "Ideas for",
+      "titleAccent": "smarter logistics",
+      "subtitle": "Guides, case studies and perspectives on WMS, transport, cold chain and customs traceability.",
+      "cta": "Book a demo"
+    },
+    "readingMin": "min read",
+    "empty": {
+      "title": "New resources coming soon",
+      "subtitle": "We're preparing guides and practical case studies. Check back soon."
+    },
+    "cta": {
+      "title": "Bring these ideas to your operation",
+      "subtitle": "We'll show you how Geodot connects every point of your supply chain.",
+      "button": "Book a demo"
+    }
   },
   "contact": {
     "title": "Book your demo",
