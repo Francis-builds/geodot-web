@@ -25,7 +25,12 @@
     "resources": "Recursos",
     "contact": "Contacto",
     "demo": "Agendar demo",
-    "rights": "© 2026 Geodot. Todos los derechos reservados."
+    "rights": "© 2026 Geodot. Todos los derechos reservados.",
+    "industries": "Industrias",
+    "allIndustries": "Todas las industrias",
+    "legal": "Legal",
+    "privacy": "Privacidad",
+    "terms": "Términos"
   },
   "blog": {
     "hero": {
