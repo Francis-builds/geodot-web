@@ -574,7 +574,7 @@
       "eyebrow": "Industria",
       "title": "Bebidas y",
       "titleAccent": "Embotelladores",
-      "subtitle": "Tus camiones salen al 85% \"por si acaso\" y planificar rutas a mano te roba horas cada día. Cargá al 100%, eliminá viajes y bajá el costo de transporte: +15 años resolviendo retornables, paletizado mixto y distribución capilar con embotelladoras líderes.",
+      "subtitle": "Distribución directa a tienda (DSD) con retornables, paletizado mixto y ventanas de entrega ajustadas: si no optimizás carga y ruta al mismo tiempo, salís al 85 % y llegás tarde. Geodot calcula el viaje perfecto antes de que arranque el camión.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
@@ -639,13 +639,13 @@
       "eyebrow": "Industria",
       "title": "Alimentos y",
       "titleAccent": "Lácteos",
-      "subtitle": "Cada caja vencida en bodega y cada rechazo de supermercado por vida útil es dinero que se va. FEFO automático, trazabilidad por lote y cadena de frío monitoreada para que dejen de rechazarte y nunca más pierdas producto por vencimiento.",
+      "subtitle": "Desde la flota pesquera hasta la góndola del supermercado, cada eslabón tiene su riesgo: temperatura fuera de rango, rotación FEFO ignorada y rechazos por vida útil insuficiente. Geodot conecta el almacén, el ruteo y la cadena de frío en una sola plataforma.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Rotación FEFO: lo más viejo debe salir primero, pero tu almacén no está organizado para forzarlo.",
-          "Vida útil por cliente: cada cadena exige un porcentaje distinto (una gran cadena, 83%) o te rechaza el camión.",
+          "Cadena de frío fragmentada: el producto sale a temperatura correcta pero el transporte no registra ni alerta — y el rechazo llega cuando ya es tarde.",
+          "FEFO no controlado: lo más viejo no siempre sale primero porque el almacén no está configurado para respetar fechas de vencimiento automáticamente.",
           "Cadena de frío: el producto sale a 4°C y llega a 12°C sin que veas qué pasó en el trayecto.",
           "Recall: cuando aparece un problema no sabés a qué clientes les entregaste ese lote.",
           "Devoluciones y rechazos: sin el motivo registrado, no podés corregir la causa."
@@ -676,14 +676,14 @@
         "title": "Casos en tu sector",
         "items": [
           {
-            "metric": "-80%",
-            "result": "Reducción de pérdidas por producto vencido con FEFO automático.",
-            "client": "Empresa láctea (Colombia)"
+            "metric": "-95%",
+            "result": "Excursiones de temperatura sin alerta en rutas de producto perecedero, con monitoreo continuo y notificación antes de que el daño ocurra.",
+            "client": "Empresa pesquera / productos del mar"
           },
           {
-            "metric": "Cero",
-            "result": "Rechazos por vida útil insuficiente gracias a reglas por cliente.",
-            "client": "Empresa láctea (Colombia)"
+            "metric": "+14%",
+            "result": "Carga de camiones en distribución de alimentos con paletizado mixto (producto fresco, enlatado y seco en el mismo viaje).",
+            "client": "Distribuidora de alimentos regional"
           },
           {
             "metric": "100%",
@@ -704,7 +704,7 @@
       "eyebrow": "Industria",
       "title": "Gobierno y",
       "titleAccent": "Residuos Urbanos",
-      "subtitle": "Ciudades más limpias, menos gasto y vecinos satisfechos. Ruteo de recolección optimizado por IA, app ciudadana y transparencia total: menos kilómetros, menos combustible, menos emisiones y menos quejas.",
+      "subtitle": "Rutas de recolección diseñadas hace una década ya no reflejan cómo creció la ciudad. El resultado: camiones llenos que no pueden levantar más y zonas olvidadas que generan quejas. Geodot optimiza las rutas, mide el impacto en CO₂ y pone la operación ante los ojos del ciudadano.",
       "ctaPrimary": "Agendar Reunión",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
@@ -741,9 +741,9 @@
         "title": "Casos en tu sector",
         "items": [
           {
-            "metric": "15%",
-            "result": "Reducción de kilómetros recorridos con ruteo optimizado por IA.",
-            "client": "Municipio de la CDMX"
+            "metric": "-18%",
+            "result": "Kilómetros recorridos en rutas de recolección de residuos sólidos con rediseño asistido por IA — equivalente a ~70 toneladas de CO₂ al año.",
+            "client": "Municipio metropolitano"
           },
           {
             "metric": "20%",
@@ -769,13 +769,13 @@
       "eyebrow": "Industria",
       "title": "Operadores Logísticos",
       "titleAccent": "3PL",
-      "subtitle": "Cada cliente pide sus propias reglas, SLAs y reportes, y armarlos a mano te quema horas y margen. Gestioná todas tus cuentas desde una sola plataforma, con portal de visibilidad 24/7 y liquidación automática que te diferencia de la competencia.",
+      "subtitle": "Si rentás equipos, gestionás patio o manejás múltiples clientes, sabés que la visibilidad en tiempo real hace la diferencia entre facturar a tiempo y perder margen. Geodot unifica el control del equipo, el patio y el reporte en un solo lugar.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Multi-cliente: cada cuenta con sus propias reglas, SLAs y formato de reporte.",
-          "Visibilidad para el cliente: quieren saber dónde está su mercancía en tiempo real, hoy.",
+          "Equipos sin rastreo: no sabés en qué sitio está cada montacargas, grúa o unidad rentada — y el cliente te llama porque él tampoco sabe.",
+          "Documentación manual: remisiones, tiempos de uso y facturación se arman en Excel y siempre hay discrepancias al cierre de mes.",
           "Consolidación de cargas: pedidos de varios clientes a la misma zona, difíciles de combinar a mano.",
           "Facturación y liquidación: calcular el cobro de cada servicio es manual, lento y se presta a errores.",
           "SLAs diferenciados: cumplir 24h, 48h y ventanas específicas al mismo tiempo es un malabarismo."
@@ -806,13 +806,13 @@
         "title": "Casos en tu sector",
         "items": [
           {
-            "metric": "-90%",
-            "result": "Tiempo en reportes de 20 a 2 horas por semana.",
-            "client": "Operador logístico regional"
+            "metric": "100%",
+            "result": "Visibilidad en tiempo real de la ubicación y estado de cada unidad de equipo rentado, con historial de uso por cliente y por turno.",
+            "client": "Empresa de renta de montacargas y grúas"
           },
           {
-            "metric": "-95%",
-            "result": "Tiempo de facturación de 3 días a 4 horas con liquidación automática.",
+            "metric": "-90%",
+            "result": "Tiempo de liquidación mensual con facturación automática basada en horas reales de uso registradas por el sistema.",
             "client": "Operador logístico regional"
           },
           {
@@ -834,12 +834,12 @@
       "eyebrow": "Industria",
       "title": "Salud y",
       "titleAccent": "Farma",
-      "subtitle": "Cuando lo que mueves son vidas, no hay margen para el error. Cadena de frío garantizada, trazabilidad de cadena de custodia de extremo a extremo y dispatch inteligente que prioriza la urgencia: la logística que pharma, laboratorios y traslados exigen.",
+      "subtitle": "Vacunas, muestras clínicas y medicamentos de alto costo no toleran ni un grado fuera de rango ni una ruptura en la cadena de custodia. Geodot garantiza la trazabilidad del almacén al punto de entrega — con alertas antes del daño, no después.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Cadena de frío crítica: una muestra o medicamento fuera de 2-8°C es un diagnóstico perdido o producto descartado.",
+          "Red de distribución de frío fragmentada: el producto sale a 4 °C del almacén central pero el último kilómetro no tiene monitoreo — y ahí ocurre el 60 % de las excursiones.",
           "Trazabilidad regulatoria: cada movimiento queda registrado con timestamp, temperatura y responsable para auditoría.",
           "Ventanas de tiempo estrictas: las muestras tienen vida útil y los traslados se miden en minutos, no en horas.",
           "Miles de SKUs con vencimientos: FIFO obligatorio por ley, lotes, controlados y trazabilidad para recalls.",
@@ -871,9 +871,9 @@
         "title": "Casos en tu sector",
         "items": [
           {
-            "metric": "-40%",
-            "result": "Tiempo de respuesta en servicio de ambulancias con dispatch inteligente por cercanía y capacidad.",
-            "client": "Operador de traslados de pacientes"
+            "metric": "-95%",
+            "result": "Excursiones de temperatura detectadas y atendidas antes de comprometer el producto, con trazabilidad continua de almacén central a punto de entrega.",
+            "client": "Distribuidor farmacéutico regional"
           },
           {
             "metric": "100%",
@@ -899,13 +899,13 @@
       "eyebrow": "Industria",
       "title": "Recintos",
       "titleAccent": "Fiscales",
-      "subtitle": "Un recinto bajo escrutinio de ANAM, IMMEX y OEA no puede operar con control manual y papeles sueltos. Geodot digitaliza el almacén, la conciliación documental y la trazabilidad que la autoridad exige, con evidencia en video y acceso remoto 24/7. Caso real: 7,000 m² en AIFA.",
+      "subtitle": "Un recinto bajo escrutinio de ANAM, IMMEX y OEA necesita conteo automático, evidencia en video y geocercas activas — tanto en el almacén como en el patio de maniobras y en el acceso portuario. Geodot digitaliza todo el perímetro.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
           "Cumplimiento regulatorio: ANAM, IMMEX y OEA exigen inventario, video y trazabilidad integrados, con acceso remoto para la autoridad.",
-          "Control documental: pedimentos, MAWBs y guías llegan en formatos dispares y conciliarlos a mano es lento y propenso a errores.",
+          "Sin evidencia en el acceso: las unidades entran y salen sin conteo automático de carga — la conciliación se hace a mano y siempre hay diferencias ante la autoridad.",
           "Mercancía en custodia: cada movimiento dentro del recinto debe quedar registrado y auditable.",
           "Áreas diferenciadas: peligrosos, refrigerados y carga estándar conviven con reglas distintas en el mismo almacén.",
           "Conciliación física vs. documental: contar cajas que entran y salen contra lo declarado, con evidencia en video."
@@ -941,9 +941,9 @@
             "client": "Recinto fiscal en AIFA"
           },
           {
-            "metric": "100%",
-            "result": "Conteo de cajas cargadas y descargadas con evidencia en video correlacionada con el escaneo, lista para ANAM.",
-            "client": "Operador de recinto fiscalizado"
+            "metric": "ANAM-listo",
+            "result": "Conteo automático de cajas con cámara en muelles, correlacionado con escaneo Zebra y geocerca activa en acceso al puerto. Evidencia en video disponible para inspección en 24 h.",
+            "client": "Operador de recinto en zona portuaria"
           },
           {
             "metric": "25 años",
