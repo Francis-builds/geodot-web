@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Geodot — Plataforma logística con IA",
+    "description": "WMS, TMS, ruteo inteligente y paletizado en una sola plataforma con IA.",
+    "ogTitle": "Geodot — Conectamos cada punto de tu cadena logística",
+    "ogDescription": "Reduce costos, elimina rechazos y obtén visibilidad total en tiempo real."
+  },
+  "nav": {
+    "plataforma": "Plataforma",
+    "industrias": "Industrias",
+    "casos": "Casos de éxito",
+    "nosotros": "Nosotros",
+    "cta": "Agendar Demo"
+  }
+}

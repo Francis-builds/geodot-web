@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Geodot — AI-powered logistics platform",
+    "description": "WMS, TMS, smart routing and palletizing in a single AI platform.",
+    "ogTitle": "Geodot — Connect every point of your supply chain",
+    "ogDescription": "Cut costs, eliminate rejections and get full real-time visibility."
+  },
+  "nav": {
+    "plataforma": "Platform",
+    "industrias": "Industries",
+    "casos": "Case studies",
+    "nosotros": "About",
+    "cta": "Book a Demo"
+  }
+}
