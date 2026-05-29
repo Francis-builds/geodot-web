@@ -5,6 +5,7 @@ import { ModuleGrid } from "@/components/ModuleGrid";
 import { MetricsBand } from "@/components/MetricsBand";
 import { CasesStrip } from "@/components/CasesStrip";
 import { CTABanner } from "@/components/CTABanner";
+import { Media } from "@/components/ui/Media";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
   const { locale } = await params;
@@ -25,6 +26,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         primaryCta={{ label: t("hero.ctaPrimary"), href: "/contacto" }}
         secondaryCta={{ label: t("hero.ctaSecondary"), href: "/plataforma" }}
         variant="dark"
+        visual={
+          <Media
+            src="/images/warehouse/hero-patio.jpg"
+            alt={t("hero.title")}
+            ratio="4/3"
+            priority
+            sizes="(max-width: 768px) 100vw, 600px"
+          />
+        }
       />
       <ProblemStats
         eyebrow={t("problem.eyebrow")} title={t("problem.title")} titleAccent={t("problem.titleAccent")}

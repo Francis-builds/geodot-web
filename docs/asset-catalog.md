@@ -64,6 +64,24 @@
 - **Healthcare/Pharma:** Megafarmacia, Mabe; content-engine `verticals/healthcare/`.
 - **Otros casos:** Gruas Laguna, Makvig (abarrotes SEDENA), FINSA (parque industrial), Mazardina (fleet).
 
+## Consumidas en web (Task 22 — reuse, sin generar nada)
+Todas servidas con `next/image` (AVIF/WebP) vía `components/ui/Media.tsx`.
+
+| Destino web | `public/images/...` | Fuente |
+|-------------|---------------------|--------|
+| Home hero (LCP, priority) | `warehouse/hero-patio.jpg` | PdfEbook `gruas-laguna-ch1-patio.jpg` |
+| Producto WMS hero | `warehouse/iwms.jpg` | PdfEbook `makvig-ch3-iwms.jpg` |
+| Producto TMS hero | `fleet/itms.jpg` | PdfEbook `makvig-ch5-itms.jpg` |
+| Producto Paletizado hero | `warehouse/paletizado.jpg` | PdfEbook `makvig-ch6-paletizado.jpg` |
+| Producto Torre de Control hero | `torre/torre-control.jpg` | PdfEbook `gruas-laguna-ch5-torre.jpg` |
+| Industria Bebidas hero | `warehouse/almacen.jpg` | `presentaciones/content/images/iwms-problem.jpg` |
+| Industria Alimentos hero | `cold-chain/cadena-frio.jpg` | `presentaciones/content/images/cadena-frio.jpg` |
+| Industria Gobierno/Residuos hero | `fleet/fleet-tracking.jpg` | `presentaciones/assets/mazardina/geodot-fleet-tracking.jpg` |
+| Industria 3PL hero | `fleet/trailer-loading.jpg` | `himex/images/trailer-loading.jpg` |
+| Industria Healthcare hero | `cold-chain/operario-tablet.png` | `presentaciones/wms-pharma/operario-tablet.png` |
+| Industria Recintos Fiscales hero | `recintos/torre-control.png` | PdfEbook `recintos-ch4-torre-control.png` |
+| (reserva recintos) | `recintos/geocerca-puerto.jpg` | PdfEbook `geodot-geocerca-puerto.jpg` |
+
 ## TODO al consumir
 - [ ] Copiar la imagen elegida a `public/images/<cat>/` (no referenciar fuera del repo).
 - [ ] Servir con `next/image` (lazy, sized, AVIF/WebP) para PSI.
