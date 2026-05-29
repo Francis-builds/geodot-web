@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const key = INDUSTRIES[industria as IndustrySlug]?.messageKey;
   if (!key) return {};
   const t = await getTranslations({ locale, namespace: `industries.${key}` });
-  return { title: t("title"), description: t("subtitle") };
+  return { title: `${t("title")} ${t("titleAccent")}`, description: t("subtitle") };
 }
 
 export default async function IndustriaPage({ params }: { params: Promise<{ locale: string; industria: string }> }) {

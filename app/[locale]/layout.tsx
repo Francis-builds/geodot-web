@@ -68,7 +68,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale === "en" ? "en" : "es-MX"} className={`${spaceGrotesk.variable} ${hanken.variable}`}>
+    <html lang={locale === "en" ? "en" : "es-MX"} data-scroll-behavior="smooth" className={`${spaceGrotesk.variable} ${hanken.variable}`}>
       <body className="antialiased">
         <NextIntlClientProvider>
           <Nav />

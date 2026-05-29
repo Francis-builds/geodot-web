@@ -6,7 +6,7 @@ import { CTABanner } from "@/components/CTABanner";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "aboutPage" });
-  return { title: t("hero.title"), description: t("hero.subtitle") };
+  return { title: `${t("hero.title")} ${t("hero.titleAccent")}`, description: t("hero.subtitle") };
 }
 
 export default async function NosotrosPage({ params }: { params: Promise<{ locale: string }> }) {
