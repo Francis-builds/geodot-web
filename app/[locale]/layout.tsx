@@ -71,7 +71,7 @@ export default async function LocaleLayout({
       <body className="antialiased">
         <NextIntlClientProvider>
           <Nav />
-          <main>{children}</main>
+          <main className="pt-16 md:pt-[72px]">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

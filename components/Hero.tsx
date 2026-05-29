@@ -41,7 +41,7 @@ export function Hero({
   // ---- Cinematic full-bleed variant ----
   if (bgImage) {
     return (
-      <section className="relative isolate grain overflow-hidden bg-navy-950 text-white">
+      <section data-hero-overlay className="relative isolate grain -mt-16 overflow-hidden bg-navy-950 text-white md:-mt-[72px]">
         <Image
           src={bgImage}
           alt={bgAlt ?? title}

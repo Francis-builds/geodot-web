@@ -1,14 +1,56 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitch } from "./LocaleSwitch";
-import { Button } from "./ui/Button";
 import { Container } from "./ui/Container";
+
+/** geo·dot wordmark — teal "dot" with a subtle glowing leading marker. */
+function Logo({ scrolled }: { scrolled: boolean }) {
+  return (
+    <Link href="/" className="group inline-flex items-center gap-2.5" aria-label="Geodot">
+      <span aria-hidden className="relative flex h-2.5 w-2.5 items-center justify-center">
+        <span className="absolute h-2.5 w-2.5 rounded-full bg-teal-500/40 group-hover:animate-[radar-pulse_1.8s_ease-out_infinite]" />
+        <span className="relative h-2 w-2 rounded-full bg-teal-500 shadow-[0_0_0_4px_rgba(0,169,157,0.18)]" />
+      </span>
+      <span
+        className={`text-heading-md font-bold tracking-tight transition-colors duration-300 ${
+          scrolled ? "text-navy-900" : "text-white"
+        }`}
+      >
+        geo<span className="text-teal-500">dot</span>
+      </span>
+    </Link>
+  );
+}
 
 export function Nav() {
   const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  // Only float transparent when a dark hero is present at the top of the page.
+  const [overHero, setOverHero] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // A cinematic <Hero> renders [data-hero-overlay]; if absent, the nav stays solid.
+  useEffect(() => {
+    setOverHero(!!document.querySelector("[data-hero-overlay]"));
+  }, []);
+
+  // Lock body scroll while the mobile drawer is open.
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   const links = [
     { href: "/plataforma", label: t("plataforma") },
     { href: "/industrias/bebidas", label: t("industrias") },
@@ -16,31 +58,96 @@ export function Nav() {
     { href: "/recursos", label: t("recursos") },
     { href: "/nosotros", label: t("nosotros") },
   ];
+
+  // Over the hero (top): transparent, light text. Scrolled, drawer open, or no
+  // hero present: glass, dark text.
+  const solid = scrolled || open || !overHero;
+  const linkColor = solid
+    ? "text-navy-700 hover:text-teal-600"
+    : "text-white/85 hover:text-white";
+
   return (
-    <header className="sticky top-0 z-50 border-b border-navy-100 bg-white/90 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="text-heading-md font-bold text-navy-900">geo<span className="text-teal-500">dot</span></Link>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-[background,box-shadow,border-color] duration-300 ${
+        solid
+          ? "glass border-b border-navy-100/80 shadow-[0_8px_30px_-12px_rgba(14,23,45,0.25)]"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
+      <Container className="flex h-16 items-center justify-between md:h-[72px]">
+        <Logo scrolled={solid} />
+
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="text-body-sm font-medium text-navy-700 hover:text-teal-600">{l.label}</Link>
+            <Link
+              key={l.href}
+              href={l.href}
+              className={`text-body-sm font-medium transition-colors duration-200 ${linkColor}`}
+            >
+              {l.label}
+            </Link>
           ))}
         </nav>
-        <div className="hidden items-center gap-4 md:flex">
-          <LocaleSwitch />
-          <Button href="/contacto">{t("cta")}</Button>
+
+        <div className="hidden items-center gap-5 md:flex">
+          <LocaleSwitch dark={!solid} />
+          <Link
+            href="/contacto"
+            className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 text-body-sm font-semibold shadow-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/45 ${
+              solid
+                ? "bg-magenta-500 text-white hover:bg-magenta-600"
+                : "bg-white/12 text-white ring-1 ring-inset ring-white/25 backdrop-blur hover:bg-white/20"
+            }`}
+          >
+            {t("cta")}
+          </Link>
         </div>
-        <button className="md:hidden text-navy-900" onClick={() => setOpen(!open)} aria-label="Menu">☰</button>
+
+        <button
+          className={`flex h-10 w-10 items-center justify-center md:hidden ${
+            solid ? "text-navy-900" : "text-white"
+          }`}
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+          aria-expanded={open}
+        >
+          <span className="relative flex h-4 w-5 flex-col justify-between">
+            <span className={`h-0.5 w-full rounded-full bg-current transition-transform duration-300 ${open ? "translate-y-[7px] rotate-45" : ""}`} />
+            <span className={`h-0.5 w-full rounded-full bg-current transition-opacity duration-200 ${open ? "opacity-0" : ""}`} />
+            <span className={`h-0.5 w-full rounded-full bg-current transition-transform duration-300 ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
+          </span>
+        </button>
       </Container>
-      {open && (
-        <div className="border-t border-navy-100 bg-white md:hidden">
-          <Container className="flex flex-col gap-4 py-4">
-            {links.map((l) => (
-              <Link key={l.href} href={l.href} className="text-body-md text-navy-700" onClick={() => setOpen(false)}>{l.label}</Link>
-            ))}
-            <div className="flex items-center justify-between"><LocaleSwitch /><Button href="/contacto">{t("cta")}</Button></div>
-          </Container>
-        </div>
-      )}
+
+      {/* Mobile drawer */}
+      <div
+        className={`overflow-hidden border-t border-navy-100/80 bg-white md:hidden ${
+          open ? "max-h-[80vh]" : "max-h-0 border-t-transparent"
+        } transition-[max-height] duration-300 ease-out`}
+      >
+        <Container className="flex flex-col gap-1 py-4">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="rounded-lg px-2 py-2.5 text-body-md font-medium text-navy-800 transition-colors hover:bg-navy-50 hover:text-teal-600"
+              onClick={() => setOpen(false)}
+            >
+              {l.label}
+            </Link>
+          ))}
+          <div className="mt-3 flex items-center justify-between border-t border-navy-100 pt-4">
+            <LocaleSwitch />
+            <Link
+              href="/contacto"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center rounded-full bg-magenta-500 px-6 py-3 text-body-sm font-semibold text-white shadow-sm transition-colors hover:bg-magenta-600"
+            >
+              {t("cta")}
+            </Link>
+          </div>
+        </Container>
+      </div>
     </header>
   );
 }
