@@ -127,12 +127,35 @@ The current `.git` is broken (macOS duplication artifacts `config 2` / `index 2`
 - Check golden path (nav → page → demo CTA → form submit success), responsive (mobile/desktop), locale switch, and form submission (success + validation error).
 - `next build` + `next lint` pass. Report with observed evidence, not assertions.
 
-## 11. Out of Scope (v1)
+## 11. Out of Scope (v1 core)
 
 - "Soluciones por problema" pages (reducir-costos, etc.) — no copy yet; deferred.
-- Blog / Recursos, ROI calculator (Fase 3), per-country pages, competitor comparisons.
+- ROI calculator (Fase 3), per-country pages, competitor comparisons.
 - Runtime light/dark theme toggle.
-- CMS — copy stays in next-intl JSON.
+- Headless CMS — copy stays in next-intl JSON / MDX.
+
+## 13. Scope v2 — Publishable goal (added 2026-05-29)
+
+End goal: repo Vercel-ready, Resend-connectable, prod domain, **content factory published**, blog images, PSI-optimized. Adds these workstreams on top of the v1 core (same stack):
+
+**A. Content factory → published (blog + vertical pages)**
+- **Verticales:** landing pages por industria del `content-engine` (Tier-1: healthcare/pharma, field services, beverages/DSD; Tier-2: alimentos, 3PL, gobierno/residuos, recintos-fiscales/aduanas). Route: `/[locale]/industrias/[vertical]` (extends the existing industry template) or a dedicated `/verticales/[slug]`.
+- **Blog/Recursos:** `/[locale]/recursos/[slug]` rendering **MDX** posts from `content/blog/{es,en}/*.mdx`. Post = frontmatter (title, date, excerpt, cover, tags, vertical) + body. Index page with cards + filtering by vertical.
+- **Pipeline:** MDX via `@next/mdx` or `next-mdx-remote`; typed frontmatter (zod); static generation (`generateStaticParams`). Reading time + OG per post.
+- **Content sources:** Recintos Fiscales ebook + Grupo Camili case, HIMEX CargoCam (AIFA), Megafarmacia/Mabe (pharma), Gruas Laguna, Makvig, FINSA — see `docs/asset-catalog.md`.
+
+**B. Image library (reuse-first)**
+- Reuse existing assets per `docs/asset-catalog.md`; copy chosen files into `public/images/<cat>/`. Generate with `/banana` only when no match.
+- Serve all imagery via `next/image` (AVIF/WebP, responsive sizes, lazy) — feeds PSI.
+
+**C. Deploy — Vercel-ready**
+- `vercel.json` (if needed), `.nvmrc`/engines, env documented in `.env.example` (`RESEND_API_KEY`, `CONTACT_TO/FROM`, `NEXT_PUBLIC_SITE_URL`).
+- Fran does: connect repo to Vercel, set env vars, point geodot.app DNS. Site reads domain from `NEXT_PUBLIC_SITE_URL` (fallback `VERCEL_URL`).
+
+**D. PSI optimization (budget: mobile ≥90)**
+- `next/image` everywhere; `next/font` (already, no layout shift); static/ISR rendering; minimal client JS (server components default; `"use client"` only for Nav drawer, LocaleSwitch, ContactForm, AnimatedCounter); preconnect/dns-prefetch as needed; defer non-critical motion; lighthouse/PSI check in verification.
+
+**Build order:** finish v1 core foundation (plan Tasks 1–11, independent of v2) → v1 pages (12–15) → SEO (16) → then v2: MDX blog pipeline → vertical pages → image integration → Vercel/PSI pass. A v2 plan extension will be written before the v2 build tasks.
 
 ## 12. Build Sequencing (for the implementation plan)
 
