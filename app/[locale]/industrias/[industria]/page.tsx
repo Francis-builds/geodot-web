@@ -12,6 +12,14 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) => INDUSTRY_SLUGS.map((industria) => ({ locale, industria })));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; industria: string }> }): Promise<import("next").Metadata> {
+  const { locale, industria } = await params;
+  const key = INDUSTRIES[industria as IndustrySlug]?.messageKey;
+  if (!key) return {};
+  const t = await getTranslations({ locale, namespace: `industries.${key}` });
+  return { title: t("title"), description: t("subtitle") };
+}
+
 export default async function IndustriaPage({ params }: { params: Promise<{ locale: string; industria: string }> }) {
   const { locale, industria } = await params;
   if (!INDUSTRY_SLUGS.includes(industria as IndustrySlug)) notFound();

@@ -12,6 +12,14 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) => MODULE_SLUGS.map((modulo) => ({ locale, modulo })));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; modulo: string }> }): Promise<import("next").Metadata> {
+  const { locale, modulo } = await params;
+  const key = MODULES[modulo as ModuleSlug]?.messageKey;
+  if (!key) return {};
+  const t = await getTranslations({ locale, namespace: `modules.${key}` });
+  return { title: t("title"), description: t("subtitle") };
+}
+
 export default async function ModuloPage({ params }: { params: Promise<{ locale: string; modulo: string }> }) {
   const { locale, modulo } = await params;
   if (!MODULE_SLUGS.includes(modulo as ModuleSlug)) notFound();

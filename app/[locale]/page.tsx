@@ -6,6 +6,12 @@ import { MetricsBand } from "@/components/MetricsBand";
 import { CasesStrip } from "@/components/CasesStrip";
 import { CTABanner } from "@/components/CTABanner";
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home" });
+  return { title: t("hero.title"), description: t("hero.subtitle") };
+}
+
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
