@@ -147,8 +147,8 @@ The current `.git` is broken (macOS duplication artifacts `config 2` / `index 2`
 9. ES + EN copy passes (polished both).
 10. SEO/OG/metadata, verify, build.
 
-## Open Questions
+## Resolved Decisions
 
-- ¿`RESEND_API_KEY` ya existe / a qué casilla deben llegar los leads (`CONTACT_TO`)?
-- ¿Hay logos de clientes (Coca-Cola, Celema, Benito Juárez) disponibles en assets, o uso placeholders por ahora?
-- ¿Dominio/deploy previsto (Vercel) para configurar metadata/OG base URL?
+- **Resend:** Fran has the `RESEND_API_KEY` and will configure `.env.local` himself. Build the action + `.env.example`; don't block on the key.
+- **Client logos:** Do NOT add client logos yet (no Coca-Cola/Celema/Benito Juárez). `CasesStrip` ships without logo row for now — case copy + metrics only, logo slot left for later.
+- **Deploy:** Vercel. Configure metadata/OG with a Vercel-friendly base URL (`NEXT_PUBLIC_SITE_URL` env, fallback to `VERCEL_URL`).
