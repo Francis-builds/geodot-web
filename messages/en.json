@@ -89,5 +89,183 @@
       "subtitle": "Book a demo and we'll show you Geodot with your own data.",
       "button": "Book a Demo"
     }
+  },
+  "modules": {
+    "wms": {
+      "name": "WMS",
+      "tagline": "Full control of your inventory",
+      "eyebrow": "Platform",
+      "title": "Warehouse Management",
+      "titleAccent": "powered by AI",
+      "subtitle": "Geodot WMS goes beyond traditional ERPs. Full traceability down to the last pack, automatic FIFO/FEFO and AI-driven picking optimization.",
+      "ctaPrimary": "Book a Demo",
+      "problem": {
+        "title": "Your warehouse hides costly inefficiencies",
+        "points": [
+          "Expired product: you find out goods have expired when it's already too late.",
+          "Slow picking: operators walk the warehouse without an optimized route.",
+          "Phantom stock: the system says one thing, reality another.",
+          "Customer rejections: you ship product with little remaining shelf life.",
+          "No traceability: you don't know which lot you delivered to each customer."
+        ],
+        "stats": [
+          { "problem": "Losses from expiration", "impact": "+80%" },
+          { "problem": "Picking time", "impact": "+40%" },
+          { "problem": "Shelf-life rejections", "impact": "+70%" }
+        ]
+      },
+      "solution": {
+        "title": "A WMS that sees what other systems can't",
+        "steps": [
+          { "title": "Smart locations", "description": "Multi-level structure with 3D visualization. The system suggests where to store each product based on its constraints." },
+          { "title": "Full traceability", "description": "By lot, expiration date and label. Immutable history of every movement for audit and compliance." },
+          { "title": "Automatic FIFO/FEFO", "description": "Configurable rules and per-customer shelf life. Blocks shipping of soon-to-expire product before it becomes a problem." },
+          { "title": "Optimized picking", "description": "The same routing engine applied inside the warehouse. AI overnight reorganization and step-by-step guides for operators." }
+        ]
+      },
+      "metrics": [
+        { "value": 40, "suffix": "%", "label": "Less picking time" },
+        { "value": 80, "suffix": "%", "label": "Fewer expiration losses" },
+        { "value": 99.9, "suffix": "%", "label": "Inventory accuracy" },
+        { "value": 70, "suffix": "%", "label": "Fewer shelf-life rejections" }
+      ],
+      "cta": {
+        "title": "Ready to take control of your warehouse?",
+        "subtitle": "Book a demo and we'll show you the WMS with your own SKUs.",
+        "button": "Book a Demo"
+      }
+    },
+    "tms": {
+      "name": "TMS",
+      "tagline": "Your fleet under control, owned or outsourced",
+      "eyebrow": "Platform",
+      "title": "Transport Management",
+      "titleAccent": "in real time",
+      "subtitle": "Manage your entire transport operation from a single platform. Live tracking, up-to-date documentation and optimized costs for owned and outsourced fleets.",
+      "ctaPrimary": "Book a Demo",
+      "problem": {
+        "title": "Transport is your biggest cost and your biggest blind spot",
+        "points": [
+          "No visibility: you don't know where your trucks are in real time.",
+          "Uncontrolled third parties: carriers operating however they want.",
+          "Expired paperwork: permits and licenses that lapse without warning.",
+          "Opaque costs: you can't attribute costs to routes or customers.",
+          "Manual coordination: phone calls and WhatsApp to keep everyone aligned."
+        ],
+        "stats": [
+          { "problem": "Fleet visibility", "impact": "Partial" },
+          { "problem": "Document compliance", "impact": "Reactive" },
+          { "problem": "Settlement time", "impact": "+60%" }
+        ]
+      },
+      "solution": {
+        "title": "Full control of your transport operation",
+        "steps": [
+          { "title": "Live tracking", "description": "Continuous GPS position by position, geofences and automatic measurement of time spent at each customer." },
+          { "title": "Unified fleet", "description": "Owned and outsourced in the same view. Carrier portal with approval workflows and shared visibility." },
+          { "title": "Documents and maintenance", "description": "Expiration alerts for permits, licenses and insurance. Preventive maintenance by mileage or time." },
+          { "title": "Automatic settlement", "description": "Calculation by kilometer, delivery or mixed. Fuel control and accounting export ready for payment." }
+        ]
+      },
+      "metrics": [
+        { "value": 100, "suffix": "%", "label": "Fleet visibility" },
+        { "value": 100, "suffix": "%", "label": "Document compliance" },
+        { "value": 15, "suffix": "%", "label": "Lower maintenance costs" },
+        { "value": 60, "suffix": "%", "label": "Less settlement time" }
+      ],
+      "cta": {
+        "title": "Ready to take control of your transport?",
+        "subtitle": "Book a demo and unify your owned and outsourced fleet in a single view.",
+        "button": "Book a Demo"
+      }
+    },
+    "paletizado": {
+      "name": "Smart Palletizing",
+      "tagline": "Loaded to 100%, no safety margin",
+      "eyebrow": "Platform",
+      "title": "Smart",
+      "titleAccent": "Palletizing",
+      "subtitle": "The only system that calculates palletizing in real time while it routes. It knows exactly what fits in each truck before it leaves.",
+      "ctaPrimary": "Book a Demo",
+      "problem": {
+        "title": "15% of your trucks travel empty",
+        "points": [
+          "Safety margin: you load to 85% \"just in case\" it won't fit.",
+          "Rules in someone's head: the expert palletizer knows, but the system doesn't.",
+          "In-transit damage: poorly stacked products that arrive damaged.",
+          "Slow picking: operators with no clear guide on how to build each pallet.",
+          "Load rejections: the customer receives crushed product."
+        ],
+        "stats": [
+          { "problem": "Unused capacity", "impact": "15%" },
+          { "problem": "In-transit damage", "impact": "+40%" },
+          { "problem": "Damage rejections", "impact": "+50%" }
+        ]
+      },
+      "solution": {
+        "title": "Palletizing that talks to routing",
+        "steps": [
+          { "title": "300+ parameters", "description": "Dimensions, weight, stackability, fragility, temperature and compatibility of every product in each calculation." },
+          { "title": "Smart rules", "description": "Stacking by product, family, customer, fragility and legal axle weight. The expert's knowledge, encoded in the system." },
+          { "title": "Simultaneous recalculation", "description": "Every time you add an order to a route, the system recalculates whether it really fits and alerts before it becomes a problem." },
+          { "title": "Visual build guides", "description": "Which product goes in each layer and position, with step-by-step sequence and operator validation." }
+        ]
+      },
+      "metrics": [
+        { "value": 15, "suffix": "%", "label": "Higher truck utilization" },
+        { "value": 40, "suffix": "%", "label": "Less in-transit damage" },
+        { "value": 25, "suffix": "%", "label": "Less loading time" },
+        { "value": 50, "suffix": "%", "label": "Fewer damage rejections" }
+      ],
+      "cta": {
+        "title": "How many extra trucks are you sending?",
+        "subtitle": "Book a demo and we'll calculate your savings with palletizing simultaneous to routing.",
+        "button": "Book a Demo"
+      }
+    },
+    "torreControl": {
+      "name": "Control Tower",
+      "tagline": "Total visibility in real time",
+      "eyebrow": "Platform",
+      "title": "Control Tower",
+      "titleAccent": "in real time",
+      "subtitle": "Command center to monitor, analyze and act on your entire supply chain. From the warehouse to the last delivery.",
+      "ctaPrimary": "Book a Demo",
+      "problem": {
+        "title": "You operate blind until it's too late",
+        "points": [
+          "Fragmented information: each system has its own view.",
+          "Late reaction: you find out about problems once they've already hit.",
+          "No clear metrics: you don't know what's working and what isn't.",
+          "Manual reports: hours compiling Excel for management.",
+          "Customers in the dark: they can't see the status of their orders."
+        ],
+        "stats": [
+          { "problem": "Incident response time", "impact": "+70%" },
+          { "problem": "Hours on manual reports", "impact": "+90%" },
+          { "problem": "Operation visibility", "impact": "Partial" }
+        ]
+      },
+      "solution": {
+        "title": "One place to see everything",
+        "steps": [
+          { "title": "Live dashboard", "description": "Operations map with every truck, delivery status, active alerts and daily KPIs compared against the average." },
+          { "title": "Proactive alerts", "description": "Configurable and escalating. Stopped truck, customer delay, late route or compromised cold chain, via dashboard, email, WhatsApp or SMS." },
+          { "title": "Predictive AI", "description": "Predicts delays before they happen, detects anomalies and suggests optimizations that learn from every delivery." },
+          { "title": "Customer portal", "description": "Customers see where their delivery is, live ETA, history and documents. Automatic daily, weekly and monthly reports." }
+        ]
+      },
+      "metrics": [
+        { "value": 70, "suffix": "%", "label": "Less incident response time" },
+        { "value": 90, "suffix": "%", "label": "Fewer hours on manual reports" },
+        { "value": 100, "suffix": "%", "label": "Operation visibility" },
+        { "value": 30, "suffix": "%", "label": "Higher customer satisfaction" }
+      ],
+      "cta": {
+        "title": "How much is operating without visibility costing you?",
+        "subtitle": "Book a demo and unify WMS, TMS, Routing and Palletizing in a single board.",
+        "button": "Book a Demo"
+      }
+    }
   }
 }
