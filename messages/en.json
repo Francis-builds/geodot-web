@@ -11,5 +11,16 @@
     "casos": "Case studies",
     "nosotros": "About",
     "cta": "Book a Demo"
+  },
+  "footer": {
+    "tagline": "We connect every point of your supply chain.",
+    "platform": "Platform",
+    "allModules": "All modules",
+    "company": "Company",
+    "about": "About",
+    "cases": "Case studies",
+    "contact": "Contact",
+    "demo": "Book a demo",
+    "rights": "© 2026 Geodot. All rights reserved."
   }
 }

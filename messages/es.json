@@ -11,5 +11,16 @@
     "casos": "Casos de éxito",
     "nosotros": "Nosotros",
     "cta": "Agendar Demo"
+  },
+  "footer": {
+    "tagline": "Conectamos cada punto de tu cadena logística.",
+    "platform": "Plataforma",
+    "allModules": "Todos los módulos",
+    "company": "Empresa",
+    "about": "Nosotros",
+    "cases": "Casos de éxito",
+    "contact": "Contacto",
+    "demo": "Agendar demo",
+    "rights": "© 2026 Geodot. Todos los derechos reservados."
   }
 }
