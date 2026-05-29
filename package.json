@@ -10,9 +10,11 @@
     "test": "tsx --import ./lib/test-setup.mjs --test lib/**/*.test.ts"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "motion": "^11.18.0",
     "next": "^16.2.6",
     "next-intl": "^4.11.2",
+    "next-mdx-remote": "^6.0.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "resend": "^6.12.3",
