@@ -709,5 +709,78 @@
         "button": "Book a Demo"
       }
     }
+  },
+  "platformPage": {
+    "hero": {
+      "eyebrow": "The platform",
+      "title": "One complete platform for your entire",
+      "titleAccent": "supply chain",
+      "subtitle": "Geodot integrates the essential modules that work together to optimize every stage of your operation: from the warehouse to the final delivery. Unlike fragmented solutions, every module talks to each other in real time.",
+      "cta": "Book a Demo"
+    },
+    "modules": {
+      "title": "Modules that work as one",
+      "description": "Geodot doesn't replace your ERP, it amplifies it. The routing engine and the palletizer work together, in real time, to optimize every load and every route."
+    },
+    "cta": {
+      "title": "What's your biggest logistics challenge?",
+      "subtitle": "Book a personalized demo and we'll show you how Geodot can solve it.",
+      "button": "Book a Demo"
+    }
+  },
+  "casesPage": {
+    "hero": {
+      "title": "Results that",
+      "titleAccent": "transform operations",
+      "subtitle": "Companies of every size and industry have optimized their logistics with Geodot. Discover their stories and the numbers behind each transformation.",
+      "cta": "I want to be next"
+    },
+    "list": {
+      "title": "The impact of Geodot in numbers",
+      "items": [
+        {
+          "client": "Coca-Cola Bottler",
+          "result": "Truck loads went from 85% to 99% and route planning from 3 hours to 15 minutes.",
+          "metric": "-92% time"
+        },
+        {
+          "client": "Dairy Company (Colombia)",
+          "result": "Automatic FEFO and lot-level traceability eliminated shelf-life rejections.",
+          "metric": "-80% waste"
+        },
+        {
+          "client": "Benito Juárez Borough (Mexico City)",
+          "result": "AI routing for 470 tons of daily waste, with ROI in under 12 months.",
+          "metric": "-15% km"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Want results like these?",
+      "subtitle": "Book a personalized demo and we'll show you how Geodot can transform your operation.",
+      "button": "Book a Demo"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Born from operations,",
+      "titleAccent": "not from a lab",
+      "subtitle": "Our team has lived the challenges of logistics from the inside. That's why we built Geodot: the platform we ourselves wished we had.",
+      "cta": "Book a call"
+    },
+    "mission": {
+      "title": "Connecting every point of the supply chain"
+    },
+    "body": [
+      "After more than 40 combined years of experience in logistics, production and technology, we realized something: the existing tools didn't solve the whole problem. Some systems routed but didn't palletize. WMS that didn't talk to TMS. And in the middle, operations teams juggling to keep everything running.",
+      "Geodot was born to change that. We built the first platform that integrates WMS, TMS, Routing and Palletizing in a single solution, where the routing engine and the palletizer work together, in real time, to optimize every load and every route.",
+      "Our mission is to connect every point of the supply chain so companies operate more efficiently, sustainably and profitably. We don't promise magic: we promise results you can measure —fewer kilometers, fewer rejections, lower costs and fewer emissions.",
+      "We're a Mexican technology company, with experience across Mexico, Argentina, Colombia and Ecuador, and in industries like beverages, food, government and logistics. We imagine a world where every truck leaves at 100% capacity and every product arrives fresh to the right customer. That's the world we're building."
+    ],
+    "cta": {
+      "title": "Ready to meet us?",
+      "subtitle": "Book a call and tell us about your operation. We want to understand your challenges before proposing a solution.",
+      "button": "Book a call"
+    }
   }
 }

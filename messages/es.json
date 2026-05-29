@@ -709,5 +709,78 @@
         "button": "Agendar Demo"
       }
     }
+  },
+  "platformPage": {
+    "hero": {
+      "eyebrow": "La plataforma",
+      "title": "Una plataforma completa para toda tu",
+      "titleAccent": "cadena logística",
+      "subtitle": "Geodot integra los módulos esenciales que trabajan juntos para optimizar cada etapa de tu operación: desde el almacén hasta la entrega final. A diferencia de soluciones fragmentadas, cada módulo se comunica en tiempo real.",
+      "cta": "Agendar Demo"
+    },
+    "modules": {
+      "title": "Módulos que trabajan como uno solo",
+      "description": "Geodot no reemplaza tu ERP, lo potencia. El motor de ruteo y el paletizador trabajan juntos, en tiempo real, para optimizar cada carga y cada ruta."
+    },
+    "cta": {
+      "title": "¿Cuál es tu mayor desafío logístico?",
+      "subtitle": "Agendá una demo personalizada y te mostramos cómo Geodot puede resolverlo.",
+      "button": "Agendar Demo"
+    }
+  },
+  "casesPage": {
+    "hero": {
+      "title": "Resultados que",
+      "titleAccent": "transforman operaciones",
+      "subtitle": "Empresas de diferentes industrias y tamaños han optimizado su logística con Geodot. Conocé sus historias y los números detrás de cada transformación.",
+      "cta": "Quiero ser el próximo caso"
+    },
+    "list": {
+      "title": "El impacto de Geodot en números",
+      "items": [
+        {
+          "client": "Embotelladora Coca-Cola",
+          "result": "Carga de camiones del 85% al 99% y planificación de rutas de 3 horas a 15 minutos.",
+          "metric": "-92% tiempo"
+        },
+        {
+          "client": "Empresa Láctea (Colombia)",
+          "result": "FEFO automático y trazabilidad por lote eliminaron los rechazos por vida útil.",
+          "metric": "-80% mermas"
+        },
+        {
+          "client": "Alcaldía Benito Juárez (CDMX)",
+          "result": "Ruteo con IA para 470 toneladas diarias de residuos, con ROI en menos de 12 meses.",
+          "metric": "-15% km"
+        }
+      ]
+    },
+    "cta": {
+      "title": "¿Querés resultados como estos?",
+      "subtitle": "Agendá una demo personalizada y te mostramos cómo Geodot puede transformar tu operación.",
+      "button": "Agendar Demo"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Nacimos de la operación,",
+      "titleAccent": "no del laboratorio",
+      "subtitle": "Nuestro equipo ha vivido los desafíos de la logística desde adentro. Por eso creamos Geodot: la plataforma que nosotros mismos hubiéramos querido tener.",
+      "cta": "Agendar una llamada"
+    },
+    "mission": {
+      "title": "Conectar cada punto de la cadena logística"
+    },
+    "body": [
+      "Después de más de 40 años combinados de experiencia en logística, producción y tecnología, nos dimos cuenta de algo: las herramientas existentes no resolvían el problema completo. Había sistemas que ruteaban pero no paletizaban. WMS que no hablaban con TMS. Y en medio, equipos de operaciones haciendo malabares para que todo funcionara.",
+      "Geodot nació para cambiar eso. Creamos la primera plataforma que integra WMS, TMS, Ruteo y Paletizado en una sola solución, donde el motor de ruteo y el paletizador trabajan juntos, en tiempo real, para optimizar cada carga y cada ruta.",
+      "Nuestra misión es conectar cada punto de la cadena logística para que las empresas operen de manera más eficiente, sostenible y rentable. No prometemos magia: prometemos resultados que podés medir —menos kilómetros, menos rechazos, menos costos y menos emisiones.",
+      "Somos una empresa mexicana de tecnología, con experiencia en México, Argentina, Colombia y Ecuador, y en industrias como bebidas, alimentos, gobierno y logística. Imaginamos un mundo donde cada camión sale al 100% de su capacidad y cada producto llega fresco al cliente correcto. Ese es el mundo que estamos construyendo."
+    ],
+    "cta": {
+      "title": "¿Listo para conocernos?",
+      "subtitle": "Agendá una llamada y contanos sobre tu operación. Queremos entender tus desafíos antes de proponerte una solución.",
+      "button": "Agendar una llamada"
+    }
   }
 }
