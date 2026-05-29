@@ -2,6 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Hero } from "@/components/Hero";
 import { ProblemStats } from "@/components/ProblemStats";
 import { ModuleGrid } from "@/components/ModuleGrid";
+import { ConnectThePoints } from "@/components/ConnectThePoints";
 import { MetricsBand } from "@/components/MetricsBand";
 import { CasesStrip } from "@/components/CasesStrip";
 import { CTABanner } from "@/components/CTABanner";
@@ -34,6 +35,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         stats={t.raw("problem.stats") as { problem: string; impact: string }[]}
       />
       <ModuleGrid eyebrow={t("platform.eyebrow")} title={t("platform.title")} titleAccent={t("platform.titleAccent")} description={t("platform.description")} />
+      <ConnectThePoints eyebrow={t("journey.eyebrow")} title={t("journey.title")} titleAccent={t("journey.titleAccent")} />
       <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />
       <CasesStrip eyebrow={t("cases.eyebrow")} title={t("cases.title")} cases={t.raw("cases.items") as { client: string; result: string; metric: string }[]} />
       <CTABanner title={t("cta.title")} subtitle={t("cta.subtitle")} cta={{ label: t("cta.button"), href: "/contacto" }} />

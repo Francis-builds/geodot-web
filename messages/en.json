@@ -103,6 +103,29 @@
       "titleAccent": "All your logistics.",
       "description": "Geodot integrates warehouse, transport, routing and palletizing into a single AI platform."
     },
+    "journey": {
+      "eyebrow": "Point to point",
+      "title": "We connect every point",
+      "titleAccent": "of your chain.",
+      "stages": {
+        "warehouse": {
+          "title": "Warehouse",
+          "body": "AI-orchestrated receiving, putaway and picking. Accurate inventory in real time."
+        },
+        "transport": {
+          "title": "Transport",
+          "body": "Load and fleet planning. Every shipment leaves with the right paperwork."
+        },
+        "route": {
+          "title": "Routing",
+          "body": "Optimal routes computed instantly. Fewer miles, lower cost, more deliveries."
+        },
+        "delivery": {
+          "title": "Delivery",
+          "body": "Digital proof of delivery and full visibility. The last point closes the loop."
+        }
+      }
+    },
     "metrics": [
       {
         "value": 10,

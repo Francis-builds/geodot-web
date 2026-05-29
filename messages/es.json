@@ -103,6 +103,29 @@
       "titleAccent": "Toda tu logística.",
       "description": "Geodot integra almacén, transporte, ruteo y paletizado en una sola plataforma con IA."
     },
+    "journey": {
+      "eyebrow": "De punto a punto",
+      "title": "Conectamos cada punto",
+      "titleAccent": "de tu cadena.",
+      "stages": {
+        "warehouse": {
+          "title": "Almacén",
+          "body": "Recepción, ubicación y picking orquestados con IA. Inventario preciso en tiempo real."
+        },
+        "transport": {
+          "title": "Transporte",
+          "body": "Planificación de cargas y flota. Cada envío sale con la documentación correcta."
+        },
+        "route": {
+          "title": "Ruteo",
+          "body": "Rutas óptimas calculadas al instante. Menos kilómetros, menos costo, más entregas."
+        },
+        "delivery": {
+          "title": "Entrega",
+          "body": "Prueba de entrega digital y visibilidad total. El punto final cierra el ciclo."
+        }
+      }
+    },
     "metrics": [
       {
         "value": 10,

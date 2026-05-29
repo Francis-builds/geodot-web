@@ -8,6 +8,8 @@ import {
   Milk,
   Recycle,
   Package,
+  PackageCheck,
+  Route,
   HeartPulse,
   Container,
 } from "lucide-react";
@@ -22,6 +24,8 @@ const ICONS: Record<string, LucideIcon> = {
   truck: Truck,
   boxes: Boxes,
   radar: Radar,
+  route: Route,
+  "package-check": PackageCheck,
   // industries
   "bottle-wine": Wine,
   milk: Milk,
