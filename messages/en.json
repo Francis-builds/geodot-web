@@ -37,5 +37,57 @@
       "success": "Thanks! We'll be in touch shortly.",
       "error": "Please check your details and try again."
     }
+  },
+  "home": {
+    "hero": {
+      "title": "Connect every point of your",
+      "titleAccent": "supply chain",
+      "subtitle": "The only platform that integrates WMS, TMS, Smart Routing and Palletizing with AI. Cut costs, eliminate rejections and get full real-time visibility.",
+      "ctaPrimary": "Book a Demo",
+      "ctaSecondary": "Explore the platform"
+    },
+    "problem": {
+      "eyebrow": "The problem",
+      "title": "Your logistics has leaks you",
+      "titleAccent": "can't see",
+      "points": [
+        "91% of trucks leave with unused space.",
+        "Routes are planned manually.",
+        "Rejections surface when it's already too late.",
+        "Every system speaks a different language."
+      ],
+      "stats": [
+        { "problem": "Underused trucks", "impact": "+15% cost" },
+        { "problem": "Unoptimized routes", "impact": "+20% km" },
+        { "problem": "No visibility", "impact": "+25% rejections" },
+        { "problem": "Disconnected systems", "impact": "Hours lost" }
+      ]
+    },
+    "platform": {
+      "eyebrow": "The platform",
+      "title": "One platform.",
+      "titleAccent": "All your logistics.",
+      "description": "Geodot integrates warehouse, transport, routing and palletizing into a single AI platform."
+    },
+    "metrics": [
+      { "value": 10, "suffix": "%", "label": "Transport savings" },
+      { "value": 20, "suffix": "%", "label": "Fewer kilometers" },
+      { "value": 30, "suffix": "%", "label": "Fewer rejections" },
+      { "value": 100, "suffix": "%", "label": "Real-time visibility" }
+    ],
+    "cases": {
+      "eyebrow": "Case studies",
+      "title": "Real results",
+      "items": [
+        { "metric": "−10%", "result": "Lower transport costs", "client": "Beverage bottler" },
+        { "metric": "−30%", "result": "Fewer delivery rejections", "client": "Dairy" },
+        { "metric": "100%", "result": "Waste traceability", "client": "Municipal government" }
+      ]
+    },
+    "cta": {
+      "title": "Ready to connect your logistics?",
+      "subtitle": "Book a demo and we'll show you Geodot with your own data.",
+      "button": "Book a Demo"
+    }
   }
 }

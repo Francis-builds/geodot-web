@@ -37,5 +37,57 @@
       "success": "¡Gracias! Te contactamos a la brevedad.",
       "error": "Revisá los datos e intentá de nuevo."
     }
+  },
+  "home": {
+    "hero": {
+      "title": "Conectamos cada punto de tu",
+      "titleAccent": "cadena logística",
+      "subtitle": "La única plataforma que integra WMS, TMS, Ruteo Inteligente y Paletizado con IA. Reduce costos, elimina rechazos y obtén visibilidad total en tiempo real.",
+      "ctaPrimary": "Agendar Demo",
+      "ctaSecondary": "Ver plataforma"
+    },
+    "problem": {
+      "eyebrow": "El problema",
+      "title": "Tu logística tiene fugas que",
+      "titleAccent": "no puedes ver",
+      "points": [
+        "El 91% de los camiones salen con espacio sin usar.",
+        "Las rutas se planifican manualmente.",
+        "Los rechazos se descubren cuando ya es tarde.",
+        "Cada sistema habla un idioma diferente."
+      ],
+      "stats": [
+        { "problem": "Camiones subutilizados", "impact": "+15% costos" },
+        { "problem": "Rutas no optimizadas", "impact": "+20% km" },
+        { "problem": "Sin visibilidad", "impact": "+25% rechazos" },
+        { "problem": "Sistemas desconectados", "impact": "Horas perdidas" }
+      ]
+    },
+    "platform": {
+      "eyebrow": "La plataforma",
+      "title": "Una plataforma.",
+      "titleAccent": "Toda tu logística.",
+      "description": "Geodot integra almacén, transporte, ruteo y paletizado en una sola plataforma con IA."
+    },
+    "metrics": [
+      { "value": 10, "suffix": "%", "label": "Ahorro en transporte" },
+      { "value": 20, "suffix": "%", "label": "Menos kilómetros" },
+      { "value": 30, "suffix": "%", "label": "Menos rechazos" },
+      { "value": 100, "suffix": "%", "label": "Visibilidad en tiempo real" }
+    ],
+    "cases": {
+      "eyebrow": "Casos de éxito",
+      "title": "Resultados reales",
+      "items": [
+        { "metric": "−10%", "result": "Reducción de costos de transporte", "client": "Embotelladora" },
+        { "metric": "−30%", "result": "Menos rechazos en entregas", "client": "Lácteos" },
+        { "metric": "100%", "result": "Trazabilidad de residuos", "client": "Gobierno municipal" }
+      ]
+    },
+    "cta": {
+      "title": "¿Listo para conectar tu logística?",
+      "subtitle": "Agendá una demo y te mostramos Geodot con tus propios datos.",
+      "button": "Agendar Demo"
+    }
   }
 }

@@ -1,15 +1,33 @@
-import { use } from "react";
-import { setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import { Hero } from "@/components/Hero";
+import { ProblemStats } from "@/components/ProblemStats";
+import { ModuleGrid } from "@/components/ModuleGrid";
+import { MetricsBand } from "@/components/MetricsBand";
+import { CasesStrip } from "@/components/CasesStrip";
+import { CTABanner } from "@/components/CTABanner";
 
-export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = use(params);
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   setRequestLocale(locale);
-  const t = useTranslations("nav");
+  const t = await getTranslations("home");
+
   return (
-    <section className="mx-auto max-w-[1200px] px-6 py-24">
-      <h1 className="text-display-xl font-bold text-navy-900">Geodot</h1>
-      <p className="mt-4 text-body-lg text-navy-600">{t("cta")}</p>
-    </section>
+    <>
+      <Hero
+        title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")}
+        primaryCta={{ label: t("hero.ctaPrimary"), href: "/contacto" }}
+        secondaryCta={{ label: t("hero.ctaSecondary"), href: "/plataforma" }}
+        variant="dark"
+      />
+      <ProblemStats
+        eyebrow={t("problem.eyebrow")} title={t("problem.title")} titleAccent={t("problem.titleAccent")}
+        points={t.raw("problem.points") as string[]}
+        stats={t.raw("problem.stats") as { problem: string; impact: string }[]}
+      />
+      <ModuleGrid eyebrow={t("platform.eyebrow")} title={t("platform.title")} titleAccent={t("platform.titleAccent")} description={t("platform.description")} />
+      <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />
+      <CasesStrip eyebrow={t("cases.eyebrow")} title={t("cases.title")} cases={t.raw("cases.items") as { client: string; result: string; metric: string }[]} />
+      <CTABanner title={t("cta.title")} subtitle={t("cta.subtitle")} cta={{ label: t("cta.button"), href: "/contacto" }} />
+    </>
   );
 }
