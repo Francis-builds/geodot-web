@@ -209,6 +209,35 @@
       "title": "Calculá cuánto estás perdiendo hoy",
       "subtitle": "Agendá una demo de 30 minutos y te mostramos tu ahorro con tus propios datos.",
       "button": "Agendar Demo"
+    },
+    "multimodal": {
+      "eyebrow": "Logística multimodal",
+      "title": "Mové tu carga por",
+      "titleAccent": "mar, aire y tierra",
+      "subtitle": "Una sola plataforma para orquestar todos los modos de transporte, con la misma visibilidad y optimización de punta a punta.",
+      "modes": [
+        {
+          "key": "sea",
+          "name": "Marítimo",
+          "desc": "Contenedores, puertos y patios. Visibilidad del buque al último kilómetro."
+        },
+        {
+          "key": "air",
+          "name": "Aéreo",
+          "desc": "Carga urgente y perecedera, con trazabilidad y tiempos críticos bajo control."
+        },
+        {
+          "key": "road",
+          "name": "Terrestre",
+          "desc": "Flota propia y tercerizada, ruteo inteligente y paletizado optimizado."
+        },
+        {
+          "key": "rail",
+          "name": "Ferroviario",
+          "desc": "Integración ferroviaria para tramos de larga distancia.",
+          "soon": "Próximamente"
+        }
+      ]
     }
   },
   "modules": {

@@ -209,6 +209,35 @@
       "title": "See what you're losing today",
       "subtitle": "Book a 30-minute demo and we'll show you your savings with your own data.",
       "button": "Book a Demo"
+    },
+    "multimodal": {
+      "eyebrow": "Multimodal logistics",
+      "title": "Move your freight by",
+      "titleAccent": "sea, air and land",
+      "subtitle": "One platform to orchestrate every transport mode, with the same end-to-end visibility and optimization.",
+      "modes": [
+        {
+          "key": "sea",
+          "name": "Sea",
+          "desc": "Containers, ports and yards. Visibility from vessel to last mile."
+        },
+        {
+          "key": "air",
+          "name": "Air",
+          "desc": "Urgent and perishable cargo, with traceability and critical timing under control."
+        },
+        {
+          "key": "road",
+          "name": "Road",
+          "desc": "Owned and outsourced fleet, smart routing and optimized palletizing."
+        },
+        {
+          "key": "rail",
+          "name": "Rail",
+          "desc": "Rail integration for long-haul legs.",
+          "soon": "Coming soon"
+        }
+      ]
     }
   },
   "modules": {

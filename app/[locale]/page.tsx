@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { ProblemStats } from "@/components/ProblemStats";
 import { ModuleGrid } from "@/components/ModuleGrid";
 import { ConnectThePoints } from "@/components/ConnectThePoints";
+import { Multimodal } from "@/components/Multimodal";
 import { MetricsBand } from "@/components/MetricsBand";
 import { CasesStrip } from "@/components/CasesStrip";
 import { CTABanner } from "@/components/CTABanner";
@@ -36,6 +37,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
       <ModuleGrid eyebrow={t("platform.eyebrow")} title={t("platform.title")} titleAccent={t("platform.titleAccent")} description={t("platform.description")} />
       <ConnectThePoints eyebrow={t("journey.eyebrow")} title={t("journey.title")} titleAccent={t("journey.titleAccent")} />
+      <Multimodal
+        eyebrow={t("multimodal.eyebrow")} title={t("multimodal.title")} titleAccent={t("multimodal.titleAccent")}
+        subtitle={t("multimodal.subtitle")}
+        modes={t.raw("multimodal.modes") as { key: "sea" | "air" | "road" | "rail"; name: string; desc: string; soon?: string }[]}
+      />
       <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />
       <CasesStrip eyebrow={t("cases.eyebrow")} title={t("cases.title")} cases={t.raw("cases.items") as { client: string; result: string; metric: string }[]} />
       <CTABanner title={t("cta.title")} subtitle={t("cta.subtitle")} cta={{ label: t("cta.button"), href: "/contacto" }} />
