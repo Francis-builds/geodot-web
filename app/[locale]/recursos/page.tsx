@@ -25,6 +25,8 @@ export default async function RecursosPage({ params }: { params: Promise<{ local
         titleAccent={t("hero.titleAccent")}
         subtitle={t("hero.subtitle")}
         primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
+        bgImage="/images/warehouse/almacen.jpg"
+        bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`}
       />
       <section className="bg-white py-20">
         <Container>

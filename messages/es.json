@@ -902,6 +902,7 @@
   },
   "casesPage": {
     "hero": {
+      "eyebrow": "Casos de éxito",
       "title": "Resultados que",
       "titleAccent": "transforman operaciones",
       "subtitle": "Empresas de diferentes industrias y tamaños han optimizado su logística con Geodot. Conocé sus historias y los números detrás de cada transformación.",
@@ -935,6 +936,7 @@
   },
   "aboutPage": {
     "hero": {
+      "eyebrow": "Nosotros",
       "title": "Nacimos de la operación,",
       "titleAccent": "no del laboratorio",
       "subtitle": "Nuestro equipo ha vivido los desafíos de la logística desde adentro. Por eso creamos Geodot: la plataforma que nosotros mismos hubiéramos querido tener.",

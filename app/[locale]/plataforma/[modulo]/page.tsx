@@ -7,7 +7,6 @@ import { ProblemStats } from "@/components/ProblemStats";
 import { SolutionSteps } from "@/components/SolutionSteps";
 import { MetricsBand } from "@/components/MetricsBand";
 import { CTABanner } from "@/components/CTABanner";
-import { Media } from "@/components/ui/Media";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => MODULE_SLUGS.map((modulo) => ({ locale, modulo })));
@@ -32,7 +31,7 @@ export default async function ModuloPage({ params }: { params: Promise<{ locale:
     <>
       <Hero variant="dark" eyebrow={t("eyebrow")} eyebrowIcon={icon} title={t("title")} titleAccent={t("titleAccent")} subtitle={t("subtitle")}
         primaryCta={{ label: t("ctaPrimary"), href: "/contacto" }}
-        visual={<Media src={hero} alt={`${t("title")} ${t("titleAccent")}`} ratio="4/3" priority sizes="(max-width: 768px) 100vw, 600px" />} />
+        bgImage={hero} bgAlt={`${t("title")} ${t("titleAccent")}`} />
       <ProblemStats title={t("problem.title")} points={t.raw("problem.points") as string[]} stats={t.raw("problem.stats") as { problem: string; impact: string }[]} />
       <SolutionSteps title={t("solution.title")} steps={t.raw("solution.steps") as { title: string; description: string }[]} />
       <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />

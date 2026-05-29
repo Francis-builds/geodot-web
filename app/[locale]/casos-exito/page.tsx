@@ -15,7 +15,8 @@ export default async function CasosPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations("casesPage");
   return (
     <>
-      <Hero variant="dark" title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")} primaryCta={{ label: t("hero.cta"), href: "/contacto" }} />
+      <Hero variant="dark" eyebrow={t("hero.eyebrow")} title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")} primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
+        bgImage="/images/recintos/geocerca-puerto.jpg" bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`} />
       <CasesStrip title={t("list.title")} cases={t.raw("list.items") as { client: string; result: string; metric: string }[]} />
       <CTABanner title={t("cta.title")} subtitle={t("cta.subtitle")} cta={{ label: t("cta.button"), href: "/contacto" }} />
     </>

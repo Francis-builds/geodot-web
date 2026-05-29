@@ -16,7 +16,8 @@ export default async function NosotrosPage({ params }: { params: Promise<{ local
   const paras = t.raw("body") as string[];
   return (
     <>
-      <Hero variant="dark" title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")} primaryCta={{ label: t("hero.cta"), href: "/contacto" }} />
+      <Hero variant="dark" eyebrow={t("hero.eyebrow")} title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")} primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
+        bgImage="/images/torre/torre-control.jpg" bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`} />
       <Section tone="base">
         <SectionHeader title={t("mission.title")} align="left" />
         <div className="max-w-3xl space-y-4">{paras.map((p, i) => <p key={i} className="text-body-lg text-navy-700">{p}</p>)}</div>
