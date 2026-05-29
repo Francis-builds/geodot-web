@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitch } from "./LocaleSwitch";
 import { Container } from "./ui/Container";
+import { DesktopNavMenus, MobileNavMenus } from "./NavMenu";
 
 /** geo·dot wordmark — teal "dot" with a subtle glowing leading marker. */
 function Logo({ scrolled }: { scrolled: boolean }) {
@@ -51,9 +52,9 @@ export function Nav() {
     };
   }, [open]);
 
+  // Plataforma + Industrias are dropdown menus (see <DesktopNavMenus> /
+  // <MobileNavMenus>); the rest stay as plain links.
   const links = [
-    { href: "/plataforma", label: t("plataforma") },
-    { href: "/industrias/bebidas", label: t("industrias") },
     { href: "/casos-exito", label: t("casos") },
     { href: "/recursos", label: t("recursos") },
     { href: "/nosotros", label: t("nosotros") },
@@ -77,7 +78,8 @@ export function Nav() {
       <Container className="flex h-16 items-center justify-between md:h-[72px]">
         <Logo scrolled={solid} />
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
+          <DesktopNavMenus linkColor={linkColor} />
           {links.map((l) => (
             <Link
               key={l.href}
@@ -126,6 +128,7 @@ export function Nav() {
         } transition-[max-height] duration-300 ease-out`}
       >
         <Container className="flex flex-col gap-1 py-4">
+          <MobileNavMenus onNavigate={() => setOpen(false)} />
           {links.map((l) => (
             <Link
               key={l.href}

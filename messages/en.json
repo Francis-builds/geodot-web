@@ -11,7 +11,9 @@
     "casos": "Case studies",
     "recursos": "Resources",
     "nosotros": "About",
-    "cta": "Book a Demo"
+    "cta": "Book a Demo",
+    "platformAll": "Explore the platform",
+    "industriesAll": "All industries"
   },
   "footer": {
     "tagline": "Load to 100%, route smarter, see everything in real time.",
@@ -504,6 +506,8 @@
   },
   "industries": {
     "bebidas": {
+      "name": "Beverages",
+      "tagline": "High turnover with lot-level traceability",
       "eyebrow": "Industry",
       "title": "Beverages &",
       "titleAccent": "Bottlers",
@@ -567,6 +571,8 @@
       }
     },
     "alimentos": {
+      "name": "Food & Dairy",
+      "tagline": "Cold chain and expiry under control",
       "eyebrow": "Industry",
       "title": "Food &",
       "titleAccent": "Dairy",
@@ -630,6 +636,8 @@
       }
     },
     "gobiernoResiduos": {
+      "name": "Government & Waste",
+      "tagline": "Routes and collection with full visibility",
       "eyebrow": "Industry",
       "title": "Government &",
       "titleAccent": "Urban Waste",
@@ -693,6 +701,8 @@
       }
     },
     "logistica3pl": {
+      "name": "3PL Logistics",
+      "tagline": "Multi-client, billing and SLAs in one place",
       "eyebrow": "Industry",
       "title": "Logistics Operators",
       "titleAccent": "3PL",
@@ -756,6 +766,8 @@
       }
     },
     "healthcare": {
+      "name": "Healthcare & Pharma",
+      "tagline": "Compliance, cold chain and regulatory traceability",
       "eyebrow": "Industry",
       "title": "Healthcare &",
       "titleAccent": "Pharma",
@@ -819,6 +831,8 @@
       }
     },
     "recintosFiscales": {
+      "name": "Bonded Warehouses",
+      "tagline": "Customs control and Zero Label",
       "eyebrow": "Industry",
       "title": "Bonded &",
       "titleAccent": "Customs Warehouses",
