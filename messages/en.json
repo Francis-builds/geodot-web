@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Geodot — AI-powered logistics platform",
-    "description": "WMS, TMS, smart routing and palletizing in a single AI platform.",
-    "ogTitle": "Geodot — Connect every point of your supply chain",
-    "ogDescription": "Cut costs, eliminate rejections and get full real-time visibility."
+    "title": "Geodot — Load every truck to 100% with AI",
+    "description": "WMS, TMS, routing and palletizing in one AI platform. Cut transport cost, eliminate rejections and gain full visibility. ROI in under 12 months.",
+    "ogTitle": "Geodot — Logistics that loads to 100% and runs in real time",
+    "ogDescription": "Fewer trucks, fewer rejections, no blind spots. Routing + palletizing at once, integrated with your ERP. Results in 90 days."
   },
   "nav": {
     "plataforma": "Platform",
@@ -14,7 +14,7 @@
     "cta": "Book a Demo"
   },
   "footer": {
-    "tagline": "We connect every point of your supply chain.",
+    "tagline": "Load to 100%, route smarter, see everything in real time.",
     "platform": "Platform",
     "allModules": "All modules",
     "company": "Company",
@@ -61,22 +61,22 @@
   },
   "home": {
     "hero": {
-      "title": "Connect every point of your",
-      "titleAccent": "supply chain",
-      "subtitle": "The only platform that integrates WMS, TMS, Smart Routing and Palletizing with AI. Cut costs, eliminate rejections and get full real-time visibility.",
+      "title": "Load every truck to 100% and",
+      "titleAccent": "see it in real time",
+      "subtitle": "The only platform that routes and palletizes at the same time with AI. Fewer trucks, fewer rejections, no blind spots —integrated with your ERP, live in 90 days.",
       "ctaPrimary": "Book a Demo",
       "ctaSecondary": "Explore the platform",
-      "eyebrow": "AI-powered logistics platform"
+      "eyebrow": "WMS + TMS + Routing + Palletizing, with AI"
     },
     "problem": {
       "eyebrow": "The problem",
-      "title": "Your logistics has leaks you",
-      "titleAccent": "can't see",
+      "title": "Your logistics is leaking money where you",
+      "titleAccent": "can't see it",
       "points": [
-        "91% of trucks leave with unused space.",
-        "Routes are planned manually.",
-        "Rejections surface when it's already too late.",
-        "Every system speaks a different language."
+        "91% of your trucks leave with unused space.",
+        "Your team plans routes by hand, 3 hours a day.",
+        "Rejections surface only after the customer complains.",
+        "Every system speaks a different language and nothing reconciles."
       ],
       "stats": [
         {
@@ -100,8 +100,8 @@
     "platform": {
       "eyebrow": "The platform",
       "title": "One platform.",
-      "titleAccent": "All your logistics.",
-      "description": "Geodot integrates warehouse, transport, routing and palletizing into a single AI platform."
+      "titleAccent": "All your logistics, connected.",
+      "description": "Warehouse, transport, routing and palletizing working together in real time. It doesn't replace your ERP —it makes it stronger."
     },
     "journey": {
       "eyebrow": "Point to point",
@@ -110,19 +110,19 @@
       "stages": {
         "warehouse": {
           "title": "Warehouse",
-          "body": "AI-orchestrated receiving, putaway and picking. Accurate inventory in real time."
+          "body": "AI-driven receiving, putaway and picking. Automatic FEFO and 99.9% inventory accuracy."
         },
         "transport": {
           "title": "Transport",
-          "body": "Load and fleet planning. Every shipment leaves with the right paperwork."
+          "body": "Owned and outsourced fleet in one view. Every shipment leaves with its paperwork in order."
         },
         "route": {
           "title": "Routing",
-          "body": "Optimal routes computed instantly. Fewer miles, lower cost, more deliveries."
+          "body": "Optimal routes instantly, computed alongside palletizing. Fewer miles, lower cost."
         },
         "delivery": {
           "title": "Delivery",
-          "body": "Digital proof of delivery and full visibility. The last point closes the loop."
+          "body": "Digital proof of delivery and full traceability. The last point closes the loop."
         }
       }
     },
@@ -150,28 +150,28 @@
     ],
     "cases": {
       "eyebrow": "Case studies",
-      "title": "Real results",
+      "title": "Real results, not promises",
       "items": [
         {
           "metric": "−10%",
-          "result": "Lower transport costs",
+          "result": "Lower transport cost by loading to 99%",
           "client": "Beverage bottler"
         },
         {
           "metric": "−30%",
-          "result": "Fewer delivery rejections",
+          "result": "Fewer rejections with FEFO and per-customer shelf life",
           "client": "Dairy"
         },
         {
           "metric": "100%",
-          "result": "Waste traceability",
+          "result": "Collection traceability and −70 t CO₂/year",
           "client": "Municipal government"
         }
       ]
     },
     "cta": {
-      "title": "Ready to connect your logistics?",
-      "subtitle": "Book a demo and we'll show you Geodot with your own data.",
+      "title": "See what you're losing today",
+      "subtitle": "Book a 30-minute demo and we'll show you your savings with your own data.",
       "button": "Book a Demo"
     }
   },

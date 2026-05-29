@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Geodot — Plataforma logística con IA",
-    "description": "WMS, TMS, ruteo inteligente y paletizado en una sola plataforma con IA.",
-    "ogTitle": "Geodot — Conectamos cada punto de tu cadena logística",
-    "ogDescription": "Reduce costos, elimina rechazos y obtén visibilidad total en tiempo real."
+    "title": "Geodot — Carga tus camiones al 100% con IA",
+    "description": "WMS, TMS, ruteo y paletizado en una sola plataforma con IA. Reduce costo de transporte, elimina rechazos y gana visibilidad total. ROI en menos de 12 meses.",
+    "ogTitle": "Geodot — La logística que carga al 100% y se ve en tiempo real",
+    "ogDescription": "Menos camiones, menos rechazos, cero puntos ciegos. Ruteo + paletizado en simultáneo, integrado a tu ERP. Resultados en 90 días."
   },
   "nav": {
     "plataforma": "Plataforma",
@@ -14,7 +14,7 @@
     "cta": "Agendar Demo"
   },
   "footer": {
-    "tagline": "Conectamos cada punto de tu cadena logística.",
+    "tagline": "Cargá al 100%, ruteá mejor y vé todo en tiempo real.",
     "platform": "Plataforma",
     "allModules": "Todos los módulos",
     "company": "Empresa",
@@ -61,22 +61,22 @@
   },
   "home": {
     "hero": {
-      "title": "Conectamos cada punto de tu",
-      "titleAccent": "cadena logística",
-      "subtitle": "La única plataforma que integra WMS, TMS, Ruteo Inteligente y Paletizado con IA. Reduce costos, elimina rechazos y obtén visibilidad total en tiempo real.",
+      "title": "Cargá tus camiones al 100% y",
+      "titleAccent": "vé todo en tiempo real",
+      "subtitle": "La única plataforma que rutea y paletiza en simultáneo con IA. Menos camiones, menos rechazos, cero puntos ciegos —integrada a tu ERP, con resultados en 90 días.",
       "ctaPrimary": "Agendar Demo",
-      "ctaSecondary": "Ver plataforma",
-      "eyebrow": "Plataforma logística con IA"
+      "ctaSecondary": "Ver la plataforma",
+      "eyebrow": "WMS + TMS + Ruteo + Paletizado, con IA"
     },
     "problem": {
       "eyebrow": "El problema",
-      "title": "Tu logística tiene fugas que",
+      "title": "Tu logística pierde plata por fugas que",
       "titleAccent": "no puedes ver",
       "points": [
-        "El 91% de los camiones salen con espacio sin usar.",
-        "Las rutas se planifican manualmente.",
-        "Los rechazos se descubren cuando ya es tarde.",
-        "Cada sistema habla un idioma diferente."
+        "El 91% de tus camiones sale con espacio sin usar.",
+        "Tu equipo planifica rutas a mano, 3 horas por día.",
+        "Los rechazos aparecen cuando el cliente ya se quejó.",
+        "Cada sistema habla un idioma distinto y nada se concilia."
       ],
       "stats": [
         {
@@ -99,9 +99,9 @@
     },
     "platform": {
       "eyebrow": "La plataforma",
-      "title": "Una plataforma.",
-      "titleAccent": "Toda tu logística.",
-      "description": "Geodot integra almacén, transporte, ruteo y paletizado en una sola plataforma con IA."
+      "title": "Una sola plataforma.",
+      "titleAccent": "Toda tu logística conectada.",
+      "description": "Almacén, transporte, ruteo y paletizado trabajando juntos en tiempo real. No reemplaza tu ERP: lo potencia."
     },
     "journey": {
       "eyebrow": "De punto a punto",
@@ -110,19 +110,19 @@
       "stages": {
         "warehouse": {
           "title": "Almacén",
-          "body": "Recepción, ubicación y picking orquestados con IA. Inventario preciso en tiempo real."
+          "body": "Recepción, ubicación y picking con IA. FEFO automático e inventario preciso al 99.9%."
         },
         "transport": {
           "title": "Transporte",
-          "body": "Planificación de cargas y flota. Cada envío sale con la documentación correcta."
+          "body": "Flota propia y tercerizada en una sola vista. Cada envío sale con su documentación al día."
         },
         "route": {
           "title": "Ruteo",
-          "body": "Rutas óptimas calculadas al instante. Menos kilómetros, menos costo, más entregas."
+          "body": "Rutas óptimas al instante, calculadas junto al paletizado. Menos kilómetros, menos costo."
         },
         "delivery": {
           "title": "Entrega",
-          "body": "Prueba de entrega digital y visibilidad total. El punto final cierra el ciclo."
+          "body": "Prueba de entrega digital y trazabilidad total. El último punto cierra el ciclo."
         }
       }
     },
@@ -150,28 +150,28 @@
     ],
     "cases": {
       "eyebrow": "Casos de éxito",
-      "title": "Resultados reales",
+      "title": "Resultados reales, no promesas",
       "items": [
         {
           "metric": "−10%",
-          "result": "Reducción de costos de transporte",
+          "result": "Menos costo de transporte cargando al 99%",
           "client": "Embotelladora"
         },
         {
           "metric": "−30%",
-          "result": "Menos rechazos en entregas",
+          "result": "Menos rechazos con FEFO y vida útil por cliente",
           "client": "Lácteos"
         },
         {
           "metric": "100%",
-          "result": "Trazabilidad de residuos",
+          "result": "Trazabilidad de recolección y −70 t CO₂/año",
           "client": "Gobierno municipal"
         }
       ]
     },
     "cta": {
-      "title": "¿Listo para conectar tu logística?",
-      "subtitle": "Agendá una demo y te mostramos Geodot con tus propios datos.",
+      "title": "Calculá cuánto estás perdiendo hoy",
+      "subtitle": "Agendá una demo de 30 minutos y te mostramos tu ahorro con tus propios datos.",
       "button": "Agendar Demo"
     }
   },
