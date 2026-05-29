@@ -22,5 +22,20 @@
     "contact": "Contact",
     "demo": "Book a demo",
     "rights": "© 2026 Geodot. All rights reserved."
+  },
+  "contact": {
+    "title": "Book your demo",
+    "subtitle": "Tell us about your operation and we'll show you Geodot in action.",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Tell us about your operation",
+      "submit": "Request demo",
+      "sending": "Sending…",
+      "success": "Thanks! We'll be in touch shortly.",
+      "error": "Please check your details and try again."
+    }
   }
 }

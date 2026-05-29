@@ -22,5 +22,20 @@
     "contact": "Contacto",
     "demo": "Agendar demo",
     "rights": "© 2026 Geodot. Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Agendá tu demo",
+    "subtitle": "Contanos de tu operación y te mostramos Geodot en acción.",
+    "form": {
+      "name": "Nombre",
+      "company": "Empresa",
+      "email": "Email",
+      "phone": "Teléfono",
+      "message": "Contanos sobre tu operación",
+      "submit": "Solicitar demo",
+      "sending": "Enviando…",
+      "success": "¡Gracias! Te contactamos a la brevedad.",
+      "error": "Revisá los datos e intentá de nuevo."
+    }
   }
 }
