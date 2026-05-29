@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  /* ===== full @theme block from geodot-design-system/theme.css ===== */
+  /* Colors — Teal */
+  --color-teal-50:  #E6F7F5;
+  --color-teal-100: #C0ECE8;
+  --color-teal-200: #8DDDD5;
+  --color-teal-300: #4DCABE;
+  --color-teal-400: #1AB7A8;
+  --color-teal-500: #00A99D;
+  --color-teal-600: #008C82;
+  --color-teal-700: #006F67;
+  --color-teal-800: #00524C;
+  --color-teal-900: #003733;
+
+  /* Colors — Magenta */
+  --color-magenta-50:  #FCE7EE;
+  --color-magenta-100: #F8C2D4;
+  --color-magenta-200: #F08AAC;
+  --color-magenta-300: #E85183;
+  --color-magenta-400: #E02E6C;
+  --color-magenta-500: #D4145A;
+  --color-magenta-600: #B30E4B;
+  --color-magenta-700: #8F0B3C;
+  --color-magenta-800: #6B082D;
+  --color-magenta-900: #48051E;
+
+  /* Colors — Navy / Neutral */
+  --color-navy-50:  #F2F4F9;
+  --color-navy-100: #E2E6F0;
+  --color-navy-200: #C5CCDE;
+  --color-navy-300: #9BA6C2;
+  --color-navy-400: #6B789B;
+  --color-navy-500: #4A5778;
+  --color-navy-600: #364261;
+  --color-navy-700: #253354;
+  --color-navy-800: #18233F;
+  --color-navy-900: #0E172D;
+  --color-navy-950: #080F1F;
+
+  --color-periwinkle: #525F9E;
+
+  /* Feedback */
+  --color-success: #1FA971;
+  --color-warning: #C8851A;
+  --color-error:   #D4145A;
+  --color-info:    #2874FC;
+
+  /* Fonts (vars provided by next/font in layout.tsx) */
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-body:    var(--font-hanken), system-ui, sans-serif;
+
+  /* Type scale */
+  --text-display-2xl: 72px;  --text-display-2xl--line-height: 1.05; --text-display-2xl--letter-spacing: -0.02em;
+  --text-display-xl:  56px;  --text-display-xl--line-height:  1.08; --text-display-xl--letter-spacing:  -0.02em;
+  --text-display-lg:  44px;  --text-display-lg--line-height:  1.10; --text-display-lg--letter-spacing:  -0.01em;
+  --text-heading-xl:  32px;  --text-heading-xl--line-height:  1.15; --text-heading-xl--letter-spacing:  -0.01em;
+  --text-heading-lg:  28px;  --text-heading-lg--line-height:  1.20;
+  --text-heading-md:  22px;  --text-heading-md--line-height:  1.30;
+  --text-heading-sm:  18px;  --text-heading-sm--line-height:  1.40;
+  --text-body-lg:     18px;  --text-body-lg--line-height:     1.60;
+  --text-body-md:     16px;  --text-body-md--line-height:     1.60;
+  --text-body-sm:     14px;  --text-body-sm--line-height:     1.50;
+  --text-caption:     13px;  --text-caption--line-height:     1.40;
+  --text-overline:    12px;  --text-overline--line-height:    1.30; --text-overline--letter-spacing: 0.08em;
+
+  /* Font weights */
+  --font-weight-light:    300;
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  /* Spacing (4px base) */
+  --spacing-0:  0;
+  --spacing-1:  4px;
+  --spacing-2:  8px;
+  --spacing-3:  12px;
+  --spacing-4:  16px;
+  --spacing-5:  20px;
+  --spacing-6:  24px;
+  --spacing-8:  32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
+
+  /* Border radius */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-2xl:  28px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(14, 23, 45, 0.06);
+  --shadow-sm: 0 2px 8px rgba(14, 23, 45, 0.08);
+  --shadow-md: 0 8px 24px rgba(14, 23, 45, 0.10);
+  --shadow-lg: 0 16px 48px rgba(14, 23, 45, 0.14);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    font-family: var(--font-body);
+    background: var(--color-white, #ffffff);
+    color: var(--color-navy-900);
+    min-height: 100dvh;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); }
+  ::selection { background: var(--color-teal-500); color: #ffffff; }
+}
