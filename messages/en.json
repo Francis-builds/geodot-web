@@ -221,7 +221,7 @@
           },
           {
             "title": "Automatic FIFO/FEFO",
-            "description": "Configurable rules and per-customer shelf life (e.g. Carrefour 83%). Blocks shipping of soon-to-expire product before it becomes a rejection."
+            "description": "Configurable rules and per-customer shelf life (e.g. a major chain, 83%). Blocks shipping of soon-to-expire product before it becomes a rejection."
           },
           {
             "title": "Optimized picking",
@@ -507,7 +507,7 @@
       "eyebrow": "Industry",
       "title": "Beverages &",
       "titleAccent": "Bottlers",
-      "subtitle": "Your trucks leave at 85% \"just in case,\" and planning routes by hand eats hours every day. Load at 100%, cut wasted trips and lower transport cost: 15+ years solving returnables, mixed palletizing and last-mile distribution with Coca-Cola bottlers.",
+      "subtitle": "Your trucks leave at 85% \"just in case,\" and planning routes by hand eats hours every day. Load at 100%, cut wasted trips and lower transport cost: 15+ years solving returnables, mixed palletizing and last-mile distribution with leading bottlers.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
@@ -576,7 +576,7 @@
         "title": "Specific challenges we solve",
         "points": [
           "FEFO rotation: the oldest product should ship first, but your warehouse isn't set up to enforce it.",
-          "Per-customer shelf life: each chain demands a different percentage (Carrefour 83%) or rejects the truck.",
+          "Per-customer shelf life: each chain demands a different percentage (una gran cadena, 83%) or rejects the truck.",
           "Cold chain: product leaves at 4°C and arrives at 12°C with no view of what happened en route.",
           "Recall: when a problem appears you don't know which customers received that batch.",
           "Returns and rejections: without the reason logged, you can't fix the root cause."
@@ -672,17 +672,17 @@
           {
             "metric": "15%",
             "result": "Fewer kilometers driven with AI-optimized routing.",
-            "client": "Benito Juárez borough (Mexico City)"
+            "client": "Mexico City borough"
           },
           {
             "metric": "20%",
             "result": "Fewer citizen complaints with app and control tower.",
-            "client": "Benito Juárez borough (Mexico City)"
+            "client": "Mexico City borough"
           },
           {
             "metric": "70 t/yr",
             "result": "Tons of CO₂ avoided through shorter routes.",
-            "client": "Benito Juárez borough (Mexico City)"
+            "client": "Mexico City borough"
           }
         ]
       },
@@ -822,7 +822,7 @@
       "eyebrow": "Industry",
       "title": "Bonded &",
       "titleAccent": "Customs Warehouses",
-      "subtitle": "A facility under ANAM, IMMEX and OEA scrutiny can't run on manual control and loose paperwork. Geodot digitizes the warehouse, document reconciliation and the traceability the authority requires, with video evidence and 24/7 remote access. Grupo Camili case: 7,000 m² at AIFA.",
+      "subtitle": "A facility under ANAM, IMMEX and OEA scrutiny can't run on manual control and loose paperwork. Geodot digitizes the warehouse, document reconciliation and the traceability the authority requires, with video evidence and 24/7 remote access. Real case: 7,000 m² at AIFA.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
@@ -861,17 +861,17 @@
           {
             "metric": "7,000 m²",
             "result": "Bonded warehouse at AIFA digitized with iWMS and Etiqueta Zero, three zones (hazardous, refrigerated, standard).",
-            "client": "Grupo Camili"
+            "client": "Recinto fiscal en AIFA"
           },
           {
             "metric": "100%",
             "result": "Boxes loaded and unloaded counted with video evidence correlated to scanning, audit-ready for ANAM.",
-            "client": "Fiscalized facility operator (HIMEX)"
+            "client": "Fiscalized facility operator"
           },
           {
             "metric": "25 years",
             "result": "Foreign-trade integrated-logistics experience supercharged with end-to-end digital traceability.",
-            "client": "Grupo Camili"
+            "client": "Recinto fiscal en AIFA"
           }
         ]
       },
@@ -912,7 +912,7 @@
       "title": "The impact of Geodot in numbers",
       "items": [
         {
-          "client": "Coca-Cola Bottler",
+          "client": "Leading bottler",
           "result": "Truck loads went from 85% to 99% and route planning from 3 hours to 15 minutes, cutting transport cost by 8%.",
           "metric": "-92% time"
         },
@@ -922,7 +922,7 @@
           "metric": "-80% waste"
         },
         {
-          "client": "Benito Juárez Borough (Mexico City)",
+          "client": "Mexico City borough",
           "result": "AI routing for 470 tons of daily waste: fewer kilometers, less CO₂ and ROI in under 12 months.",
           "metric": "-15% km"
         }
@@ -939,7 +939,7 @@
       "eyebrow": "About us",
       "title": "Born from operations,",
       "titleAccent": "not from a lab",
-      "subtitle": "40+ combined years moving trucks and 15+ with Coca-Cola bottlers. We built Geodot because we've fought the same fires you do —so we never need it explained why the glass goes on the bottom.",
+      "subtitle": "40+ combined years moving trucks and 15+ with leading bottlers. We built Geodot because we've fought the same fires you do —so we never need it explained why the glass goes on the bottom.",
       "cta": "Book a call"
     },
     "mission": {

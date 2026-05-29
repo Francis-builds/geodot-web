@@ -221,7 +221,7 @@
           },
           {
             "title": "FIFO/FEFO automático",
-            "description": "Reglas configurables y vida útil por cliente (ej. Carrefour 83%). Bloquea el despacho de producto próximo a vencer antes de que sea un rechazo."
+            "description": "Reglas configurables y vida útil por cliente (ej. una gran cadena, 83%). Bloquea el despacho de producto próximo a vencer antes de que sea un rechazo."
           },
           {
             "title": "Picking optimizado",
@@ -507,7 +507,7 @@
       "eyebrow": "Industria",
       "title": "Bebidas y",
       "titleAccent": "Embotelladores",
-      "subtitle": "Tus camiones salen al 85% \"por si acaso\" y planificar rutas a mano te roba horas cada día. Cargá al 100%, eliminá viajes y bajá el costo de transporte: +15 años resolviendo retornables, paletizado mixto y distribución capilar con embotelladores Coca-Cola.",
+      "subtitle": "Tus camiones salen al 85% \"por si acaso\" y planificar rutas a mano te roba horas cada día. Cargá al 100%, eliminá viajes y bajá el costo de transporte: +15 años resolviendo retornables, paletizado mixto y distribución capilar con embotelladoras líderes.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
@@ -576,7 +576,7 @@
         "title": "Desafíos específicos que resolvemos",
         "points": [
           "Rotación FEFO: lo más viejo debe salir primero, pero tu almacén no está organizado para forzarlo.",
-          "Vida útil por cliente: cada cadena exige un porcentaje distinto (Carrefour 83%) o te rechaza el camión.",
+          "Vida útil por cliente: cada cadena exige un porcentaje distinto (una gran cadena, 83%) o te rechaza el camión.",
           "Cadena de frío: el producto sale a 4°C y llega a 12°C sin que veas qué pasó en el trayecto.",
           "Recall: cuando aparece un problema no sabés a qué clientes les entregaste ese lote.",
           "Devoluciones y rechazos: sin el motivo registrado, no podés corregir la causa."
@@ -672,17 +672,17 @@
           {
             "metric": "15%",
             "result": "Reducción de kilómetros recorridos con ruteo optimizado por IA.",
-            "client": "Alcaldía Benito Juárez (CDMX)"
+            "client": "Municipio de la CDMX"
           },
           {
             "metric": "20%",
             "result": "Reducción de quejas ciudadanas con app y torre de control.",
-            "client": "Alcaldía Benito Juárez (CDMX)"
+            "client": "Municipio de la CDMX"
           },
           {
             "metric": "70 t/año",
             "result": "Toneladas de CO₂ evitadas por rutas más cortas.",
-            "client": "Alcaldía Benito Juárez (CDMX)"
+            "client": "Municipio de la CDMX"
           }
         ]
       },
@@ -822,7 +822,7 @@
       "eyebrow": "Industria",
       "title": "Recintos",
       "titleAccent": "Fiscales",
-      "subtitle": "Un recinto bajo escrutinio de ANAM, IMMEX y OEA no puede operar con control manual y papeles sueltos. Geodot digitaliza el almacén, la conciliación documental y la trazabilidad que la autoridad exige, con evidencia en video y acceso remoto 24/7. Caso Grupo Camili: 7,000 m² en AIFA.",
+      "subtitle": "Un recinto bajo escrutinio de ANAM, IMMEX y OEA no puede operar con control manual y papeles sueltos. Geodot digitaliza el almacén, la conciliación documental y la trazabilidad que la autoridad exige, con evidencia en video y acceso remoto 24/7. Caso real: 7,000 m² en AIFA.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
@@ -861,17 +861,17 @@
           {
             "metric": "7,000 m²",
             "result": "Almacén fiscal en AIFA digitalizado con iWMS y Etiqueta Zero, tres áreas (peligrosos, refrigerados, estándar).",
-            "client": "Grupo Camili"
+            "client": "Recinto fiscal en AIFA"
           },
           {
             "metric": "100%",
             "result": "Conteo de cajas cargadas y descargadas con evidencia en video correlacionada con el escaneo, lista para ANAM.",
-            "client": "Operador de recinto fiscalizado (HIMEX)"
+            "client": "Operador de recinto fiscalizado"
           },
           {
             "metric": "25 años",
             "result": "Experiencia en logística integral de comercio exterior potenciada con trazabilidad digital de extremo a extremo.",
-            "client": "Grupo Camili"
+            "client": "Recinto fiscal en AIFA"
           }
         ]
       },
@@ -912,7 +912,7 @@
       "title": "El impacto de Geodot en números",
       "items": [
         {
-          "client": "Embotelladora Coca-Cola",
+          "client": "Embotelladora líder",
           "result": "Pasó de cargar camiones al 85% al 99% y de planificar rutas en 3 horas a hacerlo en 15 minutos, con -8% en costo de transporte.",
           "metric": "-92% tiempo"
         },
@@ -922,7 +922,7 @@
           "metric": "-80% mermas"
         },
         {
-          "client": "Alcaldía Benito Juárez (CDMX)",
+          "client": "Municipio de la CDMX",
           "result": "Ruteo con IA para 470 toneladas diarias de residuos: menos kilómetros, menos CO₂ y ROI en menos de 12 meses.",
           "metric": "-15% km"
         }
@@ -939,7 +939,7 @@
       "eyebrow": "Nosotros",
       "title": "Nacimos de la operación,",
       "titleAccent": "no del laboratorio",
-      "subtitle": "+40 años combinados moviendo camiones y +15 con embotelladores Coca-Cola. Creamos Geodot porque vivimos los mismos incendios que vos: por eso no hay que explicarnos qué es una planchada.",
+      "subtitle": "+40 años combinados moviendo camiones y +15 con embotelladoras líderes. Creamos Geodot porque vivimos los mismos incendios que vos: por eso no hay que explicarnos qué es una planchada.",
       "cta": "Agendá una llamada"
     },
     "mission": {
