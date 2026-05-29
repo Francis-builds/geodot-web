@@ -47,6 +47,11 @@
   --color-error:   #D4145A;
   --color-info:    #2874FC;
 
+  /* Brand gradients */
+  --gradient-brand:    linear-gradient(135deg, #00A99D 0%, #008C82 100%);
+  --gradient-magenta:  linear-gradient(135deg, #E02E6C 0%, #D4145A 100%);
+  --gradient-midnight: linear-gradient(135deg, #0E172D 0%, #253354 100%);
+
   /* Fonts (vars provided by next/font in layout.tsx) */
   --font-display: var(--font-space-grotesk), system-ui, sans-serif;
   --font-body:    var(--font-hanken), system-ui, sans-serif;
