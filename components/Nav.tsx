@@ -1,26 +1,24 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitch } from "./LocaleSwitch";
 import { Container } from "./ui/Container";
 import { DesktopNavMenus, MobileNavMenus } from "./NavMenu";
 
-/** geo·dot wordmark — teal "dot" with a subtle glowing leading marker. */
+/** Official geodot logo — full-color over light surfaces, white over the dark hero. */
 function Logo({ scrolled }: { scrolled: boolean }) {
   return (
-    <Link href="/" className="group inline-flex items-center gap-2.5" aria-label="Geodot">
-      <span aria-hidden className="relative flex h-2.5 w-2.5 items-center justify-center">
-        <span className="absolute h-2.5 w-2.5 rounded-full bg-teal-500/40 group-hover:animate-[radar-pulse_1.8s_ease-out_infinite]" />
-        <span className="relative h-2 w-2 rounded-full bg-teal-500 shadow-[0_0_0_4px_rgba(0,169,157,0.18)]" />
-      </span>
-      <span
-        className={`text-heading-md font-bold tracking-tight transition-colors duration-300 ${
-          scrolled ? "text-navy-900" : "text-white"
-        }`}
-      >
-        geo<span className="text-teal-500">dot</span>
-      </span>
+    <Link href="/" className="inline-flex items-center" aria-label="Geodot">
+      <Image
+        src={scrolled ? "/images/brand/geodot-logo.png" : "/images/brand/geodot-logo-white.png"}
+        alt="Geodot"
+        width={527}
+        height={162}
+        priority
+        className="h-7 w-auto md:h-8"
+      />
     </Link>
   );
 }

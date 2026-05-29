@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container } from "./ui/Container";
@@ -28,10 +29,13 @@ export function Footer() {
       <Container className="relative z-[1] grid gap-12 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr_1fr] md:py-20">
         {/* Brand */}
         <div>
-          <span className="inline-flex items-center gap-2.5">
-            <span aria-hidden className="h-2 w-2 rounded-full bg-teal-400 shadow-[0_0_0_4px_rgba(0,169,157,0.2)]" />
-            <span className="text-heading-md font-bold tracking-tight text-white">geo<span className="text-teal-400">dot</span></span>
-          </span>
+          <Image
+            src="/images/brand/geodot-logo-white.png"
+            alt="Geodot"
+            width={527}
+            height={162}
+            className="h-8 w-auto"
+          />
           <p className="mt-4 max-w-xs text-body-sm leading-relaxed text-navy-300">{t("tagline")}</p>
         </div>
 
