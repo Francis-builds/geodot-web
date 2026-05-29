@@ -133,3 +133,71 @@
   h1, h2, h3, h4 { font-family: var(--font-display); }
   ::selection { background: var(--color-teal-500); color: #ffffff; }
 }
+
+/* ============================================================
+   2026 visual language — "Connected Network on Midnight"
+   Ambient texture + depth utilities. CSS-only (PSI-friendly).
+   ============================================================ */
+@layer utilities {
+  /* Dot grid — the geo/dot supply-chain motif as background texture */
+  .bg-dotgrid {
+    background-image: radial-gradient(currentColor 1px, transparent 1.4px);
+    background-size: 22px 22px;
+  }
+  .bg-dotgrid-fade {
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 35%, transparent 78%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 35%, transparent 78%);
+  }
+  /* Radial brand glows layered over navy */
+  .glow-teal { background: radial-gradient(40% 55% at var(--gx,70%) var(--gy,30%), rgba(0,169,157,0.28), transparent 70%); }
+  .glow-magenta { background: radial-gradient(38% 50% at var(--gx,18%) var(--gy,75%), rgba(212,20,90,0.22), transparent 72%); }
+  /* Subtle film grain */
+  .grain::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.045; z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* Gradient text accent */
+  .text-gradient-brand {
+    background: linear-gradient(100deg, var(--color-teal-400) 0%, var(--color-teal-500) 45%, var(--color-magenta-400) 110%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  /* Glass surface (nav, chips) */
+  .glass {
+    background: color-mix(in srgb, var(--color-white) 72%, transparent);
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+  }
+  .glass-dark {
+    background: color-mix(in srgb, var(--color-navy-900) 55%, transparent);
+    backdrop-filter: saturate(150%) blur(14px);
+    -webkit-backdrop-filter: saturate(150%) blur(14px);
+  }
+  /* Elevated card with hover lift + border glow */
+  .card-lift {
+    transition: transform var(--duration-base,200ms) var(--ease-standard), box-shadow var(--duration-base,200ms), border-color var(--duration-base,200ms);
+    will-change: transform;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 48px rgba(14,23,45,0.14);
+    border-color: color-mix(in srgb, var(--color-teal-500) 45%, transparent);
+  }
+  /* Eyebrow with leading dot */
+  .eyebrow-dot::before {
+    content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 9999px;
+    background: var(--color-teal-500); margin-right: 8px; vertical-align: middle;
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-teal-500) 22%, transparent);
+  }
+}
+
+@layer base {
+  @keyframes radar-pulse {
+    0% { transform: scale(0.6); opacity: 0.55; }
+    70% { opacity: 0; }
+    100% { transform: scale(2.2); opacity: 0; }
+  }
+  @keyframes float-soft { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-rise { animation: rise-in 0.7s var(--ease-standard) both; }
+  .animate-float { animation: float-soft 6s ease-in-out infinite; }
+}
