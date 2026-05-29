@@ -35,7 +35,7 @@ export function PostCard({ post, locale, readingLabel }: { post: Post; locale: s
         )}
         <h3 className="font-display text-heading-sm font-bold text-navy-900 group-hover:text-teal-600">{post.title}</h3>
         <p className="mt-2 line-clamp-3 flex-1 text-body-sm text-navy-600">{post.excerpt}</p>
-        <div className="mt-4 flex items-center gap-2 text-caption text-navy-400">
+        <div className="mt-4 flex items-center gap-2 text-caption text-navy-500">
           <time dateTime={post.date}>{dateLabel}</time>
           <span aria-hidden>·</span>
           <span>

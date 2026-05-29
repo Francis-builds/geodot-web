@@ -72,3 +72,24 @@ npm run dev                  # http://localhost:3000  (ES)  ·  /en (EN)
 - `lib/` — data (`modules.ts`, `industries.ts`), blog reader, schemas, `site.ts`
 - `messages/{es,en}.json` — translation namespaces
 - `public/images/` — site imagery (served via `next/image`)
+
+## Performance (PSI / Lighthouse)
+
+The site is built for PageSpeed: all routes are statically prerendered (SSG) and only a handful of components ship client JS (Nav drawer, `LocaleSwitch`, `ContactForm`, `AnimatedCounter`). Imagery is served exclusively through `next/image` (AVIF/WebP, explicit `sizes`); `priority` is set only on the above-the-fold LCP image of each page, everything else lazy-loads. Fonts use `next/font` with `display: swap` (no render-blocking external CSS).
+
+### Run Lighthouse locally
+
+```bash
+npm run build && npm start          # serve the production build on :3000
+npx --yes lighthouse http://localhost:3000/ \
+  --only-categories=performance,accessibility,best-practices,seo \
+  --form-factor=mobile --quiet \
+  --chrome-flags="--headless=new" \
+  --output=json --output-path=/tmp/psi-home.json
+```
+
+Latest local mobile run (`/`, 2026-05-29): **Performance 90 · Accessibility 92 · Best Practices 100 · SEO 92** (FCP 1.1s, LCP 3.6s, TBT 80ms, CLS 0).
+
+Notes:
+- The `canonical` SEO flag and the `redirects` opportunity only appear when auditing `http://localhost:3000/` — the canonical URL points at the production origin (`geodot.app`) and `/` redirects to the default locale. Audit `https://geodot.app` (Production) via [PageSpeed Insights](https://pagespeed.web.dev/) for the real numbers.
+- The remaining color-contrast notices are the intentional teal title accent on large display text (brand element from the design system).
