@@ -507,16 +507,16 @@
       "eyebrow": "Industria",
       "title": "Bebidas y",
       "titleAccent": "Embotelladores",
-      "subtitle": "+15 años optimizando operaciones de embotelladores. La experiencia que solo da haber resuelto los desafíos más complejos de la industria: retornables, paletizado mixto y distribución capilar.",
+      "subtitle": "Tus camiones salen al 85% \"por si acaso\" y planificar rutas a mano te roba horas cada día. Cargá al 100%, eliminá viajes y bajá el costo de transporte: +15 años resolviendo retornables, paletizado mixto y distribución capilar con embotelladores Coca-Cola.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Productos retornables: cada camión debe reservar espacio para los vacíos que vuelven.",
-          "Paletizado mixto: vidrio, PET, lata y Tetra Pak, cada uno con sus reglas de apilamiento.",
-          "Margen de seguridad del 15%: cargas al 85% porque no sabes si el paletizado entrará.",
-          "Integración con BASIS: tu sistema central no tiene interfaces modernas.",
-          "Equipos especializados (Tiger): no todos los SKUs pueden moverse por camada completa."
+          "Retornables: cada camión reserva espacio para los vacíos que vuelven, y nadie sabe cuánto exacto.",
+          "Paletizado mixto: vidrio, PET, lata y Tetra Pak, cada uno con sus reglas de apilamiento (el vidrio va abajo).",
+          "Margen de seguridad del 15%: cargás al 85% porque no sabés si el paletizado va a entrar.",
+          "Integración con BASIS: tu sistema central no tiene interfaces modernas y queda aislado.",
+          "Equipos especializados (Tiger): no todos los SKUs se mueven por camada completa."
         ],
         "stats": [
           {
@@ -562,7 +562,7 @@
       },
       "cta": {
         "title": "¿Listo para cargar tus camiones al 100%?",
-        "subtitle": "Agenda una demo y te mostramos cómo funciona con operaciones como la tuya.",
+        "subtitle": "Agendá una demo y te mostramos, con tu operación, cómo pasar del 85% al 99% de carga.",
         "button": "Agendar Demo"
       }
     },
@@ -570,16 +570,16 @@
       "eyebrow": "Industria",
       "title": "Alimentos y",
       "titleAccent": "Lácteos",
-      "subtitle": "Control total de productos perecederos. FEFO automático, trazabilidad por lote, monitoreo de cadena de frío y cumplimiento de reglas de vida útil por cliente.",
+      "subtitle": "Cada caja vencida en bodega y cada rechazo de supermercado por vida útil es dinero que se va. FEFO automático, trazabilidad por lote y cadena de frío monitoreada para que dejen de rechazarte y nunca más pierdas producto por vencimiento.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Rotación FEFO: el producto más viejo debe salir primero, pero tu almacén no está organizado para eso.",
-          "Reglas de vida útil por cliente: cada cadena exige un porcentaje distinto o te rechaza.",
-          "Cadena de frío: el producto sale a 4°C pero llega a 12°C sin visibilidad del trayecto.",
-          "Trazabilidad: ante un recall no sabes a qué clientes les entregaste ese lote.",
-          "Devoluciones y rechazos: sin datos del motivo, no puedes mejorar."
+          "Rotación FEFO: lo más viejo debe salir primero, pero tu almacén no está organizado para forzarlo.",
+          "Vida útil por cliente: cada cadena exige un porcentaje distinto (Carrefour 83%) o te rechaza el camión.",
+          "Cadena de frío: el producto sale a 4°C y llega a 12°C sin que veas qué pasó en el trayecto.",
+          "Recall: cuando aparece un problema no sabés a qué clientes les entregaste ese lote.",
+          "Devoluciones y rechazos: sin el motivo registrado, no podés corregir la causa."
         ],
         "stats": [
           {
@@ -624,8 +624,8 @@
         ]
       },
       "cta": {
-        "title": "¿Cuánto pierdes por producto vencido?",
-        "subtitle": "Agenda una demo y te mostramos cómo eliminar esas pérdidas.",
+        "title": "¿Cuánto pierdes al mes por producto vencido?",
+        "subtitle": "Agendá una demo y te mostramos cómo eliminar esas pérdidas y los rechazos por vida útil.",
         "button": "Agendar Demo"
       }
     },
@@ -633,16 +633,16 @@
       "eyebrow": "Industria",
       "title": "Gobierno y",
       "titleAccent": "Residuos Urbanos",
-      "subtitle": "Ciudades más limpias con rutas inteligentes. Optimización de recolección de residuos, participación ciudadana y transparencia total. Menos kilómetros, menos emisiones, más satisfacción.",
+      "subtitle": "Ciudades más limpias, menos gasto y vecinos satisfechos. Ruteo de recolección optimizado por IA, app ciudadana y transparencia total: menos kilómetros, menos combustible, menos emisiones y menos quejas.",
       "ctaPrimary": "Agendar Reunión",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Rutas obsoletas: se diseñaron hace años y la ciudad ya cambió.",
-          "Flota subutilizada: algunos camiones salen llenos y otros medio vacíos.",
-          "Sin visibilidad: no sabes dónde están los camiones en tiempo real.",
-          "Ciudadanos desinformados: no saben cuándo pasa el camión por su zona.",
-          "Costos elevados: kilómetros innecesarios y combustible desperdiciado."
+          "Rutas obsoletas: se diseñaron hace años y la ciudad ya creció y cambió.",
+          "Flota subutilizada: unos camiones salen llenos y otros medio vacíos.",
+          "Sin visibilidad: no sabés dónde están los camiones en tiempo real.",
+          "Vecinos desinformados: no saben cuándo pasa el camión y se llenan las quejas.",
+          "Costos elevados: kilómetros innecesarios y combustible desperdiciado todos los días."
         ],
         "stats": [
           {
@@ -688,7 +688,7 @@
       },
       "cta": {
         "title": "¿Listo para modernizar tu servicio de recolección?",
-        "subtitle": "Agenda una reunión y te presentamos un diagnóstico inicial sin costo.",
+        "subtitle": "Agendá una reunión y te entregamos un diagnóstico inicial de ahorro sin costo.",
         "button": "Agendar Reunión"
       }
     },
@@ -696,16 +696,16 @@
       "eyebrow": "Industria",
       "title": "Operadores Logísticos",
       "titleAccent": "3PL",
-      "subtitle": "Gestión multi-cliente con visibilidad total. Cada cliente tiene sus propias reglas, SLAs y necesidad de visibilidad. Geodot te permite gestionarlos todos desde una sola plataforma.",
+      "subtitle": "Cada cliente pide sus propias reglas, SLAs y reportes, y armarlos a mano te quema horas y margen. Gestioná todas tus cuentas desde una sola plataforma, con portal de visibilidad 24/7 y liquidación automática que te diferencia de la competencia.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Gestión multi-cliente: cada cliente con sus propias reglas, SLAs y reportes.",
-          "Visibilidad para clientes: quieren saber dónde está su mercancía en tiempo real.",
-          "Consolidación de cargas: pedidos de varios clientes a la misma zona, difícil de combinar.",
-          "Facturación y liquidación: calcular el cobro de cada servicio es manual y lento.",
-          "SLAs diferenciados: cumplir 24h, 48h y ventanas específicas a la vez es un malabarismo."
+          "Multi-cliente: cada cuenta con sus propias reglas, SLAs y formato de reporte.",
+          "Visibilidad para el cliente: quieren saber dónde está su mercancía en tiempo real, hoy.",
+          "Consolidación de cargas: pedidos de varios clientes a la misma zona, difíciles de combinar a mano.",
+          "Facturación y liquidación: calcular el cobro de cada servicio es manual, lento y se presta a errores.",
+          "SLAs diferenciados: cumplir 24h, 48h y ventanas específicas al mismo tiempo es un malabarismo."
         ],
         "stats": [
           {
@@ -751,7 +751,7 @@
       },
       "cta": {
         "title": "¿Listo para diferenciarte de la competencia?",
-        "subtitle": "Agenda una demo y te mostramos cómo gestionar todos tus clientes desde una sola plataforma.",
+        "subtitle": "Agendá una demo y te mostramos cómo gestionar todas tus cuentas desde una sola plataforma.",
         "button": "Agendar Demo"
       }
     },
@@ -759,16 +759,16 @@
       "eyebrow": "Industria",
       "title": "Salud y",
       "titleAccent": "Farma",
-      "subtitle": "Cuando lo que mueves son vidas, cada minuto cuenta. Geodot fue diseñado para la complejidad de la logística en salud: cadena de frío garantizada, trazabilidad completa de cadena de custodia y dispatch inteligente que prioriza lo que importa.",
+      "subtitle": "Cuando lo que mueves son vidas, no hay margen para el error. Cadena de frío garantizada, trazabilidad de cadena de custodia de extremo a extremo y dispatch inteligente que prioriza la urgencia: la logística que pharma, laboratorios y traslados exigen.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Cadena de frío crítica: muestras y medicamentos que pierden los 2-8°C significan diagnósticos perdidos y producto descartado.",
-          "Trazabilidad regulatoria: cada movimiento debe quedar registrado con timestamp, temperatura y responsable para auditorías.",
-          "Ventanas de tiempo estrictas: las muestras tienen vida útil y los traslados de pacientes se miden en minutos, no en horas.",
-          "Miles de SKUs con vencimientos: FIFO obligatorio por ley, lotes, productos controlados y trazabilidad para recalls.",
-          "Dispatch por urgencia y capacidad: asignar la unidad correcta, con el equipamiento correcto, al lugar correcto."
+          "Cadena de frío crítica: una muestra o medicamento fuera de 2-8°C es un diagnóstico perdido o producto descartado.",
+          "Trazabilidad regulatoria: cada movimiento queda registrado con timestamp, temperatura y responsable para auditoría.",
+          "Ventanas de tiempo estrictas: las muestras tienen vida útil y los traslados se miden en minutos, no en horas.",
+          "Miles de SKUs con vencimientos: FIFO obligatorio por ley, lotes, controlados y trazabilidad para recalls.",
+          "Dispatch por urgencia y capacidad: la unidad correcta, con el equipo correcto, al lugar correcto."
         ],
         "stats": [
           {
@@ -814,7 +814,7 @@
       },
       "cta": {
         "title": "¿Listo para una logística sin tolerancia al error?",
-        "subtitle": "Agenda una demo y te mostramos cómo garantizar cadena de frío, trazabilidad y dispatch inteligente en una sola plataforma.",
+        "subtitle": "Agendá una demo y te mostramos cómo garantizar cadena de frío, trazabilidad y dispatch inteligente en una sola plataforma.",
         "button": "Agendar Demo"
       }
     },
@@ -822,16 +822,16 @@
       "eyebrow": "Industria",
       "title": "Recintos",
       "titleAccent": "Fiscales",
-      "subtitle": "Almacenes fiscales, recintos fiscalizados estratégicos y agencias de comercio exterior operan bajo escrutinio regulatorio total. Geodot digitaliza el control del almacén, la gestión documental y la trazabilidad que ANAM, IMMEX y OEA exigen, con visibilidad remota para la autoridad.",
+      "subtitle": "Un recinto bajo escrutinio de ANAM, IMMEX y OEA no puede operar con control manual y papeles sueltos. Geodot digitaliza el almacén, la conciliación documental y la trazabilidad que la autoridad exige, con evidencia en video y acceso remoto 24/7. Caso Grupo Camili: 7,000 m² en AIFA.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Cumplimiento regulatorio: ANAM, IMMEX y OEA exigen sistemas integrados de inventario, video y trazabilidad con acceso remoto para la autoridad.",
+          "Cumplimiento regulatorio: ANAM, IMMEX y OEA exigen inventario, video y trazabilidad integrados, con acceso remoto para la autoridad.",
           "Control documental: pedimentos, MAWBs y guías llegan en formatos dispares y conciliarlos a mano es lento y propenso a errores.",
-          "Trazabilidad de mercancía en custodia: cada movimiento dentro del recinto debe quedar registrado y auditable.",
-          "Áreas diferenciadas: materiales peligrosos, refrigerados y carga estándar conviven con reglas distintas en el mismo almacén.",
-          "Conciliación física vs. documental: contar cajas que entran y salen contra lo declarado, idealmente con evidencia en video."
+          "Mercancía en custodia: cada movimiento dentro del recinto debe quedar registrado y auditable.",
+          "Áreas diferenciadas: peligrosos, refrigerados y carga estándar conviven con reglas distintas en el mismo almacén.",
+          "Conciliación física vs. documental: contar cajas que entran y salen contra lo declarado, con evidencia en video."
         ],
         "stats": [
           {
@@ -877,7 +877,7 @@
       },
       "cta": {
         "title": "¿Listo para un recinto auditable de extremo a extremo?",
-        "subtitle": "Agenda una demo y te mostramos cómo digitalizar el control del almacén, la gestión documental y la trazabilidad que la autoridad exige.",
+        "subtitle": "Agendá una demo y te mostramos cómo digitalizar el control del almacén, la gestión documental y la trazabilidad que la autoridad exige.",
         "button": "Agendar Demo"
       }
     }

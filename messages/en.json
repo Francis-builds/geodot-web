@@ -507,15 +507,15 @@
       "eyebrow": "Industry",
       "title": "Beverages &",
       "titleAccent": "Bottlers",
-      "subtitle": "15+ years optimizing bottler operations. The expertise that only comes from solving the industry's hardest challenges: returnables, mixed palletizing and last-mile distribution.",
+      "subtitle": "Your trucks leave at 85% \"just in case,\" and planning routes by hand eats hours every day. Load at 100%, cut wasted trips and lower transport cost: 15+ years solving returnables, mixed palletizing and last-mile distribution with Coca-Cola bottlers.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
-          "Returnable products: every truck must reserve space for the empties coming back.",
-          "Mixed palletizing: glass, PET, can and Tetra Pak, each with its own stacking rules.",
-          "15% safety margin: you load at 85% because you don't know if the pallet plan fits.",
-          "BASIS integration: your core system lacks modern interfaces.",
+          "Returnables: every truck reserves space for the empties coming back, and no one knows exactly how much.",
+          "Mixed palletizing: glass, PET, can and Tetra Pak, each with its own stacking rules (glass goes on the bottom).",
+          "15% safety margin: you load at 85% because you don't know if the pallet plan will fit.",
+          "BASIS integration: your core system lacks modern interfaces and stays siloed.",
           "Specialized equipment (Tiger): not every SKU can be moved by full layer."
         ],
         "stats": [
@@ -562,7 +562,7 @@
       },
       "cta": {
         "title": "Ready to load your trucks at 100%?",
-        "subtitle": "Book a demo and we'll show you how it works for operations like yours.",
+        "subtitle": "Book a demo and we'll show you, on your own operation, how to go from 85% to 99% load factor.",
         "button": "Book a Demo"
       }
     },
@@ -570,16 +570,16 @@
       "eyebrow": "Industry",
       "title": "Food &",
       "titleAccent": "Dairy",
-      "subtitle": "Total control over perishable goods. Automatic FEFO, batch traceability, cold-chain monitoring and per-customer shelf-life compliance.",
+      "subtitle": "Every expired case in the warehouse and every supermarket rejection for shelf life is money walking out the door. Automatic FEFO, batch traceability and monitored cold chain so they stop rejecting you and you never lose product to expiration again.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
-          "FEFO rotation: the oldest product should ship first, but your warehouse isn't organized for it.",
-          "Per-customer shelf-life rules: each chain demands a different percentage or rejects you.",
-          "Cold chain: product leaves at 4°C and arrives at 12°C with no visibility en route.",
-          "Traceability: in a recall you don't know which customers received that batch.",
-          "Returns and rejections: without reason data, you can't improve."
+          "FEFO rotation: the oldest product should ship first, but your warehouse isn't set up to enforce it.",
+          "Per-customer shelf life: each chain demands a different percentage (Carrefour 83%) or rejects the truck.",
+          "Cold chain: product leaves at 4°C and arrives at 12°C with no view of what happened en route.",
+          "Recall: when a problem appears you don't know which customers received that batch.",
+          "Returns and rejections: without the reason logged, you can't fix the root cause."
         ],
         "stats": [
           {
@@ -624,8 +624,8 @@
         ]
       },
       "cta": {
-        "title": "How much do you lose to expired product?",
-        "subtitle": "Book a demo and we'll show you how to eliminate those losses.",
+        "title": "How much do you lose every month to expired product?",
+        "subtitle": "Book a demo and we'll show you how to eliminate those losses and shelf-life rejections.",
         "button": "Book a Demo"
       }
     },
@@ -633,16 +633,16 @@
       "eyebrow": "Industry",
       "title": "Government &",
       "titleAccent": "Urban Waste",
-      "subtitle": "Cleaner cities with smart routes. Waste-collection optimization, citizen participation and full transparency. Fewer kilometers, fewer emissions, more satisfaction.",
+      "subtitle": "Cleaner cities, lower spend and satisfied residents. AI-optimized collection routing, a citizen app and full transparency: fewer kilometers, less fuel, fewer emissions and fewer complaints.",
       "ctaPrimary": "Book a Meeting",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
-          "Outdated routes: designed years ago while the city has changed.",
+          "Outdated routes: designed years ago while the city has grown and changed.",
           "Underused fleet: some trucks leave full, others half empty.",
           "No visibility: you don't know where the trucks are in real time.",
-          "Uninformed citizens: they don't know when the truck passes their area.",
-          "High costs: unnecessary kilometers and wasted fuel."
+          "Uninformed residents: they don't know when the truck passes, so complaints pile up.",
+          "High costs: unnecessary kilometers and wasted fuel, every single day."
         ],
         "stats": [
           {
@@ -688,7 +688,7 @@
       },
       "cta": {
         "title": "Ready to modernize your collection service?",
-        "subtitle": "Book a meeting and we'll present an initial assessment at no cost.",
+        "subtitle": "Book a meeting and we'll deliver an initial savings assessment at no cost.",
         "button": "Book a Meeting"
       }
     },
@@ -696,15 +696,15 @@
       "eyebrow": "Industry",
       "title": "Logistics Operators",
       "titleAccent": "3PL",
-      "subtitle": "Multi-client management with full visibility. Each client has their own rules, SLAs and visibility needs. Geodot lets you manage them all from a single platform.",
+      "subtitle": "Every client wants their own rules, SLAs and reports, and building them by hand burns hours and margin. Manage every account from one platform, with a 24/7 visibility portal and automatic settlement that sets you apart from the competition.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
-          "Multi-client management: each client with their own rules, SLAs and reports.",
-          "Client visibility: they want to know where their goods are in real time.",
-          "Load consolidation: orders from multiple clients to the same area, hard to combine.",
-          "Billing and settlement: pricing each service is manual and slow.",
+          "Multi-client: each account with its own rules, SLAs and report format.",
+          "Client visibility: they want to know where their goods are in real time, today.",
+          "Load consolidation: orders from multiple clients to the same area, hard to combine by hand.",
+          "Billing and settlement: pricing each service is manual, slow and error-prone.",
           "Differentiated SLAs: meeting 24h, 48h and specific windows at once is a juggling act."
         ],
         "stats": [
@@ -751,7 +751,7 @@
       },
       "cta": {
         "title": "Ready to stand out from the competition?",
-        "subtitle": "Book a demo and we'll show you how to manage all your clients from a single platform.",
+        "subtitle": "Book a demo and we'll show you how to manage all your accounts from a single platform.",
         "button": "Book a Demo"
       }
     },
@@ -759,16 +759,16 @@
       "eyebrow": "Industry",
       "title": "Healthcare &",
       "titleAccent": "Pharma",
-      "subtitle": "When what you move is lives, every minute counts. Geodot was built for the complexity of healthcare logistics: guaranteed cold chain, full chain-of-custody traceability and smart dispatch that prioritizes what matters.",
+      "subtitle": "When what you move is lives, there's no margin for error. Guaranteed cold chain, end-to-end chain-of-custody traceability and smart dispatch that prioritizes urgency: the logistics pharma, labs and patient transfers demand.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
-          "Critical cold chain: samples and medicines that lose 2-8°C mean lost diagnoses and discarded product.",
-          "Regulatory traceability: every movement must be logged with timestamp, temperature and owner for audits.",
-          "Strict time windows: samples have a shelf life and patient transfers are measured in minutes, not hours.",
-          "Thousands of SKUs with expiry dates: FIFO mandated by law, lots, controlled products and traceability for recalls.",
-          "Dispatch by urgency and capacity: assign the right unit, with the right equipment, to the right place."
+          "Critical cold chain: a sample or medicine outside 2-8°C is a lost diagnosis or discarded product.",
+          "Regulatory traceability: every movement is logged with timestamp, temperature and owner for audits.",
+          "Strict time windows: samples have a shelf life and transfers are measured in minutes, not hours.",
+          "Thousands of SKUs with expiry dates: FIFO mandated by law, lots, controlled products and recall traceability.",
+          "Dispatch by urgency and capacity: the right unit, with the right equipment, to the right place."
         ],
         "stats": [
           {
@@ -822,16 +822,16 @@
       "eyebrow": "Industry",
       "title": "Bonded &",
       "titleAccent": "Customs Warehouses",
-      "subtitle": "Bonded warehouses, strategic fiscalized facilities and foreign-trade agencies operate under full regulatory scrutiny. Geodot digitizes warehouse control, document management and the traceability that ANAM, IMMEX and OEA require, with remote visibility for the authority.",
+      "subtitle": "A facility under ANAM, IMMEX and OEA scrutiny can't run on manual control and loose paperwork. Geodot digitizes the warehouse, document reconciliation and the traceability the authority requires, with video evidence and 24/7 remote access. Grupo Camili case: 7,000 m² at AIFA.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
-          "Regulatory compliance: ANAM, IMMEX and OEA require integrated inventory, video and traceability systems with remote access for the authority.",
+          "Regulatory compliance: ANAM, IMMEX and OEA require integrated inventory, video and traceability, with remote access for the authority.",
           "Document control: pedimentos, MAWBs and waybills arrive in disparate formats and reconciling them by hand is slow and error-prone.",
-          "Traceability of goods in custody: every movement inside the facility must be logged and auditable.",
-          "Differentiated zones: hazardous materials, refrigerated and standard cargo coexist under different rules in the same warehouse.",
-          "Physical vs. document reconciliation: counting boxes in and out against what was declared, ideally with video evidence."
+          "Goods in custody: every movement inside the facility must be logged and auditable.",
+          "Differentiated zones: hazardous, refrigerated and standard cargo coexist under different rules in the same warehouse.",
+          "Physical vs. document reconciliation: counting boxes in and out against what was declared, with video evidence."
         ],
         "stats": [
           {
