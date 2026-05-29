@@ -25,12 +25,12 @@ export default async function IndustriaPage({ params }: { params: Promise<{ loca
   const { locale, industria } = await params;
   if (!INDUSTRY_SLUGS.includes(industria as IndustrySlug)) notFound();
   setRequestLocale(locale);
-  const { messageKey: key, hero } = INDUSTRIES[industria as IndustrySlug];
+  const { messageKey: key, hero, icon } = INDUSTRIES[industria as IndustrySlug];
   const t = await getTranslations(`industries.${key}`);
 
   return (
     <>
-      <Hero variant="dark" eyebrow={t("eyebrow")} title={t("title")} titleAccent={t("titleAccent")} subtitle={t("subtitle")}
+      <Hero variant="dark" eyebrow={t("eyebrow")} eyebrowIcon={icon} title={t("title")} titleAccent={t("titleAccent")} subtitle={t("subtitle")}
         primaryCta={{ label: t("ctaPrimary"), href: "/contacto" }}
         visual={<Media src={hero} alt={`${t("title")} ${t("titleAccent")}`} ratio="4/3" priority sizes="(max-width: 768px) 100vw, 600px" />} />
       <ProblemStats title={t("problem.title")} points={t.raw("problem.points") as string[]} stats={t.raw("problem.stats") as { problem: string; impact: string }[]} />

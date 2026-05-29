@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import Image from "next/image";
 import { Button } from "./ui/Button";
 import { Container } from "./ui/Container";
+import { Icon } from "./ui/Icon";
 
 /**
  * Cinematic hero. When `bgImage` is set, the photo becomes a full-bleed canvas
@@ -12,6 +13,7 @@ import { Container } from "./ui/Container";
  */
 export function Hero({
   eyebrow,
+  eyebrowIcon,
   title,
   titleAccent,
   subtitle,
@@ -23,6 +25,7 @@ export function Hero({
   bgAlt,
 }: {
   eyebrow?: string;
+  eyebrowIcon?: string;
   title: string;
   titleAccent?: string;
   subtitle: string;
@@ -56,7 +59,8 @@ export function Hero({
         <Container className="relative z-[2] flex min-h-[90vh] flex-col justify-center py-28">
           <div className="max-w-3xl">
             {eyebrow && (
-              <span className="eyebrow-dot animate-rise mb-5 inline-block text-overline font-semibold uppercase tracking-wide text-teal-300" style={{ animationDelay: "0ms" }}>
+              <span className={`animate-rise mb-5 inline-flex items-center gap-2 text-overline font-semibold uppercase tracking-wide text-teal-300 ${eyebrowIcon ? "" : "eyebrow-dot"}`} style={{ animationDelay: "0ms" }}>
+                {eyebrowIcon && <Icon name={eyebrowIcon} className="h-4 w-4" />}
                 {eyebrow}
               </span>
             )}
@@ -90,7 +94,12 @@ export function Hero({
       {dark && <div aria-hidden className="absolute inset-0 glow-teal" style={{ ["--gx" as string]: "85%", ["--gy" as string]: "20%" }} />}
       <Container className="relative z-[1] grid items-center gap-12 py-20 md:grid-cols-2 md:py-28">
         <div>
-          {eyebrow && <span className="eyebrow-dot mb-4 inline-block text-overline font-semibold uppercase tracking-wide text-teal-400">{eyebrow}</span>}
+          {eyebrow && (
+            <span className={`mb-4 inline-flex items-center gap-2 text-overline font-semibold uppercase tracking-wide ${dark ? "text-teal-400" : "text-teal-600"} ${eyebrowIcon ? "" : "eyebrow-dot"}`}>
+              {eyebrowIcon && <Icon name={eyebrowIcon} className="h-4 w-4" />}
+              {eyebrow}
+            </span>
+          )}
           <h1 className="text-display-lg md:text-display-2xl font-bold leading-tight">
             {title} {titleAccent && <span className="text-gradient-brand">{titleAccent}</span>}
           </h1>
