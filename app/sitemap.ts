@@ -4,7 +4,7 @@ import { INDUSTRY_SLUGS } from "@/lib/industries";
 import { getPostSlugs } from "@/lib/blog";
 import { SITE_URL as BASE } from "@/lib/site";
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["", "/plataforma", "/casos-exito", "/recursos", "/nosotros", "/contacto",
+  const paths = ["", "/plataforma", "/industrias", "/casos-exito", "/recursos", "/nosotros", "/contacto",
     ...MODULE_SLUGS.map((m) => `/plataforma/${m}`), ...INDUSTRY_SLUGS.map((i) => `/industrias/${i}`),
     ...getPostSlugs("es").map((s) => `/recursos/${s}`)];
   return paths.flatMap((p) => [

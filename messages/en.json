@@ -914,6 +914,25 @@
       "button": "Book your demo"
     }
   },
+  "industriesIndex": {
+    "hero": {
+      "eyebrow": "Industries",
+      "title": "Logistics that understands your",
+      "titleAccent": "industry",
+      "subtitle": "Every sector has its own pressure: turnover, cold chain, compliance, multi-client. Geodot adapts to the operation you already run and adds traceability, routing and palletizing exactly where you need them.",
+      "cta": "Book your demo"
+    },
+    "eyebrow": "Sectors",
+    "title": "Six industries,",
+    "titleAccent": "one platform",
+    "subtitle": "Pick your sector and see how Geodot solves the concrete problems of your operation.",
+    "explore": "View industry",
+    "cta": {
+      "title": "Don't see your industry here?",
+      "subtitle": "If you move inventory, routes or trucks, Geodot adapts to your operation. Book a demo and we'll walk through your numbers.",
+      "button": "Book your demo"
+    }
+  },
   "casesPage": {
     "hero": {
       "eyebrow": "Success stories",

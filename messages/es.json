@@ -914,6 +914,25 @@
       "button": "Agendá tu demo"
     }
   },
+  "industriesIndex": {
+    "hero": {
+      "eyebrow": "Industrias",
+      "title": "Logística que entiende tu",
+      "titleAccent": "industria",
+      "subtitle": "Cada sector tiene su propia presión: rotación, cadena de frío, cumplimiento, multicliente. Geodot se adapta a la operación que ya tenés y suma trazabilidad, ruteo y paletizado donde más lo necesitás.",
+      "cta": "Agendá tu demo"
+    },
+    "eyebrow": "Sectores",
+    "title": "Seis industrias,",
+    "titleAccent": "una sola plataforma",
+    "subtitle": "Elegí tu sector y descubrí cómo Geodot resuelve los problemas concretos de tu operación.",
+    "explore": "Ver industria",
+    "cta": {
+      "title": "¿No ves tu industria en la lista?",
+      "subtitle": "Si movés inventario, rutas o camiones, Geodot se adapta a tu operación. Agendá una demo y lo vemos sobre tus números.",
+      "button": "Agendá tu demo"
+    }
+  },
   "casesPage": {
     "hero": {
       "eyebrow": "Casos de éxito",
