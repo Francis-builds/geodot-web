@@ -40,7 +40,9 @@ export function Nav() {
   }, []);
 
   // A cinematic <Hero> renders [data-hero-overlay]; if absent, the nav stays solid.
+  // One-shot post-mount DOM read; intentional setState in effect.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOverHero(!!document.querySelector("[data-hero-overlay]"));
   }, []);
 
