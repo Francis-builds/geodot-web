@@ -57,10 +57,22 @@
         "Cada sistema habla un idioma diferente."
       ],
       "stats": [
-        { "problem": "Camiones subutilizados", "impact": "+15% costos" },
-        { "problem": "Rutas no optimizadas", "impact": "+20% km" },
-        { "problem": "Sin visibilidad", "impact": "+25% rechazos" },
-        { "problem": "Sistemas desconectados", "impact": "Horas perdidas" }
+        {
+          "problem": "Camiones subutilizados",
+          "impact": "+15% costos"
+        },
+        {
+          "problem": "Rutas no optimizadas",
+          "impact": "+20% km"
+        },
+        {
+          "problem": "Sin visibilidad",
+          "impact": "+25% rechazos"
+        },
+        {
+          "problem": "Sistemas desconectados",
+          "impact": "Horas perdidas"
+        }
       ]
     },
     "platform": {
@@ -70,18 +82,46 @@
       "description": "Geodot integra almacén, transporte, ruteo y paletizado en una sola plataforma con IA."
     },
     "metrics": [
-      { "value": 10, "suffix": "%", "label": "Ahorro en transporte" },
-      { "value": 20, "suffix": "%", "label": "Menos kilómetros" },
-      { "value": 30, "suffix": "%", "label": "Menos rechazos" },
-      { "value": 100, "suffix": "%", "label": "Visibilidad en tiempo real" }
+      {
+        "value": 10,
+        "suffix": "%",
+        "label": "Ahorro en transporte"
+      },
+      {
+        "value": 20,
+        "suffix": "%",
+        "label": "Menos kilómetros"
+      },
+      {
+        "value": 30,
+        "suffix": "%",
+        "label": "Menos rechazos"
+      },
+      {
+        "value": 100,
+        "suffix": "%",
+        "label": "Visibilidad en tiempo real"
+      }
     ],
     "cases": {
       "eyebrow": "Casos de éxito",
       "title": "Resultados reales",
       "items": [
-        { "metric": "−10%", "result": "Reducción de costos de transporte", "client": "Embotelladora" },
-        { "metric": "−30%", "result": "Menos rechazos en entregas", "client": "Lácteos" },
-        { "metric": "100%", "result": "Trazabilidad de residuos", "client": "Gobierno municipal" }
+        {
+          "metric": "−10%",
+          "result": "Reducción de costos de transporte",
+          "client": "Embotelladora"
+        },
+        {
+          "metric": "−30%",
+          "result": "Menos rechazos en entregas",
+          "client": "Lácteos"
+        },
+        {
+          "metric": "100%",
+          "result": "Trazabilidad de residuos",
+          "client": "Gobierno municipal"
+        }
       ]
     },
     "cta": {
@@ -109,25 +149,62 @@
           "Sin trazabilidad: no sabes qué lote entregaste a cada cliente."
         ],
         "stats": [
-          { "problem": "Pérdidas por vencimiento", "impact": "+80%" },
-          { "problem": "Tiempo de picking", "impact": "+40%" },
-          { "problem": "Rechazos por vida útil", "impact": "+70%" }
+          {
+            "problem": "Pérdidas por vencimiento",
+            "impact": "+80%"
+          },
+          {
+            "problem": "Tiempo de picking",
+            "impact": "+40%"
+          },
+          {
+            "problem": "Rechazos por vida útil",
+            "impact": "+70%"
+          }
         ]
       },
       "solution": {
         "title": "Un WMS que ve lo que otros sistemas no pueden",
         "steps": [
-          { "title": "Ubicaciones inteligentes", "description": "Estructura multinivel con visualización 3D. El sistema sugiere dónde almacenar cada producto según sus capacidades." },
-          { "title": "Trazabilidad completa", "description": "Por lote, fecha de vencimiento y etiqueta. Historial inmutable de cada movimiento para auditoría y cumplimiento." },
-          { "title": "FIFO/FEFO automático", "description": "Reglas configurables y vida útil por cliente. Bloquea el despacho de producto próximo a vencer antes de que sea un problema." },
-          { "title": "Picking optimizado", "description": "El mismo motor de ruteo aplicado al almacén. Reorganización nocturna con IA y guías paso a paso para operarios." }
+          {
+            "title": "Ubicaciones inteligentes",
+            "description": "Estructura multinivel con visualización 3D. El sistema sugiere dónde almacenar cada producto según sus capacidades."
+          },
+          {
+            "title": "Trazabilidad completa",
+            "description": "Por lote, fecha de vencimiento y etiqueta. Historial inmutable de cada movimiento para auditoría y cumplimiento."
+          },
+          {
+            "title": "FIFO/FEFO automático",
+            "description": "Reglas configurables y vida útil por cliente. Bloquea el despacho de producto próximo a vencer antes de que sea un problema."
+          },
+          {
+            "title": "Picking optimizado",
+            "description": "El mismo motor de ruteo aplicado al almacén. Reorganización nocturna con IA y guías paso a paso para operarios."
+          }
         ]
       },
       "metrics": [
-        { "value": 40, "suffix": "%", "label": "Menos tiempo de picking" },
-        { "value": 80, "suffix": "%", "label": "Menos pérdidas por vencimiento" },
-        { "value": 99.9, "suffix": "%", "label": "Precisión de inventario" },
-        { "value": 70, "suffix": "%", "label": "Menos rechazos por vida útil" }
+        {
+          "value": 40,
+          "suffix": "%",
+          "label": "Menos tiempo de picking"
+        },
+        {
+          "value": 80,
+          "suffix": "%",
+          "label": "Menos pérdidas por vencimiento"
+        },
+        {
+          "value": 99.9,
+          "suffix": "%",
+          "label": "Precisión de inventario"
+        },
+        {
+          "value": 70,
+          "suffix": "%",
+          "label": "Menos rechazos por vida útil"
+        }
       ],
       "cta": {
         "title": "¿Listo para tomar control de tu almacén?",
@@ -153,25 +230,62 @@
           "Comunicación manual: llamadas y WhatsApp para coordinar todo."
         ],
         "stats": [
-          { "problem": "Visibilidad de flota", "impact": "Parcial" },
-          { "problem": "Cumplimiento documental", "impact": "Reactivo" },
-          { "problem": "Tiempo de liquidación", "impact": "+60%" }
+          {
+            "problem": "Visibilidad de flota",
+            "impact": "Parcial"
+          },
+          {
+            "problem": "Cumplimiento documental",
+            "impact": "Reactivo"
+          },
+          {
+            "problem": "Tiempo de liquidación",
+            "impact": "+60%"
+          }
         ]
       },
       "solution": {
         "title": "Control total de tu operación de transporte",
         "steps": [
-          { "title": "Tracking en vivo", "description": "GPS continuo posición a posición, geocercas y medición automática del tiempo en cada cliente." },
-          { "title": "Flota unificada", "description": "Propia y tercerizada en la misma vista. Portal de transportistas con workflows de aprobación y visibilidad compartida." },
-          { "title": "Documentación y mantenimiento", "description": "Alertas de vencimiento de permisos, licencias y seguros. Mantenimiento preventivo por kilometraje o tiempo." },
-          { "title": "Liquidación automática", "description": "Cálculo por kilómetro, entrega o mixto. Control de combustible y exportación contable lista para pago." }
+          {
+            "title": "Tracking en vivo",
+            "description": "GPS continuo posición a posición, geocercas y medición automática del tiempo en cada cliente."
+          },
+          {
+            "title": "Flota unificada",
+            "description": "Propia y tercerizada en la misma vista. Portal de transportistas con workflows de aprobación y visibilidad compartida."
+          },
+          {
+            "title": "Documentación y mantenimiento",
+            "description": "Alertas de vencimiento de permisos, licencias y seguros. Mantenimiento preventivo por kilometraje o tiempo."
+          },
+          {
+            "title": "Liquidación automática",
+            "description": "Cálculo por kilómetro, entrega o mixto. Control de combustible y exportación contable lista para pago."
+          }
         ]
       },
       "metrics": [
-        { "value": 100, "suffix": "%", "label": "Visibilidad de flota" },
-        { "value": 100, "suffix": "%", "label": "Cumplimiento documental" },
-        { "value": 15, "suffix": "%", "label": "Menos costos de mantenimiento" },
-        { "value": 60, "suffix": "%", "label": "Menos tiempo de liquidación" }
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Visibilidad de flota"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Cumplimiento documental"
+        },
+        {
+          "value": 15,
+          "suffix": "%",
+          "label": "Menos costos de mantenimiento"
+        },
+        {
+          "value": 60,
+          "suffix": "%",
+          "label": "Menos tiempo de liquidación"
+        }
       ],
       "cta": {
         "title": "¿Listo para tomar control de tu transporte?",
@@ -197,25 +311,62 @@
           "Rechazos por carga: el cliente recibe producto aplastado."
         ],
         "stats": [
-          { "problem": "Capacidad sin usar", "impact": "15%" },
-          { "problem": "Daños en tránsito", "impact": "+40%" },
-          { "problem": "Rechazos por daño", "impact": "+50%" }
+          {
+            "problem": "Capacidad sin usar",
+            "impact": "15%"
+          },
+          {
+            "problem": "Daños en tránsito",
+            "impact": "+40%"
+          },
+          {
+            "problem": "Rechazos por daño",
+            "impact": "+50%"
+          }
         ]
       },
       "solution": {
         "title": "Paletizado que habla con el ruteo",
         "steps": [
-          { "title": "+300 parámetros", "description": "Dimensiones, peso, apilabilidad, fragilidad, temperatura y compatibilidad de cada producto en cada cálculo." },
-          { "title": "Reglas inteligentes", "description": "Apilamiento por producto, familia, cliente, fragilidad y peso axial legal. El conocimiento del experto, en el sistema." },
-          { "title": "Recálculo simultáneo", "description": "Cada vez que agregas un pedido a una ruta, el sistema recalcula si realmente entra y alerta antes de que sea un problema." },
-          { "title": "Guías de armado visual", "description": "Qué producto va en cada capa y posición, con secuencia paso a paso y validación del operario." }
+          {
+            "title": "+300 parámetros",
+            "description": "Dimensiones, peso, apilabilidad, fragilidad, temperatura y compatibilidad de cada producto en cada cálculo."
+          },
+          {
+            "title": "Reglas inteligentes",
+            "description": "Apilamiento por producto, familia, cliente, fragilidad y peso axial legal. El conocimiento del experto, en el sistema."
+          },
+          {
+            "title": "Recálculo simultáneo",
+            "description": "Cada vez que agregas un pedido a una ruta, el sistema recalcula si realmente entra y alerta antes de que sea un problema."
+          },
+          {
+            "title": "Guías de armado visual",
+            "description": "Qué producto va en cada capa y posición, con secuencia paso a paso y validación del operario."
+          }
         ]
       },
       "metrics": [
-        { "value": 15, "suffix": "%", "label": "Más utilización de camión" },
-        { "value": 40, "suffix": "%", "label": "Menos daños en tránsito" },
-        { "value": 25, "suffix": "%", "label": "Menos tiempo de carga" },
-        { "value": 50, "suffix": "%", "label": "Menos rechazos por daño" }
+        {
+          "value": 15,
+          "suffix": "%",
+          "label": "Más utilización de camión"
+        },
+        {
+          "value": 40,
+          "suffix": "%",
+          "label": "Menos daños en tránsito"
+        },
+        {
+          "value": 25,
+          "suffix": "%",
+          "label": "Menos tiempo de carga"
+        },
+        {
+          "value": 50,
+          "suffix": "%",
+          "label": "Menos rechazos por daño"
+        }
       ],
       "cta": {
         "title": "¿Cuántos camiones extra estás enviando?",
@@ -241,29 +392,320 @@
           "Clientes en la oscuridad: no pueden ver el estado de sus pedidos."
         ],
         "stats": [
-          { "problem": "Tiempo de respuesta a incidentes", "impact": "+70%" },
-          { "problem": "Horas en reportes manuales", "impact": "+90%" },
-          { "problem": "Visibilidad de operación", "impact": "Parcial" }
+          {
+            "problem": "Tiempo de respuesta a incidentes",
+            "impact": "+70%"
+          },
+          {
+            "problem": "Horas en reportes manuales",
+            "impact": "+90%"
+          },
+          {
+            "problem": "Visibilidad de operación",
+            "impact": "Parcial"
+          }
         ]
       },
       "solution": {
         "title": "Un solo lugar para ver todo",
         "steps": [
-          { "title": "Dashboard en vivo", "description": "Mapa de operaciones con todos los camiones, estado de entregas, alertas activas y KPIs del día comparados contra el promedio." },
-          { "title": "Alertas proactivas", "description": "Configurables y escalables. Camión detenido, demora en cliente, ruta atrasada o cadena de frío comprometida, por dashboard, email, WhatsApp o SMS." },
-          { "title": "IA predictiva", "description": "Predicción de demoras antes de que ocurran, detección de anomalías y sugerencias de optimización que aprenden de cada entrega." },
-          { "title": "Portal de clientes", "description": "El cliente ve dónde está su entrega, ETA en vivo, historial y documentos. Reportes automáticos diarios, semanales y mensuales." }
+          {
+            "title": "Dashboard en vivo",
+            "description": "Mapa de operaciones con todos los camiones, estado de entregas, alertas activas y KPIs del día comparados contra el promedio."
+          },
+          {
+            "title": "Alertas proactivas",
+            "description": "Configurables y escalables. Camión detenido, demora en cliente, ruta atrasada o cadena de frío comprometida, por dashboard, email, WhatsApp o SMS."
+          },
+          {
+            "title": "IA predictiva",
+            "description": "Predicción de demoras antes de que ocurran, detección de anomalías y sugerencias de optimización que aprenden de cada entrega."
+          },
+          {
+            "title": "Portal de clientes",
+            "description": "El cliente ve dónde está su entrega, ETA en vivo, historial y documentos. Reportes automáticos diarios, semanales y mensuales."
+          }
         ]
       },
       "metrics": [
-        { "value": 70, "suffix": "%", "label": "Menos tiempo de respuesta a incidentes" },
-        { "value": 90, "suffix": "%", "label": "Menos horas en reportes manuales" },
-        { "value": 100, "suffix": "%", "label": "Visibilidad de operación" },
-        { "value": 30, "suffix": "%", "label": "Más satisfacción del cliente" }
+        {
+          "value": 70,
+          "suffix": "%",
+          "label": "Menos tiempo de respuesta a incidentes"
+        },
+        {
+          "value": 90,
+          "suffix": "%",
+          "label": "Menos horas en reportes manuales"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Visibilidad de operación"
+        },
+        {
+          "value": 30,
+          "suffix": "%",
+          "label": "Más satisfacción del cliente"
+        }
       ],
       "cta": {
         "title": "¿Cuánto te cuesta operar sin visibilidad?",
         "subtitle": "Agendá una demo y unificá WMS, TMS, Ruteo y Paletizado en un solo tablero.",
+        "button": "Agendar Demo"
+      }
+    }
+  },
+  "industries": {
+    "bebidas": {
+      "eyebrow": "Industria",
+      "title": "Bebidas y",
+      "titleAccent": "Embotelladores",
+      "subtitle": "+15 años optimizando operaciones de embotelladores. La experiencia que solo da haber resuelto los desafíos más complejos de la industria: retornables, paletizado mixto y distribución capilar.",
+      "ctaPrimary": "Agendar Demo",
+      "problem": {
+        "title": "Desafíos específicos que resolvemos",
+        "points": [
+          "Productos retornables: cada camión debe reservar espacio para los vacíos que vuelven.",
+          "Paletizado mixto: vidrio, PET, lata y Tetra Pak, cada uno con sus reglas de apilamiento.",
+          "Margen de seguridad del 15%: cargas al 85% porque no sabes si el paletizado entrará.",
+          "Integración con BASIS: tu sistema central no tiene interfaces modernas.",
+          "Equipos especializados (Tiger): no todos los SKUs pueden moverse por camada completa."
+        ],
+        "stats": [
+          {
+            "problem": "Carga de camiones",
+            "impact": "85% → 99%"
+          },
+          {
+            "problem": "Tiempo de planificación",
+            "impact": "-92%"
+          },
+          {
+            "problem": "Visibilidad de flota",
+            "impact": "100%"
+          },
+          {
+            "problem": "Rechazos por horario",
+            "impact": "-75%"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Módulos más usados en tu industria"
+      },
+      "cases": {
+        "title": "Casos en tu sector",
+        "items": [
+          {
+            "metric": "+14%",
+            "result": "Carga de camiones del 85% al 99% con paletizado y ruteo simultáneo.",
+            "client": "Embotelladora regional"
+          },
+          {
+            "metric": "-92%",
+            "result": "Tiempo de planificación de 3 horas a 15 minutos.",
+            "client": "Embotelladora regional"
+          },
+          {
+            "metric": "100%",
+            "result": "Visibilidad total de la flota propia y tercerizada.",
+            "client": "Embotelladora regional"
+          }
+        ]
+      },
+      "cta": {
+        "title": "¿Listo para cargar tus camiones al 100%?",
+        "subtitle": "Agenda una demo y te mostramos cómo funciona con operaciones como la tuya.",
+        "button": "Agendar Demo"
+      }
+    },
+    "alimentos": {
+      "eyebrow": "Industria",
+      "title": "Alimentos y",
+      "titleAccent": "Lácteos",
+      "subtitle": "Control total de productos perecederos. FEFO automático, trazabilidad por lote, monitoreo de cadena de frío y cumplimiento de reglas de vida útil por cliente.",
+      "ctaPrimary": "Agendar Demo",
+      "problem": {
+        "title": "Desafíos específicos que resolvemos",
+        "points": [
+          "Rotación FEFO: el producto más viejo debe salir primero, pero tu almacén no está organizado para eso.",
+          "Reglas de vida útil por cliente: cada cadena exige un porcentaje distinto o te rechaza.",
+          "Cadena de frío: el producto sale a 4°C pero llega a 12°C sin visibilidad del trayecto.",
+          "Trazabilidad: ante un recall no sabes a qué clientes les entregaste ese lote.",
+          "Devoluciones y rechazos: sin datos del motivo, no puedes mejorar."
+        ],
+        "stats": [
+          {
+            "problem": "Pérdidas por vencimiento",
+            "impact": "-80%"
+          },
+          {
+            "problem": "Rechazos por vida útil",
+            "impact": "Cero"
+          },
+          {
+            "problem": "Trazabilidad de lotes",
+            "impact": "100%"
+          },
+          {
+            "problem": "Visibilidad de entregas",
+            "impact": "100%"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Módulos más usados en tu industria"
+      },
+      "cases": {
+        "title": "Casos en tu sector",
+        "items": [
+          {
+            "metric": "-80%",
+            "result": "Reducción de pérdidas por producto vencido con FEFO automático.",
+            "client": "Empresa láctea (Colombia)"
+          },
+          {
+            "metric": "Cero",
+            "result": "Rechazos por vida útil insuficiente gracias a reglas por cliente.",
+            "client": "Empresa láctea (Colombia)"
+          },
+          {
+            "metric": "100%",
+            "result": "Trazabilidad completa de lote a cliente para recalls focalizados.",
+            "client": "Empresa láctea (Colombia)"
+          }
+        ]
+      },
+      "cta": {
+        "title": "¿Cuánto pierdes por producto vencido?",
+        "subtitle": "Agenda una demo y te mostramos cómo eliminar esas pérdidas.",
+        "button": "Agendar Demo"
+      }
+    },
+    "gobiernoResiduos": {
+      "eyebrow": "Industria",
+      "title": "Gobierno y",
+      "titleAccent": "Residuos Urbanos",
+      "subtitle": "Ciudades más limpias con rutas inteligentes. Optimización de recolección de residuos, participación ciudadana y transparencia total. Menos kilómetros, menos emisiones, más satisfacción.",
+      "ctaPrimary": "Agendar Reunión",
+      "problem": {
+        "title": "Desafíos específicos que resolvemos",
+        "points": [
+          "Rutas obsoletas: se diseñaron hace años y la ciudad ya cambió.",
+          "Flota subutilizada: algunos camiones salen llenos y otros medio vacíos.",
+          "Sin visibilidad: no sabes dónde están los camiones en tiempo real.",
+          "Ciudadanos desinformados: no saben cuándo pasa el camión por su zona.",
+          "Costos elevados: kilómetros innecesarios y combustible desperdiciado."
+        ],
+        "stats": [
+          {
+            "problem": "Reducción de kilómetros",
+            "impact": "15%"
+          },
+          {
+            "problem": "Reducción de quejas",
+            "impact": "20%"
+          },
+          {
+            "problem": "Reducción de CO₂",
+            "impact": "70 t/año"
+          },
+          {
+            "problem": "ROI",
+            "impact": "< 12 meses"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Módulos más usados en tu industria"
+      },
+      "cases": {
+        "title": "Casos en tu sector",
+        "items": [
+          {
+            "metric": "15%",
+            "result": "Reducción de kilómetros recorridos con ruteo optimizado por IA.",
+            "client": "Alcaldía Benito Juárez (CDMX)"
+          },
+          {
+            "metric": "20%",
+            "result": "Reducción de quejas ciudadanas con app y torre de control.",
+            "client": "Alcaldía Benito Juárez (CDMX)"
+          },
+          {
+            "metric": "70 t/año",
+            "result": "Toneladas de CO₂ evitadas por rutas más cortas.",
+            "client": "Alcaldía Benito Juárez (CDMX)"
+          }
+        ]
+      },
+      "cta": {
+        "title": "¿Listo para modernizar tu servicio de recolección?",
+        "subtitle": "Agenda una reunión y te presentamos un diagnóstico inicial sin costo.",
+        "button": "Agendar Reunión"
+      }
+    },
+    "logistica3pl": {
+      "eyebrow": "Industria",
+      "title": "Operadores Logísticos",
+      "titleAccent": "3PL",
+      "subtitle": "Gestión multi-cliente con visibilidad total. Cada cliente tiene sus propias reglas, SLAs y necesidad de visibilidad. Geodot te permite gestionarlos todos desde una sola plataforma.",
+      "ctaPrimary": "Agendar Demo",
+      "problem": {
+        "title": "Desafíos específicos que resolvemos",
+        "points": [
+          "Gestión multi-cliente: cada cliente con sus propias reglas, SLAs y reportes.",
+          "Visibilidad para clientes: quieren saber dónde está su mercancía en tiempo real.",
+          "Consolidación de cargas: pedidos de varios clientes a la misma zona, difícil de combinar.",
+          "Facturación y liquidación: calcular el cobro de cada servicio es manual y lento.",
+          "SLAs diferenciados: cumplir 24h, 48h y ventanas específicas a la vez es un malabarismo."
+        ],
+        "stats": [
+          {
+            "problem": "Tiempo en reportes",
+            "impact": "-90%"
+          },
+          {
+            "problem": "Visibilidad para clientes",
+            "impact": "Portal 24/7"
+          },
+          {
+            "problem": "Tiempo de facturación",
+            "impact": "-95%"
+          },
+          {
+            "problem": "Utilización de camiones",
+            "impact": "+15%"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Módulos más usados en tu industria"
+      },
+      "cases": {
+        "title": "Casos en tu sector",
+        "items": [
+          {
+            "metric": "-90%",
+            "result": "Tiempo en reportes de 20 a 2 horas por semana.",
+            "client": "Operador logístico regional"
+          },
+          {
+            "metric": "-95%",
+            "result": "Tiempo de facturación de 3 días a 4 horas con liquidación automática.",
+            "client": "Operador logístico regional"
+          },
+          {
+            "metric": "+15%",
+            "result": "Utilización de camiones del 70% al 85% con consolidación inteligente.",
+            "client": "Operador logístico regional"
+          }
+        ]
+      },
+      "cta": {
+        "title": "¿Listo para diferenciarte de la competencia?",
+        "subtitle": "Agenda una demo y te mostramos cómo gestionar todos tus clientes desde una sola plataforma.",
         "button": "Agendar Demo"
       }
     }

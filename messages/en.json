@@ -57,10 +57,22 @@
         "Every system speaks a different language."
       ],
       "stats": [
-        { "problem": "Underused trucks", "impact": "+15% cost" },
-        { "problem": "Unoptimized routes", "impact": "+20% km" },
-        { "problem": "No visibility", "impact": "+25% rejections" },
-        { "problem": "Disconnected systems", "impact": "Hours lost" }
+        {
+          "problem": "Underused trucks",
+          "impact": "+15% cost"
+        },
+        {
+          "problem": "Unoptimized routes",
+          "impact": "+20% km"
+        },
+        {
+          "problem": "No visibility",
+          "impact": "+25% rejections"
+        },
+        {
+          "problem": "Disconnected systems",
+          "impact": "Hours lost"
+        }
       ]
     },
     "platform": {
@@ -70,18 +82,46 @@
       "description": "Geodot integrates warehouse, transport, routing and palletizing into a single AI platform."
     },
     "metrics": [
-      { "value": 10, "suffix": "%", "label": "Transport savings" },
-      { "value": 20, "suffix": "%", "label": "Fewer kilometers" },
-      { "value": 30, "suffix": "%", "label": "Fewer rejections" },
-      { "value": 100, "suffix": "%", "label": "Real-time visibility" }
+      {
+        "value": 10,
+        "suffix": "%",
+        "label": "Transport savings"
+      },
+      {
+        "value": 20,
+        "suffix": "%",
+        "label": "Fewer kilometers"
+      },
+      {
+        "value": 30,
+        "suffix": "%",
+        "label": "Fewer rejections"
+      },
+      {
+        "value": 100,
+        "suffix": "%",
+        "label": "Real-time visibility"
+      }
     ],
     "cases": {
       "eyebrow": "Case studies",
       "title": "Real results",
       "items": [
-        { "metric": "−10%", "result": "Lower transport costs", "client": "Beverage bottler" },
-        { "metric": "−30%", "result": "Fewer delivery rejections", "client": "Dairy" },
-        { "metric": "100%", "result": "Waste traceability", "client": "Municipal government" }
+        {
+          "metric": "−10%",
+          "result": "Lower transport costs",
+          "client": "Beverage bottler"
+        },
+        {
+          "metric": "−30%",
+          "result": "Fewer delivery rejections",
+          "client": "Dairy"
+        },
+        {
+          "metric": "100%",
+          "result": "Waste traceability",
+          "client": "Municipal government"
+        }
       ]
     },
     "cta": {
@@ -109,25 +149,62 @@
           "No traceability: you don't know which lot you delivered to each customer."
         ],
         "stats": [
-          { "problem": "Losses from expiration", "impact": "+80%" },
-          { "problem": "Picking time", "impact": "+40%" },
-          { "problem": "Shelf-life rejections", "impact": "+70%" }
+          {
+            "problem": "Losses from expiration",
+            "impact": "+80%"
+          },
+          {
+            "problem": "Picking time",
+            "impact": "+40%"
+          },
+          {
+            "problem": "Shelf-life rejections",
+            "impact": "+70%"
+          }
         ]
       },
       "solution": {
         "title": "A WMS that sees what other systems can't",
         "steps": [
-          { "title": "Smart locations", "description": "Multi-level structure with 3D visualization. The system suggests where to store each product based on its constraints." },
-          { "title": "Full traceability", "description": "By lot, expiration date and label. Immutable history of every movement for audit and compliance." },
-          { "title": "Automatic FIFO/FEFO", "description": "Configurable rules and per-customer shelf life. Blocks shipping of soon-to-expire product before it becomes a problem." },
-          { "title": "Optimized picking", "description": "The same routing engine applied inside the warehouse. AI overnight reorganization and step-by-step guides for operators." }
+          {
+            "title": "Smart locations",
+            "description": "Multi-level structure with 3D visualization. The system suggests where to store each product based on its constraints."
+          },
+          {
+            "title": "Full traceability",
+            "description": "By lot, expiration date and label. Immutable history of every movement for audit and compliance."
+          },
+          {
+            "title": "Automatic FIFO/FEFO",
+            "description": "Configurable rules and per-customer shelf life. Blocks shipping of soon-to-expire product before it becomes a problem."
+          },
+          {
+            "title": "Optimized picking",
+            "description": "The same routing engine applied inside the warehouse. AI overnight reorganization and step-by-step guides for operators."
+          }
         ]
       },
       "metrics": [
-        { "value": 40, "suffix": "%", "label": "Less picking time" },
-        { "value": 80, "suffix": "%", "label": "Fewer expiration losses" },
-        { "value": 99.9, "suffix": "%", "label": "Inventory accuracy" },
-        { "value": 70, "suffix": "%", "label": "Fewer shelf-life rejections" }
+        {
+          "value": 40,
+          "suffix": "%",
+          "label": "Less picking time"
+        },
+        {
+          "value": 80,
+          "suffix": "%",
+          "label": "Fewer expiration losses"
+        },
+        {
+          "value": 99.9,
+          "suffix": "%",
+          "label": "Inventory accuracy"
+        },
+        {
+          "value": 70,
+          "suffix": "%",
+          "label": "Fewer shelf-life rejections"
+        }
       ],
       "cta": {
         "title": "Ready to take control of your warehouse?",
@@ -153,25 +230,62 @@
           "Manual coordination: phone calls and WhatsApp to keep everyone aligned."
         ],
         "stats": [
-          { "problem": "Fleet visibility", "impact": "Partial" },
-          { "problem": "Document compliance", "impact": "Reactive" },
-          { "problem": "Settlement time", "impact": "+60%" }
+          {
+            "problem": "Fleet visibility",
+            "impact": "Partial"
+          },
+          {
+            "problem": "Document compliance",
+            "impact": "Reactive"
+          },
+          {
+            "problem": "Settlement time",
+            "impact": "+60%"
+          }
         ]
       },
       "solution": {
         "title": "Full control of your transport operation",
         "steps": [
-          { "title": "Live tracking", "description": "Continuous GPS position by position, geofences and automatic measurement of time spent at each customer." },
-          { "title": "Unified fleet", "description": "Owned and outsourced in the same view. Carrier portal with approval workflows and shared visibility." },
-          { "title": "Documents and maintenance", "description": "Expiration alerts for permits, licenses and insurance. Preventive maintenance by mileage or time." },
-          { "title": "Automatic settlement", "description": "Calculation by kilometer, delivery or mixed. Fuel control and accounting export ready for payment." }
+          {
+            "title": "Live tracking",
+            "description": "Continuous GPS position by position, geofences and automatic measurement of time spent at each customer."
+          },
+          {
+            "title": "Unified fleet",
+            "description": "Owned and outsourced in the same view. Carrier portal with approval workflows and shared visibility."
+          },
+          {
+            "title": "Documents and maintenance",
+            "description": "Expiration alerts for permits, licenses and insurance. Preventive maintenance by mileage or time."
+          },
+          {
+            "title": "Automatic settlement",
+            "description": "Calculation by kilometer, delivery or mixed. Fuel control and accounting export ready for payment."
+          }
         ]
       },
       "metrics": [
-        { "value": 100, "suffix": "%", "label": "Fleet visibility" },
-        { "value": 100, "suffix": "%", "label": "Document compliance" },
-        { "value": 15, "suffix": "%", "label": "Lower maintenance costs" },
-        { "value": 60, "suffix": "%", "label": "Less settlement time" }
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Fleet visibility"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Document compliance"
+        },
+        {
+          "value": 15,
+          "suffix": "%",
+          "label": "Lower maintenance costs"
+        },
+        {
+          "value": 60,
+          "suffix": "%",
+          "label": "Less settlement time"
+        }
       ],
       "cta": {
         "title": "Ready to take control of your transport?",
@@ -197,25 +311,62 @@
           "Load rejections: the customer receives crushed product."
         ],
         "stats": [
-          { "problem": "Unused capacity", "impact": "15%" },
-          { "problem": "In-transit damage", "impact": "+40%" },
-          { "problem": "Damage rejections", "impact": "+50%" }
+          {
+            "problem": "Unused capacity",
+            "impact": "15%"
+          },
+          {
+            "problem": "In-transit damage",
+            "impact": "+40%"
+          },
+          {
+            "problem": "Damage rejections",
+            "impact": "+50%"
+          }
         ]
       },
       "solution": {
         "title": "Palletizing that talks to routing",
         "steps": [
-          { "title": "300+ parameters", "description": "Dimensions, weight, stackability, fragility, temperature and compatibility of every product in each calculation." },
-          { "title": "Smart rules", "description": "Stacking by product, family, customer, fragility and legal axle weight. The expert's knowledge, encoded in the system." },
-          { "title": "Simultaneous recalculation", "description": "Every time you add an order to a route, the system recalculates whether it really fits and alerts before it becomes a problem." },
-          { "title": "Visual build guides", "description": "Which product goes in each layer and position, with step-by-step sequence and operator validation." }
+          {
+            "title": "300+ parameters",
+            "description": "Dimensions, weight, stackability, fragility, temperature and compatibility of every product in each calculation."
+          },
+          {
+            "title": "Smart rules",
+            "description": "Stacking by product, family, customer, fragility and legal axle weight. The expert's knowledge, encoded in the system."
+          },
+          {
+            "title": "Simultaneous recalculation",
+            "description": "Every time you add an order to a route, the system recalculates whether it really fits and alerts before it becomes a problem."
+          },
+          {
+            "title": "Visual build guides",
+            "description": "Which product goes in each layer and position, with step-by-step sequence and operator validation."
+          }
         ]
       },
       "metrics": [
-        { "value": 15, "suffix": "%", "label": "Higher truck utilization" },
-        { "value": 40, "suffix": "%", "label": "Less in-transit damage" },
-        { "value": 25, "suffix": "%", "label": "Less loading time" },
-        { "value": 50, "suffix": "%", "label": "Fewer damage rejections" }
+        {
+          "value": 15,
+          "suffix": "%",
+          "label": "Higher truck utilization"
+        },
+        {
+          "value": 40,
+          "suffix": "%",
+          "label": "Less in-transit damage"
+        },
+        {
+          "value": 25,
+          "suffix": "%",
+          "label": "Less loading time"
+        },
+        {
+          "value": 50,
+          "suffix": "%",
+          "label": "Fewer damage rejections"
+        }
       ],
       "cta": {
         "title": "How many extra trucks are you sending?",
@@ -241,29 +392,320 @@
           "Customers in the dark: they can't see the status of their orders."
         ],
         "stats": [
-          { "problem": "Incident response time", "impact": "+70%" },
-          { "problem": "Hours on manual reports", "impact": "+90%" },
-          { "problem": "Operation visibility", "impact": "Partial" }
+          {
+            "problem": "Incident response time",
+            "impact": "+70%"
+          },
+          {
+            "problem": "Hours on manual reports",
+            "impact": "+90%"
+          },
+          {
+            "problem": "Operation visibility",
+            "impact": "Partial"
+          }
         ]
       },
       "solution": {
         "title": "One place to see everything",
         "steps": [
-          { "title": "Live dashboard", "description": "Operations map with every truck, delivery status, active alerts and daily KPIs compared against the average." },
-          { "title": "Proactive alerts", "description": "Configurable and escalating. Stopped truck, customer delay, late route or compromised cold chain, via dashboard, email, WhatsApp or SMS." },
-          { "title": "Predictive AI", "description": "Predicts delays before they happen, detects anomalies and suggests optimizations that learn from every delivery." },
-          { "title": "Customer portal", "description": "Customers see where their delivery is, live ETA, history and documents. Automatic daily, weekly and monthly reports." }
+          {
+            "title": "Live dashboard",
+            "description": "Operations map with every truck, delivery status, active alerts and daily KPIs compared against the average."
+          },
+          {
+            "title": "Proactive alerts",
+            "description": "Configurable and escalating. Stopped truck, customer delay, late route or compromised cold chain, via dashboard, email, WhatsApp or SMS."
+          },
+          {
+            "title": "Predictive AI",
+            "description": "Predicts delays before they happen, detects anomalies and suggests optimizations that learn from every delivery."
+          },
+          {
+            "title": "Customer portal",
+            "description": "Customers see where their delivery is, live ETA, history and documents. Automatic daily, weekly and monthly reports."
+          }
         ]
       },
       "metrics": [
-        { "value": 70, "suffix": "%", "label": "Less incident response time" },
-        { "value": 90, "suffix": "%", "label": "Fewer hours on manual reports" },
-        { "value": 100, "suffix": "%", "label": "Operation visibility" },
-        { "value": 30, "suffix": "%", "label": "Higher customer satisfaction" }
+        {
+          "value": 70,
+          "suffix": "%",
+          "label": "Less incident response time"
+        },
+        {
+          "value": 90,
+          "suffix": "%",
+          "label": "Fewer hours on manual reports"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Operation visibility"
+        },
+        {
+          "value": 30,
+          "suffix": "%",
+          "label": "Higher customer satisfaction"
+        }
       ],
       "cta": {
         "title": "How much is operating without visibility costing you?",
         "subtitle": "Book a demo and unify WMS, TMS, Routing and Palletizing in a single board.",
+        "button": "Book a Demo"
+      }
+    }
+  },
+  "industries": {
+    "bebidas": {
+      "eyebrow": "Industry",
+      "title": "Beverages &",
+      "titleAccent": "Bottlers",
+      "subtitle": "15+ years optimizing bottler operations. The expertise that only comes from solving the industry's hardest challenges: returnables, mixed palletizing and last-mile distribution.",
+      "ctaPrimary": "Book a Demo",
+      "problem": {
+        "title": "Specific challenges we solve",
+        "points": [
+          "Returnable products: every truck must reserve space for the empties coming back.",
+          "Mixed palletizing: glass, PET, can and Tetra Pak, each with its own stacking rules.",
+          "15% safety margin: you load at 85% because you don't know if the pallet plan fits.",
+          "BASIS integration: your core system lacks modern interfaces.",
+          "Specialized equipment (Tiger): not every SKU can be moved by full layer."
+        ],
+        "stats": [
+          {
+            "problem": "Truck load factor",
+            "impact": "85% → 99%"
+          },
+          {
+            "problem": "Planning time",
+            "impact": "-92%"
+          },
+          {
+            "problem": "Fleet visibility",
+            "impact": "100%"
+          },
+          {
+            "problem": "Window rejections",
+            "impact": "-75%"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Modules most used in your industry"
+      },
+      "cases": {
+        "title": "Cases in your sector",
+        "items": [
+          {
+            "metric": "+14%",
+            "result": "Truck load factor from 85% to 99% with simultaneous palletizing and routing.",
+            "client": "Regional bottler"
+          },
+          {
+            "metric": "-92%",
+            "result": "Planning time cut from 3 hours to 15 minutes.",
+            "client": "Regional bottler"
+          },
+          {
+            "metric": "100%",
+            "result": "Full visibility of owned and third-party fleet.",
+            "client": "Regional bottler"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to load your trucks at 100%?",
+        "subtitle": "Book a demo and we'll show you how it works for operations like yours.",
+        "button": "Book a Demo"
+      }
+    },
+    "alimentos": {
+      "eyebrow": "Industry",
+      "title": "Food &",
+      "titleAccent": "Dairy",
+      "subtitle": "Total control over perishable goods. Automatic FEFO, batch traceability, cold-chain monitoring and per-customer shelf-life compliance.",
+      "ctaPrimary": "Book a Demo",
+      "problem": {
+        "title": "Specific challenges we solve",
+        "points": [
+          "FEFO rotation: the oldest product should ship first, but your warehouse isn't organized for it.",
+          "Per-customer shelf-life rules: each chain demands a different percentage or rejects you.",
+          "Cold chain: product leaves at 4°C and arrives at 12°C with no visibility en route.",
+          "Traceability: in a recall you don't know which customers received that batch.",
+          "Returns and rejections: without reason data, you can't improve."
+        ],
+        "stats": [
+          {
+            "problem": "Losses from expiration",
+            "impact": "-80%"
+          },
+          {
+            "problem": "Shelf-life rejections",
+            "impact": "Zero"
+          },
+          {
+            "problem": "Batch traceability",
+            "impact": "100%"
+          },
+          {
+            "problem": "Delivery visibility",
+            "impact": "100%"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Modules most used in your industry"
+      },
+      "cases": {
+        "title": "Cases in your sector",
+        "items": [
+          {
+            "metric": "-80%",
+            "result": "Lower losses from expired product with automatic FEFO.",
+            "client": "Dairy company (Colombia)"
+          },
+          {
+            "metric": "Zero",
+            "result": "Shelf-life rejections eliminated with per-customer rules.",
+            "client": "Dairy company (Colombia)"
+          },
+          {
+            "metric": "100%",
+            "result": "Full batch-to-customer traceability for targeted recalls.",
+            "client": "Dairy company (Colombia)"
+          }
+        ]
+      },
+      "cta": {
+        "title": "How much do you lose to expired product?",
+        "subtitle": "Book a demo and we'll show you how to eliminate those losses.",
+        "button": "Book a Demo"
+      }
+    },
+    "gobiernoResiduos": {
+      "eyebrow": "Industry",
+      "title": "Government &",
+      "titleAccent": "Urban Waste",
+      "subtitle": "Cleaner cities with smart routes. Waste-collection optimization, citizen participation and full transparency. Fewer kilometers, fewer emissions, more satisfaction.",
+      "ctaPrimary": "Book a Meeting",
+      "problem": {
+        "title": "Specific challenges we solve",
+        "points": [
+          "Outdated routes: designed years ago while the city has changed.",
+          "Underused fleet: some trucks leave full, others half empty.",
+          "No visibility: you don't know where the trucks are in real time.",
+          "Uninformed citizens: they don't know when the truck passes their area.",
+          "High costs: unnecessary kilometers and wasted fuel."
+        ],
+        "stats": [
+          {
+            "problem": "Kilometer reduction",
+            "impact": "15%"
+          },
+          {
+            "problem": "Complaint reduction",
+            "impact": "20%"
+          },
+          {
+            "problem": "CO₂ reduction",
+            "impact": "70 t/yr"
+          },
+          {
+            "problem": "ROI",
+            "impact": "< 12 months"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Modules most used in your industry"
+      },
+      "cases": {
+        "title": "Cases in your sector",
+        "items": [
+          {
+            "metric": "15%",
+            "result": "Fewer kilometers driven with AI-optimized routing.",
+            "client": "Benito Juárez borough (Mexico City)"
+          },
+          {
+            "metric": "20%",
+            "result": "Fewer citizen complaints with app and control tower.",
+            "client": "Benito Juárez borough (Mexico City)"
+          },
+          {
+            "metric": "70 t/yr",
+            "result": "Tons of CO₂ avoided through shorter routes.",
+            "client": "Benito Juárez borough (Mexico City)"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to modernize your collection service?",
+        "subtitle": "Book a meeting and we'll present an initial assessment at no cost.",
+        "button": "Book a Meeting"
+      }
+    },
+    "logistica3pl": {
+      "eyebrow": "Industry",
+      "title": "Logistics Operators",
+      "titleAccent": "3PL",
+      "subtitle": "Multi-client management with full visibility. Each client has their own rules, SLAs and visibility needs. Geodot lets you manage them all from a single platform.",
+      "ctaPrimary": "Book a Demo",
+      "problem": {
+        "title": "Specific challenges we solve",
+        "points": [
+          "Multi-client management: each client with their own rules, SLAs and reports.",
+          "Client visibility: they want to know where their goods are in real time.",
+          "Load consolidation: orders from multiple clients to the same area, hard to combine.",
+          "Billing and settlement: pricing each service is manual and slow.",
+          "Differentiated SLAs: meeting 24h, 48h and specific windows at once is a juggling act."
+        ],
+        "stats": [
+          {
+            "problem": "Time on reports",
+            "impact": "-90%"
+          },
+          {
+            "problem": "Client visibility",
+            "impact": "24/7 portal"
+          },
+          {
+            "problem": "Billing time",
+            "impact": "-95%"
+          },
+          {
+            "problem": "Truck utilization",
+            "impact": "+15%"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Modules most used in your industry"
+      },
+      "cases": {
+        "title": "Cases in your sector",
+        "items": [
+          {
+            "metric": "-90%",
+            "result": "Time on reports cut from 20 to 2 hours per week.",
+            "client": "Regional logistics operator"
+          },
+          {
+            "metric": "-95%",
+            "result": "Billing time cut from 3 days to 4 hours with automatic settlement.",
+            "client": "Regional logistics operator"
+          },
+          {
+            "metric": "+15%",
+            "result": "Truck utilization from 70% to 85% with smart consolidation.",
+            "client": "Regional logistics operator"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to stand out from the competition?",
+        "subtitle": "Book a demo and we'll show you how to manage all your clients from a single platform.",
         "button": "Book a Demo"
       }
     }
