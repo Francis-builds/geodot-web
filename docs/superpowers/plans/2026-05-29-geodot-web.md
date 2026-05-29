@@ -14,7 +14,7 @@
 
 **Working directory:** `/Users/fran/Documents/Geodot/geodot-web` (git already re-initialized; commit per task).
 
-> ⚠️ **PENDING — Fonts:** Titillium Web + Montserrat are NOT final. Fran will provide an updated design system with the real typefaces. Tasks 3 (globals.css `--font-display`/`--font-body` + type scale) and 4 (`next/font` imports) MUST use the updated fonts. Do not start Task 3/4 until the updated design system lands; the font names below are placeholders to be swapped. The rest of the plan (structure, colors, components, i18n, contact) is unaffected.
+> **Fonts (confirmed):** Space Grotesk (display/headings, weights 300–700) + Hanken Grotesk (body/UI, weights 300–800), both via `next/font/google`. Wired in Task 4 (`next/font`) and Task 3 (`@theme` vars).
 
 **Note on testing:** This is a content/marketing site. "Verify" steps use `next build`, `next lint`, dev-server render, and Playwright browser checks rather than unit tests — except the contact form's zod schema, which gets a real unit test (Task 11). Commit after every task.
 
@@ -281,8 +281,8 @@ Copy the full `@theme` block from `../geodot-design-system/theme.css` (teal/mage
   --color-periwinkle: #525F9E;
   --color-success: #1FA971; --color-warning: #C8851A; --color-error: #D4145A; --color-info: #2874FC;
   /* Fonts (vars provided by next/font in layout.tsx) */
-  --font-display: var(--font-titillium), system-ui, sans-serif;
-  --font-body: var(--font-montserrat), system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-body: var(--font-hanken), system-ui, sans-serif;
   /* Type scale */
   --text-display-2xl: 72px; --text-display-2xl--line-height: 1.05; --text-display-2xl--letter-spacing: -0.02em;
   --text-display-xl: 56px;  --text-display-xl--line-height: 1.08;  --text-display-xl--letter-spacing: -0.02em;
@@ -357,7 +357,7 @@ git commit -m "feat: Geodot design-system @theme + base layer in globals.css"
 
 ```tsx
 import type { Metadata } from "next";
-import { Titillium_Web, Montserrat } from "next/font/google";
+import { Space_Grotesk, Hanken_Grotesk } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -366,17 +366,17 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
-const titillium = Titillium_Web({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-titillium",
-  weight: ["300", "600", "700"],
+  variable: "--font-space-grotesk",
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
-const montserrat = Montserrat({
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-hanken",
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -426,7 +426,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale === "en" ? "en" : "es-MX"} className={`${titillium.variable} ${montserrat.variable}`}>
+    <html lang={locale === "en" ? "en" : "es-MX"} className={`${spaceGrotesk.variable} ${hanken.variable}`}>
       <body className="antialiased">
         <NextIntlClientProvider>
           <Nav />
@@ -454,7 +454,7 @@ export function Footer() { return <footer />; }
 
 ```bash
 git add app components
-git commit -m "feat: locale layout with Titillium/Montserrat fonts, providers, metadata"
+git commit -m "feat: locale layout with Space Grotesk/Hanken Grotesk fonts, providers, metadata"
 ```
 
 ---
@@ -485,7 +485,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
 - [ ] **Step 2: Run dev server and verify both locales render**
 
 Run: `npm run dev` (background), then with Playwright open `http://localhost:3000/` and `http://localhost:3000/en`.
-Expected: ES shows "Agendar Demo", EN shows "Book a Demo"; Titillium on the H1, Montserrat on the paragraph; navy text color applied. No console errors.
+Expected: ES shows "Agendar Demo", EN shows "Book a Demo"; Space Grotesk on the H1, Hanken Grotesk on the paragraph; navy text color applied. No console errors.
 
 - [ ] **Step 3: Commit**
 
