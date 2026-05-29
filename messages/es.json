@@ -729,6 +729,132 @@
         "subtitle": "Agenda una demo y te mostramos cómo gestionar todos tus clientes desde una sola plataforma.",
         "button": "Agendar Demo"
       }
+    },
+    "healthcare": {
+      "eyebrow": "Industria",
+      "title": "Salud y",
+      "titleAccent": "Farma",
+      "subtitle": "Cuando lo que mueves son vidas, cada minuto cuenta. Geodot fue diseñado para la complejidad de la logística en salud: cadena de frío garantizada, trazabilidad completa de cadena de custodia y dispatch inteligente que prioriza lo que importa.",
+      "ctaPrimary": "Agendar Demo",
+      "problem": {
+        "title": "Desafíos específicos que resolvemos",
+        "points": [
+          "Cadena de frío crítica: muestras y medicamentos que pierden los 2-8°C significan diagnósticos perdidos y producto descartado.",
+          "Trazabilidad regulatoria: cada movimiento debe quedar registrado con timestamp, temperatura y responsable para auditorías.",
+          "Ventanas de tiempo estrictas: las muestras tienen vida útil y los traslados de pacientes se miden en minutos, no en horas.",
+          "Miles de SKUs con vencimientos: FIFO obligatorio por ley, lotes, productos controlados y trazabilidad para recalls.",
+          "Dispatch por urgencia y capacidad: asignar la unidad correcta, con el equipamiento correcto, al lugar correcto."
+        ],
+        "stats": [
+          {
+            "problem": "Control de temperatura",
+            "impact": "Nativo, no addon"
+          },
+          {
+            "problem": "Cadena de custodia",
+            "impact": "100% digital"
+          },
+          {
+            "problem": "Tiempo de respuesta",
+            "impact": "-40%"
+          },
+          {
+            "problem": "Vencimientos evitados",
+            "impact": "FIFO forzado"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Módulos más usados en tu industria"
+      },
+      "cases": {
+        "title": "Casos en tu sector",
+        "items": [
+          {
+            "metric": "-40%",
+            "result": "Tiempo de respuesta en servicio de ambulancias con dispatch inteligente por cercanía y capacidad.",
+            "client": "Operador de traslados de pacientes"
+          },
+          {
+            "metric": "100%",
+            "result": "Trazabilidad de cadena de custodia, del punto de extracción al laboratorio central.",
+            "client": "Laboratorio de análisis clínicos"
+          },
+          {
+            "metric": "0",
+            "result": "Vencimientos por fuera de FIFO con alertas automáticas y gestión de lotes por sucursal.",
+            "client": "Cadena de distribución farmacéutica"
+          }
+        ]
+      },
+      "cta": {
+        "title": "¿Listo para una logística sin tolerancia al error?",
+        "subtitle": "Agenda una demo y te mostramos cómo garantizar cadena de frío, trazabilidad y dispatch inteligente en una sola plataforma.",
+        "button": "Agendar Demo"
+      }
+    },
+    "recintosFiscales": {
+      "eyebrow": "Industria",
+      "title": "Recintos",
+      "titleAccent": "Fiscales",
+      "subtitle": "Almacenes fiscales, recintos fiscalizados estratégicos y agencias de comercio exterior operan bajo escrutinio regulatorio total. Geodot digitaliza el control del almacén, la gestión documental y la trazabilidad que ANAM, IMMEX y OEA exigen, con visibilidad remota para la autoridad.",
+      "ctaPrimary": "Agendar Demo",
+      "problem": {
+        "title": "Desafíos específicos que resolvemos",
+        "points": [
+          "Cumplimiento regulatorio: ANAM, IMMEX y OEA exigen sistemas integrados de inventario, video y trazabilidad con acceso remoto para la autoridad.",
+          "Control documental: pedimentos, MAWBs y guías llegan en formatos dispares y conciliarlos a mano es lento y propenso a errores.",
+          "Trazabilidad de mercancía en custodia: cada movimiento dentro del recinto debe quedar registrado y auditable.",
+          "Áreas diferenciadas: materiales peligrosos, refrigerados y carga estándar conviven con reglas distintas en el mismo almacén.",
+          "Conciliación física vs. documental: contar cajas que entran y salen contra lo declarado, idealmente con evidencia en video."
+        ],
+        "stats": [
+          {
+            "problem": "Almacén fiscal gestionado",
+            "impact": "7,000 m²"
+          },
+          {
+            "problem": "Conciliación documental",
+            "impact": "Automática"
+          },
+          {
+            "problem": "Evidencia para auditoría",
+            "impact": "Video + inventario"
+          },
+          {
+            "problem": "Acceso remoto autoridad",
+            "impact": "24/7"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Módulos más usados en tu industria"
+      },
+      "cases": {
+        "title": "Casos en tu sector",
+        "items": [
+          {
+            "metric": "7,000 m²",
+            "result": "Almacén fiscal en AIFA digitalizado con iWMS y Etiqueta Zero, tres áreas (peligrosos, refrigerados, estándar).",
+            "client": "Grupo Camili"
+          },
+          {
+            "metric": "100%",
+            "result": "Conteo de cajas cargadas y descargadas con evidencia en video correlacionada con el escaneo, lista para ANAM.",
+            "client": "Operador de recinto fiscalizado (HIMEX)"
+          },
+          {
+            "metric": "25 años",
+            "result": "Experiencia en logística integral de comercio exterior potenciada con trazabilidad digital de extremo a extremo.",
+            "client": "Grupo Camili"
+          }
+        ]
+      },
+      "cta": {
+        "title": "¿Listo para un recinto auditable de extremo a extremo?",
+        "subtitle": "Agenda una demo y te mostramos cómo digitalizar el control del almacén, la gestión documental y la trazabilidad que la autoridad exige.",
+        "button": "Agendar Demo"
+      }
     }
   },
   "platformPage": {

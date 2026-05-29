@@ -729,6 +729,132 @@
         "subtitle": "Book a demo and we'll show you how to manage all your clients from a single platform.",
         "button": "Book a Demo"
       }
+    },
+    "healthcare": {
+      "eyebrow": "Industry",
+      "title": "Healthcare &",
+      "titleAccent": "Pharma",
+      "subtitle": "When what you move is lives, every minute counts. Geodot was built for the complexity of healthcare logistics: guaranteed cold chain, full chain-of-custody traceability and smart dispatch that prioritizes what matters.",
+      "ctaPrimary": "Book a Demo",
+      "problem": {
+        "title": "Specific challenges we solve",
+        "points": [
+          "Critical cold chain: samples and medicines that lose 2-8°C mean lost diagnoses and discarded product.",
+          "Regulatory traceability: every movement must be logged with timestamp, temperature and owner for audits.",
+          "Strict time windows: samples have a shelf life and patient transfers are measured in minutes, not hours.",
+          "Thousands of SKUs with expiry dates: FIFO mandated by law, lots, controlled products and traceability for recalls.",
+          "Dispatch by urgency and capacity: assign the right unit, with the right equipment, to the right place."
+        ],
+        "stats": [
+          {
+            "problem": "Temperature control",
+            "impact": "Native, not an addon"
+          },
+          {
+            "problem": "Chain of custody",
+            "impact": "100% digital"
+          },
+          {
+            "problem": "Response time",
+            "impact": "-40%"
+          },
+          {
+            "problem": "Expirations avoided",
+            "impact": "Enforced FIFO"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Modules most used in your industry"
+      },
+      "cases": {
+        "title": "Cases in your sector",
+        "items": [
+          {
+            "metric": "-40%",
+            "result": "Response time in an ambulance service with smart dispatch by proximity and capacity.",
+            "client": "Patient transfer operator"
+          },
+          {
+            "metric": "100%",
+            "result": "Chain-of-custody traceability, from the collection point to the central lab.",
+            "client": "Clinical analysis laboratory"
+          },
+          {
+            "metric": "0",
+            "result": "Out-of-FIFO expirations with automatic alerts and lot management per branch.",
+            "client": "Pharmaceutical distribution chain"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready for logistics with zero tolerance for error?",
+        "subtitle": "Book a demo and we'll show you how to guarantee cold chain, traceability and smart dispatch in a single platform.",
+        "button": "Book a Demo"
+      }
+    },
+    "recintosFiscales": {
+      "eyebrow": "Industry",
+      "title": "Bonded &",
+      "titleAccent": "Customs Warehouses",
+      "subtitle": "Bonded warehouses, strategic fiscalized facilities and foreign-trade agencies operate under full regulatory scrutiny. Geodot digitizes warehouse control, document management and the traceability that ANAM, IMMEX and OEA require, with remote visibility for the authority.",
+      "ctaPrimary": "Book a Demo",
+      "problem": {
+        "title": "Specific challenges we solve",
+        "points": [
+          "Regulatory compliance: ANAM, IMMEX and OEA require integrated inventory, video and traceability systems with remote access for the authority.",
+          "Document control: pedimentos, MAWBs and waybills arrive in disparate formats and reconciling them by hand is slow and error-prone.",
+          "Traceability of goods in custody: every movement inside the facility must be logged and auditable.",
+          "Differentiated zones: hazardous materials, refrigerated and standard cargo coexist under different rules in the same warehouse.",
+          "Physical vs. document reconciliation: counting boxes in and out against what was declared, ideally with video evidence."
+        ],
+        "stats": [
+          {
+            "problem": "Bonded warehouse managed",
+            "impact": "7,000 m²"
+          },
+          {
+            "problem": "Document reconciliation",
+            "impact": "Automatic"
+          },
+          {
+            "problem": "Audit evidence",
+            "impact": "Video + inventory"
+          },
+          {
+            "problem": "Authority remote access",
+            "impact": "24/7"
+          }
+        ]
+      },
+      "modules": {
+        "title": "Modules most used in your industry"
+      },
+      "cases": {
+        "title": "Cases in your sector",
+        "items": [
+          {
+            "metric": "7,000 m²",
+            "result": "Bonded warehouse at AIFA digitized with iWMS and Etiqueta Zero, three zones (hazardous, refrigerated, standard).",
+            "client": "Grupo Camili"
+          },
+          {
+            "metric": "100%",
+            "result": "Boxes loaded and unloaded counted with video evidence correlated to scanning, audit-ready for ANAM.",
+            "client": "Fiscalized facility operator (HIMEX)"
+          },
+          {
+            "metric": "25 years",
+            "result": "Foreign-trade integrated-logistics experience supercharged with end-to-end digital traceability.",
+            "client": "Grupo Camili"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready for an end-to-end auditable facility?",
+        "subtitle": "Book a demo and we'll show you how to digitize warehouse control, document management and the traceability the authority requires.",
+        "button": "Book a Demo"
+      }
     }
   },
   "platformPage": {
