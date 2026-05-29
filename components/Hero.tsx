@@ -29,7 +29,7 @@ export function Hero({
   title: string;
   titleAccent?: string;
   subtitle: string;
-  primaryCta: { label: string; href: string };
+  primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   variant?: "dark" | "light";
   visual?: ReactNode;
@@ -71,10 +71,12 @@ export function Hero({
             <p className="animate-rise mt-6 max-w-xl text-body-lg text-navy-200" style={{ animationDelay: "180ms" }}>
               {subtitle}
             </p>
-            <div className="animate-rise mt-9 flex flex-wrap gap-4" style={{ animationDelay: "280ms" }}>
-              <Button href={primaryCta.href} variant="primary">{primaryCta.label}</Button>
-              {secondaryCta && <Button href={secondaryCta.href} variant="outline">{secondaryCta.label}</Button>}
-            </div>
+            {(primaryCta || secondaryCta) && (
+              <div className="animate-rise mt-9 flex flex-wrap gap-4" style={{ animationDelay: "280ms" }}>
+                {primaryCta && <Button href={primaryCta.href} variant="primary">{primaryCta.label}</Button>}
+                {secondaryCta && <Button href={secondaryCta.href} variant="outline">{secondaryCta.label}</Button>}
+              </div>
+            )}
           </div>
         </Container>
 
@@ -104,10 +106,12 @@ export function Hero({
             {title} {titleAccent && <span className="text-gradient-brand">{titleAccent}</span>}
           </h1>
           <p className={`mt-6 text-body-lg ${dark ? "text-navy-200" : "text-navy-600"}`}>{subtitle}</p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Button href={primaryCta.href} variant="primary">{primaryCta.label}</Button>
-            {secondaryCta && <Button href={secondaryCta.href} variant={dark ? "outline" : "secondary"}>{secondaryCta.label}</Button>}
-          </div>
+          {(primaryCta || secondaryCta) && (
+            <div className="mt-8 flex flex-wrap gap-4">
+              {primaryCta && <Button href={primaryCta.href} variant="primary">{primaryCta.label}</Button>}
+              {secondaryCta && <Button href={secondaryCta.href} variant={dark ? "outline" : "secondary"}>{secondaryCta.label}</Button>}
+            </div>
+          )}
         </div>
         {visual && <div className="relative">{visual}</div>}
       </Container>

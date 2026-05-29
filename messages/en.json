@@ -994,5 +994,137 @@
       "subtitle": "Book a call and tell us your challenges. We want to understand your operation before we propose anything.",
       "button": "Book a call"
     }
+  },
+  "legal": {
+    "privacy": {
+      "meta": {
+        "title": "Privacy Policy — Geodot",
+        "description": "How Geodot collects, uses, and protects the personal data you share through our website."
+      },
+      "hero": {
+        "eyebrow": "Legal",
+        "title": "Privacy",
+        "titleAccent": "Policy",
+        "subtitle": "How we collect, use, and protect the personal data you share with Geodot through this site."
+      },
+      "updated": "Last updated: May 29, 2026",
+      "sections": [
+        {
+          "title": "1. Who we are",
+          "body": [
+            "Geodot is a logistics technology company. This policy describes how we handle the personal information we collect through our website. For any privacy questions, email us at hola@geodot.app."
+          ]
+        },
+        {
+          "title": "2. Data we collect",
+          "body": [
+            "Information you voluntarily provide through the contact form: name, email address, company, and the message you write.",
+            "Technical and usage data collected automatically through web analytics tools: pages visited, device type, browser, and aggregate browsing data. We do not use this information to identify you personally."
+          ]
+        },
+        {
+          "title": "3. How we use your data",
+          "body": [
+            "To respond to your inquiries, coordinate demos, and follow up on commercial conversations.",
+            "To understand how the site is used and improve its content and performance.",
+            "We do not sell or rent your personal data to third parties."
+          ]
+        },
+        {
+          "title": "4. Service providers and processors",
+          "body": [
+            "To send and manage contact-form messages we use Resend (resend.com) as our email processor. Resend handles the data on our behalf, under its own terms and security measures.",
+            "For web analytics we may use measurement providers that process aggregate and technical data. These providers act as processors under their respective policies."
+          ]
+        },
+        {
+          "title": "5. Retention",
+          "body": [
+            "We keep contact-form data for as long as needed to handle your inquiry and maintain the commercial relationship, unless you request its deletion."
+          ]
+        },
+        {
+          "title": "6. Your rights",
+          "body": [
+            "You may request access to, correction of, deletion of, or portability of your personal data, as well as object to or restrict its processing. To exercise any of these rights, email us at hola@geodot.app and we will respond within a reasonable time."
+          ]
+        },
+        {
+          "title": "7. Changes to this policy",
+          "body": [
+            "We may update this policy to reflect legal changes or changes in our practices. The current version will be posted on this page with its update date."
+          ]
+        },
+        {
+          "title": "8. Contact",
+          "body": [
+            "If you have questions about this policy or how we handle your data, email us at hola@geodot.app."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "meta": {
+        "title": "Terms of Use — Geodot",
+        "description": "The terms and conditions governing use of the Geodot website."
+      },
+      "hero": {
+        "eyebrow": "Legal",
+        "title": "Terms of",
+        "titleAccent": "Use",
+        "subtitle": "The terms governing access to and use of this website."
+      },
+      "updated": "Last updated: May 29, 2026",
+      "sections": [
+        {
+          "title": "1. Acceptance of terms",
+          "body": [
+            "By accessing and using this website you agree to these terms of use. If you do not agree, please do not use the site."
+          ]
+        },
+        {
+          "title": "2. Use of the site",
+          "body": [
+            "This site is provided for informational purposes about Geodot's products and services. You agree to use it lawfully and not to interfere with its operation, security, or availability."
+          ]
+        },
+        {
+          "title": "3. Intellectual property",
+          "body": [
+            "All content on the site —text, graphics, logos, images, and software— is owned by Geodot or its licensors and is protected by intellectual property laws. You may not reproduce or distribute it without prior written authorization."
+          ]
+        },
+        {
+          "title": "4. No warranties",
+          "body": [
+            "The site is provided \"as is\" and \"as available.\" We do not warrant that the content is error-free or that the site will operate uninterrupted. Information on the site does not constitute a binding offer or professional advice."
+          ]
+        },
+        {
+          "title": "5. Limitation of liability",
+          "body": [
+            "To the extent permitted by law, Geodot shall not be liable for indirect, incidental, or consequential damages arising from the use of, or inability to use, this site."
+          ]
+        },
+        {
+          "title": "6. Third-party links",
+          "body": [
+            "The site may contain links to third-party sites. We do not control and are not responsible for their content or privacy practices."
+          ]
+        },
+        {
+          "title": "7. Changes to these terms",
+          "body": [
+            "We may modify these terms at any time. The version in effect will be the one posted on this page with its update date."
+          ]
+        },
+        {
+          "title": "8. Contact",
+          "body": [
+            "For any questions about these terms, email us at hola@geodot.app."
+          ]
+        }
+      ]
+    }
   }
 }

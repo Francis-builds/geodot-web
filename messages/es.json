@@ -994,5 +994,137 @@
       "subtitle": "Agendá una llamada y contanos tus desafíos. Queremos entender tu operación antes de proponerte nada.",
       "button": "Agendá una llamada"
     }
+  },
+  "legal": {
+    "privacy": {
+      "meta": {
+        "title": "Política de Privacidad — Geodot",
+        "description": "Cómo Geodot recopila, usa y protege los datos personales que compartís a través de nuestro sitio web."
+      },
+      "hero": {
+        "eyebrow": "Legal",
+        "title": "Política de",
+        "titleAccent": "Privacidad",
+        "subtitle": "Cómo recopilamos, usamos y protegemos los datos personales que compartís con Geodot a través de este sitio."
+      },
+      "updated": "Última actualización: 29 de mayo de 2026",
+      "sections": [
+        {
+          "title": "1. Quiénes somos",
+          "body": [
+            "Geodot es una empresa de tecnología logística. Esta política describe cómo tratamos la información personal que recopilamos a través de nuestro sitio web. Para cualquier consulta sobre privacidad, escribinos a hola@geodot.app."
+          ]
+        },
+        {
+          "title": "2. Qué datos recopilamos",
+          "body": [
+            "Datos que nos compartís voluntariamente a través del formulario de contacto: nombre, correo electrónico, empresa y el mensaje que escribís.",
+            "Datos técnicos y de uso recopilados automáticamente mediante herramientas de analítica web: páginas visitadas, tipo de dispositivo, navegador y datos agregados de navegación. No usamos esta información para identificarte personalmente."
+          ]
+        },
+        {
+          "title": "3. Cómo usamos tus datos",
+          "body": [
+            "Para responder a tus consultas, coordinar demos y darte seguimiento comercial.",
+            "Para entender cómo se usa el sitio y mejorar su contenido y rendimiento.",
+            "No vendemos ni alquilamos tus datos personales a terceros."
+          ]
+        },
+        {
+          "title": "4. Proveedores y procesadores",
+          "body": [
+            "Para enviar y gestionar los mensajes del formulario de contacto utilizamos Resend (resend.com) como procesador de correo electrónico. Resend trata los datos en nuestro nombre, bajo sus propios términos y medidas de seguridad.",
+            "Para la analítica web podemos usar proveedores de medición que procesan datos agregados y técnicos. Estos proveedores actúan como procesadores conforme a sus respectivas políticas."
+          ]
+        },
+        {
+          "title": "5. Conservación",
+          "body": [
+            "Conservamos los datos del formulario de contacto durante el tiempo necesario para atender tu consulta y mantener la relación comercial, salvo que solicites su eliminación."
+          ]
+        },
+        {
+          "title": "6. Tus derechos",
+          "body": [
+            "Podés solicitar el acceso, la rectificación, la eliminación o la portabilidad de tus datos personales, así como oponerte a su tratamiento o limitarlo. Para ejercer cualquiera de estos derechos, escribinos a hola@geodot.app y responderemos en un plazo razonable."
+          ]
+        },
+        {
+          "title": "7. Cambios a esta política",
+          "body": [
+            "Podemos actualizar esta política para reflejar cambios legales o en nuestras prácticas. Publicaremos la versión vigente en esta misma página con su fecha de actualización."
+          ]
+        },
+        {
+          "title": "8. Contacto",
+          "body": [
+            "Si tenés preguntas sobre esta política o sobre el tratamiento de tus datos, escribinos a hola@geodot.app."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "meta": {
+        "title": "Términos de Uso — Geodot",
+        "description": "Términos y condiciones que regulan el uso del sitio web de Geodot."
+      },
+      "hero": {
+        "eyebrow": "Legal",
+        "title": "Términos de",
+        "titleAccent": "Uso",
+        "subtitle": "Las condiciones que regulan el acceso y uso de este sitio web."
+      },
+      "updated": "Última actualización: 29 de mayo de 2026",
+      "sections": [
+        {
+          "title": "1. Aceptación de los términos",
+          "body": [
+            "Al acceder y usar este sitio web aceptás estos términos de uso. Si no estás de acuerdo, te pedimos que no utilices el sitio."
+          ]
+        },
+        {
+          "title": "2. Uso del sitio",
+          "body": [
+            "Este sitio se ofrece con fines informativos sobre los productos y servicios de Geodot. Te comprometés a usarlo de forma lícita y a no interferir con su funcionamiento, seguridad o disponibilidad."
+          ]
+        },
+        {
+          "title": "3. Propiedad intelectual",
+          "body": [
+            "Todos los contenidos del sitio —textos, gráficos, logotipos, imágenes y software— son propiedad de Geodot o de sus licenciantes y están protegidos por las leyes de propiedad intelectual. No podés reproducirlos ni distribuirlos sin autorización previa por escrito."
+          ]
+        },
+        {
+          "title": "4. Sin garantías",
+          "body": [
+            "El sitio se ofrece \"tal cual\" y \"según disponibilidad\". No garantizamos que el contenido esté libre de errores ni que el sitio funcione de forma ininterrumpida. La información del sitio no constituye una oferta vinculante ni asesoramiento profesional."
+          ]
+        },
+        {
+          "title": "5. Limitación de responsabilidad",
+          "body": [
+            "En la medida permitida por la ley, Geodot no será responsable por daños indirectos, incidentales o consecuentes derivados del uso o la imposibilidad de uso de este sitio."
+          ]
+        },
+        {
+          "title": "6. Enlaces a terceros",
+          "body": [
+            "El sitio puede contener enlaces a sitios de terceros. No controlamos ni respondemos por sus contenidos o prácticas de privacidad."
+          ]
+        },
+        {
+          "title": "7. Cambios a los términos",
+          "body": [
+            "Podemos modificar estos términos en cualquier momento. La versión vigente será la publicada en esta página con su fecha de actualización."
+          ]
+        },
+        {
+          "title": "8. Contacto",
+          "body": [
+            "Para cualquier consulta sobre estos términos, escribinos a hola@geodot.app."
+          ]
+        }
+      ]
+    }
   }
 }
