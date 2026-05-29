@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { MODULE_SLUGS } from "@/lib/modules";
 import { INDUSTRY_SLUGS } from "@/lib/industries";
 import { getPostSlugs } from "@/lib/blog";
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://geodot.app";
+import { SITE_URL as BASE } from "@/lib/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = ["", "/plataforma", "/casos-exito", "/recursos", "/nosotros", "/contacto",
     ...MODULE_SLUGS.map((m) => `/plataforma/${m}`), ...INDUSTRY_SLUGS.map((i) => `/industrias/${i}`),

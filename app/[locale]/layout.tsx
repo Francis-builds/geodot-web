@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -21,8 +22,6 @@ const hanken = Hanken_Grotesk({
   weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://geodot.app";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

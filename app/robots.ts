@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://geodot.app";
+import { SITE_URL as BASE } from "@/lib/site";
 export default function robots(): MetadataRoute.Robots {
   return { rules: { userAgent: "*", allow: "/" }, sitemap: `${BASE}/sitemap.xml` };
 }
