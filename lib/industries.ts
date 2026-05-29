@@ -7,6 +7,6 @@ export const INDUSTRIES: Record<IndustrySlug, { icon: string; messageKey: string
   "alimentos":         { icon: "milk",        messageKey: "alimentos",       hero: "/images/cold-chain/cadena-frio.jpg" },
   "gobierno-residuos": { icon: "recycle",     messageKey: "gobiernoResiduos", hero: "/images/fleet/fleet-tracking.jpg" },
   "3pl":               { icon: "package",     messageKey: "logistica3pl",    hero: "/images/fleet/trailer-loading.jpg" },
-  "healthcare":        { icon: "heart-pulse", messageKey: "healthcare",      hero: "/images/cold-chain/operario-tablet.png" },
+  "healthcare":        { icon: "heart-pulse", messageKey: "healthcare",      hero: "/images/cold-chain/operario-tablet.jpg" },
   "recintos-fiscales": { icon: "container",   messageKey: "recintosFiscales", hero: "/images/recintos/torre-control.png" },
 };
