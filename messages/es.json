@@ -64,7 +64,36 @@
       "sending": "Enviando…",
       "success": "¡Listo! Te contactamos en menos de 24 horas hábiles.",
       "error": "Revisá los datos e intentá de nuevo."
-    }
+    },
+    "sideTitle": "Qué pasa después",
+    "steps": [
+      {
+        "title": "Hablamos de tu operación",
+        "body": "15 minutos para entender tu cadena y dónde están los cuellos de botella."
+      },
+      {
+        "title": "Demo a medida",
+        "body": "Te mostramos Geodot con casos de tu industria, no una demo genérica."
+      },
+      {
+        "title": "Plan y ROI",
+        "body": "Salís con un plan concreto y el ahorro estimado para tu operación."
+      }
+    ],
+    "proof": [
+      {
+        "value": "99%",
+        "label": "de carga por camión"
+      },
+      {
+        "value": "−30%",
+        "label": "rechazos en entrega"
+      },
+      {
+        "value": "90 días",
+        "label": "a los primeros resultados"
+      }
+    ]
   },
   "home": {
     "hero": {

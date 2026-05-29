@@ -64,7 +64,36 @@
       "sending": "Sending…",
       "success": "Done! We'll be in touch within 24 business hours.",
       "error": "Please check your details and try again."
-    }
+    },
+    "sideTitle": "What happens next",
+    "steps": [
+      {
+        "title": "We talk through your operation",
+        "body": "15 minutes to understand your supply chain and where the bottlenecks are."
+      },
+      {
+        "title": "Tailored demo",
+        "body": "We show you Geodot with cases from your industry, not a generic walkthrough."
+      },
+      {
+        "title": "Plan & ROI",
+        "body": "You leave with a concrete plan and the estimated savings for your operation."
+      }
+    ],
+    "proof": [
+      {
+        "value": "99%",
+        "label": "truck load achieved"
+      },
+      {
+        "value": "−30%",
+        "label": "delivery rejections"
+      },
+      {
+        "value": "90 days",
+        "label": "to first results"
+      }
+    ]
   },
   "home": {
     "hero": {
