@@ -30,32 +30,32 @@
       "eyebrow": "Resources",
       "title": "Ideas for",
       "titleAccent": "smarter logistics",
-      "subtitle": "Guides, case studies and perspectives on WMS, transport, cold chain and customs traceability.",
-      "cta": "Book a demo"
+      "subtitle": "Guides, real cases and numbers on 100% loads, AI routing, cold chain, FEFO and customs traceability. Learn from operations like yours.",
+      "cta": "Book your demo"
     },
     "readingMin": "min read",
     "empty": {
-      "title": "New resources coming soon",
-      "subtitle": "We're preparing guides and practical case studies. Check back soon."
+      "title": "Resources for your operation, coming soon",
+      "subtitle": "We're preparing guides and practical case studies with real numbers. Check back soon."
     },
     "cta": {
       "title": "Bring these ideas to your operation",
-      "subtitle": "We'll show you how Geodot connects every point of your supply chain.",
-      "button": "Book a demo"
+      "subtitle": "A demo beats a thousand articles: we'll show you how Geodot connects every point of your chain.",
+      "button": "Book your demo"
     }
   },
   "contact": {
     "title": "Book your demo",
-    "subtitle": "Tell us about your operation and we'll show you Geodot in action.",
+    "subtitle": "Tell us about your operation in 1 minute and we'll show you Geodot in action with cases from your industry. No commitment.",
     "form": {
       "name": "Name",
       "company": "Company",
       "email": "Email",
       "phone": "Phone",
       "message": "Tell us about your operation",
-      "submit": "Request demo",
+      "submit": "Book your demo",
       "sending": "Sending…",
-      "success": "Thanks! We'll be in touch shortly.",
+      "success": "Done! We'll be in touch within 24 business hours.",
       "error": "Please check your details and try again."
     }
   },
@@ -885,53 +885,53 @@
   "platformPage": {
     "hero": {
       "eyebrow": "The platform",
-      "title": "One complete platform for your entire",
+      "title": "One platform for your entire",
       "titleAccent": "supply chain",
-      "subtitle": "Geodot integrates the essential modules that work together to optimize every stage of your operation: from the warehouse to the final delivery. Unlike fragmented solutions, every module talks to each other in real time.",
-      "cta": "Book a Demo"
+      "subtitle": "When every system speaks a different language, you lose hours reconciling data and money on half-empty trucks. Geodot unifies WMS, TMS, routing and palletizing in one platform: the routing engine and the palletizer work together, in real time, to load to 99% and route by business value.",
+      "cta": "Book your demo"
     },
     "modules": {
       "title": "Modules that work as one",
-      "description": "Geodot doesn't replace your ERP, it amplifies it. The routing engine and the palletizer work together, in real time, to optimize every load and every route."
+      "description": "Geodot doesn't replace your ERP, it amplifies it. We integrate with SAP, BASIS and Oracle through our own APIs, down to a level of detail SAP S/4HANA can't reach: routing and palletizing calculated together, with 300+ parameters per SKU."
     },
     "cta": {
-      "title": "What's your biggest logistics challenge?",
-      "subtitle": "Book a personalized demo and we'll show you how Geodot can solve it.",
-      "button": "Book a Demo"
+      "title": "What's your biggest logistics leak?",
+      "subtitle": "Trucks at 85%, routes planned by hand, rejections you catch too late. Book a demo and we'll show you, in your own operation, how much you can recover.",
+      "button": "Book your demo"
     }
   },
   "casesPage": {
     "hero": {
       "eyebrow": "Success stories",
-      "title": "Results that",
-      "titleAccent": "transform operations",
-      "subtitle": "Companies of every size and industry have optimized their logistics with Geodot. Discover their stories and the numbers behind each transformation.",
-      "cta": "I want to be next"
+      "title": "Measurable results, not",
+      "titleAccent": "transformation promises",
+      "subtitle": "Bottlers, dairy, government and bonded warehouses have already recovered costs with Geodot. These are the numbers behind each operation —and yours could be next.",
+      "cta": "I want these results"
     },
     "list": {
       "title": "The impact of Geodot in numbers",
       "items": [
         {
           "client": "Coca-Cola Bottler",
-          "result": "Truck loads went from 85% to 99% and route planning from 3 hours to 15 minutes.",
+          "result": "Truck loads went from 85% to 99% and route planning from 3 hours to 15 minutes, cutting transport cost by 8%.",
           "metric": "-92% time"
         },
         {
           "client": "Dairy Company (Colombia)",
-          "result": "Automatic FEFO and lot-level traceability eliminated shelf-life rejections.",
+          "result": "Automatic FEFO and lot-level traceability stopped supermarket rejections: they now trace any lot in minutes, not days.",
           "metric": "-80% waste"
         },
         {
           "client": "Benito Juárez Borough (Mexico City)",
-          "result": "AI routing for 470 tons of daily waste, with ROI in under 12 months.",
+          "result": "AI routing for 470 tons of daily waste: fewer kilometers, less CO₂ and ROI in under 12 months.",
           "metric": "-15% km"
         }
       ]
     },
     "cta": {
-      "title": "Want results like these?",
-      "subtitle": "Book a personalized demo and we'll show you how Geodot can transform your operation.",
-      "button": "Book a Demo"
+      "title": "Want numbers like these in your operation?",
+      "subtitle": "Book a demo and we'll show you, with your own data, where your leaks are and how much you can save.",
+      "button": "Book your demo"
     }
   },
   "aboutPage": {
@@ -939,21 +939,21 @@
       "eyebrow": "About us",
       "title": "Born from operations,",
       "titleAccent": "not from a lab",
-      "subtitle": "Our team has lived the challenges of logistics from the inside. That's why we built Geodot: the platform we ourselves wished we had.",
+      "subtitle": "40+ combined years moving trucks and 15+ with Coca-Cola bottlers. We built Geodot because we've fought the same fires you do —so we never need it explained why the glass goes on the bottom.",
       "cta": "Book a call"
     },
     "mission": {
       "title": "Connecting every point of the supply chain"
     },
     "body": [
-      "After more than 40 combined years of experience in logistics, production and technology, we realized something: the existing tools didn't solve the whole problem. Some systems routed but didn't palletize. WMS that didn't talk to TMS. And in the middle, operations teams juggling to keep everything running.",
-      "Geodot was born to change that. We built the first platform that integrates WMS, TMS, Routing and Palletizing in a single solution, where the routing engine and the palletizer work together, in real time, to optimize every load and every route.",
-      "Our mission is to connect every point of the supply chain so companies operate more efficiently, sustainably and profitably. We don't promise magic: we promise results you can measure —fewer kilometers, fewer rejections, lower costs and fewer emissions.",
-      "We're a Mexican technology company, with experience across Mexico, Argentina, Colombia and Ecuador, and in industries like beverages, food, government and logistics. We imagine a world where every truck leaves at 100% capacity and every product arrives fresh to the right customer. That's the world we're building."
+      "After more than 40 combined years in logistics, production and technology, we kept seeing the same problem: the tools never solved the whole operation. One system routed but didn't palletize. The WMS didn't talk to the TMS. And in the middle, operations teams juggling to make it all add up.",
+      "Geodot was born to end that. We built the first platform that unifies WMS, TMS, routing and palletizing in a single solution, where the routing engine and the palletizer work together, in real time, to load every truck to 99% and route by business value, not just kilometers.",
+      "We don't promise magic: we promise results you can measure from day one —fewer kilometers, fewer rejections, lower costs and fewer emissions. And we don't replace your ERP: we amplify it, integrating with SAP, BASIS and Oracle without breaking what already works.",
+      "We're a Mexican technology company operating across Mexico, Argentina, Colombia and Ecuador, with real experience in beverages, food, government, pharma and bonded warehouses. We imagine a world where every truck leaves at 100% and every product arrives fresh to the right customer. That's the world we're building —with you."
     ],
     "cta": {
-      "title": "Ready to meet us?",
-      "subtitle": "Book a call and tell us about your operation. We want to understand your challenges before proposing a solution.",
+      "title": "Let's talk about your operation",
+      "subtitle": "Book a call and tell us your challenges. We want to understand your operation before we propose anything.",
       "button": "Book a call"
     }
   }

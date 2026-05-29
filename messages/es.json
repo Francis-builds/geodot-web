@@ -30,32 +30,32 @@
       "eyebrow": "Recursos",
       "title": "Ideas para una logística",
       "titleAccent": "más inteligente",
-      "subtitle": "Guías, casos y perspectivas sobre WMS, transporte, cadena de frío y trazabilidad aduanera.",
-      "cta": "Agendar demo"
+      "subtitle": "Guías, casos reales y números sobre carga al 100%, ruteo con IA, cadena de frío, FEFO y trazabilidad aduanera. Aprendé de operaciones como la tuya.",
+      "cta": "Agendá tu demo"
     },
     "readingMin": "min de lectura",
     "empty": {
-      "title": "Pronto publicaremos nuevos recursos",
-      "subtitle": "Estamos preparando guías y casos prácticos. Volvé pronto."
+      "title": "Pronto, recursos para tu operación",
+      "subtitle": "Estamos preparando guías y casos prácticos con números reales. Volvé pronto."
     },
     "cta": {
       "title": "Llevá estas ideas a tu operación",
-      "subtitle": "Te mostramos cómo Geodot conecta cada punto de tu cadena logística.",
-      "button": "Agendar demo"
+      "subtitle": "Una demo vale más que mil artículos: te mostramos cómo Geodot conecta cada punto de tu cadena.",
+      "button": "Agendá tu demo"
     }
   },
   "contact": {
     "title": "Agendá tu demo",
-    "subtitle": "Contanos de tu operación y te mostramos Geodot en acción.",
+    "subtitle": "Contanos de tu operación en 1 minuto y te mostramos Geodot funcionando con casos de tu industria. Sin compromiso.",
     "form": {
       "name": "Nombre",
       "company": "Empresa",
       "email": "Email",
       "phone": "Teléfono",
       "message": "Contanos sobre tu operación",
-      "submit": "Solicitar demo",
+      "submit": "Agendá tu demo",
       "sending": "Enviando…",
-      "success": "¡Gracias! Te contactamos a la brevedad.",
+      "success": "¡Listo! Te contactamos en menos de 24 horas hábiles.",
       "error": "Revisá los datos e intentá de nuevo."
     }
   },
@@ -885,53 +885,53 @@
   "platformPage": {
     "hero": {
       "eyebrow": "La plataforma",
-      "title": "Una plataforma completa para toda tu",
+      "title": "Una sola plataforma para toda tu",
       "titleAccent": "cadena logística",
-      "subtitle": "Geodot integra los módulos esenciales que trabajan juntos para optimizar cada etapa de tu operación: desde el almacén hasta la entrega final. A diferencia de soluciones fragmentadas, cada módulo se comunica en tiempo real.",
-      "cta": "Agendar Demo"
+      "subtitle": "Cuando cada sistema habla un idioma distinto, pierdes horas reconciliando datos y dinero en camiones a medias. Geodot integra WMS, TMS, ruteo y paletizado en una sola plataforma: el motor de ruteo y el paletizador trabajan juntos, en tiempo real, para cargar al 99% y rutear por valor de negocio.",
+      "cta": "Agendá tu demo"
     },
     "modules": {
       "title": "Módulos que trabajan como uno solo",
-      "description": "Geodot no reemplaza tu ERP, lo potencia. El motor de ruteo y el paletizador trabajan juntos, en tiempo real, para optimizar cada carga y cada ruta."
+      "description": "Geodot no reemplaza tu ERP, lo potencia. Se integra con SAP, BASIS y Oracle vía APIs propias, y suma el detalle que ni SAP S/4HANA alcanza: ruteo y paletizado calculados a la vez, con +300 parámetros por SKU."
     },
     "cta": {
-      "title": "¿Cuál es tu mayor desafío logístico?",
-      "subtitle": "Agendá una demo personalizada y te mostramos cómo Geodot puede resolverlo.",
-      "button": "Agendar Demo"
+      "title": "¿Cuál es tu mayor fuga logística?",
+      "subtitle": "Camiones al 85%, rutas a mano, rechazos que descubrís tarde. Agendá una demo y te mostramos en tu operación cuánto podés recuperar.",
+      "button": "Agendá tu demo"
     }
   },
   "casesPage": {
     "hero": {
       "eyebrow": "Casos de éxito",
-      "title": "Resultados que",
-      "titleAccent": "transforman operaciones",
-      "subtitle": "Empresas de diferentes industrias y tamaños han optimizado su logística con Geodot. Conocé sus historias y los números detrás de cada transformación.",
-      "cta": "Quiero ser el próximo caso"
+      "title": "Resultados medibles, no",
+      "titleAccent": "promesas de transformación",
+      "subtitle": "Embotelladores, lácteos, gobierno y recintos fiscales ya recuperaron costos con Geodot. Estos son los números detrás de cada operación —y el tuyo puede ser el próximo.",
+      "cta": "Quiero estos resultados"
     },
     "list": {
       "title": "El impacto de Geodot en números",
       "items": [
         {
           "client": "Embotelladora Coca-Cola",
-          "result": "Carga de camiones del 85% al 99% y planificación de rutas de 3 horas a 15 minutos.",
+          "result": "Pasó de cargar camiones al 85% al 99% y de planificar rutas en 3 horas a hacerlo en 15 minutos, con -8% en costo de transporte.",
           "metric": "-92% tiempo"
         },
         {
           "client": "Empresa Láctea (Colombia)",
-          "result": "FEFO automático y trazabilidad por lote eliminaron los rechazos por vida útil.",
+          "result": "FEFO automático y trazabilidad por lote frenaron los rechazos de supermercados: ahora rastrean cualquier lote en minutos, no en días.",
           "metric": "-80% mermas"
         },
         {
           "client": "Alcaldía Benito Juárez (CDMX)",
-          "result": "Ruteo con IA para 470 toneladas diarias de residuos, con ROI en menos de 12 meses.",
+          "result": "Ruteo con IA para 470 toneladas diarias de residuos: menos kilómetros, menos CO₂ y ROI en menos de 12 meses.",
           "metric": "-15% km"
         }
       ]
     },
     "cta": {
-      "title": "¿Querés resultados como estos?",
-      "subtitle": "Agendá una demo personalizada y te mostramos cómo Geodot puede transformar tu operación.",
-      "button": "Agendar Demo"
+      "title": "¿Querés números como estos en tu operación?",
+      "subtitle": "Agendá una demo y te mostramos, con tus propios datos, dónde están tus fugas y cuánto podés ahorrar.",
+      "button": "Agendá tu demo"
     }
   },
   "aboutPage": {
@@ -939,22 +939,22 @@
       "eyebrow": "Nosotros",
       "title": "Nacimos de la operación,",
       "titleAccent": "no del laboratorio",
-      "subtitle": "Nuestro equipo ha vivido los desafíos de la logística desde adentro. Por eso creamos Geodot: la plataforma que nosotros mismos hubiéramos querido tener.",
-      "cta": "Agendar una llamada"
+      "subtitle": "+40 años combinados moviendo camiones y +15 con embotelladores Coca-Cola. Creamos Geodot porque vivimos los mismos incendios que vos: por eso no hay que explicarnos qué es una planchada.",
+      "cta": "Agendá una llamada"
     },
     "mission": {
       "title": "Conectar cada punto de la cadena logística"
     },
     "body": [
-      "Después de más de 40 años combinados de experiencia en logística, producción y tecnología, nos dimos cuenta de algo: las herramientas existentes no resolvían el problema completo. Había sistemas que ruteaban pero no paletizaban. WMS que no hablaban con TMS. Y en medio, equipos de operaciones haciendo malabares para que todo funcionara.",
-      "Geodot nació para cambiar eso. Creamos la primera plataforma que integra WMS, TMS, Ruteo y Paletizado en una sola solución, donde el motor de ruteo y el paletizador trabajan juntos, en tiempo real, para optimizar cada carga y cada ruta.",
-      "Nuestra misión es conectar cada punto de la cadena logística para que las empresas operen de manera más eficiente, sostenible y rentable. No prometemos magia: prometemos resultados que podés medir —menos kilómetros, menos rechazos, menos costos y menos emisiones.",
-      "Somos una empresa mexicana de tecnología, con experiencia en México, Argentina, Colombia y Ecuador, y en industrias como bebidas, alimentos, gobierno y logística. Imaginamos un mundo donde cada camión sale al 100% de su capacidad y cada producto llega fresco al cliente correcto. Ese es el mundo que estamos construyendo."
+      "Después de más de 40 años combinados en logística, producción y tecnología, vimos siempre el mismo problema: las herramientas no resolvían la operación completa. Un sistema ruteaba pero no paletizaba. El WMS no hablaba con el TMS. Y en el medio, los equipos de operaciones haciendo malabares para que todo cerrara.",
+      "Geodot nació para terminar con eso. Construimos la primera plataforma que integra WMS, TMS, ruteo y paletizado en una sola solución, donde el motor de ruteo y el paletizador trabajan juntos, en tiempo real, para cargar cada camión al 99% y rutear por valor de negocio, no solo por kilómetros.",
+      "No prometemos magia: prometemos resultados que podés medir desde el día uno —menos kilómetros, menos rechazos, menos costos y menos emisiones. Y no reemplazamos tu ERP: lo potenciamos, integrándonos con SAP, BASIS y Oracle sin romper lo que ya funciona.",
+      "Somos una empresa mexicana de tecnología con operación en México, Argentina, Colombia y Ecuador, y experiencia real en bebidas, alimentos, gobierno, pharma y recintos fiscales. Imaginamos un mundo donde cada camión sale al 100% y cada producto llega fresco al cliente correcto. Ese es el mundo que estamos construyendo —con vos."
     ],
     "cta": {
-      "title": "¿Listo para conocernos?",
-      "subtitle": "Agendá una llamada y contanos sobre tu operación. Queremos entender tus desafíos antes de proponerte una solución.",
-      "button": "Agendar una llamada"
+      "title": "Hablemos de tu operación",
+      "subtitle": "Agendá una llamada y contanos tus desafíos. Queremos entender tu operación antes de proponerte nada.",
+      "button": "Agendá una llamada"
     }
   }
 }
