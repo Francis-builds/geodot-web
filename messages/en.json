@@ -97,12 +97,12 @@
   },
   "home": {
     "hero": {
-      "title": "Load every truck to 100% and",
-      "titleAccent": "see it in real time",
-      "subtitle": "The only platform that routes and palletizes at the same time with AI. Fewer trucks, fewer rejections, no blind spots —integrated with your ERP, live in 90 days.",
-      "ctaPrimary": "Book a Demo",
+      "title": "Connect every point.",
+      "titleAccent": "Optimize every move.",
+      "subtitle": "The AI platform that moves your freight by sea, air and land: routing and palletizing at once, zero blind spots, integrated with your ERP. Measurable results in 90 days.",
+      "ctaPrimary": "Book your demo",
       "ctaSecondary": "Explore the platform",
-      "eyebrow": "WMS + TMS + Routing + Palletizing, with AI"
+      "eyebrow": "Intelligent logistics platform"
     },
     "problem": {
       "eyebrow": "The problem",

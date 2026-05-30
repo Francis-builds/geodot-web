@@ -97,12 +97,12 @@
   },
   "home": {
     "hero": {
-      "title": "Cargá tus camiones al 100% y",
-      "titleAccent": "vé todo en tiempo real",
-      "subtitle": "La única plataforma que rutea y paletiza en simultáneo con IA. Menos camiones, menos rechazos, cero puntos ciegos —integrada a tu ERP, con resultados en 90 días.",
-      "ctaPrimary": "Agendar Demo",
+      "title": "Conectá cada punto.",
+      "titleAccent": "Optimizá cada movimiento.",
+      "subtitle": "La plataforma de IA que mueve tu carga por mar, aire y tierra: rutea y paletiza en simultáneo, elimina los puntos ciegos y se integra a tu ERP. Resultados medibles en 90 días.",
+      "ctaPrimary": "Agendá tu demo",
       "ctaSecondary": "Ver la plataforma",
-      "eyebrow": "WMS + TMS + Ruteo + Paletizado, con IA"
+      "eyebrow": "Plataforma de logística inteligente"
     },
     "problem": {
       "eyebrow": "El problema",
