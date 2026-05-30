@@ -106,8 +106,8 @@
     },
     "problem": {
       "eyebrow": "The problem",
-      "title": "Your logistics is leaking money where you",
-      "titleAccent": "can't see it",
+      "title": "Your logistics is bleeding money through leaks",
+      "titleAccent": "nobody is watching",
       "points": [
         "91% of your trucks leave with unused space.",
         "Your team plans routes by hand, 3 hours a day.",
@@ -136,13 +136,13 @@
     "platform": {
       "eyebrow": "The platform",
       "title": "One platform.",
-      "titleAccent": "All your logistics, connected.",
-      "description": "Warehouse, transport, routing and palletizing working together in real time. It doesn't replace your ERP —it makes it stronger."
+      "titleAccent": "Your whole chain, connected and optimized.",
+      "description": "Warehouse, transport, routing and palletizing working as one, in real time. It doesn't replace your ERP —it makes it stronger."
     },
     "journey": {
       "eyebrow": "Point to point",
-      "title": "We connect every point",
-      "titleAccent": "of your chain.",
+      "title": "From the dock to the doorstep,",
+      "titleAccent": "with zero blind spots.",
       "stages": {
         "warehouse": {
           "title": "Warehouse",
@@ -166,12 +166,12 @@
       {
         "value": 10,
         "suffix": "%",
-        "label": "Transport savings"
+        "label": "Lower transport cost"
       },
       {
         "value": 20,
         "suffix": "%",
-        "label": "Fewer kilometers"
+        "label": "Fewer miles on the road"
       },
       {
         "value": 30,
@@ -181,12 +181,12 @@
       {
         "value": 100,
         "suffix": "%",
-        "label": "Real-time visibility"
+        "label": "Live visibility, end to end"
       }
     ],
     "cases": {
       "eyebrow": "Case studies",
-      "title": "Real results, not promises",
+      "title": "Real numbers from operations like yours",
       "items": [
         {
           "metric": "−10%",
@@ -206,15 +206,15 @@
       ]
     },
     "cta": {
-      "title": "See what you're losing today",
-      "subtitle": "Book a 30-minute demo and we'll show you your savings with your own data.",
+      "title": "See how much money is leaving on the table",
+      "subtitle": "30 minutes with your own data and we'll show you exactly where your leaks are —and what they're costing.",
       "button": "Book a Demo"
     },
     "multimodal": {
       "eyebrow": "Multimodal logistics",
-      "title": "Move your freight by",
+      "title": "One platform to move your freight by",
       "titleAccent": "sea, air and land",
-      "subtitle": "One platform to orchestrate every transport mode, with the same end-to-end visibility and optimization.",
+      "subtitle": "Sea, air, land and rail on one board: the same visibility and the same optimization, end to end.",
       "modes": [
         {
           "key": "sea",
@@ -243,14 +243,14 @@
   "modules": {
     "wms": {
       "name": "WMS",
-      "tagline": "99.9% inventory accuracy, no surprises",
+      "tagline": "99.9% inventory accuracy, down to the last pack",
       "eyebrow": "Platform",
       "title": "Warehouse Management",
       "titleAccent": "powered by AI",
       "subtitle": "Geodot WMS sees what your ERP can't: every pack, every lot, every expiration date. Automatic FEFO, per-customer shelf life and AI-optimized picking so customers stop rejecting your deliveries.",
       "ctaPrimary": "Book a Demo",
       "problem": {
-        "title": "Your warehouse loses money where you're not looking",
+        "title": "Your warehouse is throwing away money where no one's looking",
         "points": [
           "Expired product: you discover the expiration when it's too late to sell it.",
           "Slow picking: operators walk extra miles with no optimized route.",
@@ -317,21 +317,21 @@
         }
       ],
       "cta": {
-        "title": "Take control of your warehouse, down to the last pack",
+        "title": "Control your warehouse down to the last pack",
         "subtitle": "Book a demo and we'll show you the WMS running with your own SKUs.",
         "button": "Book a Demo"
       }
     },
     "tms": {
       "name": "TMS",
-      "tagline": "Your fleet under control, owned or outsourced",
+      "tagline": "Every truck under control, owned or outsourced",
       "eyebrow": "Platform",
       "title": "Transport Management",
       "titleAccent": "in real time",
       "subtitle": "Manage owned and outsourced fleets from a single screen. Live tracking, up-to-date paperwork, automatic settlement and costs attributed to every route and customer.",
       "ctaPrimary": "Book a Demo",
       "problem": {
-        "title": "Transport is your biggest cost and your biggest blind spot",
+        "title": "Transport is your biggest cost and your worst blind spot",
         "points": [
           "No visibility: you don't know where your trucks are right now.",
           "Uncontrolled third parties: carriers operating however they want.",
@@ -398,21 +398,21 @@
         }
       ],
       "cta": {
-        "title": "Put your entire fleet under control",
+        "title": "Put every truck under control, owned or outsourced",
         "subtitle": "Book a demo and unify owned and outsourced fleets in a single screen.",
         "button": "Book a Demo"
       }
     },
     "paletizado": {
       "name": "Smart Palletizing",
-      "tagline": "From 85% to 99% load, no safety margin",
+      "tagline": "From 85% to 99% load, with no safety margin left behind",
       "eyebrow": "Platform",
       "title": "Smart",
       "titleAccent": "Palletizing",
-      "subtitle": "The only system that calculates palletizing while it routes. It knows exactly what fits in each truck before it leaves, so you load to 100% without fear it won't fit.",
+      "subtitle": "The only system that palletizes while it routes. It knows exactly what fits in each truck before you load it, so you load to 100% without leaving a safety margin \"just in case.\"",
       "ctaPrimary": "Book a Demo",
       "problem": {
-        "title": "1 in 7 of your trucks travels with empty space",
+        "title": "1 in 7 of your trucks ships air",
         "points": [
           "Safety margin: you load to 85% \"just in case\" it won't fit.",
           "Rules in someone's head: the expert palletizer knows, the system doesn't.",
@@ -486,14 +486,14 @@
     },
     "torreControl": {
       "name": "Control Tower",
-      "tagline": "Total visibility in real time",
+      "tagline": "See, anticipate and act on your entire operation",
       "eyebrow": "Platform",
       "title": "Control Tower",
       "titleAccent": "in real time",
-      "subtitle": "A single board to see, anticipate and act on your entire chain, from the warehouse to the last delivery. What you used to find out through a complaint, you now solve before it happens.",
+      "subtitle": "A single board to see, anticipate and act on your entire chain, from the warehouse to the last delivery. What used to reach you as a complaint, you now solve before it happens.",
       "ctaPrimary": "Book a Demo",
       "problem": {
-        "title": "You operate blind until it's too late to react",
+        "title": "You operate blind until the problem has already blown up",
         "points": [
           "Fragmented information: each system shows its own slice.",
           "Late reaction: you find out about problems once they've already hit.",
@@ -628,8 +628,8 @@
         ]
       },
       "cta": {
-        "title": "Ready to load your trucks at 100%?",
-        "subtitle": "Book a demo and we'll show you, on your own operation, how to go from 85% to 99% load factor.",
+        "title": "Load to 100% before the truck even starts",
+        "subtitle": "Book a demo and we'll show you, on your own operation, how to go from 85% to 99% with no safety margin left.",
         "button": "Book a Demo"
       }
     },
@@ -693,8 +693,8 @@
         ]
       },
       "cta": {
-        "title": "How much do you lose every month to expired product?",
-        "subtitle": "Book a demo and we'll show you how to eliminate those losses and shelf-life rejections.",
+        "title": "Stop writing off expired product every month",
+        "subtitle": "Book a demo and we'll show you how to cut expiry write-offs and shelf-life rejections.",
         "button": "Book a Demo"
       }
     },
@@ -758,8 +758,8 @@
         ]
       },
       "cta": {
-        "title": "Ready to modernize your collection service?",
-        "subtitle": "Book a meeting and we'll deliver an initial savings assessment at no cost.",
+        "title": "Fewer miles, fewer complaints, less CO₂",
+        "subtitle": "Book a meeting and we'll deliver a no-cost savings assessment of your routes.",
         "button": "Book a Meeting"
       }
     },
@@ -823,8 +823,8 @@
         ]
       },
       "cta": {
-        "title": "Ready to stand out from the competition?",
-        "subtitle": "Book a demo and we'll show you how to manage all your accounts from a single platform.",
+        "title": "Run every client account from one screen",
+        "subtitle": "Book a demo and we'll show you how to bill on time and give each client a live view of their operation.",
         "button": "Book a Demo"
       }
     },
@@ -888,7 +888,7 @@
         ]
       },
       "cta": {
-        "title": "Ready for logistics with zero tolerance for error?",
+        "title": "Logistics that tolerates not one degree out of range",
         "subtitle": "Book a demo and we'll show you how to guarantee cold chain, traceability and smart dispatch in a single platform.",
         "button": "Book a Demo"
       }
@@ -953,8 +953,8 @@
         ]
       },
       "cta": {
-        "title": "Ready for an end-to-end auditable facility?",
-        "subtitle": "Book a demo and we'll show you how to digitize warehouse control, document management and the traceability the authority requires.",
+        "title": "A facility auditable end to end",
+        "subtitle": "Book a demo and we'll show you the video counting, geofences and traceability ANAM, IMMEX and OEA require.",
         "button": "Book a Demo"
       }
     }
@@ -962,8 +962,8 @@
   "platformPage": {
     "hero": {
       "eyebrow": "The platform",
-      "title": "One platform for your entire",
-      "titleAccent": "supply chain",
+      "title": "Your entire supply chain on",
+      "titleAccent": "one platform",
       "subtitle": "When every system speaks a different language, you lose hours reconciling data and money on half-empty trucks. Geodot unifies WMS, TMS, routing and palletizing in one platform: the routing engine and the palletizer work together, in real time, to load to 99% and route by business value.",
       "cta": "Book your demo"
     },
@@ -972,7 +972,7 @@
       "description": "Geodot doesn't replace your ERP, it amplifies it. We integrate with SAP, BASIS and Oracle through our own APIs, down to a level of detail SAP S/4HANA can't reach: routing and palletizing calculated together, with 300+ parameters per SKU."
     },
     "cta": {
-      "title": "What's your biggest logistics leak?",
+      "title": "Where is your money leaking out today?",
       "subtitle": "Trucks at 85%, routes planned by hand, rejections you catch too late. Book a demo and we'll show you, in your own operation, how much you can recover.",
       "button": "Book your demo"
     }
@@ -999,9 +999,9 @@
   "casesPage": {
     "hero": {
       "eyebrow": "Success stories",
-      "title": "Measurable results, not",
-      "titleAccent": "transformation promises",
-      "subtitle": "Bottlers, dairy, government and bonded warehouses have already recovered costs with Geodot. These are the numbers behind each operation —and yours could be next.",
+      "title": "Numbers you can measure, not",
+      "titleAccent": "consultant promises",
+      "subtitle": "Bottlers, dairy, government and bonded warehouses have already recovered costs with Geodot. These are the numbers —the next one could be yours.",
       "cta": "I want these results"
     },
     "list": {
@@ -1035,7 +1035,7 @@
       "eyebrow": "About us",
       "title": "Born from operations,",
       "titleAccent": "not from a lab",
-      "subtitle": "40+ combined years moving trucks and 15+ with leading bottlers. We built Geodot because we've fought the same fires you do —so we never need it explained why the glass goes on the bottom.",
+      "subtitle": "40+ combined years moving trucks and 15+ with leading bottlers. We built Geodot because we've fought the same fires you do —no one has to explain to us what a safety margin is or why the glass goes on the bottom.",
       "cta": "Book a call"
     },
     "mission": {

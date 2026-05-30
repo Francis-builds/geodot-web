@@ -106,8 +106,8 @@
     },
     "problem": {
       "eyebrow": "El problema",
-      "title": "Tu logística pierde plata por fugas que",
-      "titleAccent": "no puedes ver",
+      "title": "Tu logística pierde plata por fugas",
+      "titleAccent": "que nadie está viendo",
       "points": [
         "El 91% de tus camiones sale con espacio sin usar.",
         "Tu equipo planifica rutas a mano, 3 horas por día.",
@@ -135,14 +135,14 @@
     },
     "platform": {
       "eyebrow": "La plataforma",
-      "title": "Una sola plataforma.",
-      "titleAccent": "Toda tu logística conectada.",
-      "description": "Almacén, transporte, ruteo y paletizado trabajando juntos en tiempo real. No reemplaza tu ERP: lo potencia."
+      "title": "Una plataforma.",
+      "titleAccent": "Toda tu cadena, conectada y optimizada.",
+      "description": "Almacén, transporte, ruteo y paletizado trabajando como uno solo, en tiempo real. No reemplaza tu ERP: lo potencia."
     },
     "journey": {
       "eyebrow": "De punto a punto",
-      "title": "Conectamos cada punto",
-      "titleAccent": "de tu cadena.",
+      "title": "De la recepción a la firma,",
+      "titleAccent": "sin un solo punto ciego.",
       "stages": {
         "warehouse": {
           "title": "Almacén",
@@ -166,12 +166,12 @@
       {
         "value": 10,
         "suffix": "%",
-        "label": "Ahorro en transporte"
+        "label": "Menos costo de transporte"
       },
       {
         "value": 20,
         "suffix": "%",
-        "label": "Menos kilómetros"
+        "label": "Menos kilómetros en ruta"
       },
       {
         "value": 30,
@@ -181,12 +181,12 @@
       {
         "value": 100,
         "suffix": "%",
-        "label": "Visibilidad en tiempo real"
+        "label": "Visibilidad de flota, en vivo"
       }
     ],
     "cases": {
       "eyebrow": "Casos de éxito",
-      "title": "Resultados reales, no promesas",
+      "title": "Números reales de operaciones como la tuya",
       "items": [
         {
           "metric": "−10%",
@@ -206,15 +206,15 @@
       ]
     },
     "cta": {
-      "title": "Calculá cuánto estás perdiendo hoy",
-      "subtitle": "Agendá una demo de 30 minutos y te mostramos tu ahorro con tus propios datos.",
+      "title": "Mirá cuánta plata estás dejando en la calle",
+      "subtitle": "30 minutos con tus propios datos y te mostramos exactamente dónde están tus fugas y cuánto valen.",
       "button": "Agendar Demo"
     },
     "multimodal": {
       "eyebrow": "Logística multimodal",
-      "title": "Mové tu carga por",
+      "title": "Una plataforma para mover tu carga por",
       "titleAccent": "mar, aire y tierra",
-      "subtitle": "Una sola plataforma para orquestar todos los modos de transporte, con la misma visibilidad y optimización de punta a punta.",
+      "subtitle": "Mar, aire, tierra y ferrocarril en un solo tablero: la misma visibilidad y la misma optimización, de punta a punta.",
       "modes": [
         {
           "key": "sea",
@@ -243,14 +243,14 @@
   "modules": {
     "wms": {
       "name": "WMS",
-      "tagline": "Inventario exacto al 99.9%, sin sorpresas",
+      "tagline": "Inventario exacto al 99.9%, hasta el último pack",
       "eyebrow": "Plataforma",
       "title": "Gestión de Almacenes",
       "titleAccent": "con IA",
       "subtitle": "El WMS de Geodot ve lo que tu ERP no ve: cada pack, cada lote, cada fecha de vencimiento. FEFO automático, vida útil por cliente y picking optimizado con IA para que dejen de rechazarte.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
-        "title": "Tu almacén pierde dinero donde no estás mirando",
+        "title": "Tu almacén tira plata donde nadie está mirando",
         "points": [
           "Producto vencido: te enterás de la caducidad cuando ya no podés venderlo.",
           "Picking lento: tus operarios caminan de más sin una ruta optimizada.",
@@ -317,21 +317,21 @@
         }
       ],
       "cta": {
-        "title": "Tomá el control de tu almacén, hasta el último pack",
+        "title": "Controlá tu almacén hasta el último pack",
         "subtitle": "Agendá una demo y te mostramos el WMS funcionando con tus propios SKUs.",
         "button": "Agendar Demo"
       }
     },
     "tms": {
       "name": "TMS",
-      "tagline": "Tu flota bajo control, propia o tercerizada",
+      "tagline": "Cada camión bajo control, sea propio o tercerizado",
       "eyebrow": "Plataforma",
       "title": "Gestión de Transporte",
       "titleAccent": "en tiempo real",
       "subtitle": "Gestioná flota propia y tercerizada desde una sola pantalla. Tracking en vivo, documentación al día, liquidación automática y costos atribuidos a cada ruta y cliente.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
-        "title": "El transporte es tu mayor costo y tu mayor punto ciego",
+        "title": "El transporte es tu mayor costo y tu peor punto ciego",
         "points": [
           "Sin visibilidad: no sabés dónde están tus camiones ahora mismo.",
           "Terceros sin control: transportistas que operan a su manera.",
@@ -398,21 +398,21 @@
         }
       ],
       "cta": {
-        "title": "Poné tu flota completa bajo control",
+        "title": "Poné cada camión bajo control, propio o tercerizado",
         "subtitle": "Agendá una demo y unificá flota propia y tercerizada en una sola pantalla.",
         "button": "Agendar Demo"
       }
     },
     "paletizado": {
       "name": "Paletizado Inteligente",
-      "tagline": "De 85% a 99% de carga, sin margen de seguridad",
+      "tagline": "Del 85% al 99% de carga, sin dejar planchada",
       "eyebrow": "Plataforma",
       "title": "Paletizado",
       "titleAccent": "Inteligente",
-      "subtitle": "El único sistema que calcula el paletizado mientras rutea. Sabe exactamente qué entra en cada camión antes de que salga, para que cargues al 100% sin miedo a que no entre.",
+      "subtitle": "El único sistema que paletiza mientras rutea. Sabe exactamente qué entra en cada camión antes de cargarlo, para que cargues al 100% sin dejar planchada por las dudas.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
-        "title": "1 de cada 7 camiones viaja con espacio vacío",
+        "title": "1 de cada 7 camiones sale con aire adentro",
         "points": [
           "Margen de seguridad: cargás al 85% \"por las dudas\" de que no entre.",
           "Reglas en la cabeza: el paletizador experto sabe, pero el sistema no.",
@@ -486,14 +486,14 @@
     },
     "torreControl": {
       "name": "Torre de Control",
-      "tagline": "Visibilidad total en tiempo real",
+      "tagline": "Ve, anticipa y actúa sobre toda tu operación",
       "eyebrow": "Plataforma",
       "title": "Torre de Control",
       "titleAccent": "en tiempo real",
-      "subtitle": "Un solo tablero para ver, anticipar y actuar sobre toda tu cadena, del almacén a la última entrega. Lo que antes descubrías por una queja, ahora lo resolvés antes de que pase.",
+      "subtitle": "Un solo tablero para ver, anticipar y actuar sobre toda tu cadena, del almacén a la última entrega. Lo que antes te llegaba como queja, ahora lo resolvés antes de que pase.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
-        "title": "Operás a ciegas hasta que ya es tarde para reaccionar",
+        "title": "Operás a ciegas hasta que el problema ya te explotó",
         "points": [
           "Información fragmentada: cada sistema muestra su propio pedazo.",
           "Reacción tardía: te enterás de los problemas cuando ya impactaron.",
@@ -628,8 +628,8 @@
         ]
       },
       "cta": {
-        "title": "¿Listo para cargar tus camiones al 100%?",
-        "subtitle": "Agendá una demo y te mostramos, con tu operación, cómo pasar del 85% al 99% de carga.",
+        "title": "Cargá al 100% antes de que arranque el camión",
+        "subtitle": "Agendá una demo y te mostramos, con tu operación, cómo pasar del 85% al 99% sin dejar planchada.",
         "button": "Agendar Demo"
       }
     },
@@ -693,8 +693,8 @@
         ]
       },
       "cta": {
-        "title": "¿Cuánto pierdes al mes por producto vencido?",
-        "subtitle": "Agendá una demo y te mostramos cómo eliminar esas pérdidas y los rechazos por vida útil.",
+        "title": "Dejá de tirar producto vencido cada mes",
+        "subtitle": "Agendá una demo y te mostramos cómo cortar las mermas por vencimiento y los rechazos por vida útil.",
         "button": "Agendar Demo"
       }
     },
@@ -758,8 +758,8 @@
         ]
       },
       "cta": {
-        "title": "¿Listo para modernizar tu servicio de recolección?",
-        "subtitle": "Agendá una reunión y te entregamos un diagnóstico inicial de ahorro sin costo.",
+        "title": "Menos kilómetros, menos quejas, menos CO₂",
+        "subtitle": "Agendá una reunión y te entregamos un diagnóstico de ahorro de tus rutas, sin costo.",
         "button": "Agendar Reunión"
       }
     },
@@ -823,8 +823,8 @@
         ]
       },
       "cta": {
-        "title": "¿Listo para diferenciarte de la competencia?",
-        "subtitle": "Agendá una demo y te mostramos cómo gestionar todas tus cuentas desde una sola plataforma.",
+        "title": "Gestioná todas tus cuentas desde una sola pantalla",
+        "subtitle": "Agendá una demo y te mostramos cómo facturar a tiempo y mostrarle a cada cliente su operación en vivo.",
         "button": "Agendar Demo"
       }
     },
@@ -888,7 +888,7 @@
         ]
       },
       "cta": {
-        "title": "¿Listo para una logística sin tolerancia al error?",
+        "title": "Logística que no tolera ni un grado fuera de rango",
         "subtitle": "Agendá una demo y te mostramos cómo garantizar cadena de frío, trazabilidad y dispatch inteligente en una sola plataforma.",
         "button": "Agendar Demo"
       }
@@ -953,8 +953,8 @@
         ]
       },
       "cta": {
-        "title": "¿Listo para un recinto auditable de extremo a extremo?",
-        "subtitle": "Agendá una demo y te mostramos cómo digitalizar el control del almacén, la gestión documental y la trazabilidad que la autoridad exige.",
+        "title": "Un recinto auditable de extremo a extremo",
+        "subtitle": "Agendá una demo y te mostramos el conteo en video, las geocercas y la trazabilidad que ANAM, IMMEX y OEA exigen.",
         "button": "Agendar Demo"
       }
     }
@@ -962,8 +962,8 @@
   "platformPage": {
     "hero": {
       "eyebrow": "La plataforma",
-      "title": "Una sola plataforma para toda tu",
-      "titleAccent": "cadena logística",
+      "title": "Toda tu cadena logística en",
+      "titleAccent": "una sola plataforma",
       "subtitle": "Cuando cada sistema habla un idioma distinto, pierdes horas reconciliando datos y dinero en camiones a medias. Geodot integra WMS, TMS, ruteo y paletizado en una sola plataforma: el motor de ruteo y el paletizador trabajan juntos, en tiempo real, para cargar al 99% y rutear por valor de negocio.",
       "cta": "Agendá tu demo"
     },
@@ -972,7 +972,7 @@
       "description": "Geodot no reemplaza tu ERP, lo potencia. Se integra con SAP, BASIS y Oracle vía APIs propias, y suma el detalle que ni SAP S/4HANA alcanza: ruteo y paletizado calculados a la vez, con +300 parámetros por SKU."
     },
     "cta": {
-      "title": "¿Cuál es tu mayor fuga logística?",
+      "title": "¿Dónde se te escapa la plata hoy?",
       "subtitle": "Camiones al 85%, rutas a mano, rechazos que descubrís tarde. Agendá una demo y te mostramos en tu operación cuánto podés recuperar.",
       "button": "Agendá tu demo"
     }
@@ -999,9 +999,9 @@
   "casesPage": {
     "hero": {
       "eyebrow": "Casos de éxito",
-      "title": "Resultados medibles, no",
-      "titleAccent": "promesas de transformación",
-      "subtitle": "Embotelladores, lácteos, gobierno y recintos fiscales ya recuperaron costos con Geodot. Estos son los números detrás de cada operación —y el tuyo puede ser el próximo.",
+      "title": "Números medibles, no",
+      "titleAccent": "promesas de consultor",
+      "subtitle": "Embotelladores, lácteos, gobierno y recintos fiscales ya recuperaron costos con Geodot. Estos son los números —el próximo puede ser el tuyo.",
       "cta": "Quiero estos resultados"
     },
     "list": {
@@ -1035,7 +1035,7 @@
       "eyebrow": "Nosotros",
       "title": "Nacimos de la operación,",
       "titleAccent": "no del laboratorio",
-      "subtitle": "+40 años combinados moviendo camiones y +15 con embotelladoras líderes. Creamos Geodot porque vivimos los mismos incendios que vos: por eso no hay que explicarnos qué es una planchada.",
+      "subtitle": "+40 años combinados moviendo camiones y +15 con embotelladoras líderes. Geodot nació porque vivimos los mismos incendios que vos: no hay que explicarnos qué es una planchada ni por qué el vidrio va abajo.",
       "cta": "Agendá una llamada"
     },
     "mission": {
