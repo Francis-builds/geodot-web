@@ -92,7 +92,7 @@ function AnimatedJourney({
                 </span>
               )}
               <h2 className="text-heading-xl md:text-display-lg font-semibold leading-[1.08] tracking-[-0.01em]">
-                {title} {titleAccent && <span className="text-gradient-brand">{titleAccent}</span>}
+                {title} {titleAccent && <span className="text-accent">{titleAccent}</span>}
               </h2>
             </header>
 
@@ -300,7 +300,7 @@ function StaticJourney({
             </span>
           )}
           <h2 className="text-heading-xl md:text-display-lg font-semibold leading-[1.08] tracking-[-0.01em]">
-            {title} {titleAccent && <span className="text-gradient-brand">{titleAccent}</span>}
+            {title} {titleAccent && <span className="text-accent">{titleAccent}</span>}
           </h2>
         </header>
         <ol className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">

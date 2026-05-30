@@ -43,9 +43,10 @@ export function SectionHeader({
 }) {
   const dark = tone === "dark";
   const alignment = align === "center" ? "mx-auto text-center" : "text-left";
-  const accentClass = accentGradient
-    ? "text-gradient-brand"
-    : dark ? "text-teal-400" : "text-teal-500";
+  // Solid brand accent by surface tone (no gradient text — design-system rule).
+  // accentGradient kept for API compat; both paths resolve to a tone-correct teal.
+  void accentGradient;
+  const accentClass = dark ? "text-accent" : "text-accent-strong";
   return (
     <Reveal direction="up" className={`mb-12 max-w-3xl ${alignment}`}>
       {eyebrow && (

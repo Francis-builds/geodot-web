@@ -71,7 +71,7 @@ export function Nav() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background,box-shadow,border-color] duration-300 ${
         solid
-          ? "glass border-b border-navy-100/80 shadow-[0_8px_30px_-12px_rgba(14,23,45,0.25)]"
+          ? "glass border-b border-navy-100/80 shadow-nav"
           : "border-b border-transparent bg-transparent"
       }`}
     >

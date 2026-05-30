@@ -66,7 +66,7 @@ export function Hero({
             )}
             <h1 className="animate-rise text-[clamp(2.75rem,7vw,5.5rem)] font-bold leading-[1.02] tracking-[-0.02em]" style={{ animationDelay: "80ms" }}>
               {title}{" "}
-              {titleAccent && <span className="text-gradient-brand">{titleAccent}</span>}
+              {titleAccent && <span className="text-accent">{titleAccent}</span>}
             </h1>
             <p className="animate-rise mt-6 max-w-xl text-body-lg text-navy-200" style={{ animationDelay: "180ms" }}>
               {subtitle}
@@ -103,7 +103,7 @@ export function Hero({
             </span>
           )}
           <h1 className="text-display-lg md:text-display-2xl font-bold leading-tight">
-            {title} {titleAccent && <span className="text-gradient-brand">{titleAccent}</span>}
+            {title} {titleAccent && <span className="text-accent">{titleAccent}</span>}
           </h1>
           <p className={`mt-6 text-body-lg ${dark ? "text-navy-200" : "text-navy-600"}`}>{subtitle}</p>
           {(primaryCta || secondaryCta) && (

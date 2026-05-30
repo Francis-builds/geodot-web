@@ -13,7 +13,7 @@ export function ProblemStats({ eyebrow, title, titleAccent, points, stats }: {
           <ul className="space-y-4">
             {points.map((p, i) => (
               <li key={i} className="flex gap-3 text-body-md text-navy-700">
-                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-magenta-500 shadow-[0_0_0_4px_rgba(212,20,90,0.12)]" />{p}
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-magenta-500 shadow-ring-magenta" />{p}
               </li>
             ))}
           </ul>

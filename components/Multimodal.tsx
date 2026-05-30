@@ -22,7 +22,7 @@ export function Multimodal({
         <Reveal className="mb-14 max-w-3xl">
           <span className="eyebrow-dot mb-4 inline-block text-overline font-semibold uppercase tracking-wide text-teal-300">{eyebrow}</span>
           <h2 className="text-display-lg font-bold leading-tight">
-            {title} <span className="text-gradient-brand">{titleAccent}</span>
+            {title} <span className="text-accent">{titleAccent}</span>
           </h2>
           <p className="mt-5 text-body-lg text-navy-200">{subtitle}</p>
         </Reveal>
