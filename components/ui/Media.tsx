@@ -24,7 +24,7 @@ export function Media({
   ratio = "4/3",
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
-  overlay = true,
+  overlay = false,
   rounded = true,
   className = "",
 }: {
