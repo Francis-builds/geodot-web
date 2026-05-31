@@ -146,19 +146,31 @@
       "stages": {
         "warehouse": {
           "title": "Almacén",
-          "body": "Recepción, ubicación y picking con IA. FEFO automático e inventario preciso al 99.9%."
+          "body": "Recepción, ubicación y picking con IA. FEFO automático e inventario preciso al 99.9%.",
+          "metric": "99.9%",
+          "metricLabel": "inventario exacto",
+          "image": "/images/warehouse/iwms.jpg"
         },
         "transport": {
           "title": "Transporte",
-          "body": "Flota propia y tercerizada en una sola vista. Cada envío sale con su documentación al día."
+          "body": "Flota propia y tercerizada en una sola vista. Cada envío sale con su documentación al día.",
+          "metric": "99%",
+          "metricLabel": "de carga por camión",
+          "image": "/images/fleet/itms.jpg"
         },
         "route": {
           "title": "Ruteo",
-          "body": "Rutas óptimas al instante, calculadas junto al paletizado. Menos kilómetros, menos costo."
+          "body": "Rutas óptimas al instante, calculadas junto al paletizado. Menos kilómetros, menos costo.",
+          "metric": "-20%",
+          "metricLabel": "kilómetros en ruta",
+          "image": "/images/fleet/fleet-tracking.jpg"
         },
         "delivery": {
           "title": "Entrega",
-          "body": "Prueba de entrega digital y trazabilidad total. El último punto cierra el ciclo."
+          "body": "Prueba de entrega digital y trazabilidad total. El último punto cierra el ciclo.",
+          "metric": "100%",
+          "metricLabel": "visible en tiempo real",
+          "image": "/images/torre/torre-control-room.jpg"
         }
       }
     },

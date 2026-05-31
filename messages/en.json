@@ -146,19 +146,31 @@
       "stages": {
         "warehouse": {
           "title": "Warehouse",
-          "body": "AI-driven receiving, putaway and picking. Automatic FEFO and 99.9% inventory accuracy."
+          "body": "AI-driven receiving, putaway and picking. Automatic FEFO and 99.9% inventory accuracy.",
+          "metric": "99.9%",
+          "metricLabel": "inventory accuracy",
+          "image": "/images/warehouse/iwms.jpg"
         },
         "transport": {
           "title": "Transport",
-          "body": "Owned and outsourced fleet in one view. Every shipment leaves with its paperwork in order."
+          "body": "Owned and outsourced fleet in one view. Every shipment leaves with its paperwork in order.",
+          "metric": "99%",
+          "metricLabel": "truck load",
+          "image": "/images/fleet/itms.jpg"
         },
         "route": {
           "title": "Routing",
-          "body": "Optimal routes instantly, computed alongside palletizing. Fewer miles, lower cost."
+          "body": "Optimal routes instantly, computed alongside palletizing. Fewer miles, lower cost.",
+          "metric": "-20%",
+          "metricLabel": "route kilometers",
+          "image": "/images/fleet/fleet-tracking.jpg"
         },
         "delivery": {
           "title": "Delivery",
-          "body": "Digital proof of delivery and full traceability. The last point closes the loop."
+          "body": "Digital proof of delivery and full traceability. The last point closes the loop.",
+          "metric": "100%",
+          "metricLabel": "visible in real time",
+          "image": "/images/torre/torre-control-room.jpg"
         }
       }
     },

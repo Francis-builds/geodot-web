@@ -11,3 +11,5 @@ next-env.d.ts
 
 # Internal marketing doc — real client names, keep out of public repo
 .claude/product-marketing-context.md
+
+.playwright-mcp/

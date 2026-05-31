@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -70,6 +71,7 @@ export default async function LocaleLayout({
     <html lang={locale === "en" ? "en" : "es-MX"} data-scroll-behavior="smooth" className={`${spaceGrotesk.variable} ${hanken.variable}`}>
       <body className="antialiased">
         <NextIntlClientProvider>
+          <SmoothScroll />
           <Nav />
           <main className="pt-16 md:pt-[72px]">{children}</main>
           <Footer />

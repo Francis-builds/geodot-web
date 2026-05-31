@@ -2,7 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Hero } from "@/components/Hero";
 import { ProblemStats } from "@/components/ProblemStats";
 import { ModuleGrid } from "@/components/ModuleGrid";
-import { ConnectThePoints } from "@/components/ConnectThePoints";
+import { JourneyScroll } from "@/components/JourneyScroll";
 import { Multimodal } from "@/components/Multimodal";
 import { MetricsBand } from "@/components/MetricsBand";
 import { CasesStrip } from "@/components/CasesStrip";
@@ -36,7 +36,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         stats={t.raw("problem.stats") as { problem: string; impact: string }[]}
       />
       <ModuleGrid eyebrow={t("platform.eyebrow")} title={t("platform.title")} titleAccent={t("platform.titleAccent")} description={t("platform.description")} />
-      <ConnectThePoints eyebrow={t("journey.eyebrow")} title={t("journey.title")} titleAccent={t("journey.titleAccent")} />
+      <JourneyScroll eyebrow={t("journey.eyebrow")} title={t("journey.title")} titleAccent={t("journey.titleAccent")} />
       <Multimodal
         eyebrow={t("multimodal.eyebrow")} title={t("multimodal.title")} titleAccent={t("multimodal.titleAccent")}
         subtitle={t("multimodal.subtitle")}
