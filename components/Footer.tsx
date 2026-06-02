@@ -83,6 +83,9 @@ export function Footer() {
           <ul className="space-y-2.5">
             <li><Link href="/recursos" className={linkClass}>{tNav("recursos")}</Link></li>
             <li><Link href="/casos-exito" className={linkClass}>{t("cases")}</Link></li>
+            <li><Link href="/integraciones" className={linkClass}>{tNav("integraciones")}</Link></li>
+            <li><Link href="/partners" className={linkClass}>{tNav("partners")}</Link></li>
+            <li><Link href="/preguntas-frecuentes" className={linkClass}>{t("faq")}</Link></li>
           </ul>
         </div>
 

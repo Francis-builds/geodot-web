@@ -55,6 +55,8 @@ export function Nav() {
   // Plataforma + Industrias are dropdown menus (see <DesktopNavMenus> /
   // <MobileNavMenus>); the rest stay as plain links.
   const links = [
+    { href: "/integraciones", label: t("integraciones") },
+    { href: "/partners", label: t("partners") },
     { href: "/casos-exito", label: t("casos") },
     { href: "/recursos", label: t("recursos") },
     { href: "/nosotros", label: t("nosotros") },

@@ -13,7 +13,9 @@
     "nosotros": "About",
     "cta": "Book a Demo",
     "platformAll": "Explore the platform",
-    "industriesAll": "All industries"
+    "industriesAll": "All industries",
+    "integraciones": "Integrations",
+    "partners": "Partners"
   },
   "footer": {
     "tagline": "Load to 100%, route smarter, see everything in real time.",
@@ -30,7 +32,8 @@
     "allIndustries": "All industries",
     "legal": "Legal",
     "privacy": "Privacy",
-    "terms": "Terms"
+    "terms": "Terms",
+    "faq": "FAQ"
   },
   "blog": {
     "hero": {
@@ -1195,6 +1198,256 @@
           ]
         }
       ]
+    }
+  },
+  "faqPage": {
+    "hero": {
+      "eyebrow": "FAQ",
+      "title": "Everything you want to know",
+      "titleAccent": "before the demo",
+      "subtitle": "The questions operations, IT, and finance teams ask us most. Straight answers, with numbers, no fluff.",
+      "cta": "Book a demo"
+    },
+    "groups": [
+      {
+        "group": "Platform",
+        "items": [
+          {
+            "q": "What exactly does the platform include?",
+            "a": "WMS, TMS, smart routing, load planning, Control Tower, cold chain, document manager, and yard/dock scheduling modules. Everything connected in one cloud-native platform: start with the modules you need and add the rest whenever you want."
+          },
+          {
+            "q": "Can I really load trucks to 100%?",
+            "a": "Yes. We calculate load planning and routing at the same time, so we know exactly what fits in the truck before we route. A regional bottler went from 85% to 99% load and cut transport cost by more than 8%."
+          },
+          {
+            "q": "Our operation is very specific. Will you understand it?",
+            "a": "That is exactly why we exist. Geodot was built from real operations: returnables, FEFO per customer, shelf-life per customer, cold chain, bonded warehouses. It is highly configurable, with over 300 parameters per SKU."
+          },
+          {
+            "q": "Do I need to change my hardware?",
+            "a": "No. We work with standard Android, your existing Zebra scanners, and any GPS provider. You do not have to buy new equipment to get started."
+          },
+          {
+            "q": "What uptime does the platform offer?",
+            "a": "99.9% availability. It is cloud-native, with real-time visibility and traceability from day one."
+          }
+        ]
+      },
+      {
+        "group": "Implementation",
+        "items": [
+          {
+            "q": "How long does implementation take?",
+            "a": "Basic routing in 4 to 6 weeks. WMS plus routing in 2 to 3 months. Full platform in 3 to 4 months. Results in 90 days, not a year."
+          },
+          {
+            "q": "Do I have to replace my ERP?",
+            "a": "No. Geodot powers your ERP, it does not replace it. We integrate via APIs with SAP, BASIS, and Oracle, reaching a level of detail (pack, pallet, location, load plan) that even SAP S/4HANA does not."
+          },
+          {
+            "q": "What about the knowledge living in our expert's head?",
+            "a": "We document and automate it. Load-planning and operating rules are codified per SKU, so you no longer depend on one person being there to build the load."
+          },
+          {
+            "q": "What does onboarding look like?",
+            "a": "Guided implementation by a team that has lived the operation. Native-language support, with presence in Mexico and across LATAM."
+          }
+        ]
+      },
+      {
+        "group": "Integration",
+        "items": [
+          {
+            "q": "Which systems do you integrate with?",
+            "a": "SAP (TM/EWM), Oracle (OTM), BASIS (Release 53), local SQL systems, refrigeration telemetry, billing systems, and even TXT files. We do it through our own APIs."
+          },
+          {
+            "q": "Connecting to BASIS or SAP is usually a headache. How do you handle it?",
+            "a": "With our own RESTful APIs and real experience integrating Coca-Cola bottlers on BASIS Release 53. The integration is deep, not a patch on top."
+          },
+          {
+            "q": "Does it replace SAP TM or EWM?",
+            "a": "No. It powers them. SAP remains your system of record; Geodot adds the logistics execution layer (routing + load planning in real time) that those suites do not solve together."
+          },
+          {
+            "q": "Do you handle cold-chain telemetry?",
+            "a": "Yes. We integrate temperature sensors for 100% traceability and early alerts. In pharma and food cases we have reached up to 95% fewer temperature excursions."
+          }
+        ]
+      },
+      {
+        "group": "Commercial",
+        "items": [
+          {
+            "q": "How does pricing work?",
+            "a": "SaaS subscription based on number of users, operation volume, and contracted modules. Custom models are available. We quote after the demo."
+          },
+          {
+            "q": "What is the typical ROI?",
+            "a": "Under 12 months, and 4 to 6 months in large operations. Between 5% and 10% lower transport cost, 15% to 20% fewer kilometers, and up to 25% fewer rejected orders."
+          },
+          {
+            "q": "Do you offer support in Spanish?",
+            "a": "Yes. We are a regional company with presence in Mexico, Argentina, Colombia, and Ecuador. The whole team is native Spanish-speaking."
+          },
+          {
+            "q": "What size of operation makes sense?",
+            "a": "Medium to large operations with intensive physical logistics: from dozens to hundreds of trucks and hundreds of SKUs. If your operation is 1 to 5 vehicles with no IT team, we are probably not the right fit yet."
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Still have a question?",
+      "subtitle": "Book a 30-minute demo and we will answer with your operation on the table.",
+      "button": "Book a demo"
+    }
+  },
+  "integrationsPage": {
+    "hero": {
+      "eyebrow": "For IT teams",
+      "title": "We power your ERP,",
+      "titleAccent": "we don't replace it",
+      "subtitle": "Geodot integrates with your systems through its own APIs and adds the logistics execution layer your ERP cannot solve. No rip-and-replace, in production in 90 days.",
+      "cta": "Talk to a specialist",
+      "cta2": "See the platform"
+    },
+    "how": {
+      "eyebrow": "How it integrates",
+      "title": "Your ERP stays",
+      "titleAccent": "your system of record",
+      "description": "Geodot does not compete with SAP, Oracle, or BASIS. It connects on top and adds real-time routing and load planning, at a level of detail those suites do not reach.",
+      "points": [
+        {
+          "title": "Connects, doesn't replace",
+          "body": "Your ERP keeps master data, inventory, and billing. Geodot reads and writes via API, without touching your core or breaking what already works."
+        },
+        {
+          "title": "Reaches the fine detail",
+          "body": "Pack, pallet, location, load plan, shelf-life per customer. An operational level even SAP S/4HANA does not cover, with no ERP customization required."
+        },
+        {
+          "title": "In production in 90 days",
+          "body": "Basic routing in 4 to 6 weeks, full platform in 3 to 4 months. Measurable results from the first month, not after a year-long project."
+        }
+      ]
+    },
+    "systems": {
+      "eyebrow": "Systems we connect",
+      "title": "Deep integration,",
+      "titleAccent": "through our own APIs",
+      "description": "From global suites to local systems and field telemetry. If your data exists, we connect it.",
+      "items": [
+        {
+          "name": "SAP (TM / EWM)",
+          "detail": "API integration with SAP Transportation and Extended Warehouse. Geodot runs the routing and load planning SAP does not solve together."
+        },
+        {
+          "name": "Oracle (OTM)",
+          "detail": "Connection with Oracle Transportation Management to sync orders, routes, and deliveries in real time."
+        },
+        {
+          "name": "BASIS (Release 53)",
+          "detail": "Proven integration with the core ERP of Coca-Cola bottlers, including returnables and load-margin rules."
+        },
+        {
+          "name": "Local systems (SQL)",
+          "detail": "Read and write against your own SQL databases and in-house builds, without migrating your data."
+        },
+        {
+          "name": "Refrigeration telemetry",
+          "detail": "Temperature sensors for cold-chain traceability, early alerts, and 100% logging."
+        },
+        {
+          "name": "Billing and TXT files",
+          "detail": "Connection with billing systems and flat-file (TXT) exchange when the legacy system requires it."
+        }
+      ]
+    },
+    "speed": {
+      "eyebrow": "No rip-and-replace",
+      "title": "90 days, not 12 months",
+      "body": "While a traditional suite takes 6 to 12 months to launch, Geodot goes into production in 90 days on top of your current systems. No ERP replacement, no operational downtime."
+    },
+    "cta": {
+      "title": "Want to validate the integration with your stack?",
+      "subtitle": "Book a technical session and we will show you how we connect to your ERP and field systems.",
+      "button": "Book a technical session"
+    }
+  },
+  "partnersPage": {
+    "hero": {
+      "eyebrow": "Geodot Alliance Program",
+      "title": "Grow with us",
+      "titleAccent": "across LATAM",
+      "subtitle": "A partner program for integrators, technology partners, and strategic allies who want to bring smart logistics to their customers across the region.",
+      "cta": "Apply as a partner"
+    },
+    "categories": {
+      "eyebrow": "Categories",
+      "title": "Three ways to",
+      "titleAccent": "work together",
+      "description": "Choose the role that best fits your business. Every category gets access to the full tier program and the services model.",
+      "items": [
+        {
+          "name": "Channel Partner",
+          "body": "You resell and implement Geodot with your own customers. Ideal for integrators and logistics consultancies with commercial presence in the region."
+        },
+        {
+          "name": "Technology Partner",
+          "body": "You connect your product or technology with the platform. Built for hardware makers, ISVs, and telemetry providers that add value to the ecosystem."
+        },
+        {
+          "name": "Strategic Alliance",
+          "body": "We build a long-term joint go-to-market. For allies who want to co-develop vertical or regional solutions with Geodot."
+        }
+      ]
+    },
+    "tiers": {
+      "eyebrow": "Tiers",
+      "title": "Three tiers,",
+      "titleAccent": "same commitment",
+      "description": "Your tier is set by the annual business volume generated with Geodot. More volume means more benefits and better margin.",
+      "items": [
+        {
+          "name": "Gold",
+          "range": "Under 500K USD/year",
+          "body": "The entry point to the program. Access to sales materials, base training, and support for your first implementations."
+        },
+        {
+          "name": "Platinum",
+          "range": "500K to 5M USD/year",
+          "body": "For established partners. Better commercial terms, priority technical support, and co-marketing."
+        },
+        {
+          "name": "Diamond",
+          "range": "Over 5M USD/year",
+          "body": "The highest tier. Preferred margin, joint roadmap, and positioning as a strategic Geodot ally in the region."
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "Services model",
+      "title": "You choose",
+      "titleAccent": "how much you run",
+      "description": "How implementation services are split depends on who executes. The more in-house capability you have, the more margin you keep.",
+      "items": [
+        {
+          "title": "Geodot executes: 30%",
+          "body": "If Geodot performs the implementation and professional services, the partner keeps 30% of the services value. Ideal for starting without your own technical team."
+        },
+        {
+          "title": "GCIE-certified partner: 100%",
+          "body": "If your team is certified as a Geodot Certified Implementation Expert (GCIE), you execute the services yourself and keep 100% of their value."
+        }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Join the program",
+      "title": "Let's bring smart logistics to more customers",
+      "subtitle": "Tell us about your business and we will build the alliance plan that fits you best.",
+      "button": "Email Luis Perasollo"
     }
   }
 }

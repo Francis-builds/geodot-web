@@ -13,7 +13,9 @@
     "nosotros": "Nosotros",
     "cta": "Agendar Demo",
     "platformAll": "Ver toda la plataforma",
-    "industriesAll": "Ver todas las industrias"
+    "industriesAll": "Ver todas las industrias",
+    "integraciones": "Integraciones",
+    "partners": "Partners"
   },
   "footer": {
     "tagline": "Cargá al 100%, ruteá mejor y vé todo en tiempo real.",
@@ -30,7 +32,8 @@
     "allIndustries": "Todas las industrias",
     "legal": "Legal",
     "privacy": "Privacidad",
-    "terms": "Términos"
+    "terms": "Términos",
+    "faq": "Preguntas frecuentes"
   },
   "blog": {
     "hero": {
@@ -1195,6 +1198,256 @@
           ]
         }
       ]
+    }
+  },
+  "faqPage": {
+    "hero": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Todo lo que querés saber",
+      "titleAccent": "antes de la demo",
+      "subtitle": "Las dudas que más nos hacen los equipos de operaciones, TI y finanzas. Respuestas directas, con números, sin humo.",
+      "cta": "Agendar demo"
+    },
+    "groups": [
+      {
+        "group": "Plataforma",
+        "items": [
+          {
+            "q": "¿Qué incluye exactamente la plataforma?",
+            "a": "WMS, TMS, ruteo inteligente, paletizado, Torre de Control, cadena de frío, gestor documental y módulos de turnos y patio. Todo conectado en una sola plataforma cloud-native: contratás los módulos que necesitás y sumás el resto cuando quieras."
+          },
+          {
+            "q": "¿De verdad puedo cargar los camiones al 100%?",
+            "a": "Sí. Calculamos paletizado y ruteo a la vez, así sabemos exactamente qué entra en el camión antes de rutear. Un embotellador regional pasó de 85% a 99% de carga y bajó su costo de transporte más de 8%."
+          },
+          {
+            "q": "Nuestra operación es muy particular. ¿La van a entender?",
+            "a": "Por eso existimos. Geodot nació de la operación real: retornables, FEFO por cliente, vida útil por cliente, cadena de frío, recintos fiscales. Es altamente configurable, con más de 300 parámetros por SKU. No tuvimos que explicarle a nadie qué es una planchada."
+          },
+          {
+            "q": "¿Necesito cambiar mi hardware?",
+            "a": "No. Trabajamos con Android estándar, lectores Zebra existentes y cualquier proveedor de GPS. No tenés que comprar equipos nuevos para arrancar."
+          },
+          {
+            "q": "¿Qué disponibilidad tiene la plataforma?",
+            "a": "99.9% de disponibilidad. Es cloud-native, con visibilidad y trazabilidad en tiempo real desde el primer día."
+          }
+        ]
+      },
+      {
+        "group": "Implementación",
+        "items": [
+          {
+            "q": "¿Cuánto tarda implementar?",
+            "a": "Ruteo básico en 4 a 6 semanas. WMS más ruteo en 2 a 3 meses. Plataforma completa en 3 a 4 meses. Resultados en 90 días, no en un año."
+          },
+          {
+            "q": "¿Tengo que reemplazar mi ERP?",
+            "a": "No. Geodot potencia tu ERP, no lo reemplaza. Nos integramos vía APIs con SAP, BASIS y Oracle, y llegamos a un nivel de detalle (pack, pallet, ubicación, paletizado) que ni SAP S/4HANA alcanza."
+          },
+          {
+            "q": "¿Qué pasa con el conocimiento que está en la cabeza del experto?",
+            "a": "Lo documentamos y automatizamos. Las reglas de paletizado y de operación quedan codificadas por SKU, así no dependés de que una persona esté presente para armar la carga."
+          },
+          {
+            "q": "¿Cómo es el acompañamiento?",
+            "a": "Implementación acompañada por un equipo que ya vivió la operación. Soporte en español nativo, con presencia en México y LATAM."
+          }
+        ]
+      },
+      {
+        "group": "Integración",
+        "items": [
+          {
+            "q": "¿Con qué sistemas se integra?",
+            "a": "SAP (TM/EWM), Oracle (OTM), BASIS (Release 53), sistemas locales sobre SQL, telemetría de refrigeración, sistemas de facturación e incluso archivos TXT. Lo hacemos vía APIs propias."
+          },
+          {
+            "q": "Conectar con BASIS o SAP suele ser un dolor de cabeza. ¿Cómo lo resuelven?",
+            "a": "Con APIs RESTful propias y experiencia real integrando embotelladores Coca-Cola sobre BASIS Release 53. La integración es profunda, no un parche por encima."
+          },
+          {
+            "q": "¿Reemplaza a SAP TM o EWM?",
+            "a": "No. Los potencia. SAP sigue siendo tu sistema de registro; Geodot agrega la capa de ejecución logística (ruteo + paletizado en tiempo real) que esas suites no resuelven juntas."
+          },
+          {
+            "q": "¿Manejan telemetría de cadena de frío?",
+            "a": "Sí. Integramos sensores de temperatura para trazabilidad 100% y alertas tempranas. En casos de pharma y alimentos logramos hasta 95% menos excursiones de temperatura."
+          }
+        ]
+      },
+      {
+        "group": "Comercial",
+        "items": [
+          {
+            "q": "¿Cómo es el modelo de precios?",
+            "a": "SaaS por suscripción, según cantidad de usuarios, volumen de operaciones y módulos contratados. Hay modelos a medida disponibles. Cotizamos después de la demo."
+          },
+          {
+            "q": "¿Cuál es el ROI típico?",
+            "a": "Menos de 12 meses, y de 4 a 6 meses en operaciones grandes. Entre 5% y 10% menos de costo de transporte, 15% a 20% menos kilómetros y hasta 25% menos órdenes rechazadas."
+          },
+          {
+            "q": "¿Tienen soporte en español?",
+            "a": "Sí. Somos una empresa de la región con presencia en México, Argentina, Colombia y Ecuador. Todo el equipo es hispanohablante nativo."
+          },
+          {
+            "q": "¿Para qué tamaño de operación tiene sentido?",
+            "a": "Operaciones medianas a grandes con logística física intensiva: desde decenas hasta cientos de camiones y cientos de SKUs. Si tu operación es de 1 a 5 vehículos sin equipo de TI, probablemente todavía no seamos para vos."
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "title": "¿Te quedó alguna duda?",
+      "subtitle": "Agendá una demo de 30 minutos y te respondemos con tu operación sobre la mesa.",
+      "button": "Agendar demo"
+    }
+  },
+  "integrationsPage": {
+    "hero": {
+      "eyebrow": "Para equipos de TI",
+      "title": "Potenciamos tu ERP,",
+      "titleAccent": "no lo reemplazamos",
+      "subtitle": "Geodot se integra con tus sistemas vía APIs propias y suma la capa de ejecución logística que tu ERP no resuelve. Sin rip-and-replace, en producción en 90 días.",
+      "cta": "Hablar con un especialista",
+      "cta2": "Ver la plataforma"
+    },
+    "how": {
+      "eyebrow": "Cómo integra",
+      "title": "Tu ERP sigue siendo",
+      "titleAccent": "tu sistema de registro",
+      "description": "Geodot no compite con SAP, Oracle ni BASIS. Se conecta por encima y agrega ruteo y paletizado en tiempo real, con un nivel de detalle que esas suites no alcanzan.",
+      "points": [
+        {
+          "title": "Conecta, no reemplaza",
+          "body": "Tu ERP mantiene maestros, inventario y facturación. Geodot lee y escribe vía API, sin tocar tu núcleo ni romper lo que ya funciona."
+        },
+        {
+          "title": "Llega al detalle fino",
+          "body": "Pack, pallet, ubicación, paletizado, vida útil por cliente. Un nivel operativo que ni SAP S/4HANA cubre, y sin que tengas que personalizar tu ERP."
+        },
+        {
+          "title": "En producción en 90 días",
+          "body": "Ruteo básico en 4 a 6 semanas, plataforma completa en 3 a 4 meses. Resultados medibles desde el primer mes, no después de un año de proyecto."
+        }
+      ]
+    },
+    "systems": {
+      "eyebrow": "Sistemas que conectamos",
+      "title": "Integración profunda,",
+      "titleAccent": "vía APIs propias",
+      "description": "Desde suites globales hasta sistemas locales y telemetría de campo. Si tu dato existe, lo conectamos.",
+      "items": [
+        {
+          "name": "SAP (TM / EWM)",
+          "detail": "Integración vía API con SAP Transportation y Extended Warehouse. Geodot ejecuta el ruteo y el paletizado que SAP no resuelve en simultáneo."
+        },
+        {
+          "name": "Oracle (OTM)",
+          "detail": "Conexión con Oracle Transportation Management para sincronizar órdenes, rutas y entregas en tiempo real."
+        },
+        {
+          "name": "BASIS (Release 53)",
+          "detail": "Integración probada con el ERP central de embotelladores Coca-Cola, incluido retornables y reglas de planchada."
+        },
+        {
+          "name": "Sistemas locales (SQL)",
+          "detail": "Lectura y escritura contra bases SQL propias y desarrollos in-house, sin migrar tus datos."
+        },
+        {
+          "name": "Telemetría de refrigeración",
+          "detail": "Sensores de temperatura para trazabilidad de cadena de frío, alertas tempranas y registro 100%."
+        },
+        {
+          "name": "Facturación y archivos TXT",
+          "detail": "Conexión con sistemas de facturación e intercambio por archivos planos (TXT) cuando el sistema legacy lo requiere."
+        }
+      ]
+    },
+    "speed": {
+      "eyebrow": "Sin rip-and-replace",
+      "title": "90 días, no 12 meses",
+      "body": "Mientras una suite tradicional tarda de 6 a 12 meses en arrancar, Geodot entra en producción en 90 días sobre tus sistemas actuales. Sin reemplazar el ERP, sin frenar la operación."
+    },
+    "cta": {
+      "title": "¿Querés validar la integración con tu stack?",
+      "subtitle": "Agendá una sesión técnica y te mostramos cómo conectamos con tu ERP y tus sistemas de campo.",
+      "button": "Agendar sesión técnica"
+    }
+  },
+  "partnersPage": {
+    "hero": {
+      "eyebrow": "Geodot Alliance Program",
+      "title": "Crecé con nosotros",
+      "titleAccent": "en toda LATAM",
+      "subtitle": "Un programa de alianzas para integradores, partners tecnológicos y aliados estratégicos que quieren llevar logística inteligente a sus clientes en toda la región.",
+      "cta": "Postular como partner"
+    },
+    "categories": {
+      "eyebrow": "Categorías",
+      "title": "Tres formas de",
+      "titleAccent": "trabajar juntos",
+      "description": "Elegí el rol que mejor se adapta a tu negocio. Todas las categorías acceden al programa completo de niveles y al modelo de servicios.",
+      "items": [
+        {
+          "name": "Channel Partner",
+          "body": "Revendés e implementás Geodot con tus propios clientes. Ideal para integradores y consultoras logísticas con presencia comercial en la región."
+        },
+        {
+          "name": "Technology Partner",
+          "body": "Conectás tu producto o tecnología con la plataforma. Pensado para fabricantes de hardware, ISVs y proveedores de telemetría que suman valor al ecosistema."
+        },
+        {
+          "name": "Strategic Alliance",
+          "body": "Construimos una propuesta conjunta de mercado a largo plazo. Para aliados que quieren co-desarrollar soluciones verticales o regionales con Geodot."
+        }
+      ]
+    },
+    "tiers": {
+      "eyebrow": "Niveles",
+      "title": "Tres niveles,",
+      "titleAccent": "mismo compromiso",
+      "description": "Tu nivel se define por el volumen anual de negocio generado con Geodot. Más volumen, más beneficios y mejor margen.",
+      "items": [
+        {
+          "name": "Gold",
+          "range": "Menos de 500K USD/año",
+          "body": "El punto de entrada al programa. Acceso a materiales de venta, capacitación base y soporte para tus primeras implementaciones."
+        },
+        {
+          "name": "Platinum",
+          "range": "500K a 5M USD/año",
+          "body": "Para partners consolidados. Mejores condiciones comerciales, acompañamiento técnico prioritario y co-marketing."
+        },
+        {
+          "name": "Diamond",
+          "range": "Más de 5M USD/año",
+          "body": "El nivel más alto. Margen preferencial, roadmap conjunto y posicionamiento como aliado estratégico de Geodot en la región."
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "Modelo de servicios",
+      "title": "Vos elegís",
+      "titleAccent": "cuánto ejecutás",
+      "description": "El reparto de los servicios de implementación depende de quién ejecuta. Cuanto más capacidad propia tengas, más margen retenés.",
+      "items": [
+        {
+          "title": "Geodot ejecuta: 30%",
+          "body": "Si Geodot realiza la implementación y los servicios profesionales, el partner retiene el 30% del valor de los servicios. Ideal para empezar sin equipo técnico propio."
+        },
+        {
+          "title": "Partner certificado GCIE: 100%",
+          "body": "Si tu equipo está certificado en el Geodot Certified Implementation Expert (GCIE), ejecutás los servicios vos mismo y retenés el 100% de su valor."
+        }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Sumate al programa",
+      "title": "Llevemos logística inteligente a más clientes",
+      "subtitle": "Contanos sobre tu negocio y armamos juntos el plan de alianza que mejor te conviene.",
+      "button": "Escribir a Luis Perasollo"
     }
   }
 }
