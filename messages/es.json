@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Geodot — Carga tus camiones al 100% con IA",
+    "title": "Geodot: carga tus camiones al 100% con IA",
     "description": "WMS, TMS, ruteo y paletizado en una sola plataforma con IA. Reduce costo de transporte, elimina rechazos y gana visibilidad total. ROI en menos de 12 meses.",
-    "ogTitle": "Geodot — La logística que carga al 100% y se ve en tiempo real",
+    "ogTitle": "Geodot: la logística que carga al 100% y se ve en tiempo real",
     "ogDescription": "Menos camiones, menos rechazos, cero puntos ciegos. Ruteo + paletizado en simultáneo, integrado a tu ERP. Resultados en 90 días."
   },
   "nav": {
@@ -659,7 +659,7 @@
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Cadena de frío fragmentada: el producto sale a temperatura correcta pero el transporte no registra ni alerta — y el rechazo llega cuando ya es tarde.",
+          "Cadena de frío fragmentada: el producto sale a temperatura correcta pero el transporte no registra ni alerta, y el rechazo llega cuando ya es tarde.",
           "FEFO no controlado: lo más viejo no siempre sale primero porque el almacén no está configurado para respetar fechas de vencimiento automáticamente.",
           "Cadena de frío: el producto sale a 4°C y llega a 12°C sin que veas qué pasó en el trayecto.",
           "Recall: cuando aparece un problema no sabés a qué clientes les entregaste ese lote.",
@@ -757,7 +757,7 @@
         "items": [
           {
             "metric": "-18%",
-            "result": "Kilómetros recorridos en rutas de recolección de residuos sólidos con rediseño asistido por IA — equivalente a ~70 toneladas de CO₂ al año.",
+            "result": "Kilómetros recorridos en rutas de recolección de residuos sólidos con rediseño asistido por IA, equivalente a ~70 toneladas de CO₂ al año.",
             "client": "Municipio metropolitano"
           },
           {
@@ -789,7 +789,7 @@
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Equipos sin rastreo: no sabés en qué sitio está cada montacargas, grúa o unidad rentada — y el cliente te llama porque él tampoco sabe.",
+          "Equipos sin rastreo: no sabés en qué sitio está cada montacargas, grúa o unidad rentada, y el cliente te llama porque él tampoco sabe.",
           "Documentación manual: remisiones, tiempos de uso y facturación se arman en Excel y siempre hay discrepancias al cierre de mes.",
           "Consolidación de cargas: pedidos de varios clientes a la misma zona, difíciles de combinar a mano.",
           "Facturación y liquidación: calcular el cobro de cada servicio es manual, lento y se presta a errores.",
@@ -849,12 +849,12 @@
       "eyebrow": "Industria",
       "title": "Salud y",
       "titleAccent": "Farma",
-      "subtitle": "Vacunas, muestras clínicas y medicamentos de alto costo no toleran ni un grado fuera de rango ni una ruptura en la cadena de custodia. Geodot garantiza la trazabilidad del almacén al punto de entrega — con alertas antes del daño, no después.",
+      "subtitle": "Vacunas, muestras clínicas y medicamentos de alto costo no toleran ni un grado fuera de rango ni una ruptura en la cadena de custodia. Geodot garantiza la trazabilidad del almacén al punto de entrega, con alertas antes del daño, no después.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Red de distribución de frío fragmentada: el producto sale a 4 °C del almacén central pero el último kilómetro no tiene monitoreo — y ahí ocurre el 60 % de las excursiones.",
+          "Red de distribución de frío fragmentada: el producto sale a 4 °C del almacén central pero el último kilómetro no tiene monitoreo, y ahí ocurre el 60 % de las excursiones.",
           "Trazabilidad regulatoria: cada movimiento queda registrado con timestamp, temperatura y responsable para auditoría.",
           "Ventanas de tiempo estrictas: las muestras tienen vida útil y los traslados se miden en minutos, no en horas.",
           "Miles de SKUs con vencimientos: FIFO obligatorio por ley, lotes, controlados y trazabilidad para recalls.",
@@ -914,13 +914,13 @@
       "eyebrow": "Industria",
       "title": "Recintos",
       "titleAccent": "Fiscales",
-      "subtitle": "Un recinto bajo escrutinio de ANAM, IMMEX y OEA necesita conteo automático, evidencia en video y geocercas activas — tanto en el almacén como en el patio de maniobras y en el acceso portuario. Geodot digitaliza todo el perímetro.",
+      "subtitle": "Un recinto bajo escrutinio de ANAM, IMMEX y OEA necesita conteo automático, evidencia en video y geocercas activas, tanto en el almacén como en el patio de maniobras y en el acceso portuario. Geodot digitaliza todo el perímetro.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
           "Cumplimiento regulatorio: ANAM, IMMEX y OEA exigen inventario, video y trazabilidad integrados, con acceso remoto para la autoridad.",
-          "Sin evidencia en el acceso: las unidades entran y salen sin conteo automático de carga — la conciliación se hace a mano y siempre hay diferencias ante la autoridad.",
+          "Sin evidencia en el acceso: las unidades entran y salen sin conteo automático de carga: la conciliación se hace a mano y siempre hay diferencias ante la autoridad.",
           "Mercancía en custodia: cada movimiento dentro del recinto debe quedar registrado y auditable.",
           "Áreas diferenciadas: peligrosos, refrigerados y carga estándar conviven con reglas distintas en el mismo almacén.",
           "Conciliación física vs. documental: contar cajas que entran y salen contra lo declarado, con evidencia en video."
@@ -1016,7 +1016,7 @@
       "eyebrow": "Casos de éxito",
       "title": "Números medibles, no",
       "titleAccent": "promesas en PowerPoint",
-      "subtitle": "Embotelladores, lácteos, gobierno y recintos fiscales ya recuperaron costos con Geodot. Estos son los números —el próximo puede ser el tuyo.",
+      "subtitle": "Embotelladores, lácteos, gobierno y recintos fiscales ya recuperaron costos con Geodot. Estos son los números, y el próximo puede ser el tuyo.",
       "cta": "Quiero estos resultados"
     },
     "list": {
@@ -1116,8 +1116,8 @@
     "body": [
       "Después de más de 40 años combinados en logística, producción y tecnología, vimos siempre el mismo problema: las herramientas no resolvían la operación completa. Un sistema ruteaba pero no paletizaba. El WMS no hablaba con el TMS. Y en el medio, los equipos de operaciones haciendo malabares para que todo cerrara.",
       "Geodot nació para terminar con eso. Construimos la primera plataforma que integra WMS, TMS, ruteo y paletizado en una sola solución, donde el motor de ruteo y el paletizador trabajan juntos, en tiempo real, para cargar cada camión al 99% y rutear por valor de negocio, no solo por kilómetros.",
-      "No prometemos magia: prometemos resultados que podés medir desde el día uno —menos kilómetros, menos rechazos, menos costos y menos emisiones. Y no reemplazamos tu ERP: lo potenciamos, integrándonos con SAP, BASIS y Oracle sin romper lo que ya funciona.",
-      "Somos una empresa mexicana de tecnología con operación en México, Argentina, Colombia y Ecuador, y experiencia real en bebidas, alimentos, gobierno, pharma y recintos fiscales. Imaginamos un mundo donde cada camión sale al 100% y cada producto llega fresco al cliente correcto. Ese es el mundo que estamos construyendo —con vos."
+      "No prometemos magia: prometemos resultados que podés medir desde el día uno: menos kilómetros, menos rechazos, menos costos y menos emisiones. Y no reemplazamos tu ERP: lo potenciamos, integrándonos con SAP, BASIS y Oracle sin romper lo que ya funciona.",
+      "Somos una empresa mexicana de tecnología con operación en México, Argentina, Colombia y Ecuador, y experiencia real en bebidas, alimentos, gobierno, pharma y recintos fiscales. Imaginamos un mundo donde cada camión sale al 100% y cada producto llega fresco al cliente correcto. Ese es el mundo que estamos construyendo, con vos."
     ],
     "cta": {
       "title": "Hablemos de tu operación",
@@ -1128,7 +1128,7 @@
   "legal": {
     "privacy": {
       "meta": {
-        "title": "Política de Privacidad — Geodot",
+        "title": "Política de Privacidad | Geodot",
         "description": "Cómo Geodot recopila, usa y protege los datos personales que compartís a través de nuestro sitio web."
       },
       "hero": {
@@ -1195,7 +1195,7 @@
     },
     "terms": {
       "meta": {
-        "title": "Términos de Uso — Geodot",
+        "title": "Términos de Uso | Geodot",
         "description": "Términos y condiciones que regulan el uso del sitio web de Geodot."
       },
       "hero": {
@@ -1221,7 +1221,7 @@
         {
           "title": "3. Propiedad intelectual",
           "body": [
-            "Todos los contenidos del sitio —textos, gráficos, logotipos, imágenes y software— son propiedad de Geodot o de sus licenciantes y están protegidos por las leyes de propiedad intelectual. No podés reproducirlos ni distribuirlos sin autorización previa por escrito."
+            "Todos los contenidos del sitio (textos, gráficos, logotipos, imágenes y software) son propiedad de Geodot o de sus licenciantes y están protegidos por las leyes de propiedad intelectual. No podés reproducirlos ni distribuirlos sin autorización previa por escrito."
           ]
         },
         {

@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Geodot — Load every truck to 100% with AI",
+    "title": "Geodot: load every truck to 100% with AI",
     "description": "WMS, TMS, routing and palletizing in one AI platform. Cut transport cost, eliminate rejections and gain full visibility. ROI in under 12 months.",
-    "ogTitle": "Geodot — Logistics that loads to 100% and runs in real time",
+    "ogTitle": "Geodot: logistics that loads to 100% and runs in real time",
     "ogDescription": "Fewer trucks, fewer rejections, no blind spots. Routing + palletizing at once, integrated with your ERP. Results in 90 days."
   },
   "nav": {
@@ -140,7 +140,7 @@
       "eyebrow": "The platform",
       "title": "One platform.",
       "titleAccent": "Your whole chain, connected and optimized.",
-      "description": "Warehouse, transport, routing and palletizing working as one, in real time. It doesn't replace your ERP —it makes it stronger."
+      "description": "Warehouse, transport, routing and palletizing working as one, in real time. It doesn't replace your ERP, it makes it stronger."
     },
     "journey": {
       "eyebrow": "Point to point",
@@ -222,7 +222,7 @@
     },
     "cta": {
       "title": "See how much money is leaving on the table",
-      "subtitle": "30 minutes with your own data and we'll show you exactly where your leaks are —and what they're costing.",
+      "subtitle": "30 minutes with your own data and we'll show you exactly where your leaks are, and what they're costing.",
       "button": "Book a Demo"
     },
     "multimodal": {
@@ -659,7 +659,7 @@
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
-          "Fragmented cold chain: product leaves at the right temperature but transport has no monitoring — and the rejection arrives after the damage is done.",
+          "Fragmented cold chain: product leaves at the right temperature but transport has no monitoring, and the rejection arrives after the damage is done.",
           "Uncontrolled FEFO: oldest product doesn't always leave first because the warehouse isn't configured to enforce expiry dates automatically.",
           "Cold chain: product leaves at 4°C and arrives at 12°C with no view of what happened en route.",
           "Recall: when a problem appears you don't know which customers received that batch.",
@@ -757,7 +757,7 @@
         "items": [
           {
             "metric": "-18%",
-            "result": "Kilometers driven on solid-waste collection routes with AI-assisted redesign — equivalent to ~70 tonnes of CO₂ per year.",
+            "result": "Kilometers driven on solid-waste collection routes with AI-assisted redesign, equivalent to ~70 tonnes of CO₂ per year.",
             "client": "Metropolitan municipality"
           },
           {
@@ -789,7 +789,7 @@
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
-          "Assets without tracking: you don't know which site each forklift or crane is at — and your client is calling because they don't know either.",
+          "Assets without tracking: you don't know which site each forklift or crane is at, and your client is calling because they don't know either.",
           "Manual documentation: usage logs, billing and reports are built in spreadsheets and there are always discrepancies at month-end close.",
           "Load consolidation: orders from multiple clients to the same area, hard to combine by hand.",
           "Billing and settlement: pricing each service is manual, slow and error-prone.",
@@ -849,12 +849,12 @@
       "eyebrow": "Industry",
       "title": "Healthcare &",
       "titleAccent": "Pharma",
-      "subtitle": "Vaccines, clinical samples and high-cost medications tolerate neither a single degree out of range nor a break in chain of custody. Geodot guarantees traceability from warehouse to delivery point — with alerts before the damage, not after.",
+      "subtitle": "Vaccines, clinical samples and high-cost medications tolerate neither a single degree out of range nor a break in chain of custody. Geodot guarantees traceability from warehouse to delivery point, with alerts before the damage, not after.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
-          "Fragmented cold distribution network: product leaves the central warehouse at 4 °C but the last mile has no monitoring — and that's where 60 % of excursions happen.",
+          "Fragmented cold distribution network: product leaves the central warehouse at 4 °C but the last mile has no monitoring, and that's where 60 % of excursions happen.",
           "Regulatory traceability: every movement is logged with timestamp, temperature and owner for audits.",
           "Strict time windows: samples have a shelf life and transfers are measured in minutes, not hours.",
           "Thousands of SKUs with expiry dates: FIFO mandated by law, lots, controlled products and recall traceability.",
@@ -914,13 +914,13 @@
       "eyebrow": "Industry",
       "title": "Bonded &",
       "titleAccent": "Customs Warehouses",
-      "subtitle": "A bonded facility under ANAM, IMMEX and OEA scrutiny needs automatic counting, video evidence and active geofences — in the warehouse, the maneuvering yard and the port access gate. Geodot digitizes the entire perimeter.",
+      "subtitle": "A bonded facility under ANAM, IMMEX and OEA scrutiny needs automatic counting, video evidence and active geofences, in the warehouse, the maneuvering yard and the port access gate. Geodot digitizes the entire perimeter.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
           "Regulatory compliance: ANAM, IMMEX and OEA require integrated inventory, video and traceability, with remote access for the authority.",
-          "No evidence at the gate: units enter and leave without automatic cargo counting — reconciliation is done by hand and discrepancies always arise during authority inspections.",
+          "No evidence at the gate: units enter and leave without automatic cargo counting: reconciliation is done by hand and discrepancies always arise during authority inspections.",
           "Goods in custody: every movement inside the facility must be logged and auditable.",
           "Differentiated zones: hazardous, refrigerated and standard cargo coexist under different rules in the same warehouse.",
           "Physical vs. document reconciliation: counting boxes in and out against what was declared, with video evidence."
@@ -1016,7 +1016,7 @@
       "eyebrow": "Success stories",
       "title": "Numbers you can measure, not",
       "titleAccent": "PowerPoint promises",
-      "subtitle": "Bottlers, dairy, government and bonded warehouses have already recovered costs with Geodot. These are the numbers —the next one could be yours.",
+      "subtitle": "Bottlers, dairy, government and bonded warehouses have already recovered costs with Geodot. These are the numbers, and the next one could be yours.",
       "cta": "I want these results"
     },
     "list": {
@@ -1078,7 +1078,7 @@
       "eyebrow": "About us",
       "title": "Born from operations,",
       "titleAccent": "not from a lab",
-      "subtitle": "40+ combined years moving trucks and 15+ with leading bottlers. We built Geodot because we've fought the same fires you do —no one has to explain to us what a safety margin is or why the glass goes on the bottom.",
+      "subtitle": "40+ combined years moving trucks and 15+ with leading bottlers. We built Geodot because we've fought the same fires you do: no one has to explain to us what a safety margin is or why the glass goes on the bottom.",
       "cta": "Book a call"
     },
     "mission": {
@@ -1116,8 +1116,8 @@
     "body": [
       "After more than 40 combined years in logistics, production and technology, we kept seeing the same problem: the tools never solved the whole operation. One system routed but didn't palletize. The WMS didn't talk to the TMS. And in the middle, operations teams juggling to make it all add up.",
       "Geodot was born to end that. We built the first platform that unifies WMS, TMS, routing and palletizing in a single solution, where the routing engine and the palletizer work together, in real time, to load every truck to 99% and route by business value, not just kilometers.",
-      "We don't promise magic: we promise results you can measure from day one —fewer kilometers, fewer rejections, lower costs and fewer emissions. And we don't replace your ERP: we amplify it, integrating with SAP, BASIS and Oracle without breaking what already works.",
-      "We're a Mexican technology company operating across Mexico, Argentina, Colombia and Ecuador, with real experience in beverages, food, government, pharma and bonded warehouses. We imagine a world where every truck leaves at 100% and every product arrives fresh to the right customer. That's the world we're building —with you."
+      "We don't promise magic: we promise results you can measure from day one: fewer kilometers, fewer rejections, lower costs and fewer emissions. And we don't replace your ERP: we amplify it, integrating with SAP, BASIS and Oracle without breaking what already works.",
+      "We're a Mexican technology company operating across Mexico, Argentina, Colombia and Ecuador, with real experience in beverages, food, government, pharma and bonded warehouses. We imagine a world where every truck leaves at 100% and every product arrives fresh to the right customer. That's the world we're building, with you."
     ],
     "cta": {
       "title": "Let's talk about your operation",
@@ -1128,7 +1128,7 @@
   "legal": {
     "privacy": {
       "meta": {
-        "title": "Privacy Policy — Geodot",
+        "title": "Privacy Policy | Geodot",
         "description": "How Geodot collects, uses, and protects the personal data you share through our website."
       },
       "hero": {
@@ -1195,7 +1195,7 @@
     },
     "terms": {
       "meta": {
-        "title": "Terms of Use — Geodot",
+        "title": "Terms of Use | Geodot",
         "description": "The terms and conditions governing use of the Geodot website."
       },
       "hero": {
@@ -1221,7 +1221,7 @@
         {
           "title": "3. Intellectual property",
           "body": [
-            "All content on the site —text, graphics, logos, images, and software— is owned by Geodot or its licensors and is protected by intellectual property laws. You may not reproduce or distribute it without prior written authorization."
+            "All content on the site (text, graphics, logos, images, and software) is owned by Geodot or its licensors and is protected by intellectual property laws. You may not reproduce or distribute it without prior written authorization."
           ]
         },
         {
