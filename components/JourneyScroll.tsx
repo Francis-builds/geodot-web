@@ -124,10 +124,10 @@ export function JourneyScroll({
   // ---- Animated (pinned, light) ----
   return (
     <section ref={wrapRef} aria-label={`${title} ${titleAccent}`}>
-      <div ref={pinRef} className="relative h-screen overflow-hidden bg-navy-50">
-        <Container className="relative z-[1] grid h-full items-center gap-10 md:grid-cols-2 lg:gap-16">
-          {/* Left: heading + swapping copy + rail */}
-          <div>
+      <div ref={pinRef} className="relative grid h-screen overflow-hidden bg-navy-50 md:grid-cols-2">
+        {/* Left: heading + swapping copy + rail (on clean surface) */}
+        <div className="flex items-center">
+          <Container className="w-full md:!mr-0 md:max-w-[640px] md:pl-8 md:pr-16">
             <span className="eyebrow-dot mb-4 inline-block text-overline font-semibold uppercase tracking-wide text-teal-700">{eyebrow}</span>
             <h2 className="max-w-xl text-heading-xl md:text-display-lg font-bold leading-[1.06] text-navy-900">
               {title} <span className="text-accent-strong">{titleAccent}</span>
@@ -176,23 +176,23 @@ export function JourneyScroll({
                 ))}
               </div>
             </div>
-          </div>
+          </Container>
+        </div>
 
-          {/* Right: clean cross-fading photo panel */}
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-navy-100">
-            {stages.map((s, i) => (
-              <div
-                key={`photo-${i}`}
-                ref={(el) => { photoRefs.current[i] = el; }}
-                className="absolute inset-0"
-                style={{ opacity: i === 0 ? 1 : 0 }}
-                aria-hidden={i !== 0}
-              >
-                <Image src={s.image} alt={s.title} fill priority={i === 0} sizes="(max-width:768px) 100vw, 600px" className="object-cover" />
-              </div>
-            ))}
-          </div>
-        </Container>
+        {/* Right: full-bleed cross-fading photo (edge-to-edge, no frame) */}
+        <div className="relative hidden md:block">
+          {stages.map((s, i) => (
+            <div
+              key={`photo-${i}`}
+              ref={(el) => { photoRefs.current[i] = el; }}
+              className="absolute inset-0"
+              style={{ opacity: i === 0 ? 1 : 0 }}
+              aria-hidden={i !== 0}
+            >
+              <Image src={s.image} alt={s.title} fill priority={i === 0} sizes="50vw" className="object-cover" />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

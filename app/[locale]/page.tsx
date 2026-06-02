@@ -1,5 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { Hero } from "@/components/Hero";
+import { HeroCinematic } from "@/components/HeroCinematic";
 import { ProblemStats } from "@/components/ProblemStats";
 import { ModuleGrid } from "@/components/ModuleGrid";
 import { JourneyScroll } from "@/components/JourneyScroll";
@@ -22,13 +22,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <Hero
+      <HeroCinematic
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")}
         primaryCta={{ label: t("hero.ctaPrimary"), href: "/contacto" }}
         secondaryCta={{ label: t("hero.ctaSecondary"), href: "/plataforma" }}
-        bgImage="/images/warehouse/hero-patio.jpg"
-        bgAlt={t("hero.title")}
+        image="/images/hero/fleet-tracking.jpg"
+        imageAlt={t("hero.title")}
       />
       <ProblemStats
         eyebrow={t("problem.eyebrow")} title={t("problem.title")} titleAccent={t("problem.titleAccent")}

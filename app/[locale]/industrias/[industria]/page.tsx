@@ -35,10 +35,9 @@ export default async function IndustriaPage({ params }: { params: Promise<{ loca
         primaryCta={{ label: t("ctaPrimary"), href: "/contacto" }}
         bgImage={hero} bgAlt={`${t("title")} ${t("titleAccent")}`} />
       <ProblemStats title={t("problem.title")} points={t.raw("problem.points") as string[]} stats={t.raw("problem.stats") as { problem: string; impact: string }[]} />
-      <section className="bg-white py-12 md:py-16">
-        <Container>
-          <Media src={context} alt={`${t("title")} ${t("titleAccent")}`} ratio="16/9" sizes="(max-width: 1024px) 100vw, 1024px" />
-        </Container>
+      {/* Full-bleed contextual band: edge-to-edge photo, no frame */}
+      <section aria-hidden className="relative h-[42vh] min-h-[320px] w-full overflow-hidden md:h-[56vh]">
+        <Media src={context} alt={`${t("title")} ${t("titleAccent")}`} fill rounded={false} overlay={false} sizes="100vw" />
       </section>
       <ModuleGrid title={t("modules.title")} />
       <CasesStrip title={t("cases.title")} cases={t.raw("cases.items") as { client: string; result: string; metric: string }[]} />
