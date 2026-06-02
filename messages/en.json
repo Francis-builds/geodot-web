@@ -1039,6 +1039,34 @@
         }
       ]
     },
+    "studies": {
+      "title": "Three operations, three pain points, three results",
+      "items": [
+        {
+          "industry": "Beverage and distribution",
+          "challenge": "Trucks leaving half full and routes built by hand every morning, driving up freight cost and late deliveries.",
+          "solution": "Geodot added smart palletizing to fill every truck and automatic routing that builds the day's runs in minutes.",
+          "result": "Truck fill rate from 85% to 99% and route planning from 3 hours to 15 minutes, with -8% in transport cost."
+        },
+        {
+          "industry": "Cold chain and food",
+          "challenge": "Supermarket rejections from expired lots and slow traceability that took days to answer a claim.",
+          "solution": "Geodot turned on automatic FEFO in the WMS and end-to-end lot traceability, with temperature control on every move.",
+          "result": "Expiry-related shrink down 80% and any lot traced in minutes instead of days."
+        },
+        {
+          "industry": "Bonded warehouse and customs",
+          "challenge": "Inventory under customs control tracked on spreadsheets, risking discrepancies and delays during inspections.",
+          "solution": "Geodot deployed iWMS with Zero Label to record every move in real time and keep the operation audit-ready.",
+          "result": "Inventory at 99% accuracy and inspections cut from hours to minutes, paperless."
+        }
+      ],
+      "labels": {
+        "challenge": "The challenge",
+        "solution": "What Geodot did",
+        "result": "The result"
+      }
+    },
     "cta": {
       "title": "Want numbers like these in your operation?",
       "subtitle": "Book a demo and we'll show you, with your own data, where your leaks are and how much you can save.",

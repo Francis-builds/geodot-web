@@ -1039,6 +1039,34 @@
         }
       ]
     },
+    "studies": {
+      "title": "Tres operaciones, tres puntos de dolor, tres resultados",
+      "items": [
+        {
+          "industry": "Bebidas y distribución",
+          "challenge": "Camiones que salían a media carga y rutas armadas a mano cada mañana, con sobrecosto de flete y entregas tarde.",
+          "solution": "Geodot sumó paletizado inteligente para llenar cada camión y ruteo automático que arma los recorridos del día en minutos.",
+          "result": "Ocupación de camión del 85% al 99% y planificación de rutas de 3 horas a 15 minutos, con -8% en costo de transporte."
+        },
+        {
+          "industry": "Cadena de frío y alimentos",
+          "challenge": "Rechazos de supermercados por lotes vencidos y trazabilidad lenta que tardaba días en responder ante un reclamo.",
+          "solution": "Geodot activó FEFO automático en el WMS y trazabilidad por lote de punta a punta, con control de temperatura en cada movimiento.",
+          "result": "Mermas por vencimiento -80% y rastreo de cualquier lote en minutos en lugar de días."
+        },
+        {
+          "industry": "Recinto fiscal y aduana",
+          "challenge": "Inventario de mercancía bajo control aduanero llevado en planillas, con riesgo de discrepancias y demoras en las revisiones.",
+          "solution": "Geodot implementó iWMS con Etiqueta Zero para registrar cada movimiento en tiempo real y dejar la operación lista para auditoría.",
+          "result": "Inventario al 99% de exactitud y revisiones que pasaron de horas a minutos, sin papel."
+        }
+      ],
+      "labels": {
+        "challenge": "El reto",
+        "solution": "Qué hizo Geodot",
+        "result": "El resultado"
+      }
+    },
     "cta": {
       "title": "¿Querés números como estos en tu operación?",
       "subtitle": "Agendá una demo y te mostramos, con tus propios datos, dónde están tus fugas y cuánto podés ahorrar.",
