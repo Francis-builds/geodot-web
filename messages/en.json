@@ -1056,6 +1056,35 @@
     "mission": {
       "title": "Connecting every point of the supply chain"
     },
+    "timeline": {
+      "title": "The road that brought us here",
+      "steps": [
+        {
+          "year": "40+ years",
+          "label": "On the dock",
+          "title": "A lifetime in the field",
+          "body": "More than 40 combined years moving trucks, building routes and grinding it out on the floor. We didn't read about logistics: we lived it shift after shift."
+        },
+        {
+          "year": "15+ years",
+          "label": "With bottlers",
+          "title": "Where the glass goes on the bottom",
+          "body": "More than 15 years operating with leading bottlers taught us that every pallet, every degree and every kilometer counts. That's where we learned not to break what already works."
+        },
+        {
+          "year": "The turning point",
+          "label": "Why Geodot",
+          "title": "The tools never added up",
+          "body": "One system routed but didn't palletize. The WMS didn't talk to the TMS. Tired of the juggling, we decided to build the platform we always wished we had in the operation."
+        },
+        {
+          "year": "Today",
+          "label": "Across LATAM",
+          "title": "One platform, four countries",
+          "body": "We operate across Mexico, Argentina, Colombia and Ecuador, with real experience in beverages, food, government, pharma and bonded warehouses. We're still operations people, now with our own technology."
+        }
+      ]
+    },
     "body": [
       "After more than 40 combined years in logistics, production and technology, we kept seeing the same problem: the tools never solved the whole operation. One system routed but didn't palletize. The WMS didn't talk to the TMS. And in the middle, operations teams juggling to make it all add up.",
       "Geodot was born to end that. We built the first platform that unifies WMS, TMS, routing and palletizing in a single solution, where the routing engine and the palletizer work together, in real time, to load every truck to 99% and route by business value, not just kilometers.",

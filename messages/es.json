@@ -1056,6 +1056,35 @@
     "mission": {
       "title": "Conectar cada punto de la cadena logística"
     },
+    "timeline": {
+      "title": "El camino que nos trajo hasta acá",
+      "steps": [
+        {
+          "year": "+40 años",
+          "label": "En la planchada",
+          "title": "Toda una vida en la calle",
+          "body": "Más de 40 años combinados moviendo camiones, armando rutas y peleándola en piso. No leímos sobre logística: la vivimos turno tras turno."
+        },
+        {
+          "year": "+15 años",
+          "label": "Con embotelladoras",
+          "title": "Donde el vidrio va abajo",
+          "body": "Más de 15 años operando con embotelladoras líderes nos enseñaron que cada paleta, cada grado y cada kilómetro cuentan. Ahí aprendimos a no romper lo que ya funciona."
+        },
+        {
+          "year": "El quiebre",
+          "label": "Por qué Geodot",
+          "title": "Las herramientas no cerraban",
+          "body": "Un sistema ruteaba pero no paletizaba. El WMS no hablaba con el TMS. Cansados de los malabares, decidimos construir la plataforma que siempre quisimos tener en la operación."
+        },
+        {
+          "year": "Hoy",
+          "label": "En toda LATAM",
+          "title": "Una plataforma, cuatro países",
+          "body": "Operamos en México, Argentina, Colombia y Ecuador, con experiencia real en bebidas, alimentos, gobierno, pharma y recintos fiscales. Seguimos siendo gente de la operación, ahora con tecnología propia."
+        }
+      ]
+    },
     "body": [
       "Después de más de 40 años combinados en logística, producción y tecnología, vimos siempre el mismo problema: las herramientas no resolvían la operación completa. Un sistema ruteaba pero no paletizaba. El WMS no hablaba con el TMS. Y en el medio, los equipos de operaciones haciendo malabares para que todo cerrara.",
       "Geodot nació para terminar con eso. Construimos la primera plataforma que integra WMS, TMS, ruteo y paletizado en una sola solución, donde el motor de ruteo y el paletizador trabajan juntos, en tiempo real, para cargar cada camión al 99% y rutear por valor de negocio, no solo por kilómetros.",
