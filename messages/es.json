@@ -166,7 +166,7 @@
           "body": "Rutas óptimas al instante, calculadas junto al paletizado. Menos kilómetros, menos costo.",
           "metric": "-20%",
           "metricLabel": "kilómetros en ruta",
-          "image": "/images/fleet/fleet-tracking.jpg"
+          "image": "/images/fleet/ruteo-nocturno.jpg"
         },
         "delivery": {
           "title": "Entrega",
