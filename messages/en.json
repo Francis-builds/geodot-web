@@ -585,11 +585,11 @@
   "industries": {
     "bebidas": {
       "name": "Beverages",
-      "tagline": "High turnover with lot-level traceability",
+      "tagline": "Routing and palletizing at the same time, no slack left",
       "eyebrow": "Industry",
       "title": "Beverages &",
       "titleAccent": "Bottlers",
-      "subtitle": "Direct store delivery (DSD) with returnables, mixed palletizing and tight delivery windows: if you don't optimize load and route simultaneously, you leave at 85% and arrive late. Geodot calculates the perfect trip before the truck starts.",
+      "subtitle": "Your trucks leave at 85%. That empty space is money traveling for free. Geodot calculates routing and palletizing at the same time: it knows what fits the truck before setting the route, shifts glass customers between units, and builds every pallet with the glass on the bottom.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
@@ -606,16 +606,16 @@
             "impact": "85% → 99%"
           },
           {
-            "problem": "Planning time",
-            "impact": "-92%"
+            "problem": "Transport cost",
+            "impact": "-8%"
           },
           {
-            "problem": "Fleet visibility",
-            "impact": "100%"
+            "problem": "Capacity from glass rule",
+            "impact": "+10%"
           },
           {
-            "problem": "Window rejections",
-            "impact": "-75%"
+            "problem": "Trucks per day",
+            "impact": "4-5 fewer"
           }
         ]
       },
@@ -626,61 +626,61 @@
         "title": "Cases in your sector",
         "items": [
           {
-            "metric": "+14%",
-            "result": "Truck load factor from 85% to 99% with simultaneous palletizing and routing.",
-            "client": "Regional bottler"
+            "metric": "85% → 99%",
+            "result": "Truck load factor and -8% transport cost by calculating routing and palletizing at the same time, with no slack left.",
+            "client": "A leading bottler"
           },
           {
-            "metric": "-92%",
-            "result": "Planning time cut from 3 hours to 15 minutes.",
-            "client": "Regional bottler"
+            "metric": "+10%",
+            "result": "Truck capacity recovered by shifting returnable-glass customers between units, without touching the rest of the trip.",
+            "client": "A leading bottler"
           },
           {
-            "metric": "100%",
-            "result": "Full visibility of owned and third-party fleet.",
-            "client": "Regional bottler"
+            "metric": "4-5/day",
+            "result": "Fewer trucks per day with the same consolidation logic, freeing fleet for more routes.",
+            "client": "A leading bottler"
           }
         ]
       },
       "cta": {
-        "title": "Load to 100% before the truck even starts",
-        "subtitle": "Book a demo and we'll show you, on your own operation, how to go from 85% to 99% with no safety margin left.",
+        "title": "Load to 99, not to 85",
+        "subtitle": "Book a demo and we'll show you, on your own operation, how to go from 85% to 99% with no slack left.",
         "button": "Book a Demo"
       }
     },
     "alimentos": {
       "name": "Food & Dairy",
-      "tagline": "Cold chain and expiry under control",
+      "tagline": "One platform: warehouse, cold chain and real FEFO in a single flow",
       "eyebrow": "Industry",
       "title": "Food &",
       "titleAccent": "Dairy",
-      "subtitle": "From fishing fleet to supermarket shelf, every link carries risk: temperature excursions, FEFO ignored in the warehouse, and shelf-life rejections that surface when it's already too late. Geodot connects warehouse, routing and cold chain in one platform.",
+      "subtitle": "You find out about a temperature excursion when they reject the truck. Too late. Geodot connects plant, warehouse, routing and cold chain in one platform: real FEFO by expiry date, per-customer shelf-life rules, and an alert before the product is lost.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
           "Fragmented cold chain: product leaves at the right temperature but transport has no monitoring, and the rejection arrives after the damage is done.",
-          "Uncontrolled FEFO: oldest product doesn't always leave first because the warehouse isn't configured to enforce expiry dates automatically.",
-          "Cold chain: product leaves at 4°C and arrives at 12°C with no view of what happened en route.",
+          "Uncontrolled FEFO: oldest product doesn't always leave first because the warehouse doesn't enforce expiry dates automatically.",
+          "Per-customer shelf life: some customers require delivery with over 83% shelf life left, and a miss means the whole truck is rejected.",
           "Recall: when a problem appears you don't know which customers received that batch.",
-          "Returns and rejections: without the reason logged, you can't fix the root cause."
+          "Expired product hidden in the back: in a large warehouse, old pallets nobody sees get lost."
         ],
         "stats": [
           {
-            "problem": "Losses from expiration",
-            "impact": "-80%"
+            "problem": "FEFO by expiry date",
+            "impact": "Real"
           },
           {
-            "problem": "Shelf-life rejections",
-            "impact": "Zero"
+            "problem": "Shelf-life rule",
+            "impact": "Per customer"
           },
           {
-            "problem": "Batch traceability",
-            "impact": "100%"
+            "problem": "Plant → customer platform",
+            "impact": "One single record"
           },
           {
-            "problem": "Delivery visibility",
-            "impact": "100%"
+            "problem": "Temperature excursion",
+            "impact": "Instant alert"
           }
         ]
       },
@@ -691,61 +691,61 @@
         "title": "Cases in your sector",
         "items": [
           {
-            "metric": "-95%",
-            "result": "Unmonitored temperature excursions on perishable routes, with continuous monitoring and alerts before damage occurs.",
-            "client": "Fishing / seafood company"
+            "metric": "Real FEFO",
+            "result": "When a pallet is pulled, the system flags that there are 12 older pallets in another location: expired product hidden in the back disappears.",
+            "client": "A food distributor"
           },
           {
-            "metric": "+14%",
-            "result": "Truck load in food distribution with mixed palletizing (fresh, canned and dry on the same trip).",
-            "client": "Regional food distributor"
+            "metric": "83%",
+            "result": "Per-customer shelf-life rule applied to the whole trip at scan time: if a customer requires 83%+ shelf life, no old product gets loaded for them.",
+            "client": "A regional dairy"
           },
           {
-            "metric": "100%",
-            "result": "Full batch-to-customer traceability for targeted recalls.",
-            "client": "Dairy company (Colombia)"
+            "metric": "Cold",
+            "result": "Separate appointments for chilled and dry product, with temperature sensors in trucks and rejection at receiving if out of range.",
+            "client": "A regional dairy"
           }
         ]
       },
       "cta": {
-        "title": "Stop writing off expired product every month",
-        "subtitle": "Book a demo and we'll show you how to cut expiry write-offs and shelf-life rejections.",
+        "title": "Oldest out first, no excuses",
+        "subtitle": "Book a demo and we'll show you real FEFO, per-customer shelf-life rules and cold chain in a single platform.",
         "button": "Book a Demo"
       }
     },
     "gobiernoResiduos": {
       "name": "Government & Waste",
-      "tagline": "Routes and collection with full visibility",
+      "tagline": "AI-optimized routes and GPS that validates every drop-off",
       "eyebrow": "Industry",
       "title": "Government &",
       "titleAccent": "Urban Waste",
-      "subtitle": "Waste collection routes designed a decade ago no longer reflect how the city grew. The result: full trucks that can't pick up more and forgotten zones that generate complaints. Geodot optimizes routes, measures CO₂ impact and puts operations in front of citizens.",
+      "subtitle": "Four in five residents feel waste is out of control. Routes designed a decade ago, full trucks that can't pick up more, and forgotten zones. Geodot optimizes routes, validates every drop-off against GPS, and puts the operation in front of citizens.",
       "ctaPrimary": "Book a Meeting",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
           "Outdated routes: designed years ago while the city has grown and changed.",
-          "Underused fleet: some trucks leave full, others half empty.",
-          "No visibility: you don't know where the trucks are in real time.",
+          "Simulated drop-offs: collections reported that never happened, with no way to validate them.",
+          "No visibility: you don't know where the trucks are or which points were actually serviced.",
           "Uninformed residents: they don't know when the truck passes, so complaints pile up.",
           "High costs: unnecessary kilometers and wasted fuel, every single day."
         ],
         "stats": [
           {
-            "problem": "Kilometer reduction",
-            "impact": "15%"
+            "problem": "Drop-off validated against GPS",
+            "impact": "No more simulated"
           },
           {
-            "problem": "Complaint reduction",
-            "impact": "20%"
+            "problem": "Collection-point census by tonnage",
+            "impact": "Heat map"
           },
           {
-            "problem": "CO₂ reduction",
-            "impact": "70 t/yr"
+            "problem": "Fuel and km (estimated potential)",
+            "impact": "Up to -15%"
           },
           {
-            "problem": "ROI",
-            "impact": "< 12 months"
+            "problem": "CO₂ avoided (estimated potential)",
+            "impact": "~70 t/yr"
           }
         ]
       },
@@ -756,61 +756,61 @@
         "title": "Cases in your sector",
         "items": [
           {
-            "metric": "-18%",
-            "result": "Kilometers driven on solid-waste collection routes with AI-assisted redesign, equivalent to ~70 tonnes of CO₂ per year.",
-            "client": "Metropolitan municipality"
+            "metric": "GPS",
+            "result": "Every drop-off validated against GPS: simulated collections end, and there's a record of which point was serviced and when.",
+            "client": "A Mexico City borough"
           },
           {
-            "metric": "20%",
-            "result": "Fewer citizen complaints with app and control tower.",
-            "client": "Mexico City borough"
+            "metric": "Census",
+            "result": "Heat map and census of collection points by density and estimated tonnage, the basis for redesigning routes with AI.",
+            "client": "A Mexico City borough"
           },
           {
-            "metric": "70 t/yr",
-            "result": "Tons of CO₂ avoided through shorter routes.",
-            "client": "Mexico City borough"
+            "metric": "~70 t/yr",
+            "result": "Estimated potential CO₂ avoided through shorter routes in a collection project, alongside a target of up to -15% in km and fuel.",
+            "client": "A Mexico City borough"
           }
         ]
       },
       "cta": {
-        "title": "Fewer miles, fewer complaints, less CO₂",
-        "subtitle": "Book a meeting and we'll deliver a no-cost savings assessment of your routes.",
+        "title": "Fewer miles, fewer complaints, drop-offs that actually happened",
+        "subtitle": "Book a meeting and we'll deliver a no-cost route assessment and collection-point census.",
         "button": "Book a Meeting"
       }
     },
     "logistica3pl": {
       "name": "3PL Logistics",
-      "tagline": "Multi-client, billing and SLAs in one place",
+      "tagline": "Zero Label + iWMS: the data travels with the pallet",
       "eyebrow": "Industry",
       "title": "Logistics Operators",
       "titleAccent": "3PL",
-      "subtitle": "Whether you rent equipment, manage a yard or handle multiple client accounts, real-time visibility is what separates billing on time from losing margin. Geodot unifies equipment tracking, yard control and reporting in one place.",
+      "subtitle": "Every client asks for a different report and you have no way to show it to them. Geodot starts with Zero Label and iWMS (no re-labeling, the data already travels with the pallet) and adds multi-client, routing and billing when you need them: land and expand on your operation.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
+          "Manual re-labeling: at receiving, every label is reprinted and re-stuck by hand, a constant source of errors.",
           "Assets without tracking: you don't know which site each forklift or crane is at, and your client is calling because they don't know either.",
           "Manual documentation: usage logs, billing and reports are built in spreadsheets and there are always discrepancies at month-end close.",
-          "Load consolidation: orders from multiple clients to the same area, hard to combine by hand.",
-          "Billing and settlement: pricing each service is manual, slow and error-prone.",
-          "Differentiated SLAs: meeting 24h, 48h and specific windows at once is a juggling act."
+          "Every client wants their report: without a multi-client portal, showing each account its operation is a juggling act.",
+          "Load consolidation: orders from multiple clients to the same area, hard to combine by hand."
         ],
         "stats": [
           {
-            "problem": "Time on reports",
-            "impact": "-90%"
+            "problem": "Re-labeling at receiving",
+            "impact": "Zero"
           },
           {
-            "problem": "Client visibility",
-            "impact": "24/7 portal"
+            "problem": "Data travels with the pallet",
+            "impact": "Zero Label"
           },
           {
-            "problem": "Billing time",
-            "impact": "-95%"
+            "problem": "Visibility per account",
+            "impact": "Multi-client portal"
           },
           {
-            "problem": "Truck utilization",
-            "impact": "+15%"
+            "problem": "Grow by adding modules",
+            "impact": "Land and expand"
           }
         ]
       },
@@ -821,61 +821,61 @@
         "title": "Cases in your sector",
         "items": [
           {
-            "metric": "100%",
+            "metric": "Zero Label",
+            "result": "No manual re-labeling at receiving: the data already travels with the pallet, ending reprint-and-restick errors.",
+            "client": "A logistics operator"
+          },
+          {
+            "metric": "Multi-client",
+            "result": "Each account with its own visibility and reports in a 24/7 portal, without building a spreadsheet per client.",
+            "client": "A logistics operator"
+          },
+          {
+            "metric": "iWMS",
             "result": "Real-time location and status of every rented equipment unit, with usage history by client and by shift.",
-            "client": "Forklift and crane rental company"
-          },
-          {
-            "metric": "-90%",
-            "result": "Monthly settlement time with automatic billing based on actual usage hours logged by the system.",
-            "client": "Regional logistics operator"
-          },
-          {
-            "metric": "+15%",
-            "result": "Truck utilization from 70% to 85% with smart consolidation.",
-            "client": "Regional logistics operator"
+            "client": "An equipment rental company"
           }
         ]
       },
       "cta": {
-        "title": "Run every client account from one screen",
-        "subtitle": "Book a demo and we'll show you how to bill on time and give each client a live view of their operation.",
+        "title": "Start with Zero Label, grow with the whole platform",
+        "subtitle": "Book a demo and we'll show you how to eliminate re-labeling and give each client a live view of their operation.",
         "button": "Book a Demo"
       }
     },
     "healthcare": {
       "name": "Healthcare & Pharma",
-      "tagline": "Compliance, cold chain and regulatory traceability",
+      "tagline": "Cold chain with alerts before the damage, not after",
       "eyebrow": "Industry",
       "title": "Healthcare &",
       "titleAccent": "Pharma",
-      "subtitle": "Vaccines, clinical samples and high-cost medications tolerate neither a single degree out of range nor a break in chain of custody. Geodot guarantees traceability from warehouse to delivery point, with alerts before the damage, not after.",
+      "subtitle": "Vaccines, clinical samples and high-cost medications tolerate not one degree out of range. Geodot enters through the cold chain: end-to-end temperature traceability, an alert when the excursion happens (not when they reject the truck), and real FEFO so the closest-to-expiry product leaves first.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
-          "Fragmented cold distribution network: product leaves the central warehouse at 4 °C but the last mile has no monitoring, and that's where 60 % of excursions happen.",
-          "Regulatory traceability: every movement is logged with timestamp, temperature and owner for audits.",
+          "Fragmented cold network: product leaves the central warehouse at 4 °C but the last mile has no monitoring, and that's where most excursions happen.",
+          "You find out late: without sensors in the truck, the excursion surfaces when the delivery is rejected.",
           "Strict time windows: samples have a shelf life and transfers are measured in minutes, not hours.",
-          "Thousands of SKUs with expiry dates: FIFO mandated by law, lots, controlled products and recall traceability.",
-          "Dispatch by urgency and capacity: the right unit, with the right equipment, to the right place."
+          "Thousands of SKUs with expiry dates: mandatory FEFO, lots, controlled products and recall traceability.",
+          "Chain of custody: every movement must be logged with timestamp, temperature and owner for audits."
         ],
         "stats": [
           {
-            "problem": "Temperature control",
-            "impact": "Native, not an addon"
+            "problem": "Temperature traceability",
+            "impact": "End to end"
+          },
+          {
+            "problem": "Excursion alert",
+            "impact": "When it happens"
+          },
+          {
+            "problem": "FEFO by expiry",
+            "impact": "Real"
           },
           {
             "problem": "Chain of custody",
-            "impact": "100% digital"
-          },
-          {
-            "problem": "Response time",
-            "impact": "-40%"
-          },
-          {
-            "problem": "Expirations avoided",
-            "impact": "Enforced FIFO"
+            "impact": "Digital and auditable"
           }
         ]
       },
@@ -886,61 +886,61 @@
         "title": "Cases in your sector",
         "items": [
           {
-            "metric": "-95%",
-            "result": "Temperature excursions detected and resolved before product is compromised, with continuous traceability from central warehouse to delivery point.",
-            "client": "Regional pharmaceutical distributor"
+            "metric": "Cold",
+            "result": "Temperature sensors in chilled trucks and automatic rejection at receiving if product arrives out of range: the excursion shows up when it happens.",
+            "client": "A pharmaceutical distributor"
           },
           {
-            "metric": "100%",
-            "result": "Chain-of-custody traceability, from the collection point to the central lab.",
-            "client": "Clinical analysis laboratory"
+            "metric": "Real FEFO",
+            "result": "Dispatch by expiry date with an alert at scan time when an older pallet sits in another location: nothing expired stays hidden in the back.",
+            "client": "A pharmaceutical distributor"
           },
           {
-            "metric": "0",
-            "result": "Out-of-FIFO expirations with automatic alerts and lot management per branch.",
-            "client": "Pharmaceutical distribution chain"
+            "metric": "Custody",
+            "result": "Every movement logged with timestamp, temperature and owner, with continuous traceability from central warehouse to delivery point.",
+            "client": "A healthcare distribution chain"
           }
         ]
       },
       "cta": {
         "title": "Logistics that tolerates not one degree out of range",
-        "subtitle": "Book a demo and we'll show you how to guarantee cold chain, traceability and smart dispatch in a single platform.",
+        "subtitle": "Book a demo and we'll show you how to guarantee cold chain, real FEFO and chain of custody in a single platform.",
         "button": "Book a Demo"
       }
     },
     "recintosFiscales": {
       "name": "Bonded Warehouses",
-      "tagline": "Customs control and Zero Label",
+      "tagline": "Zero Label + iWMS for an auditable facility",
       "eyebrow": "Industry",
       "title": "Bonded &",
       "titleAccent": "Customs Warehouses",
-      "subtitle": "A bonded facility under ANAM, IMMEX and OEA scrutiny needs automatic counting, video evidence and active geofences, in the warehouse, the maneuvering yard and the port access gate. Geodot digitizes the entire perimeter.",
+      "subtitle": "Without digital evidence, an ANAM audit is a gamble. Geodot enters through Zero Label and iWMS: no re-labeling, the data travels with the pallet, and every movement inside the facility is logged and auditable, with a document manager and control tower when you need them.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
+          "Re-labeling at receiving: every pallet entering the facility is reprinted and re-stuck by hand, a source of errors before the authority.",
           "Regulatory compliance: ANAM, IMMEX and OEA require integrated inventory, video and traceability, with remote access for the authority.",
-          "No evidence at the gate: units enter and leave without automatic cargo counting: reconciliation is done by hand and discrepancies always arise during authority inspections.",
           "Goods in custody: every movement inside the facility must be logged and auditable.",
           "Differentiated zones: hazardous, refrigerated and standard cargo coexist under different rules in the same warehouse.",
-          "Physical vs. document reconciliation: counting boxes in and out against what was declared, with video evidence."
+          "Physical vs. document reconciliation: counting what comes in and out against what was declared, with evidence."
         ],
         "stats": [
           {
-            "problem": "Bonded warehouse managed",
-            "impact": "7,000 m²"
+            "problem": "Re-labeling at receiving",
+            "impact": "Zero"
           },
           {
-            "problem": "Document reconciliation",
-            "impact": "Automatic"
+            "problem": "Data travels with the pallet",
+            "impact": "Zero Label"
           },
           {
-            "problem": "Audit evidence",
-            "impact": "Video + inventory"
+            "problem": "Every movement logged",
+            "impact": "Auditable"
           },
           {
-            "problem": "Authority remote access",
-            "impact": "24/7"
+            "problem": "Document query",
+            "impact": "< 2 min, 24/7"
           }
         ]
       },
@@ -951,25 +951,25 @@
         "title": "Cases in your sector",
         "items": [
           {
-            "metric": "7,000 m²",
-            "result": "Bonded warehouse at AIFA digitized with iWMS and Etiqueta Zero, three zones (hazardous, refrigerated, standard).",
-            "client": "Recinto fiscal en AIFA"
+            "metric": "Zero Label",
+            "result": "Bonded warehouse digitized with iWMS and Zero Label: no re-labeling and pallet-level traceability across hazardous, refrigerated and standard zones.",
+            "client": "A facility at AIFA"
           },
           {
-            "metric": "ANAM-ready",
-            "result": "Automatic box counting with dock cameras, correlated with Zebra scanning and active geofence at port access. Video evidence available for inspection in 24 h.",
-            "client": "Bonded facility operator in port zone"
+            "metric": "Auditable",
+            "result": "Every movement inside the facility logged and available for inspection, with physical reconciliation against what was declared.",
+            "client": "A facility in a port zone"
           },
           {
-            "metric": "25 years",
-            "result": "Foreign-trade integrated-logistics experience supercharged with end-to-end digital traceability.",
-            "client": "Recinto fiscal en AIFA"
+            "metric": "< 2 min",
+            "result": "Document query resolved by an AI assistant in under 2 minutes, 24/7, always on the current version.",
+            "client": "A facility at AIFA"
           }
         ]
       },
       "cta": {
         "title": "A facility auditable end to end",
-        "subtitle": "Book a demo and we'll show you the video counting, geofences and traceability ANAM, IMMEX and OEA require.",
+        "subtitle": "Book a demo and we'll show you Zero Label, pallet-level traceability and the evidence ANAM, IMMEX and OEA require.",
         "button": "Book a Demo"
       }
     }
@@ -997,13 +997,13 @@
       "eyebrow": "Industries",
       "title": "Logistics that understands your",
       "titleAccent": "industry",
-      "subtitle": "Every sector has its own pressure: turnover, cold chain, compliance, multi-client. Geodot adapts to the operation you already run and adds traceability, routing and palletizing exactly where you need them.",
+      "subtitle": "Every sector enters through its own pain: bonded and 3PL through Zero Label, government through GPS, food through cold chain and FEFO, beverages through routing and palletizing. Geodot adapts to the operation you already run and grows from there.",
       "cta": "Book your demo"
     },
     "eyebrow": "Sectors",
     "title": "Six industries,",
     "titleAccent": "one platform",
-    "subtitle": "Pick your sector and see how Geodot solves the concrete problems of your operation.",
+    "subtitle": "Pick your sector and find the right module to start with, plus how Geodot solves the concrete problems of your operation.",
     "explore": "View industry",
     "cta": {
       "title": "Don't see your industry here?",

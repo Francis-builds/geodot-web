@@ -585,11 +585,11 @@
   "industries": {
     "bebidas": {
       "name": "Bebidas",
-      "tagline": "Alta rotación y trazabilidad por lote",
+      "tagline": "Ruteo y paletizado en simultáneo, sin dejar planchada",
       "eyebrow": "Industria",
       "title": "Bebidas y",
       "titleAccent": "Embotelladores",
-      "subtitle": "Distribución directa a tienda (DSD) con retornables, paletizado mixto y ventanas de entrega ajustadas: si no optimizás carga y ruta al mismo tiempo, salís al 85 % y llegás tarde. Geodot calcula el viaje perfecto antes de que arranque el camión.",
+      "subtitle": "Tus camiones salen al 85%. Esa planchada es plata que viaja vacía. Geodot calcula el ruteo y el paletizado al mismo tiempo: sabe qué entra al camión antes de definir la ruta, mueve clientes de vidrio entre unidades y arma cada palet con el vidrio abajo.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
@@ -602,20 +602,20 @@
         ],
         "stats": [
           {
-            "problem": "Carga de camiones",
+            "problem": "Carga de camión",
             "impact": "85% → 99%"
           },
           {
-            "problem": "Tiempo de planificación",
-            "impact": "-92%"
+            "problem": "Costo de transporte",
+            "impact": "-8%"
           },
           {
-            "problem": "Visibilidad de flota",
-            "impact": "100%"
+            "problem": "Capacidad por regla de vidrio",
+            "impact": "+10%"
           },
           {
-            "problem": "Rechazos por horario",
-            "impact": "-75%"
+            "problem": "Camiones por día",
+            "impact": "4-5 menos"
           }
         ]
       },
@@ -626,61 +626,61 @@
         "title": "Casos en tu sector",
         "items": [
           {
-            "metric": "+14%",
-            "result": "Carga de camiones del 85% al 99% con paletizado y ruteo simultáneo.",
-            "client": "Embotelladora regional"
+            "metric": "85% → 99%",
+            "result": "Carga de camión y -8% de costo de transporte calculando ruteo y paletizado en simultáneo, sin dejar planchada.",
+            "client": "Una embotelladora líder"
           },
           {
-            "metric": "-92%",
-            "result": "Tiempo de planificación de 3 horas a 15 minutos.",
-            "client": "Embotelladora regional"
+            "metric": "+10%",
+            "result": "Capacidad de camión recuperada moviendo clientes de vidrio retornable entre unidades, sin tocar el resto del viaje.",
+            "client": "Una embotelladora líder"
           },
           {
-            "metric": "100%",
-            "result": "Visibilidad total de la flota propia y tercerizada.",
-            "client": "Embotelladora regional"
+            "metric": "4-5/día",
+            "result": "Camiones menos por día con la misma lógica de consolidación, liberando flota para más rutas.",
+            "client": "Una embotelladora líder"
           }
         ]
       },
       "cta": {
-        "title": "Cargá al 100% antes de que arranque el camión",
+        "title": "Cargá al 99, no al 85",
         "subtitle": "Agendá una demo y te mostramos, con tu operación, cómo pasar del 85% al 99% sin dejar planchada.",
         "button": "Agendar Demo"
       }
     },
     "alimentos": {
       "name": "Alimentos y Lácteos",
-      "tagline": "Cadena de frío y vencimientos bajo control",
+      "tagline": "Plataforma integrada: almacén, frío y FEFO real en un flujo",
       "eyebrow": "Industria",
       "title": "Alimentos y",
       "titleAccent": "Lácteos",
-      "subtitle": "Desde la flota pesquera hasta la góndola del supermercado, cada eslabón tiene su riesgo: temperatura fuera de rango, rotación FEFO ignorada y rechazos por vida útil insuficiente. Geodot conecta el almacén, el ruteo y la cadena de frío en una sola plataforma.",
+      "subtitle": "Te enterás de la excursión de temperatura cuando rechazan el camión. Tarde. Geodot conecta planta, almacén, ruteo y cadena de frío en una sola plataforma: FEFO real por fecha de expiración, regla de vida útil por cliente y alerta antes de que el producto se pierda.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
           "Cadena de frío fragmentada: el producto sale a temperatura correcta pero el transporte no registra ni alerta, y el rechazo llega cuando ya es tarde.",
-          "FEFO no controlado: lo más viejo no siempre sale primero porque el almacén no está configurado para respetar fechas de vencimiento automáticamente.",
-          "Cadena de frío: el producto sale a 4°C y llega a 12°C sin que veas qué pasó en el trayecto.",
+          "FEFO no controlado: lo más viejo no siempre sale primero porque el almacén no respeta la fecha de expiración automáticamente.",
+          "Vida útil por cliente: hay clientes que exigen entregar con más del 83% de vida útil y el rechazo es del camión completo.",
           "Recall: cuando aparece un problema no sabés a qué clientes les entregaste ese lote.",
-          "Devoluciones y rechazos: sin el motivo registrado, no podés corregir la causa."
+          "Producto vencido escondido atrás: en un almacén grande se pierden palets viejos que nadie ve."
         ],
         "stats": [
           {
-            "problem": "Pérdidas por vencimiento",
-            "impact": "-80%"
+            "problem": "FEFO por fecha de expiración",
+            "impact": "Real"
           },
           {
-            "problem": "Rechazos por vida útil",
-            "impact": "Cero"
+            "problem": "Regla de vida útil",
+            "impact": "Por cliente"
           },
           {
-            "problem": "Trazabilidad de lotes",
-            "impact": "100%"
+            "problem": "Plataforma planta → cliente",
+            "impact": "Un solo dato"
           },
           {
-            "problem": "Visibilidad de entregas",
-            "impact": "100%"
+            "problem": "Excursión de temperatura",
+            "impact": "Alerta al instante"
           }
         ]
       },
@@ -691,61 +691,61 @@
         "title": "Casos en tu sector",
         "items": [
           {
-            "metric": "-95%",
-            "result": "Excursiones de temperatura sin alerta en rutas de producto perecedero, con monitoreo continuo y notificación antes de que el daño ocurra.",
-            "client": "Empresa pesquera / productos del mar"
+            "metric": "FEFO real",
+            "result": "Al sacar un palet, el sistema avisa que hay 12 palets más viejos en otra ubicación: desaparece el producto vencido escondido atrás.",
+            "client": "Un distribuidor de alimentos"
           },
           {
-            "metric": "+14%",
-            "result": "Carga de camiones en distribución de alimentos con paletizado mixto (producto fresco, enlatado y seco en el mismo viaje).",
-            "client": "Distribuidora de alimentos regional"
+            "metric": "83%",
+            "result": "Regla de vida útil por cliente aplicada a todo el viaje al pistolear: si un cliente exige +83% de vida útil, ningún producto viejo se le carga.",
+            "client": "Una láctea regional"
           },
           {
-            "metric": "100%",
-            "result": "Trazabilidad completa de lote a cliente para recalls focalizados.",
-            "client": "Empresa láctea (Colombia)"
+            "metric": "Frío",
+            "result": "Citas diferenciadas para producto frío y seco, con sensores de temperatura en camiones y rechazo en recepción si está fuera de rango.",
+            "client": "Una láctea regional"
           }
         ]
       },
       "cta": {
-        "title": "Dejá de tirar producto vencido cada mes",
-        "subtitle": "Agendá una demo y te mostramos cómo cortar las mermas por vencimiento y los rechazos por vida útil.",
+        "title": "Que lo más viejo salga primero, sin excusas",
+        "subtitle": "Agendá una demo y te mostramos FEFO real, regla de vida útil por cliente y cadena de frío en una sola plataforma.",
         "button": "Agendar Demo"
       }
     },
     "gobiernoResiduos": {
       "name": "Gobierno y Residuos",
-      "tagline": "Rutas y recolección con visibilidad total",
+      "tagline": "Rutas optimizadas con IA y GPS que valida cada descarga",
       "eyebrow": "Industria",
       "title": "Gobierno y",
       "titleAccent": "Residuos Urbanos",
-      "subtitle": "Rutas de recolección diseñadas hace una década ya no reflejan cómo creció la ciudad. El resultado: camiones llenos que no pueden levantar más y zonas olvidadas que generan quejas. Geodot optimiza las rutas, mide el impacto en CO₂ y pone la operación ante los ojos del ciudadano.",
+      "subtitle": "Cuatro de cada cinco vecinos sienten que la basura está fuera de control. Rutas diseñadas hace una década, camiones llenos que no levantan más y zonas olvidadas. Geodot optimiza las rutas, valida cada descarga contra GPS y pone la operación ante los ojos del ciudadano.",
       "ctaPrimary": "Agendar Reunión",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
           "Rutas obsoletas: se diseñaron hace años y la ciudad ya creció y cambió.",
-          "Flota subutilizada: unos camiones salen llenos y otros medio vacíos.",
-          "Sin visibilidad: no sabés dónde están los camiones en tiempo real.",
+          "Cargas simuladas: descargas que se reportan pero no pasaron, sin forma de validarlas.",
+          "Sin visibilidad: no sabés dónde están los camiones ni qué puntos se levantaron de verdad.",
           "Vecinos desinformados: no saben cuándo pasa el camión y se llenan las quejas.",
           "Costos elevados: kilómetros innecesarios y combustible desperdiciado todos los días."
         ],
         "stats": [
           {
-            "problem": "Reducción de kilómetros",
-            "impact": "15%"
+            "problem": "Descarga validada contra GPS",
+            "impact": "Sin simular"
           },
           {
-            "problem": "Reducción de quejas",
-            "impact": "20%"
+            "problem": "Censo de puntos por tonelaje",
+            "impact": "Mapa de calor"
           },
           {
-            "problem": "Reducción de CO₂",
-            "impact": "70 t/año"
+            "problem": "Combustible y km (potencial estimado)",
+            "impact": "Hasta -15%"
           },
           {
-            "problem": "ROI",
-            "impact": "< 12 meses"
+            "problem": "CO₂ evitado (potencial estimado)",
+            "impact": "~70 t/año"
           }
         ]
       },
@@ -756,61 +756,61 @@
         "title": "Casos en tu sector",
         "items": [
           {
-            "metric": "-18%",
-            "result": "Kilómetros recorridos en rutas de recolección de residuos sólidos con rediseño asistido por IA, equivalente a ~70 toneladas de CO₂ al año.",
-            "client": "Municipio metropolitano"
+            "metric": "GPS",
+            "result": "Validación de cada descarga contra GPS: se acaban las cargas simuladas y queda registro de qué punto se levantó y cuándo.",
+            "client": "Un municipio de la CDMX"
           },
           {
-            "metric": "20%",
-            "result": "Reducción de quejas ciudadanas con app y torre de control.",
-            "client": "Municipio de la CDMX"
+            "metric": "Censo",
+            "result": "Mapa de calor y censo de puntos de recolección por densidad y tonelaje estimado, base para rediseñar rutas con IA.",
+            "client": "Un municipio de la CDMX"
           },
           {
-            "metric": "70 t/año",
-            "result": "Toneladas de CO₂ evitadas por rutas más cortas.",
-            "client": "Municipio de la CDMX"
+            "metric": "~70 t/año",
+            "result": "Potencial estimado de CO₂ evitado por rutas más cortas en un proyecto de recolección, junto a un objetivo de hasta -15% en km y combustible.",
+            "client": "Un municipio de la CDMX"
           }
         ]
       },
       "cta": {
-        "title": "Menos kilómetros, menos quejas, menos CO₂",
-        "subtitle": "Agendá una reunión y te entregamos un diagnóstico de ahorro de tus rutas, sin costo.",
+        "title": "Menos kilómetros, menos quejas, descargas que sí pasaron",
+        "subtitle": "Agendá una reunión y te entregamos un diagnóstico de tus rutas y un censo de puntos, sin costo.",
         "button": "Agendar Reunión"
       }
     },
     "logistica3pl": {
       "name": "Logística 3PL",
-      "tagline": "Multicliente, facturación y SLAs en un solo lugar",
+      "tagline": "Etiqueta Zero + iWMS: el dato viaja con el palet",
       "eyebrow": "Industria",
       "title": "Operadores Logísticos",
       "titleAccent": "3PL",
-      "subtitle": "Si rentás equipos, gestionás patio o manejás múltiples clientes, sabés que la visibilidad en tiempo real hace la diferencia entre facturar a tiempo y perder margen. Geodot unifica el control del equipo, el patio y el reporte en un solo lugar.",
+      "subtitle": "Cada cliente te pide un reporte distinto y no tenés cómo mostrárselo. Geodot arranca por Etiqueta Zero y iWMS (cero re-etiquetado, el dato ya viaja con el palet) y suma multicliente, ruteo y facturación cuando lo necesitás: land-and-expand sobre tu operación.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
+          "Re-etiquetado manual: en recepción se reimprime y repega cada etiqueta, fuente constante de errores.",
           "Equipos sin rastreo: no sabés en qué sitio está cada montacargas, grúa o unidad rentada, y el cliente te llama porque él tampoco sabe.",
           "Documentación manual: remisiones, tiempos de uso y facturación se arman en Excel y siempre hay discrepancias al cierre de mes.",
-          "Consolidación de cargas: pedidos de varios clientes a la misma zona, difíciles de combinar a mano.",
-          "Facturación y liquidación: calcular el cobro de cada servicio es manual, lento y se presta a errores.",
-          "SLAs diferenciados: cumplir 24h, 48h y ventanas específicas al mismo tiempo es un malabarismo."
+          "Cada cliente pide su reporte: sin portal multicliente, mostrar la operación a cada cuenta es un malabarismo.",
+          "Consolidación de cargas: pedidos de varios clientes a la misma zona, difíciles de combinar a mano."
         ],
         "stats": [
           {
-            "problem": "Tiempo en reportes",
-            "impact": "-90%"
+            "problem": "Re-etiquetado en recepción",
+            "impact": "Cero"
           },
           {
-            "problem": "Visibilidad para clientes",
-            "impact": "Portal 24/7"
+            "problem": "El dato viaja con el palet",
+            "impact": "Etiqueta Zero"
           },
           {
-            "problem": "Tiempo de facturación",
-            "impact": "-95%"
+            "problem": "Visibilidad por cuenta",
+            "impact": "Portal multicliente"
           },
           {
-            "problem": "Utilización de camiones",
-            "impact": "+15%"
+            "problem": "Crecé sumando módulos",
+            "impact": "Land-and-expand"
           }
         ]
       },
@@ -821,61 +821,61 @@
         "title": "Casos en tu sector",
         "items": [
           {
-            "metric": "100%",
-            "result": "Visibilidad en tiempo real de la ubicación y estado de cada unidad de equipo rentado, con historial de uso por cliente y por turno.",
-            "client": "Empresa de renta de montacargas y grúas"
+            "metric": "Etiqueta Zero",
+            "result": "Cero re-etiquetado manual en recepción: el dato ya viaja con el palet, se acaban los errores de reimpresión y repegado.",
+            "client": "Un operador logístico"
           },
           {
-            "metric": "-90%",
-            "result": "Tiempo de liquidación mensual con facturación automática basada en horas reales de uso registradas por el sistema.",
-            "client": "Operador logístico regional"
+            "metric": "Multicliente",
+            "result": "Cada cuenta con su propia visibilidad y sus reportes en un portal 24/7, sin armar un Excel por cliente.",
+            "client": "Un operador logístico"
           },
           {
-            "metric": "+15%",
-            "result": "Utilización de camiones del 70% al 85% con consolidación inteligente.",
-            "client": "Operador logístico regional"
+            "metric": "iWMS",
+            "result": "Ubicación y estado de cada unidad de equipo rentado en tiempo real, con historial de uso por cliente y por turno.",
+            "client": "Una empresa de renta de equipo"
           }
         ]
       },
       "cta": {
-        "title": "Gestioná todas tus cuentas desde una sola pantalla",
-        "subtitle": "Agendá una demo y te mostramos cómo facturar a tiempo y mostrarle a cada cliente su operación en vivo.",
+        "title": "Empezá por Etiqueta Zero, crecé con toda la plataforma",
+        "subtitle": "Agendá una demo y te mostramos cómo eliminar el re-etiquetado y darle a cada cliente su operación en vivo.",
         "button": "Agendar Demo"
       }
     },
     "healthcare": {
       "name": "Salud y Farma",
-      "tagline": "Cumplimiento, frío y trazabilidad regulatoria",
+      "tagline": "Cadena de frío con alerta antes del daño, no después",
       "eyebrow": "Industria",
       "title": "Salud y",
       "titleAccent": "Farma",
-      "subtitle": "Vacunas, muestras clínicas y medicamentos de alto costo no toleran ni un grado fuera de rango ni una ruptura en la cadena de custodia. Geodot garantiza la trazabilidad del almacén al punto de entrega, con alertas antes del daño, no después.",
+      "subtitle": "Vacunas, muestras clínicas y medicamentos de alto costo no toleran ni un grado fuera de rango. Geodot entra por la cadena de frío: trazabilidad de temperatura de punta a punta, alerta cuando la excursión pasa (no cuando te rechazan el camión) y FEFO real para que lo más próximo a vencer salga primero.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Red de distribución de frío fragmentada: el producto sale a 4 °C del almacén central pero el último kilómetro no tiene monitoreo, y ahí ocurre el 60 % de las excursiones.",
-          "Trazabilidad regulatoria: cada movimiento queda registrado con timestamp, temperatura y responsable para auditoría.",
+          "Red de frío fragmentada: el producto sale a 4 °C del almacén central pero el último kilómetro no tiene monitoreo, y ahí ocurre la mayoría de las excursiones.",
+          "Te enterás tarde: sin sensores en el camión, la excursión aparece cuando rechazan la entrega.",
           "Ventanas de tiempo estrictas: las muestras tienen vida útil y los traslados se miden en minutos, no en horas.",
-          "Miles de SKUs con vencimientos: FIFO obligatorio por ley, lotes, controlados y trazabilidad para recalls.",
-          "Dispatch por urgencia y capacidad: la unidad correcta, con el equipo correcto, al lugar correcto."
+          "Miles de SKUs con vencimientos: FEFO obligatorio, lotes, controlados y trazabilidad para recalls.",
+          "Cadena de custodia: cada movimiento debe quedar registrado con timestamp, temperatura y responsable para auditoría."
         ],
         "stats": [
           {
-            "problem": "Control de temperatura",
-            "impact": "Nativo, no addon"
+            "problem": "Trazabilidad de temperatura",
+            "impact": "Punta a punta"
+          },
+          {
+            "problem": "Alerta de excursión",
+            "impact": "Cuando pasa"
+          },
+          {
+            "problem": "FEFO por vencimiento",
+            "impact": "Real"
           },
           {
             "problem": "Cadena de custodia",
-            "impact": "100% digital"
-          },
-          {
-            "problem": "Tiempo de respuesta",
-            "impact": "-40%"
-          },
-          {
-            "problem": "Vencimientos evitados",
-            "impact": "FIFO forzado"
+            "impact": "Digital y auditable"
           }
         ]
       },
@@ -886,61 +886,61 @@
         "title": "Casos en tu sector",
         "items": [
           {
-            "metric": "-95%",
-            "result": "Excursiones de temperatura detectadas y atendidas antes de comprometer el producto, con trazabilidad continua de almacén central a punto de entrega.",
-            "client": "Distribuidor farmacéutico regional"
+            "metric": "Frío",
+            "result": "Sensores de temperatura en camiones con frío y rechazo automático en recepción si el producto llega fuera de rango: la excursión se ve cuando pasa.",
+            "client": "Un distribuidor farmacéutico"
           },
           {
-            "metric": "100%",
-            "result": "Trazabilidad de cadena de custodia, del punto de extracción al laboratorio central.",
-            "client": "Laboratorio de análisis clínicos"
+            "metric": "FEFO real",
+            "result": "Salida por fecha de expiración con aviso al pistolear cuando hay un palet más viejo en otra ubicación: nada vencido queda escondido atrás.",
+            "client": "Un distribuidor farmacéutico"
           },
           {
-            "metric": "0",
-            "result": "Vencimientos por fuera de FIFO con alertas automáticas y gestión de lotes por sucursal.",
-            "client": "Cadena de distribución farmacéutica"
+            "metric": "Custodia",
+            "result": "Cada movimiento registrado con timestamp, temperatura y responsable, con trazabilidad continua del almacén central al punto de entrega.",
+            "client": "Una cadena de distribución de salud"
           }
         ]
       },
       "cta": {
         "title": "Logística que no tolera ni un grado fuera de rango",
-        "subtitle": "Agendá una demo y te mostramos cómo garantizar cadena de frío, trazabilidad y dispatch inteligente en una sola plataforma.",
+        "subtitle": "Agendá una demo y te mostramos cómo garantizar cadena de frío, FEFO real y cadena de custodia en una sola plataforma.",
         "button": "Agendar Demo"
       }
     },
     "recintosFiscales": {
       "name": "Recintos Fiscales",
-      "tagline": "Control aduanero y Etiqueta Zero",
+      "tagline": "Etiqueta Zero + iWMS para un recinto auditable",
       "eyebrow": "Industria",
       "title": "Recintos",
       "titleAccent": "Fiscales",
-      "subtitle": "Un recinto bajo escrutinio de ANAM, IMMEX y OEA necesita conteo automático, evidencia en video y geocercas activas, tanto en el almacén como en el patio de maniobras y en el acceso portuario. Geodot digitaliza todo el perímetro.",
+      "subtitle": "Sin evidencia digital, una auditoría de ANAM es una apuesta. Geodot entra por Etiqueta Zero e iWMS: cero re-etiquetado, el dato viaja con el palet y cada movimiento dentro del recinto queda registrado y auditable, con gestor documental y torre de control cuando los necesitás.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
+          "Re-etiquetado en recepción: cada palet que entra al recinto se reimprime y repega a mano, fuente de errores ante la autoridad.",
           "Cumplimiento regulatorio: ANAM, IMMEX y OEA exigen inventario, video y trazabilidad integrados, con acceso remoto para la autoridad.",
-          "Sin evidencia en el acceso: las unidades entran y salen sin conteo automático de carga: la conciliación se hace a mano y siempre hay diferencias ante la autoridad.",
           "Mercancía en custodia: cada movimiento dentro del recinto debe quedar registrado y auditable.",
           "Áreas diferenciadas: peligrosos, refrigerados y carga estándar conviven con reglas distintas en el mismo almacén.",
-          "Conciliación física vs. documental: contar cajas que entran y salen contra lo declarado, con evidencia en video."
+          "Conciliación física vs. documental: contar lo que entra y sale contra lo declarado, con evidencia."
         ],
         "stats": [
           {
-            "problem": "Almacén fiscal gestionado",
-            "impact": "7,000 m²"
+            "problem": "Re-etiquetado en recepción",
+            "impact": "Cero"
           },
           {
-            "problem": "Conciliación documental",
-            "impact": "Automática"
+            "problem": "El dato viaja con el palet",
+            "impact": "Etiqueta Zero"
           },
           {
-            "problem": "Evidencia para auditoría",
-            "impact": "Video + inventario"
+            "problem": "Cada movimiento registrado",
+            "impact": "Auditable"
           },
           {
-            "problem": "Acceso remoto autoridad",
-            "impact": "24/7"
+            "problem": "Consulta documental",
+            "impact": "< 2 min, 24/7"
           }
         ]
       },
@@ -951,25 +951,25 @@
         "title": "Casos en tu sector",
         "items": [
           {
-            "metric": "7,000 m²",
-            "result": "Almacén fiscal en AIFA digitalizado con iWMS y Etiqueta Zero, tres áreas (peligrosos, refrigerados, estándar).",
-            "client": "Recinto fiscal en AIFA"
+            "metric": "Etiqueta Zero",
+            "result": "Almacén fiscal digitalizado con iWMS y Etiqueta Zero: cero re-etiquetado y trazabilidad por palet en áreas de peligrosos, refrigerados y estándar.",
+            "client": "Un recinto en AIFA"
           },
           {
-            "metric": "ANAM-listo",
-            "result": "Conteo automático de cajas con cámara en muelles, correlacionado con escaneo Zebra y geocerca activa en acceso al puerto. Evidencia en video disponible para inspección en 24 h.",
-            "client": "Operador de recinto en zona portuaria"
+            "metric": "Auditable",
+            "result": "Cada movimiento dentro del recinto queda registrado y disponible para inspección, con conciliación física contra lo declarado.",
+            "client": "Un recinto en zona portuaria"
           },
           {
-            "metric": "25 años",
-            "result": "Experiencia en logística integral de comercio exterior potenciada con trazabilidad digital de extremo a extremo.",
-            "client": "Recinto fiscal en AIFA"
+            "metric": "< 2 min",
+            "result": "Consulta documental resuelta por un asistente IA en menos de 2 minutos, 24/7, siempre sobre la versión vigente.",
+            "client": "Un recinto en AIFA"
           }
         ]
       },
       "cta": {
         "title": "Un recinto auditable de extremo a extremo",
-        "subtitle": "Agendá una demo y te mostramos el conteo en video, las geocercas y la trazabilidad que ANAM, IMMEX y OEA exigen.",
+        "subtitle": "Agendá una demo y te mostramos Etiqueta Zero, la trazabilidad por palet y la evidencia que ANAM, IMMEX y OEA exigen.",
         "button": "Agendar Demo"
       }
     }
@@ -997,13 +997,13 @@
       "eyebrow": "Industrias",
       "title": "Logística que entiende tu",
       "titleAccent": "industria",
-      "subtitle": "Cada sector tiene su propia presión: rotación, cadena de frío, cumplimiento, multicliente. Geodot se adapta a la operación que ya tenés y suma trazabilidad, ruteo y paletizado donde más lo necesitás.",
+      "subtitle": "Cada sector entra por su propio dolor: recintos y 3PL por Etiqueta Zero, gobierno por GPS, alimentos por frío y FEFO, bebidas por ruteo y paletizado. Geodot se adapta a la operación que ya tenés y crece desde ahí.",
       "cta": "Agendá tu demo"
     },
     "eyebrow": "Sectores",
     "title": "Seis industrias,",
     "titleAccent": "una sola plataforma",
-    "subtitle": "Elegí tu sector y descubrí cómo Geodot resuelve los problemas concretos de tu operación.",
+    "subtitle": "Elegí tu sector y descubrí por qué módulo conviene entrar y cómo Geodot resuelve los problemas concretos de tu operación.",
     "explore": "Ver industria",
     "cta": {
       "title": "¿No ves tu industria en la lista?",
