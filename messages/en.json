@@ -249,8 +249,7 @@
         {
           "key": "rail",
           "name": "Rail",
-          "desc": "Rail integration for long-haul legs.",
-          "soon": "Coming soon"
+          "desc": "Rail integration for long-haul legs."
         }
       ]
     }

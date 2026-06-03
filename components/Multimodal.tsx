@@ -1,8 +1,15 @@
+import Image from "next/image";
 import { Ship, Plane, Truck, TrainFront } from "lucide-react";
 import { Container } from "./ui/Container";
 import { Reveal, RevealGroup } from "./ui/Reveal";
 
 const ICONS = { sea: Ship, air: Plane, road: Truck, rail: TrainFront } as const;
+const IMAGES = {
+  sea: "/images/industries/alimentos/hero.jpg", // fishing fleet at sea
+  air: "/images/multimodal/aereo.jpg",
+  road: "/images/fleet/itms.jpg",
+  rail: "/images/multimodal/ferroviario.jpg",
+} as const;
 type ModeKey = keyof typeof ICONS;
 
 type Mode = { key: ModeKey; name: string; desc: string; soon?: string };
@@ -26,22 +33,27 @@ export function Multimodal({
         <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {modes.map((m) => {
             const I = ICONS[m.key] ?? Truck;
-            const soon = !!m.soon;
+            const img = IMAGES[m.key];
             return (
               <div
                 key={m.key}
-                className={`card-lift relative rounded-2xl border border-navy-100 bg-white p-7 shadow-sm ${soon ? "opacity-90" : ""}`}
+                className="card-lift group relative isolate flex aspect-[3/4] flex-col justify-end overflow-hidden rounded-2xl"
               >
-                {soon && (
-                  <span className="absolute right-4 top-4 rounded-full bg-magenta-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-magenta-700 ring-1 ring-inset ring-magenta-200">
-                    {m.soon}
+                <Image
+                  src={img}
+                  alt={m.name}
+                  fill
+                  sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+                <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-navy-950/10" />
+                <div className="relative z-[1] p-6">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/12 text-teal-300 ring-1 ring-inset ring-white/20 backdrop-blur-sm">
+                    <I className="h-5 w-5" strokeWidth={1.75} />
                   </span>
-                )}
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-teal-500/10 text-teal-600 ring-1 ring-inset ring-teal-500/20">
-                  <I className="h-6 w-6" strokeWidth={1.75} />
-                </span>
-                <h3 className="mt-5 text-heading-sm font-semibold text-navy-900">{m.name}</h3>
-                <p className="mt-2 text-body-sm leading-relaxed text-navy-600">{m.desc}</p>
+                  <h3 className="mt-4 text-heading-sm font-semibold text-white">{m.name}</h3>
+                  <p className="mt-1.5 text-body-sm leading-relaxed text-navy-100">{m.desc}</p>
+                </div>
               </div>
             );
           })}

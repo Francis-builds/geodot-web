@@ -249,8 +249,7 @@
         {
           "key": "rail",
           "name": "Ferroviario",
-          "desc": "Integración ferroviaria para tramos de larga distancia.",
-          "soon": "Próximamente"
+          "desc": "Integración ferroviaria para tramos de larga distancia."
         }
       ]
     }
