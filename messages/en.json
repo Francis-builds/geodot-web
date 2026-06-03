@@ -112,35 +112,35 @@
       "title": "Your logistics is bleeding money through leaks",
       "titleAccent": "nobody is watching",
       "points": [
-        "91% of your trucks leave with unused space.",
-        "Your team plans routes by hand, 3 hours a day.",
+        "Your trucks leave at 85% when they could run at 99%.",
+        "Your team builds routes by hand, 3 hours a day.",
         "Rejections surface only after the customer complains.",
         "Every system speaks a different language and nothing reconciles."
       ],
       "stats": [
         {
-          "problem": "Underused trucks",
-          "impact": "+15% cost"
+          "problem": "Half-loaded trucks",
+          "impact": "Money on the road"
         },
         {
-          "problem": "Unoptimized routes",
-          "impact": "+20% km"
+          "problem": "Routes built by hand",
+          "impact": "Hours lost"
         },
         {
           "problem": "No visibility",
-          "impact": "+25% rejections"
+          "impact": "You find out late"
         },
         {
           "problem": "Disconnected systems",
-          "impact": "Hours lost"
+          "impact": "Nothing reconciles"
         }
       ]
     },
     "platform": {
       "eyebrow": "The platform",
       "title": "One platform.",
-      "titleAccent": "Your whole chain, connected and optimized.",
-      "description": "Warehouse, transport, routing and palletizing working as one, in real time. It doesn't replace your ERP, it makes it stronger."
+      "titleAccent": "Visibility, control and profitability.",
+      "description": "Visibility: see everything live, from vessel to last mile. Control: nothing slips by, lot by lot with real FEFO. Profitability: every trip pays off more, with routing and palletizing computed at once. All in real time, without replacing your ERP, it makes it stronger."
     },
     "journey": {
       "eyebrow": "Point to point",
@@ -149,54 +149,54 @@
       "stages": {
         "warehouse": {
           "title": "Warehouse",
-          "body": "AI-driven receiving, putaway and picking. Automatic FEFO and 99.9% inventory accuracy.",
-          "metric": "99.9%",
-          "metricLabel": "inventory accuracy",
+          "body": "AI-driven receiving, putaway and picking. Real FEFO: the 12 oldest pallets go to the back, and each customer's shelf-life rule is enforced at the scan.",
+          "metric": "FEFO",
+          "metricLabel": "real, lot by lot",
           "image": "/images/warehouse/iwms.jpg"
         },
         "transport": {
           "title": "Transport",
-          "body": "Owned and outsourced fleet in one view. Every shipment leaves with its paperwork in order.",
+          "body": "Owned and outsourced fleet in one view. Trucks leave loaded to 99%, not 85%, with their paperwork in order.",
           "metric": "99%",
           "metricLabel": "truck load",
           "image": "/images/fleet/itms.jpg"
         },
         "route": {
           "title": "Routing",
-          "body": "Optimal routes instantly, computed alongside palletizing. Fewer miles, lower cost.",
-          "metric": "-20%",
-          "metricLabel": "route kilometers",
+          "body": "Optimal routes instantly, computed alongside palletizing. What used to take 3 hours by hand now takes minutes.",
+          "metric": "10 min",
+          "metricLabel": "to route 5,000 orders",
           "image": "/images/fleet/ruteo-nocturno.jpg"
         },
         "delivery": {
           "title": "Delivery",
           "body": "Digital proof of delivery and full traceability. The last point closes the loop.",
           "metric": "100%",
-          "metricLabel": "visible in real time",
+          "metricLabel": "traceable, live",
           "image": "/images/torre/torre-control-room.jpg"
         }
       }
     },
     "metrics": [
       {
-        "value": 10,
+        "value": 99,
+        "suffix": "%",
+        "label": "Truck load, not 85%"
+      },
+      {
+        "value": 8,
         "suffix": "%",
         "label": "Lower transport cost"
       },
       {
-        "value": 20,
-        "suffix": "%",
-        "label": "Fewer miles on the road"
-      },
-      {
-        "value": 30,
-        "suffix": "%",
-        "label": "Fewer rejections"
+        "value": 10,
+        "suffix": " min",
+        "label": "To route 5,000 orders"
       },
       {
         "value": 100,
         "suffix": "%",
-        "label": "Live visibility, end to end"
+        "label": "Traceability, live"
       }
     ],
     "cases": {
@@ -204,19 +204,19 @@
       "title": "Real numbers from operations like yours",
       "items": [
         {
-          "metric": "−10%",
-          "result": "Lower transport cost by loading to 99%",
-          "client": "Beverage bottler"
+          "metric": "−8%",
+          "result": "Lower transport cost by going from 85% to 99% truck load",
+          "client": "A leading beverage bottler"
         },
         {
-          "metric": "−30%",
-          "result": "Fewer rejections with FEFO and per-customer shelf life",
-          "client": "Dairy"
+          "metric": "83%",
+          "result": "Per-customer shelf-life rule enforced at the scan: real FEFO, no surprise rejections",
+          "client": "Food distribution"
         },
         {
           "metric": "100%",
-          "result": "Collection traceability and −70 t CO₂/year",
-          "client": "Municipal government"
+          "result": "Live collection traceability, with an estimated potential of up to ~70 t CO₂/year saved",
+          "client": "A municipality"
         }
       ]
     },

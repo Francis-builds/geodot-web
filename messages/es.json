@@ -112,35 +112,35 @@
       "title": "Tu logística pierde plata por fugas",
       "titleAccent": "que nadie está viendo",
       "points": [
-        "El 91% de tus camiones sale con espacio sin usar.",
-        "Tu equipo planifica rutas a mano, 3 horas por día.",
+        "Tus camiones salen al 85% cuando podrían ir al 99%.",
+        "Tu equipo arma rutas a mano, 3 horas por día.",
         "Los rechazos aparecen cuando el cliente ya se quejó.",
         "Cada sistema habla un idioma distinto y nada se concilia."
       ],
       "stats": [
         {
-          "problem": "Camiones subutilizados",
-          "impact": "+15% costos"
+          "problem": "Camiones a medio cargar",
+          "impact": "Plata en la calle"
         },
         {
-          "problem": "Rutas no optimizadas",
-          "impact": "+20% km"
+          "problem": "Rutas armadas a mano",
+          "impact": "Horas perdidas"
         },
         {
           "problem": "Sin visibilidad",
-          "impact": "+25% rechazos"
+          "impact": "Te enterás tarde"
         },
         {
           "problem": "Sistemas desconectados",
-          "impact": "Horas perdidas"
+          "impact": "Nada concilia"
         }
       ]
     },
     "platform": {
       "eyebrow": "La plataforma",
-      "title": "Una plataforma.",
-      "titleAccent": "Toda tu cadena, conectada y optimizada.",
-      "description": "Almacén, transporte, ruteo y paletizado trabajando como uno solo, en tiempo real. No reemplaza tu ERP: lo potencia."
+      "title": "Una sola plataforma.",
+      "titleAccent": "Visibilidad, control y rentabilidad.",
+      "description": "Visibilidad: ves todo en vivo, del buque al último kilómetro. Control: nada se te escapa, lote por lote y FEFO real. Rentabilidad: cada viaje rinde más, ruteo y paletizado en simultáneo. Todo en tiempo real, sin reemplazar tu ERP: lo potencia."
     },
     "journey": {
       "eyebrow": "De punto a punto",
@@ -149,54 +149,54 @@
       "stages": {
         "warehouse": {
           "title": "Almacén",
-          "body": "Recepción, ubicación y picking con IA. FEFO automático e inventario preciso al 99.9%.",
-          "metric": "99.9%",
-          "metricLabel": "inventario exacto",
+          "body": "Recepción, ubicación y picking con IA. FEFO real: los 12 palets más viejos van atrás, y la regla de vida útil de cada cliente se aplica al pistolear.",
+          "metric": "FEFO",
+          "metricLabel": "real, lote por lote",
           "image": "/images/warehouse/iwms.jpg"
         },
         "transport": {
           "title": "Transporte",
-          "body": "Flota propia y tercerizada en una sola vista. Cada envío sale con su documentación al día.",
+          "body": "Flota propia y tercerizada en una sola vista. El camión sale cargado al 99, no al 85, y con su documentación al día.",
           "metric": "99%",
           "metricLabel": "de carga por camión",
           "image": "/images/fleet/itms.jpg"
         },
         "route": {
           "title": "Ruteo",
-          "body": "Rutas óptimas al instante, calculadas junto al paletizado. Menos kilómetros, menos costo.",
-          "metric": "-20%",
-          "metricLabel": "kilómetros en ruta",
+          "body": "Rutas óptimas al instante, calculadas junto al paletizado. Lo que llevaba 3 horas a mano, ahora son minutos.",
+          "metric": "10 min",
+          "metricLabel": "para 5.000 pedidos",
           "image": "/images/fleet/ruteo-nocturno.jpg"
         },
         "delivery": {
           "title": "Entrega",
           "body": "Prueba de entrega digital y trazabilidad total. El último punto cierra el ciclo.",
           "metric": "100%",
-          "metricLabel": "visible en tiempo real",
+          "metricLabel": "trazable, en vivo",
           "image": "/images/torre/torre-control-room.jpg"
         }
       }
     },
     "metrics": [
       {
-        "value": 10,
+        "value": 99,
+        "suffix": "%",
+        "label": "Carga por camión, no el 85%"
+      },
+      {
+        "value": 8,
         "suffix": "%",
         "label": "Menos costo de transporte"
       },
       {
-        "value": 20,
-        "suffix": "%",
-        "label": "Menos kilómetros en ruta"
-      },
-      {
-        "value": 30,
-        "suffix": "%",
-        "label": "Menos rechazos"
+        "value": 10,
+        "suffix": " min",
+        "label": "Para rutear 5.000 pedidos"
       },
       {
         "value": 100,
         "suffix": "%",
-        "label": "Visibilidad de flota, en vivo"
+        "label": "Trazabilidad, en vivo"
       }
     ],
     "cases": {
@@ -204,19 +204,19 @@
       "title": "Números reales de operaciones como la tuya",
       "items": [
         {
-          "metric": "−10%",
-          "result": "Menos costo de transporte cargando al 99%",
-          "client": "Embotelladora"
+          "metric": "−8%",
+          "result": "Menos costo de transporte saltando del 85% al 99% de carga por camión",
+          "client": "Una embotelladora líder"
         },
         {
-          "metric": "−30%",
-          "result": "Menos rechazos con FEFO y vida útil por cliente",
-          "client": "Lácteos"
+          "metric": "83%",
+          "result": "Regla de vida útil por cliente aplicada al pistolear: FEFO real, sin rechazos sorpresa",
+          "client": "Distribución de alimentos"
         },
         {
           "metric": "100%",
-          "result": "Trazabilidad de recolección y −70 t CO₂/año",
-          "client": "Gobierno municipal"
+          "result": "Trazabilidad de recolección en vivo, con potencial estimado de hasta ~70 t CO₂/año menos",
+          "client": "Un municipio"
         }
       ]
     },
