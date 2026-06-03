@@ -89,8 +89,8 @@
         "label": "de carga por camión"
       },
       {
-        "value": "−30%",
-        "label": "rechazos en entrega"
+        "value": "−8%",
+        "label": "costo de transporte"
       },
       {
         "value": "90 días",
@@ -1013,29 +1013,29 @@
   },
   "casesPage": {
     "hero": {
-      "eyebrow": "Casos de éxito",
+      "eyebrow": "Casos reales",
       "title": "Números medibles, no",
       "titleAccent": "promesas en PowerPoint",
-      "subtitle": "Embotelladores, lácteos, gobierno y recintos fiscales ya recuperaron costos con Geodot. Estos son los números, y el próximo puede ser el tuyo.",
+      "subtitle": "Embotelladoras, flotas pesqueras y operaciones de frío ya mueven más con Geodot. Estos son los números reales, marcamos qué está en producción y qué se mostró en demo. Sin inventar nada.",
       "cta": "Quiero estos resultados"
     },
     "list": {
       "title": "El impacto de Geodot en números",
       "items": [
         {
-          "client": "Embotelladora líder",
-          "result": "Pasó de cargar camiones al 85% al 99% y de planificar rutas en 3 horas a hacerlo en 15 minutos, con -8% en costo de transporte.",
-          "metric": "-92% tiempo"
+          "client": "Una embotelladora líder",
+          "result": "Pasó de cargar camiones al 85% al 99% de capacidad y bajó 8% el costo de transporte. La regla del vidrio retornable le sumó 10% de capacidad y le sacó de la calle entre 4 y 5 camiones por día.",
+          "metric": "85% → 99%"
         },
         {
-          "client": "Empresa Láctea (Colombia)",
-          "result": "FEFO automático y trazabilidad por lote frenaron los rechazos de supermercados: ahora rastrean cualquier lote en minutos, no en días.",
-          "metric": "-80% mermas"
+          "client": "Una flota pesquera",
+          "result": "23 buques en producción con telemetría y Torre de Control en una sola pantalla. Visibilidad real de la operación en alta mar, no un puntito perdido en el mapa.",
+          "metric": "23 buques"
         },
         {
-          "client": "Municipio de la CDMX",
-          "result": "Ruteo con IA para 470 toneladas diarias de residuos: menos kilómetros, menos CO₂ y ROI en menos de 12 meses.",
-          "metric": "-15% km"
+          "client": "Una operación de distribución",
+          "result": "El ruteo pasó de ~3 horas a rutear 5.000 pedidos en ~10 minutos. Las ETAs arrancaron en una franja de 30 minutos y la IA las afinó a 10 en unos 3 meses.",
+          "metric": "3 h → 10 min"
         }
       ]
     },
@@ -1043,33 +1043,33 @@
       "title": "Tres operaciones, tres puntos de dolor, tres resultados",
       "items": [
         {
-          "industry": "Bebidas y distribución",
-          "challenge": "Camiones que salían a media carga y rutas armadas a mano cada mañana, con sobrecosto de flete y entregas tarde.",
-          "solution": "Geodot sumó paletizado inteligente para llenar cada camión y ruteo automático que arma los recorridos del día en minutos.",
-          "result": "Ocupación de camión del 85% al 99% y planificación de rutas de 3 horas a 15 minutos, con -8% en costo de transporte."
+          "industry": "Bebidas y distribución (en producción)",
+          "challenge": "Camiones que salían al 85% y rutas armadas a mano cada mañana. Para mover lo mismo hacían falta 100 camiones cuando con mejor carga alcanzaba con 150. La planchada del sindicato comía capacidad real.",
+          "solution": "Geodot calcula paletizado y ruteo en simultáneo: sabe qué entra al camión antes de armar la ruta. Movió clientes de vidrio retornable entre camiones para liberar capacidad sin romper el margen.",
+          "result": "Carga de camión del 85% al 99% y 8% menos de costo de transporte. La regla del vidrio sumó 10% de capacidad y sacó 4 a 5 camiones por día de la calle."
         },
         {
-          "industry": "Cadena de frío y alimentos",
-          "challenge": "Rechazos de supermercados por lotes vencidos y trazabilidad lenta que tardaba días en responder ante un reclamo.",
-          "solution": "Geodot activó FEFO automático en el WMS y trazabilidad por lote de punta a punta, con control de temperatura en cada movimiento.",
-          "result": "Mermas por vencimiento -80% y rastreo de cualquier lote en minutos en lugar de días."
+          "industry": "Frío y trazabilidad (mostrado en demo)",
+          "challenge": "Producto vencido escondido al fondo del almacén y rechazos de camión completo porque un cliente exige entregar con más del 83% de vida útil. La trazabilidad tardaba días en responder un reclamo.",
+          "solution": "Geodot aplica FEFO real al pistolear: si sacás un palet, avisa que hay 12 más viejos en otra ubicación y te manda a buscar esos. La regla de vida útil del cliente se aplica a todo el viaje, no a un palet suelto.",
+          "result": "Desaparece el producto vencido escondido atrás y el rechazo de camión completo por vida útil. La franja de ETA bajó de 30 a 10 minutos en unos 3 meses, a medida que la IA aprendió."
         },
         {
-          "industry": "Recinto fiscal y aduana",
-          "challenge": "Inventario de mercancía bajo control aduanero llevado en planillas, con riesgo de discrepancias y demoras en las revisiones.",
-          "solution": "Geodot implementó iWMS con Etiqueta Zero para registrar cada movimiento en tiempo real y dejar la operación lista para auditoría.",
-          "result": "Inventario al 99% de exactitud y revisiones que pasaron de horas a minutos, sin papel."
+          "industry": "Recinto fiscal y cumplimiento (escenario tipo)",
+          "challenge": "Mercancía bajo control aduanero llevada en planillas y re-etiquetado manual en recepción, con riesgo de discrepancias y horas perdidas en cada revisión.",
+          "solution": "Geodot suma iWMS con Etiqueta Zero para que el dato viaje con el palet sin re-imprimir etiquetas, y un gestor documental con asistente de IA que resuelve una consulta de procedimiento en menos de 2 minutos, 24/7.",
+          "result": "Cero re-etiquetado manual, cada movimiento registrado en tiempo real y la operación lista para auditoría. La consulta documental que antes tomaba horas se resuelve en menos de 2 minutos."
         }
       ],
       "labels": {
         "challenge": "El reto",
-        "solution": "Qué hizo Geodot",
+        "solution": "Qué hace Geodot",
         "result": "El resultado"
       }
     },
     "cta": {
       "title": "¿Querés números como estos en tu operación?",
-      "subtitle": "Agendá una demo y te mostramos, con tus propios datos, dónde están tus fugas y cuánto podés ahorrar.",
+      "subtitle": "Agendá una demo y te mostramos, con tus propios datos, dónde están tus fugas invisibles y cuánto podés ahorrar.",
       "button": "Agendá tu demo"
     }
   },
@@ -1116,7 +1116,7 @@
     "body": [
       "Después de más de 40 años combinados en logística, producción y tecnología, vimos siempre el mismo problema: las herramientas no resolvían la operación completa. Un sistema ruteaba pero no paletizaba. El WMS no hablaba con el TMS. Y en el medio, los equipos de operaciones haciendo malabares para que todo cerrara.",
       "Geodot nació para terminar con eso. Construimos la primera plataforma que integra WMS, TMS, ruteo y paletizado en una sola solución, donde el motor de ruteo y el paletizador trabajan juntos, en tiempo real, para cargar cada camión al 99% y rutear por valor de negocio, no solo por kilómetros.",
-      "No prometemos magia: prometemos resultados que podés medir desde el día uno: menos kilómetros, menos rechazos, menos costos y menos emisiones. Y no reemplazamos tu ERP: lo potenciamos, integrándonos con SAP, BASIS y Oracle sin romper lo que ya funciona.",
+      "No prometemos magia: prometemos resultados que podés medir. En una embotelladora líder la carga de camión pasó de 85% a 99% y el costo de transporte bajó 8%. Y no reemplazamos tu ERP: lo potenciamos, integrándonos con SAP, BASIS y Oracle sin romper lo que ya funciona.",
       "Somos una empresa mexicana de tecnología con operación en México, Argentina, Colombia y Ecuador, y experiencia real en bebidas, alimentos, gobierno, pharma y recintos fiscales. Imaginamos un mundo donde cada camión sale al 100% y cada producto llega fresco al cliente correcto. Ese es el mundo que estamos construyendo, con vos."
     ],
     "cta": {
@@ -1329,7 +1329,7 @@
           },
           {
             "q": "¿Manejan telemetría de cadena de frío?",
-            "a": "Sí. Integramos sensores de temperatura para trazabilidad 100% y alertas tempranas. En casos de pharma y alimentos logramos hasta 95% menos excursiones de temperatura."
+            "a": "Sí. Integramos sensores de temperatura para trazabilidad 100% y alertas tempranas: te enterás de la excursión cuando pasa, no cuando te rechazan el camión. Citas y reglas diferenciadas para producto frío y seco."
           }
         ]
       },
@@ -1342,7 +1342,7 @@
           },
           {
             "q": "¿Cuál es el ROI típico?",
-            "a": "Menos de 12 meses, y de 4 a 6 meses en operaciones grandes. Entre 5% y 10% menos de costo de transporte, 15% a 20% menos kilómetros y hasta 25% menos órdenes rechazadas."
+            "a": "Suele estar por debajo de los 12 meses. Los resultados reales que vimos en operación: carga de camión de 85% a 99%, 8% menos de costo de transporte y 4 a 5 camiones por día menos por la regla del vidrio retornable. En tu caso lo calculamos con tus propios datos en la demo, sin números inventados."
           },
           {
             "q": "¿Tienen soporte en español?",

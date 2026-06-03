@@ -89,8 +89,8 @@
         "label": "truck load achieved"
       },
       {
-        "value": "−30%",
-        "label": "delivery rejections"
+        "value": "−8%",
+        "label": "transport cost"
       },
       {
         "value": "90 days",
@@ -1013,29 +1013,29 @@
   },
   "casesPage": {
     "hero": {
-      "eyebrow": "Success stories",
+      "eyebrow": "Real cases",
       "title": "Numbers you can measure, not",
       "titleAccent": "PowerPoint promises",
-      "subtitle": "Bottlers, dairy, government and bonded warehouses have already recovered costs with Geodot. These are the numbers, and the next one could be yours.",
+      "subtitle": "Bottlers, fishing fleets and cold-chain operations already move more with Geodot. These are the real numbers, and we flag what's in production versus what we showed in a demo. Nothing invented.",
       "cta": "I want these results"
     },
     "list": {
       "title": "The impact of Geodot in numbers",
       "items": [
         {
-          "client": "Leading bottler",
-          "result": "Truck loads went from 85% to 99% and route planning from 3 hours to 15 minutes, cutting transport cost by 8%.",
-          "metric": "-92% time"
+          "client": "A leading bottler",
+          "result": "Went from loading trucks at 85% to 99% of capacity and cut transport cost by 8%. The returnable-glass rule added 10% capacity and took 4 to 5 trucks a day off the road.",
+          "metric": "85% → 99%"
         },
         {
-          "client": "Dairy Company (Colombia)",
-          "result": "Automatic FEFO and lot-level traceability stopped supermarket rejections: they now trace any lot in minutes, not days.",
-          "metric": "-80% waste"
+          "client": "A fishing fleet",
+          "result": "23 vessels in production with telemetry and the Control Tower on a single screen. Real visibility of the operation at sea, not a lost dot on a map.",
+          "metric": "23 vessels"
         },
         {
-          "client": "Mexico City borough",
-          "result": "AI routing for 470 tons of daily waste: fewer kilometers, less CO₂ and ROI in under 12 months.",
-          "metric": "-15% km"
+          "client": "A distribution operation",
+          "result": "Routing went from about 3 hours to routing 5,000 orders in about 10 minutes. ETAs started in a 30-minute window and the AI tightened them to 10 in around 3 months.",
+          "metric": "3 hrs → 10 min"
         }
       ]
     },
@@ -1043,33 +1043,33 @@
       "title": "Three operations, three pain points, three results",
       "items": [
         {
-          "industry": "Beverage and distribution",
-          "challenge": "Trucks leaving half full and routes built by hand every morning, driving up freight cost and late deliveries.",
-          "solution": "Geodot added smart palletizing to fill every truck and automatic routing that builds the day's runs in minutes.",
-          "result": "Truck fill rate from 85% to 99% and route planning from 3 hours to 15 minutes, with -8% in transport cost."
+          "industry": "Beverage and distribution (in production)",
+          "challenge": "Trucks leaving at 85% and routes built by hand every morning. Moving the same volume took 100 trucks when better loading needed 150. The union's safety margin ate real capacity.",
+          "solution": "Geodot calculates palletizing and routing at the same time: it knows what fits in the truck before building the route. It shifted returnable-glass customers between trucks to free capacity without breaking the margin.",
+          "result": "Truck load from 85% to 99% and 8% lower transport cost. The glass rule added 10% capacity and took 4 to 5 trucks a day off the road."
         },
         {
-          "industry": "Cold chain and food",
-          "challenge": "Supermarket rejections from expired lots and slow traceability that took days to answer a claim.",
-          "solution": "Geodot turned on automatic FEFO in the WMS and end-to-end lot traceability, with temperature control on every move.",
-          "result": "Expiry-related shrink down 80% and any lot traced in minutes instead of days."
+          "industry": "Cold chain and traceability (shown in a demo)",
+          "challenge": "Expired product hidden at the back of the warehouse and full-truck rejections because a customer demands delivery with over 83% shelf-life remaining. Traceability took days to answer a claim.",
+          "solution": "Geodot applies real FEFO at scan time: if you pull a pallet, it warns there are 12 older ones in another location and sends you to fetch those. The customer's shelf-life rule applies to the whole trip, not just one pallet.",
+          "result": "Expired product hidden at the back and full-truck rejections over shelf-life both disappear. The ETA window dropped from 30 to 10 minutes in around 3 months as the AI learned."
         },
         {
-          "industry": "Bonded warehouse and customs",
-          "challenge": "Inventory under customs control tracked on spreadsheets, risking discrepancies and delays during inspections.",
-          "solution": "Geodot deployed iWMS with Zero Label to record every move in real time and keep the operation audit-ready.",
-          "result": "Inventory at 99% accuracy and inspections cut from hours to minutes, paperless."
+          "industry": "Bonded warehouse and compliance (representative scenario)",
+          "challenge": "Goods under customs control tracked on spreadsheets and manual re-labeling at receiving, risking discrepancies and lost hours on every inspection.",
+          "solution": "Geodot adds iWMS with Zero Label so the data travels with the pallet without reprinting labels, plus a document manager with an AI assistant that answers a procedure question in under 2 minutes, 24/7.",
+          "result": "Zero manual re-labeling, every move logged in real time, and the operation kept audit-ready. The document lookup that used to take hours is resolved in under 2 minutes."
         }
       ],
       "labels": {
         "challenge": "The challenge",
-        "solution": "What Geodot did",
+        "solution": "What Geodot does",
         "result": "The result"
       }
     },
     "cta": {
       "title": "Want numbers like these in your operation?",
-      "subtitle": "Book a demo and we'll show you, with your own data, where your leaks are and how much you can save.",
+      "subtitle": "Book a demo and we'll show you, with your own data, where your invisible leaks are and how much you can save.",
       "button": "Book your demo"
     }
   },
@@ -1116,7 +1116,7 @@
     "body": [
       "After more than 40 combined years in logistics, production and technology, we kept seeing the same problem: the tools never solved the whole operation. One system routed but didn't palletize. The WMS didn't talk to the TMS. And in the middle, operations teams juggling to make it all add up.",
       "Geodot was born to end that. We built the first platform that unifies WMS, TMS, routing and palletizing in a single solution, where the routing engine and the palletizer work together, in real time, to load every truck to 99% and route by business value, not just kilometers.",
-      "We don't promise magic: we promise results you can measure from day one: fewer kilometers, fewer rejections, lower costs and fewer emissions. And we don't replace your ERP: we amplify it, integrating with SAP, BASIS and Oracle without breaking what already works.",
+      "We don't promise magic: we promise results you can measure. At a leading bottler, truck load went from 85% to 99% and transport cost dropped 8%. And we don't replace your ERP: we power it, integrating with SAP, BASIS and Oracle without breaking what already works.",
       "We're a Mexican technology company operating across Mexico, Argentina, Colombia and Ecuador, with real experience in beverages, food, government, pharma and bonded warehouses. We imagine a world where every truck leaves at 100% and every product arrives fresh to the right customer. That's the world we're building, with you."
     ],
     "cta": {
@@ -1329,7 +1329,7 @@
           },
           {
             "q": "Do you handle cold-chain telemetry?",
-            "a": "Yes. We integrate temperature sensors for 100% traceability and early alerts. In pharma and food cases we have reached up to 95% fewer temperature excursions."
+            "a": "Yes. We integrate temperature sensors for 100% traceability and early alerts: you find out about an excursion when it happens, not when the truck gets rejected. Differentiated slots and rules for cold and dry product."
           }
         ]
       },
@@ -1342,7 +1342,7 @@
           },
           {
             "q": "What is the typical ROI?",
-            "a": "Under 12 months, and 4 to 6 months in large operations. Between 5% and 10% lower transport cost, 15% to 20% fewer kilometers, and up to 25% fewer rejected orders."
+            "a": "Usually under 12 months. The real results we've seen in operation: truck load from 85% to 99%, 8% lower transport cost, and 4 to 5 fewer trucks a day from the returnable-glass rule. For your case we calculate it with your own data in the demo, no made-up numbers."
           },
           {
             "q": "Do you offer support in Spanish?",
