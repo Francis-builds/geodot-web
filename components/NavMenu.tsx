@@ -159,7 +159,7 @@ function DesktopMenu({
         }`}
       >
         <div
-          className={`origin-top rounded-2xl border border-navy-100/80 glass p-2.5 shadow-pop transition-all duration-200 ${
+          className={`origin-top rounded-2xl border border-navy-100 bg-white p-2.5 shadow-pop transition-all duration-200 ${
             open ? "translate-y-0 scale-100 opacity-100" : "-translate-y-1 scale-[0.98] opacity-0"
           } ${wide ? "w-[34rem]" : "w-[26rem]"}`}
         >
