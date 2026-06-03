@@ -257,34 +257,34 @@
   },
   "modules": {
     "wms": {
-      "name": "WMS",
-      "tagline": "Inventario exacto al 99.9%, hasta el último pack",
-      "eyebrow": "Plataforma",
+      "name": "iWMS",
+      "tagline": "FEFO real: te avisa cuál palet está más viejo, antes de que se venza",
+      "eyebrow": "Pilar: Control",
       "title": "Gestión de Almacenes",
-      "titleAccent": "con IA",
-      "subtitle": "El WMS de Geodot ve lo que tu ERP no ve: cada pack, cada lote, cada fecha de vencimiento. FEFO automático, vida útil por cliente y picking optimizado con IA para que dejen de rechazarte.",
+      "titleAccent": "que ve cada pack",
+      "subtitle": "Tu SAP sabe que tenés stock. El iWMS de Geodot sabe en qué palet, qué lote y a qué altura del anaquel, y cuál está más viejo. FEFO real por fecha de expiración y vida útil por cliente, para que dejen de rechazarte el camión.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
-        "title": "Tu almacén tira plata donde nadie está mirando",
+        "title": "Tu almacén pierde plata donde nadie está mirando",
         "points": [
-          "Producto vencido: te enterás de la caducidad cuando ya no podés venderlo.",
-          "Picking lento: tus operarios caminan de más sin una ruta optimizada.",
-          "Stock fantasma: el sistema dice una cosa y el piso dice otra.",
-          "Rechazos de clientes: despachás producto con poca vida útil y te lo devuelven.",
-          "Sin trazabilidad: no sabés qué lote le entregaste a cada cliente."
+          "Producto vencido escondido atrás: lo encontrás cuando ya no lo podés vender.",
+          "Picking de memoria: el operario camina de más y arma el pedido sin guía.",
+          "Stock fantasma: el ERP dice una cosa y el piso dice otra.",
+          "Rechazo de camión completo: despachás producto con poca vida útil y te lo devuelven.",
+          "Sin trazabilidad por lote: no sabés qué le entregaste a cada cliente."
         ],
         "stats": [
           {
-            "problem": "Pérdidas por vencimiento",
-            "impact": "+80%"
+            "problem": "Vida útil mínima que exige una gran cadena",
+            "impact": "83%"
           },
           {
-            "problem": "Tiempo de picking",
-            "impact": "+40%"
+            "problem": "Consulta de un procedimiento, con asistente IA",
+            "impact": "<2 min"
           },
           {
-            "problem": "Rechazos por vida útil",
-            "impact": "+70%"
+            "problem": "Producto vencido escondido atrás",
+            "impact": "a la vista"
           }
         ]
       },
@@ -292,80 +292,80 @@
         "title": "Un WMS que controla cada pack, no solo cada tarima",
         "steps": [
           {
-            "title": "Ubicaciones inteligentes",
-            "description": "Estructura multinivel con visualización 3D. El sistema te dice dónde guardar cada producto según su rotación y capacidades."
+            "title": "FEFO real, no de memoria",
+            "description": "Sale por fecha de expiración. Al sacar un palet te avisa \"tenés 12 palets más viejos en tal ubicación, andá a buscar esos\". Desaparece el vencido escondido atrás."
+          },
+          {
+            "title": "Vida útil por cliente",
+            "description": "Una gran cadena exige entregar con +83% de vida útil. Si el viaje tiene un cliente con esa regla, el sistema la aplica a todo el viaje al pistolear: \"este es viejo, sacá uno más fresco\"."
           },
           {
             "title": "Trazabilidad completa",
-            "description": "Por lote, fecha de vencimiento y etiqueta. Historial inmutable de cada movimiento para auditoría y cumplimiento."
-          },
-          {
-            "title": "FIFO/FEFO automático",
-            "description": "Reglas configurables y vida útil por cliente (ej. una gran cadena, 83%). Bloquea el despacho de producto próximo a vencer antes de que sea un rechazo."
+            "description": "Pistoleás la etiqueta y te dice en qué estado está, dónde estuvo y dónde está. Maestro de materiales único: volumen, peso, vida útil, cuarentena y ubicación física en un solo dato."
           },
           {
             "title": "Picking optimizado",
-            "description": "El mismo motor de ruteo, aplicado dentro del almacén. Reorganización nocturna con IA y guías paso a paso para tus operarios."
+            "description": "El mismo motor de ruteo, aplicado dentro del almacén. Guía paso a paso al operario y el conocimiento del experto queda en el sistema, no se va con la persona."
           }
         ]
       },
       "metrics": [
         {
-          "value": 40,
+          "value": 83,
           "suffix": "%",
-          "label": "Menos tiempo de picking"
+          "label": "Vida útil mínima que el sistema garantiza por cliente"
         },
         {
-          "value": 80,
-          "suffix": "%",
-          "label": "Menos pérdidas por vencimiento"
+          "value": 2,
+          "suffix": " min",
+          "label": "Resolver una consulta documental con asistente IA, 24/7"
         },
         {
-          "value": 99.9,
+          "value": 100,
           "suffix": "%",
-          "label": "Precisión de inventario"
+          "label": "Trazabilidad por lote, pack y ubicación"
         },
         {
-          "value": 70,
-          "suffix": "%",
-          "label": "Menos rechazos por vida útil"
+          "value": 90,
+          "suffix": " días",
+          "label": "En producción, no 6 a 12 meses"
         }
       ],
       "cta": {
         "title": "Controlá tu almacén hasta el último pack",
-        "subtitle": "Agendá una demo y te mostramos el WMS funcionando con tus propios SKUs.",
+        "subtitle": "Agendá una demo y te mostramos el iWMS funcionando con tus propios SKUs.",
         "button": "Agendar Demo"
       }
     },
     "tms": {
-      "name": "TMS",
+      "name": "iTMS",
       "tagline": "Cada camión bajo control, sea propio o tercerizado",
-      "eyebrow": "Plataforma",
+      "eyebrow": "Pilar: Visibilidad",
       "title": "Gestión de Transporte",
       "titleAccent": "en tiempo real",
-      "subtitle": "Gestioná flota propia y tercerizada desde una sola pantalla. Tracking en vivo, documentación al día, liquidación automática y costos atribuidos a cada ruta y cliente.",
+      "subtitle": "El transporte es tu mayor costo y tu peor punto ciego. El iTMS gestiona flota propia y tercerizada desde una sola pantalla: tracking en vivo, documentación al día, validación de cada descarga y costos atribuidos a cada ruta y cliente.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "El transporte es tu mayor costo y tu peor punto ciego",
         "points": [
           "Sin visibilidad: no sabés dónde están tus camiones ahora mismo.",
-          "Terceros sin control: transportistas que operan a su manera.",
+          "Cargas simuladas: descargas que se reportan pero nunca pasaron.",
           "Documentación vencida: permisos y licencias que expiran sin aviso.",
-          "Costos opacos: no podés saber cuánto te cuesta cada ruta o cliente.",
-          "Coordinación manual: llamadas y WhatsApp para mover cada camión."
+          "Costos opacos: no podés saber cuánto te cuesta cada ruta o cada cliente.",
+          "Coordinación a mano: llamadas y WhatsApp para mover cada camión."
         ],
         "stats": [
           {
-            "problem": "Visibilidad de flota",
-            "impact": "Parcial"
+            "problem": "Reducción de costo de transporte",
+            "impact": "-8%"
           },
           {
-            "problem": "Cumplimiento documental",
-            "impact": "Reactivo"
+            "problem": "Validación de descargas contra GPS",
+            "impact": "sí"
           },
           {
-            "problem": "Tiempo de liquidación",
-            "impact": "+60%"
+            "problem": "Cargas simuladas",
+            "impact": "se acaban"
           }
         ]
       },
@@ -377,39 +377,39 @@
             "description": "Posición a posición en el mapa, geocercas por cliente y medición automática del tiempo real que pasa cada camión en cada parada."
           },
           {
-            "title": "Flota unificada",
-            "description": "Flota propia y tercerizada en la misma vista. Portal de transportistas con workflows de aprobación y visibilidad compartida."
+            "title": "Validación de descargas",
+            "description": "GPS no es el puntito en el mapa: cada descarga se valida contra GPS. Se acabaron las cargas simuladas y el camión a medias que sale dos veces."
           },
           {
-            "title": "Documentación y mantenimiento",
-            "description": "Alertas de vencimiento de permisos, licencias y seguros. Mantenimiento preventivo por kilometraje o tiempo."
+            "title": "Flota propia y tercerizada",
+            "description": "Todo en la misma vista, aunque el camión sea de un tercero. Portal de transportistas con workflows de aprobación y visibilidad compartida."
           },
           {
-            "title": "Liquidación automática",
-            "description": "Cálculo por kilómetro, entrega o mixto. Control de combustible y exportación contable lista para pago."
+            "title": "Documentación y costos",
+            "description": "Registro de conducir vencido es bloqueante: el chofer no sale con ese camión. Costo atribuido por ruta, cliente y kilómetro, listo para liquidar."
           }
         ]
       },
       "metrics": [
         {
-          "value": 100,
+          "value": 8,
           "suffix": "%",
-          "label": "Visibilidad de flota"
+          "label": "Menos costo de transporte, junto al salto 85%→99% de carga"
         },
         {
           "value": 100,
           "suffix": "%",
-          "label": "Cumplimiento documental"
+          "label": "Visibilidad de flota propia y tercerizada"
         },
         {
-          "value": 15,
+          "value": 100,
           "suffix": "%",
-          "label": "Menos costos de mantenimiento"
+          "label": "Descargas validadas contra GPS"
         },
         {
-          "value": 60,
-          "suffix": "%",
-          "label": "Menos tiempo de liquidación"
+          "value": 90,
+          "suffix": " días",
+          "label": "En producción, no 6 a 12 meses"
         }
       ],
       "cta": {
@@ -420,77 +420,77 @@
     },
     "paletizado": {
       "name": "Paletizado Inteligente",
-      "tagline": "Del 85% al 99% de carga, sin dejar planchada",
-      "eyebrow": "Plataforma",
+      "tagline": "Del 85% al 99% de carga, sin dejar planchada por las dudas",
+      "eyebrow": "Pilar: Rentabilidad",
       "title": "Paletizado",
       "titleAccent": "Inteligente",
-      "subtitle": "El único sistema que paletiza mientras rutea. Sabe exactamente qué entra en cada camión antes de cargarlo, para que cargues al 100% sin dejar planchada por las dudas.",
+      "subtitle": "Otros rutean primero y paletizan después. Geodot lo hace a la vez: somos los únicos que calculan paletizado y ruteo al mismo tiempo. Sabemos qué entra a cada camión antes de cargarlo, para que cargues al 99% sin dejar planchada.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
-        "title": "1 de cada 7 camiones sale con aire adentro",
+        "title": "Tus camiones salen al 85%. Esa planchada es plata que viaja vacía",
         "points": [
           "Margen de seguridad: cargás al 85% \"por las dudas\" de que no entre.",
           "Reglas en la cabeza: el paletizador experto sabe, pero el sistema no.",
-          "Daños en tránsito: productos mal apilados que llegan rotos.",
-          "Picking lento: operarios sin guía clara de cómo armar cada pallet.",
-          "Rechazos por carga: el cliente recibe producto aplastado y lo devuelve."
+          "El que sale dos veces paga dos veces: combustible, gente y desgaste.",
+          "Vidrio retornable: la planchada obligatoria te come capacidad de camión.",
+          "Picking sin guía: el operario no sabe cómo armar cada palet."
         ],
         "stats": [
           {
-            "problem": "Capacidad sin usar",
-            "impact": "15%"
+            "problem": "Carga de camión, del 85% al",
+            "impact": "99%"
           },
           {
-            "problem": "Daños en tránsito",
-            "impact": "+40%"
+            "problem": "Capacidad extra por regla de vidrio retornable",
+            "impact": "+10%"
           },
           {
-            "problem": "Rechazos por daño",
-            "impact": "+50%"
+            "problem": "Camiones menos por día con esa misma lógica",
+            "impact": "4-5"
           }
         ]
       },
       "solution": {
-        "title": "Paletizado que habla con el ruteo",
+        "title": "Paletizado que habla con el ruteo, al mismo tiempo",
         "steps": [
           {
-            "title": "+300 parámetros",
-            "description": "Dimensiones, peso, apilabilidad, fragilidad, temperatura y compatibilidad de cada producto, calculados en cada carga."
-          },
-          {
-            "title": "Reglas inteligentes",
-            "description": "Apilamiento por producto, familia, cliente, fragilidad y peso axial legal. El conocimiento del experto, en el sistema."
-          },
-          {
             "title": "Recálculo simultáneo",
-            "description": "Cada vez que sumás un pedido a una ruta, el sistema recalcula si realmente entra y te avisa antes de que el camión salga mal cargado."
+            "description": "Cada vez que sumás un pedido a una ruta, el sistema recalcula el paletizado al instante y te dice: este cliente entra o no entra, qué va arriba, qué va abajo, cuánto de cada uno."
+          },
+          {
+            "title": "Oficio en el sistema",
+            "description": "Sabe que el vidrio va abajo y qué es una planchada, sin que se lo expliques. Apilamiento por producto, familia, cliente, fragilidad y peso axial legal."
+          },
+          {
+            "title": "Regla del vidrio retornable",
+            "description": "Con sacarle un cliente de vidrio a un camión, le metés diez más al de al lado: +10% de capacidad y 4 a 5 camiones menos por día."
           },
           {
             "title": "Guías de armado visual",
-            "description": "Qué producto va en cada capa y posición, con secuencia paso a paso y validación del operario."
+            "description": "Qué producto va en cada camada y posición, con secuencia paso a paso y validación del operario contra la guía, camada por camada."
           }
         ]
       },
       "metrics": [
         {
-          "value": 15,
+          "value": 99,
           "suffix": "%",
-          "label": "Más utilización de camión"
+          "label": "Carga de camión, del 85% al 99%"
         },
         {
-          "value": 40,
+          "value": 8,
           "suffix": "%",
-          "label": "Menos daños en tránsito"
+          "label": "Menos costo de transporte"
         },
         {
-          "value": 25,
+          "value": 10,
           "suffix": "%",
-          "label": "Menos tiempo de carga"
+          "label": "Capacidad extra por regla de vidrio retornable"
         },
         {
-          "value": 50,
-          "suffix": "%",
-          "label": "Menos rechazos por daño"
+          "value": 5,
+          "suffix": " camiones",
+          "label": "Menos por día con la misma lógica"
         }
       ],
       "cta": {
@@ -501,33 +501,33 @@
     },
     "torreControl": {
       "name": "Torre de Control",
-      "tagline": "Ve, anticipa y actúa sobre toda tu operación",
-      "eyebrow": "Plataforma",
+      "tagline": "Ves todo, en vivo. Lo resolvés antes de que sea una queja",
+      "eyebrow": "Pilar: Visibilidad",
       "title": "Torre de Control",
       "titleAccent": "en tiempo real",
-      "subtitle": "Un solo tablero para ver, anticipar y actuar sobre toda tu cadena, del almacén a la última entrega. Lo que antes te llegaba como queja, ahora lo resolvés antes de que pase.",
+      "subtitle": "Un solo tablero para ver, anticipar y actuar sobre toda tu cadena, del almacén a la última entrega. La IA aprende de cada viaje: el rango de ETA baja de 30 a 10 minutos tras unos meses de operación.",
       "ctaPrimary": "Agendar Demo",
       "problem": {
         "title": "Operás a ciegas hasta que el problema ya te explotó",
         "points": [
           "Información fragmentada: cada sistema muestra su propio pedazo.",
           "Reacción tardía: te enterás de los problemas cuando ya impactaron.",
-          "Sin métricas claras: no sabés qué está funcionando y qué no.",
-          "Reportes manuales: horas armando Excel para la gerencia.",
-          "Clientes a oscuras: no pueden ver el estado de sus pedidos."
+          "ETAs flojos: das una hora amplia y el cliente igual te llama.",
+          "Reportes a mano: horas armando Excel para la gerencia.",
+          "Clientes a oscuras: no pueden ver el estado de su pedido."
         ],
         "stats": [
           {
-            "problem": "Tiempo de respuesta a incidentes",
-            "impact": "+70%"
+            "problem": "Rango de ETA tras unos meses de operación",
+            "impact": "30→10 min"
           },
           {
-            "problem": "Horas en reportes manuales",
-            "impact": "+90%"
+            "problem": "La IA aprende por chofer, cliente y bultos",
+            "impact": "sí"
           },
           {
-            "problem": "Visibilidad de operación",
-            "impact": "Parcial"
+            "problem": "Visibilidad de toda la operación",
+            "impact": "en vivo"
           }
         ]
       },
@@ -536,47 +536,47 @@
         "steps": [
           {
             "title": "Dashboard en vivo",
-            "description": "Mapa de operaciones con todos los camiones, estado de entregas, alertas activas y KPIs del día comparados contra el promedio."
+            "description": "Mapa de operaciones con todos los camiones, estado de entregas, alertas activas y KPIs del día contra el promedio. Ves todo, en vivo."
+          },
+          {
+            "title": "ETA que mejora sola",
+            "description": "La IA aprende de cada entrega: el rango de ETA baja de 30 a 20, a 15, a 10 minutos tras unos 3 meses, por chofer, por cliente y por cantidad de bultos."
           },
           {
             "title": "Alertas proactivas",
-            "description": "Configurables y escalables. Camión detenido, demora en cliente, ruta atrasada o cadena de frío comprometida, por dashboard, email, WhatsApp o SMS."
-          },
-          {
-            "title": "IA predictiva",
-            "description": "Predice demoras antes de que ocurran, detecta anomalías y sugiere optimizaciones que aprenden de cada entrega."
+            "description": "Camión detenido, demora en cliente, ruta atrasada o cadena de frío comprometida. Por dashboard, email, WhatsApp o SMS, antes de que sea una queja."
           },
           {
             "title": "Portal de clientes",
-            "description": "El cliente ve dónde está su entrega, ETA en vivo, historial y documentos. Reportes automáticos diarios, semanales y mensuales."
+            "description": "El cliente ve dónde está su entrega, ETA en vivo, historial y documentos, con notificación push sin invadir. Reportes automáticos diarios, semanales y mensuales."
           }
         ]
       },
       "metrics": [
         {
-          "value": 70,
-          "suffix": "%",
-          "label": "Menos tiempo de respuesta a incidentes"
+          "value": 10,
+          "suffix": " min",
+          "label": "Rango de ETA, baja de 30 a 10 tras unos meses"
         },
         {
-          "value": 90,
-          "suffix": "%",
-          "label": "Menos horas en reportes manuales"
+          "value": 3,
+          "suffix": " meses",
+          "label": "Para que la IA aprenda tu operación"
         },
         {
           "value": 100,
           "suffix": "%",
-          "label": "Visibilidad de operación"
+          "label": "Visibilidad de la operación, en un solo tablero"
         },
         {
-          "value": 30,
-          "suffix": "%",
-          "label": "Más satisfacción del cliente"
+          "value": 90,
+          "suffix": " días",
+          "label": "En producción, no 6 a 12 meses"
         }
       ],
       "cta": {
         "title": "¿Cuánto te cuesta cada incidente que descubrís tarde?",
-        "subtitle": "Agendá una demo y unificá WMS, TMS, Ruteo y Paletizado en un solo tablero.",
+        "subtitle": "Agendá una demo y unificá iWMS, iTMS, ruteo y paletizado en un solo tablero.",
         "button": "Agendar Demo"
       }
     },
@@ -977,18 +977,18 @@
   "platformPage": {
     "hero": {
       "eyebrow": "La plataforma",
-      "title": "Toda tu cadena logística en",
-      "titleAccent": "una sola plataforma",
-      "subtitle": "Cuando cada sistema habla un idioma distinto, pierdes horas reconciliando datos y dinero en camiones a medias. Geodot integra WMS, TMS, ruteo y paletizado en una sola plataforma: el motor de ruteo y el paletizador trabajan juntos, en tiempo real, para cargar al 99% y rutear por valor de negocio.",
+      "title": "Potenciá tu ERP en 90 días, no en",
+      "titleAccent": "un año",
+      "subtitle": "Tu SAP sabe que tenés stock. Geodot sabe en qué palet, qué lote y a qué altura del anaquel, y carga tus camiones del 85% al 99%. WMS, TMS, ruteo y paletizado en una sola plataforma: el ruteador y el paletizador calculan al mismo tiempo, en vivo. En producción en 90 días, no en 6 a 12 meses.",
       "cta": "Agendá tu demo"
     },
     "modules": {
       "title": "Módulos que trabajan como uno solo",
-      "description": "Geodot no reemplaza tu ERP, lo potencia. Se integra con SAP, BASIS y Oracle vía APIs propias, y suma el detalle que ni SAP S/4HANA alcanza: ruteo y paletizado calculados a la vez, con +300 parámetros por SKU."
+      "description": "No venimos a reemplazar tu SAP, venimos a llegar adonde tu SAP no llega: pack, palet, lote, ubicación, paletizado. Nos integramos con SAP, SAP Business One, BASIS y Oracle vía APIs propias, y sumamos lo único que nadie más hace: ruteo y paletizado calculados a la vez."
     },
     "cta": {
       "title": "¿Dónde se te escapa la plata hoy?",
-      "subtitle": "Camiones al 85%, rutas a mano, rechazos que descubrís tarde. Agendá una demo y te mostramos en tu operación cuánto podés recuperar.",
+      "subtitle": "Camiones al 85%, rutas a mano, rechazos que descubrís tarde. Agendá una demo y te mostramos en tu propia operación cuánto podés recuperar.",
       "button": "Agendá tu demo"
     }
   },

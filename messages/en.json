@@ -257,115 +257,115 @@
   },
   "modules": {
     "wms": {
-      "name": "WMS",
-      "tagline": "99.9% inventory accuracy, down to the last pack",
-      "eyebrow": "Platform",
+      "name": "iWMS",
+      "tagline": "Real FEFO: it tells you which pallet is oldest, before it expires",
+      "eyebrow": "Pillar: Control",
       "title": "Warehouse Management",
-      "titleAccent": "powered by AI",
-      "subtitle": "Geodot WMS sees what your ERP can't: every pack, every lot, every expiration date. Automatic FEFO, per-customer shelf life and AI-optimized picking so customers stop rejecting your deliveries.",
+      "titleAccent": "that sees every pack",
+      "subtitle": "Your SAP knows you have stock. Geodot's iWMS knows which pallet, which lot and which shelf height it's on, and which one is oldest. Real FEFO by expiration date and shelf life per customer, so they stop rejecting your truck.",
       "ctaPrimary": "Book a Demo",
       "problem": {
-        "title": "Your warehouse is throwing away money where no one's looking",
+        "title": "Your warehouse loses money where no one is looking",
         "points": [
-          "Expired product: you discover the expiration when it's too late to sell it.",
-          "Slow picking: operators walk extra miles with no optimized route.",
-          "Phantom stock: the system says one thing, the floor says another.",
-          "Customer rejections: you ship low-shelf-life product and it comes back.",
-          "No traceability: you don't know which lot you delivered to each customer."
+          "Expired product hidden in the back: you find it when you can no longer sell it.",
+          "Picking from memory: the operator walks too far and builds orders with no guidance.",
+          "Phantom stock: the ERP says one thing, the floor says another.",
+          "Full-truck rejection: you ship product with little shelf life and it comes back.",
+          "No lot traceability: you don't know what you delivered to each customer."
         ],
         "stats": [
           {
-            "problem": "Losses from expiration",
-            "impact": "+80%"
+            "problem": "Minimum shelf life a major retail chain requires",
+            "impact": "83%"
           },
           {
-            "problem": "Picking time",
-            "impact": "+40%"
+            "problem": "Look up a procedure with the AI assistant",
+            "impact": "<2 min"
           },
           {
-            "problem": "Shelf-life rejections",
-            "impact": "+70%"
+            "problem": "Expired product hidden in the back",
+            "impact": "now visible"
           }
         ]
       },
       "solution": {
-        "title": "A WMS that controls every pack, not just every pallet",
+        "title": "A WMS that controls every pack, not just every pallet slot",
         "steps": [
           {
-            "title": "Smart locations",
-            "description": "Multi-level structure with 3D visualization. The system tells you where to store each product based on its turnover and constraints."
+            "title": "Real FEFO, not from memory",
+            "description": "Ships by expiration date. When you pull a pallet it warns you \"you have 12 older pallets in this location, go grab those.\" The product hidden in the back disappears."
+          },
+          {
+            "title": "Shelf life per customer",
+            "description": "A major retail chain requires delivery with 83%+ of shelf life. If a trip has a customer with that rule, the system applies it to the whole trip when you scan: \"this one's old, grab a fresher one.\""
           },
           {
             "title": "Full traceability",
-            "description": "By lot, expiration date and label. Immutable history of every movement for audit and compliance."
-          },
-          {
-            "title": "Automatic FIFO/FEFO",
-            "description": "Configurable rules and per-customer shelf life (e.g. a major chain, 83%). Blocks shipping of soon-to-expire product before it becomes a rejection."
+            "description": "Scan the label and it tells you its status, where it's been and where it is now. A single material master: volume, weight, shelf life, quarantine and physical location in one data point."
           },
           {
             "title": "Optimized picking",
-            "description": "The same routing engine, applied inside the warehouse. AI overnight reorganization and step-by-step guides for your operators."
+            "description": "The same routing engine, applied inside the warehouse. Step-by-step guidance for the operator, and the expert's knowledge stays in the system instead of walking out the door."
           }
         ]
       },
       "metrics": [
         {
-          "value": 40,
+          "value": 83,
           "suffix": "%",
-          "label": "Less picking time"
+          "label": "Minimum shelf life the system guarantees per customer"
         },
         {
-          "value": 80,
-          "suffix": "%",
-          "label": "Fewer expiration losses"
+          "value": 2,
+          "suffix": " min",
+          "label": "Resolve a document query with the AI assistant, 24/7"
         },
         {
-          "value": 99.9,
+          "value": 100,
           "suffix": "%",
-          "label": "Inventory accuracy"
+          "label": "Traceability by lot, pack and location"
         },
         {
-          "value": 70,
-          "suffix": "%",
-          "label": "Fewer shelf-life rejections"
+          "value": 90,
+          "suffix": " days",
+          "label": "In production, not 6 to 12 months"
         }
       ],
       "cta": {
         "title": "Control your warehouse down to the last pack",
-        "subtitle": "Book a demo and we'll show you the WMS running with your own SKUs.",
+        "subtitle": "Book a demo and we'll show you the iWMS running on your own SKUs.",
         "button": "Book a Demo"
       }
     },
     "tms": {
-      "name": "TMS",
+      "name": "iTMS",
       "tagline": "Every truck under control, owned or outsourced",
-      "eyebrow": "Platform",
+      "eyebrow": "Pillar: Visibility",
       "title": "Transport Management",
       "titleAccent": "in real time",
-      "subtitle": "Manage owned and outsourced fleets from a single screen. Live tracking, up-to-date paperwork, automatic settlement and costs attributed to every route and customer.",
+      "subtitle": "Transport is your biggest cost and your worst blind spot. The iTMS manages owned and outsourced fleets from a single screen: live tracking, documentation up to date, every drop validated, and costs attributed to each route and customer.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "Transport is your biggest cost and your worst blind spot",
         "points": [
           "No visibility: you don't know where your trucks are right now.",
-          "Uncontrolled third parties: carriers operating however they want.",
-          "Expired paperwork: permits and licenses that lapse without warning.",
-          "Opaque costs: you can't tell what each route or customer really costs.",
-          "Manual coordination: phone calls and WhatsApp to move every truck."
+          "Simulated drops: deliveries reported that never actually happened.",
+          "Expired documentation: permits and licenses that lapse with no warning.",
+          "Opaque costs: you can't tell what each route or customer really costs you.",
+          "Manual coordination: calls and WhatsApp to move every truck."
         ],
         "stats": [
           {
-            "problem": "Fleet visibility",
-            "impact": "Partial"
+            "problem": "Reduction in transport cost",
+            "impact": "-8%"
           },
           {
-            "problem": "Document compliance",
-            "impact": "Reactive"
+            "problem": "Drops validated against GPS",
+            "impact": "yes"
           },
           {
-            "problem": "Settlement time",
-            "impact": "+60%"
+            "problem": "Simulated drops",
+            "impact": "gone"
           }
         ]
       },
@@ -374,123 +374,123 @@
         "steps": [
           {
             "title": "Live tracking",
-            "description": "Position by position on the map, per-customer geofences and automatic measurement of the real time each truck spends at every stop."
+            "description": "Position by position on the map, geofences per customer, and automatic measurement of the real time each truck spends at each stop."
           },
           {
-            "title": "Unified fleet",
-            "description": "Owned and outsourced fleet in the same view. Carrier portal with approval workflows and shared visibility."
+            "title": "Drop validation",
+            "description": "GPS isn't the dot on the map: every drop is validated against GPS. No more simulated loads and no more half-empty truck that goes out twice."
           },
           {
-            "title": "Documents and maintenance",
-            "description": "Expiration alerts for permits, licenses and insurance. Preventive maintenance by mileage or time."
+            "title": "Owned and outsourced fleet",
+            "description": "All in the same view, even when the truck belongs to a third party. Carrier portal with approval workflows and shared visibility."
           },
           {
-            "title": "Automatic settlement",
-            "description": "Calculation by kilometer, delivery or mixed. Fuel control and accounting export ready for payment."
+            "title": "Documentation and costs",
+            "description": "An expired driver's license is a hard stop: the driver doesn't leave with that truck. Cost attributed by route, customer and kilometer, ready to settle."
           }
         ]
       },
       "metrics": [
         {
-          "value": 100,
+          "value": 8,
           "suffix": "%",
-          "label": "Fleet visibility"
+          "label": "Less transport cost, alongside the 85%→99% load jump"
         },
         {
           "value": 100,
           "suffix": "%",
-          "label": "Document compliance"
+          "label": "Visibility of owned and outsourced fleet"
         },
         {
-          "value": 15,
+          "value": 100,
           "suffix": "%",
-          "label": "Lower maintenance costs"
+          "label": "Drops validated against GPS"
         },
         {
-          "value": 60,
-          "suffix": "%",
-          "label": "Less settlement time"
+          "value": 90,
+          "suffix": " days",
+          "label": "In production, not 6 to 12 months"
         }
       ],
       "cta": {
         "title": "Put every truck under control, owned or outsourced",
-        "subtitle": "Book a demo and unify owned and outsourced fleets in a single screen.",
+        "subtitle": "Book a demo and unify owned and outsourced fleets on a single screen.",
         "button": "Book a Demo"
       }
     },
     "paletizado": {
       "name": "Smart Palletizing",
-      "tagline": "From 85% to 99% load, with no safety margin left behind",
-      "eyebrow": "Platform",
+      "tagline": "From 85% to 99% load, no safety margin left empty",
+      "eyebrow": "Pillar: Profitability",
       "title": "Smart",
       "titleAccent": "Palletizing",
-      "subtitle": "The only system that palletizes while it routes. It knows exactly what fits in each truck before you load it, so you load to 100% without leaving a safety margin \"just in case.\"",
+      "subtitle": "Others route first and palletize later. Geodot does both at once: we're the only ones who calculate palletizing and routing at the same time. We know what fits in each truck before loading it, so you load to 99% with no empty safety margin.",
       "ctaPrimary": "Book a Demo",
       "problem": {
-        "title": "1 in 7 of your trucks ships air",
+        "title": "Your trucks leave at 85%. That empty margin is money traveling empty",
         "points": [
-          "Safety margin: you load to 85% \"just in case\" it won't fit.",
+          "Safety margin: you load to 85% \"just in case\" it doesn't fit.",
           "Rules in someone's head: the expert palletizer knows, the system doesn't.",
-          "In-transit damage: poorly stacked products that arrive broken.",
-          "Slow picking: operators with no clear guide on how to build each pallet.",
-          "Load rejections: the customer receives crushed product and sends it back."
+          "Whoever goes out twice pays twice: fuel, labor and wear.",
+          "Returnable glass: the mandatory empty margin eats your truck capacity.",
+          "Picking with no guide: the operator doesn't know how to build each pallet."
         ],
         "stats": [
           {
-            "problem": "Unused capacity",
-            "impact": "15%"
+            "problem": "Truck load, from 85% up to",
+            "impact": "99%"
           },
           {
-            "problem": "In-transit damage",
-            "impact": "+40%"
+            "problem": "Extra capacity from the returnable-glass rule",
+            "impact": "+10%"
           },
           {
-            "problem": "Damage rejections",
-            "impact": "+50%"
+            "problem": "Fewer trucks per day with that same logic",
+            "impact": "4-5"
           }
         ]
       },
       "solution": {
-        "title": "Palletizing that talks to routing",
+        "title": "Palletizing that talks to routing, at the same time",
         "steps": [
           {
-            "title": "300+ parameters",
-            "description": "Dimensions, weight, stackability, fragility, temperature and compatibility of every product, computed on every load."
-          },
-          {
-            "title": "Smart rules",
-            "description": "Stacking by product, family, customer, fragility and legal axle weight. The expert's knowledge, encoded in the system."
-          },
-          {
             "title": "Simultaneous recalculation",
-            "description": "Every time you add an order to a route, the system recalculates whether it really fits and warns you before the truck leaves badly loaded."
+            "description": "Every time you add an order to a route, the system recalculates palletizing instantly and tells you: this customer fits or doesn't, what goes on top, what goes underneath, how much of each."
+          },
+          {
+            "title": "Trade craft in the system",
+            "description": "It knows glass goes on the bottom and what an empty safety margin is, with no need to explain. Stacking by product, family, customer, fragility and legal axle weight."
+          },
+          {
+            "title": "The returnable-glass rule",
+            "description": "Take one glass customer off a truck and you fit ten more on the next one: +10% capacity and 4 to 5 fewer trucks per day."
           },
           {
             "title": "Visual build guides",
-            "description": "Which product goes in each layer and position, with step-by-step sequence and operator validation."
+            "description": "Which product goes in each layer and position, with a step-by-step sequence and operator validation against the guide, layer by layer."
           }
         ]
       },
       "metrics": [
         {
-          "value": 15,
+          "value": 99,
           "suffix": "%",
-          "label": "Higher truck utilization"
+          "label": "Truck load, from 85% to 99%"
         },
         {
-          "value": 40,
+          "value": 8,
           "suffix": "%",
-          "label": "Less in-transit damage"
+          "label": "Less transport cost"
         },
         {
-          "value": 25,
+          "value": 10,
           "suffix": "%",
-          "label": "Less loading time"
+          "label": "Extra capacity from the returnable-glass rule"
         },
         {
-          "value": 50,
-          "suffix": "%",
-          "label": "Fewer damage rejections"
+          "value": 5,
+          "suffix": " trucks",
+          "label": "Fewer per day with the same logic"
         }
       ],
       "cta": {
@@ -501,33 +501,33 @@
     },
     "torreControl": {
       "name": "Control Tower",
-      "tagline": "See, anticipate and act on your entire operation",
-      "eyebrow": "Platform",
+      "tagline": "You see everything, live. You fix it before it becomes a complaint",
+      "eyebrow": "Pillar: Visibility",
       "title": "Control Tower",
       "titleAccent": "in real time",
-      "subtitle": "A single board to see, anticipate and act on your entire chain, from the warehouse to the last delivery. What used to reach you as a complaint, you now solve before it happens.",
+      "subtitle": "A single dashboard to see, anticipate and act on your whole chain, from the warehouse to the last delivery. The AI learns from every trip: the ETA range drops from 30 to 10 minutes after a few months of operation.",
       "ctaPrimary": "Book a Demo",
       "problem": {
         "title": "You operate blind until the problem has already blown up",
         "points": [
-          "Fragmented information: each system shows its own slice.",
+          "Fragmented information: each system shows its own piece.",
           "Late reaction: you find out about problems once they've already hit.",
-          "No clear metrics: you don't know what's working and what isn't.",
+          "Weak ETAs: you give a wide window and the customer calls anyway.",
           "Manual reports: hours building Excel for management.",
-          "Customers in the dark: they can't see the status of their orders."
+          "Customers in the dark: they can't see the status of their order."
         ],
         "stats": [
           {
-            "problem": "Incident response time",
-            "impact": "+70%"
+            "problem": "ETA range after a few months of operation",
+            "impact": "30→10 min"
           },
           {
-            "problem": "Hours on manual reports",
-            "impact": "+90%"
+            "problem": "The AI learns by driver, customer and packages",
+            "impact": "yes"
           },
           {
-            "problem": "Operation visibility",
-            "impact": "Partial"
+            "problem": "Visibility of the whole operation",
+            "impact": "live"
           }
         ]
       },
@@ -536,47 +536,47 @@
         "steps": [
           {
             "title": "Live dashboard",
-            "description": "Operations map with every truck, delivery status, active alerts and daily KPIs compared against the average."
+            "description": "Operations map with every truck, delivery status, active alerts and the day's KPIs against the average. You see everything, live."
+          },
+          {
+            "title": "ETA that improves on its own",
+            "description": "The AI learns from every delivery: the ETA range drops from 30 to 20, to 15, to 10 minutes after about 3 months, by driver, by customer and by number of packages."
           },
           {
             "title": "Proactive alerts",
-            "description": "Configurable and escalating. Stopped truck, customer delay, late route or compromised cold chain, via dashboard, email, WhatsApp or SMS."
-          },
-          {
-            "title": "Predictive AI",
-            "description": "Predicts delays before they happen, detects anomalies and suggests optimizations that learn from every delivery."
+            "description": "Stopped truck, delay at a customer, late route or compromised cold chain. By dashboard, email, WhatsApp or SMS, before it becomes a complaint."
           },
           {
             "title": "Customer portal",
-            "description": "Customers see where their delivery is, live ETA, history and documents. Automatic daily, weekly and monthly reports."
+            "description": "The customer sees where their delivery is, live ETA, history and documents, with a non-intrusive push notification. Automatic daily, weekly and monthly reports."
           }
         ]
       },
       "metrics": [
         {
-          "value": 70,
-          "suffix": "%",
-          "label": "Less incident response time"
+          "value": 10,
+          "suffix": " min",
+          "label": "ETA range, drops from 30 to 10 after a few months"
         },
         {
-          "value": 90,
-          "suffix": "%",
-          "label": "Fewer hours on manual reports"
+          "value": 3,
+          "suffix": " months",
+          "label": "For the AI to learn your operation"
         },
         {
           "value": 100,
           "suffix": "%",
-          "label": "Operation visibility"
+          "label": "Visibility of the operation, on a single dashboard"
         },
         {
-          "value": 30,
-          "suffix": "%",
-          "label": "Higher customer satisfaction"
+          "value": 90,
+          "suffix": " days",
+          "label": "In production, not 6 to 12 months"
         }
       ],
       "cta": {
-        "title": "How much does every incident you catch late cost you?",
-        "subtitle": "Book a demo and unify WMS, TMS, Routing and Palletizing in a single board.",
+        "title": "What does every incident you catch too late cost you?",
+        "subtitle": "Book a demo and unify iWMS, iTMS, routing and palletizing on a single dashboard.",
         "button": "Book a Demo"
       }
     },
@@ -977,14 +977,14 @@
   "platformPage": {
     "hero": {
       "eyebrow": "The platform",
-      "title": "Your entire supply chain on",
-      "titleAccent": "one platform",
-      "subtitle": "When every system speaks a different language, you lose hours reconciling data and money on half-empty trucks. Geodot unifies WMS, TMS, routing and palletizing in one platform: the routing engine and the palletizer work together, in real time, to load to 99% and route by business value.",
+      "title": "Power up your ERP in 90 days, not",
+      "titleAccent": "a year",
+      "subtitle": "Your SAP knows you have stock. Geodot knows which pallet, which lot and which shelf height it's on, and loads your trucks from 85% to 99%. WMS, TMS, routing and palletizing on one platform: the router and the palletizer calculate at the same time, live. In production in 90 days, not 6 to 12 months.",
       "cta": "Book your demo"
     },
     "modules": {
       "title": "Modules that work as one",
-      "description": "Geodot doesn't replace your ERP, it amplifies it. We integrate with SAP, BASIS and Oracle through our own APIs, down to a level of detail SAP S/4HANA can't reach: routing and palletizing calculated together, with 300+ parameters per SKU."
+      "description": "We're not here to replace your SAP, we're here to reach where your SAP can't: pack, pallet, lot, location, palletizing. We integrate with SAP, SAP Business One, BASIS and Oracle through our own APIs, and add the one thing no one else does: routing and palletizing calculated together."
     },
     "cta": {
       "title": "Where is your money leaking out today?",
