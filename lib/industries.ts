@@ -10,6 +10,6 @@ export const INDUSTRIES: Record<IndustrySlug, { icon: string; messageKey: string
   "alimentos":         { icon: "milk",        messageKey: "alimentos",       hero: "/images/industries/alimentos/hero.jpg",         context: "/images/industries/alimentos/context.jpg" },
   "gobierno-residuos": { icon: "recycle",     messageKey: "gobiernoResiduos", hero: "/images/industries/gobierno-residuos/hero.jpg", context: "/images/industries/gobierno-residuos/context.jpg" },
   "3pl":               { icon: "package",     messageKey: "logistica3pl",    hero: "/images/industries/3pl/hero.jpg",               context: "/images/industries/3pl/context.jpg" },
-  "healthcare":        { icon: "heart-pulse", messageKey: "healthcare",      hero: "/images/industries/healthcare/hero.jpg",        context: "/images/industries/healthcare/context-diagram.png" },
+  "healthcare":        { icon: "heart-pulse", messageKey: "healthcare",      hero: "/images/industries/healthcare/hero.jpg",        context: "/images/industries/healthcare/context.jpg" },
   "recintos-fiscales": { icon: "container",   messageKey: "recintosFiscales", hero: "/images/industries/recintos-fiscales/hero.png", context: "/images/industries/recintos-fiscales/context.jpg" },
 };

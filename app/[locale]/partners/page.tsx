@@ -29,7 +29,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
         titleAccent={t("hero.titleAccent")}
         subtitle={t("hero.subtitle")}
         primaryCta={{ label: t("hero.cta"), href: `mailto:${CONTACT_EMAIL}` }}
-        bgImage="/images/torre/torre-control-room.jpg"
+        bgImage="/images/pages/partners.jpg"
         bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`}
       />
 

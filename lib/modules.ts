@@ -5,7 +5,7 @@ export type ModuleSlug = (typeof MODULE_SLUGS)[number];
 // hero = reused photo from the asset catalog (public/images/...)
 export const MODULES: Record<ModuleSlug, { icon: string; messageKey: string; hero: string }> = {
   "wms":           { icon: "warehouse",   messageKey: "wms",          hero: "/images/warehouse/iwms.jpg" },
-  "tms":           { icon: "truck",       messageKey: "tms",          hero: "/images/fleet/itms.jpg" },
+  "tms":           { icon: "truck",       messageKey: "tms",          hero: "/images/fleet/itms-hub.jpg" },
   "paletizado":    { icon: "boxes",       messageKey: "paletizado",   hero: "/images/warehouse/paletizado-optimizado.jpg" },
   "torre-control": { icon: "radar",       messageKey: "torreControl", hero: "/images/torre/torre-control-room.jpg" },
 };

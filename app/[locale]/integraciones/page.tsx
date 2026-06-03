@@ -27,7 +27,7 @@ export default async function IntegracionesPage({ params }: { params: Promise<{ 
         subtitle={t("hero.subtitle")}
         primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
         secondaryCta={{ label: t("hero.cta2"), href: "/plataforma" }}
-        bgImage="/images/torre/torre-control.jpg"
+        bgImage="/images/pages/integraciones.jpg"
         bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`}
       />
 
