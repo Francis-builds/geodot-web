@@ -143,37 +143,51 @@
       "description": "Visibilidad: ves todo en vivo, del buque al último kilómetro. Control: nada se te escapa, lote por lote y FEFO real. Rentabilidad: cada viaje rinde más, ruteo y paletizado en simultáneo. Todo en tiempo real, sin reemplazar tu ERP: lo potencia."
     },
     "journey": {
-      "eyebrow": "De punto a punto",
+      "eyebrow": "En cada punto de la ruta",
       "title": "De la recepción a la firma,",
       "titleAccent": "sin un solo punto ciego.",
       "stages": {
+        "reception": {
+          "title": "Recepción",
+          "body": "La carga entra por mar, aire, tierra o tren. Geodot la toma desde el primer punto, sin importar el modo.",
+          "metric": "Multimodal",
+          "metricLabel": "de entrada",
+          "image": "/images/multimodal/aereo.jpg"
+        },
         "warehouse": {
           "title": "Almacén",
-          "body": "Recepción, ubicación y picking con IA. FEFO real: los 12 palets más viejos van atrás, y la regla de vida útil de cada cliente se aplica al pistolear.",
-          "metric": "FEFO",
-          "metricLabel": "real, lote por lote",
+          "body": "Inventario en tiempo real por lote, ubicación y vencimiento. Al sacar un palet te avisa: tenés 12 más viejos atrás, andá a buscar esos.",
+          "metric": "FEFO real",
+          "metricLabel": "cero vencido escondido",
           "image": "/images/warehouse/iwms.jpg"
         },
-        "transport": {
-          "title": "Transporte",
-          "body": "Flota propia y tercerizada en una sola vista. El camión sale cargado al 99, no al 85, y con su documentación al día.",
+        "palletizing": {
+          "title": "Paletizado",
+          "body": "El paletizador y el ruteador trabajan juntos: el camión sale al 99%, no al 85% por si acaso. Menos viajes, mismo producto.",
           "metric": "99%",
-          "metricLabel": "de carga por camión",
-          "image": "/images/fleet/itms.jpg"
+          "metricLabel": "de carga, no el 85%",
+          "image": "/images/warehouse/paletizado-optimizado.jpg"
         },
         "route": {
-          "title": "Ruteo",
-          "body": "Rutas óptimas al instante, calculadas junto al paletizado. Lo que llevaba 3 horas a mano, ahora son minutos.",
-          "metric": "10 min",
-          "metricLabel": "para 5.000 pedidos",
+          "title": "En ruta",
+          "body": "Sale por el modo que sea, con la ETA actualizándose en vivo. La IA aprende por chofer, cliente y bultos: el rango baja de 30 a 10 minutos en tres meses.",
+          "metric": "30→10 min",
+          "metricLabel": "de ETA, la IA aprende",
           "image": "/images/fleet/ruteo-nocturno.jpg"
         },
         "delivery": {
           "title": "Entrega",
-          "body": "Prueba de entrega digital y trazabilidad total. El último punto cierra el ciclo.",
+          "body": "Prueba de entrega digital: firma y foto en el celular, sin papeles. El chofer cierra y el dato vuelve al instante.",
           "metric": "100%",
-          "metricLabel": "trazable, en vivo",
+          "metricLabel": "entrega trazable",
           "image": "/images/torre/torre-control-room.jpg"
+        },
+        "billing": {
+          "title": "Cobro",
+          "body": "El ciclo cierra solo: lo entregado queda listo para facturar y liquidar. Nada se pierde entre la calle y la oficina.",
+          "metric": "Ciclo cerrado",
+          "metricLabel": "de la orden al cobro",
+          "image": "/images/pages/partners.jpg"
         }
       }
     },
@@ -224,34 +238,6 @@
       "title": "Mirá cuánta plata estás dejando en la calle",
       "subtitle": "30 minutos con tus propios datos y te mostramos exactamente dónde están tus fugas y cuánto valen.",
       "button": "Agendar Demo"
-    },
-    "multimodal": {
-      "eyebrow": "Logística multimodal",
-      "title": "Una plataforma para mover tu carga por",
-      "titleAccent": "mar, aire y tierra",
-      "subtitle": "Mar, aire, tierra y ferrocarril en un solo tablero: la misma visibilidad y la misma optimización, de punta a punta.",
-      "modes": [
-        {
-          "key": "sea",
-          "name": "Marítimo",
-          "desc": "Contenedores, puertos y patios. Visibilidad del buque al último kilómetro."
-        },
-        {
-          "key": "air",
-          "name": "Aéreo",
-          "desc": "Carga urgente y perecedera, con trazabilidad y tiempos críticos bajo control."
-        },
-        {
-          "key": "road",
-          "name": "Terrestre",
-          "desc": "Flota propia y tercerizada, ruteo inteligente y paletizado optimizado."
-        },
-        {
-          "key": "rail",
-          "name": "Ferroviario",
-          "desc": "Integración ferroviaria para tramos de larga distancia."
-        }
-      ]
     }
   },
   "modules": {

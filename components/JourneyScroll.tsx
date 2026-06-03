@@ -5,11 +5,11 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Warehouse, Boxes, Route, PackageCheck } from "lucide-react";
+import { PackagePlus, Warehouse, Boxes, Route, PackageCheck, ReceiptText } from "lucide-react";
 import { Container } from "./ui/Container";
 
-const STAGE_ICONS = [Warehouse, Boxes, Route, PackageCheck];
-const STAGE_ORDER = ["warehouse", "transport", "route", "delivery"] as const;
+const STAGE_ICONS = [PackagePlus, Warehouse, Boxes, Route, PackageCheck, ReceiptText];
+const STAGE_ORDER = ["reception", "warehouse", "palletizing", "route", "delivery", "billing"] as const;
 const STAGES = STAGE_ORDER.length;
 
 type Stage = { title: string; body: string; metric: string; metricLabel: string; image: string };
@@ -57,7 +57,7 @@ export function JourneyScroll({
       const st = ScrollTrigger.create({
         trigger: wrapRef.current,
         start: "top top",
-        end: () => `+=${window.innerHeight * STAGES}`,
+        end: () => `+=${window.innerHeight * STAGES * 0.7}`,
         pin: pinRef.current,
         scrub: true,
         onUpdate: (self) => {

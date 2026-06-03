@@ -143,37 +143,51 @@
       "description": "Visibility: see everything live, from vessel to last mile. Control: nothing slips by, lot by lot with real FEFO. Profitability: every trip pays off more, with routing and palletizing computed at once. All in real time, without replacing your ERP, it makes it stronger."
     },
     "journey": {
-      "eyebrow": "Point to point",
-      "title": "From the dock to the doorstep,",
-      "titleAccent": "with zero blind spots.",
+      "eyebrow": "At every point of the route",
+      "title": "From intake to signature,",
+      "titleAccent": "not a single blind spot.",
       "stages": {
+        "reception": {
+          "title": "Intake",
+          "body": "Freight arrives by sea, air, road or rail. Geodot picks it up from the first point, whatever the mode.",
+          "metric": "Multimodal",
+          "metricLabel": "intake",
+          "image": "/images/multimodal/aereo.jpg"
+        },
         "warehouse": {
           "title": "Warehouse",
-          "body": "AI-driven receiving, putaway and picking. Real FEFO: the 12 oldest pallets go to the back, and each customer's shelf-life rule is enforced at the scan.",
-          "metric": "FEFO",
-          "metricLabel": "real, lot by lot",
+          "body": "Real-time inventory by lot, location and expiry. Pull a pallet and it tells you: you have 12 older ones in the back, grab those.",
+          "metric": "True FEFO",
+          "metricLabel": "no hidden expired stock",
           "image": "/images/warehouse/iwms.jpg"
         },
-        "transport": {
-          "title": "Transport",
-          "body": "Owned and outsourced fleet in one view. Trucks leave loaded to 99%, not 85%, with their paperwork in order.",
+        "palletizing": {
+          "title": "Palletizing",
+          "body": "Palletizer and router work together: the truck leaves at 99%, not at 85% just in case. Fewer trips, same product.",
           "metric": "99%",
-          "metricLabel": "truck load",
-          "image": "/images/fleet/itms.jpg"
+          "metricLabel": "load, not 85%",
+          "image": "/images/warehouse/paletizado-optimizado.jpg"
         },
         "route": {
-          "title": "Routing",
-          "body": "Optimal routes instantly, computed alongside palletizing. What used to take 3 hours by hand now takes minutes.",
-          "metric": "10 min",
-          "metricLabel": "to route 5,000 orders",
+          "title": "In transit",
+          "body": "It ships by any mode, with the ETA updating live. The AI learns by driver, customer and parcel count: the range drops from 30 to 10 minutes in three months.",
+          "metric": "30→10 min",
+          "metricLabel": "ETA, the AI learns",
           "image": "/images/fleet/ruteo-nocturno.jpg"
         },
         "delivery": {
           "title": "Delivery",
-          "body": "Digital proof of delivery and full traceability. The last point closes the loop.",
+          "body": "Digital proof of delivery: signature and photo on the phone, no paper. The driver closes it and the data returns instantly.",
           "metric": "100%",
-          "metricLabel": "traceable, live",
+          "metricLabel": "traceable delivery",
           "image": "/images/torre/torre-control-room.jpg"
+        },
+        "billing": {
+          "title": "Billing",
+          "body": "The cycle closes itself: what was delivered is ready to invoice and settle. Nothing is lost between the street and the office.",
+          "metric": "Closed loop",
+          "metricLabel": "from order to cash",
+          "image": "/images/pages/partners.jpg"
         }
       }
     },
@@ -224,34 +238,6 @@
       "title": "See how much money is leaving on the table",
       "subtitle": "30 minutes with your own data and we'll show you exactly where your leaks are, and what they're costing.",
       "button": "Book a Demo"
-    },
-    "multimodal": {
-      "eyebrow": "Multimodal logistics",
-      "title": "One platform to move your freight by",
-      "titleAccent": "sea, air and land",
-      "subtitle": "Sea, air, land and rail on one board: the same visibility and the same optimization, end to end.",
-      "modes": [
-        {
-          "key": "sea",
-          "name": "Sea",
-          "desc": "Containers, ports and yards. Visibility from vessel to last mile."
-        },
-        {
-          "key": "air",
-          "name": "Air",
-          "desc": "Urgent and perishable cargo, with traceability and critical timing under control."
-        },
-        {
-          "key": "road",
-          "name": "Road",
-          "desc": "Owned and outsourced fleet, smart routing and optimized palletizing."
-        },
-        {
-          "key": "rail",
-          "name": "Rail",
-          "desc": "Rail integration for long-haul legs."
-        }
-      ]
     }
   },
   "modules": {
