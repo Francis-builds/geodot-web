@@ -9,18 +9,18 @@ import { Section, SectionHeader } from "./ui/Section";
 import { revealItem } from "./ui/Reveal";
 import { Icon } from "./ui/Icon";
 
-export function IndustryGrid({ eyebrow, title, titleAccent, description }: {
-  eyebrow?: string; title: string; titleAccent?: string; description?: string;
+export function IndustryGrid({ title, titleAccent, description }: {
+  title: string; titleAccent?: string; description?: string;
 }) {
   const t = useTranslations("industries");
   const tIdx = useTranslations("industriesIndex");
   const reduce = useReducedMotion();
 
   return (
-    <Section tone="dark" texture="glow">
+    <Section tone="dark">
       <SectionHeader
-        eyebrow={eyebrow} title={title} titleAccent={titleAccent} description={description}
-        tone="dark" accentGradient
+        title={title} titleAccent={titleAccent} description={description}
+        tone="dark"
       />
       <motion.div
         className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"

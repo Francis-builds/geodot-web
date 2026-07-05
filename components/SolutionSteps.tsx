@@ -1,11 +1,11 @@
 import { Section, SectionHeader } from "./ui/Section";
 
-export function SolutionSteps({ eyebrow, title, steps }: {
-  eyebrow?: string; title: string; steps: { title: string; description: string }[];
+export function SolutionSteps({ title, steps }: {
+  title: string; steps: { title: string; description: string }[];
 }) {
   return (
     <Section tone="base">
-      <SectionHeader eyebrow={eyebrow} title={title} />
+      <SectionHeader title={title} />
       <ol className="grid gap-8 md:grid-cols-3">
         {steps.map((s, i) => (
           <li key={i} className="rounded-lg border border-navy-100 p-6">

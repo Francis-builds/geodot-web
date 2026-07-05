@@ -22,11 +22,9 @@ type Stage = { title: string; body: string; metric: string; metricLabel: string;
  * it (synced to Lenis). Under prefers-reduced-motion it renders a static stack.
  */
 export function JourneyScroll({
-  eyebrow,
   title,
   titleAccent,
 }: {
-  eyebrow: string;
   title: string;
   titleAccent: string;
 }) {
@@ -95,7 +93,6 @@ export function JourneyScroll({
     return (
       <section className="bg-navy-50 py-20" aria-label={`${title} ${titleAccent}`}>
         <Container>
-          <span className="eyebrow-dot mb-4 inline-block text-overline font-semibold uppercase tracking-wide text-teal-700">{eyebrow}</span>
           <h2 className="mb-12 max-w-2xl text-display-lg font-bold leading-[1.05] text-navy-900">
             {title} <span className="text-accent-strong">{titleAccent}</span>
           </h2>
@@ -128,7 +125,6 @@ export function JourneyScroll({
         {/* Left: heading + swapping copy + rail (on clean surface) */}
         <div className="flex items-center">
           <Container className="w-full md:!mr-0 md:max-w-[640px] md:pl-8 md:pr-16">
-            <span className="eyebrow-dot mb-4 inline-block text-overline font-semibold uppercase tracking-wide text-teal-700">{eyebrow}</span>
             <h2 className="max-w-xl text-heading-xl md:text-display-lg font-bold leading-[1.06] text-navy-900">
               {title} <span className="text-accent-strong">{titleAccent}</span>
             </h2>

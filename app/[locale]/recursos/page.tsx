@@ -18,9 +18,7 @@ export default async function RecursosPage({ params }: { params: Promise<{ local
 
   return (
     <>
-      <Hero
-        variant="dark"
-        eyebrow={t("hero.eyebrow")}
+      <Hero variant="dark" eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
         titleAccent={t("hero.titleAccent")}
         subtitle={t("hero.subtitle")}

@@ -20,8 +20,7 @@ export default async function IntegracionesPage({ params }: { params: Promise<{ 
 
   return (
     <>
-      <Hero
-        eyebrow={t("hero.eyebrow")}
+      <Hero eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
         titleAccent={t("hero.titleAccent")}
         subtitle={t("hero.subtitle")}
@@ -35,7 +34,6 @@ export default async function IntegracionesPage({ params }: { params: Promise<{ 
       <Section tone="base">
         <SectionHeader
           align="left"
-          eyebrow={t("how.eyebrow")}
           title={t("how.title")}
           titleAccent={t("how.titleAccent")}
           description={t("how.description")}
@@ -58,7 +56,6 @@ export default async function IntegracionesPage({ params }: { params: Promise<{ 
       {/* Systems grid */}
       <Section tone="subtle">
         <SectionHeader
-          eyebrow={t("systems.eyebrow")}
           title={t("systems.title")}
           titleAccent={t("systems.titleAccent")}
           description={t("systems.description")}

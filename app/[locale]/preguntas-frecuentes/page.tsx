@@ -17,8 +17,7 @@ export default async function FaqPage({ params }: { params: Promise<{ locale: st
 
   return (
     <>
-      <Hero
-        eyebrow={t("hero.eyebrow")}
+      <Hero eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
         titleAccent={t("hero.titleAccent")}
         subtitle={t("hero.subtitle")}

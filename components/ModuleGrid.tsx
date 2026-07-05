@@ -17,17 +17,17 @@ const SPANS: Record<number, string> = {
   3: "lg:col-span-7",
 };
 
-export function ModuleGrid({ eyebrow, title, titleAccent, description }: {
-  eyebrow?: string; title: string; titleAccent?: string; description?: string;
+export function ModuleGrid({ title, titleAccent, description }: {
+  title: string; titleAccent?: string; description?: string;
 }) {
   const t = useTranslations("modules");
   const reduce = useReducedMotion();
 
   return (
-    <Section tone="dark" texture="glow">
+    <Section tone="dark">
       <SectionHeader
-        eyebrow={eyebrow} title={title} titleAccent={titleAccent} description={description}
-        tone="dark" accentGradient
+        title={title} titleAccent={titleAccent} description={description}
+        tone="dark"
       />
       <motion.div
         className="grid auto-rows-[minmax(0,1fr)] gap-4 sm:gap-5 lg:grid-cols-12"

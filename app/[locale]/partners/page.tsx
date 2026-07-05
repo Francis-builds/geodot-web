@@ -23,8 +23,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
 
   return (
     <>
-      <Hero
-        eyebrow={t("hero.eyebrow")}
+      <Hero eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
         titleAccent={t("hero.titleAccent")}
         subtitle={t("hero.subtitle")}
@@ -36,7 +35,6 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       {/* Partner categories */}
       <Section tone="base">
         <SectionHeader
-          eyebrow={t("categories.eyebrow")}
           title={t("categories.title")}
           titleAccent={t("categories.titleAccent")}
           description={t("categories.description")}
@@ -56,7 +54,6 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       {/* Levels */}
       <Section tone="subtle">
         <SectionHeader
-          eyebrow={t("tiers.eyebrow")}
           title={t("tiers.title")}
           titleAccent={t("tiers.titleAccent")}
           description={t("tiers.description")}
@@ -84,7 +81,6 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       {/* Services model */}
       <Section tone="base">
         <SectionHeader
-          eyebrow={t("services.eyebrow")}
           title={t("services.title")}
           titleAccent={t("services.titleAccent")}
           description={t("services.description")}

@@ -21,8 +21,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <HeroCinematic
-        eyebrow={t("hero.eyebrow")}
+      <HeroCinematic eyebrow={t("hero.eyebrow")}
         title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")}
         primaryCta={{ label: t("hero.ctaPrimary"), href: "/contacto" }}
         secondaryCta={{ label: t("hero.ctaSecondary"), href: "/plataforma" }}
@@ -30,14 +29,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         imageAlt={t("hero.title")}
       />
       <ProblemStats
-        eyebrow={t("problem.eyebrow")} title={t("problem.title")} titleAccent={t("problem.titleAccent")}
+        title={t("problem.title")} titleAccent={t("problem.titleAccent")}
         points={t.raw("problem.points") as string[]}
         stats={t.raw("problem.stats") as { problem: string; impact: string }[]}
       />
-      <ModuleGrid eyebrow={t("platform.eyebrow")} title={t("platform.title")} titleAccent={t("platform.titleAccent")} description={t("platform.description")} />
-      <JourneyScroll eyebrow={t("journey.eyebrow")} title={t("journey.title")} titleAccent={t("journey.titleAccent")} />
+      <ModuleGrid title={t("platform.title")} titleAccent={t("platform.titleAccent")} description={t("platform.description")} />
+      <JourneyScroll title={t("journey.title")} titleAccent={t("journey.titleAccent")} />
       <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />
-      <CasesStrip eyebrow={t("cases.eyebrow")} title={t("cases.title")} cases={t.raw("cases.items") as { client: string; result: string; metric: string }[]} />
+      <CasesStrip title={t("cases.title")} cases={t.raw("cases.items") as { client: string; result: string; metric: string }[]} />
       <CTABanner title={t("cta.title")} subtitle={t("cta.subtitle")} cta={{ label: t("cta.button"), href: "/contacto" }} />
     </>
   );

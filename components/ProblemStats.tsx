@@ -1,13 +1,13 @@
 import { Section, SectionHeader } from "./ui/Section";
 import { Reveal } from "./ui/Reveal";
 
-export function ProblemStats({ eyebrow, title, titleAccent, points, stats }: {
-  eyebrow?: string; title: string; titleAccent?: string;
+export function ProblemStats({ title, titleAccent, points, stats }: {
+  title: string; titleAccent?: string;
   points: string[]; stats: { problem: string; impact: string }[];
 }) {
   return (
     <Section tone="base">
-      <SectionHeader eyebrow={eyebrow} title={title} titleAccent={titleAccent} align="left" />
+      <SectionHeader title={title} titleAccent={titleAccent} align="left" />
       <div className="grid gap-12 md:grid-cols-2">
         <Reveal direction="right">
           <ul className="space-y-4">

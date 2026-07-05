@@ -4,13 +4,13 @@ import { motion, useReducedMotion } from "motion/react";
 import { Section, SectionHeader } from "./ui/Section";
 import { revealItem } from "./ui/Reveal";
 
-export function CasesStrip({ eyebrow, title, cases }: {
-  eyebrow?: string; title: string; cases: { client: string; result: string; metric: string }[];
+export function CasesStrip({ title, cases }: {
+  title: string; cases: { client: string; result: string; metric: string }[];
 }) {
   const reduce = useReducedMotion();
   return (
     <Section tone="subtle">
-      <SectionHeader eyebrow={eyebrow} title={title} />
+      <SectionHeader title={title} />
       <motion.div
         className="grid gap-6 md:grid-cols-3"
         initial={reduce ? undefined : "hidden"}
