@@ -13,3 +13,6 @@ next-env.d.ts
 .claude/product-marketing-context.md
 
 .playwright-mcp/
+
+# Visual brainstorm sessions
+.superpowers/
