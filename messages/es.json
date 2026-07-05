@@ -41,13 +41,13 @@
       "eyebrow": "Recursos",
       "title": "Ideas para una logística",
       "titleAccent": "más inteligente",
-      "subtitle": "Guías, casos reales y números sobre carga al 100%, ruteo con IA, cadena de frío, FEFO y trazabilidad aduanera. Aprendé de operaciones como la tuya.",
+      "subtitle": "Guías, casos y números sobre carga al 100%, ruteo con IA, cadena de frío, FEFO y trazabilidad aduanera. Aprendé de operaciones como la tuya.",
       "cta": "Agendá tu demo"
     },
     "readingMin": "min de lectura",
     "empty": {
       "title": "Pronto, recursos para tu operación",
-      "subtitle": "Estamos preparando guías y casos prácticos con números reales. Volvé pronto."
+      "subtitle": "Estamos preparando guías y casos prácticos, con números. Volvé pronto."
     },
     "cta": {
       "title": "Llevá estas ideas a tu operación",
@@ -231,7 +231,7 @@
     ],
     "cases": {
       "eyebrow": "Casos de éxito",
-      "title": "Números reales de operaciones como la tuya",
+      "title": "Números de operaciones como la tuya",
       "items": [
         {
           "metric": "−8%",
@@ -251,7 +251,7 @@
       ]
     },
     "cta": {
-      "title": "Mirá cuánta plata estás dejando en la calle",
+      "title": "Ponele número a tus fugas",
       "subtitle": "30 minutos con tus propios datos y te mostramos exactamente dónde están tus fugas y cuánto valen.",
       "button": "Agendá tu demo"
     }
@@ -1014,10 +1014,10 @@
   },
   "casesPage": {
     "hero": {
-      "eyebrow": "Casos reales",
+      "eyebrow": "Casos de éxito",
       "title": "Números medibles, no",
       "titleAccent": "promesas en PowerPoint",
-      "subtitle": "Embotelladoras, flotas pesqueras y operaciones de frío ya mueven más con Geodot. Estos son los números reales, marcamos qué está en producción y qué se mostró en demo. Sin inventar nada.",
+      "subtitle": "Embotelladoras, flotas pesqueras y operaciones de frío ya mueven más con Geodot. Marcamos qué está en producción y qué se mostró en demo.",
       "imageAlt": "Geocerca virtual delimitando la zona de contenedores de un puerto",
       "cta": "Quiero estos resultados"
     },
@@ -1344,7 +1344,7 @@
           },
           {
             "q": "¿Cuál es el ROI típico?",
-            "a": "Suele estar por debajo de los 12 meses. Los resultados reales que vimos en operación: carga de camión de 85% a 99%, 8% menos de costo de transporte y 4 a 5 camiones por día menos por la regla del vidrio retornable. En tu caso lo calculamos con tus propios datos en la demo, sin números inventados."
+            "a": "Suele estar por debajo de los 12 meses. Lo que vimos en operación: carga de camión de 85% a 99%, 8% menos de costo de transporte y 4 a 5 camiones por día menos por la regla del vidrio retornable. En tu caso lo calculamos con tus propios datos en la demo."
           },
           {
             "q": "¿Tienen soporte en español?",

@@ -41,13 +41,13 @@
       "eyebrow": "Resources",
       "title": "Ideas for",
       "titleAccent": "smarter logistics",
-      "subtitle": "Guides, real cases and numbers on 100% loads, AI routing, cold chain, FEFO and customs traceability. Learn from operations like yours.",
+      "subtitle": "Guides, cases and numbers on 100% loads, AI routing, cold chain, FEFO and customs traceability. Learn from operations like yours.",
       "cta": "Book your demo"
     },
     "readingMin": "min read",
     "empty": {
       "title": "Resources for your operation, coming soon",
-      "subtitle": "We're preparing guides and practical case studies with real numbers. Check back soon."
+      "subtitle": "We're preparing guides and practical case studies, with numbers. Check back soon."
     },
     "cta": {
       "title": "Bring these ideas to your operation",
@@ -231,7 +231,7 @@
     ],
     "cases": {
       "eyebrow": "Case studies",
-      "title": "Real numbers from operations like yours",
+      "title": "Numbers from operations like yours",
       "items": [
         {
           "metric": "−8%",
@@ -251,7 +251,7 @@
       ]
     },
     "cta": {
-      "title": "See how much money is leaving on the table",
+      "title": "Put a number on your leaks",
       "subtitle": "30 minutes with your own data and we'll show you exactly where your leaks are, and what they're costing.",
       "button": "Book a demo"
     }
@@ -1014,10 +1014,10 @@
   },
   "casesPage": {
     "hero": {
-      "eyebrow": "Real cases",
+      "eyebrow": "Case studies",
       "title": "Numbers you can measure, not",
       "titleAccent": "PowerPoint promises",
-      "subtitle": "Bottlers, fishing fleets and cold-chain operations already move more with Geodot. These are the real numbers, and we flag what's in production versus what we showed in a demo. Nothing invented.",
+      "subtitle": "Bottlers, fishing fleets and cold-chain operations already move more with Geodot. We flag what's in production versus what we showed in a demo.",
       "imageAlt": "Virtual geofence outlining the container zone of a port",
       "cta": "I want these results"
     },
@@ -1344,7 +1344,7 @@
           },
           {
             "q": "What is the typical ROI?",
-            "a": "Usually under 12 months. The real results we've seen in operation: truck load from 85% to 99%, 8% lower transport cost, and 4 to 5 fewer trucks a day from the returnable-glass rule. For your case we calculate it with your own data in the demo, no made-up numbers."
+            "a": "Usually under 12 months. What we've seen in operation: truck load from 85% to 99%, 8% lower transport cost, and 4 to 5 fewer trucks a day from the returnable-glass rule. For your case we calculate it with your own data in the demo."
           },
           {
             "q": "Do you offer support in Spanish?",
