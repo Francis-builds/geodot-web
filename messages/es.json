@@ -64,6 +64,7 @@
       "email": "Email",
       "phone": "Teléfono",
       "message": "Contanos sobre tu operación",
+      "required": "* Campos obligatorios",
       "submit": "Agendá tu demo",
       "sending": "Enviando…",
       "success": "¡Listo! Te contactamos en menos de 24 horas hábiles.",

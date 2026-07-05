@@ -64,6 +64,7 @@
       "email": "Email",
       "phone": "Phone",
       "message": "Tell us about your operation",
+      "required": "* Required fields",
       "submit": "Book your demo",
       "sending": "Sending…",
       "success": "Done! We'll be in touch within 24 business hours.",
