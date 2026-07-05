@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Hanken_Grotesk } from "next/font/google";
+import { Schibsted_Grotesk } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -10,17 +10,9 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const schibsted = Schibsted_Grotesk({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-const hanken = Hanken_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-hanken",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-schibsted",
   display: "swap",
 });
 
@@ -68,7 +60,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale === "en" ? "en" : "es-MX"} data-scroll-behavior="smooth" className={`${spaceGrotesk.variable} ${hanken.variable}`}>
+    <html lang={locale === "en" ? "en" : "es-MX"} data-scroll-behavior="smooth" className={schibsted.variable}>
       <body className="antialiased">
         <NextIntlClientProvider>
           <SmoothScroll />

@@ -53,8 +53,8 @@
   --gradient-midnight: linear-gradient(135deg, #0E172D 0%, #253354 100%);
 
   /* Fonts (vars provided by next/font in layout.tsx) */
-  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
-  --font-body:    var(--font-hanken), system-ui, sans-serif;
+  --font-display: var(--font-schibsted), system-ui, sans-serif;
+  --font-body:    var(--font-schibsted), system-ui, sans-serif;
 
   /* Type scale */
   --text-display-2xl: 72px;  --text-display-2xl--line-height: 1.05; --text-display-2xl--letter-spacing: -0.02em;
@@ -71,7 +71,6 @@
   --text-overline:    12px;  --text-overline--line-height:    1.30; --text-overline--letter-spacing: 0.08em;
 
   /* Font weights */
-  --font-weight-light:    300;
   --font-weight-regular:  400;
   --font-weight-medium:   500;
   --font-weight-semibold: 600;
