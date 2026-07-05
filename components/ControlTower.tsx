@@ -54,7 +54,7 @@ export function ControlTower({
           </div>
           <div className="absolute right-5 top-[38%] rounded-md border border-white/10 bg-navy-900 px-4 py-3">
             <p className="text-caption text-navy-300">{labels.transportLabel}</p>
-            <p className="text-heading-md font-bold text-white">−10%</p>
+            <p className="text-heading-md font-bold text-white">−8%</p>
           </div>
           <div className="absolute bottom-5 left-5 flex items-center gap-2.5 rounded-md border border-white/10 bg-navy-900 px-3.5 py-2">
             <span className="h-2 w-2 rounded-full bg-teal-400" />

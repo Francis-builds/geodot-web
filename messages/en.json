@@ -11,7 +11,7 @@
     "casos": "Case studies",
     "recursos": "Resources",
     "nosotros": "About",
-    "cta": "Book a Demo",
+    "cta": "Book a demo",
     "platformAll": "Explore the platform",
     "industriesAll": "All industries",
     "integraciones": "Integrations",
@@ -253,7 +253,7 @@
     "cta": {
       "title": "See how much money is leaving on the table",
       "subtitle": "30 minutes with your own data and we'll show you exactly where your leaks are, and what they're costing.",
-      "button": "Book a Demo"
+      "button": "Book a demo"
     }
   },
   "modules": {
@@ -264,7 +264,7 @@
       "title": "Warehouse Management",
       "titleAccent": "that sees every pack",
       "subtitle": "Your SAP knows you have stock. Geodot's iWMS knows which pallet, which lot and which shelf height it's on, and which one is oldest. Real FEFO by expiration date and shelf life per customer, so they stop rejecting your truck.",
-      "ctaPrimary": "Book a Demo",
+      "ctaPrimary": "Book a demo",
       "problem": {
         "title": "Your warehouse loses money where no one is looking",
         "points": [
@@ -335,7 +335,7 @@
       "cta": {
         "title": "Control your warehouse down to the last pack",
         "subtitle": "Book a demo and we'll show you the iWMS running on your own SKUs.",
-        "button": "Book a Demo"
+        "button": "Book a demo"
       }
     },
     "tms": {
@@ -345,7 +345,7 @@
       "title": "Transport Management",
       "titleAccent": "in real time",
       "subtitle": "Transport is your biggest cost and your worst blind spot. The iTMS manages owned and outsourced fleets from a single screen: live tracking, documentation up to date, every drop validated, and costs attributed to each route and customer.",
-      "ctaPrimary": "Book a Demo",
+      "ctaPrimary": "Book a demo",
       "problem": {
         "title": "Transport is your biggest cost and your worst blind spot",
         "points": [
@@ -379,7 +379,7 @@
           },
           {
             "title": "Drop validation",
-            "description": "GPS isn't the dot on the map: every drop is validated against GPS. No more simulated loads and no more half-empty truck that goes out twice."
+            "description": "GPS here isn't just a dot on a map: every drop is validated against the truck's real position. No more simulated loads and no more half-empty truck that goes out twice."
           },
           {
             "title": "Owned and outsourced fleet",
@@ -416,7 +416,7 @@
       "cta": {
         "title": "Put every truck under control, owned or outsourced",
         "subtitle": "Book a demo and unify owned and outsourced fleets on a single screen.",
-        "button": "Book a Demo"
+        "button": "Book a demo"
       }
     },
     "paletizado": {
@@ -426,7 +426,7 @@
       "title": "Smart",
       "titleAccent": "Palletizing",
       "subtitle": "Others route first and palletize later. Geodot does both at once: we're the only ones who calculate palletizing and routing at the same time. We know what fits in each truck before loading it, so you load to 99% with no empty safety margin.",
-      "ctaPrimary": "Book a Demo",
+      "ctaPrimary": "Book a demo",
       "problem": {
         "title": "Your trucks leave at 85%. That empty margin is money traveling empty",
         "points": [
@@ -464,7 +464,7 @@
           },
           {
             "title": "The returnable-glass rule",
-            "description": "Take one glass customer off a truck and you fit ten more on the next one: +10% capacity and 4 to 5 fewer trucks per day."
+            "description": "Take one glass customer off a truck and ten more orders fit on the next one: +10% capacity and 4 to 5 fewer trucks per day."
           },
           {
             "title": "Visual build guides",
@@ -497,7 +497,7 @@
       "cta": {
         "title": "How many extra trucks are you paying for every week?",
         "subtitle": "Book a demo and we'll calculate your savings with simultaneous palletizing and routing.",
-        "button": "Book a Demo"
+        "button": "Book a demo"
       }
     },
     "torreControl": {
@@ -507,7 +507,7 @@
       "title": "Control Tower",
       "titleAccent": "in real time",
       "subtitle": "A single dashboard to see, anticipate and act on your whole chain, from the warehouse to the last delivery. The AI learns from every trip: the ETA range drops from 30 to 10 minutes after a few months of operation.",
-      "ctaPrimary": "Book a Demo",
+      "ctaPrimary": "Book a demo",
       "problem": {
         "title": "You operate blind until the problem has already blown up",
         "points": [
@@ -578,7 +578,7 @@
       "cta": {
         "title": "What does every incident you catch too late cost you?",
         "subtitle": "Book a demo and unify iWMS, iTMS, routing and palletizing on a single dashboard.",
-        "button": "Book a Demo"
+        "button": "Book a demo"
       }
     },
     "explore": "Explore"
@@ -591,7 +591,7 @@
       "title": "Beverages &",
       "titleAccent": "Bottlers",
       "subtitle": "Your trucks leave at 85%. That empty space is money traveling for free. Geodot calculates routing and palletizing at the same time: it knows what fits the truck before setting the route, shifts glass customers between units, and builds every pallet with the glass on the bottom.",
-      "ctaPrimary": "Book a Demo",
+      "ctaPrimary": "Book a demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
@@ -646,7 +646,7 @@
       "cta": {
         "title": "Load to 99, not to 85",
         "subtitle": "Book a demo and we'll show you, on your own operation, how to go from 85% to 99% with no slack left.",
-        "button": "Book a Demo"
+        "button": "Book a demo"
       }
     },
     "alimentos": {
@@ -656,7 +656,7 @@
       "title": "Food &",
       "titleAccent": "Dairy",
       "subtitle": "You find out about a temperature excursion when they reject the truck. Too late. Geodot connects plant, warehouse, routing and cold chain in one platform: real FEFO by expiry date, per-customer shelf-life rules, and an alert before the product is lost.",
-      "ctaPrimary": "Book a Demo",
+      "ctaPrimary": "Book a demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
@@ -711,7 +711,7 @@
       "cta": {
         "title": "Oldest out first, no excuses",
         "subtitle": "Book a demo and we'll show you real FEFO, per-customer shelf-life rules and cold chain in a single platform.",
-        "button": "Book a Demo"
+        "button": "Book a demo"
       }
     },
     "gobiernoResiduos": {
@@ -721,7 +721,7 @@
       "title": "Government &",
       "titleAccent": "Urban Waste",
       "subtitle": "Four in five residents feel waste is out of control. Routes designed a decade ago, full trucks that can't pick up more, and forgotten zones. Geodot optimizes routes, validates every drop-off against GPS, and puts the operation in front of citizens.",
-      "ctaPrimary": "Book a Meeting",
+      "ctaPrimary": "Book a meeting",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
@@ -776,7 +776,7 @@
       "cta": {
         "title": "Fewer miles, fewer complaints, drop-offs that actually happened",
         "subtitle": "Book a meeting and we'll deliver a no-cost route assessment and collection-point census.",
-        "button": "Book a Meeting"
+        "button": "Book a meeting"
       }
     },
     "logistica3pl": {
@@ -786,7 +786,7 @@
       "title": "Logistics Operators",
       "titleAccent": "3PL",
       "subtitle": "Every client asks for a different report and you have no way to show it to them. Geodot starts with Zero Label and iWMS (no re-labeling, the data already travels with the pallet) and adds multi-client, routing and billing when you need them: land and expand on your operation.",
-      "ctaPrimary": "Book a Demo",
+      "ctaPrimary": "Book a demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
@@ -841,7 +841,7 @@
       "cta": {
         "title": "Start with Zero Label, grow with the whole platform",
         "subtitle": "Book a demo and we'll show you how to eliminate re-labeling and give each client a live view of their operation.",
-        "button": "Book a Demo"
+        "button": "Book a demo"
       }
     },
     "healthcare": {
@@ -851,7 +851,7 @@
       "title": "Healthcare &",
       "titleAccent": "Pharma",
       "subtitle": "Vaccines, clinical samples and high-cost medications tolerate not one degree out of range. Geodot enters through the cold chain: end-to-end temperature traceability, an alert when the excursion happens (not when they reject the truck), and real FEFO so the closest-to-expiry product leaves first.",
-      "ctaPrimary": "Book a Demo",
+      "ctaPrimary": "Book a demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
@@ -906,7 +906,7 @@
       "cta": {
         "title": "Logistics that tolerates not one degree out of range",
         "subtitle": "Book a demo and we'll show you how to guarantee cold chain, real FEFO and chain of custody in a single platform.",
-        "button": "Book a Demo"
+        "button": "Book a demo"
       }
     },
     "recintosFiscales": {
@@ -916,7 +916,7 @@
       "title": "Bonded &",
       "titleAccent": "Customs Warehouses",
       "subtitle": "Without digital evidence, an ANAM audit is a gamble. Geodot enters through Zero Label and iWMS: no re-labeling, the data travels with the pallet, and every movement inside the facility is logged and auditable, with a document manager and control tower when you need them.",
-      "ctaPrimary": "Book a Demo",
+      "ctaPrimary": "Book a demo",
       "problem": {
         "title": "Specific challenges we solve",
         "points": [
@@ -971,7 +971,7 @@
       "cta": {
         "title": "A facility auditable end to end",
         "subtitle": "Book a demo and we'll show you Zero Label, pallet-level traceability and the evidence ANAM, IMMEX and OEA require.",
-        "button": "Book a Demo"
+        "button": "Book a demo"
       }
     }
   },
@@ -1046,7 +1046,7 @@
       "items": [
         {
           "industry": "Beverage and distribution (in production)",
-          "challenge": "Trucks leaving at 85% and routes built by hand every morning. Moving the same volume took 100 trucks when better loading needed 150. The union's safety margin ate real capacity.",
+          "challenge": "Trucks leaving at 85% and routes built by hand every morning. Moving the same volume took 150 trucks when better loading could do it with 100. The union's safety margin ate real capacity.",
           "solution": "Geodot calculates palletizing and routing at the same time: it knows what fits in the truck before building the route. It shifted returnable-glass customers between trucks to free capacity without breaking the margin.",
           "result": "Truck load from 85% to 99% and 8% lower transport cost. The glass rule added 10% capacity and took 4 to 5 trucks a day off the road."
         },
@@ -1440,7 +1440,7 @@
       "eyebrow": "Geodot Alliance Program",
       "title": "Grow with us",
       "titleAccent": "across LATAM",
-      "subtitle": "A partner program for integrators, technology partners, and strategic allies who want to bring smart logistics to their customers across the region.",
+      "subtitle": "A partner program for integrators, technology partners, and strategic allies. Preferred margins by tier, and up to 100% of services value once your team is certified.",
       "cta": "Apply as a partner"
     },
     "categories": {

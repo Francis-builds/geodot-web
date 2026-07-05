@@ -11,7 +11,7 @@
     "casos": "Casos de éxito",
     "recursos": "Recursos",
     "nosotros": "Nosotros",
-    "cta": "Agendar Demo",
+    "cta": "Agendar demo",
     "platformAll": "Ver toda la plataforma",
     "industriesAll": "Ver todas las industrias",
     "integraciones": "Integraciones",
@@ -19,7 +19,7 @@
     "skip": "Saltar al contenido"
   },
   "footer": {
-    "tagline": "Cargá al 100%, ruteá mejor y vé todo en tiempo real.",
+    "tagline": "Cargá al 100%, ruteá mejor y mirá todo en tiempo real.",
     "platform": "Plataforma",
     "allModules": "Todos los módulos",
     "company": "Empresa",
@@ -253,7 +253,7 @@
     "cta": {
       "title": "Mirá cuánta plata estás dejando en la calle",
       "subtitle": "30 minutos con tus propios datos y te mostramos exactamente dónde están tus fugas y cuánto valen.",
-      "button": "Agendar Demo"
+      "button": "Agendá tu demo"
     }
   },
   "modules": {
@@ -264,7 +264,7 @@
       "title": "Gestión de Almacenes",
       "titleAccent": "que ve cada pack",
       "subtitle": "Tu SAP sabe que tenés stock. El iWMS de Geodot sabe en qué palet, qué lote y a qué altura del anaquel, y cuál está más viejo. FEFO real por fecha de expiración y vida útil por cliente, para que dejen de rechazarte el camión.",
-      "ctaPrimary": "Agendar Demo",
+      "ctaPrimary": "Agendá tu demo",
       "problem": {
         "title": "Tu almacén pierde plata donde nadie está mirando",
         "points": [
@@ -335,7 +335,7 @@
       "cta": {
         "title": "Controlá tu almacén hasta el último pack",
         "subtitle": "Agendá una demo y te mostramos el iWMS funcionando con tus propios SKUs.",
-        "button": "Agendar Demo"
+        "button": "Agendá tu demo"
       }
     },
     "tms": {
@@ -345,7 +345,7 @@
       "title": "Gestión de Transporte",
       "titleAccent": "en tiempo real",
       "subtitle": "El transporte es tu mayor costo y tu peor punto ciego. El iTMS gestiona flota propia y tercerizada desde una sola pantalla: tracking en vivo, documentación al día, validación de cada descarga y costos atribuidos a cada ruta y cliente.",
-      "ctaPrimary": "Agendar Demo",
+      "ctaPrimary": "Agendá tu demo",
       "problem": {
         "title": "El transporte es tu mayor costo y tu peor punto ciego",
         "points": [
@@ -379,7 +379,7 @@
           },
           {
             "title": "Validación de descargas",
-            "description": "GPS no es el puntito en el mapa: cada descarga se valida contra GPS. Se acabaron las cargas simuladas y el camión a medias que sale dos veces."
+            "description": "El GPS acá no es un puntito en el mapa: cada descarga se valida contra la posición real del camión. Se acabaron las cargas simuladas y el camión a medias que sale dos veces."
           },
           {
             "title": "Flota propia y tercerizada",
@@ -416,7 +416,7 @@
       "cta": {
         "title": "Poné cada camión bajo control, propio o tercerizado",
         "subtitle": "Agendá una demo y unificá flota propia y tercerizada en una sola pantalla.",
-        "button": "Agendar Demo"
+        "button": "Agendá tu demo"
       }
     },
     "paletizado": {
@@ -426,7 +426,7 @@
       "title": "Paletizado",
       "titleAccent": "Inteligente",
       "subtitle": "Otros rutean primero y paletizan después. Geodot lo hace a la vez: somos los únicos que calculan paletizado y ruteo al mismo tiempo. Sabemos qué entra a cada camión antes de cargarlo, para que cargues al 99% sin dejar planchada.",
-      "ctaPrimary": "Agendar Demo",
+      "ctaPrimary": "Agendá tu demo",
       "problem": {
         "title": "Tus camiones salen al 85%. Esa planchada es plata que viaja vacía",
         "points": [
@@ -464,7 +464,7 @@
           },
           {
             "title": "Regla del vidrio retornable",
-            "description": "Con sacarle un cliente de vidrio a un camión, le metés diez más al de al lado: +10% de capacidad y 4 a 5 camiones menos por día."
+            "description": "Sacás un cliente de vidrio de un camión y entran diez pedidos más en el de al lado: +10% de capacidad y 4 a 5 camiones menos por día."
           },
           {
             "title": "Guías de armado visual",
@@ -497,7 +497,7 @@
       "cta": {
         "title": "¿Cuántos camiones de más estás pagando cada semana?",
         "subtitle": "Agendá una demo y calculamos tu ahorro con paletizado y ruteo simultáneos.",
-        "button": "Agendar Demo"
+        "button": "Agendá tu demo"
       }
     },
     "torreControl": {
@@ -507,7 +507,7 @@
       "title": "Torre de Control",
       "titleAccent": "en tiempo real",
       "subtitle": "Un solo tablero para ver, anticipar y actuar sobre toda tu cadena, del almacén a la última entrega. La IA aprende de cada viaje: el rango de ETA baja de 30 a 10 minutos tras unos meses de operación.",
-      "ctaPrimary": "Agendar Demo",
+      "ctaPrimary": "Agendá tu demo",
       "problem": {
         "title": "Operás a ciegas hasta que el problema ya te explotó",
         "points": [
@@ -578,7 +578,7 @@
       "cta": {
         "title": "¿Cuánto te cuesta cada incidente que descubrís tarde?",
         "subtitle": "Agendá una demo y unificá iWMS, iTMS, ruteo y paletizado en un solo tablero.",
-        "button": "Agendar Demo"
+        "button": "Agendá tu demo"
       }
     },
     "explore": "Explorar"
@@ -591,7 +591,7 @@
       "title": "Bebidas y",
       "titleAccent": "Embotelladores",
       "subtitle": "Tus camiones salen al 85%. Esa planchada es plata que viaja vacía. Geodot calcula el ruteo y el paletizado al mismo tiempo: sabe qué entra al camión antes de definir la ruta, mueve clientes de vidrio entre unidades y arma cada palet con el vidrio abajo.",
-      "ctaPrimary": "Agendar Demo",
+      "ctaPrimary": "Agendá tu demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
@@ -646,7 +646,7 @@
       "cta": {
         "title": "Cargá al 99, no al 85",
         "subtitle": "Agendá una demo y te mostramos, con tu operación, cómo pasar del 85% al 99% sin dejar planchada.",
-        "button": "Agendar Demo"
+        "button": "Agendá tu demo"
       }
     },
     "alimentos": {
@@ -656,7 +656,7 @@
       "title": "Alimentos y",
       "titleAccent": "Lácteos",
       "subtitle": "Te enterás de la excursión de temperatura cuando rechazan el camión. Tarde. Geodot conecta planta, almacén, ruteo y cadena de frío en una sola plataforma: FEFO real por fecha de expiración, regla de vida útil por cliente y alerta antes de que el producto se pierda.",
-      "ctaPrimary": "Agendar Demo",
+      "ctaPrimary": "Agendá tu demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
@@ -711,7 +711,7 @@
       "cta": {
         "title": "Que lo más viejo salga primero, sin excusas",
         "subtitle": "Agendá una demo y te mostramos FEFO real, regla de vida útil por cliente y cadena de frío en una sola plataforma.",
-        "button": "Agendar Demo"
+        "button": "Agendá tu demo"
       }
     },
     "gobiernoResiduos": {
@@ -721,7 +721,7 @@
       "title": "Gobierno y",
       "titleAccent": "Residuos Urbanos",
       "subtitle": "Cuatro de cada cinco vecinos sienten que la basura está fuera de control. Rutas diseñadas hace una década, camiones llenos que no levantan más y zonas olvidadas. Geodot optimiza las rutas, valida cada descarga contra GPS y pone la operación ante los ojos del ciudadano.",
-      "ctaPrimary": "Agendar Reunión",
+      "ctaPrimary": "Agendá una reunión",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
@@ -776,7 +776,7 @@
       "cta": {
         "title": "Menos kilómetros, menos quejas, descargas que sí pasaron",
         "subtitle": "Agendá una reunión y te entregamos un diagnóstico de tus rutas y un censo de puntos, sin costo.",
-        "button": "Agendar Reunión"
+        "button": "Agendá una reunión"
       }
     },
     "logistica3pl": {
@@ -786,7 +786,7 @@
       "title": "Operadores Logísticos",
       "titleAccent": "3PL",
       "subtitle": "Cada cliente te pide un reporte distinto y no tenés cómo mostrárselo. Geodot arranca por Etiqueta Zero y iWMS (cero re-etiquetado, el dato ya viaja con el palet) y suma multicliente, ruteo y facturación cuando lo necesitás: land-and-expand sobre tu operación.",
-      "ctaPrimary": "Agendar Demo",
+      "ctaPrimary": "Agendá tu demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
@@ -841,7 +841,7 @@
       "cta": {
         "title": "Empezá por Etiqueta Zero, crecé con toda la plataforma",
         "subtitle": "Agendá una demo y te mostramos cómo eliminar el re-etiquetado y darle a cada cliente su operación en vivo.",
-        "button": "Agendar Demo"
+        "button": "Agendá tu demo"
       }
     },
     "healthcare": {
@@ -851,7 +851,7 @@
       "title": "Salud y",
       "titleAccent": "Farma",
       "subtitle": "Vacunas, muestras clínicas y medicamentos de alto costo no toleran ni un grado fuera de rango. Geodot entra por la cadena de frío: trazabilidad de temperatura de punta a punta, alerta cuando la excursión pasa (no cuando te rechazan el camión) y FEFO real para que lo más próximo a vencer salga primero.",
-      "ctaPrimary": "Agendar Demo",
+      "ctaPrimary": "Agendá tu demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
@@ -906,7 +906,7 @@
       "cta": {
         "title": "Logística que no tolera ni un grado fuera de rango",
         "subtitle": "Agendá una demo y te mostramos cómo garantizar cadena de frío, FEFO real y cadena de custodia en una sola plataforma.",
-        "button": "Agendar Demo"
+        "button": "Agendá tu demo"
       }
     },
     "recintosFiscales": {
@@ -916,7 +916,7 @@
       "title": "Recintos",
       "titleAccent": "Fiscales",
       "subtitle": "Sin evidencia digital, una auditoría de ANAM es una apuesta. Geodot entra por Etiqueta Zero e iWMS: cero re-etiquetado, el dato viaja con el palet y cada movimiento dentro del recinto queda registrado y auditable, con gestor documental y torre de control cuando los necesitás.",
-      "ctaPrimary": "Agendar Demo",
+      "ctaPrimary": "Agendá tu demo",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
@@ -971,7 +971,7 @@
       "cta": {
         "title": "Un recinto auditable de extremo a extremo",
         "subtitle": "Agendá una demo y te mostramos Etiqueta Zero, la trazabilidad por palet y la evidencia que ANAM, IMMEX y OEA exigen.",
-        "button": "Agendar Demo"
+        "button": "Agendá tu demo"
       }
     }
   },
@@ -1046,7 +1046,7 @@
       "items": [
         {
           "industry": "Bebidas y distribución (en producción)",
-          "challenge": "Camiones que salían al 85% y rutas armadas a mano cada mañana. Para mover lo mismo hacían falta 100 camiones cuando con mejor carga alcanzaba con 150. La planchada del sindicato comía capacidad real.",
+          "challenge": "Camiones que salían al 85% y rutas armadas a mano cada mañana. Para mover lo mismo hacían falta 150 camiones cuando con mejor carga alcanzaba con 100. La planchada del sindicato comía capacidad real.",
           "solution": "Geodot calcula paletizado y ruteo en simultáneo: sabe qué entra al camión antes de armar la ruta. Movió clientes de vidrio retornable entre camiones para liberar capacidad sin romper el margen.",
           "result": "Carga de camión del 85% al 99% y 8% menos de costo de transporte. La regla del vidrio sumó 10% de capacidad y sacó 4 a 5 camiones por día de la calle."
         },
@@ -1265,7 +1265,7 @@
       "title": "Todo lo que querés saber",
       "titleAccent": "antes de la demo",
       "subtitle": "Las dudas que más nos hacen los equipos de operaciones, TI y finanzas. Respuestas directas, con números, sin humo.",
-      "cta": "Agendar demo"
+      "cta": "Agendá tu demo"
     },
     "groups": [
       {
@@ -1360,7 +1360,7 @@
     "cta": {
       "title": "¿Te quedó alguna duda?",
       "subtitle": "Agendá una demo de 30 minutos y te respondemos con tu operación sobre la mesa.",
-      "button": "Agendar demo"
+      "button": "Agendá tu demo"
     }
   },
   "integrationsPage": {
@@ -1432,7 +1432,7 @@
     "cta": {
       "title": "¿Querés validar la integración con tu stack?",
       "subtitle": "Agendá una sesión técnica y te mostramos cómo conectamos con tu ERP y tus sistemas de campo.",
-      "button": "Agendar sesión técnica"
+      "button": "Agendá una sesión técnica"
     }
   },
   "partnersPage": {
@@ -1440,7 +1440,7 @@
       "eyebrow": "Geodot Alliance Program",
       "title": "Crecé con nosotros",
       "titleAccent": "en toda LATAM",
-      "subtitle": "Un programa de alianzas para integradores, partners tecnológicos y aliados estratégicos que quieren llevar logística inteligente a sus clientes en toda la región.",
+      "subtitle": "Un programa de alianzas para integradores, partners tecnológicos y aliados estratégicos. Margen preferencial por nivel, y hasta el 100% del valor de los servicios cuando tu equipo se certifica.",
       "cta": "Postular como partner"
     },
     "categories": {
