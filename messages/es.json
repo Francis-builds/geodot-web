@@ -119,8 +119,14 @@
       "tower": {
         "occupancyLabel": "Ocupación de carga",
         "transportLabel": "Costo de transporte",
-        "statusLabel": "En ruta · ETA 09:41",
-        "routeLabel": "Ruta optimizada"
+        "routeLabel": "Ruta optimizada",
+        "modes": [
+          "En ruta · ETA 09:41",
+          "En navegación · ETA 14:30",
+          "En patio · Listo para cargar",
+          "En vuelo · ETA 11:05",
+          "En vía · ETA 16:20"
+        ]
       }
     },
     "problem": {
@@ -336,6 +342,10 @@
         "title": "Controlá tu almacén hasta el último pack",
         "subtitle": "Agendá una demo y te mostramos el iWMS funcionando con tus propios SKUs.",
         "button": "Agendá tu demo"
+      },
+      "cardMetric": {
+        "value": "83%",
+        "label": "de vida útil por cliente, garantizada al pistolear"
       }
     },
     "tms": {
@@ -417,6 +427,10 @@
         "title": "Poné cada camión bajo control, propio o tercerizado",
         "subtitle": "Agendá una demo y unificá flota propia y tercerizada en una sola pantalla.",
         "button": "Agendá tu demo"
+      },
+      "cardMetric": {
+        "value": "100%",
+        "label": "de descargas validadas contra GPS"
       }
     },
     "paletizado": {
@@ -498,6 +512,10 @@
         "title": "¿Cuántos camiones de más estás pagando cada semana?",
         "subtitle": "Agendá una demo y calculamos tu ahorro con paletizado y ruteo simultáneos.",
         "button": "Agendá tu demo"
+      },
+      "cardMetric": {
+        "value": "85→99%",
+        "label": "de carga por camión, sin planchada"
       }
     },
     "torreControl": {
@@ -579,6 +597,10 @@
         "title": "¿Cuánto te cuesta cada incidente que descubrís tarde?",
         "subtitle": "Agendá una demo y unificá iWMS, iTMS, ruteo y paletizado en un solo tablero.",
         "button": "Agendá tu demo"
+      },
+      "cardMetric": {
+        "value": "30→10 min",
+        "label": "de rango de ETA: la IA aprende sola"
       }
     },
     "explore": "Explorar"
@@ -1440,7 +1462,7 @@
       "eyebrow": "Geodot Alliance Program",
       "title": "Crecé con nosotros",
       "titleAccent": "en toda LATAM",
-      "subtitle": "Un programa de alianzas para integradores, partners tecnológicos y aliados estratégicos. Margen preferencial por nivel, y hasta el 100% del valor de los servicios cuando tu equipo se certifica.",
+      "subtitle": "Un programa de alianzas para integradores, partners tecnológicos y aliados estratégicos que quieren llevar logística inteligente a sus clientes en toda la región.",
       "cta": "Postular como partner"
     },
     "categories": {
@@ -1467,21 +1489,21 @@
       "eyebrow": "Niveles",
       "title": "Tres niveles,",
       "titleAccent": "mismo compromiso",
-      "description": "Tu nivel se define por el volumen anual de negocio generado con Geodot. Más volumen, más beneficios y mejor margen.",
+      "description": "Tu nivel crece con el negocio que generamos juntos: más beneficios, mejor acompañamiento y más protagonismo regional. Los detalles del programa los conversamos al postular.",
       "items": [
         {
           "name": "Gold",
-          "range": "Menos de 500K USD/año",
+          "range": "Para empezar",
           "body": "El punto de entrada al programa. Acceso a materiales de venta, capacitación base y soporte para tus primeras implementaciones."
         },
         {
           "name": "Platinum",
-          "range": "500K a 5M USD/año",
+          "range": "Para crecer",
           "body": "Para partners consolidados. Mejores condiciones comerciales, acompañamiento técnico prioritario y co-marketing."
         },
         {
           "name": "Diamond",
-          "range": "Más de 5M USD/año",
+          "range": "Para liderar la región",
           "body": "El nivel más alto. Margen preferencial, roadmap conjunto y posicionamiento como aliado estratégico de Geodot en la región."
         }
       ]
@@ -1490,15 +1512,15 @@
       "eyebrow": "Modelo de servicios",
       "title": "Vos elegís",
       "titleAccent": "cuánto ejecutás",
-      "description": "El reparto de los servicios de implementación depende de quién ejecuta. Cuanto más capacidad propia tengas, más margen retenés.",
+      "description": "El modelo se adapta a tu capacidad: podés arrancar sin equipo técnico propio y crecer hasta ejecutar las implementaciones de punta a punta.",
       "items": [
         {
-          "title": "Geodot ejecuta: 30%",
-          "body": "Si Geodot realiza la implementación y los servicios profesionales, el partner retiene el 30% del valor de los servicios. Ideal para empezar sin equipo técnico propio."
+          "title": "Geodot ejecuta",
+          "body": "Nosotros realizamos la implementación y los servicios profesionales; vos liderás la relación comercial. Ideal para empezar sin equipo técnico propio."
         },
         {
-          "title": "Partner certificado GCIE: 100%",
-          "body": "Si tu equipo está certificado en el Geodot Certified Implementation Expert (GCIE), ejecutás los servicios vos mismo y retenés el 100% de su valor."
+          "title": "Ejecutás vos, certificado GCIE",
+          "body": "Con tu equipo certificado como Geodot Certified Implementation Expert (GCIE), la implementación es tuya de punta a punta, con todo lo que eso implica."
         }
       ]
     },
@@ -1506,7 +1528,7 @@
       "eyebrow": "Sumate al programa",
       "title": "Llevemos logística inteligente a más clientes",
       "subtitle": "Contanos sobre tu negocio y armamos juntos el plan de alianza que mejor te conviene.",
-      "button": "Escribir a Luis Perasollo"
+      "button": "Postular como partner"
     }
   }
 }

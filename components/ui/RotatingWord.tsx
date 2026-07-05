@@ -1,28 +1,23 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useReducedMotion } from "motion/react";
-
-const HOLD_MS = 2400;
+import { useHeroRotation } from "./heroRotation";
 
 /**
- * Rotating accent word (hero signature animation). The outgoing and incoming
- * words crossfade in the same grid cell, so there is never a blank frame; the
- * cell hugs the current word, so it must sit at the END of its line (Hero
- * inserts a <br> after it) where the ragged edge absorbs width changes.
- * The rotator is aria-hidden; a static sr-only copy of the first word keeps
- * the h1 readable for assistive tech. Still under prefers-reduced-motion.
+ * Rotating accent word (hero signature animation), driven by the shared
+ * heroRotation clock so the ControlTower visual swaps in sync. Outgoing and
+ * incoming words crossfade in the same grid cell (no blank frame); the cell
+ * hugs the current word, so it must sit at the END of its line (Hero inserts
+ * a <br> after it). aria-hidden rotator + static sr-only first word for AT.
+ * Still under prefers-reduced-motion.
  */
 export function RotatingWord({ words, className = "" }: { words: string[]; className?: string }) {
   const reduced = useReducedMotion();
-  const [pair, setPair] = useState<{ cur: number; prev: number | null }>({ cur: 0, prev: null });
+  const index = useHeroRotation(Boolean(reduced)) % words.length;
 
-  useEffect(() => {
-    if (reduced || words.length < 2) return;
-    const id = setInterval(() => {
-      setPair(({ cur }) => ({ cur: (cur + 1) % words.length, prev: cur }));
-    }, HOLD_MS);
-    return () => clearInterval(id);
-  }, [reduced, words.length]);
+  // Derive prev during render (official "adjust state on prop change" pattern).
+  const [pair, setPair] = useState<{ cur: number; prev: number | null }>({ cur: index, prev: null });
+  if (pair.cur !== index) setPair({ cur: index, prev: pair.cur });
 
   return (
     <>

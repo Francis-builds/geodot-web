@@ -29,7 +29,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         subtitle={t("hero.subtitle")}
         primaryCta={{ label: t("hero.ctaPrimary"), href: "/contacto" }}
         secondaryCta={{ label: t("hero.ctaSecondary"), href: "/plataforma" }}
-        visual={<ControlTower labels={t.raw("hero.tower") as { occupancyLabel: string; transportLabel: string; statusLabel: string; routeLabel: string }} />}
+        visual={<ControlTower labels={t.raw("hero.tower") as { occupancyLabel: string; transportLabel: string; routeLabel: string; modes: string[] }} />}
       />
       <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />
       <ProblemStats

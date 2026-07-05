@@ -119,8 +119,14 @@
       "tower": {
         "occupancyLabel": "Load occupancy",
         "transportLabel": "Transport cost",
-        "statusLabel": "En route · ETA 09:41",
-        "routeLabel": "Optimized route"
+        "routeLabel": "Optimized route",
+        "modes": [
+          "On the road · ETA 09:41",
+          "At sea · ETA 14:30",
+          "In the yard · Ready to load",
+          "In flight · ETA 11:05",
+          "On rail · ETA 16:20"
+        ]
       }
     },
     "problem": {
@@ -336,6 +342,10 @@
         "title": "Control your warehouse down to the last pack",
         "subtitle": "Book a demo and we'll show you the iWMS running on your own SKUs.",
         "button": "Book a demo"
+      },
+      "cardMetric": {
+        "value": "83%",
+        "label": "customer shelf-life rule, enforced at scan"
       }
     },
     "tms": {
@@ -417,6 +427,10 @@
         "title": "Put every truck under control, owned or outsourced",
         "subtitle": "Book a demo and unify owned and outsourced fleets on a single screen.",
         "button": "Book a demo"
+      },
+      "cardMetric": {
+        "value": "100%",
+        "label": "of drops validated against GPS"
       }
     },
     "paletizado": {
@@ -498,6 +512,10 @@
         "title": "How many extra trucks are you paying for every week?",
         "subtitle": "Book a demo and we'll calculate your savings with simultaneous palletizing and routing.",
         "button": "Book a demo"
+      },
+      "cardMetric": {
+        "value": "85→99%",
+        "label": "truck load, no safety margin"
       }
     },
     "torreControl": {
@@ -579,6 +597,10 @@
         "title": "What does every incident you catch too late cost you?",
         "subtitle": "Book a demo and unify iWMS, iTMS, routing and palletizing on a single dashboard.",
         "button": "Book a demo"
+      },
+      "cardMetric": {
+        "value": "30→10 min",
+        "label": "ETA range: the AI learns on its own"
       }
     },
     "explore": "Explore"
@@ -1440,7 +1462,7 @@
       "eyebrow": "Geodot Alliance Program",
       "title": "Grow with us",
       "titleAccent": "across LATAM",
-      "subtitle": "A partner program for integrators, technology partners, and strategic allies. Preferred margins by tier, and up to 100% of services value once your team is certified.",
+      "subtitle": "A partner program for integrators, technology partners, and strategic allies who want to bring smart logistics to their customers across the region.",
       "cta": "Apply as a partner"
     },
     "categories": {
@@ -1467,21 +1489,21 @@
       "eyebrow": "Tiers",
       "title": "Three tiers,",
       "titleAccent": "same commitment",
-      "description": "Your tier is set by the annual business volume generated with Geodot. More volume means more benefits and better margin.",
+      "description": "Your tier grows with the business we build together: more benefits, closer support, and a bigger regional role. We go over program details when you apply.",
       "items": [
         {
           "name": "Gold",
-          "range": "Under 500K USD/year",
+          "range": "To get started",
           "body": "The entry point to the program. Access to sales materials, base training, and support for your first implementations."
         },
         {
           "name": "Platinum",
-          "range": "500K to 5M USD/year",
+          "range": "To grow",
           "body": "For established partners. Better commercial terms, priority technical support, and co-marketing."
         },
         {
           "name": "Diamond",
-          "range": "Over 5M USD/year",
+          "range": "To lead the region",
           "body": "The highest tier. Preferred margin, joint roadmap, and positioning as a strategic Geodot ally in the region."
         }
       ]
@@ -1490,15 +1512,15 @@
       "eyebrow": "Services model",
       "title": "You choose",
       "titleAccent": "how much you run",
-      "description": "How implementation services are split depends on who executes. The more in-house capability you have, the more margin you keep.",
+      "description": "The model adapts to your capacity: start without your own technical team and grow into running implementations end to end.",
       "items": [
         {
-          "title": "Geodot executes: 30%",
-          "body": "If Geodot performs the implementation and professional services, the partner keeps 30% of the services value. Ideal for starting without your own technical team."
+          "title": "Geodot delivers",
+          "body": "We run the implementation and professional services; you lead the commercial relationship. Ideal for starting without your own technical team."
         },
         {
-          "title": "GCIE-certified partner: 100%",
-          "body": "If your team is certified as a Geodot Certified Implementation Expert (GCIE), you execute the services yourself and keep 100% of their value."
+          "title": "You deliver, GCIE certified",
+          "body": "With your team certified as Geodot Certified Implementation Experts (GCIE), the implementation is yours end to end, with everything that comes with it."
         }
       ]
     },
@@ -1506,7 +1528,7 @@
       "eyebrow": "Join the program",
       "title": "Let's bring smart logistics to more customers",
       "subtitle": "Tell us about your business and we will build the alliance plan that fits you best.",
-      "button": "Email Luis Perasollo"
+      "button": "Apply as a partner"
     }
   }
 }

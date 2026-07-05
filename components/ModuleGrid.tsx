@@ -52,6 +52,13 @@ export function ModuleGrid({ title, titleAccent, description }: {
                     </svg>
                   </span>
                 </div>
+
+                <div className="mt-6 border-t border-navy-100 pt-4">
+                  <p className={`font-bold text-navy-900 ${hero ? "text-display-lg" : "text-heading-lg"}`}>
+                    {t(`${key}.cardMetric.value`)}
+                  </p>
+                  <p className="mt-0.5 text-caption text-navy-600">{t(`${key}.cardMetric.label`)}</p>
+                </div>
               </Link>
             </Reveal>
           );

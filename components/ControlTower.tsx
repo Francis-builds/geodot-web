@@ -1,16 +1,28 @@
+"use client";
+import { useReducedMotion } from "motion/react";
+import { Truck, Ship, Container, Plane, TrainFront } from "lucide-react";
+import { useHeroRotation } from "./ui/heroRotation";
+
 /**
  * Hero visual — stylized control-tower "screen" (Motive-style viewfinder frame).
  * A navy panel with teal corner brackets containing a code-built route
- * visualization + real metric chips. Deliberately a designed representation,
- * not a fake product screenshot. Decorative: aria-hidden with an sr-only
- * description; the pulse animation is CSS-only so the global
- * prefers-reduced-motion rule freezes it.
+ * visualization + real metric chips. The status chip (icon + label) swaps in
+ * sync with the hero's RotatingWord via the shared heroRotation clock:
+ * camiones → barcos → containers → aviones → vagones. Deliberately a designed
+ * representation, not a fake product screenshot. Decorative: aria-hidden with
+ * an sr-only description; animations freeze under prefers-reduced-motion.
  */
+const MODE_ICONS = [Truck, Ship, Container, Plane, TrainFront];
+
 export function ControlTower({
   labels,
 }: {
-  labels: { occupancyLabel: string; transportLabel: string; statusLabel: string; routeLabel: string };
+  labels: { occupancyLabel: string; transportLabel: string; routeLabel: string; modes: string[] };
 }) {
+  const reduced = useReducedMotion();
+  const index = useHeroRotation(Boolean(reduced)) % MODE_ICONS.length;
+  const ModeIcon = MODE_ICONS[index];
+
   const brackets = [
     "-left-2 -top-2 border-l-2 border-t-2",
     "-right-2 -top-2 border-r-2 border-t-2",
@@ -56,9 +68,12 @@ export function ControlTower({
             <p className="text-caption text-navy-300">{labels.transportLabel}</p>
             <p className="text-heading-md font-bold text-white">−8%</p>
           </div>
-          <div className="absolute bottom-5 left-5 flex items-center gap-2.5 rounded-md border border-white/10 bg-navy-900 px-3.5 py-2">
-            <span className="h-2 w-2 rounded-full bg-teal-400" />
-            <p className="text-caption font-medium text-navy-300">{labels.statusLabel}</p>
+          {/* status chip — synced with the rotating word */}
+          <div className="absolute bottom-5 left-5 flex items-center gap-2.5 overflow-hidden rounded-md border border-white/10 bg-navy-900 px-3.5 py-2">
+            <ModeIcon key={`icon-${index}`} className="h-4 w-4 shrink-0 animate-word-in text-teal-400" strokeWidth={1.75} />
+            <p key={`mode-${index}`} className="animate-word-in text-caption font-medium text-navy-300">
+              {labels.modes[index]}
+            </p>
           </div>
         </div>
       </div>
