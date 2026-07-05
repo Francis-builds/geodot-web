@@ -196,6 +196,10 @@
   }
   @keyframes float-soft { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
   @keyframes rise-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes word-out { to { opacity: 0; transform: translateY(-0.35em); } }
+  @keyframes word-in { from { opacity: 0; transform: translateY(0.4em); } to { opacity: 1; transform: translateY(0); } }
   .animate-rise { animation: rise-in 0.7s var(--ease-standard) both; }
   .animate-float { animation: float-soft 6s ease-in-out infinite; }
+  .animate-word-out { animation: word-out 0.3s cubic-bezier(0.5, 0, 0.7, 0.4) forwards; }
+  .animate-word-in { animation: word-in 0.42s cubic-bezier(0.16, 1, 0.3, 1) both; }
 }

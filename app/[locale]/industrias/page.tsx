@@ -15,7 +15,7 @@ export default async function IndustriasPage({ params }: { params: Promise<{ loc
   const t = await getTranslations("industriesIndex");
   return (
     <>
-      <Hero variant="dark" eyebrow={t("hero.eyebrow")} title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")}
+      <Hero eyebrow={t("hero.eyebrow")} title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")}
         primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
         bgImage="/images/warehouse/almacen.jpg" bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`} />
       <IndustryGrid title={t("title")} titleAccent={t("titleAccent")} description={t("subtitle")} />

@@ -24,12 +24,12 @@ export default async function ModuloPage({ params }: { params: Promise<{ locale:
   const { locale, modulo } = await params;
   if (!MODULE_SLUGS.includes(modulo as ModuleSlug)) notFound();
   setRequestLocale(locale);
-  const { messageKey: key, hero, icon } = MODULES[modulo as ModuleSlug];
+  const { messageKey: key, hero } = MODULES[modulo as ModuleSlug];
   const t = await getTranslations(`modules.${key}`);
 
   return (
     <>
-      <Hero variant="dark" eyebrow={t("eyebrow")} eyebrowIcon={icon} title={t("title")} titleAccent={t("titleAccent")} subtitle={t("subtitle")}
+      <Hero eyebrow={t("eyebrow")} title={t("title")} titleAccent={t("titleAccent")} subtitle={t("subtitle")}
         primaryCta={{ label: t("ctaPrimary"), href: "/contacto" }}
         bgImage={hero} bgAlt={`${t("title")} ${t("titleAccent")}`} />
       <ProblemStats title={t("problem.title")} points={t.raw("problem.points") as string[]} stats={t.raw("problem.stats") as { problem: string; impact: string }[]} />

@@ -100,12 +100,14 @@
   },
   "home": {
     "hero": {
-      "title": "Connect every point.",
-      "titleAccent": "Optimize every move.",
+      "title": "Load your",
+      "rotatingWords": ["trucks", "ships", "containers", "planes", "railcars"],
+      "titleAfter": "to 100% with AI",
       "subtitle": "The AI platform that moves your freight by sea, air and land: routing and palletizing at once, zero blind spots, integrated with your ERP. Measurable results in 90 days.",
       "ctaPrimary": "Book your demo",
       "ctaSecondary": "Explore the platform",
-      "eyebrow": "Intelligent logistics platform"
+      "eyebrow": "Intelligent logistics platform",
+      "imageAlt": "Fleet of trucks on the highway tracked in real time"
     },
     "problem": {
       "eyebrow": "The problem",

@@ -17,7 +17,7 @@ export default async function NosotrosPage({ params }: { params: Promise<{ local
   const timelineSteps = t.raw("timeline.steps") as { year: string; label: string; title: string; body: string }[];
   return (
     <>
-      <Hero variant="dark" eyebrow={t("hero.eyebrow")} title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")} primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
+      <Hero eyebrow={t("hero.eyebrow")} title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")} primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
         bgImage="/images/pages/nosotros.jpg" bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`} />
       <Section tone="base">
         <SectionHeader title={t("mission.title")} align="left" />
