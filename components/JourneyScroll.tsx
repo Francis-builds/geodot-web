@@ -46,6 +46,9 @@ export function JourneyScroll({
       setReduced(true);
       return;
     }
+    // Pin only on md+; mobile renders the static stack below.
+    const desktop = window.matchMedia("(min-width: 768px)").matches;
+    if (!desktop) return;
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
@@ -118,10 +121,31 @@ export function JourneyScroll({
     );
   }
 
-  // ---- Animated (pinned, light) ----
+  // ---- Animated (pinned on md+; static stack with photos on mobile) ----
   return (
     <section ref={wrapRef} aria-label={`${title} ${titleAccent}`}>
-      <div ref={pinRef} className="relative grid h-screen overflow-hidden bg-navy-50 md:grid-cols-2">
+      {/* Mobile: normal scroll, photo per stage, no pin */}
+      <div className="bg-navy-50 py-20 md:hidden">
+        <Container>
+          <h2 className="max-w-xl text-heading-xl font-bold leading-[1.06] text-navy-900">
+            {title} <span className="text-accent-strong">{titleAccent}</span>
+          </h2>
+          <div className="mt-12 space-y-12">
+            {stages.map((s, i) => (
+              <div key={`m-${STAGE_ORDER[i]}`}>
+                <div className="relative aspect-[16/10] overflow-hidden rounded-xl ring-1 ring-navy-100">
+                  <Image src={s.image} alt={s.title} fill sizes="100vw" className="object-cover" />
+                </div>
+                <p className="mt-4 text-overline font-medium uppercase text-accent-sm">{s.metric}</p>
+                <h3 className="mt-1 text-heading-lg font-bold text-navy-900">{s.title}</h3>
+                <p className="mt-2 text-body-md text-navy-600">{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
+
+      <div ref={pinRef} className="relative hidden h-screen overflow-hidden bg-navy-50 md:grid md:grid-cols-2">
         {/* Left: heading + swapping copy + rail (on clean surface) */}
         <div className="flex items-center">
           <Container className="w-full md:!mr-0 md:max-w-[640px] md:pl-8 md:pr-16">
@@ -129,7 +153,7 @@ export function JourneyScroll({
               {title} <span className="text-accent-strong">{titleAccent}</span>
             </h2>
 
-            <div className="relative mt-8 h-40">
+            <div className="relative mt-8 min-h-44">
               {stages.map((s, i) => {
                 const Icon = STAGE_ICONS[i] ?? Warehouse;
                 return (
