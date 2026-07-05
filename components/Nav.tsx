@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitch } from "./LocaleSwitch";
+import { Button } from "./ui/Button";
 import { Container } from "./ui/Container";
 import { DesktopNavMenus, MobileNavMenus } from "./NavMenu";
 
@@ -44,11 +45,14 @@ export function Nav() {
     setOverHero(!!document.querySelector("[data-hero-overlay]"));
   }, []);
 
-  // Lock body scroll while the mobile drawer is open.
+  // Lock body scroll while the mobile drawer is open + make the page content
+  // behind the drawer inert so focus/AT can't reach it.
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    document.getElementById("contenido")?.toggleAttribute("inert", open);
     return () => {
       document.body.style.overflow = "";
+      document.getElementById("contenido")?.removeAttribute("inert");
     };
   }, [open]);
 
@@ -76,7 +80,7 @@ export function Nav() {
   // hero present: glass, dark text.
   const solid = scrolled || open || !overHero;
   const linkColor = solid
-    ? "text-navy-600 hover:text-teal-600"
+    ? "text-navy-600 hover:text-teal-700"
     : "text-white/85 hover:text-white";
 
   return (
@@ -105,16 +109,10 @@ export function Nav() {
 
         <div className="hidden items-center gap-5 md:flex">
           <LocaleSwitch dark={!solid} />
-          <Link
-            href="/contacto"
-            className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 text-body-sm font-semibold shadow-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/45 ${
-              solid
-                ? "bg-magenta-500 text-white hover:bg-magenta-600"
-                : "bg-white/12 text-white ring-1 ring-inset ring-white/25 backdrop-blur hover:bg-white/20"
-            }`}
-          >
+          {/* Same Button recipe (size included) as everywhere else in the site. */}
+          <Button href="/contacto" variant={solid ? "primary" : "outline-light"}>
             {t("cta")}
-          </Link>
+          </Button>
         </div>
 
         <button
@@ -148,7 +146,7 @@ export function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="rounded-lg px-2 py-2.5 text-body-md font-medium text-navy-800 transition-colors hover:bg-navy-50 hover:text-teal-600"
+              className="rounded-lg px-2 py-2.5 text-body-md font-medium text-navy-900 transition-colors hover:bg-navy-50 hover:text-teal-700"
               onClick={() => setOpen(false)}
             >
               {l.label}
@@ -156,13 +154,9 @@ export function Nav() {
           ))}
           <div className="mt-3 flex items-center justify-between border-t border-navy-100 pt-4">
             <LocaleSwitch />
-            <Link
-              href="/contacto"
-              onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center rounded-full bg-magenta-500 px-6 py-3 text-body-sm font-semibold text-white shadow-sm transition-colors hover:bg-magenta-600"
-            >
+            <Button href="/contacto" variant="primary" onClick={() => setOpen(false)}>
               {t("cta")}
-            </Link>
+            </Button>
           </div>
         </Container>
       </div>

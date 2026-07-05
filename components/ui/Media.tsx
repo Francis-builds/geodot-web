@@ -13,8 +13,7 @@ const ASPECT: Record<AspectRatio, string> = {
  * Thin next/image wrapper for editorial / hero imagery.
  *
  * Renders a `fill` image inside a fixed aspect-ratio, rounded container so the
- * layout never shifts (CLS = 0). Applies Geodot brand treatment: a navy/magenta
- * duotone overlay so brand color stays dominant over the photo (DESIGN.md → Imagery).
+ * layout never shifts (CLS = 0).
  *
  * Use `priority` ONLY for the above-the-fold LCP hero. Everything else lazy-loads.
  */
@@ -24,7 +23,6 @@ export function Media({
   ratio = "4/3",
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
-  overlay = false,
   rounded = true,
   fill = false,
   className = "",
@@ -34,7 +32,6 @@ export function Media({
   ratio?: AspectRatio;
   sizes?: string;
   priority?: boolean;
-  overlay?: boolean;
   rounded?: boolean;
   /** Fill the parent (parent must be relative + sized) instead of a fixed aspect ratio. */
   fill?: boolean;
@@ -60,12 +57,6 @@ export function Media({
         loading={priority ? undefined : "lazy"}
         className="object-cover"
       />
-      {overlay && (
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-navy-900/55 via-navy-900/10 to-magenta-500/20 mix-blend-multiply"
-        />
-      )}
     </div>
   );
 }

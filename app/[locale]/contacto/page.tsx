@@ -24,7 +24,6 @@ export default async function ContactoPage({ params }: { params: Promise<{ local
         subtitle={t("subtitle")}
         primaryCta={{ label: t("form.submit"), href: "#form" }}
         bgImage="/images/fleet/itms.jpg"
-        bgAlt={t("title")}
       />
 
       <section className="bg-navy-50">
@@ -35,7 +34,7 @@ export default async function ContactoPage({ params }: { params: Promise<{ local
             <ol className="mt-8 space-y-7">
               {steps.map((s, i) => (
                 <li key={i} className="flex gap-4">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-500/12 text-body-sm font-bold text-teal-600">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-500/12 text-body-sm font-bold text-accent-sm">
                     {i + 1}
                   </span>
                   <div>

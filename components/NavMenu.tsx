@@ -52,7 +52,6 @@ function MenuRow({ item, onSelect }: { item: MenuItem; onSelect: () => void }) {
     <Link
       href={item.href}
       onClick={onSelect}
-      role="menuitem"
       className="group/row flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors duration-200 hover:bg-teal-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-1"
     >
       <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-navy-100 bg-white text-teal-600 transition-colors duration-200 group-hover/row:border-teal-300 group-hover/row:bg-teal-500 group-hover/row:text-white">
@@ -134,7 +133,6 @@ function DesktopMenu({
       <button
         type="button"
         aria-expanded={open}
-        aria-haspopup="true"
         aria-controls={panelId}
         onClick={() => setOpen((v) => !v)}
         className={`inline-flex items-center gap-1 text-body-sm font-medium transition-colors duration-200 ${linkColor}`}
@@ -152,15 +150,13 @@ function DesktopMenu({
 
       <div
         id={panelId}
-        role="menu"
-        aria-label={label}
         inert={!open}
         className={`absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 ${
           open ? "pointer-events-auto" : "pointer-events-none"
         }`}
       >
         <div
-          className={`origin-top rounded-2xl border border-navy-100 bg-white p-2.5 shadow-pop transition-all duration-200 ${
+          className={`origin-top rounded-2xl border border-navy-100 bg-white p-2.5 shadow-pop transition-[opacity,transform] duration-200 ${
             open ? "translate-y-0 scale-100 opacity-100" : "-translate-y-1 scale-[0.98] opacity-0"
           } ${wide ? "w-[34rem]" : "w-[26rem]"}`}
         >
@@ -171,7 +167,6 @@ function DesktopMenu({
           </div>
           <Link
             href={viewAllHref}
-            role="menuitem"
             onClick={() => setOpen(false)}
             className="mt-1.5 flex items-center justify-between gap-2 rounded-xl border-t border-navy-100/70 px-3 py-2.5 text-body-sm font-semibold text-teal-700 transition-colors duration-200 hover:bg-teal-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-1"
           >
@@ -227,7 +222,7 @@ function MobileAccordion({
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full items-center justify-between rounded-lg px-2 py-2.5 text-body-md font-medium text-navy-800 transition-colors hover:text-teal-600"
+        className="flex w-full items-center justify-between rounded-lg px-2 py-2.5 text-body-md font-medium text-navy-900 transition-colors hover:text-teal-700"
       >
         {label}
         <svg

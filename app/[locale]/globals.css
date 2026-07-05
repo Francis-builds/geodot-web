@@ -142,12 +142,6 @@
     backdrop-filter: saturate(160%) blur(14px);
     -webkit-backdrop-filter: saturate(160%) blur(14px);
   }
-  /* Eyebrow with leading dot */
-  .eyebrow-dot::before {
-    content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 9999px;
-    background: var(--color-teal-500); margin-right: 8px; vertical-align: middle;
-    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-teal-500) 22%, transparent);
-  }
 }
 
 @layer base {

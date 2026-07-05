@@ -53,7 +53,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
                 </div>
               )}
               <h1 className="font-display text-display-lg font-bold leading-tight">{post.title}</h1>
-              <p className="mt-4 text-body-lg text-navy-200">{post.excerpt}</p>
+              <p className="mt-4 text-body-lg text-navy-300">{post.excerpt}</p>
               <div className="mt-6 flex items-center gap-2 text-body-sm text-navy-300">
                 <span>{post.author}</span>
                 <span aria-hidden>·</span>
@@ -72,7 +72,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
             <div className="relative mb-12 aspect-[16/9] overflow-hidden rounded-2xl bg-navy-50">
               <Image
                 src={post.cover}
-                alt={post.title}
+                alt=""
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 768px"

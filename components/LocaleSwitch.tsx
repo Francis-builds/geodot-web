@@ -11,7 +11,7 @@ export function LocaleSwitch({ dark = false }: { dark?: boolean }) {
     <button
       onClick={toggle}
       className={`inline-flex h-11 min-w-11 items-center justify-center px-2 text-body-sm font-semibold tracking-wide transition-colors duration-200 ${
-        dark ? "text-white/80 hover:text-white" : "text-navy-600 hover:text-teal-600"
+        dark ? "text-white/80 hover:text-white" : "text-navy-600 hover:text-teal-700"
       }`}
       aria-label="Switch language"
     >

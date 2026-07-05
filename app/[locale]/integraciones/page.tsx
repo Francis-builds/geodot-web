@@ -41,7 +41,7 @@ export default async function IntegracionesPage({ params }: { params: Promise<{ 
           {points.map((p, i) => (
             <Reveal key={i} direction="up" delay={i * 0.08}>
               <div className="h-full rounded-xl border border-navy-100 bg-white p-7 transition-shadow hover:shadow-sm">
-                <span className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-teal-500/12 text-body-sm font-bold text-teal-600">
+                <span className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-teal-500/12 text-body-sm font-bold text-accent-sm">
                   {i + 1}
                 </span>
                 <h3 className="text-heading-sm font-semibold text-navy-900">{p.title}</h3>
@@ -74,9 +74,8 @@ export default async function IntegracionesPage({ params }: { params: Promise<{ 
       {/* 90-day note */}
       <section className="bg-white">
         <Container className="py-16 md:py-20">
-          <Reveal className="mx-auto max-w-3xl rounded-2xl border border-teal-100 bg-teal-50/60 p-8 text-center md:p-10">
-            <p className="text-overline font-semibold uppercase tracking-wide text-teal-700">{t("speed.eyebrow")}</p>
-            <h2 className="mt-3 text-heading-lg font-semibold text-navy-900">{t("speed.title")}</h2>
+          <Reveal className="mx-auto max-w-3xl rounded-xl border border-navy-100 bg-white p-8 text-left md:p-10">
+            <h2 className="text-heading-lg font-semibold text-navy-900">{t("speed.title")}</h2>
             <p className="mt-3 text-body-md leading-relaxed text-navy-600">{t("speed.body")}</p>
           </Reveal>
         </Container>

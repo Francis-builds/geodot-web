@@ -12,12 +12,12 @@ export function Footer() {
   const tInd = useTranslations("industries");
 
   const linkClass =
-    "text-body-sm text-navy-200 transition-colors hover:text-teal-300";
+    "inline-block py-2 text-body-sm text-navy-300 transition-colors hover:text-teal-300";
   const headingClass =
     "mb-4 text-overline font-semibold uppercase tracking-wide text-navy-300";
 
   return (
-    <footer className="border-t border-white/10 bg-navy-900 text-navy-200">
+    <footer className="border-t border-white/10 bg-navy-900 text-navy-300">
       <Container className="grid gap-12 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr_1fr] md:py-20">
         {/* Brand */}
         <div>
@@ -33,7 +33,7 @@ export function Footer() {
 
         {/* Plataforma */}
         <div>
-          <h3 className={headingClass}>{t("platform")}</h3>
+          <p className={headingClass}>{t("platform")}</p>
           <ul className="space-y-2.5">
             {MODULE_SLUGS.map((slug) => (
               <li key={slug}>
@@ -52,7 +52,7 @@ export function Footer() {
 
         {/* Industrias */}
         <div>
-          <h3 className={headingClass}>{t("industries")}</h3>
+          <p className={headingClass}>{t("industries")}</p>
           <ul className="space-y-2.5">
             {INDUSTRY_SLUGS.map((slug) => (
               <li key={slug}>
@@ -71,7 +71,7 @@ export function Footer() {
 
         {/* Recursos */}
         <div>
-          <h3 className={headingClass}>{t("resources")}</h3>
+          <p className={headingClass}>{t("resources")}</p>
           <ul className="space-y-2.5">
             <li><Link href="/recursos" className={linkClass}>{tNav("recursos")}</Link></li>
             <li><Link href="/casos-exito" className={linkClass}>{t("cases")}</Link></li>
@@ -83,7 +83,7 @@ export function Footer() {
 
         {/* Empresa */}
         <div>
-          <h3 className={headingClass}>{t("company")}</h3>
+          <p className={headingClass}>{t("company")}</p>
           <ul className="space-y-2.5">
             <li><Link href="/nosotros" className={linkClass}>{t("about")}</Link></li>
             <li><Link href="/contacto" className={linkClass}>{t("contact")}</Link></li>
@@ -95,8 +95,8 @@ export function Footer() {
         <Container className="flex flex-col items-center justify-between gap-4 py-6 text-caption text-navy-300 sm:flex-row">
           <span>{t("rights")}</span>
           <ul className="flex items-center gap-5">
-            <li><Link href="/privacidad" className="transition-colors hover:text-teal-300">{t("privacy")}</Link></li>
-            <li><Link href="/terminos" className="transition-colors hover:text-teal-300">{t("terms")}</Link></li>
+            <li><Link href="/privacidad" className="inline-block py-2 transition-colors hover:text-teal-300">{t("privacy")}</Link></li>
+            <li><Link href="/terminos" className="inline-block py-2 transition-colors hover:text-teal-300">{t("terms")}</Link></li>
           </ul>
         </Container>
       </div>

@@ -13,7 +13,7 @@ export function ProblemStats({ title, titleAccent, points, stats }: {
           <ul className="space-y-4">
             {points.map((p, i) => (
               <li key={i} className="flex gap-3 text-body-md text-navy-600">
-                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-magenta-500 shadow-ring-magenta" />{p}
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-navy-300" />{p}
               </li>
             ))}
           </ul>
@@ -23,7 +23,7 @@ export function ProblemStats({ title, titleAccent, points, stats }: {
             {stats.map((s, i) => (
               <div key={i} className="flex items-center justify-between border-b border-navy-100 px-5 py-4 transition-colors duration-200 last:border-0 hover:bg-navy-50">
                 <span className="text-body-sm text-navy-600">{s.problem}</span>
-                <span className="text-heading-sm font-semibold text-magenta-600">{s.impact}</span>
+                <span className="text-heading-sm font-semibold text-navy-900">{s.impact}</span>
               </div>
             ))}
           </div>

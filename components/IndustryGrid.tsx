@@ -13,10 +13,9 @@ export function IndustryGrid({ title, titleAccent, description }: {
   const tIdx = useTranslations("industriesIndex");
 
   return (
-    <Section tone="dark">
+    <Section tone="subtle">
       <SectionHeader
         title={title} titleAccent={titleAccent} description={description}
-        tone="dark"
       />
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {INDUSTRY_SLUGS.map((slug, i) => {
@@ -25,10 +24,10 @@ export function IndustryGrid({ title, titleAccent, description }: {
             <Reveal key={slug} direction="up" delay={i * 0.06}>
               <Link
                 href={`/industrias/${slug}`}
-                className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white/5"
+                className="group flex h-full flex-col overflow-hidden rounded-xl border border-navy-100 bg-white transition-shadow hover:shadow-sm"
               >
                 {/* thumbnail */}
-                <span className="relative block aspect-[16/10] overflow-hidden">
+                <span className="relative block aspect-[16/10] overflow-hidden rounded-t-xl">
                   <Image
                     src={hero}
                     alt={t(`${key}.name`)}
@@ -36,16 +35,15 @@ export function IndustryGrid({ title, titleAccent, description }: {
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent" />
-                  <span className="absolute left-4 top-4 z-[1] inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/15 bg-navy-900/70 text-teal-300 backdrop-blur-sm transition-colors duration-300 group-hover:border-teal-400/40 group-hover:bg-teal-500 group-hover:text-white">
-                    <Icon name={icon} className="h-5 w-5" />
-                  </span>
                 </span>
 
-                <div className="relative z-[1] flex flex-1 flex-col p-6">
-                  <h3 className="text-heading-sm font-semibold text-white">{t(`${key}.name`)}</h3>
-                  <p className="mt-2 text-body-sm text-navy-200">{t(`${key}.tagline`)}</p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-caption font-semibold uppercase tracking-wide text-teal-300 transition-transform duration-300 group-hover:translate-x-0.5">
+                <div className="flex flex-1 flex-col p-5">
+                  <span className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-teal-50 text-accent-sm">
+                    <Icon name={icon} className="h-4.5 w-4.5" />
+                  </span>
+                  <h3 className="text-heading-sm font-semibold text-navy-900">{t(`${key}.name`)}</h3>
+                  <p className="mt-2 text-body-sm text-navy-600">{t(`${key}.tagline`)}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-caption font-semibold uppercase tracking-wide text-accent-sm transition-transform duration-300 group-hover:translate-x-0.5">
                     {tIdx("explore")}
                     <svg aria-hidden viewBox="0 0 16 16" className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="2">
                       <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />

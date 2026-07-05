@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useReducedMotion } from "motion/react";
 
 interface AnimatedCounterProps {
@@ -11,6 +11,10 @@ interface AnimatedCounterProps {
   className?: string;
 }
 
+/**
+ * Counts up when it enters the viewport. Writes to the DOM via ref inside the
+ * rAF loop (no per-frame setState/re-render). Reduced motion: final value directly.
+ */
 export function AnimatedCounter({
   value,
   suffix = "",
@@ -18,63 +22,58 @@ export function AnimatedCounter({
   duration = 2000,
   className = "",
 }: AnimatedCounterProps) {
-  const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
   const reduced = useReducedMotion();
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    let animationFrame = 0;
+    const setText = (n: number) => {
+      el.textContent = `${prefix}${n}${suffix}`;
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+
+        if (reduced) {
+          setText(value);
+          return;
         }
+
+        let startTime: number | undefined;
+        const animate = (timestamp: number) => {
+          if (startTime === undefined) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+
+          // Easing function for smooth animation
+          const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+
+          if (progress < 1) {
+            setText(Math.floor(easeOutQuart * value));
+            animationFrame = requestAnimationFrame(animate);
+          } else {
+            setText(value);
+          }
+        };
+        animationFrame = requestAnimationFrame(animate);
       },
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    let startTime: number;
-    let animationFrame: number;
-
-    if (reduced) {
-      animationFrame = requestAnimationFrame(() => setCount(value));
-      return () => cancelAnimationFrame(animationFrame);
-    }
-
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-
-      // Easing function for smooth animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      setCount(Math.floor(easeOutQuart * value));
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      } else {
-        setCount(value);
-      }
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(animationFrame);
     };
-
-    animationFrame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrame);
-  }, [isVisible, value, duration, reduced]);
+  }, [value, duration, prefix, suffix, reduced]);
 
   return (
     <span ref={ref} className={className}>
-      {prefix}{count}{suffix}
+      {prefix}0{suffix}
     </span>
   );
 }
-

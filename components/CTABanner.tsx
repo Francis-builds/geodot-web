@@ -15,7 +15,7 @@ export function CTABanner({ title, subtitle, cta }: { title: string; subtitle: s
       <Container className="relative z-[2] flex flex-col items-center gap-6 py-20 text-center md:py-24">
         <Reveal direction="up" className="flex flex-col items-center gap-6">
           <h2 className="max-w-2xl text-heading-xl font-bold text-white md:text-display-lg">{title}</h2>
-          <p className="max-w-xl text-body-lg text-navy-200">{subtitle}</p>
+          <p className="max-w-xl text-body-lg text-navy-300">{subtitle}</p>
           <Button href={cta.href} variant="primary">{cta.label}</Button>
         </Reveal>
       </Container>

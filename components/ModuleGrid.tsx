@@ -20,10 +20,9 @@ export function ModuleGrid({ title, titleAccent, description }: {
   const t = useTranslations("modules");
 
   return (
-    <Section tone="dark">
+    <Section tone="subtle">
       <SectionHeader
         title={title} titleAccent={titleAccent} description={description}
-        tone="dark"
       />
       <div className="grid auto-rows-[minmax(0,1fr)] gap-4 sm:gap-5 lg:grid-cols-12">
         {MODULE_SLUGS.map((slug, i) => {
@@ -33,25 +32,20 @@ export function ModuleGrid({ title, titleAccent, description }: {
             <Reveal key={slug} direction="up" delay={i * 0.06} className={SPANS[i]}>
               <Link
                 href={`/plataforma/${slug}`}
-                className="group relative flex h-full min-h-[180px] flex-col justify-between overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 md:p-7"
+                className="group flex h-full min-h-[180px] flex-col justify-between rounded-xl border border-navy-100 bg-white p-6 transition-shadow hover:shadow-sm md:p-7"
               >
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-teal-500/20 blur-3xl transition-opacity duration-300 group-hover:bg-teal-400/30"
-                />
-
-                <span className="relative z-[1] inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-teal-300 transition-colors duration-300 group-hover:border-teal-400/40 group-hover:bg-teal-500 group-hover:text-white">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-teal-50 text-accent-sm">
                   <Icon name={icon} className={hero ? "h-6 w-6" : "h-5 w-5"} />
                 </span>
 
-                <div className="relative z-[1] mt-6">
-                  <h3 className={`font-semibold text-white ${hero ? "text-heading-lg" : "text-heading-sm"}`}>
+                <div className="mt-6">
+                  <h3 className={`font-semibold text-navy-900 ${hero ? "text-heading-lg" : "text-heading-sm"}`}>
                     {t(`${key}.name`)}
                   </h3>
-                  <p className={`mt-2 text-navy-200 ${hero ? "text-body-md" : "text-body-sm"}`}>
+                  <p className={`mt-2 text-navy-600 ${hero ? "text-body-md" : "text-body-sm"}`}>
                     {t(`${key}.tagline`)}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-caption font-semibold uppercase tracking-wide text-teal-300 opacity-0 transition-[transform,opacity] duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
+                  <span className="mt-4 inline-flex items-center gap-1 text-caption font-semibold uppercase tracking-wide text-accent-sm opacity-0 transition-[transform,opacity] duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
                     {t("explore")}
                     <svg aria-hidden viewBox="0 0 16 16" className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="2">
                       <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />

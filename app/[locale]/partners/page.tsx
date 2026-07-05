@@ -101,7 +101,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
         <Container className="flex flex-col items-center gap-6 py-20 text-center md:py-24">
           <Reveal direction="up" className="flex flex-col items-center gap-6">
             <h2 className="max-w-2xl text-display-lg font-bold text-white">{t("contact.title")}</h2>
-            <p className="max-w-xl text-body-lg text-navy-200">{t("contact.subtitle")}</p>
+            <p className="max-w-xl text-body-lg text-navy-300">{t("contact.subtitle")}</p>
             <Button href={`mailto:${CONTACT_EMAIL}`} variant="primary">{t("contact.button")}</Button>
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-body-sm font-medium text-teal-400 transition-colors hover:text-teal-200">
               {CONTACT_EMAIL}
