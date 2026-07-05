@@ -12,7 +12,7 @@ export function ProblemStats({ title, titleAccent, points, stats }: {
         <Reveal direction="right">
           <ul className="space-y-4">
             {points.map((p, i) => (
-              <li key={i} className="flex gap-3 text-body-md text-navy-700">
+              <li key={i} className="flex gap-3 text-body-md text-navy-600">
                 <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-magenta-500 shadow-ring-magenta" />{p}
               </li>
             ))}

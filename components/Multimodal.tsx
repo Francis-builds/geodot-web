@@ -23,8 +23,8 @@ export function Multimodal({
     <section className="relative isolate overflow-hidden bg-white">
       <Container className="relative z-[1] py-20 md:py-28">
         <Reveal className="mb-14 max-w-3xl">
-          <span className="eyebrow-dot mb-4 inline-block text-overline font-semibold uppercase tracking-wide text-teal-700">{eyebrow}</span>
-          <h2 className="text-display-lg font-bold leading-tight text-navy-900">
+          <span className="eyebrow-dot mb-4 inline-block text-overline font-semibold uppercase tracking-wide text-accent-sm">{eyebrow}</span>
+          <h2 className="text-balance text-display-lg font-bold text-navy-900">
             {title} <span className="text-accent-strong">{titleAccent}</span>
           </h2>
           <p className="mt-5 text-body-lg text-navy-600">{subtitle}</p>
@@ -48,7 +48,7 @@ export function Multimodal({
                 />
                 <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-navy-950/10" />
                 <div className="relative z-[1] p-6">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/12 text-teal-300 ring-1 ring-inset ring-white/20 backdrop-blur-sm">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-teal-300 ring-1 ring-inset ring-white/20">
                     <I className="h-5 w-5" strokeWidth={1.75} />
                   </span>
                   <h3 className="mt-4 text-heading-sm font-semibold text-white">{m.name}</h3>

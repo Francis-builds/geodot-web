@@ -14,7 +14,7 @@ function FaqRow({ item }: { item: FaqItem }) {
     <details className="group border-b border-navy-100 last:border-b-0">
       <summary className="flex cursor-pointer list-none items-start justify-between gap-4 py-5 text-left [&::-webkit-details-marker]:hidden">
         <span className="text-body-lg font-semibold text-navy-900">{item.q}</span>
-        <span aria-hidden className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-navy-200 text-navy-500 transition-colors group-open:border-teal-300 group-open:bg-teal-50 group-open:text-teal-600">
+        <span aria-hidden className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-navy-200 text-navy-600 transition-colors group-open:border-teal-300 group-open:bg-teal-50 group-open:text-teal-600">
           <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 fill-none stroke-current transition-transform duration-200 group-open:rotate-180" strokeWidth="2">
             <path d="M4 6l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -39,7 +39,7 @@ export function Faq({ groups }: { groups: FaqGroup[] }) {
                 type="button"
                 onClick={() => setActive(i)}
                 aria-current={i === active ? "true" : undefined}
-                className={`w-full rounded-lg px-3 py-2 text-left text-body-sm font-medium transition-colors ${
+                className={`min-h-11 w-full rounded-lg px-4 py-2.5 text-left text-body-sm font-medium transition-colors ${
                   i === active
                     ? "bg-teal-50 text-teal-700"
                     : "text-navy-600 hover:bg-navy-50 hover:text-navy-900"
