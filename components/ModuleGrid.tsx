@@ -35,15 +35,6 @@ export function ModuleGrid({ title, titleAccent, description }: {
                 href={`/plataforma/${slug}`}
                 className="group relative flex h-full min-h-[180px] flex-col justify-between overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 md:p-7"
               >
-                {/* surface gradient + dotgrid texture */}
-                <span
-                  aria-hidden
-                  className="absolute inset-0 bg-[image:var(--gradient-midnight)] opacity-60 transition-opacity duration-300 group-hover:opacity-80"
-                />
-                <span
-                  aria-hidden
-                  className="absolute inset-0 bg-dotgrid text-white/[0.05] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                />
                 <span
                   aria-hidden
                   className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-teal-500/20 blur-3xl transition-opacity duration-300 group-hover:bg-teal-400/30"
