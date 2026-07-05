@@ -4,8 +4,18 @@ import { Link } from "@/i18n/navigation";
 
 type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 type ImgProps = React.ImgHTMLAttributes<HTMLImageElement>;
+type PreProps = React.HTMLAttributes<HTMLPreElement>;
+type TableProps = React.TableHTMLAttributes<HTMLTableElement>;
 
 const components = {
+  pre: (props: PreProps) => (
+    <pre className="overflow-x-auto rounded-lg bg-navy-900 p-4 text-body-sm text-navy-100" {...props} />
+  ),
+  table: (props: TableProps) => (
+    <div className="overflow-x-auto">
+      <table className="w-full text-body-sm" {...props} />
+    </div>
+  ),
   a: ({ href = "", children, ...rest }: AnchorProps) => {
     const isInternal = href.startsWith("/");
     if (isInternal) {
@@ -53,7 +63,7 @@ export async function MdxContent({ source }: { source: string }) {
     <div
       className="
         mx-auto max-w-[768px]
-        text-body-lg leading-relaxed text-navy-700
+        text-body-lg leading-relaxed text-navy-600
         [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:font-display [&_h2]:text-heading-lg [&_h2]:font-bold [&_h2]:text-navy-900
         [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:font-display [&_h3]:text-heading-md [&_h3]:font-bold [&_h3]:text-navy-900
         [&_p]:my-5
@@ -62,8 +72,8 @@ export async function MdxContent({ source }: { source: string }) {
         [&_ol]:my-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6
         [&_li]:text-body-md
         [&_strong]:font-semibold [&_strong]:text-navy-900
-        [&_blockquote]:my-8 [&_blockquote]:border-l-4 [&_blockquote]:border-teal-500 [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:text-navy-600
-        [&_code]:rounded [&_code]:bg-navy-50 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-body-sm [&_code]:text-navy-800
+        [&_blockquote]:my-8 [&_blockquote]:border-l-2 [&_blockquote]:border-navy-200 [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:text-navy-600
+        [&_:not(pre)>code]:rounded [&_:not(pre)>code]:bg-navy-50 [&_:not(pre)>code]:px-1.5 [&_:not(pre)>code]:py-0.5 [&_:not(pre)>code]:text-body-sm [&_:not(pre)>code]:text-navy-800
       "
     >
       {content}

@@ -21,7 +21,7 @@ export default async function NosotrosPage({ params }: { params: Promise<{ local
         bgImage="/images/pages/nosotros.jpg" bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`} />
       <Section tone="base">
         <SectionHeader title={t("mission.title")} align="left" />
-        <div className="max-w-3xl space-y-4">{paras.map((p, i) => <p key={i} className="text-body-lg text-navy-700">{p}</p>)}</div>
+        <div className="max-w-3xl space-y-4">{paras.map((p, i) => <p key={i} className="text-body-lg text-navy-600">{p}</p>)}</div>
       </Section>
       <Section tone="subtle">
         <SectionHeader title={t("timeline.title")} align="left" />
@@ -29,7 +29,7 @@ export default async function NosotrosPage({ params }: { params: Promise<{ local
           {timelineSteps.map((s, i) => (
             <li key={i} className="rounded-lg border border-navy-100 bg-white p-6">
               <span className="text-heading-md font-bold text-accent-strong">{s.year}</span>
-              <p className="mt-1 text-body-sm font-semibold uppercase tracking-wide text-navy-500">{s.label}</p>
+              <p className="mt-1 text-body-sm font-semibold uppercase tracking-wide text-navy-600">{s.label}</p>
               <h3 className="mt-3 text-heading-sm font-semibold text-navy-900">{s.title}</h3>
               <p className="mt-2 text-body-sm text-navy-600">{s.body}</p>
             </li>

@@ -30,8 +30,8 @@ export default async function RecursosPage({ params }: { params: Promise<{ local
         <Container>
           {posts.length === 0 ? (
             <div className="mx-auto max-w-xl rounded-2xl border border-dashed border-navy-200 py-20 text-center">
-              <p className="text-body-lg font-medium text-navy-700">{t("empty.title")}</p>
-              <p className="mt-2 text-body-sm text-navy-500">{t("empty.subtitle")}</p>
+              <p className="text-body-lg font-medium text-navy-900">{t("empty.title")}</p>
+              <p className="mt-2 text-body-sm text-navy-600">{t("empty.subtitle")}</p>
             </div>
           ) : (
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
