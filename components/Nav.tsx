@@ -52,6 +52,16 @@ export function Nav() {
     };
   }, [open]);
 
+  // Close the drawer with Escape.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   // Plataforma + Industrias are dropdown menus (see <DesktopNavMenus> /
   // <MobileNavMenus>); the rest stay as plain links.
   const links = [
@@ -108,12 +118,13 @@ export function Nav() {
         </div>
 
         <button
-          className={`flex h-10 w-10 items-center justify-center md:hidden ${
+          className={`flex h-11 w-11 items-center justify-center md:hidden ${
             solid ? "text-navy-900" : "text-white"
           }`}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
           aria-expanded={open}
+          aria-controls="nav-drawer"
         >
           <span className="relative flex h-4 w-5 flex-col justify-between">
             <span className={`h-0.5 w-full rounded-full bg-current transition-transform duration-300 ${open ? "translate-y-[7px] rotate-45" : ""}`} />
@@ -125,8 +136,10 @@ export function Nav() {
 
       {/* Mobile drawer */}
       <div
-        className={`overflow-hidden border-t border-navy-100/80 bg-white md:hidden ${
-          open ? "max-h-[80vh]" : "max-h-0 border-t-transparent"
+        id="nav-drawer"
+        inert={!open}
+        className={`border-t border-navy-100/80 bg-white md:hidden ${
+          open ? "max-h-[80vh] overflow-y-auto" : "max-h-0 overflow-hidden border-t-transparent"
         } transition-[max-height] duration-300 ease-out`}
       >
         <Container className="flex flex-col gap-1 py-4">

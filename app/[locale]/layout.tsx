@@ -58,14 +58,21 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
+  const tNav = await getTranslations({ locale, namespace: "nav" });
 
   return (
     <html lang={locale === "en" ? "en" : "es-MX"} data-scroll-behavior="smooth" className={schibsted.variable}>
       <body className="antialiased">
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-3 focus:text-body-sm focus:font-semibold focus:text-navy-900 focus:shadow-md"
+        >
+          {tNav("skip")}
+        </a>
         <NextIntlClientProvider>
           <SmoothScroll />
           <Nav />
-          <main className="pt-16 md:pt-[72px]">{children}</main>
+          <main id="contenido" className="pt-16 md:pt-[72px]">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

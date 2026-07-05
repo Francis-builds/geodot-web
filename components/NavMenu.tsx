@@ -53,7 +53,7 @@ function MenuRow({ item, onSelect }: { item: MenuItem; onSelect: () => void }) {
       href={item.href}
       onClick={onSelect}
       role="menuitem"
-      className="group/row flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors duration-200 hover:bg-teal-50 focus-visible:bg-teal-50 focus-visible:outline-none"
+      className="group/row flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors duration-200 hover:bg-teal-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-1"
     >
       <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-navy-100 bg-white text-teal-600 transition-colors duration-200 group-hover/row:border-teal-300 group-hover/row:bg-teal-500 group-hover/row:text-white">
         <Icon name={item.icon} className="h-[18px] w-[18px]" />
@@ -154,6 +154,7 @@ function DesktopMenu({
         id={panelId}
         role="menu"
         aria-label={label}
+        inert={!open}
         className={`absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 ${
           open ? "pointer-events-auto" : "pointer-events-none"
         }`}
@@ -172,7 +173,7 @@ function DesktopMenu({
             href={viewAllHref}
             role="menuitem"
             onClick={() => setOpen(false)}
-            className="mt-1.5 flex items-center justify-between gap-2 rounded-xl border-t border-navy-100/70 px-3 py-2.5 text-body-sm font-semibold text-teal-700 transition-colors duration-200 hover:bg-teal-50 focus-visible:bg-teal-50 focus-visible:outline-none"
+            className="mt-1.5 flex items-center justify-between gap-2 rounded-xl border-t border-navy-100/70 px-3 py-2.5 text-body-sm font-semibold text-teal-700 transition-colors duration-200 hover:bg-teal-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-1"
           >
             {viewAllLabel}
             <svg aria-hidden viewBox="0 0 16 16" className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="2">
@@ -240,6 +241,7 @@ function MobileAccordion({
       </button>
       <div
         id={panelId}
+        inert={!open}
         className={`overflow-hidden transition-[max-height] duration-300 ease-out ${open ? "max-h-[640px]" : "max-h-0"}`}
       >
         <div className="flex flex-col gap-0.5 pb-2 pl-2">
