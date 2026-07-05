@@ -17,7 +17,7 @@ export function PostCard({ post, locale, readingLabel }: { post: Post; locale: s
       <div className="relative aspect-[16/9] overflow-hidden bg-navy-50">
         <Image
           src={post.cover}
-          alt={post.title}
+          alt=""
           fill
           sizes="(max-width: 768px) 100vw, 380px"
           className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -33,7 +33,7 @@ export function PostCard({ post, locale, readingLabel }: { post: Post; locale: s
             ))}
           </div>
         )}
-        <h3 className="font-display text-heading-sm font-bold text-navy-900 group-hover:text-teal-600">{post.title}</h3>
+        <h3 className="font-display text-heading-sm font-bold text-navy-900 group-hover:text-teal-700">{post.title}</h3>
         <p className="mt-2 line-clamp-3 flex-1 text-body-sm text-navy-600">{post.excerpt}</p>
         <div className="mt-4 flex items-center gap-2 text-caption text-navy-600">
           <time dateTime={post.date}>{dateLabel}</time>

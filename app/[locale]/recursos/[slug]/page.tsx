@@ -46,7 +46,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
               {post.tags.length > 0 && (
                 <div className="mb-4 flex flex-wrap gap-2">
                   {post.tags.map((tag) => (
-                    <span key={tag} className="rounded-full bg-white/10 px-2.5 py-0.5 text-caption font-medium text-teal-300">
+                    <span key={tag} className="rounded-full bg-white/10 px-2.5 py-0.5 text-caption font-medium text-teal-400">
                       {tag}
                     </span>
                   ))}
