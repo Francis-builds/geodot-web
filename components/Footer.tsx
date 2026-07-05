@@ -14,19 +14,11 @@ export function Footer() {
   const linkClass =
     "text-body-sm text-navy-200 transition-colors hover:text-teal-300";
   const headingClass =
-    "mb-4 text-overline font-semibold uppercase tracking-wide text-navy-400";
+    "mb-4 text-overline font-semibold uppercase tracking-wide text-navy-300";
 
   return (
-    <footer className="relative isolate overflow-hidden bg-navy-950 text-navy-200">
-      {/* Top hairline + subtle teal seam */}
-      <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-teal-500/40 to-transparent" />
-      {/* Dot-grid texture */}
-      <div aria-hidden className="absolute inset-0 bg-dotgrid bg-dotgrid-fade text-white/[0.05]" />
-      {/* Faint brand glows */}
-      <div aria-hidden className="absolute inset-0 glow-teal opacity-50" style={{ ["--gx" as string]: "88%", ["--gy" as string]: "0%" }} />
-      <div aria-hidden className="absolute inset-0 glow-magenta opacity-40" style={{ ["--gx" as string]: "8%", ["--gy" as string]: "100%" }} />
-
-      <Container className="relative z-[1] grid gap-12 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr_1fr] md:py-20">
+    <footer className="border-t border-white/10 bg-navy-900 text-navy-200">
+      <Container className="grid gap-12 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr_1fr] md:py-20">
         {/* Brand */}
         <div>
           <Image
@@ -51,7 +43,7 @@ export function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/plataforma" className={`${linkClass} font-medium text-teal-300/90`}>
+              <Link href="/plataforma" className={`${linkClass} font-medium text-teal-400`}>
                 {t("allModules")}
               </Link>
             </li>
@@ -70,7 +62,7 @@ export function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/industrias" className={`${linkClass} font-medium text-teal-300/90`}>
+              <Link href="/industrias" className={`${linkClass} font-medium text-teal-400`}>
                 {t("allIndustries")}
               </Link>
             </li>
@@ -99,8 +91,8 @@ export function Footer() {
         </div>
       </Container>
 
-      <div className="relative z-[1] border-t border-white/10">
-        <Container className="flex flex-col items-center justify-between gap-4 py-6 text-caption text-navy-400 sm:flex-row">
+      <div className="border-t border-white/10">
+        <Container className="flex flex-col items-center justify-between gap-4 py-6 text-caption text-navy-300 sm:flex-row">
           <span>{t("rights")}</span>
           <ul className="flex items-center gap-5">
             <li><Link href="/privacidad" className="transition-colors hover:text-teal-300">{t("privacy")}</Link></li>

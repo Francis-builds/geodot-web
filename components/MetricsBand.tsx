@@ -7,23 +7,31 @@ export function MetricsBand({ items, tone = "subtle" }: {
   tone?: "subtle" | "dark";
 }) {
   const dark = tone === "dark";
+  const [hero, ...rest] = items;
+  if (!hero) return null;
   return (
-    <section className={`relative isolate overflow-hidden ${dark ? "bg-navy-900 text-white" : "bg-navy-50"}`}>
-      {dark && (
-        <>
-          <div aria-hidden className="absolute inset-0 bg-dotgrid bg-dotgrid-fade text-white/[0.05]" />
-          <div aria-hidden className="absolute inset-0 glow-teal" style={{ ["--gx" as string]: "85%", ["--gy" as string]: "30%" }} />
-        </>
-      )}
-      <Container className="relative z-[1] grid gap-8 py-16 sm:grid-cols-2 lg:grid-cols-4">
-        {items.map((m, i) => (
-          <Reveal key={i} direction="up" delay={i * 0.08} className="text-center">
-            <div className={`text-display-lg font-bold ${dark ? "text-teal-400" : "text-teal-600"}`}>
-              <AnimatedCounter value={m.value} prefix={m.prefix} suffix={m.suffix} />
-            </div>
-            <p className={`mt-2 text-body-sm ${dark ? "text-navy-200" : "text-navy-600"}`}>{m.label}</p>
-          </Reveal>
-        ))}
+    <section className={dark ? "bg-navy-900 text-white" : undefined}>
+      <Container>
+        <Reveal direction="up">
+          <div className={`flex flex-col gap-6 border-y py-10 md:flex-row md:items-end md:justify-between ${dark ? "border-white/10" : "border-navy-100"}`}>
+            <p>
+              <span className={`block text-display-lg font-extrabold ${dark ? "text-accent" : "text-accent-strong"}`}>
+                <AnimatedCounter value={hero.value} prefix={hero.prefix} suffix={hero.suffix} />
+              </span>
+              <span className={`mt-1 block max-w-md text-body-lg ${dark ? "text-navy-300" : "text-navy-600"}`}>{hero.label}</span>
+            </p>
+            {rest.length > 0 && (
+              <ul className="flex flex-wrap gap-x-10 gap-y-3">
+                {rest.map((m) => (
+                  <li key={m.label} className="text-body-sm">
+                    <span className={`font-bold ${dark ? "text-white" : "text-navy-900"}`}>{m.prefix}{m.value}{m.suffix}</span>{" "}
+                    <span className={dark ? "text-navy-300" : "text-navy-600"}>{m.label}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </Reveal>
       </Container>
     </section>
   );
