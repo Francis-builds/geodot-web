@@ -25,7 +25,7 @@ export default async function CasosPage({ params }: { params: Promise<{ locale: 
           {(t.raw("studies.items") as { industry: string; challenge: string; solution: string; result: string }[]).map((s, i) => (
             <div key={i} className="flex h-full flex-col rounded-xl border border-navy-100 bg-white p-6">
               <span className="inline-block self-start rounded-full bg-teal-50 px-3 py-1 text-caption font-semibold uppercase tracking-wide text-accent-strong">{s.industry}</span>
-              <dl className="mt-5 space-y-4">
+              <dl className="mt-5 flex flex-1 flex-col space-y-4">
                 <div>
                   <dt className="text-overline font-semibold uppercase tracking-wide text-navy-500">{t("studies.labels.challenge")}</dt>
                   <dd className="mt-1 text-body-md text-navy-700">{s.challenge}</dd>
@@ -34,11 +34,11 @@ export default async function CasosPage({ params }: { params: Promise<{ locale: 
                   <dt className="text-overline font-semibold uppercase tracking-wide text-navy-500">{t("studies.labels.solution")}</dt>
                   <dd className="mt-1 text-body-md text-navy-700">{s.solution}</dd>
                 </div>
+                <div className="mt-auto border-t border-navy-100 pt-4">
+                  <dt className="text-overline font-semibold uppercase tracking-wide text-navy-500">{t("studies.labels.result")}</dt>
+                  <dd className="mt-1 text-body-md font-semibold text-navy-900">{s.result}</dd>
+                </div>
               </dl>
-              <div className="mt-auto border-t border-navy-100 pt-4">
-                <dt className="text-overline font-semibold uppercase tracking-wide text-navy-500">{t("studies.labels.result")}</dt>
-                <p className="mt-1 text-body-md font-semibold text-navy-900">{s.result}</p>
-              </div>
             </div>
           ))}
         </div>
