@@ -108,7 +108,7 @@ Empresa láctea con productos de 90-100 días de vida útil, distribución a sup
 
 ### Testimonial
 > "Ahora sabemos exactamente qué lote entregamos a cada cliente. Si hay un problema, podemos rastrear todo en minutos, no en días."
-> — *Gerente de Supply Chain*
+> *Gerente de Supply Chain*
 
 ---
 

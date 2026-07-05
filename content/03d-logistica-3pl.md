@@ -121,7 +121,7 @@ Operador logístico con 15 clientes activos, 3 almacenes y flota mixta de 80 veh
 
 ### Testimonial
 > "Nuestros clientes ahora tienen visibilidad total sin tener que llamarnos. Eso mejoró la relación y nos permitió enfocarnos en la operación."
-> — *Gerente de Operaciones*
+> *Gerente de Operaciones*
 
 ---
 

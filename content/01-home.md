@@ -110,7 +110,7 @@ Geodot integra la gestión de almacén, transporte, ruteo y paletizado en una so
 ### Testimonial Destacado
 > "Con Geodot pasamos de cargar camiones al 85% a cargarlos al 100%. Eso significó eliminar viajes innecesarios y reducir nuestros costos de transporte en más del 8%."
 > 
-> — *Director de Operaciones, Embotelladora Regional*
+> *Director de Operaciones, Embotelladora Regional*
 
 ---
 

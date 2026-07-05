@@ -62,7 +62,7 @@ Embotelladora regional de Coca-Cola con operaciones en múltiples estados de Arg
 ### Testimonial
 > "Geodot entiende nuestra operación porque la ha vivido. No tuvimos que explicar qué es una planchada o por qué el vidrio va abajo. Ya lo sabían. El equipo de implementación habla nuestro idioma."
 > 
-> — *Director de Operaciones*
+> *Director de Operaciones*
 
 ### Tiempo de Implementación
 4 meses
@@ -105,7 +105,7 @@ Empresa láctea colombiana con productos de 90-100 días de vida útil. Distribu
 ### Testimonial
 > "Ahora sabemos exactamente qué lote entregamos a cada cliente. Si hay un problema, podemos rastrear todo en minutos, no en días. Los supermercados dejaron de rechazarnos."
 > 
-> — *Gerente de Supply Chain*
+> *Gerente de Supply Chain*
 
 ### Tiempo de Implementación
 3 meses

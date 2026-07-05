@@ -112,7 +112,7 @@ Embotelladora de Coca-Cola con operaciones en múltiples estados, 250+ SKUs y 30
 
 ### Testimonial
 > "Geodot entiende nuestra operación porque la ha vivido. No tuvimos que explicar qué es una planchada o por qué el vidrio va abajo. Ya lo sabían."
-> — *Director de Operaciones*
+> *Director de Operaciones*
 
 ---
 
