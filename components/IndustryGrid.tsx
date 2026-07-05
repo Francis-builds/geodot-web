@@ -1,12 +1,9 @@
-"use client";
-
 import Image from "next/image";
-import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { INDUSTRIES, INDUSTRY_SLUGS } from "@/lib/industries";
 import { Section, SectionHeader } from "./ui/Section";
-import { revealItem } from "./ui/Reveal";
+import { Reveal } from "./ui/Reveal";
 import { Icon } from "./ui/Icon";
 
 export function IndustryGrid({ title, titleAccent, description }: {
@@ -14,7 +11,6 @@ export function IndustryGrid({ title, titleAccent, description }: {
 }) {
   const t = useTranslations("industries");
   const tIdx = useTranslations("industriesIndex");
-  const reduce = useReducedMotion();
 
   return (
     <Section tone="dark">
@@ -22,17 +18,11 @@ export function IndustryGrid({ title, titleAccent, description }: {
         title={title} titleAccent={titleAccent} description={description}
         tone="dark"
       />
-      <motion.div
-        className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
-        initial={reduce ? undefined : "hidden"}
-        whileInView={reduce ? undefined : "show"}
-        viewport={{ once: true, margin: "-80px" }}
-        variants={{ show: { transition: { staggerChildren: 0.09 } } }}
-      >
-        {INDUSTRY_SLUGS.map((slug) => {
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {INDUSTRY_SLUGS.map((slug, i) => {
           const { messageKey: key, icon, hero } = INDUSTRIES[slug];
           return (
-            <motion.div key={slug} variants={reduce ? undefined : revealItem}>
+            <Reveal key={slug} direction="up" delay={i * 0.06}>
               <Link
                 href={`/industrias/${slug}`}
                 className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white/5"
@@ -55,7 +45,7 @@ export function IndustryGrid({ title, titleAccent, description }: {
                 <div className="relative z-[1] flex flex-1 flex-col p-6">
                   <h3 className="text-heading-sm font-semibold text-white">{t(`${key}.name`)}</h3>
                   <p className="mt-2 text-body-sm text-navy-200">{t(`${key}.tagline`)}</p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-caption font-semibold uppercase tracking-wide text-teal-300 transition-all duration-300 group-hover:translate-x-0.5">
+                  <span className="mt-4 inline-flex items-center gap-1 text-caption font-semibold uppercase tracking-wide text-teal-300 transition-transform duration-300 group-hover:translate-x-0.5">
                     {tIdx("explore")}
                     <svg aria-hidden viewBox="0 0 16 16" className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="2">
                       <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
@@ -63,10 +53,10 @@ export function IndustryGrid({ title, titleAccent, description }: {
                   </span>
                 </div>
               </Link>
-            </motion.div>
+            </Reveal>
           );
         })}
-      </motion.div>
+      </div>
     </Section>
   );
 }

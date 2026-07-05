@@ -1,11 +1,8 @@
-"use client";
-
-import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { MODULES, MODULE_SLUGS } from "@/lib/modules";
 import { Section, SectionHeader } from "./ui/Section";
-import { revealItem } from "./ui/Reveal";
+import { Reveal } from "./ui/Reveal";
 import { Icon } from "./ui/Icon";
 
 // Bento layout: varied spans so the grid reads as a composition, not 4 equal cards.
@@ -21,7 +18,6 @@ export function ModuleGrid({ title, titleAccent, description }: {
   title: string; titleAccent?: string; description?: string;
 }) {
   const t = useTranslations("modules");
-  const reduce = useReducedMotion();
 
   return (
     <Section tone="dark">
@@ -29,18 +25,12 @@ export function ModuleGrid({ title, titleAccent, description }: {
         title={title} titleAccent={titleAccent} description={description}
         tone="dark"
       />
-      <motion.div
-        className="grid auto-rows-[minmax(0,1fr)] gap-4 sm:gap-5 lg:grid-cols-12"
-        initial={reduce ? undefined : "hidden"}
-        whileInView={reduce ? undefined : "show"}
-        viewport={{ once: true, margin: "-80px" }}
-        variants={{ show: { transition: { staggerChildren: 0.1 } } }}
-      >
+      <div className="grid auto-rows-[minmax(0,1fr)] gap-4 sm:gap-5 lg:grid-cols-12">
         {MODULE_SLUGS.map((slug, i) => {
           const { messageKey: key, icon } = MODULES[slug];
           const hero = i === 0;
           return (
-            <motion.div key={slug} variants={reduce ? undefined : revealItem} className={SPANS[i]}>
+            <Reveal key={slug} direction="up" delay={i * 0.06} className={SPANS[i]}>
               <Link
                 href={`/plataforma/${slug}`}
                 className="group relative flex h-full min-h-[180px] flex-col justify-between overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 md:p-7"
@@ -70,7 +60,7 @@ export function ModuleGrid({ title, titleAccent, description }: {
                   <p className={`mt-2 text-navy-200 ${hero ? "text-body-md" : "text-body-sm"}`}>
                     {t(`${key}.tagline`)}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-caption font-semibold uppercase tracking-wide text-teal-300 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
+                  <span className="mt-4 inline-flex items-center gap-1 text-caption font-semibold uppercase tracking-wide text-teal-300 opacity-0 transition-[transform,opacity] duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
                     {t("explore")}
                     <svg aria-hidden viewBox="0 0 16 16" className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="2">
                       <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
@@ -78,10 +68,10 @@ export function ModuleGrid({ title, titleAccent, description }: {
                   </span>
                 </div>
               </Link>
-            </motion.div>
+            </Reveal>
           );
         })}
-      </motion.div>
+      </div>
     </Section>
   );
 }
