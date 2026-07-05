@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "motion/react";
 
 interface AnimatedCounterProps {
   value: number;
@@ -20,6 +21,7 @@ export function AnimatedCounter({
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
+  const reduced = useReducedMotion();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,6 +47,11 @@ export function AnimatedCounter({
     let startTime: number;
     let animationFrame: number;
 
+    if (reduced) {
+      animationFrame = requestAnimationFrame(() => setCount(value));
+      return () => cancelAnimationFrame(animationFrame);
+    }
+
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
@@ -62,7 +69,7 @@ export function AnimatedCounter({
 
     animationFrame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrame);
-  }, [isVisible, value, duration]);
+  }, [isVisible, value, duration, reduced]);
 
   return (
     <span ref={ref} className={className}>
