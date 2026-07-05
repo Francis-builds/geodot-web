@@ -76,7 +76,7 @@ export function Nav() {
   // hero present: glass, dark text.
   const solid = scrolled || open || !overHero;
   const linkColor = solid
-    ? "text-navy-700 hover:text-teal-600"
+    ? "text-navy-600 hover:text-teal-600"
     : "text-white/85 hover:text-white";
 
   return (

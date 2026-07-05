@@ -60,7 +60,7 @@ function MenuRow({ item, onSelect }: { item: MenuItem; onSelect: () => void }) {
       </span>
       <span className="min-w-0">
         <span className="block text-body-sm font-semibold text-navy-900">{item.name}</span>
-        <span className="block truncate text-caption text-navy-500">{item.tagline}</span>
+        <span className="block truncate text-caption text-navy-600">{item.tagline}</span>
       </span>
     </Link>
   );
@@ -257,7 +257,7 @@ function MobileAccordion({
               </span>
               <span className="min-w-0">
                 <span className="block text-body-sm font-semibold text-navy-900">{item.name}</span>
-                <span className="block truncate text-caption text-navy-500">{item.tagline}</span>
+                <span className="block truncate text-caption text-navy-600">{item.tagline}</span>
               </span>
             </Link>
           ))}

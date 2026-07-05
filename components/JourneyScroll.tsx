@@ -108,7 +108,7 @@ export function JourneyScroll({
                 <div>
                   <div className="flex items-baseline gap-3">
                     <span className="text-heading-xl font-bold text-accent-strong">{s.metric}</span>
-                    <span className="text-caption uppercase tracking-wide text-navy-500">{s.metricLabel}</span>
+                    <span className="text-caption uppercase tracking-wide text-navy-600">{s.metricLabel}</span>
                   </div>
                   <h3 className="mt-1 text-heading-md font-semibold text-navy-900">{s.title}</h3>
                   <p className="mt-1 text-body-md text-navy-600">{s.body}</p>
@@ -170,7 +170,7 @@ export function JourneyScroll({
                       <div>
                         <div className="flex items-baseline gap-3">
                           <span className="text-heading-xl font-bold text-accent-strong">{s.metric}</span>
-                          <span className="text-caption uppercase tracking-wide text-navy-500">{s.metricLabel}</span>
+                          <span className="text-caption uppercase tracking-wide text-navy-600">{s.metricLabel}</span>
                         </div>
                         <h3 className="mt-1 text-heading-md font-semibold text-navy-900">{s.title}</h3>
                         <p className="mt-1 max-w-md text-body-md text-navy-600">{s.body}</p>
