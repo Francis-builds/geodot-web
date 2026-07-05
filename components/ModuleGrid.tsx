@@ -43,7 +43,7 @@ export function ModuleGrid({ title, titleAccent, description }: {
             <motion.div key={slug} variants={reduce ? undefined : revealItem} className={SPANS[i]}>
               <Link
                 href={`/plataforma/${slug}`}
-                className="card-lift group relative flex h-full min-h-[180px] flex-col justify-between overflow-hidden rounded-xl border border-white/10 bg-white/[0.04] p-6 md:p-7"
+                className="group relative flex h-full min-h-[180px] flex-col justify-between overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 md:p-7"
               >
                 {/* surface gradient + dotgrid texture */}
                 <span

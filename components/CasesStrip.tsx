@@ -20,7 +20,7 @@ export function CasesStrip({ title, cases }: {
       >
         {cases.map((c, i) => (
           <motion.div key={i} variants={reduce ? undefined : revealItem}>
-            <div className="card-lift group relative h-full overflow-hidden rounded-xl border border-navy-100 bg-white p-6">
+            <div className="group relative h-full overflow-hidden rounded-xl border border-navy-100 bg-white p-6 transition-shadow hover:shadow-sm">
               <span aria-hidden className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-magenta-500/8 blur-2xl transition-opacity duration-300 group-hover:bg-magenta-500/14" />
               <p className="relative z-[1] text-heading-md font-semibold text-magenta-600">{c.metric}</p>
               <p className="relative z-[1] mt-2 text-body-md text-navy-900">{c.result}</p>

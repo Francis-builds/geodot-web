@@ -37,7 +37,7 @@ export function Multimodal({
             return (
               <div
                 key={m.key}
-                className="card-lift group relative isolate flex aspect-[3/4] flex-col justify-end overflow-hidden rounded-2xl"
+                className="group relative isolate flex aspect-[3/4] flex-col justify-end overflow-hidden rounded-xl border border-navy-100 bg-white transition-shadow hover:shadow-sm"
               >
                 <Image
                   src={img}

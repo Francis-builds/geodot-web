@@ -42,7 +42,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
         <div className="grid gap-6 md:grid-cols-3">
           {categories.map((c, i) => (
             <Reveal key={i} direction="up" delay={i * 0.08}>
-              <div className="card-lift h-full rounded-2xl border border-navy-100 bg-white p-7 shadow-sm">
+              <div className="h-full rounded-xl border border-navy-100 bg-white p-7 transition-shadow hover:shadow-sm">
                 <h3 className="text-heading-sm font-semibold text-navy-900">{c.name}</h3>
                 <p className="mt-2 text-body-md leading-relaxed text-navy-600">{c.body}</p>
               </div>

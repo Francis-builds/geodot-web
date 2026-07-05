@@ -41,7 +41,7 @@ export default async function IntegracionesPage({ params }: { params: Promise<{ 
         <div className="grid gap-6 md:grid-cols-3">
           {points.map((p, i) => (
             <Reveal key={i} direction="up" delay={i * 0.08}>
-              <div className="card-lift h-full rounded-2xl border border-navy-100 bg-white p-7 shadow-sm">
+              <div className="h-full rounded-xl border border-navy-100 bg-white p-7 transition-shadow hover:shadow-sm">
                 <span className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-teal-500/12 text-body-sm font-bold text-teal-600">
                   {i + 1}
                 </span>

@@ -12,7 +12,7 @@ export function PostCard({ post, locale, readingLabel }: { post: Post; locale: s
   return (
     <Link
       href={`/recursos/${post.slug}` as Parameters<typeof Link>[0]["href"]}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white transition-shadow hover:shadow-lg"
+      className="group flex flex-col overflow-hidden rounded-xl border border-navy-100 bg-white transition-shadow hover:shadow-sm"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-navy-50">
         <Image

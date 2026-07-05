@@ -57,7 +57,7 @@ export default async function ContactoPage({ params }: { params: Promise<{ local
 
           {/* Right: form in an elevated card */}
           <Reveal direction="left" delay={0.1}>
-            <div id="form" className="card-lift scroll-mt-28 rounded-2xl border border-navy-100 bg-white p-8 shadow-md">
+            <div id="form" className="scroll-mt-28 rounded-xl border border-navy-100 bg-white p-8 transition-shadow hover:shadow-sm">
               <ContactForm />
             </div>
           </Reveal>

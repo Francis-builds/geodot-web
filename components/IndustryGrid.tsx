@@ -35,7 +35,7 @@ export function IndustryGrid({ title, titleAccent, description }: {
             <motion.div key={slug} variants={reduce ? undefined : revealItem}>
               <Link
                 href={`/industrias/${slug}`}
-                className="card-lift group relative flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.04]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white/5"
               >
                 {/* thumbnail */}
                 <span className="relative block aspect-[16/10] overflow-hidden">
