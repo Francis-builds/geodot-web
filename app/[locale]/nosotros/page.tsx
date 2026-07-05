@@ -18,7 +18,7 @@ export default async function NosotrosPage({ params }: { params: Promise<{ local
   return (
     <>
       <Hero eyebrow={t("hero.eyebrow")} title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")} primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
-        bgImage="/images/pages/nosotros.jpg" bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`} />
+        bgImage="/images/pages/nosotros.jpg" />
       <Section tone="base">
         <SectionHeader title={t("mission.title")} align="left" />
         <div className="max-w-3xl space-y-4">{paras.map((p, i) => <p key={i} className="text-body-lg text-navy-600">{p}</p>)}</div>

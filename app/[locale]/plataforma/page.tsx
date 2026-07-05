@@ -16,7 +16,7 @@ export default async function PlataformaPage({ params }: { params: Promise<{ loc
   return (
     <>
       <Hero eyebrow={t("hero.eyebrow")} title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")} primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
-        bgImage="/images/warehouse/hero-patio.jpg" bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`} />
+        bgImage="/images/warehouse/hero-patio.jpg" />
       <ModuleGrid title={t("modules.title")} description={t("modules.description")} />
       <CTABanner title={t("cta.title")} subtitle={t("cta.subtitle")} cta={{ label: t("cta.button"), href: "/contacto" }} />
     </>

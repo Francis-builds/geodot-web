@@ -19,7 +19,7 @@ export default async function TerminosPage({ params }: { params: Promise<{ local
   return (
     <>
       <Hero eyebrow={t("hero.eyebrow")} title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")}
-        bgImage="/images/torre/torre-control.jpg" bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`} />
+        bgImage="/images/torre/torre-control.jpg" />
       <Section tone="base">
         <LegalBody updated={t("updated")} sections={t.raw("sections") as { title: string; body: string[] }[]} />
       </Section>

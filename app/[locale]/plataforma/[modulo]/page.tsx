@@ -31,7 +31,7 @@ export default async function ModuloPage({ params }: { params: Promise<{ locale:
     <>
       <Hero eyebrow={t("eyebrow")} title={t("title")} titleAccent={t("titleAccent")} subtitle={t("subtitle")}
         primaryCta={{ label: t("ctaPrimary"), href: "/contacto" }}
-        bgImage={hero} bgAlt={`${t("title")} ${t("titleAccent")}`} />
+        bgImage={hero} />
       <ProblemStats title={t("problem.title")} points={t.raw("problem.points") as string[]} stats={t.raw("problem.stats") as { problem: string; impact: string }[]} />
       <SolutionSteps title={t("solution.title")} steps={t.raw("solution.steps") as { title: string; description: string }[]} />
       <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />

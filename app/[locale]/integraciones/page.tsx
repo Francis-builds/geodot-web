@@ -27,7 +27,6 @@ export default async function IntegracionesPage({ params }: { params: Promise<{ 
         primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
         secondaryCta={{ label: t("hero.cta2"), href: "/plataforma" }}
         bgImage="/images/pages/integraciones.jpg"
-        bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`}
       />
 
       {/* How it integrates — does not replace the ERP */}

@@ -23,7 +23,6 @@ export default async function FaqPage({ params }: { params: Promise<{ locale: st
         subtitle={t("hero.subtitle")}
         primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
         bgImage="/images/pages/faq.jpg"
-        bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`}
       />
       <section className="bg-white">
         <Faq groups={groups} />
