@@ -5,8 +5,6 @@ import { Section, SectionHeader } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 
-const CONTACT_EMAIL = "luis.perasollo@geodot.app";
-
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "partnersPage" });
@@ -27,7 +25,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
         title={t("hero.title")}
         titleAccent={t("hero.titleAccent")}
         subtitle={t("hero.subtitle")}
-        primaryCta={{ label: t("hero.cta"), href: `mailto:${CONTACT_EMAIL}` }}
+        primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
         bgImage="/images/pages/partners.jpg"
       />
 
@@ -102,10 +100,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
           <Reveal direction="up" className="flex flex-col items-center gap-6">
             <h2 className="max-w-2xl text-display-lg font-bold text-white">{t("contact.title")}</h2>
             <p className="max-w-xl text-body-lg text-navy-300">{t("contact.subtitle")}</p>
-            <Button href={`mailto:${CONTACT_EMAIL}`} variant="primary">{t("contact.button")}</Button>
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-body-sm font-medium text-teal-400 transition-colors hover:text-teal-200">
-              {CONTACT_EMAIL}
-            </a>
+            <Button href="/contacto" variant="primary">{t("contact.button")}</Button>
           </Reveal>
         </Container>
       </section>
