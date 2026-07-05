@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Hero } from "@/components/Hero";
+import { ControlTower } from "@/components/ControlTower";
 import { ProblemStats } from "@/components/ProblemStats";
 import { ModuleGrid } from "@/components/ModuleGrid";
 import { JourneyScroll } from "@/components/JourneyScroll";
@@ -28,9 +29,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         subtitle={t("hero.subtitle")}
         primaryCta={{ label: t("hero.ctaPrimary"), href: "/contacto" }}
         secondaryCta={{ label: t("hero.ctaSecondary"), href: "/plataforma" }}
-        bgImage="/images/hero/fleet-tracking.jpg"
-        bgAlt={t("hero.imageAlt")}
+        visual={<ControlTower labels={t.raw("hero.tower") as { occupancyLabel: string; transportLabel: string; statusLabel: string; routeLabel: string }} />}
       />
+      <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />
       <ProblemStats
         title={t("problem.title")} titleAccent={t("problem.titleAccent")}
         points={t.raw("problem.points") as string[]}
@@ -38,7 +39,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
       <ModuleGrid title={t("platform.title")} titleAccent={t("platform.titleAccent")} description={t("platform.description")} />
       <JourneyScroll title={t("journey.title")} titleAccent={t("journey.titleAccent")} />
-      <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />
       <CasesStrip title={t("cases.title")} cases={t.raw("cases.items") as { client: string; result: string; metric: string }[]} />
       <CTABanner title={t("cta.title")} subtitle={t("cta.subtitle")} cta={{ label: t("cta.button"), href: "/contacto" }} />
     </>

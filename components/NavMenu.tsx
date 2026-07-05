@@ -5,13 +5,11 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { MODULES, MODULE_SLUGS } from "@/lib/modules";
 import { INDUSTRIES, INDUSTRY_SLUGS } from "@/lib/industries";
-import { Icon } from "./ui/Icon";
 
 type MenuKind = "platform" | "industries";
 
 export type MenuItem = {
   href: string;
-  icon: string;
   name: string;
   tagline: string;
 };
@@ -20,10 +18,9 @@ export type MenuItem = {
 function usePlatformItems(): MenuItem[] {
   const t = useTranslations("modules");
   return MODULE_SLUGS.map((slug) => {
-    const { messageKey: key, icon } = MODULES[slug];
+    const { messageKey: key } = MODULES[slug];
     return {
       href: `/plataforma/${slug}`,
-      icon,
       name: t(`${key}.name`),
       tagline: t(`${key}.tagline`),
     };
@@ -33,10 +30,9 @@ function usePlatformItems(): MenuItem[] {
 function useIndustryItems(): MenuItem[] {
   const t = useTranslations("industries");
   return INDUSTRY_SLUGS.map((slug) => {
-    const { messageKey: key, icon } = INDUSTRIES[slug];
+    const { messageKey: key } = INDUSTRIES[slug];
     return {
       href: `/industrias/${slug}`,
-      icon,
       name: t(`${key}.name`),
       tagline: t(`${key}.tagline`),
     };
@@ -52,15 +48,10 @@ function MenuRow({ item, onSelect }: { item: MenuItem; onSelect: () => void }) {
     <Link
       href={item.href}
       onClick={onSelect}
-      className="group/row flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors duration-200 hover:bg-teal-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-1"
+      className="group/row block rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-navy-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-1"
     >
-      <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-navy-100 bg-white text-teal-600 transition-colors duration-200 group-hover/row:border-teal-300 group-hover/row:bg-teal-500 group-hover/row:text-white">
-        <Icon name={item.icon} className="h-[18px] w-[18px]" />
-      </span>
-      <span className="min-w-0">
-        <span className="block text-body-sm font-semibold text-navy-900">{item.name}</span>
-        <span className="block truncate text-caption text-navy-600">{item.tagline}</span>
-      </span>
+      <span className="block text-body-sm font-semibold text-navy-900 transition-colors duration-200 group-hover/row:text-teal-700">{item.name}</span>
+      <span className="mt-0.5 block text-caption leading-snug text-navy-600">{item.tagline}</span>
     </Link>
   );
 }
@@ -148,6 +139,9 @@ function DesktopMenu({
         </svg>
       </button>
 
+      {open && (
+        <div aria-hidden className="fixed inset-x-0 bottom-0 top-16 z-40 bg-navy-950/25 md:top-[72px]" onClick={() => setOpen(false)} />
+      )}
       <div
         id={panelId}
         inert={!open}
@@ -156,11 +150,11 @@ function DesktopMenu({
         }`}
       >
         <div
-          className={`origin-top rounded-2xl border border-navy-100 bg-white p-2.5 shadow-pop transition-[opacity,transform] duration-200 ${
+          className={`origin-top rounded-xl border border-navy-100 bg-white p-3 shadow-pop transition-[opacity,transform] duration-200 ${
             open ? "translate-y-0 scale-100 opacity-100" : "-translate-y-1 scale-[0.98] opacity-0"
-          } ${wide ? "w-[34rem]" : "w-[26rem]"}`}
+          } ${wide ? "w-[40rem]" : "w-[24rem]"}`}
         >
-          <div className={`grid gap-0.5 ${wide ? "grid-cols-2" : "grid-cols-1"}`}>
+          <div className={`grid ${wide ? "grid-cols-2 gap-x-2 gap-y-0.5" : "grid-cols-1 gap-0.5"}`}>
             {items.map((item) => (
               <MenuRow key={item.href} item={item} onSelect={() => setOpen(false)} />
             ))}
@@ -247,12 +241,9 @@ function MobileAccordion({
               onClick={onNavigate}
               className="flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-navy-50"
             >
-              <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-navy-100 bg-white text-teal-600">
-                <Icon name={item.icon} className="h-4 w-4" />
-              </span>
               <span className="min-w-0">
                 <span className="block text-body-sm font-semibold text-navy-900">{item.name}</span>
-                <span className="block truncate text-caption text-navy-600">{item.tagline}</span>
+                <span className="block text-caption leading-snug text-navy-600">{item.tagline}</span>
               </span>
             </Link>
           ))}

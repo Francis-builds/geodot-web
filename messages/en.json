@@ -103,13 +103,25 @@
   "home": {
     "hero": {
       "title": "Load your",
-      "rotatingWords": ["trucks", "ships", "containers", "planes", "railcars"],
+      "rotatingWords": [
+        "trucks",
+        "ships",
+        "containers",
+        "planes",
+        "railcars"
+      ],
       "titleAfter": "to 100% with AI",
       "subtitle": "The AI platform that moves your freight by sea, air and land: routing and palletizing at once, zero blind spots, integrated with your ERP. Measurable results in 90 days.",
       "ctaPrimary": "Book your demo",
       "ctaSecondary": "Explore the platform",
-      "eyebrow": "Intelligent logistics platform",
-      "imageAlt": "Fleet of trucks on the highway tracked in real time"
+      "eyebrow": "Real load occupancy with Geodot: 85% → 99%",
+      "imageAlt": "Fleet of trucks on the highway tracked in real time",
+      "tower": {
+        "occupancyLabel": "Load occupancy",
+        "transportLabel": "Transport cost",
+        "statusLabel": "En route · ETA 09:41",
+        "routeLabel": "Optimized route"
+      }
     },
     "problem": {
       "eyebrow": "The problem",
