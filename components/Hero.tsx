@@ -9,8 +9,7 @@ import { Link } from "@/i18n/navigation";
  * Hero v2.1 — split light, 2026 scale. Giant display type at weight 500 (the
  * "shout" comes from size, not boldness), a plain-case stat eyebrow, one
  * primary CTA + a text-link secondary. The visual slot takes either a custom
- * node (home: ControlTower screen, which brings its own frame) or a photo
- * panel. `rotatingWords` takes priority over `titleAccent`; `titleAfter`
+ * node (which brings its own frame) or a photo panel. `rotatingWords` takes priority over `titleAccent`; `titleAfter`
  * continues the sentence after the accent on its own line.
  */
 export function Hero({

@@ -5,7 +5,7 @@ import { useHeroRotation } from "./heroRotation";
 
 /**
  * Rotating accent word (hero signature animation), driven by the shared
- * heroRotation clock so the ControlTower visual swaps in sync. Outgoing and
+ * heroRotation clock so the hero visual (HeroCanvas) swaps in sync. Outgoing and
  * incoming words crossfade in the same grid cell (no blank frame); the cell
  * hugs the current word, so it must sit at the END of its line (Hero inserts
  * a <br> after it). aria-hidden rotator + static sr-only first word for AT.

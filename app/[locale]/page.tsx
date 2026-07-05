@@ -1,6 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { Hero } from "@/components/Hero";
-import { ControlTower } from "@/components/ControlTower";
+import { HomeHero } from "@/components/HomeHero";
 import { ProblemStats } from "@/components/ProblemStats";
 import { ModuleGrid } from "@/components/ModuleGrid";
 import { JourneyScroll } from "@/components/JourneyScroll";
@@ -22,14 +21,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <Hero eyebrow={t("hero.eyebrow")}
+      <HomeHero eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
         rotatingWords={t.raw("hero.rotatingWords") as string[]}
         titleAfter={t("hero.titleAfter")}
         subtitle={t("hero.subtitle")}
         primaryCta={{ label: t("hero.ctaPrimary"), href: "/contacto" }}
         secondaryCta={{ label: t("hero.ctaSecondary"), href: "/plataforma" }}
-        visual={<ControlTower labels={t.raw("hero.tower") as { occupancyLabel: string; transportLabel: string; routeLabel: string; modes: string[] }} />}
+        tower={t.raw("hero.tower") as { occupancyLabel: string; transportLabel: string; routeLabel: string; modes: string[] }}
       />
       <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />
       <ProblemStats
