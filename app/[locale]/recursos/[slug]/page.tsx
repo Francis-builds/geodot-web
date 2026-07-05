@@ -69,7 +69,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
 
         <Container className="py-12 md:py-16">
           <div className="mx-auto max-w-[768px]">
-            <div className="relative mb-12 aspect-[16/9] overflow-hidden rounded-2xl bg-navy-50">
+            <div className="relative mb-12 aspect-[16/9] overflow-hidden bg-navy-50">
               <Image
                 src={post.cover}
                 alt=""

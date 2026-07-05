@@ -64,7 +64,7 @@ export function Hero({
         {visual ? (
           <div className="relative">{visual}</div>
         ) : bgImage ? (
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl ring-1 ring-navy-100">
+          <div className="relative aspect-[4/3] overflow-hidden md:mr-[calc(50%-50vw)]">
             <Image src={bgImage} alt={bgAlt ?? ""} fill priority sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
           </div>
         ) : null}

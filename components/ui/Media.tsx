@@ -23,7 +23,6 @@ export function Media({
   ratio = "4/3",
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
-  rounded = true,
   fill = false,
   className = "",
 }: {
@@ -32,7 +31,6 @@ export function Media({
   ratio?: AspectRatio;
   sizes?: string;
   priority?: boolean;
-  rounded?: boolean;
   /** Fill the parent (parent must be relative + sized) instead of a fixed aspect ratio. */
   fill?: boolean;
   className?: string;
@@ -42,7 +40,6 @@ export function Media({
       className={[
         fill ? "absolute inset-0" : "relative w-full overflow-hidden bg-navy-50",
         fill ? "" : ASPECT[ratio],
-        rounded && !fill ? "rounded-2xl" : "",
         className,
       ]
         .filter(Boolean)

@@ -102,7 +102,7 @@ export function JourneyScroll({
           <div className="space-y-12">
             {stages.map((s, i) => (
               <div key={`fb-${i}`} className="grid gap-6 md:grid-cols-2 md:items-center">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-navy-100">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <Image src={s.image} alt={s.title} fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
                 </div>
                 <div>
@@ -133,7 +133,7 @@ export function JourneyScroll({
           <div className="mt-12 space-y-12">
             {stages.map((s, i) => (
               <div key={`m-${STAGE_ORDER[i]}`}>
-                <div className="relative aspect-[16/10] overflow-hidden rounded-xl ring-1 ring-navy-100">
+                <div className="relative -mx-6 aspect-[16/10] overflow-hidden">
                   <Image src={s.image} alt={s.title} fill sizes="100vw" className="object-cover" />
                 </div>
                 <p className="mt-4 text-overline font-medium uppercase text-accent-sm">{s.metric}</p>
