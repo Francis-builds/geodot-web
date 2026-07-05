@@ -60,10 +60,10 @@ export default async function IntegracionesPage({ params }: { params: Promise<{ 
           titleAccent={t("systems.titleAccent")}
           description={t("systems.description")}
         />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
           {systems.map((s, i) => (
-            <Reveal key={i} direction="up" delay={(i % 3) * 0.06}>
-              <div className="h-full rounded-2xl border border-navy-100 bg-white p-6 shadow-sm">
+            <Reveal key={i} direction="up" delay={(i % 3) * 0.06} className={i < 2 ? "lg:col-span-3" : "lg:col-span-2"}>
+              <div className="h-full rounded-xl border border-navy-100 bg-white p-6 transition-shadow hover:shadow-sm">
                 <h3 className="text-body-lg font-semibold text-navy-900">{s.name}</h3>
                 <p className="mt-1.5 text-body-sm leading-relaxed text-navy-600">{s.detail}</p>
               </div>
