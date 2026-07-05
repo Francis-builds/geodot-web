@@ -45,11 +45,11 @@ export default async function ContactoPage({ params }: { params: Promise<{ local
                 </li>
               ))}
             </ol>
-            <div className="mt-10 grid grid-cols-3 gap-4 border-t border-navy-100 pt-8">
+            <div className="mt-10 grid grid-cols-1 gap-4 border-t border-navy-100 pt-8 sm:grid-cols-3">
               {proof.map((p, i) => (
                 <div key={i}>
                   <div className="text-heading-lg font-bold text-accent-strong">{p.value}</div>
-                  <div className="mt-1 text-caption text-navy-500">{p.label}</div>
+                  <div className="mt-1 text-caption text-navy-600">{p.label}</div>
                 </div>
               ))}
             </div>

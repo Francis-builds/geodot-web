@@ -17,7 +17,7 @@ export default async function IndustriasPage({ params }: { params: Promise<{ loc
     <>
       <Hero eyebrow={t("hero.eyebrow")} title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")}
         primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
-        bgImage="/images/warehouse/almacen.jpg" bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`} />
+        bgImage="/images/warehouse/almacen.jpg" />
       <IndustryGrid title={t("title")} titleAccent={t("titleAccent")} description={t("subtitle")} />
       <CTABanner title={t("cta.title")} subtitle={t("cta.subtitle")} cta={{ label: t("cta.button"), href: "/contacto" }} />
     </>

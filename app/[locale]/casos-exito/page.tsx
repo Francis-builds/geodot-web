@@ -17,25 +17,25 @@ export default async function CasosPage({ params }: { params: Promise<{ locale: 
   return (
     <>
       <Hero eyebrow={t("hero.eyebrow")} title={t("hero.title")} titleAccent={t("hero.titleAccent")} subtitle={t("hero.subtitle")} primaryCta={{ label: t("hero.cta"), href: "/contacto" }}
-        bgImage="/images/recintos/geocerca-puerto.jpg" bgAlt={`${t("hero.title")} ${t("hero.titleAccent")}`} />
+        bgImage="/images/recintos/geocerca-puerto.jpg" bgAlt={t("hero.imageAlt")} />
       <CasesStrip title={t("list.title")} cases={t.raw("list.items") as { client: string; result: string; metric: string }[]} />
       <Section tone="base">
         <SectionHeader title={t("studies.title")} />
         <div className="grid gap-6 md:grid-cols-3">
           {(t.raw("studies.items") as { industry: string; challenge: string; solution: string; result: string }[]).map((s, i) => (
             <div key={i} className="flex h-full flex-col rounded-xl border border-navy-100 bg-white p-6">
-              <span className="inline-block self-start rounded-full bg-teal-50 px-3 py-1 text-caption font-semibold uppercase tracking-wide text-accent-strong">{s.industry}</span>
+              <span className="inline-block self-start rounded-full bg-teal-50 px-3 py-1 text-caption font-semibold uppercase tracking-wide text-accent-sm">{s.industry}</span>
               <dl className="mt-5 flex flex-1 flex-col space-y-4">
                 <div>
-                  <dt className="text-overline font-semibold uppercase tracking-wide text-navy-500">{t("studies.labels.challenge")}</dt>
-                  <dd className="mt-1 text-body-md text-navy-700">{s.challenge}</dd>
+                  <dt className="text-overline font-semibold uppercase tracking-wide text-navy-600">{t("studies.labels.challenge")}</dt>
+                  <dd className="mt-1 text-body-md text-navy-600">{s.challenge}</dd>
                 </div>
                 <div>
-                  <dt className="text-overline font-semibold uppercase tracking-wide text-navy-500">{t("studies.labels.solution")}</dt>
-                  <dd className="mt-1 text-body-md text-navy-700">{s.solution}</dd>
+                  <dt className="text-overline font-semibold uppercase tracking-wide text-navy-600">{t("studies.labels.solution")}</dt>
+                  <dd className="mt-1 text-body-md text-navy-600">{s.solution}</dd>
                 </div>
                 <div className="mt-auto border-t border-navy-100 pt-4">
-                  <dt className="text-overline font-semibold uppercase tracking-wide text-navy-500">{t("studies.labels.result")}</dt>
+                  <dt className="text-overline font-semibold uppercase tracking-wide text-navy-600">{t("studies.labels.result")}</dt>
                   <dd className="mt-1 text-body-md font-semibold text-navy-900">{s.result}</dd>
                 </div>
               </dl>

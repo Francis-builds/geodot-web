@@ -32,7 +32,7 @@ export default async function IndustriaPage({ params }: { params: Promise<{ loca
     <>
       <Hero eyebrow={t("eyebrow")} title={t("title")} titleAccent={t("titleAccent")} subtitle={t("subtitle")}
         primaryCta={{ label: t("ctaPrimary"), href: "/contacto" }}
-        bgImage={hero} bgAlt={`${t("title")} ${t("titleAccent")}`} />
+        bgImage={hero} />
       <ProblemStats title={t("problem.title")} points={t.raw("problem.points") as string[]} stats={t.raw("problem.stats") as { problem: string; impact: string }[]} />
       {/* Full-bleed contextual band: edge-to-edge photo, no frame */}
       <section aria-hidden className="relative h-[42vh] min-h-[320px] w-full overflow-hidden md:h-[56vh]">

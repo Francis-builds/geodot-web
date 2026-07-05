@@ -12,7 +12,7 @@ export function LegalBody({ updated, sections }: { updated: string; sections: Le
             <h2 className="text-heading-md font-semibold tracking-[-0.01em] text-navy-900">{s.title}</h2>
             <div className="mt-3 space-y-3">
               {s.body.map((p, j) => (
-                <p key={j} className="text-body-lg leading-relaxed text-navy-700">{p}</p>
+                <p key={j} className="text-body-lg leading-relaxed text-navy-600">{p}</p>
               ))}
             </div>
           </Reveal>
