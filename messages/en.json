@@ -260,6 +260,43 @@
       "title": "Put a number on your leaks",
       "subtitle": "30 minutes with your own data and we'll show you exactly where your leaks are, and what they're costing.",
       "button": "Book a demo"
+    },
+    "story": {
+      "hint": "Scroll to explore",
+      "scenes": [
+        {
+          "kicker": "The route",
+          "title": "Your entire operation, end to end"
+        },
+        {
+          "kicker": "Routing + palletizing",
+          "title": "We know what fits in every truck before loading it"
+        },
+        {
+          "kicker": "99% load",
+          "title": "The safety gap disappears: product travels, not air"
+        },
+        {
+          "kicker": "Document control",
+          "title": "The manifest validates itself at the dock"
+        },
+        {
+          "kicker": "Unloading",
+          "title": "Every pallet comes off registered, no paperwork"
+        },
+        {
+          "kicker": "Storage",
+          "title": "Every rack position lives in the system"
+        },
+        {
+          "kicker": "Traceability",
+          "title": "One scan and the batch is in the tower"
+        },
+        {
+          "kicker": "Control tower",
+          "title": "Everything that happens, visible in real time"
+        }
+      ]
     }
   },
   "modules": {

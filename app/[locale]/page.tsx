@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { HomeHero } from "@/components/HomeHero";
+import { HeroStory, type StoryScene } from "@/components/HeroStory";
 import { ProblemStats } from "@/components/ProblemStats";
 import { ModuleGrid } from "@/components/ModuleGrid";
 import { JourneyScroll } from "@/components/JourneyScroll";
@@ -21,14 +22,33 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <HomeHero eyebrow={t("hero.eyebrow")}
-        title={t("hero.title")}
-        rotatingWords={t.raw("hero.rotatingWords") as string[]}
-        titleAfter={t("hero.titleAfter")}
-        subtitle={t("hero.subtitle")}
-        primaryCta={{ label: t("hero.ctaPrimary"), href: "/contacto" }}
-        secondaryCta={{ label: t("hero.ctaSecondary"), href: "/plataforma" }}
-        tower={t.raw("hero.tower") as { occupancyLabel: string; transportLabel: string; routeLabel: string; modes: string[] }}
+      <div className="md:hidden">
+        <HomeHero eyebrow={t("hero.eyebrow")}
+          title={t("hero.title")}
+          rotatingWords={t.raw("hero.rotatingWords") as string[]}
+          titleAfter={t("hero.titleAfter")}
+          subtitle={t("hero.subtitle")}
+          primaryCta={{ label: t("hero.ctaPrimary"), href: "/contacto" }}
+          secondaryCta={{ label: t("hero.ctaSecondary"), href: "/plataforma" }}
+          tower={t.raw("hero.tower") as { occupancyLabel: string; transportLabel: string; routeLabel: string; modes: string[] }}
+        />
+      </div>
+      <HeroStory
+        intro={{
+          eyebrow: t("hero.eyebrow"),
+          title: t("hero.title"),
+          rotatingWords: t.raw("hero.rotatingWords") as string[],
+          titleAfter: t("hero.titleAfter"),
+          subtitle: t("hero.subtitle"),
+          primaryCta: { label: t("hero.ctaPrimary"), href: "/contacto" },
+          secondaryCta: { label: t("hero.ctaSecondary"), href: "/plataforma" },
+        }}
+        scenes={(t.raw("story.scenes") as { kicker: string; title: string }[]).map((sc, i): StoryScene => ({
+          ...sc,
+          src: `/hero-story/s${i + 1}.mp4`,
+          poster: `/hero-story/s${i + 1}-poster.webp`,
+        }))}
+        hint={t("story.hint")}
       />
       <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />
       <ProblemStats

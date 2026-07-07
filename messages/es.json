@@ -260,6 +260,43 @@
       "title": "Ponele número a tus fugas",
       "subtitle": "30 minutos con tus propios datos y te mostramos exactamente dónde están tus fugas y cuánto valen.",
       "button": "Agendá tu demo"
+    },
+    "story": {
+      "hint": "Scrolleá para explorar",
+      "scenes": [
+        {
+          "kicker": "La ruta",
+          "title": "Tu operación completa, de punta a punta"
+        },
+        {
+          "kicker": "Ruteo + paletizado",
+          "title": "Sabemos qué entra en cada camión antes de cargarlo"
+        },
+        {
+          "kicker": "Carga al 99%",
+          "title": "La planchada desaparece: viaja producto, no aire"
+        },
+        {
+          "kicker": "Control documental",
+          "title": "El manifiesto se valida solo al llegar al dock"
+        },
+        {
+          "kicker": "Descarga",
+          "title": "Cada pallet baja registrado, sin papeles"
+        },
+        {
+          "kicker": "Almacenamiento",
+          "title": "Cada posición del rack vive en el sistema"
+        },
+        {
+          "kicker": "Trazabilidad",
+          "title": "Un pistoleo y el lote queda en la torre"
+        },
+        {
+          "kicker": "Torre de control",
+          "title": "Todo lo que pasa, visible en tiempo real"
+        }
+      ]
     }
   },
   "modules": {
