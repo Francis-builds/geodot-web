@@ -87,9 +87,12 @@ export const Forklift: React.FC<{
         <boxGeometry args={[0.14, 0.14, 0.14]} />
         <meshBasicMaterial color={C.accent} transparent opacity={blink} />
       </mesh>
-      {/* mástil: dos rieles + travesaños */}
+      {/* mástil dúplex: rieles fijos + etapa interior que asciende con la carga
+          (sin esto, el carro "flotaría" sobre el mástil en estibas altas) */}
       <WireBox size={[0.1, 3.0, 0.14]} position={[-0.38, 1.5, 0.95]} edgeColor={edgeColor} edgeOpacity={0.95} />
       <WireBox size={[0.1, 3.0, 0.14]} position={[0.38, 1.5, 0.95]} edgeColor={edgeColor} edgeOpacity={0.95} />
+      <WireBox size={[0.08, 2.9, 0.1]} position={[-0.28, 1.45 + Math.max(0, forkHeight - 1.4), 0.99]} edgeColor={edgeColor} edgeOpacity={0.8} />
+      <WireBox size={[0.08, 2.9, 0.1]} position={[0.28, 1.45 + Math.max(0, forkHeight - 1.4), 0.99]} edgeColor={edgeColor} edgeOpacity={0.8} />
       <lineSegments geometry={mastLinesGeo} position={[0, 0, 0.95]}>
         <lineBasicMaterial color={edgeColor} transparent opacity={0.6} />
       </lineSegments>
