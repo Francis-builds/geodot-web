@@ -17,15 +17,18 @@ export const S6_DURATION = 192;
 // rack derecho, bahía 2 (z=-1.45), nivel 2 (vigas y=3.8, piso pallet 3.86).
 const TARGET = { x: 4.2, y: 3.86, z: -1.45, bay: 2, level: 2 };
 
-// Timeline: f0-24 aproxima · f24-104 eleva · f104-146 inserta · f146-162 asienta
+// Timeline: f4-26 termina la aproximación DE FRENTE (nada de andar de
+// costado: ya viene girado hacia el rack) · f26-104 eleva · f104-146
+// inserta · f146-162 asienta
 const fkX = (frame: number) => {
+  if (frame <= 26)
+    return interpolate(frame, [4, 26], [0.15, 0.75], { extrapolateLeft: "clamp", easing: Easing.out(Easing.quad) });
   if (frame <= 104) return 0.75;
   if (frame <= 146)
     return interpolate(frame, [104, 146], [0.75, 2.48], { easing: Easing.inOut(Easing.quad) });
   return 2.48;
 };
-const fkZ = (frame: number) =>
-  interpolate(frame, [0, 24], [3.4, TARGET.z], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.quad) });
+const fkZ = (_frame: number) => TARGET.z;
 const forkH = (frame: number) => {
   if (frame <= 24) return 0.25;
   if (frame <= 104) return interpolate(frame, [24, 104], [0.25, 3.92], { easing: Easing.inOut(Easing.cubic) });
