@@ -6,6 +6,7 @@ import * as THREE from "three";
 import { C, MONO } from "../world/tokens";
 import { hash2 } from "../world/hash";
 import { WireBox, CornerBrackets, GroundGrid, DataMotes } from "../world/primitives";
+import { RBox } from "../world/rounded";
 import { Container, CONT_SIZE } from "../world/Container";
 import { Truck, ParkedTrailer } from "../world/Truck";
 
@@ -213,8 +214,8 @@ const Crane: React.FC = () => (
 // Depósitos en el horizonte lateral (contexto, parallax)
 const Warehouse: React.FC<{ x: number }> = ({ x }) => (
   <group position={[x, 0, -40]}>
-    <WireBox size={[26, 9, 70]} position={[0, 4.5, 0]} edgeColor={C.edgeDim} edgeOpacity={0.6} />
-    <WireBox size={[10, 1.6, 60]} position={[0, 9.7, 0]} edgeColor={C.edgeDim} edgeOpacity={0.5} />
+    <RBox r={0.5} size={[26, 9, 70]} position={[0, 4.5, 0]} edgeColor={C.edgeDim} edgeOpacity={0.6} />
+    <RBox r={0.35} size={[10, 1.6, 60]} position={[0, 9.7, 0]} edgeColor={C.edgeDim} edgeOpacity={0.5} />
     {/* portones de dock hacia el yard */}
     <lineSegments
       geometry={(() => {

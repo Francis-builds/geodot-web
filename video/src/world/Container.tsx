@@ -1,13 +1,15 @@
 import React from "react";
 import * as THREE from "three";
+import { roundedSolid, roundedWire } from "./rounded";
 
 // Container 40ft con detalle: panel inset, corrugado (ribs), puertas traseras.
 // Geometrías a nivel módulo: se comparten entre las ~150 instancias del yard.
 const W = 2.6, H = 2.7, L = 12.4;
 export const CONT_SIZE: [number, number, number] = [W, H, L];
 
-const bodyGeo = new THREE.BoxGeometry(W, H, L);
-const edgeGeo = new THREE.EdgesGeometry(bodyGeo);
+// chaflán sutil: los containers SON cajas, pero sin aristas de debug
+const bodyGeo = roundedSolid(W, H, L, 0.09);
+const edgeGeo = roundedWire(W, H, L, 0.09);
 
 const detailGeo = (() => {
   const p: number[] = [];

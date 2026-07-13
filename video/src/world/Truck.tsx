@@ -2,6 +2,7 @@ import React from "react";
 import * as THREE from "three";
 import { C } from "./tokens";
 import { WireBox } from "./primitives";
+import { RBox, roundedSolid, roundedWire } from "./rounded";
 
 // ---- geometrías compartidas ----
 // Neumático: 18 lados, threshold 25° deja SOLO los dos aros (nada de facetas)
@@ -55,10 +56,10 @@ export const Wheel: React.FC<{
 // ---- carga paletizada (12 pallets, wall-to-wall: el claim del 99%) ----
 const palletDeckGeo = new THREE.BoxGeometry(1.08, 0.13, 1.72);
 const palletDeckEdges = new THREE.EdgesGeometry(palletDeckGeo);
-const cargoBoxGeo = new THREE.BoxGeometry(1.02, 1.0, 1.64);
-const cargoBoxEdges = new THREE.EdgesGeometry(cargoBoxGeo);
-const cargoTopGeo = new THREE.BoxGeometry(0.94, 0.5, 1.5);
-const cargoTopEdges = new THREE.EdgesGeometry(cargoTopGeo);
+const cargoBoxGeo = roundedSolid(1.02, 1.0, 1.64, 0.07);
+const cargoBoxEdges = roundedWire(1.02, 1.0, 1.64, 0.07);
+const cargoTopGeo = roundedSolid(0.94, 0.5, 1.5, 0.07);
+const cargoTopEdges = roundedWire(0.94, 0.5, 1.5, 0.07);
 
 const PALLET_Z = [-1.25, -3.15, -5.05, -6.95, -8.85, -10.75];
 
@@ -120,13 +121,20 @@ const truckDetailGeo = (() => {
       p.push(...a, ...b);
     }
   };
-  // parabrisas (frente de cabina, z=2.86)
-  rect("z", 2.87, -1.02, 1.02, 2.4, 3.05);
-  // ventanas laterales de cabina
-  rect("x", 1.27, 0.9, 2.1, 2.35, 3.0);
-  rect("x", -1.27, 0.9, 2.1, 2.35, 3.0);
-  // grilla del capó (z=4.46): 3 líneas horizontales
-  for (const y of [0.85, 1.15, 1.45]) p.push(-0.8, y, 4.47, 0.8, y, 4.47);
+  // parabrisas RASTRILLADO: plano inclinado entre la cintura (y2.42,z2.78)
+  // y el techo retrasado (y3.18,z2.34)
+  p.push(-1.0, 2.42, 2.78, 1.0, 2.42, 2.78);
+  p.push(-1.0, 3.18, 2.34, 1.0, 3.18, 2.34);
+  p.push(-1.0, 2.42, 2.78, -1.0, 3.18, 2.34);
+  p.push(1.0, 2.42, 2.78, 1.0, 3.18, 2.34);
+  // pilares A
+  p.push(-1.22, 2.27, 2.82, -1.18, 3.3, 2.28);
+  p.push(1.22, 2.27, 2.82, 1.18, 3.3, 2.28);
+  // ventanas laterales del glasshouse
+  rect("x", 1.22, 0.55, 2.05, 2.5, 3.15);
+  rect("x", -1.22, 0.55, 2.05, 2.5, 3.15);
+  // grilla del capó: 3 líneas horizontales
+  for (const y of [0.85, 1.15, 1.45]) p.push(-0.72, y, 4.47, 0.72, y, 4.47);
   // panel lateral del trailer (inset) + 2 líneas longitudinales
   for (const s of [-1, 1]) {
     const x = s * 1.295;
@@ -158,14 +166,15 @@ export const Truck: React.FC<{
   const shell = 1 - 0.8 * xray;
   return (
   <group position={position}>
-    {/* paragolpes + capó + cabina + deflector */}
-    <WireBox faceColor={TRUCK_FACE} size={[2.35, 0.4, 0.22]} position={[0, 0.55, 4.55]} edgeColor={edgeColor} edgeOpacity={0.9} />
-    <WireBox faceColor={TRUCK_FACE} faceOpacity={shell} size={[2.15, 1.35, 2.1]} position={[0, 1.25, 3.4]} edgeColor={edgeColor} edgeOpacity={1} />
-    <WireBox faceColor={TRUCK_FACE} faceOpacity={shell} size={[2.5, 2.85, 2.5]} position={[0, 1.9, 1.6]} edgeColor={edgeColor} edgeOpacity={1} />
-    <WireBox faceColor={TRUCK_FACE} size={[2.4, 0.75, 1.4]} position={[0, 3.65, 1.3]} edgeColor={edgeColor} edgeOpacity={0.85} />
-    {/* espejos */}
-    <WireBox faceColor={TRUCK_FACE} size={[0.06, 0.5, 0.26]} position={[-1.5, 2.85, 2.7]} edgeColor={edgeColor} edgeOpacity={0.7} />
-    <WireBox faceColor={TRUCK_FACE} size={[0.06, 0.5, 0.26]} position={[1.5, 2.85, 2.7]} edgeColor={edgeColor} edgeOpacity={0.7} />
+    {/* paragolpes + capó redondeado + cabina baja + glasshouse retrasado + deflector */}
+    <RBox faceColor={TRUCK_FACE} r={0.09} size={[2.35, 0.4, 0.22]} position={[0, 0.55, 4.55]} edgeColor={edgeColor} edgeOpacity={0.9} />
+    <RBox faceColor={TRUCK_FACE} faceOpacity={shell} r={0.24} size={[2.15, 1.3, 2.1]} position={[0, 1.22, 3.4]} edgeColor={edgeColor} edgeOpacity={1} />
+    <RBox faceColor={TRUCK_FACE} faceOpacity={shell} r={0.18} size={[2.5, 1.8, 2.5]} position={[0, 1.37, 1.6]} edgeColor={edgeColor} edgeOpacity={1} />
+    <RBox faceColor={TRUCK_FACE} faceOpacity={shell} r={0.22} size={[2.42, 1.1, 1.9]} position={[0, 2.82, 1.35]} edgeColor={edgeColor} edgeOpacity={1} />
+    <RBox faceColor={TRUCK_FACE} r={0.2} size={[2.3, 0.6, 1.3]} position={[0, 3.62, 0.85]} edgeColor={edgeColor} edgeOpacity={0.85} />
+    {/* espejos (colgados del pilar A) */}
+    <WireBox faceColor={TRUCK_FACE} size={[0.06, 0.5, 0.26]} position={[-1.48, 2.9, 2.45]} edgeColor={edgeColor} edgeOpacity={0.7} />
+    <WireBox faceColor={TRUCK_FACE} size={[0.06, 0.5, 0.26]} position={[1.48, 2.9, 2.45]} edgeColor={edgeColor} edgeOpacity={0.7} />
     {/* chasis + quinta rueda */}
     <WireBox faceColor={TRUCK_FACE} size={[2.0, 0.45, 6.4]} position={[0, 0.8, 0.5]} edgeColor={edgeColor} edgeOpacity={0.65} />
     <WireBox faceColor={TRUCK_FACE} size={[1.1, 0.22, 1.3]} position={[0, 1.12, -0.8]} edgeColor={edgeColor} edgeOpacity={0.65} />
@@ -190,7 +199,7 @@ export const Truck: React.FC<{
     )}
     <Driver reveal={revealAt(1.55)} />
     {/* trailer + patas + faldones + guarda trasera */}
-    <WireBox faceColor={TRUCK_FACE} faceOpacity={shell} size={[2.55, 2.75, 12.2]} position={[0, 2.55, -6.0]} edgeColor={edgeColor} edgeOpacity={1} />
+    <RBox faceColor={TRUCK_FACE} faceOpacity={shell} r={0.14} size={[2.55, 2.75, 12.2]} position={[0, 2.55, -6.0]} edgeColor={edgeColor} edgeOpacity={1} />
     <WireBox faceColor={TRUCK_FACE} size={[0.14, 0.95, 0.14]} position={[-0.9, 0.7, -2.6]} edgeColor={edgeColor} edgeOpacity={0.6} />
     <WireBox faceColor={TRUCK_FACE} size={[0.14, 0.95, 0.14]} position={[0.9, 0.7, -2.6]} edgeColor={edgeColor} edgeOpacity={0.6} />
     <WireBox faceColor={TRUCK_FACE} size={[0.05, 0.7, 4.6]} position={[-1.28, 0.82, -6.6]} edgeColor={edgeColor} edgeOpacity={0.55} />
@@ -223,7 +232,7 @@ export const ParkedTrailer: React.FC<{
   edgeOpacity: number;
 }> = ({ position, edgeColor, faceColor, edgeOpacity }) => (
   <group position={position}>
-    <WireBox size={[2.55, 2.75, 12.2]} position={[0, 2.55, 0]} edgeColor={edgeColor} faceColor={faceColor} edgeOpacity={edgeOpacity} />
+    <RBox r={0.14} size={[2.55, 2.75, 12.2]} position={[0, 2.55, 0]} edgeColor={edgeColor} faceColor={faceColor} edgeOpacity={edgeOpacity} />
     <WireBox size={[0.14, 1.15, 0.14]} position={[-0.9, 0.6, 3.6]} edgeColor={edgeColor} faceColor={faceColor} edgeOpacity={edgeOpacity * 0.7} />
     <WireBox size={[0.14, 1.15, 0.14]} position={[0.9, 0.6, 3.6]} edgeColor={edgeColor} faceColor={faceColor} edgeOpacity={edgeOpacity * 0.7} />
     <Wheel position={[-1.08, 0.5, -3.9]} spin={0} dual edgeColor={edgeColor} opacity={edgeOpacity * 0.7} />
