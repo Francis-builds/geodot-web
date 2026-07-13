@@ -14,12 +14,12 @@ import { Worker } from "../world/Worker";
 
 export const S8_DURATION = 216; // 9s: el gran final respira un poco más
 
-const OFFICE: [number, number, number] = [0, 5.85, -20];
+const OFFICE: [number, number, number] = [-13.4, 5.45, -14];
 
 // fuentes de datos → oficina de la torre (todo lo que pasa, en vivo)
 const SOURCES: [number, number, number][] = [
   [0, 1.2, -33.5], // vano del dock
-  [-10, 4.2, -6], // rack oeste
+  [-10, 4.2, 3], // rack oeste
   [10, 4.2, 2], // rack este
   [2.5, 1.0, 4], // autoelevador
   [-5.2, 1.4, 8], // operario pistoleando
@@ -41,14 +41,14 @@ const CameraRig: React.FC<{ frame: number }> = ({ frame }) => {
   const e = interpolate(frame, [0, S8_DURATION - 1], [0, 1], { easing: Easing.inOut(Easing.cubic) });
   // de la oficina hacia el gran plano general: el depósito entero visible
   camera.position.set(
-    interpolate(e, [0, 1], [-4.5, 15]),
-    interpolate(e, [0, 1], [6.6, 22]),
-    interpolate(e, [0, 1], [-12.5, 25]),
+    interpolate(e, [0, 1], [-6.5, 15]),
+    interpolate(e, [0, 1], [6.2, 22]),
+    interpolate(e, [0, 1], [-14, 25]),
   );
   camera.lookAt(
-    interpolate(e, [0, 1], [0, 0]),
-    interpolate(e, [0, 1], [5.7, 1.8]),
-    interpolate(e, [0, 1], [-20, -12]),
+    interpolate(e, [0, 1], [-13, 0]),
+    interpolate(e, [0, 1], [5.5, 1.8]),
+    interpolate(e, [0, 1], [-14, -12]),
   );
   return null;
 };
@@ -219,12 +219,12 @@ export const S8Tower: React.FC = () => {
         <DockDoor position={[8.5, 0, -33.85]} number="16" open={0} />
         <ParkedTrailer position={[0, -1.175, -41]} edgeColor={C.edgeDim} faceColor="#20304F" edgeOpacity={0.7} faceOpacity={0.4} />
         {/* filas de racks */}
-        <Rack position={[-10, 0, -6]} rotationY={Math.PI / 2} bays={6} levels={3} fill={0.75} seed={21} edgeOpacity={0.6} />
-        <Rack position={[-14.8, 0, -6]} rotationY={Math.PI / 2} bays={6} levels={3} fill={0.7} seed={23} edgeOpacity={0.5} />
+        <Rack position={[-10, 0, 3]} rotationY={Math.PI / 2} bays={6} levels={3} fill={0.75} seed={21} edgeOpacity={0.6} />
+        <Rack position={[-14.8, 0, 5]} rotationY={Math.PI / 2} bays={6} levels={3} fill={0.7} seed={23} edgeOpacity={0.5} />
         <Rack position={[10, 0, -2]} rotationY={Math.PI / 2} bays={6} levels={3} fill={0.72} seed={25} edgeOpacity={0.6} />
         <Rack position={[14.8, 0, -2]} rotationY={Math.PI / 2} bays={6} levels={3} fill={0.68} seed={27} edgeOpacity={0.5} />
         {/* la torre: el ancla */}
-        <ControlTower position={[0, 0, -20]} rotationY={0.2} frame={frame} />
+        <ControlTower position={[-13.2, 0, -14]} rotationY={Math.PI / 2} frame={frame} />
         {/* vida en el piso */}
         <Forklift position={[2.5, 0, fkZ]} rotationY={Math.PI} forkHeight={0.3} pallet frame={frame} edgeColor={C.hero} />
         <Worker position={[-5.2, 0, 8]} rotationY={2.4} pose="scan" frame={frame} />

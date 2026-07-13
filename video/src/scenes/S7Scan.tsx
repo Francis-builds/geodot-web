@@ -17,8 +17,8 @@ export const S7_DURATION = 192;
 // a la torre (fondo) · f126: la torre registra · f150: barra final.
 const SCANNER: [number, number, number] = [-0.31, 1.32, 1.52];
 const BOX: [number, number, number] = [0, 1.15, 0.4];
-const TOWER: [number, number, number] = [-7.5, 0, -26];
-const OFFICE: [number, number, number] = [TOWER[0], 5.85, TOWER[2]];
+const TOWER: [number, number, number] = [-11.5, 0, -18];
+const OFFICE: [number, number, number] = [TOWER[0] - 0.2, 5.45, TOWER[2]];
 
 const beamOn = (frame: number) => frame >= 28 && frame <= 78;
 
@@ -47,9 +47,9 @@ const CameraRig: React.FC<{ frame: number }> = ({ frame }) => {
   // el lookAt deriva hacia la torre cuando el paquete viaja
   const toTower = interpolate(frame, [74, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.inOut(Easing.quad) });
   camera.lookAt(
-    interpolate(toTower, [0, 1], [0.2, -2.2]),
-    interpolate(toTower, [0, 1], [1.2, 3.2]),
-    interpolate(toTower, [0, 1], [0.5, -12]),
+    interpolate(toTower, [0, 1], [0.2, -4.5]),
+    interpolate(toTower, [0, 1], [1.2, 3.8]),
+    interpolate(toTower, [0, 1], [0.5, -11]),
   );
   return null;
 };
@@ -65,9 +65,9 @@ const project = (point: [number, number, number], frame: number, W: number, H: n
   );
   const toTower = interpolate(frame, [74, 110], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.inOut(Easing.quad) });
   projCam.lookAt(
-    interpolate(toTower, [0, 1], [0.2, -2.2]),
-    interpolate(toTower, [0, 1], [1.2, 3.2]),
-    interpolate(toTower, [0, 1], [0.5, -12]),
+    interpolate(toTower, [0, 1], [0.2, -4.5]),
+    interpolate(toTower, [0, 1], [1.2, 3.8]),
+    interpolate(toTower, [0, 1], [0.5, -11]),
   );
   projCam.updateMatrixWorld();
   projCam.updateProjectionMatrix();
@@ -245,9 +245,9 @@ export const S7Scan: React.FC = () => {
         {/* racks de contexto + torre al fondo */}
         <Rack position={[-6.5, 0, -3]} rotationY={Math.PI / 2} bays={4} levels={3} fill={0.7} seed={13} edgeOpacity={0.55} />
         <Rack position={[6.5, 0, -5]} rotationY={Math.PI / 2} bays={4} levels={3} fill={0.6} seed={17} edgeOpacity={0.5} />
-        <ControlTower position={TOWER} rotationY={0.35} frame={frame} />
+        <ControlTower position={TOWER} rotationY={Math.PI / 2} frame={frame} />
         {towerFlash > 0.01 && (
-          <CornerBrackets size={[5.4, 3.0, 3.8]} position={[OFFICE[0], OFFICE[1], OFFICE[2]]} opacity={towerFlash} arm={0.8} />
+          <CornerBrackets size={[3.6, 3.1, 6.8]} position={[OFFICE[0], OFFICE[1], OFFICE[2]]} opacity={towerFlash} arm={0.8} />
         )}
         {/* paquete de datos: scanner → torre, con estela */}
         {pkt &&
