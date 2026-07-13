@@ -84,7 +84,7 @@ const holoPart = (geo: THREE.BufferGeometry, edges: THREE.BufferGeometry, y: num
   </group>
 );
 
-const PalletStack: React.FC<{ x: number; z: number; reveal: number }> = ({ x, z, reveal }) => (
+export const PalletStack: React.FC<{ x: number; z: number; reveal: number }> = ({ x, z, reveal }) => (
   <group position={[x, 0, z]}>
     {holoPart(palletDeckGeo, palletDeckEdges, 1.26, reveal)}
     {holoPart(cargoBoxGeo, cargoBoxEdges, 1.85, reveal)}
@@ -230,9 +230,10 @@ export const ParkedTrailer: React.FC<{
   edgeColor: string;
   faceColor: string;
   edgeOpacity: number;
-}> = ({ position, edgeColor, faceColor, edgeOpacity }) => (
+  faceOpacity?: number; // <1 = trailer de vidrio (escenas de plan de carga)
+}> = ({ position, edgeColor, faceColor, edgeOpacity, faceOpacity = 1 }) => (
   <group position={position}>
-    <RBox r={0.14} size={[2.55, 2.75, 12.2]} position={[0, 2.55, 0]} edgeColor={edgeColor} faceColor={faceColor} edgeOpacity={edgeOpacity} />
+    <RBox r={0.14} size={[2.55, 2.75, 12.2]} position={[0, 2.55, 0]} edgeColor={edgeColor} faceColor={faceColor} edgeOpacity={edgeOpacity} faceOpacity={faceOpacity} />
     <WireBox size={[0.14, 1.15, 0.14]} position={[-0.9, 0.6, 3.6]} edgeColor={edgeColor} faceColor={faceColor} edgeOpacity={edgeOpacity * 0.7} />
     <WireBox size={[0.14, 1.15, 0.14]} position={[0.9, 0.6, 3.6]} edgeColor={edgeColor} faceColor={faceColor} edgeOpacity={edgeOpacity * 0.7} />
     <Wheel position={[-1.08, 0.5, -3.9]} spin={0} dual edgeColor={edgeColor} opacity={edgeOpacity * 0.7} />
