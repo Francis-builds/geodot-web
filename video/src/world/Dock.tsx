@@ -86,9 +86,10 @@ export const DockBay: React.FC<{
   rotationY?: number;
   number?: string;
   open?: number;
+  groundNumber?: boolean; // número también pintado en el asfalto (vistas cenitales)
   edgeColor?: string;
   edgeOpacity?: number;
-}> = ({ position, rotationY = 0, number, open = 0, edgeColor = C.edgeDim, edgeOpacity = 0.8 }) => {
+}> = ({ position, rotationY = 0, number, open = 0, groundNumber = false, edgeColor = C.edgeDim, edgeOpacity = 0.8 }) => {
   const guides = useMemo(() => {
     const p: number[] = [];
     // guías de posicionamiento del trailer sobre el asfalto
@@ -112,6 +113,9 @@ export const DockBay: React.FC<{
       <lineSegments geometry={guides}>
         <lineBasicMaterial color={C.gridMajor} transparent opacity={0.9} />
       </lineSegments>
+      {number && groundNumber && (
+        <PaintedNumber text={number} position={[0, 0.03, 16.4]} size={1.05} plane="floor" color={C.edgeLit} opacity={0.75} />
+      )}
     </group>
   );
 };
