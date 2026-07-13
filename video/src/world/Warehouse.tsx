@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import * as THREE from "three";
 import { C } from "./tokens";
 import { WireBox } from "./primitives";
+import { Figure } from "./Figure";
 import { RBox } from "./rounded";
 import { DockBay } from "./Dock";
 
@@ -136,17 +137,15 @@ const mullionsGeo = (() => {
   return g;
 })();
 
-// operador sentado mirando las pantallas (de espaldas al vidrio no: de cara
-// al piso y a sus monitores)
+// operador sentado en su puesto, de cara al piso y a sus monitores
+const DECK_TOP = DECK_Y + 0.32;
 const SeatedOp: React.FC<{ x: number; edgeColor: string }> = ({ x, edgeColor }) => (
   <group position={[x, 0, 0]}>
-    {/* silla */}
-    <WireBox faceColor="#0D1830" size={[0.42, 0.07, 0.42]} position={[0, DECK_Y + 0.55, -0.15]} edgeColor={C.edgeDim} edgeOpacity={0.6} />
-    <WireBox faceColor="#0D1830" size={[0.42, 0.55, 0.07]} position={[0, DECK_Y + 0.85, -0.38]} edgeColor={C.edgeDim} edgeOpacity={0.6} />
-    <WireBox faceColor="#0D1830" size={[0.08, 0.55, 0.08]} position={[0, DECK_Y + 0.28, -0.15]} edgeColor={C.edgeDim} edgeOpacity={0.5} />
-    {/* torso + cabeza */}
-    <RBox r={0.07} faceColor="#20304F" size={[0.46, 0.58, 0.26]} position={[0, DECK_Y + 0.92, -0.12]} edgeColor={edgeColor} edgeOpacity={0.9} />
-    <RBox r={0.06} faceColor="#20304F" size={[0.23, 0.25, 0.21]} position={[0, DECK_Y + 1.36, -0.12]} edgeColor={edgeColor} edgeOpacity={0.85} />
+    {/* silla (asiento a ~0.45 del entrepiso, como corresponde) */}
+    <WireBox faceColor="#0D1830" size={[0.42, 0.06, 0.42]} position={[0, DECK_TOP + 0.43, -0.35]} edgeColor={C.edgeDim} edgeOpacity={0.6} />
+    <WireBox faceColor="#0D1830" size={[0.42, 0.5, 0.06]} position={[0, DECK_TOP + 0.72, -0.56]} edgeColor={C.edgeDim} edgeOpacity={0.6} />
+    <WireBox faceColor="#0D1830" size={[0.07, 0.43, 0.07]} position={[0, DECK_TOP + 0.21, -0.35]} edgeColor={C.edgeDim} edgeOpacity={0.5} />
+    <Figure pose="sit" position={[0, DECK_TOP + 0.46, -0.35]} edgeColor={edgeColor} />
   </group>
 );
 
@@ -214,11 +213,11 @@ export const ControlTower: React.FC<{
         <lineBasicMaterial color={edgeColor} transparent opacity={0.5} />
       </lineSegments>
       {/* escritorio corrido contra el vidrio + panel frontal */}
-      <WireBox faceColor="#0D1830" size={[5.4, 0.07, 0.75]} position={[0, DECK_Y + 0.78, 0.55]} edgeColor={C.edgeDim} edgeOpacity={0.8} />
-      <WireBox faceColor="#0D1830" size={[5.4, 0.55, 0.06]} position={[0, DECK_Y + 0.48, 0.9]} edgeColor={C.edgeDim} edgeOpacity={0.6} />
+      <WireBox faceColor="#0D1830" size={[5.4, 0.07, 0.75]} position={[0, DECK_Y + 1.06, 0.55]} edgeColor={C.edgeDim} edgeOpacity={0.8} />
+      <WireBox faceColor="#0D1830" size={[5.4, 0.7, 0.06]} position={[0, DECK_Y + 0.72, 0.9]} edgeColor={C.edgeDim} edgeOpacity={0.6} />
       {/* monitores encendidos (visibles de ambos lados, estilización asumida) */}
       {[-1.9, -0.65, 0.65, 1.9].map((x) => (
-        <mesh key={x} position={[x, DECK_Y + 1.12, 0.72]} rotation={[-0.12, 0, 0]} renderOrder={3}>
+        <mesh key={x} position={[x, DECK_Y + 1.42, 0.72]} rotation={[-0.12, 0, 0]} renderOrder={3}>
           <planeGeometry args={[0.8, 0.48]} />
           <meshBasicMaterial color={C.accent} transparent opacity={0.45} side={THREE.DoubleSide} depthWrite={false} />
         </mesh>

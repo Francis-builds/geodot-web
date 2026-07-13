@@ -15,7 +15,7 @@ export const S7_DURATION = 192;
 // Pallet en origen; operario a +z apuntando el lector al bulto.
 // f28: haz ON + brackets · f40: cota LOT · f74-124: paquete de datos vuela
 // a la torre (fondo) · f126: la torre registra · f150: barra final.
-const SCANNER: [number, number, number] = [-0.31, 1.32, 1.52];
+const SCANNER: [number, number, number] = [-0.315, 1.31, 1.55];
 const BOX: [number, number, number] = [0, 1.15, 0.4];
 const TOWER: [number, number, number] = [-11.5, 0, -18];
 const OFFICE: [number, number, number] = [TOWER[0] - 0.2, 5.45, TOWER[2]];

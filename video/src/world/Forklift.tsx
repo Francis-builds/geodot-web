@@ -4,6 +4,7 @@ import { C } from "./tokens";
 import { WireBox } from "./primitives";
 import { RBox } from "./rounded";
 import { PalletStack } from "./Truck";
+import { Figure } from "./Figure";
 
 // ---- ruedas chicas de autoelevador ----
 const fkTireGeo = new THREE.CylinderGeometry(0.3, 0.3, 0.24, 14);
@@ -47,13 +48,7 @@ const backrestGeo = (() => {
   return g;
 })();
 
-// Operario sentado (estilizado, sin rostro)
-const Operator: React.FC<{ edgeColor: string }> = ({ edgeColor }) => (
-  <group>
-    <WireBox size={[0.42, 0.5, 0.28]} position={[0, 1.28, -0.28]} edgeColor={edgeColor} edgeOpacity={0.8} />
-    <WireBox size={[0.22, 0.24, 0.2]} position={[0, 1.68, -0.28]} edgeColor={edgeColor} edgeOpacity={0.8} />
-  </group>
-);
+
 
 // Autoelevador contrabalanceado. EXACTAMENTE DOS uñas.
 // Origen: piso, centro del chasis. Frente (mástil) hacia +z.
@@ -76,7 +71,7 @@ export const Forklift: React.FC<{
       <WireBox faceColor="#20304F" size={[0.48, 0.1, 0.45]} position={[0, 1.2, -0.3]} edgeColor={edgeColor} edgeOpacity={0.7} />
       <WireBox faceColor="#20304F" size={[0.48, 0.5, 0.09]} position={[0, 1.5, -0.55]} edgeColor={edgeColor} edgeOpacity={0.7} />
       <WireBox faceColor="#20304F" size={[0.3, 0.05, 0.2]} position={[0, 1.32, 0.28]} edgeColor={edgeColor} edgeOpacity={0.6} />
-      {operator && <Operator edgeColor={edgeColor} />}
+      {operator && <Figure pose="sit" position={[0, 1.26, -0.3]} helmet edgeColor={edgeColor} />}
       {/* pórtico de seguridad (ROPS) */}
       {([[-0.52, 0.52], [0.52, 0.52], [-0.52, -0.62], [0.52, -0.62]] as const).map(([x, z]) => (
         <WireBox key={`${x}${z}`} size={[0.07, 1.2, 0.07]} position={[x, 1.9, z]} edgeColor={edgeColor} edgeOpacity={0.75} />

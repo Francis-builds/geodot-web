@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { C } from "./tokens";
 import { WireBox } from "./primitives";
 import { RBox, roundedSolid, roundedWire } from "./rounded";
+import { Figure } from "./Figure";
 
 // ---- geometrías compartidas ----
 // Neumático: 18 lados, threshold 25° deja SOLO los dos aros (nada de facetas)
@@ -92,21 +93,7 @@ export const PalletStack: React.FC<{ x: number; z: number; reveal: number }> = (
   </group>
 );
 
-// Chofer estilizado (sin detalle facial, DS E+F): torso + cabeza en la butaca
-const torsoGeo = new THREE.BoxGeometry(0.5, 0.62, 0.34);
-const torsoEdges = new THREE.EdgesGeometry(torsoGeo);
-const headGeo = new THREE.BoxGeometry(0.26, 0.28, 0.24);
-const headEdges = new THREE.EdgesGeometry(headGeo);
 
-const Driver: React.FC<{ reveal: number }> = ({ reveal }) => {
-  if (reveal <= 0.01) return null;
-  return (
-    <group position={[-0.55, 0, 1.55]}>
-      {holoPart(torsoGeo, torsoEdges, 2.32, reveal, "torso")}
-      {holoPart(headGeo, headEdges, 2.82, reveal, "head")}
-    </group>
-  );
-};
 
 // Líneas de detalle del tractor + trailer (parabrisas, ventanas, grilla, puertas)
 const truckDetailGeo = (() => {
@@ -197,7 +184,7 @@ export const Truck: React.FC<{
         return a > 0.01 ? <PalletStack key={`${x}-${z}`} x={x} z={z} reveal={a} /> : null;
       }),
     )}
-    <Driver reveal={revealAt(1.55)} />
+    <Figure pose="sit" position={[-0.55, 2.02, 1.4]} edgeColor={edgeColor} />
     {/* trailer + patas + faldones + guarda trasera */}
     <RBox faceColor={TRUCK_FACE} faceOpacity={shell} r={0.14} size={[2.55, 2.75, 12.2]} position={[0, 2.55, -6.0]} edgeColor={edgeColor} edgeOpacity={1} />
     <WireBox faceColor={TRUCK_FACE} size={[0.14, 0.95, 0.14]} position={[-0.9, 0.7, -2.6]} edgeColor={edgeColor} edgeOpacity={0.6} />
