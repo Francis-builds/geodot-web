@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig, Easing } from "remotion";
 import { ThreeCanvas } from "@remotion/three";
 import { useThree } from "@react-three/fiber";
@@ -32,6 +32,20 @@ const truckZ = (frame: number) => interpolate(frame, [0, S1_DURATION - 1], [-46,
 const lerpColor = (a: string, b: string, t: number) =>
   "#" + new THREE.Color(a).lerp(new THREE.Color(b), t).getHexString();
 
+// Progreso con rampas coseno (C1) en ambos extremos: velocidad 0 al inicio y
+// al final, velocidad constante en el medio. Evita el arranque en seco de la
+// cámara y deja los extremos quietos (mejor para los crossfades del scrub).
+const rampedProgress = (frame: number, total: number, ramp: number) => {
+  const T = total - 1;
+  const f = Math.min(Math.max(frame, 0), T);
+  const easeIn = (x: number) => 0.5 * x - (ramp / (2 * Math.PI)) * Math.sin((Math.PI * x) / ramp);
+  let dist: number;
+  if (f < ramp) dist = easeIn(f);
+  else if (f <= T - ramp) dist = easeIn(ramp) + (f - ramp);
+  else dist = T - ramp - easeIn(T - f);
+  return dist / (T - ramp);
+};
+
 const litAt = (frame: number, z: number) =>
   interpolate(sweepZ(frame) - z, [-4, 5], [0, 1], {
     extrapolateLeft: "clamp",
@@ -40,21 +54,28 @@ const litAt = (frame: number, z: number) =>
 
 const CameraRig: React.FC<{ frame: number }> = ({ frame }) => {
   const { camera } = useThree();
-  useEffect(() => {
-    (camera as THREE.PerspectiveCamera).fov = 30;
-    camera.updateProjectionMatrix();
-  }, [camera]);
+  // fov en el render path, NUNCA en useEffect: los effects corren después de
+  // que Remotion captura los primeros frames del chunk → salto de fov 75→30
+  const cam = camera as THREE.PerspectiveCamera;
+  if (cam.fov !== 30) {
+    cam.fov = 30;
+    cam.updateProjectionMatrix();
+  }
   const e = interpolate(frame, [0, S1_DURATION - 1], [0, 1], {
     easing: Easing.inOut(Easing.cubic),
   });
-  const tz = truckZ(frame);
+  // la cámara sigue su PROPIO track suavizado (no va atada al camión: eso
+  // transmitía el arranque en seco del follow); el camión deriva ±3m en cuadro
+  // durante las rampas, como un operador que lo alcanza
+  const pz = rampedProgress(frame, S1_DURATION, 24);
+  const tzSmooth = interpolate(pz, [0, 1], [-46, 10]);
   // vista torre de control: cámara alta 3/4 que sigue al camión — nada la ocluye
   camera.position.set(
     interpolate(e, [0, 1], [-19, -11]),
     interpolate(e, [0, 1], [41, 31]),
-    tz + interpolate(e, [0, 1], [34, 28]),
+    tzSmooth + interpolate(e, [0, 1], [34, 28]),
   );
-  camera.lookAt(0, 0, tz - 5);
+  camera.lookAt(0, 0, tzSmooth - 5);
   return null;
 };
 
