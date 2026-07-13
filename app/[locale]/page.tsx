@@ -48,6 +48,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           src: `/hero-story/s${i + 1}.mp4`,
           poster: `/hero-story/s${i + 1}-poster.webp`,
         }))}
+        bridges={["/hero-story/t1.mp4", null, "/hero-story/t3.mp4", "/hero-story/t4.mp4", "/hero-story/t5.mp4", "/hero-story/t6.mp4", "/hero-story/t7.mp4"]}
         hint={t("story.hint")}
       />
       <MetricsBand items={t.raw("metrics") as { value: number; suffix?: string; label: string }[]} />
