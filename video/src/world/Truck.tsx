@@ -52,6 +52,61 @@ export const Wheel: React.FC<{
   </group>
 );
 
+// ---- carga paletizada (12 pallets, wall-to-wall: el claim del 99%) ----
+const palletDeckGeo = new THREE.BoxGeometry(1.08, 0.13, 1.72);
+const palletDeckEdges = new THREE.EdgesGeometry(palletDeckGeo);
+const cargoBoxGeo = new THREE.BoxGeometry(1.02, 1.0, 1.64);
+const cargoBoxEdges = new THREE.EdgesGeometry(cargoBoxGeo);
+const cargoTopGeo = new THREE.BoxGeometry(0.94, 0.5, 1.5);
+const cargoTopEdges = new THREE.EdgesGeometry(cargoTopGeo);
+
+const PALLET_Z = [-1.25, -3.15, -5.05, -6.95, -8.85, -10.75];
+
+// La carga y el chofer son DATOS descubiertos: renderOrder por encima de la
+// carrocería translúcida (si no, la pared los tiñe al asentarse y la cascada
+// se lee al revés: los mid-reveal brillan y los revelados se apagan).
+const holoPart = (geo: THREE.BufferGeometry, edges: THREE.BufferGeometry, y: number, reveal: number, key?: React.Key) => (
+  <group key={key} position={[0, y, 0]}>
+    <mesh geometry={geo} renderOrder={2}>
+      <meshBasicMaterial
+        color="#182742"
+        transparent
+        opacity={reveal * 0.92}
+        polygonOffset
+        polygonOffsetFactor={2}
+        polygonOffsetUnits={2}
+      />
+    </mesh>
+    <lineSegments geometry={edges} renderOrder={3}>
+      <lineBasicMaterial color={C.edgeLit} transparent opacity={reveal * 0.95} depthWrite={false} />
+    </lineSegments>
+  </group>
+);
+
+const PalletStack: React.FC<{ x: number; z: number; reveal: number }> = ({ x, z, reveal }) => (
+  <group position={[x, 0, z]}>
+    {holoPart(palletDeckGeo, palletDeckEdges, 1.26, reveal)}
+    {holoPart(cargoBoxGeo, cargoBoxEdges, 1.85, reveal)}
+    {holoPart(cargoTopGeo, cargoTopEdges, 2.62, reveal)}
+  </group>
+);
+
+// Chofer estilizado (sin detalle facial, DS E+F): torso + cabeza en la butaca
+const torsoGeo = new THREE.BoxGeometry(0.5, 0.62, 0.34);
+const torsoEdges = new THREE.EdgesGeometry(torsoGeo);
+const headGeo = new THREE.BoxGeometry(0.26, 0.28, 0.24);
+const headEdges = new THREE.EdgesGeometry(headGeo);
+
+const Driver: React.FC<{ reveal: number }> = ({ reveal }) => {
+  if (reveal <= 0.01) return null;
+  return (
+    <group position={[-0.55, 0, 1.55]}>
+      {holoPart(torsoGeo, torsoEdges, 2.32, reveal, "torso")}
+      {holoPart(headGeo, headEdges, 2.82, reveal, "head")}
+    </group>
+  );
+};
+
 // Líneas de detalle del tractor + trailer (parabrisas, ventanas, grilla, puertas)
 const truckDetailGeo = (() => {
   const p: number[] = [];
@@ -97,12 +152,16 @@ export const Truck: React.FC<{
   position: [number, number, number];
   wheelSpin: number;
   edgeColor?: string;
-}> = ({ position, wheelSpin, edgeColor = C.hero }) => (
+  xray?: number; // 0..1: caras de cabina/trailer se vuelven translúcidas
+  revealAt?: (localZ: number) => number; // reveal de carga/chofer según z local
+}> = ({ position, wheelSpin, edgeColor = C.hero, xray = 0, revealAt = () => 0 }) => {
+  const shell = 1 - 0.8 * xray;
+  return (
   <group position={position}>
     {/* paragolpes + capó + cabina + deflector */}
     <WireBox faceColor={TRUCK_FACE} size={[2.35, 0.4, 0.22]} position={[0, 0.55, 4.55]} edgeColor={edgeColor} edgeOpacity={0.9} />
-    <WireBox faceColor={TRUCK_FACE} size={[2.15, 1.35, 2.1]} position={[0, 1.25, 3.4]} edgeColor={edgeColor} edgeOpacity={1} />
-    <WireBox faceColor={TRUCK_FACE} size={[2.5, 2.85, 2.5]} position={[0, 1.9, 1.6]} edgeColor={edgeColor} edgeOpacity={1} />
+    <WireBox faceColor={TRUCK_FACE} faceOpacity={shell} size={[2.15, 1.35, 2.1]} position={[0, 1.25, 3.4]} edgeColor={edgeColor} edgeOpacity={1} />
+    <WireBox faceColor={TRUCK_FACE} faceOpacity={shell} size={[2.5, 2.85, 2.5]} position={[0, 1.9, 1.6]} edgeColor={edgeColor} edgeOpacity={1} />
     <WireBox faceColor={TRUCK_FACE} size={[2.4, 0.75, 1.4]} position={[0, 3.65, 1.3]} edgeColor={edgeColor} edgeOpacity={0.85} />
     {/* espejos */}
     <WireBox faceColor={TRUCK_FACE} size={[0.06, 0.5, 0.26]} position={[-1.5, 2.85, 2.7]} edgeColor={edgeColor} edgeOpacity={0.7} />
@@ -122,8 +181,16 @@ export const Truck: React.FC<{
         </lineSegments>
       </group>
     ))}
+    {/* carga y chofer: existen siempre, el barrido los "descubre" */}
+    {PALLET_Z.map((z) =>
+      [-0.62, 0.62].map((x) => {
+        const a = revealAt(z);
+        return a > 0.01 ? <PalletStack key={`${x}-${z}`} x={x} z={z} reveal={a} /> : null;
+      }),
+    )}
+    <Driver reveal={revealAt(1.55)} />
     {/* trailer + patas + faldones + guarda trasera */}
-    <WireBox faceColor={TRUCK_FACE} size={[2.55, 2.75, 12.2]} position={[0, 2.55, -6.0]} edgeColor={edgeColor} edgeOpacity={1} />
+    <WireBox faceColor={TRUCK_FACE} faceOpacity={shell} size={[2.55, 2.75, 12.2]} position={[0, 2.55, -6.0]} edgeColor={edgeColor} edgeOpacity={1} />
     <WireBox faceColor={TRUCK_FACE} size={[0.14, 0.95, 0.14]} position={[-0.9, 0.7, -2.6]} edgeColor={edgeColor} edgeOpacity={0.6} />
     <WireBox faceColor={TRUCK_FACE} size={[0.14, 0.95, 0.14]} position={[0.9, 0.7, -2.6]} edgeColor={edgeColor} edgeOpacity={0.6} />
     <WireBox faceColor={TRUCK_FACE} size={[0.05, 0.7, 4.6]} position={[-1.28, 0.82, -6.6]} edgeColor={edgeColor} edgeOpacity={0.55} />
@@ -145,7 +212,8 @@ export const Truck: React.FC<{
     <Wheel position={[-1.08, 0.5, -10.9]} spin={wheelSpin} dual edgeColor={edgeColor} />
     <Wheel position={[1.08, 0.5, -10.9]} spin={wheelSpin} dual edgeColor={edgeColor} />
   </group>
-);
+  );
+};
 
 // Trailer estacionado (sin tractor): para darle vida a slots del yard
 export const ParkedTrailer: React.FC<{

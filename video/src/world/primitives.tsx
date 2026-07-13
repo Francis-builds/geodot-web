@@ -13,7 +13,8 @@ export const WireBox: React.FC<{
   edgeColor?: string;
   edgeOpacity?: number;
   faceColor?: string;
-}> = ({ size, position, rotationY = 0, edgeColor = C.edgeLit, edgeOpacity = 0.9, faceColor = C.face }) => {
+  faceOpacity?: number; // <1 = modo rayos X: caras translúcidas sin depthWrite
+}> = ({ size, position, rotationY = 0, edgeColor = C.edgeLit, edgeOpacity = 0.9, faceColor = C.face, faceOpacity = 1 }) => {
   const { box, edges } = useMemo(() => {
     const box = new THREE.BoxGeometry(size[0], size[1], size[2]);
     const edges = new THREE.EdgesGeometry(box);
@@ -23,7 +24,15 @@ export const WireBox: React.FC<{
   return (
     <group position={position} rotation={[0, rotationY, 0]}>
       <mesh geometry={box}>
-        <meshBasicMaterial color={faceColor} polygonOffset polygonOffsetFactor={2} polygonOffsetUnits={2} />
+        <meshBasicMaterial
+          color={faceColor}
+          transparent={faceOpacity < 1}
+          opacity={faceOpacity}
+          depthWrite={faceOpacity >= 1}
+          polygonOffset
+          polygonOffsetFactor={2}
+          polygonOffsetUnits={2}
+        />
       </mesh>
       <lineSegments geometry={edges}>
         <lineBasicMaterial color={edgeColor} transparent opacity={edgeOpacity} />

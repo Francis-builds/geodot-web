@@ -52,6 +52,44 @@ const litAt = (frame: number, z: number) =>
     extrapolateRight: "clamp",
   });
 
+// Track de cámara compartido entre el rig y la proyección de las cotas
+const cameraAt = (frame: number) => {
+  const e = interpolate(frame, [0, S1_DURATION - 1], [0, 1], {
+    easing: Easing.inOut(Easing.cubic),
+  });
+  // la cámara sigue su PROPIO track suavizado (no va atada al camión: eso
+  // transmitía el arranque en seco del follow); el camión deriva ±3m en cuadro
+  // durante las rampas, como un operador que lo alcanza
+  const pz = rampedProgress(frame, S1_DURATION, 24);
+  const tzSmooth = interpolate(pz, [0, 1], [-46, 10]);
+  return {
+    pos: [
+      interpolate(e, [0, 1], [-19, -11]),
+      interpolate(e, [0, 1], [41, 31]),
+      tzSmooth + interpolate(e, [0, 1], [34, 28]),
+    ] as const,
+    look: [0, 0, tzSmooth - 5] as const,
+  };
+};
+
+// Cámara "de cálculo" para proyectar puntos 3D a pantalla (cotas del HUD)
+const projCam = new THREE.PerspectiveCamera(30, 16 / 9, 0.1, 1000);
+const projectToScreen = (
+  point: [number, number, number],
+  frame: number,
+  width: number,
+  height: number,
+) => {
+  const { pos, look } = cameraAt(frame);
+  projCam.aspect = width / height;
+  projCam.position.set(pos[0], pos[1], pos[2]);
+  projCam.lookAt(look[0], look[1], look[2]);
+  projCam.updateMatrixWorld();
+  projCam.updateProjectionMatrix();
+  const v = new THREE.Vector3(point[0], point[1], point[2]).project(projCam);
+  return { x: (v.x * 0.5 + 0.5) * width, y: (-v.y * 0.5 + 0.5) * height };
+};
+
 const CameraRig: React.FC<{ frame: number }> = ({ frame }) => {
   const { camera } = useThree();
   // fov en el render path, NUNCA en useEffect: los effects corren después de
@@ -61,21 +99,9 @@ const CameraRig: React.FC<{ frame: number }> = ({ frame }) => {
     cam.fov = 30;
     cam.updateProjectionMatrix();
   }
-  const e = interpolate(frame, [0, S1_DURATION - 1], [0, 1], {
-    easing: Easing.inOut(Easing.cubic),
-  });
-  // la cámara sigue su PROPIO track suavizado (no va atada al camión: eso
-  // transmitía el arranque en seco del follow); el camión deriva ±3m en cuadro
-  // durante las rampas, como un operador que lo alcanza
-  const pz = rampedProgress(frame, S1_DURATION, 24);
-  const tzSmooth = interpolate(pz, [0, 1], [-46, 10]);
-  // vista torre de control: cámara alta 3/4 que sigue al camión — nada la ocluye
-  camera.position.set(
-    interpolate(e, [0, 1], [-19, -11]),
-    interpolate(e, [0, 1], [41, 31]),
-    tzSmooth + interpolate(e, [0, 1], [34, 28]),
-  );
-  camera.lookAt(0, 0, tzSmooth - 5);
+  const { pos, look } = cameraAt(frame);
+  camera.position.set(pos[0], pos[1], pos[2]);
+  camera.lookAt(look[0], look[1], look[2]);
   return null;
 };
 
@@ -285,6 +311,94 @@ const LaneMarks: React.FC = () => (
   </group>
 );
 
+// ---- cotas de ingeniería sobre el camión (leader lines + tooltips) ----
+// El haz cruza el camión de atrás (trailer, ~f92) hacia adelante (cabina, ~f116):
+// las cotas aparecen en ese orden físico.
+type CalloutDef = {
+  local: [number, number, number]; // ancla en coordenadas del camión
+  at: number; // frame de aparición
+  dx: number; // offset del label en px (base 1080)
+  dy: number;
+  prefix: string;
+  value: string;
+};
+
+const CALLOUTS: CalloutDef[] = [
+  { local: [0, 4.05, -6.0], at: 106, dx: 190, dy: -100, prefix: "MFT", value: "#88412 · 12 PLT" },
+  { local: [-0.55, 2.85, 1.55], at: 120, dx: -140, dy: -185, prefix: "DRV", value: "R. GÓMEZ" },
+  { local: [0, 1.5, 4.2], at: 130, dx: -190, dy: 90, prefix: "TRK", value: "#114 · FLT 07" },
+];
+
+const Callouts: React.FC<{ frame: number; tz: number }> = ({ frame, tz }) => {
+  const { width, height } = useVideoConfig();
+  const u = height / 1080;
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none" }}>
+      <svg width={width} height={height} style={{ position: "absolute", inset: 0 }}>
+        {CALLOUTS.map((c) => {
+          const a = interpolate(frame, [c.at, c.at + 10], [0, 1], {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          });
+          if (a <= 0) return null;
+          const anchor = projectToScreen([c.local[0], c.local[1], c.local[2] + tz], frame, width, height);
+          const ex = anchor.x + c.dx * u;
+          const ey = anchor.y + c.dy * u;
+          const elbowX = ex - Math.sign(c.dx) * 34 * u;
+          // la línea se "dibuja" con el fade
+          return (
+            <g key={c.prefix} opacity={a * 0.85}>
+              <circle cx={anchor.x} cy={anchor.y} r={4 * u} fill={C.accent} />
+              <polyline
+                points={`${anchor.x},${anchor.y} ${anchor.x + (elbowX - anchor.x) * a},${anchor.y + (ey - anchor.y) * a} ${anchor.x + (ex - anchor.x) * a},${anchor.y + (ey - anchor.y) * a}`}
+                fill="none"
+                stroke={C.accent}
+                strokeWidth={1.5 * u}
+              />
+            </g>
+          );
+        })}
+      </svg>
+      {CALLOUTS.map((c) => {
+        const a = interpolate(frame, [c.at + 4, c.at + 14], [0, 1], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        });
+        if (a <= 0) return null;
+        const anchor = projectToScreen([c.local[0], c.local[1], c.local[2] + tz], frame, width, height);
+        const ex = anchor.x + c.dx * u;
+        const ey = anchor.y + c.dy * u;
+        return (
+          <div
+            key={c.prefix}
+            style={{
+              position: "absolute",
+              left: ex + (c.dx > 0 ? 8 * u : -8 * u),
+              top: ey,
+              transform: `translateY(-50%) ${c.dx > 0 ? "" : "translateX(-100%)"}`,
+              opacity: a,
+              fontFamily: MONO,
+              fontSize: 17 * u,
+              letterSpacing: "0.16em",
+              whiteSpace: "nowrap",
+              color: C.text,
+              background: "#080F1FCC",
+              border: `1px solid ${C.accent}55`,
+              padding: `${9 * u}px ${16 * u}px`,
+              display: "flex",
+              alignItems: "center",
+              gap: 12 * u,
+            }}
+          >
+            <span style={{ color: C.textDim }}>{c.prefix}</span>
+            {c.value}
+          </div>
+        );
+      })}
+    </AbsoluteFill>
+  );
+};
+
 // ---- HUD (pantalla, mono, estilo telemetría) ----
 const Hud: React.FC<{ frame: number }> = ({ frame }) => {
   const { height } = useVideoConfig();
@@ -294,7 +408,7 @@ const Hud: React.FC<{ frame: number }> = ({ frame }) => {
   const scanned = Math.round(
     interpolate(frame, [SWEEP_START, SWEEP_END], [0, total], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
   );
-  const barIn = interpolate(frame, [104, 118], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const barIn = interpolate(frame, [138, 152], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   const chip: React.CSSProperties = {
     fontFamily: MONO,
@@ -355,8 +469,22 @@ export const S1Yard: React.FC = () => {
   const tz = truckZ(frame);
   const wheelSpin = (tz + 46) / 0.5;
 
-  // el barrido cruza al camión ~f103 → aparecen brackets + barra HUD
-  const truckSweepLit = interpolate(sweepZ(frame) - tz, [-2, 4], [0, 1], {
+  // offset del haz respecto del camión: cruza el trailer trasero (~f92)
+  // y llega a la cabina (~f116)
+  const beamOffset = sweepZ(frame) - tz;
+  // X-ray: las paredes se vuelven translúcidas cuando el haz ENTRA al trailer,
+  // para que la cascada de pallets sea visible desde el primero
+  const xray = interpolate(beamOffset, [-12.5, -7], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  // reveal por z local: cada pallet (y el chofer) aparece cuando el haz lo toca
+  const revealAt = (localZ: number) =>
+    interpolate(beamOffset - localZ, [-0.5, 1.8], [0, 1], {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    });
+  const truckSweepLit = interpolate(beamOffset, [-2, 4], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -382,7 +510,7 @@ export const S1Yard: React.FC = () => {
         <Fence />
         <Gate frame={frame} />
         <group>
-          <Truck position={[0, 0, tz]} wheelSpin={wheelSpin} />
+          <Truck position={[0, 0, tz]} wheelSpin={wheelSpin} xray={xray} revealAt={revealAt} />
           {truckSweepLit > 0.01 && (
             <CornerBrackets size={[3.4, 4.6, 17.5]} position={[0, 2.2, tz - 2.6]} opacity={bracketPulse} arm={1.1} />
           )}
@@ -390,6 +518,7 @@ export const S1Yard: React.FC = () => {
         <SweepPlane frame={frame} />
         <DataMotes frame={frame} />
       </ThreeCanvas>
+      <Callouts frame={frame} tz={tz} />
       <Hud frame={frame} />
       <Vignette />
     </AbsoluteFill>
