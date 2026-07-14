@@ -126,11 +126,63 @@ const Callout: React.FC<{ frame: number }> = ({ frame }) => {
   );
 };
 
+// al llegar el paquete, la torre CRUZA el dato contra los documentos:
+// manifiesto, remito, stock — el check aparece anclado a la oficina
+const DOC_CHECKS: { at: number; label: string }[] = [
+  { at: 128, label: "MFT #88412" },
+  { at: 138, label: "DOC 4512" },
+  { at: 148, label: "STK +1" },
+];
+
+const DocCheck: React.FC<{ frame: number }> = ({ frame }) => {
+  const { width, height } = useVideoConfig();
+  const u = height / 1080;
+  const panelIn = interpolate(frame, [124, 136], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  if (panelIn <= 0) return null;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        right: 84 * u,
+        top: "38%",
+        opacity: panelIn,
+        transform: `translateY(${(1 - panelIn) * 12 * u}px)`,
+        fontFamily: MONO,
+        border: `1px solid ${C.accent}44`,
+        background: "#080F1FC8",
+        padding: `${14 * u}px ${20 * u}px`,
+        display: "flex",
+        flexDirection: "column",
+        gap: 11 * u,
+      }}
+    >
+      {DOC_CHECKS.map((c) => {
+        const on = interpolate(frame, [c.at, c.at + 8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+        return (
+          <div key={c.label} style={{ display: "flex", alignItems: "center", gap: 12 * u, fontSize: 16 * u, letterSpacing: "0.18em" }}>
+            <span
+              style={{
+                width: 11 * u,
+                height: 11 * u,
+                border: `1.5px solid ${on > 0 ? C.accent : C.textDim}`,
+                background: on > 0.5 ? C.accent : "transparent",
+                display: "inline-block",
+              }}
+            />
+            <span style={{ color: on > 0.5 ? C.text : C.textDim }}>{c.label}</span>
+            <span style={{ color: C.accent, opacity: on, marginLeft: "auto", paddingLeft: 14 * u }}>OK</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 const Hud: React.FC<{ frame: number }> = ({ frame }) => {
   const { height } = useVideoConfig();
   const u = height / 1080;
   const fadeIn = interpolate(frame, [10, 28], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const barIn = interpolate(frame, [150, 164], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const barIn = interpolate(frame, [162, 176], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const chip: React.CSSProperties = {
     fontFamily: MONO,
     fontSize: 19 * u,
@@ -162,7 +214,7 @@ const Hud: React.FC<{ frame: number }> = ({ frame }) => {
         }}
       >
         <span style={{ width: 9 * u, height: 9 * u, background: C.accent }} />
-        LOT A-4471 → TORRE · LIVE
+        LOT A-4471 · DOC CHECK OK · 0 PAPEL
       </div>
     </AbsoluteFill>
   );
@@ -264,6 +316,7 @@ export const S7Scan: React.FC = () => {
         <DataMotes frame={frame} count={40} />
       </ThreeCanvas>
       <Callout frame={frame} />
+      <DocCheck frame={frame} />
       <Hud frame={frame} />
       <Vignette />
     </AbsoluteFill>

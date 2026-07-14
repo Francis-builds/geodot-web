@@ -114,6 +114,7 @@ const Hud: React.FC<{ frame: number }> = ({ frame }) => {
     { at: 70, label: "OCC 99%" },
     { at: 92, label: "POS 128/128" },
     { at: 114, label: "TRK 12 LIVE" },
+    { at: 136, label: "DOCS 47/47" },
   ];
   const barIn = interpolate(frame, [178, 194], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const chip: React.CSSProperties = {
