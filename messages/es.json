@@ -278,7 +278,7 @@
         },
         {
           "kicker": "Control documental",
-          "title": "El manifiesto se valida solo al llegar al dock"
+          "title": "El manifiesto se valida automáticamente al llegar al dock"
         },
         {
           "kicker": "Descarga",
