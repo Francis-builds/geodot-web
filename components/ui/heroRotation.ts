@@ -7,7 +7,7 @@ import { useSyncExternalStore } from "react";
  * The timer starts with the first subscriber and stops with the last; under
  * reduced motion components subscribe to a no-op and stay at index 0.
  */
-const CYCLE = 5; // camiones · barcos · containers · aviones · vagones
+const CYCLE = 3; // camiones · barcos · contenedores (air/rail are roadmap, not shown)
 export const HOLD_MS = 2400;
 
 let index = 0;

@@ -5,6 +5,9 @@ import { CTABanner } from "@/components/CTABanner";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { pageMeta } from "@/lib/seo";
 
+// Demos and typical scenarios never read as achieved results: each kind gets its own label.
+const RESULT_LABEL = { real: "result", demo: "shown", scenario: "scenario" } as const;
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "casesPage" });
@@ -23,7 +26,7 @@ export default async function CasosPage({ params }: { params: Promise<{ locale: 
       <Section tone="base">
         <SectionHeader title={t("studies.title")} />
         <div className="grid gap-6 md:grid-cols-3">
-          {(t.raw("studies.items") as { industry: string; challenge: string; solution: string; result: string }[]).map((s, i) => (
+          {(t.raw("studies.items") as { kind: "real" | "demo" | "scenario"; industry: string; challenge: string; solution: string; result: string }[]).map((s, i) => (
             <div key={i} className="flex h-full flex-col rounded-xl border border-navy-100 bg-white p-6">
               <span className="inline-block self-start rounded-full bg-teal-50 px-3 py-1 text-caption font-semibold uppercase tracking-wide text-accent-sm">{s.industry}</span>
               <dl className="mt-5 flex flex-1 flex-col space-y-4">
@@ -36,7 +39,7 @@ export default async function CasosPage({ params }: { params: Promise<{ locale: 
                   <dd className="mt-1 text-body-md text-navy-600">{s.solution}</dd>
                 </div>
                 <div className="mt-auto border-t border-navy-100 pt-4">
-                  <dt className="text-overline font-semibold uppercase tracking-wide text-navy-600">{t("studies.labels.result")}</dt>
+                  <dt className="text-overline font-semibold uppercase tracking-wide text-navy-600">{t(`studies.labels.${RESULT_LABEL[s.kind]}`)}</dt>
                   <dd className="mt-1 text-body-md font-semibold text-navy-900">{s.result}</dd>
                 </div>
               </dl>
