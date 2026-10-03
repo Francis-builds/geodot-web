@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E172D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Geodot · Companion</title>
+  <rect x="5.5" y="2.5" width="13" height="19" rx="2.5" />
+  <path d="M10.5 5.5h3" />
+  <path d="M8.5 14.5c1.2-3 2.6-3.8 3.1-2.6.5 1.2-.8 3.2.3 3.3 1 .1 1.7-1.6 2.6-1.6" />
+  <path d="M8.5 18h4" />
+  <g fill="#00A99D" stroke="none">
+    <circle cx="15.5" cy="18" r="1.5" />
+  </g>
+</svg>

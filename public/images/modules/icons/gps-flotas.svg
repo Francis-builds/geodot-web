@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E172D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Geodot · GPS & Flotas</title>
+  <path d="M12 18.4L7.43 11.56A5.5 5.5 0 1 1 16.57 11.56Z" />
+  <path d="M3 21.5h3M9.5 21.5h5M18 21.5h3" />
+  <g fill="#00A99D" stroke="none">
+    <circle cx="12" cy="8.5" r="2" />
+  </g>
+</svg>

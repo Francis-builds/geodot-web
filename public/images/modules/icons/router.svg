@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E172D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Geodot · iRouter</title>
+  <circle cx="5" cy="7" r="2" />
+  <path d="M5 9v6.5a3 3 0 0 0 3 3h6.5a3 3 0 0 0 3-3v-2.2" />
+  <path d="M17.5 13.25L14.38 8.58A3.75 3.75 0 1 1 20.62 8.58Z" />
+  <g fill="#00A99D" stroke="none">
+    <circle cx="17.5" cy="6.5" r="1.5" />
+  </g>
+</svg>

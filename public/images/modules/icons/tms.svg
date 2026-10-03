@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E172D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Geodot · iTMS</title>
+  <path d="M2.5 15.5V7A1.5 1.5 0 0 1 4 5.5h8A1.5 1.5 0 0 1 13.5 7v8.5" />
+  <path d="M13.5 9h3.7l3.3 3.6v4.9h-1.5" />
+  <path d="M9 17.5h6" />
+  <path d="M2.5 15.5v2H5" />
+  <circle cx="7" cy="17.5" r="2" />
+  <circle cx="17" cy="17.5" r="2" />
+  <g fill="#00A99D" stroke="none">
+    <circle cx="8" cy="10.5" r="2" />
+  </g>
+</svg>

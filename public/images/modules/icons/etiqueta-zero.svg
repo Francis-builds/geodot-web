@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E172D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Geodot · Etiqueta Zero</title>
+  <path d="M6.18 15 3.44 12.26A1.5 1.5 0 0 1 3 11.2V4.5A1.5 1.5 0 0 1 4.5 3h6.7a1.5 1.5 0 0 1 1.06.44L15 6.18" />
+  <path d="m17.82 9 2.74 2.74a1.5 1.5 0 0 1 0 2.12l-6.7 6.7a1.5 1.5 0 0 1-2.12 0L9 17.82" />
+  <path d="M3 21 21 3" />
+  <g fill="#00A99D" stroke="none">
+    <circle cx="7.5" cy="7.5" r="2" />
+  </g>
+</svg>
