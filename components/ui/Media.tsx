@@ -23,6 +23,7 @@ export function Media({
   ratio = "4/3",
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
+  quality,
   fill = false,
   className = "",
 }: {
@@ -31,6 +32,8 @@ export function Media({
   ratio?: AspectRatio;
   sizes?: string;
   priority?: boolean;
+  /** next/image quality; pass 90 on hero / full-bleed slots (must be listed in images.qualities). */
+  quality?: 75 | 90;
   /** Fill the parent (parent must be relative + sized) instead of a fixed aspect ratio. */
   fill?: boolean;
   className?: string;
@@ -50,6 +53,7 @@ export function Media({
         alt={alt}
         fill
         sizes={sizes}
+        quality={quality}
         priority={priority}
         loading={priority ? undefined : "lazy"}
         className="object-cover"

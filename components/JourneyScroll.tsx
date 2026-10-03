@@ -134,7 +134,7 @@ export function JourneyScroll({
             {stages.map((s, i) => (
               <div key={`m-${STAGE_ORDER[i]}`}>
                 <div className="relative -mx-6 aspect-[16/10] overflow-hidden">
-                  <Image src={s.image} alt={s.title} fill sizes="100vw" className="object-cover" />
+                  <Image src={s.image} alt={s.title} fill sizes="100vw" quality={90} className="object-cover" />
                 </div>
                 <p className="mt-4 text-overline font-medium uppercase text-accent-sm">{s.metric}</p>
                 <h3 className="mt-1 text-heading-lg font-bold text-navy-900">{s.title}</h3>
@@ -209,7 +209,7 @@ export function JourneyScroll({
               style={{ opacity: i === 0 ? 1 : 0 }}
               aria-hidden={i !== 0}
             >
-              <Image src={s.image} alt={s.title} fill priority={i === 0} sizes="50vw" className="object-cover" />
+              <Image src={s.image} alt={s.title} fill priority={i === 0} sizes="50vw" quality={90} className="object-cover" />
             </div>
           ))}
         </div>
