@@ -25,7 +25,7 @@ export default async function IndustriaPage({ params }: { params: Promise<{ loca
   const { locale, industria } = await params;
   if (!INDUSTRY_SLUGS.includes(industria as IndustrySlug)) notFound();
   setRequestLocale(locale);
-  const { messageKey: key, hero, context } = INDUSTRIES[industria as IndustrySlug];
+  const { messageKey: key, hero, context, entryModules, crossSell } = INDUSTRIES[industria as IndustrySlug];
   const t = await getTranslations(`industries.${key}`);
 
   return (
@@ -38,7 +38,7 @@ export default async function IndustriaPage({ params }: { params: Promise<{ loca
       <section aria-hidden className="relative h-[42vh] min-h-[320px] w-full overflow-hidden md:h-[56vh]">
         <Media src={context} alt="" fill sizes="100vw" />
       </section>
-      <ModuleGrid title={t("modules.title")} />
+      <ModuleGrid title={t("modules.title")} slugs={[...entryModules, ...crossSell]} entry={entryModules} />
       <CasesStrip title={t("cases.title")} cases={t.raw("cases.items") as { client: string; result: string; metric: string }[]} />
       <CTABanner title={t("cta.title")} subtitle={t("cta.subtitle")} cta={{ label: t("cta.button"), href: "/contacto" }} />
     </>
