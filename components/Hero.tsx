@@ -64,7 +64,7 @@ export function Hero({
           <div data-seq="visual" className="relative">{visual}</div>
         ) : bgImage ? (
           <div className="hero-photo relative aspect-[4/3] overflow-hidden md:mr-[calc(50%-50vw)]">
-            <Image src={bgImage} alt={bgAlt ?? ""} fill priority sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+            <Image src={bgImage} alt={bgAlt ?? ""} fill priority sizes="(min-width: 768px) 55vw, 100vw" quality={90} className="object-cover" />
           </div>
         ) : null}
       </Container>

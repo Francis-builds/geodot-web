@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [75, 90],
     minimumCacheTTL: 2678400, // 31 días
   },
   async headers() {

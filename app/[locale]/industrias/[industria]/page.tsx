@@ -37,7 +37,7 @@ export default async function IndustriaPage({ params }: { params: Promise<{ loca
       <ProblemStats title={t("problem.title")} points={t.raw("problem.points") as string[]} stats={t.raw("problem.stats") as { problem: string; impact: string }[]} />
       {/* Full-bleed contextual band: edge-to-edge photo, no frame */}
       <section aria-hidden className="relative h-[42vh] min-h-[320px] w-full overflow-hidden md:h-[56vh]">
-        <Media src={context} alt="" fill sizes="100vw" />
+        <Media src={context} alt="" fill sizes="100vw" quality={90} />
       </section>
       <ModuleGrid title={t("modules.title")} />
       <CasesStrip title={t("cases.title")} cases={t.raw("cases.items") as { client: string; result: string; metric: string }[]} />
