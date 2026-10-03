@@ -4,7 +4,8 @@
   "description": "Escenas del hero scrollytelling renderizadas en código (Remotion + Three.js)",
   "scripts": {
     "studio": "remotion studio",
-    "render": "remotion render"
+    "render": "remotion render",
+    "render:all": "bash render-all.sh"
   },
   "dependencies": {
     "@react-three/fiber": "^9.0.0",
