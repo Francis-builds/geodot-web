@@ -1567,5 +1567,27 @@
       "subtitle": "Contanos sobre tu negocio y armamos juntos el plan de alianza que mejor te conviene.",
       "button": "Postular como partner"
     }
+  },
+  "ui": {
+    "contact": {
+      "errorValidation": "Revisa los datos marcados: faltan campos o alguno no es válido.",
+      "errorServer": "No pudimos enviar tu mensaje: falló algo de nuestro lado, no del tuyo.",
+      "errorFallback": "Escríbenos directo a"
+    },
+    "footer": {
+      "partnerCta": "¿Quieres ser partner?"
+    },
+    "nav": {
+      "menu": "Menú",
+      "switchLanguage": "Cambiar idioma",
+      "toggleSubmenu": "Mostrar u ocultar el menú de {label}"
+    },
+    "notFound": {
+      "title": "No encontramos esta página",
+      "body": "Puede que el enlace haya cambiado o que la página ya no exista.",
+      "home": "Ir al inicio",
+      "platform": "Ver la plataforma",
+      "contact": "Contacto"
+    }
   }
 }
