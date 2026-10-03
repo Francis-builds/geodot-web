@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E172D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Geodot · Torre de Control</title>
+  <path d="M8.26 3a4.5 4.5 0 0 0 0 5" />
+  <path d="M15.74 3a4.5 4.5 0 0 1 0 5" />
+  <path d="M6.5 12.5h11l-1.5 4H8z" />
+  <path d="M12 12.5v4M10 16.5V21M14 16.5V21M7 21h10" />
+  <g fill="#00A99D" stroke="none">
+    <circle cx="12" cy="5.5" r="2" />
+  </g>
+</svg>

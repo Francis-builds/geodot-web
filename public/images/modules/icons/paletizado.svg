@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E172D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Geodot · Paletizado</title>
+  <rect x="4" y="11.5" width="7.5" height="7" rx="1" />
+  <rect x="12.5" y="11.5" width="7.5" height="7" rx="1" />
+  <rect x="8" y="4.5" width="8" height="7" rx="1" />
+  <path d="M2.5 18.5h19M5 18.5V21M12 18.5V21M19 18.5V21" />
+  <g fill="#00A99D" stroke="none">
+    <circle cx="12" cy="8" r="2" />
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E172D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Geodot · Gestor Documental</title>
+  <path d="M18 10V8l-5-5H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4" />
+  <path d="M13 3v3.5A1.5 1.5 0 0 0 14.5 8H18" />
+  <path d="M8.5 10h3M8.5 13.5h2" />
+  <circle cx="16" cy="15.5" r="3.5" />
+  <path d="M18.6 18.1 21 20.5" />
+  <g fill="#00A99D" stroke="none">
+    <circle cx="16" cy="15.5" r="1.5" />
+  </g>
+</svg>

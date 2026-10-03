@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E172D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Geodot · Cadena de Frío</title>
+  <path d="M7 13.5V6a2.5 2.5 0 0 1 5 0v7.5a4 4 0 1 1-5 0z" />
+  <path d="M17.5 4v6M14.9 5.5l5.2 3M14.9 8.5l5.2-3" />
+  <g fill="#00A99D" stroke="none">
+    <circle cx="9.5" cy="16.62" r="2" />
+  </g>
+</svg>
