@@ -611,6 +611,478 @@
         "label": "ETA range: the AI learns on its own"
       }
     },
+    "router": {
+      "name": "iRouter",
+      "tagline": "Routes in minutes, by business value, not just kilometers",
+      "eyebrow": "Pillar: Profitability",
+      "title": "iRouter — Smart routing",
+      "titleAccent": "with AI that learns",
+      "subtitle": "Builds routes in minutes, not hours, respecting each customer's delivery windows, capacity and priority. And because it shares the calculation with Smart Palletizing, it knows what fits in each truck before closing the route.",
+      "ctaPrimary": "Book a demo",
+      "problem": {
+        "title": "Your team loses the morning building routes by hand",
+        "points": [
+          "Hours of planning every day, against the clock, after the order cutoff.",
+          "Routes that ignore the delivery window: the truck arrives and nobody receives it.",
+          "Routing by kilometer, not by what each customer is worth.",
+          "The route closes without knowing if the load fits: the truck leaves half-empty or makes a second run.",
+          "Wide ETAs that don't hold, and the customer calls anyway."
+        ],
+        "stats": [
+          {
+            "problem": "ETA range after about 3 months in operation",
+            "impact": "30→10 min"
+          },
+          {
+            "problem": "Routing 5,000 orders, shown in a demo",
+            "impact": "~10 min"
+          },
+          {
+            "problem": "Routing and palletizing",
+            "impact": "At the same time"
+          }
+        ]
+      },
+      "solution": {
+        "title": "Routing that thinks about the truck, the customer and the clock",
+        "steps": [
+          {
+            "title": "Routing by business value",
+            "description": "Optimizes for what matters to you: customer value, time window, priority and capacity, not just the shortest kilometer."
+          },
+          {
+            "title": "Knows what fits before routing",
+            "description": "Every time you move an order from one truck to another, it recalculates the palletizing instantly: this customer fits, this one doesn't. No tier-1 competitor calculates routing and palletizing together."
+          },
+          {
+            "title": "AI that learns from every delivery",
+            "description": "The ETA improves with the operation: the range drops from 30 to 10 minutes in about 3 months, because the AI learns by driver, by customer and by parcel count."
+          },
+          {
+            "title": "Minutes, not hours",
+            "description": "In a demo, the engine routed 5,000 orders (50 trips) in about 10 minutes. Your team stops building routes against the clock and gets back to deciding."
+          }
+        ]
+      },
+      "metrics": [
+        {
+          "value": 10,
+          "suffix": " min",
+          "label": "ETA range after about 3 months: the AI learns"
+        },
+        {
+          "value": 6,
+          "suffix": " weeks",
+          "label": "To get basic routing into production (4 to 6)"
+        }
+      ],
+      "cta": {
+        "title": "How many hours a day go into building routes?",
+        "subtitle": "Book a demo and we'll route a real day of your operation.",
+        "button": "Book a demo"
+      },
+      "cardMetric": {
+        "value": "~10 min",
+        "label": "to route 5,000 orders (demo)"
+      }
+    },
+    "cadenaFrio": {
+      "name": "Cold Chain",
+      "tagline": "See the excursion when it happens, not when the truck gets rejected",
+      "eyebrow": "Specialized · Food and healthcare",
+      "title": "Cold Chain",
+      "titleAccent": "with end-to-end traceability",
+      "subtitle": "Monitors product temperature from the warehouse to delivery and alerts you to an excursion the moment it happens. Sensors from any vendor, connected to iWMS, iTMS and the Control Tower, with evidence ready for the customer and the regulator.",
+      "ctaPrimary": "Book a demo",
+      "problem": {
+        "title": "You find out the cold chain broke after the load is rejected",
+        "points": [
+          "Product leaves at the right temperature, but transport neither logs nor alerts.",
+          "The rejection comes at the customer's receiving dock: late, and for the whole load.",
+          "A generic WMS knows nothing about cold: no temperature rules, no separate cold and dry appointments.",
+          "When an audit or a claim comes, all you have are spreadsheets nobody signed in real time."
+        ],
+        "stats": [
+          {
+            "problem": "Temperature logging",
+            "impact": "Minute by minute"
+          },
+          {
+            "problem": "Excursion alert",
+            "impact": "When it happens"
+          },
+          {
+            "problem": "Report per delivery",
+            "impact": "Automatic"
+          }
+        ]
+      },
+      "solution": {
+        "title": "From sensor to evidence, no spreadsheets",
+        "steps": [
+          {
+            "title": "Sensors from any vendor",
+            "description": "We connect dedicated devices, OBD readings or any API. You're not locked into a manufacturer and you keep the hardware you already have."
+          },
+          {
+            "title": "Alert in the moment",
+            "description": "If the temperature goes out of range, the Control Tower gets the alert instantly, with time to step in before the load is lost."
+          },
+          {
+            "title": "Cold appointments and rules",
+            "description": "Separate appointments for cold and dry product, and rejection at receiving if it arrives out of range."
+          },
+          {
+            "title": "Audit-ready evidence",
+            "description": "Every delivery generates its exportable temperature report, tied to the lot: ready for the customer or the regulator."
+          }
+        ]
+      },
+      "metrics": [],
+      "cta": {
+        "title": "Don't let the cold chain break behind your back",
+        "subtitle": "Book a demo and we'll show you temperature traceability on your critical routes.",
+        "button": "Book a demo"
+      },
+      "cardMetric": {
+        "value": "Minute by minute",
+        "label": "temperature logging, with instant alerts"
+      }
+    },
+    "gestorDocumental": {
+      "name": "Document Hub",
+      "tagline": "Versioned documents and an assistant that answers in under 2 minutes",
+      "eyebrow": "Specialized · Bonded facilities and compliance",
+      "title": "Document Hub",
+      "titleAccent": "with an AI assistant",
+      "subtitle": "Digitizes, versions and audits your operating documents. And an AI assistant resolves a procedure question in under 2 minutes, 24/7, always against the current version.",
+      "ctaPrimary": "Book a demo",
+      "problem": {
+        "title": "Every procedure question costs hours, or days",
+        "points": [
+          "Support by email, calls and people: hours or days to resolve a procedure question.",
+          "Paper and spreadsheets: no versioning, no audit trail, no way to know which document is current.",
+          "Every audit starts with a hunt for the right document.",
+          "An assistant that answers with the old procedure is worse than no assistant at all."
+        ],
+        "stats": [
+          {
+            "problem": "Procedure question with the AI assistant",
+            "impact": "< 2 min, 24/7"
+          },
+          {
+            "problem": "Version the assistant reads",
+            "impact": "Always the current one"
+          },
+          {
+            "problem": "Review, approval and publishing",
+            "impact": "With workflow"
+          }
+        ]
+      },
+      "solution": {
+        "title": "Your documents, organized and explained",
+        "steps": [
+          {
+            "title": "Versioning and metadata",
+            "description": "Classifies and versions each document by type, with code, area and purpose: a trail of who changed what and when."
+          },
+          {
+            "title": "Approval workflow",
+            "description": "Review, approval and publishing with defined owners. Our largest contracted scope covers 10,000 documents with workflow and 50 approvers."
+          },
+          {
+            "title": "AI assistant",
+            "description": "Ask in plain language and the assistant answers in under 2 minutes, 24/7, against the current version of the procedure."
+          },
+          {
+            "title": "Automatic translation",
+            "description": "Multilingual documents translated automatically for teams operating across countries."
+          }
+        ]
+      },
+      "metrics": [
+        {
+          "value": 2,
+          "prefix": "<",
+          "suffix": " min",
+          "label": "To resolve a procedure question with the assistant, 24/7"
+        }
+      ],
+      "cta": {
+        "title": "Get every question answered in minutes",
+        "subtitle": "Book a demo and we'll show you the assistant answering on your own procedures.",
+        "button": "Book a demo"
+      },
+      "cardMetric": {
+        "value": "< 2 min",
+        "label": "per question, 24/7, on the current version"
+      }
+    },
+    "etiquetaZero": {
+      "name": "Zero Label",
+      "tagline": "Zero manual re-labeling: the data already travels with the pallet",
+      "eyebrow": "Specialized · 3PL and bonded facilities",
+      "title": "Zero Label",
+      "titleAccent": "no re-labeling at the dock",
+      "subtitle": "Eliminates manual re-labeling at receiving. The supplier's code is reconciled with your SKU once and, from then on, every unit comes in with its original label and is identified.",
+      "ctaPrimary": "Book a demo",
+      "problem": {
+        "title": "Re-labeling adds no value, yet someone does it every day",
+        "points": [
+          "Every pallet that arrives with the supplier's code gets peeled, reprinted and stuck back on.",
+          "Person-hours at receiving and goods sitting idle waiting for their new label.",
+          "Every manual translation is an error that later shows up as phantom inventory.",
+          "In a bonded facility, every discrepancy against the declaration is a risk with the authority."
+        ],
+        "stats": [
+          {
+            "problem": "Manual re-labeling at receiving",
+            "impact": "Zero"
+          },
+          {
+            "problem": "Supplier-to-SKU mapping",
+            "impact": "Just once"
+          },
+          {
+            "problem": "Re-labeling station",
+            "impact": "No longer needed"
+          }
+        ]
+      },
+      "solution": {
+        "title": "The system learns to read goods as they arrive",
+        "steps": [
+          {
+            "title": "Automatic reconciliation",
+            "description": "The supplier's code is mapped to your internal SKU once. From then on, every unit from that supplier is recognized without reprinting anything."
+          },
+          {
+            "title": "Receiving without a bottleneck",
+            "description": "Goods come in, get scanned with their original label and are put away in iWMS. No re-labeling station slowing the flow."
+          },
+          {
+            "title": "Clean data downstream",
+            "description": "Picking, palletizing and reconciliation work on reliable data from the first scan: less paper, fewer stickers, fewer capture errors."
+          }
+        ]
+      },
+      "metrics": [],
+      "cta": {
+        "title": "How many pallets do you re-label each month?",
+        "subtitle": "Book a demo and we'll work out together what the full re-labeling process is costing you.",
+        "button": "Book a demo"
+      },
+      "cardMetric": {
+        "value": "Zero",
+        "label": "manual re-labeling at receiving"
+      }
+    },
+    "gpsFlotas": {
+      "name": "GPS & Fleet Control",
+      "tagline": "The validated drop, not the dot on the map",
+      "eyebrow": "Operational · Government and fleets",
+      "title": "GPS & Fleet Control",
+      "titleAccent": "that validates every drop",
+      "subtitle": "Tracks every vehicle with raw GPS, validates every drop against its geofence and tells you which point was visited, when, for how long, and which one wasn't. Works with the GPS provider you already have.",
+      "ctaPrimary": "Book a meeting",
+      "problem": {
+        "title": "The report says it happened. Did it really?",
+        "points": [
+          "Simulated loads and pickups: the report says it was done, but the truck was never there.",
+          "Standalone GPS: it gives you a dot on the map, but it doesn't validate, route or integrate.",
+          "Pre-processed events that miss short visits or real stops.",
+          "No coverage per shift: you don't know which planned points went unserved."
+        ],
+        "stats": [
+          {
+            "problem": "Every drop",
+            "impact": "Validated against a geofence"
+          },
+          {
+            "problem": "Planned vs. visited points",
+            "impact": "Per shift"
+          },
+          {
+            "problem": "GPS hardware",
+            "impact": "The one you already have"
+          }
+        ]
+      },
+      "solution": {
+        "title": "GPS that works as evidence",
+        "steps": [
+          {
+            "title": "Raw GPS, not events",
+            "description": "We work with raw positions, not pre-processed events: we catch visits a stop-detection system misses, with the exact time."
+          },
+          {
+            "title": "Geofences and visit rules",
+            "description": "Every coordinate is checked against circular or polygonal geofences, with a speed filter (stopped below 5 km/h) and a minimum visit time."
+          },
+          {
+            "title": "Coverage per shift",
+            "description": "Planned versus visited points, with arrival time, departure time and duration per point. What wasn't visited is visible too."
+          },
+          {
+            "title": "Heat map and census",
+            "description": "Where, how much and when each unit really went: the basis for redesigning routes with iRouter."
+          }
+        ]
+      },
+      "metrics": [],
+      "cta": {
+        "title": "How many of your drops actually happened?",
+        "subtitle": "Book a meeting and we'll validate a sample of your operation against the GPS you already have.",
+        "button": "Book a meeting"
+      },
+      "cardMetric": {
+        "value": "Every drop",
+        "label": "validated against GPS and geofence"
+      }
+    },
+    "companion": {
+      "name": "Companion",
+      "tagline": "Route, delivery, signature and rejection in a single app",
+      "eyebrow": "Operational · Field app",
+      "title": "Companion",
+      "titleAccent": "the field app",
+      "subtitle": "The mobile app for drivers and operators: the day's route, deliveries, photo evidence, digital signature and rejections, even offline. The data flows back to the platform as soon as there's signal.",
+      "ctaPrimary": "Book a demo",
+      "problem": {
+        "title": "Field operations live on WhatsApp and paper",
+        "points": [
+          "The driver coordinates everything by phone and WhatsApp.",
+          "Proof of delivery and rejections end up on paper, or get lost.",
+          "No signal, no record: the data arrives late or not at all.",
+          "The customer has no simple way to reschedule or accept a delivery."
+        ],
+        "stats": [
+          {
+            "problem": "Proof of delivery",
+            "impact": "Photo and digital signature"
+          },
+          {
+            "problem": "No signal",
+            "impact": "Offline mode"
+          },
+          {
+            "problem": "Devices",
+            "impact": "Standard Android and Zebra scanners"
+          }
+        ]
+      },
+      "solution": {
+        "title": "The field, connected to the platform",
+        "steps": [
+          {
+            "title": "Route and deliveries on the phone",
+            "description": "The driver sees the day's route, deliveries and windows, and closes each stop from the app."
+          },
+          {
+            "title": "Evidence and digital signature",
+            "description": "Photo, signature and rejection reason on the spot. Trip settlement comes out of the same flow, no paperwork."
+          },
+          {
+            "title": "Works offline",
+            "description": "Without signal, the app keeps recording. When the connection is back, everything syncs with the Control Tower."
+          },
+          {
+            "title": "Shelf life at scan",
+            "description": "If a customer requires a minimum shelf life, the app warns at scan: this one's old, grab a fresher one."
+          }
+        ]
+      },
+      "metrics": [],
+      "cta": {
+        "title": "Get your field operation off WhatsApp",
+        "subtitle": "Book a demo and we'll show you Companion on a standard Android phone.",
+        "button": "Book a demo"
+      },
+      "cardMetric": {
+        "value": "Offline",
+        "label": "evidence, signature and rejections from the phone"
+      }
+    },
+    "plantSync": {
+      "name": "Plant Sync + Gate Scheduling",
+      "tagline": "Appointment, documents and dock sorted before the truck arrives",
+      "eyebrow": "Operational · Yard and docks",
+      "title": "Plant Sync + Gate Scheduling",
+      "titleAccent": "with the yard under control",
+      "subtitle": "Digitizes the full loading and unloading flow: appointment, document check, gate in, dock, operation and documented gate out. The dock is assigned before the truck arrives.",
+      "ctaPrimary": "Book a demo",
+      "problem": {
+        "title": "Lines at the gate and docks assigned by radio",
+        "points": [
+          "Trucks arriving unannounced, early-morning peaks and queues with no priority.",
+          "POs, invoices and delivery notes checked on paper, one by one, at the gate.",
+          "Docks assigned on the fly, at whoever's discretion.",
+          "No record of who came in, when they unloaded and when they left: disputes can't be settled."
+        ],
+        "stats": [
+          {
+            "problem": "Appointment and dock",
+            "impact": "Assigned before arrival"
+          },
+          {
+            "problem": "Incomplete documents",
+            "impact": "The truck doesn't get in"
+          },
+          {
+            "problem": "Gate in and gate out",
+            "impact": "QR, plates and photo"
+          }
+        ]
+      },
+      "solution": {
+        "title": "From appointment to gate out, with evidence",
+        "steps": [
+          {
+            "title": "Time-window appointments",
+            "description": "The carrier books an appointment and gets a dock: your slot is 10:00, dock 3. The appointment is linked to the order in iWMS, no double entry."
+          },
+          {
+            "title": "Document check up front",
+            "description": "Driver, plates, insurance, PO, ASN, invoice and bill of lading are validated before entry. Without complete documents, the truck doesn't get in."
+          },
+          {
+            "title": "Smart dock assignment",
+            "description": "Assigned by type of goods, priority and capacity, not by the guard's judgment."
+          },
+          {
+            "title": "Gate in and out with evidence",
+            "description": "QR, plate reading and photo record. Per-carrier metrics (time at dock, waiting time and appointment compliance) visible in the Control Tower."
+          }
+        ]
+      },
+      "metrics": [],
+      "cta": {
+        "title": "How long do trucks wait in your yard?",
+        "subtitle": "Book a demo and we'll show you the full flow, from appointment to gate out, with your operation.",
+        "button": "Book a demo"
+      },
+      "cardMetric": {
+        "value": "Appointment + dock",
+        "label": "assigned before the truck arrives"
+      }
+    },
+    "groups": {
+      "core": {
+        "title": "Core",
+        "description": "The heart of the operation: warehouse, transport, routing, palletizing and visibility."
+      },
+      "especializados": {
+        "title": "Specialized",
+        "description": "The way in for each industry: cold chain, documents and labels."
+      },
+      "operativos": {
+        "title": "Operational",
+        "description": "Fleets, field and yard connected to the same platform."
+      }
+    },
+    "entryTitle": "Where teams start",
+    "crossSellTitle": "What comes next",
     "explore": "Explore"
   },
   "industries": {

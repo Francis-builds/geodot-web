@@ -12,6 +12,12 @@ import {
   Route,
   HeartPulse,
   Container,
+  ThermometerSnowflake,
+  FileText,
+  ScanBarcode,
+  MapPin,
+  Smartphone,
+  CalendarClock,
 } from "lucide-react";
 
 /**
@@ -26,6 +32,12 @@ const ICONS: Record<string, LucideIcon> = {
   radar: Radar,
   route: Route,
   "package-check": PackageCheck,
+  thermometer: ThermometerSnowflake,
+  "file-text": FileText,
+  "scan-barcode": ScanBarcode,
+  "map-pin": MapPin,
+  smartphone: Smartphone,
+  "calendar-clock": CalendarClock,
   // industries
   "bottle-wine": Wine,
   milk: Milk,

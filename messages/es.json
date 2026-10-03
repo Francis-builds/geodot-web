@@ -611,6 +611,478 @@
         "label": "de rango de ETA: la IA aprende sola"
       }
     },
+    "router": {
+      "name": "iRouter",
+      "tagline": "Rutas en minutos, por valor de negocio y no solo por kilómetros",
+      "eyebrow": "Pilar: Rentabilidad",
+      "title": "iRouter — Ruteo inteligente",
+      "titleAccent": "con IA que aprende",
+      "subtitle": "Arma las rutas en minutos, no en horas, respetando ventanas de descarga, capacidad y prioridad de cada cliente. Y como comparte el cálculo con el Paletizado Inteligente, sabe qué entra en cada camión antes de cerrar la ruta.",
+      "ctaPrimary": "Agenda tu demo",
+      "problem": {
+        "title": "Tu equipo pierde la mañana armando rutas a mano",
+        "points": [
+          "Horas de planeación cada día, contra reloj, después del corte de pedidos.",
+          "Rutas que ignoran la ventana de descarga: el camión llega y no lo atienden.",
+          "Se rutea por kilómetro, no por lo que vale cada cliente.",
+          "La ruta se cierra sin saber si la carga entra: el camión sale a medias o hace una segunda vuelta.",
+          "ETAs amplias que no se cumplen, y el cliente igual te llama."
+        ],
+        "stats": [
+          {
+            "problem": "Rango de ETA tras unos 3 meses de operación",
+            "impact": "30→10 min"
+          },
+          {
+            "problem": "Ruteo de 5.000 pedidos, mostrado en demo",
+            "impact": "~10 min"
+          },
+          {
+            "problem": "Ruteo y paletizado",
+            "impact": "En simultáneo"
+          }
+        ]
+      },
+      "solution": {
+        "title": "Ruteo que piensa en el camión, el cliente y el reloj",
+        "steps": [
+          {
+            "title": "Ruteo por valor de negocio",
+            "description": "Optimiza por lo que te importa: valor del cliente, ventana horaria, prioridad y capacidad, no solo el kilómetro más corto."
+          },
+          {
+            "title": "Sabe qué entra antes de rutear",
+            "description": "Cada vez que mueves un pedido de un camión a otro, recalcula el paletizado al instante: este cliente entra, este no. Ningún competidor tier-1 calcula ruteo y paletizado a la vez."
+          },
+          {
+            "title": "IA que aprende de cada entrega",
+            "description": "La ETA mejora con la operación: el rango baja de 30 a 10 minutos en unos 3 meses, porque la IA aprende por chofer, por cliente y por cantidad de bultos."
+          },
+          {
+            "title": "Minutos, no horas",
+            "description": "En demo, el motor ruteó 5.000 pedidos (50 viajes) en unos 10 minutos. Tu equipo deja de armar rutas contra reloj y vuelve a decidir."
+          }
+        ]
+      },
+      "metrics": [
+        {
+          "value": 10,
+          "suffix": " min",
+          "label": "Rango de ETA tras unos 3 meses: la IA aprende"
+        },
+        {
+          "value": 6,
+          "suffix": " semanas",
+          "label": "Para tener el ruteo básico en producción (de 4 a 6)"
+        }
+      ],
+      "cta": {
+        "title": "¿Cuántas horas al día se van en armar rutas?",
+        "subtitle": "Agenda una demo y ruteamos un día real de tu operación.",
+        "button": "Agenda tu demo"
+      },
+      "cardMetric": {
+        "value": "~10 min",
+        "label": "para rutear 5.000 pedidos (demo)"
+      }
+    },
+    "cadenaFrio": {
+      "name": "Cadena de Frío",
+      "tagline": "La excursión la ves cuando pasa, no cuando rechazan el camión",
+      "eyebrow": "Especializado · Alimentos y salud",
+      "title": "Cadena de Frío",
+      "titleAccent": "con trazabilidad de punta a punta",
+      "subtitle": "Monitorea la temperatura del producto del almacén a la entrega y te avisa de la excursión en el momento. Sensores de cualquier proveedor, conectados al iWMS, al iTMS y a la Torre de Control, con evidencia lista para el cliente y el regulador.",
+      "ctaPrimary": "Agenda tu demo",
+      "problem": {
+        "title": "Te enteras de la ruptura de frío cuando ya rechazaron la carga",
+        "points": [
+          "El producto sale a temperatura correcta, pero el transporte no registra ni alerta.",
+          "El rechazo llega en la recepción del cliente: tarde y por la carga entera.",
+          "Un WMS genérico no sabe de frío: no aplica reglas por temperatura ni separa citas de frío y seco.",
+          "Ante una auditoría o un reclamo solo hay planillas que nadie firmó en tiempo real."
+        ],
+        "stats": [
+          {
+            "problem": "Registro de temperatura",
+            "impact": "Minuto a minuto"
+          },
+          {
+            "problem": "Alerta de excursión",
+            "impact": "Cuando pasa"
+          },
+          {
+            "problem": "Reporte por entrega",
+            "impact": "Automático"
+          }
+        ]
+      },
+      "solution": {
+        "title": "Del sensor a la evidencia, sin planillas",
+        "steps": [
+          {
+            "title": "Sensores de cualquier proveedor",
+            "description": "Conectamos dispositivos dedicados, lecturas vía OBD o cualquier API. No te casas con un fabricante ni cambias el hardware que ya tienes."
+          },
+          {
+            "title": "Alerta en el momento",
+            "description": "Si la temperatura sale de rango, la Torre de Control recibe la alerta al instante, con tiempo para intervenir antes de perder la carga."
+          },
+          {
+            "title": "Citas y reglas de frío",
+            "description": "Citas diferenciadas para producto frío y seco, y rechazo en recepción si llega fuera de rango."
+          },
+          {
+            "title": "Evidencia para auditoría",
+            "description": "Cada entrega genera su reporte de temperatura exportable, asociado al lote: listo para el cliente o para el regulador."
+          }
+        ]
+      },
+      "metrics": [],
+      "cta": {
+        "title": "Que el frío no se rompa a tus espaldas",
+        "subtitle": "Agenda una demo y te mostramos la trazabilidad de temperatura sobre tus rutas críticas.",
+        "button": "Agenda tu demo"
+      },
+      "cardMetric": {
+        "value": "Minuto a minuto",
+        "label": "registro de temperatura, con alerta al instante"
+      }
+    },
+    "gestorDocumental": {
+      "name": "Gestor Documental",
+      "tagline": "Documentos versionados y un asistente que responde en menos de 2 minutos",
+      "eyebrow": "Especializado · Recintos y cumplimiento",
+      "title": "Gestor Documental",
+      "titleAccent": "con asistente de IA",
+      "subtitle": "Digitaliza, versiona y audita tus documentos operativos. Y un asistente con IA resuelve una consulta de procedimiento en menos de 2 minutos, 24/7, siempre sobre la versión vigente.",
+      "ctaPrimary": "Agenda tu demo",
+      "problem": {
+        "title": "Cada consulta de procedimiento cuesta horas, o días",
+        "points": [
+          "Soporte por correo, llamadas y personas: horas o días para resolver una duda de procedimiento.",
+          "Papel y Excel: sin versionado, sin auditoría y sin saber cuál es el documento vigente.",
+          "Cada auditoría arranca con la búsqueda del documento correcto.",
+          "Un asistente que contesta con el procedimiento viejo es peor que no tener asistente."
+        ],
+        "stats": [
+          {
+            "problem": "Consulta de procedimiento con asistente IA",
+            "impact": "< 2 min, 24/7"
+          },
+          {
+            "problem": "Versión que consulta el asistente",
+            "impact": "Siempre la vigente"
+          },
+          {
+            "problem": "Revisión, aprobación y publicación",
+            "impact": "Con workflow"
+          }
+        ]
+      },
+      "solution": {
+        "title": "Tus documentos, ordenados y explicados",
+        "steps": [
+          {
+            "title": "Versionado y metadatos",
+            "description": "Clasifica y versiona cada documento por tipo, con código, área y propósito: trazabilidad de quién cambió qué y cuándo."
+          },
+          {
+            "title": "Workflow de aprobación",
+            "description": "Revisión, aprobación y publicación con responsables definidos. El alcance más grande que tenemos contratado suma 10.000 documentos con workflow y 50 aprobadores."
+          },
+          {
+            "title": "Asistente con IA",
+            "description": "Pregunta en lenguaje natural y el asistente responde en menos de 2 minutos, 24/7, sobre la versión vigente del procedimiento."
+          },
+          {
+            "title": "Traducción automática",
+            "description": "Documentos multilingües traducidos automáticamente para equipos que operan en distintos países."
+          }
+        ]
+      },
+      "metrics": [
+        {
+          "value": 2,
+          "prefix": "<",
+          "suffix": " min",
+          "label": "Para resolver una consulta de procedimiento con el asistente, 24/7"
+        }
+      ],
+      "cta": {
+        "title": "Que cada consulta se resuelva en minutos",
+        "subtitle": "Agenda una demo y te mostramos el asistente respondiendo sobre tus propios procedimientos.",
+        "button": "Agenda tu demo"
+      },
+      "cardMetric": {
+        "value": "< 2 min",
+        "label": "por consulta, 24/7, sobre la versión vigente"
+      }
+    },
+    "etiquetaZero": {
+      "name": "Etiqueta Zero",
+      "tagline": "Cero re-etiquetado manual: el dato ya viaja con el palet",
+      "eyebrow": "Especializado · 3PL y recintos",
+      "title": "Etiqueta Zero",
+      "titleAccent": "sin re-etiquetar en el andén",
+      "subtitle": "Elimina el re-etiquetado manual en recepción. El código del proveedor se reconcilia con tu SKU una sola vez y, desde ahí, cada bulto entra con su etiqueta original y queda identificado.",
+      "ctaPrimary": "Agenda tu demo",
+      "problem": {
+        "title": "Reetiquetar no agrega valor, pero alguien lo hace todos los días",
+        "points": [
+          "Cada palet que llega con el código del proveedor se despega, se reimprime y se vuelve a pegar.",
+          "Horas-persona en recepción y mercancía parada esperando su nueva etiqueta.",
+          "Cada traducción manual es un error que después aparece como inventario fantasma.",
+          "En un recinto fiscal, cada discrepancia frente a lo declarado es un riesgo ante la autoridad."
+        ],
+        "stats": [
+          {
+            "problem": "Re-etiquetado manual en recepción",
+            "impact": "Cero"
+          },
+          {
+            "problem": "Mapeo del proveedor a tu SKU",
+            "impact": "Una sola vez"
+          },
+          {
+            "problem": "Estación de reetiquetado",
+            "impact": "Ya no hace falta"
+          }
+        ]
+      },
+      "solution": {
+        "title": "El sistema aprende a leer la mercancía como viene",
+        "steps": [
+          {
+            "title": "Reconciliación automática",
+            "description": "El código del proveedor se mapea a tu SKU interno una vez. A partir de ahí, cada bulto de ese proveedor se reconoce sin reimprimir nada."
+          },
+          {
+            "title": "Recepción sin cuello de botella",
+            "description": "La mercancía entra, se pistolea con su etiqueta original y queda ubicada en el iWMS. No hay una estación de reetiquetado que frene el flujo."
+          },
+          {
+            "title": "Datos limpios aguas abajo",
+            "description": "Picking, paletizado y conciliación trabajan sobre datos confiables desde el primer escaneo: menos papel, menos pegatinas, menos errores de captura."
+          }
+        ]
+      },
+      "metrics": [],
+      "cta": {
+        "title": "¿Cuántos palets reetiquetas por mes?",
+        "subtitle": "Agenda una demo y calculamos juntos cuánto te cuesta el proceso completo de reetiquetar.",
+        "button": "Agenda tu demo"
+      },
+      "cardMetric": {
+        "value": "Cero",
+        "label": "re-etiquetado manual en recepción"
+      }
+    },
+    "gpsFlotas": {
+      "name": "GPS y Control de Flotas",
+      "tagline": "La descarga validada, no el puntito en el mapa",
+      "eyebrow": "Operativo · Gobierno y flotas",
+      "title": "GPS y Control de Flotas",
+      "titleAccent": "que valida cada descarga",
+      "subtitle": "Rastrea cada vehículo con el GPS crudo, valida cada descarga contra su geocerca y te dice qué punto se visitó, cuándo, por cuánto tiempo y cuál no se visitó. Funciona con el proveedor de GPS que ya tienes.",
+      "ctaPrimary": "Agenda una reunión",
+      "problem": {
+        "title": "El reporte dice que pasó. ¿Pasó de verdad?",
+        "points": [
+          "Cargas y recolecciones simuladas: el reporte dice que se hizo, pero el camión nunca estuvo ahí.",
+          "GPS suelto: te da el puntito en el mapa, pero no valida, no rutea y no se integra.",
+          "Eventos preprocesados que se pierden visitas cortas o paradas reales.",
+          "Sin cobertura por turno: no sabes qué puntos planificados quedaron sin atender."
+        ],
+        "stats": [
+          {
+            "problem": "Cada descarga",
+            "impact": "Validada contra geocerca"
+          },
+          {
+            "problem": "Puntos planificados vs. visitados",
+            "impact": "Por turno"
+          },
+          {
+            "problem": "Hardware de GPS",
+            "impact": "El que ya tienes"
+          }
+        ]
+      },
+      "solution": {
+        "title": "GPS que sirve como evidencia",
+        "steps": [
+          {
+            "title": "GPS crudo, no eventos",
+            "description": "Trabajamos con la posición cruda, no con eventos preprocesados: detectamos visitas que un sistema de paradas se pierde, con la hora exacta."
+          },
+          {
+            "title": "Geocercas y reglas de visita",
+            "description": "Cada coordenada se compara contra geocercas circulares o poligonales, con filtro de velocidad (detenido por debajo de 5 km/h) y tiempo mínimo de visita."
+          },
+          {
+            "title": "Cobertura por turno",
+            "description": "Puntos planificados contra visitados, con hora de llegada, de salida y duración por punto. Lo que no se visitó también queda a la vista."
+          },
+          {
+            "title": "Mapa de calor y censo",
+            "description": "Dónde, cuánto y cuándo pasó de verdad cada unidad: la base para rediseñar las rutas con el iRouter."
+          }
+        ]
+      },
+      "metrics": [],
+      "cta": {
+        "title": "¿Cuántas de tus descargas realmente pasaron?",
+        "subtitle": "Agenda una reunión y validamos una muestra de tu operación contra el GPS que ya tienes.",
+        "button": "Agenda una reunión"
+      },
+      "cardMetric": {
+        "value": "Cada descarga",
+        "label": "validada contra GPS y geocerca"
+      }
+    },
+    "companion": {
+      "name": "Companion",
+      "tagline": "Ruta, entrega, firma y rechazo en una sola app",
+      "eyebrow": "Operativo · App de campo",
+      "title": "Companion",
+      "titleAccent": "la app de campo",
+      "subtitle": "La app móvil del chofer y del operario: ruta del día, entregas, evidencia con foto, firma digital y rechazos, también sin conexión. El dato vuelve a la plataforma en cuanto hay señal.",
+      "ctaPrimary": "Agenda tu demo",
+      "problem": {
+        "title": "La operación de campo vive en WhatsApp y en papel",
+        "points": [
+          "El chofer coordina todo por teléfono y WhatsApp.",
+          "La prueba de entrega y el rechazo quedan en papel, o se pierden.",
+          "Sin señal no hay registro: el dato llega tarde o no llega.",
+          "El cliente no tiene una forma simple de reagendar o aceptar una entrega."
+        ],
+        "stats": [
+          {
+            "problem": "Prueba de entrega",
+            "impact": "Foto y firma digital"
+          },
+          {
+            "problem": "Sin señal",
+            "impact": "Modo offline"
+          },
+          {
+            "problem": "Equipos",
+            "impact": "Android estándar y lectores Zebra"
+          }
+        ]
+      },
+      "solution": {
+        "title": "El campo, conectado a la plataforma",
+        "steps": [
+          {
+            "title": "Ruta y entregas en el celular",
+            "description": "El chofer ve su ruta del día, sus entregas y sus ventanas, y cierra cada parada desde la app."
+          },
+          {
+            "title": "Evidencia y firma digital",
+            "description": "Foto, firma y motivo de rechazo en el momento. La liquidación del viaje sale del mismo flujo, sin papeles."
+          },
+          {
+            "title": "Funciona sin conexión",
+            "description": "Sin señal, la app sigue registrando. Cuando vuelve la conexión, todo se sincroniza con la Torre de Control."
+          },
+          {
+            "title": "Vida útil al pistolear",
+            "description": "Si un cliente exige una vida útil mínima, la app avisa al pistolear: este está viejo, saca uno más fresco."
+          }
+        ]
+      },
+      "metrics": [],
+      "cta": {
+        "title": "Saca tu operación de campo de WhatsApp",
+        "subtitle": "Agenda una demo y te mostramos Companion en un celular Android estándar.",
+        "button": "Agenda tu demo"
+      },
+      "cardMetric": {
+        "value": "Offline",
+        "label": "evidencia, firma y rechazo desde el celular"
+      }
+    },
+    "plantSync": {
+      "name": "Plant Sync + Turnero",
+      "tagline": "Turno, documentos y andén resueltos antes de que llegue el camión",
+      "eyebrow": "Operativo · Patio y andenes",
+      "title": "Plant Sync + Turnero",
+      "titleAccent": "con el patio bajo control",
+      "subtitle": "Digitaliza el flujo completo de carga y descarga: turno, validación documental, ingreso, andén, operación y salida documentada. El andén queda asignado antes de que el camión llegue.",
+      "ctaPrimary": "Agenda tu demo",
+      "problem": {
+        "title": "Colas en la caseta y andenes asignados por radio",
+        "points": [
+          "Camiones que llegan sin aviso, picos a primera hora y colas sin prioridad.",
+          "OC, facturas y remisiones validadas en papel, una por una, en la caseta.",
+          "Andenes asignados sobre la marcha, según el criterio del momento.",
+          "Sin registro de quién entró, cuándo descargó y cuándo salió: imposible resolver una disputa."
+        ],
+        "stats": [
+          {
+            "problem": "Turno y andén",
+            "impact": "Asignados antes de llegar"
+          },
+          {
+            "problem": "Documentación incompleta",
+            "impact": "El camión no pasa"
+          },
+          {
+            "problem": "Ingreso y salida",
+            "impact": "QR, placas y foto"
+          }
+        ]
+      },
+      "solution": {
+        "title": "Del turno a la salida, con evidencia",
+        "steps": [
+          {
+            "title": "Turnos por ventana horaria",
+            "description": "El transportista agenda su turno y recibe su andén: tu turno es a las 10:00, andén 3. El turno queda vinculado al pedido en el iWMS, sin doble captura."
+          },
+          {
+            "title": "Validación documental previa",
+            "description": "Chofer, placas, seguro, OC, ASN, factura y carta porte se validan antes del ingreso. Sin documentación completa, el camión no pasa."
+          },
+          {
+            "title": "Andén inteligente",
+            "description": "Asignación según tipo de mercancía, prioridad y capacidad, no según el criterio del guardia."
+          },
+          {
+            "title": "Ingreso y salida con evidencia",
+            "description": "QR, lectura de placas y registro fotográfico. Métricas por proveedor (tiempo en muelle, en espera y cumplimiento de turnos) visibles en la Torre de Control."
+          }
+        ]
+      },
+      "metrics": [],
+      "cta": {
+        "title": "¿Cuánto esperan los camiones en tu patio?",
+        "subtitle": "Agenda una demo y te mostramos el flujo completo, del turno a la salida, con tu operación.",
+        "button": "Agenda tu demo"
+      },
+      "cardMetric": {
+        "value": "Turno + andén",
+        "label": "asignados antes de que llegue el camión"
+      }
+    },
+    "groups": {
+      "core": {
+        "title": "Core",
+        "description": "El corazón de la operación: almacén, transporte, ruteo, paletizado y visibilidad."
+      },
+      "especializados": {
+        "title": "Especializados",
+        "description": "La puerta de entrada por industria: frío, documentos y etiquetas."
+      },
+      "operativos": {
+        "title": "Operativos",
+        "description": "Flotas, campo y patio conectados a la misma plataforma."
+      }
+    },
+    "entryTitle": "Por dónde se entra",
+    "crossSellTitle": "Lo que se suma después",
     "explore": "Explorar"
   },
   "industries": {
