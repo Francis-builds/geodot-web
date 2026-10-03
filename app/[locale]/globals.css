@@ -165,3 +165,98 @@
     100% { opacity: 0; }
   }
 }
+
+/* ============================================================
+   Motion v2 — un gesto por tipo de contenido (ver ../design-motion.md).
+   Titulares: palabras desde máscara. Fotos: barrido clip-path + zoom.
+   Grillas/filas: stagger. Hero: secuencia orquestada al cargar.
+   Disparo: <InView> pone [data-in] una sola vez. Todo el estado oculto
+   vive dentro de no-preference → con reduced-motion se ve estático.
+   ============================================================ */
+:root {
+  --ease-reveal: cubic-bezier(0.19, 1, 0.22, 1); /* expo-out: firma de reveals */
+  --t-reveal: 900ms;
+}
+
+@layer utilities {
+  .rv-word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    /* aire para descendentes (g, p, y) sin mover la línea */
+    padding-bottom: 0.12em;
+    margin-bottom: -0.12em;
+  }
+  .rv-word > span { display: inline-block; }
+
+  /* Subrayado que se dibuja (links de texto) */
+  .link-draw {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size 250ms var(--ease-reveal);
+  }
+  .link-draw:hover, .link-draw:focus-visible { background-size: 100% 1px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero: eyebrow → título → bajada → CTAs → visual */
+  .hero-seq [data-seq] {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: rv-seq 900ms var(--ease-reveal) forwards;
+  }
+  .hero-seq [data-seq="1"] { animation-delay: 80ms; }
+  .hero-seq [data-seq="2"] { animation-delay: 200ms; }
+  .hero-seq [data-seq="3"] { animation-delay: 380ms; }
+  .hero-seq [data-seq="4"] { animation-delay: 520ms; }
+  .hero-seq [data-seq="visual"] {
+    transform: scale(1.04);
+    animation: rv-seq 1600ms var(--ease-reveal) 150ms forwards;
+  }
+  @keyframes rv-seq { to { opacity: 1; transform: none; } }
+
+  /* Foto del hero interno: barrido de derecha a izquierda + zoom que asienta */
+  .hero-photo {
+    clip-path: inset(0 0 0 18%);
+    animation: rv-wipe 1300ms var(--ease-reveal) 250ms forwards;
+  }
+  .hero-photo img { transform: scale(1.08); animation: rv-settle 1800ms var(--ease-reveal) 250ms forwards; }
+  @keyframes rv-wipe { to { clip-path: inset(0); } }
+  @keyframes rv-settle { to { transform: scale(1); } }
+
+  /* Titulares: cada palabra sube desde su máscara, en cascada */
+  .rv-words .rv-word > span {
+    transform: translateY(105%);
+    transition: transform var(--t-reveal) var(--ease-reveal);
+    transition-delay: calc(var(--i, 0) * 45ms);
+  }
+  .rv-words[data-in] .rv-word > span { transform: none; }
+  /* Bajada del titular: entra cuando las palabras ya están arriba */
+  .rv-words .rv-after {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 700ms var(--ease-reveal) 280ms, transform 700ms var(--ease-reveal) 280ms;
+  }
+  .rv-words[data-in] .rv-after { opacity: 1; transform: none; }
+
+  /* Fotos en scroll: barrido de abajo hacia arriba + zoom */
+  .rv-clip { clip-path: inset(100% 0 0 0); transition: clip-path 1100ms var(--ease-reveal); }
+  .rv-clip img { transform: scale(1.12); transition: transform 1600ms var(--ease-reveal); }
+  [data-in] .rv-clip, .rv-clip[data-in] { clip-path: inset(0); }
+  [data-in] .rv-clip img, .rv-clip[data-in] img { transform: scale(1); }
+
+  /* Grillas y filas: hijos directos en cascada (--i lo pone el componente) */
+  .rv-stagger > * {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 800ms var(--ease-reveal), transform 800ms var(--ease-reveal);
+    transition-delay: calc(var(--i, 0) * 70ms);
+  }
+  .rv-stagger[data-in] > * { opacity: 1; transform: none; }
+  .rv-rows > * {
+    opacity: 0;
+    transform: translateX(-16px);
+    transition: opacity 600ms var(--ease-reveal), transform 600ms var(--ease-reveal);
+    transition-delay: calc(120ms + var(--i, 0) * 60ms);
+  }
+  .rv-rows[data-in] > * { opacity: 1; transform: none; }
+}

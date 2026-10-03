@@ -1,5 +1,7 @@
 import { Section, SectionHeader } from "./ui/Section";
+import type { CSSProperties } from "react";
 import { Reveal } from "./ui/Reveal";
+import { InView } from "./ui/InView";
 
 export function ProblemStats({ title, titleAccent, points, stats }: {
   title: string; titleAccent?: string;
@@ -19,14 +21,14 @@ export function ProblemStats({ title, titleAccent, points, stats }: {
           </ul>
         </Reveal>
         <Reveal direction="left" delay={0.1}>
-          <div className="overflow-hidden rounded-xl border border-navy-100 bg-white transition-shadow hover:shadow-sm">
+          <InView className="rv-rows overflow-hidden rounded-xl border border-navy-100 bg-white transition-shadow hover:shadow-sm">
             {stats.map((s, i) => (
-              <div key={i} className="flex items-center justify-between border-b border-navy-100 px-5 py-4 transition-colors duration-200 last:border-0 hover:bg-navy-50">
+              <div key={i} style={{ "--i": i } as CSSProperties} className="flex items-center justify-between border-b border-navy-100 px-5 py-4 transition-colors duration-200 last:border-0 hover:bg-navy-50">
                 <span className="text-body-sm text-navy-600">{s.problem}</span>
                 <span className="text-heading-sm font-semibold text-navy-900">{s.impact}</span>
               </div>
             ))}
-          </div>
+          </InView>
         </Reveal>
       </div>
     </Section>

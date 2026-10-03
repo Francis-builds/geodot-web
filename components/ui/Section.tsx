@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Container } from "./Container";
-import { Reveal } from "./Reveal";
+import { InView, SplitWords } from "./InView";
 
 type Tone = "base" | "subtle" | "dark";
 
@@ -31,13 +31,13 @@ export function SectionHeader({
   const dark = tone === "dark";
   const alignment = align === "center" ? "mx-auto text-center" : "text-left";
   return (
-    <Reveal direction="up" className={`mb-12 max-w-3xl ${alignment}`}>
+    <InView className={`rv-words mb-12 max-w-3xl ${alignment}`}>
       <h2 className="text-balance text-heading-xl md:text-display-lg font-bold text-[color:inherit]">
-        {title} {titleAccent && <span className={dark ? "text-accent" : "text-accent-strong"}>{titleAccent}</span>}
+        <SplitWords text={title} accent={titleAccent} accentClassName={dark ? "text-accent" : "text-accent-strong"} />
       </h2>
       {description && (
-        <p className={`mt-4 text-pretty text-body-lg ${dark ? "text-navy-300" : "text-navy-600"}`}>{description}</p>
+        <p className={`rv-after mt-4 text-pretty text-body-lg ${dark ? "text-navy-300" : "text-navy-600"}`}>{description}</p>
       )}
-    </Reveal>
+    </InView>
   );
 }

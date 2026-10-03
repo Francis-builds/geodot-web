@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
 
 type Variant = "primary" | "outline-light" | "ghost";
-const BASE = "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/45 disabled:opacity-60";
+const BASE = "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-[background-color,color,scale] duration-200 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/45 disabled:opacity-60";
 const SIZES = "px-7 py-3.5 text-[15px]";
 const VARIANTS: Record<Variant, string> = {
   primary: "bg-magenta-500 text-white hover:bg-magenta-600 shadow-sm",

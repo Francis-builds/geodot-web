@@ -147,14 +147,14 @@ export function HeroCanvas({
       </svg>
 
       {/* metric chips (real numbers) */}
-      <div className="absolute right-6 top-16 hidden rounded-md border border-white/10 bg-navy-900/90 px-4 py-3 md:block lg:right-16">
+      <div className="absolute right-6 top-32 hidden rounded-md border border-white/10 bg-navy-900/90 px-4 py-3 md:block lg:right-16">
         <p className="text-caption text-navy-300">{labels.occupancyLabel}</p>
         <p className="text-heading-lg font-bold text-teal-400">99%</p>
         <span className="mt-2 block h-1 w-28 overflow-hidden rounded-full bg-navy-700">
           <span className="block h-full w-[99%] rounded-full bg-teal-400" />
         </span>
       </div>
-      <div className="absolute right-6 top-44 hidden rounded-md border border-white/10 bg-navy-900/90 px-4 py-3 md:block lg:right-16">
+      <div className="absolute right-6 top-60 hidden rounded-md border border-white/10 bg-navy-900/90 px-4 py-3 md:block lg:right-16">
         <p className="text-caption text-navy-300">{labels.transportLabel}</p>
         <p className="text-heading-md font-bold text-white">−8%</p>
       </div>

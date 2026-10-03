@@ -3,7 +3,8 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { INDUSTRIES, INDUSTRY_SLUGS } from "@/lib/industries";
 import { Section, SectionHeader } from "./ui/Section";
-import { Reveal } from "./ui/Reveal";
+import type { CSSProperties } from "react";
+import { InView } from "./ui/InView";
 import { Icon } from "./ui/Icon";
 
 export function IndustryGrid({ title, titleAccent, description }: {
@@ -17,17 +18,17 @@ export function IndustryGrid({ title, titleAccent, description }: {
       <SectionHeader
         title={title} titleAccent={titleAccent} description={description}
       />
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <InView className="rv-stagger grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {INDUSTRY_SLUGS.map((slug, i) => {
           const { messageKey: key, icon, hero } = INDUSTRIES[slug];
           return (
-            <Reveal key={slug} direction="up" delay={i * 0.06}>
+            <div key={slug} style={{ "--i": i } as CSSProperties}>
               <Link
                 href={`/industrias/${slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-xl border border-navy-100 bg-white transition-shadow hover:shadow-sm"
+                className="group flex h-full flex-col overflow-hidden rounded-xl border border-navy-100 bg-white transition-[translate,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-sm"
               >
                 {/* thumbnail */}
-                <span className="relative block aspect-[16/10] overflow-hidden rounded-t-xl">
+                <span className="rv-clip relative block aspect-[16/10] overflow-hidden rounded-t-xl">
                   <Image
                     src={hero}
                     alt={t(`${key}.name`)}
@@ -43,7 +44,7 @@ export function IndustryGrid({ title, titleAccent, description }: {
                   </span>
                   <h3 className="text-heading-sm font-semibold text-navy-900">{t(`${key}.name`)}</h3>
                   <p className="mt-2 text-body-sm text-navy-600">{t(`${key}.tagline`)}</p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-caption font-semibold uppercase tracking-wide text-accent-sm transition-transform duration-300 group-hover:translate-x-0.5">
+                  <span className="mt-4 inline-flex items-center gap-1 text-caption font-semibold uppercase tracking-wide text-accent-sm transition-transform duration-300 group-hover:translate-x-1">
                     {tIdx("explore")}
                     <svg aria-hidden viewBox="0 0 16 16" className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="2">
                       <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
@@ -51,10 +52,10 @@ export function IndustryGrid({ title, titleAccent, description }: {
                   </span>
                 </div>
               </Link>
-            </Reveal>
+            </div>
           );
         })}
-      </div>
+      </InView>
     </Section>
   );
 }

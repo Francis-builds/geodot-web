@@ -27,13 +27,13 @@ export function Hero({
   const split = Boolean(visual || bgImage);
 
   return (
-    <section className="bg-white">
+    <section className="hero-seq bg-white">
       <Container className={`grid items-center gap-12 py-16 md:gap-16 md:py-24 ${split ? "md:grid-cols-[1.1fr_1fr]" : "max-w-4xl"}`}>
         <div>
           {eyebrow && (
-            <p className="mb-6 text-body-sm font-medium text-navy-600">{eyebrow}</p>
+            <p data-seq="1" className="mb-6 text-body-sm font-medium text-navy-600">{eyebrow}</p>
           )}
-          <h1 className={`${rotatingWords?.length ? "" : "text-balance "}text-display-2xl font-medium text-navy-900`}>
+          <h1 data-seq="2" className={`${rotatingWords?.length ? "" : "text-balance "}text-display-2xl font-medium text-navy-900`}>
             {rotatingWords?.length ? (
               // The rotating word owns its line: every word fits alone, so the
               // line count (and everything below) never shifts during rotation.
@@ -42,17 +42,17 @@ export function Hero({
               <>{title} {accent}{titleAfter ? <> {titleAfter}</> : null}</>
             )}
           </h1>
-          <p className="mt-6 max-w-xl text-pretty text-body-lg text-navy-600">{subtitle}</p>
+          <p data-seq="3" className="mt-6 max-w-xl text-pretty text-body-lg text-navy-600">{subtitle}</p>
           {(primaryCta || secondaryCta) && (
-            <div className="mt-9 flex flex-wrap items-center gap-6">
+            <div data-seq="4" className="mt-9 flex flex-wrap items-center gap-6">
               {primaryCta && <Button href={primaryCta.href} variant="primary">{primaryCta.label}</Button>}
               {secondaryCta && (
                 <Link
                   href={secondaryCta.href}
-                  className="inline-flex min-h-11 items-center gap-1.5 text-body-md font-semibold text-teal-700 transition-colors hover:text-teal-800"
+                  className="group inline-flex min-h-11 items-center gap-1.5 text-body-md font-semibold text-teal-700 transition-colors hover:text-teal-800"
                 >
                   {secondaryCta.label}
-                  <svg aria-hidden viewBox="0 0 16 16" className="h-4 w-4 fill-none stroke-current" strokeWidth="2">
+                  <svg aria-hidden viewBox="0 0 16 16" className="h-4 w-4 fill-none stroke-current transition-transform duration-200 group-hover:translate-x-1" strokeWidth="2">
                     <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
@@ -61,9 +61,9 @@ export function Hero({
           )}
         </div>
         {visual ? (
-          <div className="relative">{visual}</div>
+          <div data-seq="visual" className="relative">{visual}</div>
         ) : bgImage ? (
-          <div className="relative aspect-[4/3] overflow-hidden md:mr-[calc(50%-50vw)]">
+          <div className="hero-photo relative aspect-[4/3] overflow-hidden md:mr-[calc(50%-50vw)]">
             <Image src={bgImage} alt={bgAlt ?? ""} fill priority sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
           </div>
         ) : null}

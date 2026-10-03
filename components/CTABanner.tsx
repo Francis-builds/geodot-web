@@ -1,6 +1,6 @@
 import { Button } from "./ui/Button";
 import { Container } from "./ui/Container";
-import { Reveal } from "./ui/Reveal";
+import { InView, SplitWords } from "./ui/InView";
 
 export function CTABanner({ title, subtitle, cta }: { title: string; subtitle: string; cta: { label: string; href: string } }) {
   return (
@@ -13,11 +13,11 @@ export function CTABanner({ title, subtitle, cta }: { title: string; subtitle: s
       </div>
 
       <Container className="relative z-[2] flex flex-col items-center gap-6 py-20 text-center md:py-24">
-        <Reveal direction="up" className="flex flex-col items-center gap-6">
-          <h2 className="max-w-2xl text-heading-xl font-bold text-white md:text-display-lg">{title}</h2>
-          <p className="max-w-xl text-body-lg text-navy-300">{subtitle}</p>
-          <Button href={cta.href} variant="primary">{cta.label}</Button>
-        </Reveal>
+        <InView className="rv-words flex flex-col items-center gap-6">
+          <h2 className="max-w-2xl text-heading-xl font-bold text-white md:text-display-lg"><SplitWords text={title} /></h2>
+          <p className="rv-after max-w-xl text-body-lg text-navy-300">{subtitle}</p>
+          <div className="rv-after"><Button href={cta.href} variant="primary">{cta.label}</Button></div>
+        </InView>
       </Container>
     </section>
   );

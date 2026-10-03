@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitch } from "./LocaleSwitch";
 import { Button } from "./ui/Button";
 import { Container } from "./ui/Container";
@@ -28,22 +28,35 @@ export function Nav() {
   const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // Hide while reading down, come back on any scroll up (and always near the top).
+  const [hidden, setHidden] = useState(false);
   // Only float transparent when a dark hero is present at the top of the page.
   const [overHero, setOverHero] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      if (Math.abs(y - lastY) > 6) {
+        setHidden(y > lastY && y > 320);
+        lastY = y;
+      }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // A cinematic <Hero> renders [data-hero-overlay]; if absent, the nav stays solid.
-  // One-shot post-mount DOM read; intentional setState in effect.
+  // A dark hero renders [data-hero-overlay]; if absent, the nav stays solid.
+  // Re-read on every route change: the Nav lives in the layout and survives
+  // client-side navigation. Intentional setState in effect (DOM read).
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setOverHero(!!document.querySelector("[data-hero-overlay]"));
-  }, []);
+    setHidden(false);
+  }, [pathname]);
 
   // Lock body scroll while the mobile drawer is open + make the page content
   // behind the drawer inert so focus/AT can't reach it.
@@ -85,7 +98,10 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background,box-shadow,border-color] duration-300 ${
+      onFocusCapture={() => setHidden(false)}
+      className={`fixed inset-x-0 top-0 z-50 transition-[background,box-shadow,border-color,translate] duration-300 ease-out ${
+        hidden && !open ? "-translate-y-full" : ""
+      } ${
         solid
           ? "glass border-b border-navy-100/80 shadow-nav"
           : "border-b border-transparent bg-transparent"
@@ -137,7 +153,7 @@ export function Nav() {
         id="nav-drawer"
         inert={!open}
         className={`border-t border-navy-100/80 bg-white md:hidden ${
-          open ? "max-h-[80vh] overflow-y-auto" : "max-h-0 overflow-hidden border-t-transparent"
+          open ? "max-h-[80vh] overflow-y-auto" : "max-h-0 overflow-hidden border-t-0"
         } transition-[max-height] duration-300 ease-out`}
       >
         <Container className="flex flex-col gap-1 py-4">
