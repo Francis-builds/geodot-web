@@ -1567,5 +1567,27 @@
       "subtitle": "Tell us about your business and we will build the alliance plan that fits you best.",
       "button": "Apply as a partner"
     }
+  },
+  "ui": {
+    "contact": {
+      "errorValidation": "Check the highlighted fields: something is missing or invalid.",
+      "errorServer": "We could not send your message: something failed on our side, not yours.",
+      "errorFallback": "Email us directly at"
+    },
+    "footer": {
+      "partnerCta": "Want to become a partner?"
+    },
+    "nav": {
+      "menu": "Menu",
+      "switchLanguage": "Switch language",
+      "toggleSubmenu": "Show or hide the {label} menu"
+    },
+    "notFound": {
+      "title": "We could not find this page",
+      "body": "The link may have changed, or the page no longer exists.",
+      "home": "Go home",
+      "platform": "Explore the platform",
+      "contact": "Contact"
+    }
   }
 }

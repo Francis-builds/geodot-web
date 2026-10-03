@@ -2,11 +2,12 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Hero } from "@/components/Hero";
 import { Faq, type FaqGroup } from "@/components/Faq";
 import { CTABanner } from "@/components/CTABanner";
+import { pageMeta } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "faqPage" });
-  return { title: t("hero.title"), description: t("hero.subtitle") };
+  return pageMeta({ locale, path: "/preguntas-frecuentes", title: t("hero.title"), description: t("hero.subtitle") });
 }
 
 export default async function FaqPage({ params }: { params: Promise<{ locale: string }> }) {

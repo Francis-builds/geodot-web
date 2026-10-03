@@ -2,13 +2,18 @@ import type { MetadataRoute } from "next";
 import { MODULE_SLUGS } from "@/lib/modules";
 import { INDUSTRY_SLUGS } from "@/lib/industries";
 import { getPostSlugs } from "@/lib/blog";
-import { SITE_URL as BASE } from "@/lib/site";
+import { localizedUrl } from "@/lib/seo";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["", "/plataforma", "/industrias", "/integraciones", "/partners", "/casos-exito", "/recursos", "/nosotros", "/contacto", "/preguntas-frecuentes", "/privacidad", "/terminos",
+  // /partners is intentionally left out (noindex until the Alliance Program is closed).
+  const paths = ["", "/plataforma", "/industrias", "/integraciones", "/casos-exito", "/recursos", "/nosotros", "/contacto", "/preguntas-frecuentes", "/privacidad", "/terminos",
     ...MODULE_SLUGS.map((m) => `/plataforma/${m}`), ...INDUSTRY_SLUGS.map((i) => `/industrias/${i}`),
     ...getPostSlugs("es").map((s) => `/recursos/${s}`)];
-  return paths.flatMap((p) => [
-    { url: `${BASE}${p}`, changeFrequency: "monthly", priority: p === "" ? 1 : 0.7 },
-    { url: `${BASE}/en${p}`, changeFrequency: "monthly", priority: p === "" ? 0.9 : 0.6 },
-  ]);
+  return paths.flatMap((p) => {
+    const alternates = { languages: { es: localizedUrl("es", p), en: localizedUrl("en", p) } };
+    return [
+      { url: localizedUrl("es", p), changeFrequency: "monthly" as const, priority: p === "" ? 1 : 0.7, alternates },
+      { url: localizedUrl("en", p), changeFrequency: "monthly" as const, priority: p === "" ? 0.9 : 0.6, alternates },
+    ];
+  });
 }

@@ -10,6 +10,7 @@ export function Footer() {
   const tNav = useTranslations("nav");
   const tMod = useTranslations("modules");
   const tInd = useTranslations("industries");
+  const tUi = useTranslations("ui.footer");
 
   const linkClass =
     "inline-block py-2 text-body-sm text-navy-300 transition-colors hover:text-teal-300";
@@ -76,7 +77,6 @@ export function Footer() {
             <li><Link href="/recursos" className={linkClass}>{tNav("recursos")}</Link></li>
             <li><Link href="/casos-exito" className={linkClass}>{t("cases")}</Link></li>
             <li><Link href="/integraciones" className={linkClass}>{tNav("integraciones")}</Link></li>
-            <li><Link href="/partners" className={linkClass}>{tNav("partners")}</Link></li>
             <li><Link href="/preguntas-frecuentes" className={linkClass}>{t("faq")}</Link></li>
           </ul>
         </div>
@@ -87,6 +87,7 @@ export function Footer() {
           <ul className="space-y-2.5">
             <li><Link href="/nosotros" className={linkClass}>{t("about")}</Link></li>
             <li><Link href="/contacto" className={linkClass}>{t("contact")}</Link></li>
+            <li><Link href="/contacto?tipo=partner" className={linkClass}>{tUi("partnerCta")}</Link></li>
           </ul>
         </div>
       </Container>

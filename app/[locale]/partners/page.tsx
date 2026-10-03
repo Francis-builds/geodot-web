@@ -8,7 +8,11 @@ import { Button } from "@/components/ui/Button";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "partnersPage" });
-  return { title: `${t("hero.title")} ${t("hero.titleAccent")}`, description: t("hero.subtitle") };
+  return {
+    title: `${t("hero.title")} ${t("hero.titleAccent")}`,
+    description: t("hero.subtitle"),
+    robots: { index: false, follow: false },
+  };
 }
 
 export default async function PartnersPage({ params }: { params: Promise<{ locale: string }> }) {

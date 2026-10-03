@@ -14,3 +14,7 @@ test("rejects when honeypot 'website' is filled", () => {
 test("rejects too-short message", () => {
   expect(contactSchema.safeParse({ ...valid, mensaje: "hi" }).success).toBe(false);
 });
+test("accepts tipo=partner and rejects unknown tipo", () => {
+  expect(contactSchema.safeParse({ ...valid, tipo: "partner" }).success).toBe(true);
+  expect(contactSchema.safeParse({ ...valid, tipo: "otro" }).success).toBe(false);
+});

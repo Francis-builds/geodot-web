@@ -7,6 +7,7 @@ export const contactSchema = z.object({
   telefono: z.string().max(40).optional().or(z.literal("")),
   industria: z.string().max(60).optional().or(z.literal("")),
   mensaje: z.string().min(10).max(2000),
+  tipo: z.enum(["partner"]).optional().or(z.literal("")), // inquiry type; empty = regular demo request
   website: z.literal(""), // honeypot: must be empty
 });
 

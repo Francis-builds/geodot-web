@@ -5,11 +5,12 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/ui/Section";
 import { LegalBody } from "@/components/LegalBody";
+import { pageMeta } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal.terms" });
-  return { title: t("meta.title"), description: t("meta.description") };
+  return pageMeta({ locale, path: "/terminos", title: t("meta.title").replace(/\s*\|\s*Geodot$/, ""), description: t("meta.description") });
 }
 
 export default async function TerminosPage({ params }: { params: Promise<{ locale: string }> }) {

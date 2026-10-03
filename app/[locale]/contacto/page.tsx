@@ -3,11 +3,12 @@ import { Hero } from "@/components/Hero";
 import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { pageMeta } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact" });
-  return { title: t("title"), description: t("subtitle") };
+  return pageMeta({ locale, path: "/contacto", title: t("title"), description: t("subtitle") });
 }
 
 export default async function ContactoPage({ params }: { params: Promise<{ locale: string }> }) {

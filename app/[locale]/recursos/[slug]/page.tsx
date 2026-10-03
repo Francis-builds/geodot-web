@@ -6,6 +6,7 @@ import { getPost, getPostSlugs } from "@/lib/blog";
 import { Container } from "@/components/ui/Container";
 import { MdxContent } from "@/components/blog/MdxContent";
 import { CTABanner } from "@/components/CTABanner";
+import { pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -17,11 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, slug } = await params;
   const post = getPost(locale, slug);
   if (!post) return {};
-  return {
-    title: post.title,
-    description: post.excerpt,
-    openGraph: { title: post.title, description: post.excerpt, images: [post.cover], type: "article" },
-  };
+  const meta = pageMeta({ locale, path: `/recursos/${slug}`, title: post.title, description: post.excerpt });
+  return { ...meta, openGraph: { ...meta.openGraph, images: [post.cover], type: "article" } };
 }
 
 export default async function PostPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
@@ -31,7 +29,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
   if (!post) notFound();
   const t = await getTranslations("blog");
 
-  const dateLabel = new Intl.DateTimeFormat(locale === "en" ? "en-US" : "es-ES", {
+  const dateLabel = new Intl.DateTimeFormat(locale === "en" ? "en-US" : "es-MX", {
     day: "numeric",
     month: "long",
     year: "numeric",

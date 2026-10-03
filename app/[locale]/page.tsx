@@ -6,12 +6,13 @@ import { JourneyScroll } from "@/components/JourneyScroll";
 import { MetricsBand } from "@/components/MetricsBand";
 import { CasesStrip } from "@/components/CasesStrip";
 import { CTABanner } from "@/components/CTABanner";
+import { pageMeta } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home" });
   const m = await getTranslations({ locale, namespace: "meta" });
-  return { title: { absolute: m("title") }, description: t("hero.subtitle") };
+  return { ...pageMeta({ locale, path: "", title: m("title"), description: t("hero.subtitle") }), title: { absolute: m("title") } };
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {

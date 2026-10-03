@@ -7,6 +7,7 @@ import { ProblemStats } from "@/components/ProblemStats";
 import { SolutionSteps } from "@/components/SolutionSteps";
 import { MetricsBand } from "@/components/MetricsBand";
 import { CTABanner } from "@/components/CTABanner";
+import { pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => MODULE_SLUGS.map((modulo) => ({ locale, modulo })));
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const key = MODULES[modulo as ModuleSlug]?.messageKey;
   if (!key) return {};
   const t = await getTranslations({ locale, namespace: `modules.${key}` });
-  return { title: t("title"), description: t("subtitle") };
+  return pageMeta({ locale, path: `/plataforma/${modulo}`, title: t("title"), description: t("subtitle") });
 }
 
 export default async function ModuloPage({ params }: { params: Promise<{ locale: string; modulo: string }> }) {

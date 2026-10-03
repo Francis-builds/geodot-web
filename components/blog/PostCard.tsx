@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import type { Post } from "@/lib/blog";
 
 export function PostCard({ post, locale, readingLabel }: { post: Post; locale: string; readingLabel: string }) {
-  const dateLabel = new Intl.DateTimeFormat(locale === "en" ? "en-US" : "es-ES", {
+  const dateLabel = new Intl.DateTimeFormat(locale === "en" ? "en-US" : "es-MX", {
     day: "numeric",
     month: "short",
     year: "numeric",

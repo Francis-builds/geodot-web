@@ -26,6 +26,7 @@ function Logo({ scrolled }: { scrolled: boolean }) {
 
 export function Nav() {
   const t = useTranslations("nav");
+  const tUi = useTranslations("ui.nav");
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   // Hide while reading down, come back on any scroll up (and always near the top).
@@ -83,7 +84,6 @@ export function Nav() {
   // <MobileNavMenus>); the rest stay as plain links.
   const links = [
     { href: "/integraciones", label: t("integraciones") },
-    { href: "/partners", label: t("partners") },
     { href: "/casos-exito", label: t("casos") },
     { href: "/recursos", label: t("recursos") },
     { href: "/nosotros", label: t("nosotros") },
@@ -136,7 +136,7 @@ export function Nav() {
             solid ? "text-navy-900" : "text-white"
           }`}
           onClick={() => setOpen(!open)}
-          aria-label="Menu"
+          aria-label={tUi("menu")}
           aria-expanded={open}
           aria-controls="nav-drawer"
         >
