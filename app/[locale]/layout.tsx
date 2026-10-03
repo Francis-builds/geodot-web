@@ -7,7 +7,7 @@ import { routing } from "@/i18n/routing";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/SmoothScroll";
-import { SITE_URL } from "@/lib/site";
+import { INDEXABLE, SITE_URL } from "@/lib/site";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -33,7 +33,7 @@ export async function generateMetadata({
     title: { default: t("title"), template: "%s · Geodot" },
     description: t("description"),
     openGraph: { type: "website", siteName: "Geodot" },
-    robots: { index: true, follow: true },
+    robots: { index: INDEXABLE, follow: INDEXABLE },
   };
 }
 
