@@ -208,6 +208,10 @@
   .hero-seq [data-seq="2"] { animation-delay: 200ms; }
   .hero-seq [data-seq="3"] { animation-delay: 380ms; }
   .hero-seq [data-seq="4"] { animation-delay: 520ms; }
+  /* El H1 es el LCP: nunca arranca invisible (opacity 0 retrasa el LCP);
+     solo sube, así se pinta en el primer frame. */
+  .hero-seq [data-seq="2"] { opacity: 1; animation-name: rv-rise; animation-delay: 0ms; }
+  @keyframes rv-rise { to { transform: none; } }
   .hero-seq [data-seq="visual"] {
     transform: scale(1.04);
     animation: rv-seq 1600ms var(--ease-reveal) 150ms forwards;
