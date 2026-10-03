@@ -8,6 +8,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { SITE_URL } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const schibsted = Schibsted_Grotesk({
@@ -27,23 +28,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  const path = locale === "en" ? "/en" : "";
   return {
     metadataBase: new URL(SITE_URL),
     title: { default: t("title"), template: "%s · Geodot" },
     description: t("description"),
-    openGraph: {
-      type: "website",
-      locale: locale === "en" ? "en_US" : "es_MX",
-      url: `${SITE_URL}${path}`,
-      title: t("ogTitle"),
-      description: t("ogDescription"),
-      siteName: "Geodot",
-    },
-    alternates: {
-      canonical: `${SITE_URL}${path}`,
-      languages: { es: SITE_URL, en: `${SITE_URL}/en` },
-    },
+    openGraph: { type: "website", siteName: "Geodot" },
     robots: { index: true, follow: true },
   };
 }
@@ -75,6 +64,7 @@ export default async function LocaleLayout({
           <main id="contenido" className="pt-16 md:pt-[72px]">{children}</main>
           <Footer />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );

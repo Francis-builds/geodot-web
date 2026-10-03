@@ -8,6 +8,7 @@ import { ModuleGrid } from "@/components/ModuleGrid";
 import { CasesStrip } from "@/components/CasesStrip";
 import { CTABanner } from "@/components/CTABanner";
 import { Media } from "@/components/ui/Media";
+import { pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => INDUSTRY_SLUGS.map((industria) => ({ locale, industria })));
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const key = INDUSTRIES[industria as IndustrySlug]?.messageKey;
   if (!key) return {};
   const t = await getTranslations({ locale, namespace: `industries.${key}` });
-  return { title: `${t("title")} ${t("titleAccent")}`, description: t("subtitle") };
+  return pageMeta({ locale, path: `/industrias/${industria}`, title: `${t("title")} ${t("titleAccent")}`, description: t("subtitle") });
 }
 
 export default async function IndustriaPage({ params }: { params: Promise<{ locale: string; industria: string }> }) {

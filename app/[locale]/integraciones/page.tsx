@@ -4,11 +4,12 @@ import { CTABanner } from "@/components/CTABanner";
 import { Container } from "@/components/ui/Container";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
+import { pageMeta } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "integrationsPage" });
-  return { title: `${t("hero.title")} ${t("hero.titleAccent")}`, description: t("hero.subtitle") };
+  return pageMeta({ locale, path: "/integraciones", title: `${t("hero.title")} ${t("hero.titleAccent")}`, description: t("hero.subtitle") });
 }
 
 export default async function IntegracionesPage({ params }: { params: Promise<{ locale: string }> }) {

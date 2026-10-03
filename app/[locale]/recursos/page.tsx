@@ -3,11 +3,12 @@ import { getAllPosts } from "@/lib/blog";
 import { Hero } from "@/components/Hero";
 import { Container } from "@/components/ui/Container";
 import { PostCard } from "@/components/blog/PostCard";
+import { pageMeta } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<import("next").Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "blog" });
-  return { title: `${t("hero.title")} ${t("hero.titleAccent")}`, description: t("hero.subtitle") };
+  return pageMeta({ locale, path: "/recursos", title: `${t("hero.title")} ${t("hero.titleAccent")}`, description: t("hero.subtitle") });
 }
 
 export default async function RecursosPage({ params }: { params: Promise<{ locale: string }> }) {
