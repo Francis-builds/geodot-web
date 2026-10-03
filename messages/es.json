@@ -170,7 +170,7 @@
           "body": "La carga llega en camión, en contenedor o desde el puerto. Geodot la toma desde el primer punto y no la suelta hasta la firma.",
           "metric": "Desde el andén",
           "metricLabel": "trazable desde la entrada",
-          "image": "/images/multimodal/aereo.jpg"
+          "image": "/images/modules/plant-sync.jpg"
         },
         "warehouse": {
           "title": "Almacén",
@@ -198,14 +198,14 @@
           "body": "Prueba de entrega digital: firma y foto en el celular, sin papeles. El chofer cierra y el dato vuelve al instante.",
           "metric": "Firma y foto",
           "metricLabel": "prueba de entrega, sin papel",
-          "image": "/images/torre/torre-control-room.jpg"
+          "image": "/images/modules/etiqueta-zero.jpg"
         },
         "billing": {
           "title": "Cobro",
           "body": "El ciclo cierra solo: lo entregado queda listo para facturar y liquidar. Nada se pierde entre la calle y la oficina.",
           "metric": "Ciclo cerrado",
           "metricLabel": "de la orden al cobro",
-          "image": "/images/pages/partners.jpg"
+          "image": "/images/pages/nosotros.jpg"
         }
       }
     },

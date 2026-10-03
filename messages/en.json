@@ -170,7 +170,7 @@
           "body": "Freight arrives by truck, in a container or from the port. Geodot picks it up at the first point and keeps it until the signature.",
           "metric": "From the dock",
           "metricLabel": "traceable from intake",
-          "image": "/images/multimodal/aereo.jpg"
+          "image": "/images/modules/plant-sync.jpg"
         },
         "warehouse": {
           "title": "Warehouse",
@@ -198,14 +198,14 @@
           "body": "Digital proof of delivery: signature and photo on the phone, no paper. The driver closes it and the data returns instantly.",
           "metric": "Signature + photo",
           "metricLabel": "proof of delivery, no paper",
-          "image": "/images/torre/torre-control-room.jpg"
+          "image": "/images/modules/etiqueta-zero.jpg"
         },
         "billing": {
           "title": "Billing",
           "body": "The cycle closes itself: what was delivered is ready to invoice and settle. Nothing is lost between the street and the office.",
           "metric": "Closed loop",
           "metricLabel": "from order to cash",
-          "image": "/images/pages/partners.jpg"
+          "image": "/images/pages/nosotros.jpg"
         }
       }
     },
