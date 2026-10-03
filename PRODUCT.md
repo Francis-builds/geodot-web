@@ -18,7 +18,7 @@ El sitio (geodot-web) existe para posicionar a Geodot como **líder de la catego
 
 ## Brand Personality
 
-Operativo (de la calle, no del laboratorio), inteligente, confiable, medible, sostenible. Voz: profesional, directa, segura, con los pies en la operación; habla de resultados con números, sin humo. Español neutro-LATAM (voseo, jerga real del sector: "planchada", "retornables", "fugas invisibles"); inglés US B2B pulido. Tres palabras: **experto, directo, confiable.**
+Operativo (de la calle, no del laboratorio), inteligente, confiable, medible, sostenible. Voz: profesional, directa, segura, con los pies en la operación; habla de resultados con números, sin humo. Español neutro MX/LATAM **en tuteo, sin voseo** (regla de `geodot-content-vault/voice.md`: web = neutro; el voseo queda solo para demos habladas), jerga real del sector: "planchada", "retornables", "fugas invisibles"); inglés US B2B pulido. Tres palabras: **experto, directo, confiable.**
 
 Emociones a evocar: confianza (esto lo construyó gente que vivió la operación), claridad (entiendo el problema y la solución en segundos), urgencia medida (la ventana de competitividad se cierra).
 

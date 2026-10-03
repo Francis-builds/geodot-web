@@ -7,7 +7,7 @@ Marketing site for [Geodot](https://geodot.app) — bilingual (ES default at `/`
 - **Next.js 16** (App Router, React 19, RSC)
 - **next-intl** — i18n with `localePrefix: "as-needed"` (ES at root, EN under `/en`)
 - **Tailwind CSS 4** — design tokens from `geodot-design-system`
-- **next/font** — Space Grotesk (display) + Hanken Grotesk (body), `display: swap`
+- **next/font** — Schibsted Grotesk, una sola familia variable (decisión 2026-10-03, ver DESIGN.md), `display: swap`
 - **MDX blog** via `next-mdx-remote` + `gray-matter` (`content/blog/{es,en}/*.mdx`)
 - **Resend** — contact form delivery (server action)
 - **zod** — frontmatter + contact form validation
