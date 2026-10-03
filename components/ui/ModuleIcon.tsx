@@ -7,32 +7,8 @@ import type { ReactElement } from "react";
  * Standalone copies live in /public/images/modules/icons/<slug>.svg — keep paths in sync.
  * Rationale and usage rules: docs/module-icons.md
  */
-export type ModuleSlug =
-  | "wms"
-  | "tms"
-  | "router"
-  | "paletizado"
-  | "torre-control"
-  | "cadena-frio"
-  | "gestor-documental"
-  | "etiqueta-zero"
-  | "gps-flotas"
-  | "companion"
-  | "plant-sync";
-
-export const MODULE_SLUGS: readonly ModuleSlug[] = [
-  "wms",
-  "tms",
-  "router",
-  "paletizado",
-  "torre-control",
-  "cadena-frio",
-  "gestor-documental",
-  "etiqueta-zero",
-  "gps-flotas",
-  "companion",
-  "plant-sync",
-];
+// Slugs come from the module registry (single source of truth).
+import type { ModuleSlug } from "@/lib/modules";
 
 type Glyph = { body: ReactElement; dot: ReactElement };
 

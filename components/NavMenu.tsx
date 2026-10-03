@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { MODULES, MODULE_SLUGS } from "@/lib/modules";
+import { MODULES, MODULE_GROUPS, MODULE_SLUGS, type ModuleGroup, type ModuleSlug } from "@/lib/modules";
+import { ModuleIcon } from "./ui/ModuleIcon";
 import { INDUSTRIES, INDUSTRY_SLUGS } from "@/lib/industries";
 
 type MenuKind = "platform" | "industries";
@@ -12,17 +13,20 @@ export type MenuItem = {
   href: string;
   name: string;
   tagline: string;
+  /** Platform items only: drives the pictogram and the per-group columns. */
+  module?: { slug: ModuleSlug; group: ModuleGroup };
 };
 
 /** Build the item list for a menu from the registries + messages. */
 function usePlatformItems(): MenuItem[] {
   const t = useTranslations("modules");
   return MODULE_SLUGS.map((slug) => {
-    const { messageKey: key } = MODULES[slug];
+    const { messageKey: key, group } = MODULES[slug];
     return {
       href: `/plataforma/${slug}`,
       name: t(`${key}.name`),
       tagline: t(`${key}.tagline`),
+      module: { slug, group },
     };
   });
 }
@@ -37,6 +41,37 @@ function useIndustryItems(): MenuItem[] {
       tagline: t(`${key}.tagline`),
     };
   });
+}
+
+/** Compact platform row: pictogram + name (11 modules × tagline was too tall). */
+function ModuleRow({ item, onSelect }: { item: MenuItem; onSelect: () => void }) {
+  return (
+    <Link
+      href={item.href}
+      onClick={onSelect}
+      className="group/row flex items-center gap-2.5 rounded-lg px-3 py-2 transition-colors duration-200 hover:bg-navy-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-1"
+    >
+      {item.module && <ModuleIcon slug={item.module.slug} className="h-5 w-5 shrink-0 text-teal-700" />}
+      <span className="text-body-sm font-semibold text-navy-900 transition-colors duration-200 group-hover/row:text-teal-700">{item.name}</span>
+    </Link>
+  );
+}
+
+/** Platform panel body: one column per catalog group (Core / Especializados / Operativos). */
+function PlatformColumns({ items, onSelect }: { items: MenuItem[]; onSelect: () => void }) {
+  const t = useTranslations("modules");
+  return (
+    <div className="grid grid-cols-3 gap-x-2">
+      {MODULE_GROUPS.map((g) => (
+        <div key={g}>
+          <p className="px-3 pb-1 pt-2 text-caption font-semibold uppercase tracking-wide text-navy-600">{t(`groups.${g}.title`)}</p>
+          {items.filter((i) => i.module?.group === g).map((item) => (
+            <ModuleRow key={item.href} item={item} onSelect={onSelect} />
+          ))}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 /* ------------------------------------------------------------------ */
@@ -179,20 +214,27 @@ function DesktopMenu({
       <div
         id={panelId}
         inert={!open}
-        className={`absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 ${
+        className={`absolute top-full z-50 pt-3 ${
+          // the wide platform panel anchors to its trigger's left edge so it never runs off-screen
+          kind === "platform" ? "left-0" : "left-1/2 -translate-x-1/2"
+        } ${
           open ? "pointer-events-auto" : "pointer-events-none"
         }`}
       >
         <div
           className={`origin-top rounded-xl border border-navy-100 bg-white p-3 shadow-pop transition-[opacity,translate,scale] duration-200 motion-reduce:transition-none ${
             open ? "translate-y-0 scale-100 opacity-100" : "-translate-y-1 scale-[0.98] opacity-0"
-          } ${wide ? "w-[40rem]" : "w-[24rem]"}`}
+          } ${wide ? "w-[40rem]" : "w-[44rem]"}`}
         >
-          <div className={`grid ${wide ? "grid-cols-2 gap-x-2 gap-y-0.5" : "grid-cols-1 gap-0.5"}`}>
-            {items.map((item) => (
-              <MenuRow key={item.href} item={item} onSelect={close} />
-            ))}
-          </div>
+          {kind === "platform" ? (
+            <PlatformColumns items={items} onSelect={close} />
+          ) : (
+            <div className="grid grid-cols-2 gap-x-2 gap-y-0.5">
+              {items.map((item) => (
+                <MenuRow key={item.href} item={item} onSelect={close} />
+              ))}
+            </div>
+          )}
           <Link
             href={viewAllHref}
             onClick={close}
@@ -265,7 +307,7 @@ function MobileAccordion({
       <div
         id={panelId}
         inert={!open}
-        className={`overflow-hidden transition-[max-height] duration-300 ease-out ${open ? "max-h-[640px]" : "max-h-0"}`}
+        className={`overflow-hidden transition-[max-height] duration-300 ease-out ${open ? "max-h-[1200px]" : "max-h-0"}`}
       >
         <div className="flex flex-col gap-0.5 pb-2 pl-2">
           {items.map((item) => (
@@ -275,6 +317,7 @@ function MobileAccordion({
               onClick={onNavigate}
               className="flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-navy-50"
             >
+              {item.module && <ModuleIcon slug={item.module.slug} className="h-5 w-5 shrink-0 text-teal-700" />}
               <span className="min-w-0">
                 <span className="block text-body-sm font-semibold text-navy-900">{item.name}</span>
                 <span className="block text-caption leading-snug text-navy-600">{item.tagline}</span>

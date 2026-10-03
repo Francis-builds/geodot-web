@@ -4,7 +4,7 @@ import { MODULES, MODULE_GROUPS, MODULE_SLUGS, modulesInGroup, type ModuleSlug }
 import { Section, SectionHeader } from "./ui/Section";
 import type { CSSProperties } from "react";
 import { InView } from "./ui/InView";
-import { Icon } from "./ui/Icon";
+import { ModuleIcon } from "./ui/ModuleIcon";
 
 // Bento layout for the Core group: varied spans so the grid reads as a
 // composition, not equal cards. 12-col grid on lg; first tile is the hero tile.
@@ -29,14 +29,14 @@ function Arrow() {
 /** Large tile: the Core bento and an industry's entry modules. */
 function FeatureCard({ slug, hero }: { slug: ModuleSlug; hero: boolean }) {
   const t = useTranslations("modules");
-  const { messageKey: key, icon } = MODULES[slug];
+  const { messageKey: key } = MODULES[slug];
   return (
     <Link
       href={`/plataforma/${slug}`}
       className={`group flex h-full min-h-[180px] flex-col justify-between rounded-xl border border-navy-100 bg-white p-6 md:p-7 ${LIFT}`}
     >
       <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-teal-50 text-accent-sm">
-        <Icon name={icon} className={hero ? "h-6 w-6" : "h-5 w-5"} />
+        <ModuleIcon slug={slug} className={hero ? "h-7 w-7" : "h-6 w-6"} />
       </span>
 
       <div className="mt-6">
@@ -59,14 +59,14 @@ function FeatureCard({ slug, hero }: { slug: ModuleSlug; hero: boolean }) {
 /** Compact row card: Especializados, Operativos and an industry's cross-sell. */
 function CompactCard({ slug }: { slug: ModuleSlug }) {
   const t = useTranslations("modules");
-  const { messageKey: key, icon } = MODULES[slug];
+  const { messageKey: key } = MODULES[slug];
   return (
     <Link
       href={`/plataforma/${slug}`}
       className={`group flex h-full items-start gap-4 rounded-xl border border-navy-100 bg-white p-5 ${LIFT}`}
     >
       <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-accent-sm">
-        <Icon name={icon} className="h-5 w-5" />
+        <ModuleIcon slug={slug} className="h-6 w-6" />
       </span>
       <div className="min-w-0">
         <h3 className="flex items-center gap-1.5 text-heading-sm font-semibold text-navy-900">
