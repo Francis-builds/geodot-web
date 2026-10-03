@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Geodot: carga tus camiones al 100% con IA",
-    "description": "WMS, TMS, ruteo y paletizado en una sola plataforma con IA. Reduce costo de transporte, elimina rechazos y gana visibilidad total. ROI en menos de 12 meses.",
+    "description": "iWMS, iTMS, ruteo y paletizado en una sola plataforma con IA. Reduce el costo de transporte, elimina rechazos y gana visibilidad en tiempo real. Resultados en 90 días.",
     "ogTitle": "Geodot: la logística que carga al 100% y se ve en tiempo real",
     "ogDescription": "Menos camiones, menos rechazos, cero puntos ciegos. Ruteo + paletizado en simultáneo, integrado a tu ERP. Resultados en 90 días."
   },
@@ -106,12 +106,10 @@
       "rotatingWords": [
         "camiones",
         "barcos",
-        "containers",
-        "aviones",
-        "vagones"
+        "contenedores"
       ],
       "titleAfter": "al 100% con IA",
-      "subtitle": "La plataforma de IA que mueve tu carga por mar, aire y tierra: rutea y paletiza en simultáneo, elimina los puntos ciegos y se integra a tu ERP. Resultados medibles en 90 días.",
+      "subtitle": "La plataforma de IA para tu operación logística: rutea y paletiza en simultáneo, elimina los puntos ciegos y se integra a tu ERP. Resultados medibles en 90 días.",
       "ctaPrimary": "Agenda tu demo",
       "ctaSecondary": "Ver la plataforma",
       "eyebrow": "Ocupación real de carga con Geodot: 85% → 99%",
@@ -123,9 +121,7 @@
         "modes": [
           "En ruta · ETA 09:41",
           "En navegación · ETA 14:30",
-          "En patio · Listo para cargar",
-          "En vuelo · ETA 11:05",
-          "En vía · ETA 16:20"
+          "En patio · Listo para cargar"
         ]
       }
     },
@@ -171,9 +167,9 @@
       "stages": {
         "reception": {
           "title": "Recepción",
-          "body": "La carga entra por mar, aire, tierra o tren. Geodot la toma desde el primer punto, sin importar el modo.",
-          "metric": "Multimodal",
-          "metricLabel": "de entrada",
+          "body": "La carga llega en camión, en contenedor o desde el puerto. Geodot la toma desde el primer punto y no la suelta hasta la firma.",
+          "metric": "Desde el andén",
+          "metricLabel": "trazable desde la entrada",
           "image": "/images/multimodal/aereo.jpg"
         },
         "warehouse": {
@@ -192,7 +188,7 @@
         },
         "route": {
           "title": "En ruta",
-          "body": "Sale por el modo que sea, con la ETA actualizándose en vivo. La IA aprende por chofer, cliente y bultos: el rango baja de 30 a 10 minutos en tres meses.",
+          "body": "Sale con la ETA actualizándose en vivo. La IA aprende por chofer, cliente y bultos: el rango baja de 30 a 10 minutos en unos tres meses.",
           "metric": "30→10 min",
           "metricLabel": "de ETA, la IA aprende",
           "image": "/images/fleet/ruteo-nocturno.jpg"
@@ -200,8 +196,8 @@
         "delivery": {
           "title": "Entrega",
           "body": "Prueba de entrega digital: firma y foto en el celular, sin papeles. El chofer cierra y el dato vuelve al instante.",
-          "metric": "100%",
-          "metricLabel": "entrega trazable",
+          "metric": "Firma y foto",
+          "metricLabel": "prueba de entrega, sin papel",
           "image": "/images/torre/torre-control-room.jpg"
         },
         "billing": {
@@ -227,12 +223,12 @@
       {
         "value": 10,
         "suffix": " min",
-        "label": "Para rutear 5.000 pedidos"
+        "label": "Rango de ETA tras unos 3 meses: la IA aprende"
       },
       {
-        "value": 100,
-        "suffix": "%",
-        "label": "Trazabilidad, en vivo"
+        "value": 23,
+        "suffix": " buques",
+        "label": "En producción con Torre de Control"
       }
     ],
     "cases": {
@@ -241,18 +237,18 @@
       "items": [
         {
           "metric": "−8%",
-          "result": "Menos costo de transporte saltando del 85% al 99% de carga por camión",
-          "client": "Una embotelladora líder"
+          "result": "Menos costo de transporte al pasar del 85% al 99% de carga por camión, con ruteo y paletizado en simultáneo",
+          "client": "Una embotelladora líder · en producción"
         },
         {
-          "metric": "83%",
-          "result": "Regla de vida útil por cliente aplicada al pistolear: FEFO real, sin rechazos sorpresa",
-          "client": "Distribución de alimentos"
+          "metric": "23 buques",
+          "result": "Telemetría y Torre de Control en una sola pantalla: la operación en altamar, visible en tiempo real",
+          "client": "Una flota pesquera · en producción"
         },
         {
-          "metric": "100%",
-          "result": "Trazabilidad de recolección en vivo, con potencial estimado de hasta ~70 t CO₂/año menos",
-          "client": "Un municipio"
+          "metric": "30→10 min",
+          "result": "Rango de ETA tras unos 3 meses de operación: la IA aprende por chofer, por cliente y por bultos",
+          "client": "Una operación de distribución · en producción"
         }
       ]
     },
@@ -304,7 +300,7 @@
       "name": "iWMS",
       "tagline": "FEFO real: te avisa cuál palet está más viejo, antes de que se venza",
       "eyebrow": "Pilar: Control",
-      "title": "Gestión de Almacenes",
+      "title": "iWMS — Gestión de almacenes",
       "titleAccent": "que ve cada pack",
       "subtitle": "Tu SAP sabe que tienes stock. El iWMS de Geodot sabe en qué palet, qué lote y a qué altura del anaquel, y cuál está más viejo. FEFO real por fecha de expiración y vida útil por cliente, para que dejen de rechazarte el camión.",
       "ctaPrimary": "Agenda tu demo",
@@ -323,12 +319,12 @@
             "impact": "83%"
           },
           {
-            "problem": "Consulta de un procedimiento, con asistente IA",
-            "impact": "<2 min"
+            "problem": "Producto vencido escondido atrás",
+            "impact": "Aviso al pistolear"
           },
           {
-            "problem": "Producto vencido escondido atrás",
-            "impact": "a la vista"
+            "problem": "Stock por palet, lote y altura del anaquel",
+            "impact": "En vivo"
           }
         ]
       },
@@ -357,17 +353,7 @@
         {
           "value": 83,
           "suffix": "%",
-          "label": "Vida útil mínima que el sistema garantiza por cliente"
-        },
-        {
-          "value": 2,
-          "suffix": " min",
-          "label": "Resolver una consulta documental con asistente IA, 24/7"
-        },
-        {
-          "value": 100,
-          "suffix": "%",
-          "label": "Trazabilidad por lote, pack y ubicación"
+          "label": "Vida útil mínima por cliente, aplicada a todo el viaje al pistolear"
         },
         {
           "value": 90,
@@ -389,7 +375,7 @@
       "name": "iTMS",
       "tagline": "Cada camión bajo control, sea propio o tercerizado",
       "eyebrow": "Pilar: Visibilidad",
-      "title": "Gestión de Transporte",
+      "title": "iTMS — Gestión de transporte",
       "titleAccent": "en tiempo real",
       "subtitle": "El transporte es tu mayor costo y tu peor punto ciego. El iTMS gestiona flota propia y tercerizada desde una sola pantalla: tracking en vivo, documentación al día, validación de cada descarga y costos atribuidos a cada ruta y cliente.",
       "ctaPrimary": "Agenda tu demo",
@@ -404,16 +390,16 @@
         ],
         "stats": [
           {
-            "problem": "Reducción de costo de transporte",
-            "impact": "-8%"
+            "problem": "Costo de transporte, junto al salto de carga 85% → 99%",
+            "impact": "−8%"
           },
           {
-            "problem": "Validación de descargas contra GPS",
-            "impact": "sí"
+            "problem": "Cada descarga",
+            "impact": "Validada contra GPS"
           },
           {
-            "problem": "Cargas simuladas",
-            "impact": "se acaban"
+            "problem": "Flota propia y tercerizada",
+            "impact": "Una sola pantalla"
           }
         ]
       },
@@ -426,7 +412,7 @@
           },
           {
             "title": "Validación de descargas",
-            "description": "El GPS aquí no es un puntito en el mapa: cada descarga se valida contra la posición real del camión. Se acabaron las cargas simuladas y el camión a medias que sale dos veces."
+            "description": "El GPS aquí no es un puntito en el mapa: cada descarga se valida contra la posición real del camión. Así se detectan las cargas simuladas y el camión a medias que sale dos veces."
           },
           {
             "title": "Flota propia y tercerizada",
@@ -445,16 +431,6 @@
           "label": "Menos costo de transporte, junto al salto 85%→99% de carga"
         },
         {
-          "value": 100,
-          "suffix": "%",
-          "label": "Visibilidad de flota propia y tercerizada"
-        },
-        {
-          "value": 100,
-          "suffix": "%",
-          "label": "Descargas validadas contra GPS"
-        },
-        {
           "value": 90,
           "suffix": " días",
           "label": "En producción, no 6 a 12 meses"
@@ -466,8 +442,8 @@
         "button": "Agenda tu demo"
       },
       "cardMetric": {
-        "value": "100%",
-        "label": "de descargas validadas contra GPS"
+        "value": "1 pantalla",
+        "label": "para flota propia y tercerizada"
       }
     },
     "paletizado": {
@@ -476,7 +452,7 @@
       "eyebrow": "Pilar: Rentabilidad",
       "title": "Paletizado",
       "titleAccent": "Inteligente",
-      "subtitle": "Otros rutean primero y paletizan después. Geodot lo hace a la vez: somos los únicos que calculan paletizado y ruteo al mismo tiempo. Sabemos qué entra a cada camión antes de cargarlo, para que cargues al 99% sin dejar planchada.",
+      "subtitle": "Otros rutean primero y paletizan después. Geodot lo hace a la vez: ningún competidor tier-1 calcula paletizado y ruteo al mismo tiempo. Sabemos qué entra a cada camión antes de cargarlo, para que cargues al 99% sin dejar planchada.",
       "ctaPrimary": "Agenda tu demo",
       "problem": {
         "title": "Tus camiones salen al 85%. Esa planchada es dinero que viaja vacío",
@@ -578,12 +554,12 @@
             "impact": "30→10 min"
           },
           {
-            "problem": "La IA aprende por chofer, cliente y bultos",
-            "impact": "sí"
+            "problem": "Qué aprende la IA",
+            "impact": "Chofer, cliente y bultos"
           },
           {
             "problem": "Visibilidad de toda la operación",
-            "impact": "en vivo"
+            "impact": "En vivo"
           }
         ]
       },
@@ -620,11 +596,6 @@
           "label": "Para que la IA aprenda tu operación"
         },
         {
-          "value": 100,
-          "suffix": "%",
-          "label": "Visibilidad de la operación, en un solo tablero"
-        },
-        {
           "value": 90,
           "suffix": " días",
           "label": "En producción, no 6 a 12 meses"
@@ -632,7 +603,7 @@
       ],
       "cta": {
         "title": "¿Cuánto te cuesta cada incidente que descubres tarde?",
-        "subtitle": "Agenda una demo y unifica iWMS, iTMS, ruteo y paletizado en un solo tablero.",
+        "subtitle": "Agenda una demo y unifica iWMS, iTMS, iRouter y paletizado en un solo tablero.",
         "button": "Agenda tu demo"
       },
       "cardMetric": {
@@ -727,8 +698,8 @@
         ],
         "stats": [
           {
-            "problem": "FEFO por fecha de expiración",
-            "impact": "Real"
+            "problem": "Salida de producto",
+            "impact": "FEFO por expiración"
           },
           {
             "problem": "Regla de vida útil",
@@ -748,22 +719,22 @@
         "title": "Módulos más usados en tu industria"
       },
       "cases": {
-        "title": "Casos en tu sector",
+        "title": "Casos y capacidades en tu sector",
         "items": [
           {
             "metric": "FEFO real",
             "result": "Al sacar un palet, el sistema avisa que hay 12 palets más viejos en otra ubicación: desaparece el producto vencido escondido atrás.",
-            "client": "Un distribuidor de alimentos"
+            "client": "Almacén de consumo masivo · en producción"
           },
           {
             "metric": "83%",
             "result": "Regla de vida útil por cliente aplicada a todo el viaje al pistolear: si un cliente exige +83% de vida útil, ningún producto viejo se le carga.",
-            "client": "Una láctea regional"
+            "client": "Distribución de alimentos · en operación"
           },
           {
             "metric": "Frío",
             "result": "Citas diferenciadas para producto frío y seco, con sensores de temperatura en camiones y rechazo en recepción si está fuera de rango.",
-            "client": "Una láctea regional"
+            "client": "Capacidad mostrada en demo"
           }
         ]
       },
@@ -779,7 +750,7 @@
       "eyebrow": "Industria",
       "title": "Gobierno y",
       "titleAccent": "Residuos Urbanos",
-      "subtitle": "Cuatro de cada cinco vecinos sienten que la basura está fuera de control. Rutas diseñadas hace una década, camiones llenos que no levantan más y zonas olvidadas. Geodot optimiza las rutas, valida cada descarga contra GPS y pone la operación ante los ojos del ciudadano.",
+      "subtitle": "En muchas ciudades, los vecinos sienten que la basura está fuera de control. Rutas diseñadas hace una década, camiones llenos que no levantan más y zonas olvidadas. Geodot optimiza las rutas, valida cada descarga contra GPS y pone la operación ante los ojos del ciudadano.",
       "ctaPrimary": "Agenda una reunión",
       "problem": {
         "title": "Desafíos específicos que resolvemos",
@@ -800,8 +771,8 @@
             "impact": "Mapa de calor"
           },
           {
-            "problem": "Combustible y km (potencial estimado)",
-            "impact": "Hasta -15%"
+            "problem": "Rutas de recolección",
+            "impact": "Rediseñadas con IA"
           },
           {
             "problem": "CO₂ evitado (potencial estimado)",
@@ -813,22 +784,22 @@
         "title": "Módulos más usados en tu industria"
       },
       "cases": {
-        "title": "Casos en tu sector",
+        "title": "Escenarios típicos",
         "items": [
           {
-            "metric": "GPS",
-            "result": "Validación de cada descarga contra GPS: se acaban las cargas simuladas y queda registro de qué punto se levantó y cuándo.",
-            "client": "Un municipio de la CDMX"
+            "metric": "Descargas",
+            "result": "Cada descarga se valida contra el GPS crudo y la geocerca del punto: queda registro de qué se levantó, cuándo y por cuánto tiempo, y de qué punto no se visitó.",
+            "client": "Escenario típico · recolección"
           },
           {
             "metric": "Censo",
-            "result": "Mapa de calor y censo de puntos de recolección por densidad y tonelaje estimado, base para rediseñar rutas con IA.",
-            "client": "Un municipio de la CDMX"
+            "result": "Mapa de calor y censo de puntos de recolección por densidad y tonelaje estimado, como base para rediseñar las rutas con IA.",
+            "client": "Escenario típico · rediseño de rutas"
           },
           {
             "metric": "~70 t/año",
-            "result": "Potencial estimado de CO₂ evitado por rutas más cortas en un proyecto de recolección, junto a un objetivo de hasta -15% en km y combustible.",
-            "client": "Un municipio de la CDMX"
+            "result": "Potencial estimado de CO₂ evitado por rutas más cortas en un proyecto tipo de recolección. Es una estimación, no un resultado medido.",
+            "client": "Escenario típico · sostenibilidad"
           }
         ]
       },
@@ -878,22 +849,22 @@
         "title": "Módulos más usados en tu industria"
       },
       "cases": {
-        "title": "Casos en tu sector",
+        "title": "Escenarios típicos",
         "items": [
           {
             "metric": "Etiqueta Zero",
-            "result": "Cero re-etiquetado manual en recepción: el dato ya viaja con el palet, se acaban los errores de reimpresión y repegado.",
-            "client": "Un operador logístico"
+            "result": "Recepción sin re-etiquetado manual: el código del proveedor se reconcilia una vez y el dato ya viaja con el palet.",
+            "client": "Escenario típico · recepción"
           },
           {
             "metric": "Multicliente",
             "result": "Cada cuenta con su propia visibilidad y sus reportes en un portal 24/7, sin armar un Excel por cliente.",
-            "client": "Un operador logístico"
+            "client": "Escenario típico · operador multicliente"
           },
           {
-            "metric": "iWMS",
-            "result": "Ubicación y estado de cada unidad de equipo rentado en tiempo real, con historial de uso por cliente y por turno.",
-            "client": "Una empresa de renta de equipo"
+            "metric": "Companion",
+            "result": "Ubicación y estado de cada equipo rentado, con evidencia de entrega y de uso por cliente desde la app de campo.",
+            "client": "Escenario típico · renta de equipo"
           }
         ]
       },
@@ -914,7 +885,7 @@
       "problem": {
         "title": "Desafíos específicos que resolvemos",
         "points": [
-          "Red de frío fragmentada: el producto sale a 4 °C del almacén central pero el último kilómetro no tiene monitoreo, y ahí ocurre la mayoría de las excursiones.",
+          "Red de frío fragmentada: el producto sale a 4 °C del almacén central, pero el último kilómetro no tiene monitoreo y ahí es donde se pierde el control.",
           "Te enteras tarde: sin sensores en el camión, la excursión aparece cuando rechazan la entrega.",
           "Ventanas de tiempo estrictas: las muestras tienen vida útil y los traslados se miden en minutos, no en horas.",
           "Miles de SKUs con vencimientos: FEFO obligatorio, lotes, controlados y trazabilidad para recalls.",
@@ -930,8 +901,8 @@
             "impact": "Cuando pasa"
           },
           {
-            "problem": "FEFO por vencimiento",
-            "impact": "Real"
+            "problem": "Salida por vencimiento",
+            "impact": "FEFO automático"
           },
           {
             "problem": "Cadena de custodia",
@@ -943,22 +914,22 @@
         "title": "Módulos más usados en tu industria"
       },
       "cases": {
-        "title": "Casos en tu sector",
+        "title": "Escenarios típicos",
         "items": [
           {
             "metric": "Frío",
-            "result": "Sensores de temperatura en camiones con frío y rechazo automático en recepción si el producto llega fuera de rango: la excursión se ve cuando pasa.",
-            "client": "Un distribuidor farmacéutico"
+            "result": "Sensores de temperatura en camiones con frío y rechazo en recepción si el producto llega fuera de rango: la excursión se ve cuando pasa.",
+            "client": "Escenario típico · distribución farmacéutica"
           },
           {
-            "metric": "FEFO real",
+            "metric": "FEFO",
             "result": "Salida por fecha de expiración con aviso al pistolear cuando hay un palet más viejo en otra ubicación: nada vencido queda escondido atrás.",
-            "client": "Un distribuidor farmacéutico"
+            "client": "Escenario típico · almacén de salud"
           },
           {
             "metric": "Custodia",
-            "result": "Cada movimiento registrado con timestamp, temperatura y responsable, con trazabilidad continua del almacén central al punto de entrega.",
-            "client": "Una cadena de distribución de salud"
+            "result": "Cada movimiento registrado con hora, temperatura y responsable, con trazabilidad continua del almacén central al punto de entrega.",
+            "client": "Escenario típico · cadena de custodia"
           }
         ]
       },
@@ -999,8 +970,8 @@
             "impact": "Auditable"
           },
           {
-            "problem": "Consulta documental",
-            "impact": "< 2 min, 24/7"
+            "problem": "Expediente por operación",
+            "impact": "Gestor Documental"
           }
         ]
       },
@@ -1008,22 +979,22 @@
         "title": "Módulos más usados en tu industria"
       },
       "cases": {
-        "title": "Casos en tu sector",
+        "title": "Casos y escenarios en tu sector",
         "items": [
           {
             "metric": "Etiqueta Zero",
-            "result": "Almacén fiscal digitalizado con iWMS y Etiqueta Zero: cero re-etiquetado y trazabilidad por palet en áreas de peligrosos, refrigerados y estándar.",
-            "client": "Un recinto en AIFA"
+            "result": "Almacén fiscal con iWMS y Etiqueta Zero: cero re-etiquetado y trazabilidad por palet en áreas de peligrosos, refrigerados y carga estándar.",
+            "client": "Recinto Fiscalizado del AIFA"
           },
           {
             "metric": "Auditable",
             "result": "Cada movimiento dentro del recinto queda registrado y disponible para inspección, con conciliación física contra lo declarado.",
-            "client": "Un recinto en zona portuaria"
+            "client": "Escenario típico · recinto portuario"
           },
           {
-            "metric": "< 2 min",
-            "result": "Consulta documental resuelta por un asistente IA en menos de 2 minutos, 24/7, siempre sobre la versión vigente.",
-            "client": "Un recinto en AIFA"
+            "metric": "Expediente",
+            "result": "Cada operación con su expediente digital versionado y auditable, listo para la revisión de la autoridad.",
+            "client": "Escenario típico · cumplimiento"
           }
         ]
       },
@@ -1039,12 +1010,12 @@
       "eyebrow": "La plataforma",
       "title": "Potencia tu ERP en 90 días, no en",
       "titleAccent": "un año",
-      "subtitle": "Tu SAP sabe que tienes stock. Geodot sabe en qué palet, qué lote y a qué altura del anaquel, y carga tus camiones del 85% al 99%. WMS, TMS, ruteo y paletizado en una sola plataforma: el ruteador y el paletizador calculan al mismo tiempo, en vivo. En producción en 90 días, no en 6 a 12 meses.",
+      "subtitle": "Tu SAP sabe que tienes stock. Geodot sabe en qué palet, qué lote y a qué altura del anaquel, y carga tus camiones del 85% al 99%. Once módulos en una sola plataforma, del almacén al patio y a la última entrega: el iRouter y el paletizador calculan al mismo tiempo, en vivo. En producción en 90 días, no en 6 a 12 meses.",
       "cta": "Agenda tu demo"
     },
     "modules": {
       "title": "Módulos que trabajan como uno solo",
-      "description": "No venimos a reemplazar tu SAP, venimos a llegar adonde tu SAP no llega: pack, palet, lote, ubicación, paletizado. Nos integramos con SAP, SAP Business One, BASIS y Oracle vía APIs propias, y sumamos lo único que nadie más hace: ruteo y paletizado calculados a la vez."
+      "description": "No venimos a reemplazar tu SAP, venimos a llegar adonde tu SAP no llega: pack, palet, lote, ubicación, paletizado. Nos integramos con SAP Business One, BASIS y Oracle vía APIs propias, y sumamos lo que ningún competidor tier-1 hace: ruteo y paletizado calculados a la vez."
     },
     "cta": {
       "title": "¿Dónde se te escapa el dinero hoy?",
@@ -1076,7 +1047,7 @@
       "eyebrow": "Casos de éxito",
       "title": "Números medibles, no",
       "titleAccent": "promesas en PowerPoint",
-      "subtitle": "Embotelladoras, flotas pesqueras y operaciones de frío ya mueven más con Geodot. Marcamos qué está en producción y qué se mostró en demo.",
+      "subtitle": "Embotelladoras y flotas pesqueras ya operan con Geodot en producción. Marcamos con claridad qué corre en producción, qué se mostró en demo y qué es un escenario típico.",
       "imageAlt": "Geocerca virtual delimitando la zona de contenedores de un puerto",
       "cta": "Quiero estos resultados"
     },
@@ -1095,37 +1066,42 @@
         },
         {
           "client": "Una operación de distribución",
-          "result": "El ruteo pasó de ~3 horas a rutear 5.000 pedidos en ~10 minutos. Las ETAs arrancaron en una franja de 30 minutos y la IA las afinó a 10 en unos 3 meses.",
-          "metric": "3 h → 10 min"
+          "result": "Las ETAs arrancaron en una franja de 30 minutos y la IA las afinó a 10 en unos 3 meses, aprendiendo por chofer, cliente y bultos. En demo, el mismo motor ruteó 5.000 pedidos en ~10 minutos (capacidad, no resultado de un cliente).",
+          "metric": "30→10 min"
         }
       ]
     },
     "studies": {
-      "title": "Tres operaciones, tres puntos de dolor, tres resultados",
+      "title": "Tres operaciones, tres dolores: qué corre y qué se mostró",
       "items": [
         {
           "industry": "Bebidas y distribución (en producción)",
           "challenge": "Camiones que salían al 85% y rutas armadas a mano cada mañana. Para mover lo mismo hacían falta 150 camiones cuando con mejor carga alcanzaba con 100. La planchada del sindicato comía capacidad real.",
           "solution": "Geodot calcula paletizado y ruteo en simultáneo: sabe qué entra al camión antes de armar la ruta. Movió clientes de vidrio retornable entre camiones para liberar capacidad sin romper el margen.",
-          "result": "Carga de camión del 85% al 99% y 8% menos de costo de transporte. La regla del vidrio sumó 10% de capacidad y sacó 4 a 5 camiones por día de la calle."
+          "result": "Carga de camión del 85% al 99% y 8% menos de costo de transporte. La regla del vidrio sumó 10% de capacidad y sacó 4 a 5 camiones por día de la calle.",
+          "kind": "real"
         },
         {
-          "industry": "Frío y trazabilidad (mostrado en demo)",
+          "kind": "demo",
+          "industry": "Frío y trazabilidad (demo)",
           "challenge": "Producto vencido escondido al fondo del almacén y rechazos de camión completo porque un cliente exige entregar con más del 83% de vida útil. La trazabilidad tardaba días en responder un reclamo.",
           "solution": "Geodot aplica FEFO real al pistolear: si sacas un palet, avisa que hay 12 más viejos en otra ubicación y te manda a buscar esos. La regla de vida útil del cliente se aplica a todo el viaje, no a un palet suelto.",
-          "result": "Desaparece el producto vencido escondido atrás y el rechazo de camión completo por vida útil. La franja de ETA bajó de 30 a 10 minutos en unos 3 meses, a medida que la IA aprendió."
+          "result": "El aviso de palets más viejos al pistolear, la regla de vida útil aplicada a todo el viaje y la trazabilidad por lote en segundos. Es capacidad del sistema, mostrada con datos de prueba."
         },
         {
-          "industry": "Recinto fiscal y cumplimiento (escenario tipo)",
+          "kind": "scenario",
+          "industry": "Recinto fiscal y cumplimiento (escenario típico)",
           "challenge": "Mercancía bajo control aduanero llevada en planillas y re-etiquetado manual en recepción, con riesgo de discrepancias y horas perdidas en cada revisión.",
-          "solution": "Geodot suma iWMS con Etiqueta Zero para que el dato viaje con el palet sin re-imprimir etiquetas, y un gestor documental con asistente de IA que resuelve una consulta de procedimiento en menos de 2 minutos, 24/7.",
-          "result": "Cero re-etiquetado manual, cada movimiento registrado en tiempo real y la operación lista para auditoría. La consulta documental que antes tomaba horas se resuelve en menos de 2 minutos."
+          "solution": "Geodot suma iWMS con Etiqueta Zero para que el dato viaje con el palet sin reimprimir etiquetas, y el Gestor Documental para tener cada expediente versionado y a mano.",
+          "result": "Recepción sin re-etiquetado, cada movimiento registrado en tiempo real y la evidencia lista para auditoría."
         }
       ],
       "labels": {
         "challenge": "El reto",
         "solution": "Qué hace Geodot",
-        "result": "El resultado"
+        "result": "El resultado",
+        "shown": "Qué se mostró",
+        "scenario": "Qué resuelve"
       }
     },
     "cta": {
@@ -1168,17 +1144,17 @@
         },
         {
           "year": "Hoy",
-          "label": "En toda LATAM",
-          "title": "Una plataforma, cuatro países",
-          "body": "Operamos en México, Argentina, Colombia y Ecuador, con experiencia real en bebidas, alimentos, gobierno, pharma y recintos fiscales. Seguimos siendo gente de la operación, ahora con tecnología propia."
+          "label": "México y Argentina",
+          "title": "En producción, no en PowerPoint",
+          "body": "Corremos en producción en operaciones de bebidas y de pesca, con una flota de 23 buques en una sola pantalla, y tenemos proyectos en alimentos, gobierno, salud y recintos fiscales. Seguimos siendo gente de la operación, ahora con tecnología propia."
         }
       ]
     },
     "body": [
       "Después de más de 40 años combinados en logística, producción y tecnología, vimos siempre el mismo problema: las herramientas no resolvían la operación completa. Un sistema ruteaba pero no paletizaba. El WMS no hablaba con el TMS. Y en el medio, los equipos de operaciones haciendo malabares para que todo cerrara.",
-      "Geodot nació para terminar con eso. Construimos la primera plataforma que integra WMS, TMS, ruteo y paletizado en una sola solución, donde el motor de ruteo y el paletizador trabajan juntos, en tiempo real, para cargar cada camión al 99% y rutear por valor de negocio, no solo por kilómetros.",
-      "No prometemos magia: prometemos resultados que puedes medir. En una embotelladora líder la carga de camión pasó de 85% a 99% y el costo de transporte bajó 8%. Y no reemplazamos tu ERP: lo potenciamos, integrándonos con SAP, BASIS y Oracle sin romper lo que ya funciona.",
-      "Somos una empresa mexicana de tecnología con operación en México, Argentina, Colombia y Ecuador, y experiencia real en bebidas, alimentos, gobierno, pharma y recintos fiscales. Imaginamos un mundo donde cada camión sale al 100% y cada producto llega fresco al cliente correcto. Ese es el mundo que estamos construyendo, contigo."
+      "Geodot nació para terminar con eso. Construimos una plataforma que integra almacén, transporte, ruteo y paletizado en una sola solución, donde el motor de ruteo y el paletizador trabajan juntos, en tiempo real, para cargar cada camión al 99% y rutear por valor de negocio, no solo por kilómetros.",
+      "No prometemos magia: prometemos resultados que puedes medir. En una embotelladora líder la carga de camión pasó de 85% a 99% y el costo de transporte bajó 8%. Y no reemplazamos tu ERP: lo potenciamos, integrándonos con SAP Business One, BASIS y Oracle sin romper lo que ya funciona.",
+      "Somos una empresa de tecnología logística con operación en México y Argentina, y proyectos en bebidas, alimentos, gobierno, salud y recintos fiscales. Imaginamos un mundo donde cada camión sale al 100% y cada producto llega fresco al cliente correcto. Ese es el mundo que estamos construyendo, contigo."
     ],
     "cta": {
       "title": "Hablemos de tu operación",
@@ -1332,15 +1308,15 @@
         "items": [
           {
             "q": "¿Qué incluye exactamente la plataforma?",
-            "a": "WMS, TMS, ruteo inteligente, paletizado, Torre de Control, cadena de frío, gestor documental y módulos de turnos y patio. Todo conectado en una sola plataforma cloud-native: contratas los módulos que necesitas y sumas el resto cuando quieras."
+            "a": "Once módulos en tres grupos. Core: iWMS, iTMS, iRouter, Paletizado Inteligente y Torre de Control. Especializados: Cadena de Frío, Gestor Documental y Etiqueta Zero. Operativos: GPS y Control de Flotas, Companion y Plant Sync + Turnero. Todo conectado en una sola plataforma cloud-native: contratas los módulos que necesitas y sumas el resto cuando quieras."
           },
           {
             "q": "¿De verdad puedo cargar los camiones al 100%?",
-            "a": "Sí. Calculamos paletizado y ruteo a la vez, así sabemos exactamente qué entra en el camión antes de rutear. Un embotellador regional pasó de 85% a 99% de carga y bajó su costo de transporte más de 8%."
+            "a": "Sí. Calculamos paletizado y ruteo a la vez, así sabemos exactamente qué entra en el camión antes de rutear. Una embotelladora líder pasó de 85% a 99% de carga y bajó su costo de transporte un 8%."
           },
           {
             "q": "Nuestra operación es muy particular. ¿La van a entender?",
-            "a": "Por eso existimos. Geodot nació de la operación real: retornables, FEFO por cliente, vida útil por cliente, cadena de frío, recintos fiscales. Es altamente configurable, con más de 300 parámetros por SKU. No tuvimos que explicarle a nadie qué es una planchada."
+            "a": "Por eso existimos. Geodot nació de la operación real: retornables, FEFO por cliente, vida útil por cliente, cadena de frío, recintos fiscales. Se configura por SKU, por cliente y por regla de operación. No tuvimos que explicarle a nadie qué es una planchada."
           },
           {
             "q": "¿Necesito cambiar mi hardware?",
@@ -1348,7 +1324,7 @@
           },
           {
             "q": "¿Qué disponibilidad tiene la plataforma?",
-            "a": "99.9% de disponibilidad. Es cloud-native, con visibilidad y trazabilidad en tiempo real desde el primer día."
+            "a": "Es cloud-native, con visibilidad y trazabilidad en tiempo real desde el primer día. La disponibilidad comprometida queda escrita en el acuerdo de servicio (SLA) de cada contrato."
           }
         ]
       },
@@ -1361,7 +1337,7 @@
           },
           {
             "q": "¿Tengo que reemplazar mi ERP?",
-            "a": "No. Geodot potencia tu ERP, no lo reemplaza. Nos integramos vía APIs con SAP, BASIS y Oracle, y llegamos a un nivel de detalle (pack, pallet, ubicación, paletizado) que ni SAP S/4HANA alcanza."
+            "a": "No. Geodot potencia tu ERP, no lo reemplaza. Nos integramos vía API con SAP Business One, BASIS y Oracle, y llegamos a un nivel de detalle (pack, palet, ubicación, paletizado) que el ERP normalmente no gestiona."
           },
           {
             "q": "¿Qué pasa con el conocimiento que está en la cabeza del experto?",
@@ -1369,7 +1345,7 @@
           },
           {
             "q": "¿Cómo es el acompañamiento?",
-            "a": "Implementación acompañada por un equipo que ya vivió la operación. Soporte en español nativo, con presencia en México y LATAM."
+            "a": "Implementación acompañada por un equipo que ya vivió la operación. Soporte en español nativo, con equipo en México y Argentina."
           }
         ]
       },
@@ -1378,11 +1354,11 @@
         "items": [
           {
             "q": "¿Con qué sistemas se integra?",
-            "a": "SAP (TM/EWM), Oracle (OTM), BASIS (Release 53), sistemas locales sobre SQL, telemetría de refrigeración, sistemas de facturación e incluso archivos TXT. Lo hacemos vía APIs propias."
+            "a": "Integraciones probadas: SAP Business One, BASIS (Release 53) y Oracle vía API, además de sistemas locales sobre SQL, telemetría de refrigeración, sistemas de facturación y archivos TXT. Para SAP S/4HANA, SAP TM/EWM y Oracle OTM contamos con conectores vía API cuyo alcance se valida en cada implementación."
           },
           {
             "q": "Conectar con BASIS o SAP suele ser un dolor de cabeza. ¿Cómo lo resuelven?",
-            "a": "Con APIs RESTful propias y experiencia real integrando embotelladores Coca-Cola sobre BASIS Release 53. La integración es profunda, no un parche por encima."
+            "a": "Con APIs RESTful propias y una integración en producción sobre BASIS Release 53, incluidos retornables y reglas de planchada. La integración es profunda, no un parche por encima."
           },
           {
             "q": "¿Reemplaza a SAP TM o EWM?",
@@ -1390,7 +1366,7 @@
           },
           {
             "q": "¿Manejan telemetría de cadena de frío?",
-            "a": "Sí. Integramos sensores de temperatura para trazabilidad 100% y alertas tempranas: te enteras de la excursión cuando pasa, no cuando te rechazan el camión. Citas y reglas diferenciadas para producto frío y seco."
+            "a": "Sí. Integramos sensores de temperatura para un registro continuo y alertas tempranas: te enteras de la excursión cuando pasa, no cuando te rechazan el camión. Citas y reglas diferenciadas para producto frío y seco."
           }
         ]
       },
@@ -1402,12 +1378,12 @@
             "a": "SaaS por suscripción, según cantidad de usuarios, volumen de operaciones y módulos contratados. Hay modelos a medida disponibles. Cotizamos después de la demo."
           },
           {
-            "q": "¿Cuál es el ROI típico?",
-            "a": "Suele estar por debajo de los 12 meses. Lo que vimos en operación: carga de camión de 85% a 99%, 8% menos de costo de transporte y 4 a 5 camiones por día menos por la regla del vidrio retornable. En tu caso lo calculamos con tus propios datos en la demo."
+            "q": "¿Qué retorno puedo esperar?",
+            "a": "Lo calculamos con tus propios datos en la demo; no damos un número genérico. Como referencia, lo que vimos en operación: carga de camión de 85% a 99%, 8% menos de costo de transporte y 4 a 5 camiones por día menos por la regla del vidrio retornable."
           },
           {
             "q": "¿Tienen soporte en español?",
-            "a": "Sí. Somos una empresa de la región con presencia en México, Argentina, Colombia y Ecuador. Todo el equipo es hispanohablante nativo."
+            "a": "Sí. Somos una empresa de la región con equipo en México y Argentina. Todo el equipo es hispanohablante nativo."
           },
           {
             "q": "¿Para qué tamaño de operación tiene sentido?",
@@ -1435,7 +1411,7 @@
       "eyebrow": "Cómo integra",
       "title": "Tu ERP sigue siendo",
       "titleAccent": "tu sistema de registro",
-      "description": "Geodot no compite con SAP, Oracle ni BASIS. Se conecta por encima y agrega ruteo y paletizado en tiempo real, con un nivel de detalle que esas suites no alcanzan.",
+      "description": "Geodot no compite con SAP, Oracle ni BASIS. Se conecta por encima y agrega ruteo y paletizado en tiempo real, con un nivel de detalle operativo (pack, palet, ubicación) que el ERP no gestiona por sí solo.",
       "points": [
         {
           "title": "Conecta, no reemplaza",
@@ -1443,7 +1419,7 @@
         },
         {
           "title": "Llega al detalle fino",
-          "body": "Pack, pallet, ubicación, paletizado, vida útil por cliente. Un nivel operativo que ni SAP S/4HANA cubre, y sin que tengas que personalizar tu ERP."
+          "body": "Pack, palet, ubicación, paletizado, vida útil por cliente. Un nivel operativo que el ERP normalmente no cubre, y sin que tengas que personalizarlo."
         },
         {
           "title": "En producción en 90 días",
@@ -1455,19 +1431,27 @@
       "eyebrow": "Sistemas que conectamos",
       "title": "Integración profunda,",
       "titleAccent": "vía APIs propias",
-      "description": "Desde suites globales hasta sistemas locales y telemetría de campo. Si tu dato existe, lo conectamos.",
+      "description": "Primero lo que ya está probado en producción; después, los conectores que validamos en cada implementación. Si tu dato existe, lo conectamos.",
       "items": [
         {
-          "name": "SAP (TM / EWM)",
-          "detail": "Integración vía API con SAP Transportation y Extended Warehouse. Geodot ejecuta el ruteo y el paletizado que SAP no resuelve en simultáneo."
-        },
-        {
-          "name": "Oracle (OTM)",
-          "detail": "Conexión con Oracle Transportation Management para sincronizar órdenes, rutas y entregas en tiempo real."
+          "name": "SAP Business One",
+          "detail": "Integración probada: Geodot suma almacenes virtuales y la gestión por posición, sin reemplazar el ERP."
         },
         {
           "name": "BASIS (Release 53)",
-          "detail": "Integración probada con el ERP central de embotelladores Coca-Cola, incluido retornables y reglas de planchada."
+          "detail": "Integración en producción con el ERP central, incluidos retornables y reglas de planchada."
+        },
+        {
+          "name": "Oracle (vía API)",
+          "detail": "Sincronización de órdenes, inventario y entregas a través de APIs RESTful propias."
+        },
+        {
+          "name": "SAP S/4HANA, TM y EWM",
+          "detail": "Conector vía API para órdenes, inventario y entregas. El alcance se valida en cada implementación."
+        },
+        {
+          "name": "Oracle OTM",
+          "detail": "Conector vía API para órdenes, rutas y entregas, a validar en la implementación."
         },
         {
           "name": "Sistemas locales (SQL)",
@@ -1475,7 +1459,7 @@
         },
         {
           "name": "Telemetría de refrigeración",
-          "detail": "Sensores de temperatura para trazabilidad de cadena de frío, alertas tempranas y registro 100%."
+          "detail": "Sensores de temperatura de cualquier proveedor para trazabilidad de cadena de frío, alertas tempranas y registro continuo."
         },
         {
           "name": "Facturación y archivos TXT",

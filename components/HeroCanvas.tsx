@@ -1,17 +1,19 @@
 "use client";
 import { useReducedMotion } from "motion/react";
-import { Truck, Ship, Container, Plane, TrainFront } from "lucide-react";
+import { Truck, Ship, Container } from "lucide-react";
 import { useHeroRotation } from "./ui/heroRotation";
 
 /**
- * Full-bleed hero background: five code-built mini-scenes (one per rotating
- * word: camiones, barcos, containers, aviones, vagones) that crossfade in
+ * Full-bleed hero background: three code-built mini-scenes (one per rotating
+ * word: camiones, barcos, contenedores) that crossfade in
  * sync with the headline via the shared heroRotation clock. Each scene loops
  * for the duration of its word — a "mini video" built entirely from DS tokens,
  * no fake footage. Decorative (aria-hidden); the global reduced-motion rule
  * freezes every animation and the clock stays at scene 0.
  */
-const MODE_ICONS = [Truck, Ship, Container, Plane, TrainFront];
+// Only modes Geodot runs today. Air and rail are roadmap: keep them out of the
+// rotation until they ship (scene count must match CYCLE in heroRotation.ts).
+const MODE_ICONS = [Truck, Ship, Container];
 
 const TRAVEL = "animate-[hc-travel_2.4s_linear_infinite]";
 const DASH = "animate-[hc-dash_1.6s_linear_infinite]";
@@ -75,7 +77,7 @@ export function HeroCanvas({
           />
         </Scene>
 
-        {/* 3 · containers — yard stacking */}
+        {/* 3 · contenedores — yard stacking */}
         <Scene active={index === 2}>
           {[0, 1, 2, 3, 4].map((c) => (
             <rect
@@ -104,45 +106,6 @@ export function HeroCanvas({
             />
           ))}
           <line x1="900" y1="508" x2="1420" y2="508" stroke="var(--color-navy-600)" strokeWidth="1.5" />
-        </Scene>
-
-        {/* 4 · aviones — contrail arc */}
-        <Scene active={index === 3}>
-          <path d="M560,780 C860,500 1120,320 1500,170" fill="none" stroke="var(--color-navy-600)" strokeWidth="1.5" strokeDasharray="12 14" strokeLinecap="round" className={DASH} />
-          <circle
-            r="6"
-            fill="var(--color-teal-400)"
-            className={TRAVEL}
-            style={{ offsetPath: 'path("M560,780 C860,500 1120,320 1500,170")' }}
-          />
-          <circle cx="1310" cy="243" r="5" fill="var(--color-navy-950)" stroke="var(--color-teal-400)" strokeWidth="2" />
-        </Scene>
-
-        {/* 5 · vagones — rail convoy */}
-        <Scene active={index === 4}>
-          <line x1="540" y1="560" x2="1510" y2="560" stroke="var(--color-navy-600)" strokeWidth="1.5" />
-          <line x1="540" y1="596" x2="1510" y2="596" stroke="var(--color-navy-600)" strokeWidth="1.5" />
-          {Array.from({ length: 20 }, (_, i) => (
-            <line key={`tie-${i}`} x1={540 + i * 50} y1="560" x2={532 + i * 50} y2="596" stroke="var(--color-navy-800)" strokeWidth="1.5" />
-          ))}
-          <g
-            className="animate-[hc-travel_4.8s_linear_infinite]"
-            style={{ offsetPath: 'path("M480,578 L1560,578")', offsetRotate: "0deg" }}
-          >
-            {[0, 1, 2, 3].map((c) => (
-              <rect
-                key={`w-${c}`}
-                x={c * 86 - 172}
-                y={-30}
-                width="74"
-                height="30"
-                rx="3"
-                fill={c === 0 ? "var(--color-teal-500)" : "var(--color-navy-700)"}
-                stroke="var(--color-navy-500)"
-                strokeWidth="1"
-              />
-            ))}
-          </g>
         </Scene>
       </svg>
 
