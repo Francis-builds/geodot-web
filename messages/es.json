@@ -1826,7 +1826,7 @@
         "items": [
           {
             "q": "¿Con qué sistemas se integra?",
-            "a": "Integraciones probadas: SAP Business One, BASIS (Release 53) y Oracle vía API, además de sistemas locales sobre SQL, telemetría de refrigeración, sistemas de facturación y archivos TXT. Para SAP S/4HANA, SAP TM/EWM y Oracle OTM contamos con conectores vía API cuyo alcance se valida en cada implementación."
+            "a": "Nos integramos con SAP Business One, SAP S/4HANA, SAP TM/EWM, Oracle OTM, BASIS (Release 53) y Oracle vía API, además de sistemas locales sobre SQL, telemetría de refrigeración, sistemas de facturación y archivos TXT."
           },
           {
             "q": "Conectar con BASIS o SAP suele ser un dolor de cabeza. ¿Cómo lo resuelven?",
@@ -1903,7 +1903,7 @@
       "eyebrow": "Sistemas que conectamos",
       "title": "Integración profunda,",
       "titleAccent": "vía APIs propias",
-      "description": "Primero lo que ya está probado en producción; después, los conectores que validamos en cada implementación. Si tu dato existe, lo conectamos.",
+      "description": "Integraciones con los ERP, TMS y WMS que ya usas, más los sistemas propios de tu operación. Si tu dato existe, lo conectamos.",
       "items": [
         {
           "name": "SAP Business One",
@@ -1919,11 +1919,11 @@
         },
         {
           "name": "SAP S/4HANA, TM y EWM",
-          "detail": "Conector vía API para órdenes, inventario y entregas. El alcance se valida en cada implementación."
+          "detail": "Integración vía API para órdenes, inventario y entregas, sin reemplazar el ERP."
         },
         {
           "name": "Oracle OTM",
-          "detail": "Conector vía API para órdenes, rutas y entregas, a validar en la implementación."
+          "detail": "Integración vía API para órdenes, rutas y entregas."
         },
         {
           "name": "Sistemas locales (SQL)",
