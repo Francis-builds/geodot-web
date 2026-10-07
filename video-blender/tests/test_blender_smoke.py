@@ -28,3 +28,15 @@ def route(tmp_path_factory):
 def test_scene_builds(route, tmp_path):
     out = run_hero("--mode", "check", "--route", str(route), "--out", str(tmp_path))
     assert "CHECK OK" in out.stdout, out.stdout[-2000:] + out.stderr[-2000:]
+
+
+@needs_blender
+def test_technical_frames(route, tmp_path):
+    from PIL import Image, ImageStat
+    out = run_hero("--mode", "technical", "--route", str(route), "--out", str(tmp_path),
+                   "--res", "480x270", "--frames", "1-289", "--step", "96", timeout=600)
+    names = ["f_0001.png", "f_0097.png", "f_0193.png", "f_0289.png"]
+    for n in names:
+        assert (tmp_path / n).exists(), out.stdout[-1500:] + out.stderr[-1500:]
+        assert Image.open(tmp_path / n).size == (480, 270)
+    assert ImageStat.Stat(Image.open(tmp_path / names[0]).convert("L")).mean[0] > 2
