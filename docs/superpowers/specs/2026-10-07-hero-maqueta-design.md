@@ -75,7 +75,7 @@ El video sale **sin texto**. Las cards son HTML/SVG sobre el video:
 ## 9. Fases (cada una se puede publicar)
 
 1. **Acceso → patio → andén.** Pluma, barrido de lectura, corte del techo, ruta completa del camión, HUD HTML con CAMIÓN + CHOFER, integración al hero. Primera película de ~12 s en loop.
-   *Aceptación:* holgura mínima > 0,1 m en toda la ruta, barrido sin desfase entre foto y técnico, HUD sincronizado en Chrome/Safari desktop y mobile, Lighthouse ≥ 90.
+   *Aceptación:* holgura mínima > 0,1 m en toda la ruta, barrido sin desfase entre foto y técnico, HUD sincronizado en Chrome/Safari desktop (en mobile sigue `HeroCanvas` hasta la fase 3), Lighthouse ≥ 90.
 2. **Recepción + relevo.** Racks, pallets, autoelevador, apiladora, picker hasta el relevo, card PALLET.
 3. **Armado y egreso.** Picking, paletizado, andén de salida y segundo camión, cierre del loop, card PEDIDO y resumen, versión mobile.
 4. **Scrollytelling de 8 escenas** más abajo en la home, con tramos de la misma maqueta y los textos de `ui.story.scenes`.
