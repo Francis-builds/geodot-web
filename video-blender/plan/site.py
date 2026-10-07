@@ -47,7 +47,7 @@ class Gate:
     barrier: Rect           # brazo de la pluma bajo, cruzando el carril
 
 
-_GX = dock_x(24) + 30
+_GX = dock_x(14)  # caseta de control de patio frente al andén 14 (ver ledger, Task 3)
 GATE = Gate(x=_GX, y=Y_LANE, lane_heading=math.pi,
             booth=Rect(_GX - 1.5, Y_LANE - 5.4, _GX + 1.5, Y_LANE - 2.9),
             barrier=Rect(_GX - 0.08, Y_LANE - 2.6, _GX + 0.08, Y_LANE + 2.6))
