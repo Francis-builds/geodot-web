@@ -21,3 +21,8 @@ design/
 # Remotion (video/ es source y se commitea; deps y renders no)
 video/node_modules/
 video/out/
+
+# hero maqueta: renders y caches del pipeline de Blender
+video-blender/out/
+video-blender/**/__pycache__/
+video-blender/.pytest_cache/
