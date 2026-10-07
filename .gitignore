@@ -26,3 +26,4 @@ video/out/
 video-blender/out/
 video-blender/**/__pycache__/
 video-blender/.pytest_cache/
+video-blender/assets/ph/
