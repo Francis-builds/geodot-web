@@ -157,6 +157,9 @@ def main() -> None:
             a, b = (int(x) for x in args.frames.split("-"))
             scene.frame_start, scene.frame_end = a, b
         scene.frame_step = args.step
+        # retomable: si un render se corta, al relanzarlo saltea los frames ya escritos
+        scene.render.use_overwrite = False
+        scene.render.use_placeholder = True
         args.out.mkdir(parents=True, exist_ok=True)
         scene.render.filepath = str(args.out / "f_")
         bpy.ops.render.render(animation=True)

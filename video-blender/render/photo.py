@@ -224,6 +224,10 @@ def setup_photo(scene, cols, mats_tech, res: tuple[int, int], samples: int = 96)
     scene.cycles.use_denoising = True
     prefs = bpy.context.preferences.addons["cycles"].preferences
     prefs.compute_device_type = "METAL"
+    # sin compilación de kernels optimizados en segundo plano: en Blender 5.2 ese hilo
+    # (MetalKernelPipeline::compile → airntSerializeToURL) tiró segfault a mitad de un render
+    if hasattr(prefs, "kernel_optimization_level"):
+        prefs.kernel_optimization_level = "OFF"
     prefs.get_devices()
     for d in prefs.devices:
         d.use = True

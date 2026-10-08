@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # Pipeline completo del hero maqueta (fase 1):
 #   plan → anchors → técnico → fotorrealista (hasta el fin del barrido) → post → encode → public/hero
-# Uso: ./render.sh --preview   (960x540, 1 de cada 2 frames, 12 fps, foto con 24 muestras; ~1 h)
-#      ./render.sh --final     (1920x1080, 24 fps, foto con 96 muestras; de noche)
+# Uso: ./render.sh --preview [--fresh]   (960x540, 1 de cada 2 frames, 12 fps, foto con 24 muestras; ~1 h)
+#      ./render.sh --final [--fresh]     (1920x1080, 24 fps, foto con 96 muestras; de noche)
+# Es retomable: relanzarlo saltea los frames ya renderizados. --fresh borra out/<modo> y arranca de cero
+# (necesario si cambió la escena).
 set -euo pipefail
 cd "$(dirname "$0")"
 MODE="${1:---preview}"
@@ -13,6 +15,7 @@ case "$MODE" in
   *) echo "uso: $0 --preview|--final" >&2; exit 2 ;;
 esac
 OUT="out/$NAME"
+if [ "${2:-}" = "--fresh" ]; then rm -rf "./out/$NAME"; fi
 mkdir -p "$OUT"
 ./assets/fetch_assets.sh > /dev/null
 
