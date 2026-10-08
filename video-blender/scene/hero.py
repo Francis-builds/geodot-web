@@ -22,6 +22,7 @@ from kit.trucks import truck  # noqa: E402
 from render.camera import CamKey, iso_camera  # noqa: E402
 from render.technical import setup_technical  # noqa: E402
 from export.anchors import export_anchors  # noqa: E402
+from render.photo import setup_photo  # noqa: E402
 from plan.kinematics import KP, u  # noqa: E402
 from plan.site import GATE, HERO_DOCK, dock_x  # noqa: E402
 
@@ -38,6 +39,7 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--res", default="1920x1080")
     ap.add_argument("--step", type=int, default=1)
     ap.add_argument("--frames", default=None)
+    ap.add_argument("--samples", type=int, default=96)
     return ap.parse_args(argv)
 
 
@@ -146,8 +148,11 @@ def main() -> None:
         export_anchors(scene, cam, route, args.out, parse_res(args.res))
         print("EXPORTED", args.out / "film-anchors.json")
         return
-    if args.mode == "technical":
-        setup_technical(scene, cols, parse_res(args.res))
+    if args.mode in ("technical", "photo"):
+        if args.mode == "technical":
+            setup_technical(scene, cols, parse_res(args.res))
+        else:
+            setup_photo(scene, cols, mats, parse_res(args.res), samples=args.samples)
         if args.frames:
             a, b = (int(x) for x in args.frames.split("-"))
             scene.frame_start, scene.frame_end = a, b
