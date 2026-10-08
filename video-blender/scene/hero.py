@@ -21,6 +21,7 @@ from kit.site_build import build_site  # noqa: E402
 from kit.trucks import truck  # noqa: E402
 from render.camera import CamKey, iso_camera  # noqa: E402
 from render.technical import setup_technical  # noqa: E402
+from export.anchors import export_anchors  # noqa: E402
 from plan.kinematics import KP, u  # noqa: E402
 from plan.site import GATE, HERO_DOCK, dock_x  # noqa: E402
 
@@ -140,7 +141,11 @@ def main() -> None:
         print(f"CHECK OK {len(bpy.data.objects)}")
         return
     animate(scene, route, site)
-    iso_camera(scene, camera_keys(route))
+    cam = iso_camera(scene, camera_keys(route))
+    if args.mode == "anchors":
+        export_anchors(scene, cam, route, args.out, parse_res(args.res))
+        print("EXPORTED", args.out / "film-anchors.json")
+        return
     if args.mode == "technical":
         setup_technical(scene, cols, parse_res(args.res))
         if args.frames:

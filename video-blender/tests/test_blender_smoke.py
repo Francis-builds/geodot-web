@@ -50,3 +50,20 @@ def test_interior_has_racks_and_pallets(route, tmp_path):
     m = re.search(r"RACKS (\d+) PALLETS (\d+)", out.stdout)
     assert m, out.stdout[-1500:] + out.stderr[-1500:]
     assert int(m.group(1)) >= 8 and int(m.group(2)) >= 200
+
+
+@needs_blender
+def test_anchors_export(route, tmp_path):
+    import json
+    out = run_hero("--mode", "anchors", "--route", str(route), "--out", str(tmp_path), "--res", "1920x1080")
+    p = tmp_path / "film-anchors.json"
+    assert p.exists(), out.stdout[-1500:] + out.stderr[-1500:]
+    d = json.loads(p.read_text())
+    n_route = len(json.loads(route.read_text())["frames"])
+    assert d["fps"] == 24 and (d["width"], d["height"]) == (1920, 1080) and len(d["frames"]) == n_route
+    for f in d["frames"]:
+        for k in ("tractor", "driver", "trailer"):
+            assert 0.0 <= f[k][0] <= 1.0 and 0.0 <= f[k][1] <= 1.0
+    assert d["frames"][0]["status"] == "gate" and d["frames"][-1]["status"] == "docked"
+    assert d["frames"][-1]["dist"] < 0.1
+    assert set(d["cues"]) == {"truckCard", "cargoCard", "docked"}
