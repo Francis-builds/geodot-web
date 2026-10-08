@@ -136,6 +136,7 @@ def main() -> None:
             print("CHECK FAIL missing", missing)
             sys.exit(1)
         assert len(site.roof_panels) > 10 and len(site.facade) > 5
+        print(f"RACKS {site.racks} PALLETS {site.pallets}")
         print(f"CHECK OK {len(bpy.data.objects)}")
         return
     animate(scene, route, site)

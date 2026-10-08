@@ -40,3 +40,13 @@ def test_technical_frames(route, tmp_path):
         assert (tmp_path / n).exists(), out.stdout[-1500:] + out.stderr[-1500:]
         assert Image.open(tmp_path / n).size == (480, 270)
     assert ImageStat.Stat(Image.open(tmp_path / names[0]).convert("L")).mean[0] > 2
+
+
+@needs_blender
+def test_interior_has_racks_and_pallets(route, tmp_path):
+    """Decisión de Fran en el checkpoint de la Task 5: el corte tiene que revelar racks con pallets."""
+    import re
+    out = run_hero("--mode", "check", "--route", str(route), "--out", str(tmp_path))
+    m = re.search(r"RACKS (\d+) PALLETS (\d+)", out.stdout)
+    assert m, out.stdout[-1500:] + out.stderr[-1500:]
+    assert int(m.group(1)) >= 8 and int(m.group(2)) >= 200

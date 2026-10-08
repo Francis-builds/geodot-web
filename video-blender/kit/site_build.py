@@ -10,6 +10,7 @@ import bmesh
 import bpy
 
 from kit.primitives import _obj, box, cyl, empty, text
+from kit.racks import RackLayout, build_racks
 from kit.trucks import truck
 from plan.site import (BUILDING, DOCK, DOCKS, GATE, OCCUPIED, WALL_Y, Y_DOCK, Y_LANE, Y_YARD,
                        YARD_TRACTOR, YARD_X, dock_x)
@@ -25,6 +26,8 @@ class SiteObjects:
     facade: list = field(default_factory=list)
     barrier: object = None
     booth: object = None
+    racks: int = 0
+    pallets: int = 0
 
 
 def _paint_strip(cols, mats, x0, y0, x1, y1, w, kind="paint"):
@@ -89,6 +92,18 @@ def _docks(cols, mats, font, site: SiteObjects) -> None:
         _paint_strip(cols, mats, x, -57, x, -80, 0.1, "paint_dim")
 
 
+def _interior_paint(cols, mats) -> None:
+    """Pasillos del rack y zona de preparación frente a los andenes, a la altura del piso."""
+    lay = RackLayout()
+    z = FLOOR_Z + 0.006
+    for r in range(lay.rows + 1):
+        x = lay.x0 - lay.row_pitch / 2 + r * lay.row_pitch
+        ob = box("paint", (0.08, 17.5, 0.005), (x, lay.y0 + 8.1, z), cols["PAINT"], mat=mats["paint"])
+    for y in (3.0, 8.5):  # franja de preparación / staging
+        box("paint", (BUILDING.x1 - BUILDING.x0 - 4, 0.12, 0.005),
+            ((BUILDING.x0 + BUILDING.x1) / 2, y, z), cols["PAINT"], mat=mats["paint_dim"])
+
+
 def _gate(cols, mats, site: SiteObjects) -> None:
     L = cols["LINES"]
     b = GATE.booth
@@ -130,6 +145,8 @@ def _dust(cols, mats, n: int = 1800, seed: int = 7) -> None:
 def build_site(cols, mats, font: str) -> SiteObjects:
     site = SiteObjects()
     _building(cols, site)
+    site.racks, site.pallets = build_racks(cols["LINES"], mats, RackLayout(floor_z=FLOOR_Z))
+    _interior_paint(cols, mats)
     _docks(cols, mats, font, site)
     _gate(cols, mats, site)
     _fleet(cols)
