@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { useReducedMotion } from "motion/react";
 import { cueAlpha, formatHud, frameAt, parseFilm, type Film, type FrameData } from "@/lib/hero/film";
@@ -21,20 +21,6 @@ export type HeroFilmLabels = {
   };
 };
 
-/** Ancho desde el que se muestra la película: debajo, las cards taparían al camión y al H1. */
-export const FILM_MIN_WIDTH = 1280;
-const FILM_QUERY = `(min-width: ${FILM_MIN_WIDTH}px)`;
-
-function subscribeFilmQuery(cb: () => void) {
-  const mq = window.matchMedia(FILM_QUERY);
-  mq.addEventListener("change", cb);
-  return () => mq.removeEventListener("change", cb);
-}
-/** true solo en el cliente con viewport ≥ FILM_MIN_WIDTH; en SSR siempre false (nada se pide). */
-function useFilmViewport(): boolean {
-  return useSyncExternalStore(subscribeFilmQuery, () => window.matchMedia(FILM_QUERY).matches, () => false);
-}
-
 const ASSETS = { anchors: "/hero/film-anchors.json", poster: "/hero/film-poster.webp", webm: "/hero/film-1080.webm", mp4: "/hero/film-1080.mp4" };
 type VideoWithRvfc = HTMLVideoElement & {
   requestVideoFrameCallback?: (cb: (now: number, meta: { mediaTime: number }) => void) => number;
@@ -55,18 +41,16 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
   const [liveFrame, setFrame] = useState<FrameData | null>(null);
   const [box, setBox] = useState<Size>({ w: 0, h: 0 });
   const [mountVideo, setMountVideo] = useState(false);
-  const wide = useFilmViewport();
 
   useEffect(() => {
-    if (!wide) return;
     let alive = true;
     fetch(ASSETS.anchors).then((r) => (r.ok ? r.json() : null)).then((j) => alive && setFilm(parseFilm(j))).catch(() => alive && setFilm(null));
     return () => { alive = false; };
-  }, [wide]);
+  }, []);
 
-  // el video se monta después del LCP y solo con viewport ancho (debajo sigue HeroCanvas)
+  // el video se monta después del LCP (HeroFilmLazy ya garantizó viewport ancho)
   useEffect(() => {
-    if (reduced || !wide) return;
+    if (reduced) return;
     const w = window as Window & { requestIdleCallback?: (cb: () => void) => number; cancelIdleCallback?: (id: number) => void };
     if (w.requestIdleCallback) {
       const id = w.requestIdleCallback(() => setMountVideo(true));
@@ -74,7 +58,7 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
     }
     const t = setTimeout(() => setMountVideo(true), 1200);
     return () => clearTimeout(t);
-  }, [reduced, wide]);
+  }, [reduced]);
 
   useEffect(() => {
     const el = boxRef.current;
@@ -167,8 +151,7 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
 
   return (
     <div ref={boxRef} className="absolute inset-0 overflow-hidden">
-      <span className="sr-only">{labels.summary}</span>
-      {!wide ? null : reduced || !mountVideo ? (
+      {reduced || !mountVideo ? (
         // eslint-disable-next-line @next/next/no-img-element -- poster decorativo fijo, sin optimización
         <img aria-hidden src={ASSETS.poster} alt="" className="absolute inset-0 h-full w-full object-cover" />
       ) : (

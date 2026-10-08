@@ -22,7 +22,12 @@ Los assets de Poly Haven (CC0) se bajan con `assets/fetch_assets.sh` y no van a 
 
 ## Tiempos medidos (Mac M5 Pro)
 
-| Paso | Preview | Final |
+| Paso | Preview (960×540, 1 de cada 2) | Final (1920×1080, 24 fps) |
 |---|---|---|
-| Técnico | ~6 s/frame | por medir |
-| Fotorrealista | por medir | por medir |
+| Técnico (EEVEE + Freestyle) | ~12 s/frame | 12 s/frame · 397 frames · ~92 min |
+| Fotorrealista (Cycles, hasta el fin del barrido) | ~3 s/frame | 9 s/frame · 121 frames · ~23 min |
+| Total `render.sh --final` | ~1 h | ~2 h (con encode) |
+
+Si la Mac entra en reposo, el render se frena: correr con `caffeinate -i ./render.sh --final`.
+
+**Encode:** mp4 H.264 CRF 27 `-tune animation` (3,9 MB) y WebM VP9 CRF 42 (3,2 MB), poster WebP de 1600 px (~105 KB). A simple vista no se distingue de CRF 23, que pesaba más del doble (8,5 MB).

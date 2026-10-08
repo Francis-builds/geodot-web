@@ -43,15 +43,15 @@ MID=$(printf "f_%04d.png" $(( (72 + SCAN_END) / 2 / STEP * STEP + 1 )))
 cp "$OUT/comp/$MID" "$OUT/check_barrido.png"
 
 ffmpeg -v error -y -framerate "$FPS" -pattern_type glob -i "$OUT/comp/f_*.png" \
-  -c:v libx264 -preset slow -crf 23 -pix_fmt yuv420p -movflags +faststart "$OUT/film.mp4"
+  -c:v libx264 -preset veryslow -crf 27 -tune animation -pix_fmt yuv420p -movflags +faststart "$OUT/film.mp4"
 if [ "$NAME" = final ]; then
   ffmpeg -v error -y -framerate "$FPS" -pattern_type glob -i "$OUT/comp/f_*.png" \
-    -c:v libvpx-vp9 -crf 34 -b:v 0 -row-mt 1 -pix_fmt yuv420p "$OUT/film.webm"
+    -c:v libvpx-vp9 -crf 42 -b:v 0 -row-mt 1 -deadline good -cpu-used 2 -pix_fmt yuv420p "$OUT/film.webm"
   POSTER=$(printf "f_%04d.png" $(( DOCKED + 11 )))
   mkdir -p ../public/hero
   cp "$OUT/film.mp4" ../public/hero/film-1080.mp4
   cp "$OUT/film.webm" ../public/hero/film-1080.webm
-  ffmpeg -v error -y -i "$OUT/comp/$POSTER" -c:v libwebp -quality 82 ../public/hero/film-poster.webp
+  ffmpeg -v error -y -i "$OUT/comp/$POSTER" -vf scale=1600:-1 -c:v libwebp -quality 68 ../public/hero/film-poster.webp
   cp "$OUT/film-anchors.json" ../public/hero/film-anchors.json
   ls -la ../public/hero
 fi

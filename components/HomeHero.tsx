@@ -2,7 +2,8 @@ import { Button } from "./ui/Button";
 import { Container } from "./ui/Container";
 import { RotatingWord } from "./ui/RotatingWord";
 import { HeroCanvas } from "./HeroCanvas";
-import { HeroFilm, type HeroFilmLabels } from "./hero/HeroFilm";
+import type { HeroFilmLabels } from "./hero/HeroFilm";
+import { HeroFilmLazy } from "./hero/HeroFilmLazy";
 import { Link } from "@/i18n/navigation";
 
 /**
@@ -37,7 +38,7 @@ export function HomeHero({
             Debajo de xl las cards del HUD taparían al camión y al H1. */}
         <div className="absolute inset-0 xl:hidden"><HeroCanvas labels={tower} /></div>
         <div className="absolute inset-0 hidden xl:block">
-          <HeroFilm labels={film} />
+          <HeroFilmLazy labels={film} />
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/40 to-transparent" />
         </div>
       </div>
