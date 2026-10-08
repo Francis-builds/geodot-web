@@ -19,6 +19,8 @@ from kit.materials import tech_materials  # noqa: E402
 from kit.primitives import set_default_material  # noqa: E402
 from kit.site_build import build_site  # noqa: E402
 from kit.trucks import truck  # noqa: E402
+from kit.handling import forklift, pallet, reach_truck, scan_flash, slot_highlight  # noqa: E402
+from plan.site import PICK_SLOT, RackLayout, slot_center  # noqa: E402
 from render.camera import CamKey, iso_camera  # noqa: E402
 from render.technical import setup_technical  # noqa: E402
 from export.anchors import export_anchors  # noqa: E402
@@ -58,7 +60,31 @@ def build(route: dict):
     site = build_site(cols, mats, FONT)
     f0 = route["frames"][0]
     hero = truck(cols["HERO"], "HERO", f0["R"][0], f0["R"][1], yaw=f0["yaw"], art=f0["art"])
+    if route.get("tracks"):
+        build_phase2(cols, mats, route["tracks"])
     return scene, cols, mats, site, hero
+
+
+PHASE2_REQUIRED = ("FORKLIFT", "FORKLIFT_forks", "REACH", "REACH_mast", "REACH_forks", "pallet_A",
+                   "SLOT_highlight", "SCAN_flash", "DOOR_11")
+
+
+def build_phase2(cols, mats, tracks: dict) -> None:
+    """Actores de la fase 2 en su pose del primer frame (la animación los mueve)."""
+    H = cols["HERO"]
+    for name, make in (("FORKLIFT", forklift), ("REACH", reach_truck)):
+        x, y, _, yaw, _ = tracks[name.lower() if name == "FORKLIFT" else "reach"][0]
+        ob = make(H, name)
+        ob.location = (x, y, 1.25)
+        ob.rotation_euler = (0, 0, yaw)
+    x, y, z, yaw, _ = tracks["pallet_A"][0]
+    pa = pallet(H, "pallet_A", seed=3)
+    pa.location = (x, y, z)
+    pa.rotation_euler = (0, 0, yaw)
+    hl = slot_highlight(H, slot_center(RackLayout(), PICK_SLOT))
+    hl.hide_render = True
+    fl = scan_flash(H, mats["teal"])
+    fl.hide_render = True
 
 
 REQUIRED = ("HERO", "HERO_piv", "HERO_piv_steerL", "HERO_piv_steerR", "GATE_barrier", "GATE_booth",
@@ -141,6 +167,12 @@ def main() -> None:
             sys.exit(1)
         assert len(site.roof_panels) > 10 and len(site.facade) > 5
         print(f"RACKS {site.racks} PALLETS {site.pallets}")
+        if route.get("tracks"):
+            miss2 = [n for n in PHASE2_REQUIRED if n not in bpy.data.objects]
+            if miss2:
+                print("CHECK FAIL phase2 missing", miss2)
+                sys.exit(1)
+            print("PHASE2 OK")
         print(f"CHECK OK {len(bpy.data.objects)}")
         return
     animate(scene, route, site)

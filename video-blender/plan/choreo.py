@@ -119,7 +119,8 @@ def choreograph(start_frame: int, fps: int = 24) -> tuple[dict[str, list[list[fl
     # --- autoelevador: tráiler → preparación ---
     fl.wait_until(10)                                    # la puerta ya va por la mitad
     fl.forks(TRAILER_FLOOR + FORK_IN)
-    fl.drive([(PALLET_A[0], -0.35)], +1.0, V_FL, until=lambda s: s.p[1] <= -0.35)
+    pick_y = float(PALLET_A[1]) + FORKLIFT.front - 0.6        # eje delantero con el pallet entero sobre las horquillas
+    fl.drive([(PALLET_A[0], pick_y)], +1.0, V_FL, until=lambda s: s.p[1] <= pick_y)
     ev["unloadStart"] = len(fl.frames)                   # primer frame de subida = toma el pallet
     fl.forks(TRAILER_FLOOR + 0.15)
     fl.drive([(STAGE[0], STAGE[1] + FORKLIFT.front - 0.6)], -1.0, V_FL,

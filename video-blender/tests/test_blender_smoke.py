@@ -67,3 +67,17 @@ def test_anchors_export(route, tmp_path):
     assert d["frames"][0]["status"] == "gate" and d["frames"][-1]["status"] == "docked"
     assert d["frames"][-1]["dist"] < 0.1
     assert set(d["cues"]) == {"truckCard", "cargoCard", "docked"}
+
+
+@pytest.fixture(scope="module")
+def route2(tmp_path_factory):
+    p = tmp_path_factory.mktemp("route2") / "route.json"
+    write_route(plan_route(phase=2), p)
+    return p
+
+
+@needs_blender
+def test_scene_builds_phase2(route2, tmp_path):
+    out = run_hero("--mode", "check", "--route", str(route2), "--out", str(tmp_path))
+    assert "CHECK OK" in out.stdout, out.stdout[-2000:] + out.stderr[-2000:]
+    assert "PHASE2 OK" in out.stdout, out.stdout[-1500:]

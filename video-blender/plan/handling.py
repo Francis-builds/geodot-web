@@ -29,7 +29,8 @@ class Lift:
     fork_h: float
 
 
-FORKLIFT = LiftSpec(wheelbase=1.5, half_w=0.5, front=1.25, rear=-1.8)   # eléctrico compacto, 1,0 m de ancho
+FORKLIFT = LiftSpec(wheelbase=1.5, half_w=0.5, front=1.65, rear=-1.8)   # eléctrico compacto, 1,0 m de ancho;
+# cara de horquillas a 0,45 m del eje + pallet de 1,2 m = punta a 1,65 m
 REACH = LiftSpec(wheelbase=1.4, half_w=0.55, front=1.1, rear=-1.5)
 
 
