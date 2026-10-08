@@ -12,7 +12,7 @@ import bpy
 from kit.primitives import _obj, box, cyl, empty, text
 from kit.racks import RackLayout, build_racks
 from kit.trucks import truck
-from plan.site import (BUILDING, DOCK, DOCKS, GATE, OCCUPIED, WALL_Y, Y_DOCK, Y_LANE, Y_YARD,
+from plan.site import (BUILDING, DOCK, DOCK_BUMPER_X, DOCKS, GATE, OCCUPIED, WALL_Y, Y_DOCK, Y_LANE, Y_YARD,
                        YARD_TRACTOR, YARD_X, dock_x)
 
 FLOOR_Z = 1.25          # piso del depósito a altura de andén
@@ -78,7 +78,7 @@ def _docks(cols, mats, font, site: SiteObjects) -> None:
         box("canopy", (3.5, 0.7, 0.18), (x - f.location.x, -0.05 - f.location.y, 4.7 - WALL_H / 2), L, parent=f, bev=0.02)
         box("dockdoor", (3.0, 0.06, 3.0), (x - f.location.x, 0.38 - f.location.y, 2.7 - WALL_H / 2), L, parent=f)
         for s in (-1, 1):
-            box("bumper", (0.25, 0.3, 0.45), (x + s * 1.2, 0.2, 1.25), L, bev=0.03)
+            box("bumper", (0.25, 0.3, 0.45), (x + s * DOCK_BUMPER_X, 0.2, 1.25), L, bev=0.03)
         box("leveler", (2.2, 0.5, 0.06), (x, 0.15, 1.3), L)
         _paint_strip(cols, mats, x - DOCK / 2, 0, x - DOCK / 2, -21, 0.08)
         text(f"{i:02d}", (x, -23.4, 0.01), 1.3, cols["TEXT"], mats["paint"], font)

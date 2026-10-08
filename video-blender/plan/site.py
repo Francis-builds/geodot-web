@@ -70,3 +70,37 @@ def obstacles(include_gate: bool = True) -> list[Poly]:
     if include_gate:
         obs.append(GATE.barrier.poly())
     return obs
+
+# ---- racks (fuente única; kit/racks.py arma la geometría a partir de esto) ----
+# posición del pick face donde termina el pallet de la fase 2: (fila, vano, lado, nivel, posición en el vano)
+PICK_SLOT = (5, 1, -1, 0, 0)
+DOCK_BUMPER_X = 1.35     # topes de goma a cada lado de la puerta del andén
+BAY = 2.7            # ancho de vano (m)
+SIDE = 1.1           # profundidad de cada lado de la fila
+FLUE = 0.2           # separación entre lados
+LEVELS = (0.0, 1.7, 3.4, 5.1)   # altura de los largueros sobre el piso
+TOP = 6.6            # altura de las columnas
+AISLE = 3.2
+
+
+@dataclass(frozen=True)
+class RackLayout:
+    x0: float = -15.0
+    rows: int = 12
+    y0: float = 11.0
+    bays: int = 6
+    floor_z: float = 1.25
+    fill: float = 0.82   # fracción de posiciones ocupadas
+    reserved: tuple = (PICK_SLOT,)   # posiciones que quedan libres para la coreografía
+
+    @property
+    def row_pitch(self) -> float:
+        return 2 * SIDE + FLUE + AISLE
+
+
+def slot_center(layout: RackLayout, slot: tuple) -> tuple[float, float, float]:
+    """Centro de la base del pallet en una posición del rack (coordenadas del mundo)."""
+    r, b, side, lv, k = slot
+    cx = layout.x0 + r * layout.row_pitch
+    return (cx + side * (FLUE / 2 + SIDE / 2), layout.y0 + b * BAY + BAY * (0.27 + 0.46 * k),
+            layout.floor_z + LEVELS[lv] + (0.08 if LEVELS[lv] > 0 else 0.0))

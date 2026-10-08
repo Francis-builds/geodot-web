@@ -29,8 +29,8 @@ class Lift:
     fork_h: float
 
 
-FORKLIFT = LiftSpec(wheelbase=1.6, half_w=0.6, front=1.25, rear=-1.9)
-REACH = LiftSpec(wheelbase=1.4, half_w=0.6, front=1.15, rear=-1.5)
+FORKLIFT = LiftSpec(wheelbase=1.5, half_w=0.5, front=1.25, rear=-1.8)   # eléctrico compacto, 1,0 m de ancho
+REACH = LiftSpec(wheelbase=1.4, half_w=0.55, front=1.1, rear=-1.5)
 
 
 def lift_step(s: Lift, spec: LiftSpec, v: float, steer: float, dt: float) -> Lift:
@@ -41,6 +41,12 @@ def lift_step(s: Lift, spec: LiftSpec, v: float, steer: float, dt: float) -> Lif
 def lift_rect(s: Lift, spec: LiftSpec) -> Poly:
     uu, nn = u(s.yaw), n(s.yaw)
     return [s.p + uu * a + nn * sg * spec.half_w for a, sg in ((spec.rear, -1), (spec.front, -1), (spec.front, 1), (spec.rear, 1))]
+
+
+def body_rect(s: Lift, spec: LiftSpec, nose: float = 0.35) -> Poly:
+    """Chasis sin horquillas ni carga (las horquillas entran bajo pallets y dentro del rack)."""
+    uu, nn = u(s.yaw), n(s.yaw)
+    return [s.p + uu * a + nn * sg * spec.half_w for a, sg in ((spec.rear, -1), (nose, -1), (nose, 1), (spec.rear, 1))]
 
 
 def _target(p: np.ndarray, path: np.ndarray, ld: float) -> np.ndarray:
