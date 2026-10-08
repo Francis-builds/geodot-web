@@ -123,6 +123,45 @@
           "At sea · ETA 14:30",
           "In the yard · Ready to load"
         ]
+      },
+      "film": {
+        "summary": "Animation: a truck crosses the entry gate, the system reads its plate, appointment and documents, it backs into dock 11 and docks; as the roof lifts, the warehouse racks come into view.",
+        "truck": {
+          "title": "TRUCK · TRK-114",
+          "plates": "PLATES",
+          "platesValue": "84-AK-7J",
+          "appointment": "APPOINTMENT",
+          "appointmentValue": "14:30 ✓",
+          "documents": "DOCUMENTS",
+          "documentsValue": "COMPLETE ✓",
+          "status": "STATUS",
+          "statusValues": {
+            "gate": "AT GATE",
+            "yard": "IN YARD",
+            "maneuver": "MANEUVERING",
+            "docked": "DOCKED ✓"
+          },
+          "distance": "DISTANCE",
+          "articulation": "ARTICULATION",
+          "driverSection": "DRIVER",
+          "name": "NAME",
+          "nameValue": "J. RAMÍREZ",
+          "license": "LICENSE",
+          "licenseValue": "FEDERAL B ✓",
+          "checkin": "CHECK-IN",
+          "checkinValue": "14:32"
+        },
+        "cargo": {
+          "title": "CARGO",
+          "pallets": "PALLETS",
+          "palletsValue": "22",
+          "weight": "WEIGHT",
+          "weightValue": 18.4,
+          "skus": "SKUs",
+          "skusValue": "14",
+          "cartaPorte": "CARTA PORTE",
+          "cartaPorteValue": "VALIDATED ✓"
+        }
       }
     },
     "problem": {
