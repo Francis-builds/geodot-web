@@ -2,6 +2,8 @@ import { Button } from "./ui/Button";
 import { Container } from "./ui/Container";
 import { RotatingWord } from "./ui/RotatingWord";
 import { HeroCanvas } from "./HeroCanvas";
+import type { HeroFilmLabels } from "./hero/HeroFilm";
+import { HeroFilmLazy } from "./hero/HeroFilmLazy";
 import { Link } from "@/i18n/navigation";
 
 /**
@@ -14,11 +16,12 @@ import { Link } from "@/i18n/navigation";
  * the light split Hero.
  */
 export function HomeHero({
-  eyebrow, title, rotatingWords, titleAfter, subtitle, primaryCta, secondaryCta, tower,
+  eyebrow, title, rotatingWords, titleAfter, subtitle, primaryCta, secondaryCta, tower, film,
 }: {
   eyebrow: string; title: string; rotatingWords: string[]; titleAfter: string; subtitle: string;
   primaryCta: { label: string; href: string }; secondaryCta: { label: string; href: string };
   tower: { occupancyLabel: string; transportLabel: string; routeLabel: string; modes: string[] };
+  film: HeroFilmLabels;
 }) {
   const brackets = [
     // top pair clears the transparent nav that floats over the hero
@@ -31,7 +34,13 @@ export function HomeHero({
     <section data-hero-overlay className="hero-seq relative isolate -mt-16 flex min-h-svh items-center overflow-hidden bg-navy-950 pt-16 md:-mt-[72px] md:pt-[72px]">
       <span className="sr-only">{tower.routeLabel}</span>
       <div data-seq="visual" className="absolute inset-0">
-        <HeroCanvas labels={tower} />
+        {/* < 1280 px: escenas en código; ≥ 1280 px (fase 1 del hero maqueta): película + HUD HTML.
+            Debajo de xl las cards del HUD taparían al camión y al H1. */}
+        <div className="absolute inset-0 xl:hidden"><HeroCanvas labels={tower} /></div>
+        <div className="absolute inset-0 hidden xl:block">
+          <HeroFilmLazy labels={film} />
+          <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/40 to-transparent" />
+        </div>
       </div>
       {brackets.map((c) => (
         <span key={c} aria-hidden className={`absolute z-10 h-8 w-8 border-teal-400 ${c}`} />

@@ -123,6 +123,45 @@
           "En navegación · ETA 14:30",
           "En patio · Listo para cargar"
         ]
+      },
+      "film": {
+        "summary": "Animación: un camión cruza la pluma de acceso, el sistema lee placa, cita y documentos, retrocede al andén 11 y queda acoplado; al levantarse el techo se ven los racks del almacén.",
+        "truck": {
+          "title": "CAMIÓN · TRK-114",
+          "plates": "PLACAS",
+          "platesValue": "84-AK-7J",
+          "appointment": "CITA",
+          "appointmentValue": "14:30 ✓",
+          "documents": "DOCUMENTOS",
+          "documentsValue": "COMPLETOS ✓",
+          "status": "ESTADO",
+          "statusValues": {
+            "gate": "EN ACCESO",
+            "yard": "EN PATIO",
+            "maneuver": "EN MANIOBRA",
+            "docked": "ACOPLADO ✓"
+          },
+          "distance": "DISTANCIA",
+          "articulation": "ARTICULACIÓN",
+          "driverSection": "CHOFER",
+          "name": "NOMBRE",
+          "nameValue": "J. RAMÍREZ",
+          "license": "LICENCIA",
+          "licenseValue": "FEDERAL B ✓",
+          "checkin": "CHECK-IN",
+          "checkinValue": "14:32"
+        },
+        "cargo": {
+          "title": "CARGA",
+          "pallets": "PALLETS",
+          "palletsValue": "22",
+          "weight": "PESO",
+          "weightValue": 18.4,
+          "skus": "SKUs",
+          "skusValue": "14",
+          "cartaPorte": "CARTA PORTE",
+          "cartaPorteValue": "VALIDADA ✓"
+        }
       }
     },
     "problem": {
