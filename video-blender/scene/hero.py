@@ -20,6 +20,7 @@ from kit.primitives import set_default_material  # noqa: E402
 from kit.site_build import build_site  # noqa: E402
 from kit.trucks import truck  # noqa: E402
 from kit.handling import forklift, pallet, reach_truck, scan_flash, slot_highlight  # noqa: E402
+from kit.picker import picker  # noqa: E402
 from plan.site import PICK_SLOT, RackLayout, slot_center  # noqa: E402
 from render.camera import CamKey, iso_camera  # noqa: E402
 from render.technical import setup_technical  # noqa: E402
@@ -66,7 +67,8 @@ def build(route: dict):
 
 
 PHASE2_REQUIRED = ("FORKLIFT", "FORKLIFT_forks", "REACH", "REACH_mast", "REACH_forks", "pallet_A",
-                   "SLOT_highlight", "SCAN_flash", "DOOR_11")
+                   "SLOT_highlight", "SCAN_flash", "DOOR_11", "PICKER")
+PICKER_MODE: dict[str, str] = {}
 
 
 def build_phase2(cols, mats, tracks: dict) -> None:
@@ -85,6 +87,11 @@ def build_phase2(cols, mats, tracks: dict) -> None:
     hl.hide_render = True
     fl = scan_flash(H, mats["teal"])
     fl.hide_render = True
+    pk, mode = picker(H)
+    x, y, z, yaw, _ = tracks["picker"][0]
+    pk.location = (x, y, z)
+    pk.rotation_euler = (0, 0, yaw)
+    PICKER_MODE["mode"] = mode
 
 
 REQUIRED = ("HERO", "HERO_piv", "HERO_piv_steerL", "HERO_piv_steerR", "GATE_barrier", "GATE_booth",
@@ -172,6 +179,7 @@ def main() -> None:
             if miss2:
                 print("CHECK FAIL phase2 missing", miss2)
                 sys.exit(1)
+            print(f"PICKER {PICKER_MODE.get('mode')}")
             print("PHASE2 OK")
         print(f"CHECK OK {len(bpy.data.objects)}")
         return

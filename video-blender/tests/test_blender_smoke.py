@@ -81,3 +81,24 @@ def test_scene_builds_phase2(route2, tmp_path):
     out = run_hero("--mode", "check", "--route", str(route2), "--out", str(tmp_path))
     assert "CHECK OK" in out.stdout, out.stdout[-2000:] + out.stderr[-2000:]
     assert "PHASE2 OK" in out.stdout, out.stdout[-1500:]
+
+
+MIXAMO = ROOT / "assets" / "mixamo"
+MIXAMO_CLIPS = ("idle", "walk", "scan", "pickup")
+
+
+@needs_blender
+def test_picker_without_mixamo(route2, tmp_path):
+    import os
+    empty = tmp_path / "no-mixamo"; empty.mkdir()
+    out = subprocess.run([BLENDER, "-b", "--factory-startup", "-P", str(ROOT / "scene" / "hero.py"), "--",
+                          "--mode", "check", "--route", str(route2), "--out", str(tmp_path)],
+                         capture_output=True, text=True, timeout=300, env={**os.environ, "MIXAMO_DIR": str(empty)})
+    assert "PICKER mannequin" in out.stdout, out.stdout[-1500:] + out.stderr[-1500:]
+
+
+@needs_blender
+@pytest.mark.skipif(not all((MIXAMO / f"{c}.fbx").exists() for c in MIXAMO_CLIPS), reason="faltan los FBX de Mixamo")
+def test_picker_with_mixamo(route2, tmp_path):
+    out = run_hero("--mode", "check", "--route", str(route2), "--out", str(tmp_path))
+    assert "PICKER mixamo" in out.stdout, out.stdout[-1500:] + out.stderr[-1500:]
