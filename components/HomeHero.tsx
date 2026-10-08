@@ -33,9 +33,10 @@ export function HomeHero({
     <section data-hero-overlay className="hero-seq relative isolate -mt-16 flex min-h-svh items-center overflow-hidden bg-navy-950 pt-16 md:-mt-[72px] md:pt-[72px]">
       <span className="sr-only">{tower.routeLabel}</span>
       <div data-seq="visual" className="absolute inset-0">
-        {/* mobile: escenas en código; desktop (fase 1 del hero maqueta): película + HUD HTML */}
-        <div className="absolute inset-0 md:hidden"><HeroCanvas labels={tower} /></div>
-        <div className="absolute inset-0 hidden md:block">
+        {/* < 1280 px: escenas en código; ≥ 1280 px (fase 1 del hero maqueta): película + HUD HTML.
+            Debajo de xl las cards del HUD taparían al camión y al H1. */}
+        <div className="absolute inset-0 xl:hidden"><HeroCanvas labels={tower} /></div>
+        <div className="absolute inset-0 hidden xl:block">
           <HeroFilm labels={film} />
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/40 to-transparent" />
         </div>

@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useLocale } from "next-intl";
 import { useReducedMotion } from "motion/react";
 import { cueAlpha, formatHud, frameAt, parseFilm, type Film, type FrameData } from "@/lib/hero/film";
-import { cardRects, leaderPath, videoToBox, type Rect, type Size } from "@/lib/hero/geometry";
+import { cardRects, leaderPath, leaderVisible, videoToBox, type Rect, type Size } from "@/lib/hero/geometry";
 import { HudCard, type HudRow } from "./HudCard";
 
 export type HeroFilmLabels = {
@@ -20,6 +20,20 @@ export type HeroFilmLabels = {
     skus: string; skusValue: string; cartaPorte: string; cartaPorteValue: string;
   };
 };
+
+/** Ancho desde el que se muestra la película: debajo, las cards taparían al camión y al H1. */
+export const FILM_MIN_WIDTH = 1280;
+const FILM_QUERY = `(min-width: ${FILM_MIN_WIDTH}px)`;
+
+function subscribeFilmQuery(cb: () => void) {
+  const mq = window.matchMedia(FILM_QUERY);
+  mq.addEventListener("change", cb);
+  return () => mq.removeEventListener("change", cb);
+}
+/** true solo en el cliente con viewport ≥ FILM_MIN_WIDTH; en SSR siempre false (nada se pide). */
+function useFilmViewport(): boolean {
+  return useSyncExternalStore(subscribeFilmQuery, () => window.matchMedia(FILM_QUERY).matches, () => false);
+}
 
 const ASSETS = { anchors: "/hero/film-anchors.json", poster: "/hero/film-poster.webp", webm: "/hero/film-1080.webm", mp4: "/hero/film-1080.mp4" };
 type VideoWithRvfc = HTMLVideoElement & {
@@ -41,16 +55,18 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
   const [liveFrame, setFrame] = useState<FrameData | null>(null);
   const [box, setBox] = useState<Size>({ w: 0, h: 0 });
   const [mountVideo, setMountVideo] = useState(false);
+  const wide = useFilmViewport();
 
   useEffect(() => {
+    if (!wide) return;
     let alive = true;
     fetch(ASSETS.anchors).then((r) => (r.ok ? r.json() : null)).then((j) => alive && setFilm(parseFilm(j))).catch(() => alive && setFilm(null));
     return () => { alive = false; };
-  }, []);
+  }, [wide]);
 
-  // el video se monta después del LCP y solo en desktop (en mobile sigue HeroCanvas)
+  // el video se monta después del LCP y solo con viewport ancho (debajo sigue HeroCanvas)
   useEffect(() => {
-    if (reduced || !window.matchMedia("(min-width: 768px)").matches) return;
+    if (reduced || !wide) return;
     const w = window as Window & { requestIdleCallback?: (cb: () => void) => number; cancelIdleCallback?: (id: number) => void };
     if (w.requestIdleCallback) {
       const id = w.requestIdleCallback(() => setMountVideo(true));
@@ -58,7 +74,7 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
     }
     const t = setTimeout(() => setMountVideo(true), 1200);
     return () => clearTimeout(t);
-  }, [reduced]);
+  }, [reduced, wide]);
 
   useEffect(() => {
     const el = boxRef.current;
@@ -120,7 +136,7 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
             const alpha = cueAlpha(frame.index, k.cue);
             const prog = cueAlpha(frame.index, k.cue + 8, 14);
             const a = videoToBox(k.anchor, video, box);
-            if (alpha <= 0 || prog <= 0 || !a.visible) return null;
+            if (alpha <= 0 || prog <= 0 || !leaderVisible(a, [rTruck, rCargo], "R")) return null;
             return (
               <g key={k.key} className="text-teal-400" opacity={alpha}>
                 <path d={leaderPath(k.rect, a, "R")} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - prog}
@@ -152,7 +168,7 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
   return (
     <div ref={boxRef} className="absolute inset-0 overflow-hidden">
       <span className="sr-only">{labels.summary}</span>
-      {reduced || !mountVideo ? (
+      {!wide ? null : reduced || !mountVideo ? (
         // eslint-disable-next-line @next/next/no-img-element -- poster decorativo fijo, sin optimización
         <img aria-hidden src={ASSETS.poster} alt="" className="absolute inset-0 h-full w-full object-cover" />
       ) : (

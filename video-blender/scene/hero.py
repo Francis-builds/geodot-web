@@ -23,6 +23,7 @@ from render.camera import CamKey, iso_camera  # noqa: E402
 from render.technical import setup_technical  # noqa: E402
 from export.anchors import export_anchors  # noqa: E402
 from render.photo import setup_photo  # noqa: E402
+from render.frames import remove_empty_frames  # noqa: E402
 from plan.kinematics import KP, u  # noqa: E402
 from plan.site import GATE, HERO_DOCK, dock_x  # noqa: E402
 
@@ -161,6 +162,9 @@ def main() -> None:
         scene.render.use_overwrite = False
         scene.render.use_placeholder = True
         args.out.mkdir(parents=True, exist_ok=True)
+        removed = remove_empty_frames(args.out)   # placeholders de un render cortado
+        if removed:
+            print(f"placeholders vacíos borrados: {removed}")
         scene.render.filepath = str(args.out / "f_")
         bpy.ops.render.render(animation=True)
         print("RENDERED", args.out)

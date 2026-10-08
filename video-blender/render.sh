@@ -15,7 +15,7 @@ case "$MODE" in
   *) echo "uso: $0 --preview|--final" >&2; exit 2 ;;
 esac
 OUT="out/$NAME"
-if [ "${2:-}" = "--fresh" ]; then rm -rf "./out/$NAME"; fi
+for a in "$@"; do if [ "$a" = "--fresh" ]; then rm -rf "./out/$NAME"; fi; done
 mkdir -p "$OUT"
 ./assets/fetch_assets.sh > /dev/null
 
@@ -24,9 +24,18 @@ SCAN_END=$(python3 -c "import json;print(json.load(open('$OUT/route.json'))['cue
 DOCKED=$(python3 -c "import json;print(json.load(open('$OUT/route.json'))['cues']['docked'])")
 hero() { "$BLENDER" -b --factory-startup -P scene/hero.py -- --route "$OUT/route.json" "$@" > "$OUT/blender-$2.log" 2>&1; }
 
+# frames viejos de otra escena/ruta/parámetros no se reutilizan: el sello los invalida
+stale() {  # $1 = dir, $2 = sello esperado. Sin sello (corridas previas a este cambio) se adopta.
+  if [ -f "$1/.stamp" ] && [ "$(cat "$1/.stamp")" != "$2" ]; then echo "frames viejos en $1: se descartan"; rm -rf "./$1"; fi
+  mkdir -p "$1"; echo "$2" > "$1/.stamp"
+}
+stale "$OUT/tech" "$(python3 -m render.frames "$OUT/route.json" "$RES" "$STEP" tech)"
+stale "$OUT/photo" "$(python3 -m render.frames "$OUT/route.json" "$RES" "$STEP" "$SAMPLES")"
+
 hero --mode anchors --out "$OUT" --res 1920x1080
 hero --mode technical --out "$OUT/tech" --res "$RES" --step "$STEP"
 hero --mode photo --out "$OUT/photo" --res "$RES" --step "$STEP" --frames "1-$((SCAN_END + 1))" --samples "$SAMPLES"
+rm -rf "./$OUT/comp"   # siempre desde cero: ffmpeg toma todos los f_*.png de comp/
 python3 -m post.composite "$OUT/tech" "$OUT/photo" "$OUT/comp" "$OUT/route.json"
 
 # el barrido en el frame del medio, para revisar que foto y técnico calzan

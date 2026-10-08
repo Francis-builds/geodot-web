@@ -40,3 +40,11 @@ export function leaderPath(from: Rect, to: { x: number; y: number }, side: "L" |
   const ex = side === "R" ? sx - elbow : sx + elbow;
   return `M ${n(sx)} ${n(sy)} H ${n(ex)} L ${n(to.x)} ${n(to.y)}`;
 }
+
+/** La línea solo se dibuja si el anclaje está en cuadro, fuera de toda card y antes del codo. */
+export function leaderVisible(a: { x: number; y: number; visible: boolean }, cards: Rect[], side: "L" | "R", elbow = 28): boolean {
+  if (!a.visible) return false;
+  const inside = cards.some((r) => a.x >= r.x && a.x <= r.x + r.w && a.y >= r.y && a.y <= r.y + r.h);
+  if (inside) return false;
+  return cards.every((r) => (side === "R" ? a.x < r.x - elbow : a.x > r.x + r.w + elbow));
+}
