@@ -117,8 +117,8 @@ def camera_keys(route: dict) -> list[CamKey]:
         f = fr[i - 1]
         # sigue al centro del equipo, corrido hacia el depósito para que el corte quede en cuadro
         mid = np.array(f["R"]) + 0.5 * KP * u(f["yaw"] - math.pi / 2)
-        keys.append(CamKey(i, (float(mid[0]), float(mid[1]) + 20.0), 88.0))
-    dock_target = (dock_x(HERO_DOCK) + 6.0, 4.0)
+        keys.append(CamKey(i, (float(mid[0]), float(mid[1]) + 4.0), 88.0))
+    dock_target = (dock_x(HERO_DOCK), -6.0)
     keys.append(CamKey(cues["docked"] + 1, dock_target, 84.0))
     keys.append(CamKey(len(fr), dock_target, 84.0))
     return keys
