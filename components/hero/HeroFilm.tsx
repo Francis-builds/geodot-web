@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { useReducedMotion } from "motion/react";
-import { cueAlpha, formatHud, frameAt, parseFilm, type Film, type FrameData } from "@/lib/hero/film";
+import { activeCards, cueAlpha, formatHud, frameAt, palletStage, parseFilm, type Film, type FrameData, type PalletStage } from "@/lib/hero/film";
 import { cardRects, leaderPath, leaderVisible, videoToBox, type Rect, type Size } from "@/lib/hero/geometry";
 import { HudCard, type HudRow } from "./HudCard";
 
@@ -19,7 +19,19 @@ export type HeroFilmLabels = {
     title: string; pallets: string; palletsValue: string; weight: string; weightValue: number;
     skus: string; skusValue: string; cartaPorte: string; cartaPorteValue: string;
   };
+  pallet: {
+    title: string; lot: string; lotValue: string; expiry: string; expiryValue: string; position: string;
+    positionValue: string; fefo: string; fefoValue: string; status: string;
+    stageValues: Record<PalletStage, string>; picker: string; pickerValue: string;
+  };
 };
+
+const TRUCK_STATUS = ["gate", "yard", "maneuver", "docked"] as const;
+type TruckStatus = (typeof TRUCK_STATUS)[number];
+/** En la fase 2 el camión sigue acoplado: sus estados nuevos se muestran como "acoplado". */
+function truckStatus(s: FrameData["status"]): TruckStatus {
+  return (TRUCK_STATUS as readonly string[]).includes(s) ? (s as TruckStatus) : "docked";
+}
 
 const ASSETS = { anchors: "/hero/film-anchors.json", poster: "/hero/film-poster.webp", webm: "/hero/film-1080.webm", mp4: "/hero/film-1080.mp4" };
 type VideoWithRvfc = HTMLVideoElement & {
@@ -91,7 +103,7 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
     { label: t.plates, value: t.platesValue },
     { label: t.appointment, value: t.appointmentValue, ok: true },
     { label: t.documents, value: t.documentsValue, ok: true },
-    { label: t.status, value: t.statusValues[frame.status], ok: frame.status === "docked" },
+    { label: t.status, value: t.statusValues[truckStatus(frame.status)], ok: truckStatus(frame.status) === "docked" },
     { label: t.distance, value: formatHud(locale, "dist", frame.dist) },
     { label: t.articulation, value: formatHud(locale, "art", frame.art) },
     { label: t.driverSection, value: "", section: true },
@@ -106,26 +118,50 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
     { label: c.cartaPorte, value: c.cartaPorteValue, ok: true },
   ];
 
+  const pl = labels.pallet;
+  const stage = film && frame ? palletStage(frame.index, film.cues) : "received";
+  const palletRows: HudRow[] = [
+    { label: pl.lot, value: pl.lotValue },
+    { label: pl.expiry, value: pl.expiryValue },
+    { label: pl.fefo, value: pl.fefoValue, ok: true },
+    { label: pl.position, value: pl.positionValue },
+    { label: pl.status, value: pl.stageValues[stage], ok: stage !== "received" },
+    ...(stage === "picking" ? [{ label: pl.picker, value: pl.pickerValue }] : []),
+  ];
+
   const hud = film && frame && box.w > 0 ? (() => {
-    const [rTruck, rCargo] = cardRects(box, [{ rows: truckRows.length }, { rows: cargoRows.length }]);
     const video = { w: film.width, h: film.height };
-    const cards: { key: string; title: string; rows: HudRow[]; rect: Rect; cue: number; anchor: [number, number] }[] = [
-      { key: "truck", title: t.title, rows: truckRows, rect: rTruck, cue: film.cues.truckCard, anchor: frame.tractor },
-      { key: "cargo", title: c.title, rows: cargoRows, rect: rCargo, cue: film.cues.cargoCard, anchor: frame.trailer },
-    ];
+    const showing = activeCards(frame.index, film.cues);
+    const palletIn = film.cues.palletCard ?? Number.POSITIVE_INFINITY;
+    type Card = { key: string; title: string; rows: HudRow[]; rect: Rect; alpha: number; prog: number; anchor?: [number, number] };
+    let cards: Card[];
+    if (showing.includes("pallet")) {
+      const [r] = cardRects(box, [{ rows: palletRows.length }]);
+      const relevo = film.cues.relevo !== undefined && frame.index >= film.cues.relevo;
+      cards = [{ key: "pallet", title: pl.title, rows: palletRows, rect: r, alpha: cueAlpha(frame.index, palletIn),
+        prog: cueAlpha(frame.index, palletIn + 8, 14), anchor: relevo ? frame.picker : frame.pallet }];
+    } else {
+      const [rTruck, rCargo] = cardRects(box, [{ rows: truckRows.length }, { rows: cargoRows.length }]);
+      cards = [
+        { key: "truck", title: t.title, rows: truckRows, rect: rTruck, alpha: cueAlpha(frame.index, film.cues.truckCard),
+          prog: cueAlpha(frame.index, film.cues.truckCard + 8, 14), anchor: frame.tractor },
+        { key: "cargo", title: c.title, rows: cargoRows, rect: rCargo, alpha: cueAlpha(frame.index, film.cues.cargoCard),
+          prog: cueAlpha(frame.index, film.cues.cargoCard + 8, 14), anchor: frame.trailer },
+      ];
+    }
+    const rects = cards.map((k) => k.rect);
     return (
       <>
         <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full" viewBox={`0 0 ${box.w} ${box.h}`}>
           {cards.map((k) => {
-            const alpha = cueAlpha(frame.index, k.cue);
-            const prog = cueAlpha(frame.index, k.cue + 8, 14);
+            if (!k.anchor || k.alpha <= 0 || k.prog <= 0) return null;
             const a = videoToBox(k.anchor, video, box);
-            if (alpha <= 0 || prog <= 0 || !leaderVisible(a, [rTruck, rCargo], "R")) return null;
+            if (!leaderVisible(a, rects, "R")) return null;
             return (
-              <g key={k.key} className="text-teal-400" opacity={alpha}>
-                <path d={leaderPath(k.rect, a, "R")} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - prog}
+              <g key={k.key} className="text-teal-400" opacity={k.alpha}>
+                <path d={leaderPath(k.rect, a, "R")} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - k.prog}
                   fill="none" stroke="currentColor" strokeWidth={1.4} />
-                {prog >= 1 && (
+                {k.prog >= 1 && (
                   <>
                     <circle cx={a.x} cy={a.y} r={7} fill="none" stroke="currentColor" strokeWidth={1.4} />
                     <circle cx={a.x} cy={a.y} r={2.5} fill="currentColor" />
@@ -141,10 +177,7 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
             );
           })}
         </svg>
-        {cards.map((k) => {
-          const alpha = cueAlpha(frame.index, k.cue);
-          return alpha > 0 ? <HudCard key={k.key} title={k.title} rows={k.rows} alpha={alpha} rect={k.rect} /> : null;
-        })}
+        {cards.map((k) => (k.alpha > 0 ? <HudCard key={k.key} title={k.title} rows={k.rows} alpha={k.alpha} rect={k.rect} /> : null))}
       </>
     );
   })() : null;

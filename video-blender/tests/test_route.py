@@ -40,3 +40,17 @@ def test_route_json_roundtrip(tmp_path):
     assert d["fps"] == FPS == 24 and len(d["frames"]) == len(t.frames)
     assert {"R", "yaw", "art", "steer"} <= d["frames"][0].keys()
     assert d["cues"]["docked"] == t.cues["docked"] and d["report"]["minClearance"] > 0.10
+
+
+def test_phase2_chains_after_docking(tmp_path):
+    t = plan_route(phase=2)
+    n = len(t.frames)
+    start = t.cues["phase2Start"]
+    assert t.cues["docked"] < start <= t.cues["docked"] + 8
+    assert all(len(v) == n - start for v in t.tracks.values())
+    assert n / 24 <= 31.0
+    end = t.frames[-1]   # el camión sigue acoplado durante la fase 2
+    assert abs(end.R[0] - dock_x(HERO_DOCK)) < 0.10 and abs(end.R[1] - Y_DOCK) < 0.10
+    p = tmp_path / "route.json"; write_route(t, p)
+    d = json.loads(p.read_text())
+    assert d["tracks"]["pallet_A"][-1][4] == 4 and d["cues"]["relevo"] < n

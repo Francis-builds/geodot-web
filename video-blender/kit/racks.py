@@ -7,34 +7,12 @@ no procese miles de objetos; en fase 2 los pallets que se mueven son objetos pro
 from __future__ import annotations
 
 import random
-from dataclasses import dataclass
 
 import bmesh
 import bpy
 
 from kit.primitives import _obj
-
-BAY = 2.7            # ancho de vano (m)
-SIDE = 1.1           # profundidad de cada lado de la fila
-FLUE = 0.2           # separación entre lados
-LEVELS = (0.0, 1.7, 3.4, 5.1)   # altura de los largueros sobre el piso
-TOP = 6.6            # altura de las columnas
-AISLE = 3.2
-
-
-@dataclass(frozen=True)
-class RackLayout:
-    x0: float = -15.0
-    rows: int = 12
-    y0: float = 11.0
-    bays: int = 6
-    floor_z: float = 1.25
-    fill: float = 0.82   # fracción de posiciones ocupadas
-
-    @property
-    def row_pitch(self) -> float:
-        return 2 * SIDE + FLUE + AISLE
-
+from plan.site import AISLE, BAY, FLUE, LEVELS, SIDE, TOP, RackLayout  # noqa: F401
 
 def _add_box(bm, size, center):
     ret = bmesh.ops.create_cube(bm, size=1)
@@ -69,7 +47,7 @@ def build_racks(col, mats, layout: RackLayout = RackLayout(), seed: int = 11) ->
                 px = cx + side * (FLUE / 2 + SIDE / 2)
                 for lv in LEVELS:
                     for k in range(2):
-                        if rnd.random() > layout.fill:
+                        if rnd.random() > layout.fill or (r, b, side, LEVELS.index(lv), k) in layout.reserved:
                             continue
                         py = layout.y0 + b * BAY + BAY * (0.27 + 0.46 * k)
                         base_z = fz + lv + (0.08 if lv > 0 else 0.0)
