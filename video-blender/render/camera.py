@@ -18,6 +18,7 @@ class CamKey:
     frame: int
     target: tuple[float, float]
     ortho_scale: float
+    subject: tuple[float, float] = (SUBJECT_X, 0.5)   # dónde cae el objetivo en pantalla (0..1, origen arriba a la izq.)
 
 
 def view_dir() -> Vector:
@@ -28,6 +29,10 @@ def screen_right() -> Vector:
     return Euler(ISO_ROT).to_matrix() @ Vector((1, 0, 0))
 
 
+def screen_up() -> Vector:
+    return Euler(ISO_ROT).to_matrix() @ Vector((0, 1, 0))
+
+
 def iso_camera(scene, keys: list[CamKey]) -> bpy.types.Object:
     data = bpy.data.cameras.new("cam")
     data.type = "ORTHO"
@@ -36,10 +41,12 @@ def iso_camera(scene, keys: list[CamKey]) -> bpy.types.Object:
     scene.collection.objects.link(cam)
     scene.camera = cam
     cam.rotation_euler = ISO_ROT
-    d, right = view_dir(), screen_right()
+    d, right, up = view_dir(), screen_right(), screen_up()
+    aspect = scene.render.resolution_y / scene.render.resolution_x if scene.render.resolution_x else 9 / 16
     for k in keys:
-        # correr la cámara hacia la izquierda deja el objetivo a SUBJECT_X del ancho del cuadro
-        shift = -right * ((SUBJECT_X - 0.5) * k.ortho_scale)
+        # correr la cámara deja el objetivo en `subject` (fracción del cuadro)
+        sx, sy = k.subject
+        shift = -right * ((sx - 0.5) * k.ortho_scale) + up * ((sy - 0.5) * k.ortho_scale * aspect)
         cam.location = Vector((k.target[0], k.target[1], 0.0)) - d * DISTANCE + shift
         data.ortho_scale = k.ortho_scale
         cam.keyframe_insert("location", frame=k.frame)

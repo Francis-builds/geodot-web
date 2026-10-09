@@ -267,13 +267,15 @@ def camera_keys(route: dict) -> list[CamKey]:
     # fase 2: la cámara entra al depósito siguiendo la carga hasta el pick face
     sx, sy, _ = slot_center(RackLayout(), PICK_SLOT)
     # escalas de 16–34 m: los equipos miden ~2 m y tienen que leerse
-    keys += [CamKey(cues["phase2Start"] + 14, (dock_x(HERO_DOCK) - 0.5, 1.0), 34.0),
-             CamKey(cues["unloadStart"] + 1, (dock_x(HERO_DOCK) - 0.5, 0.5), 26.0),
-             CamKey(cues["scanA"] + 1, (dock_x(HERO_DOCK) - 0.5, 4.5), 24.0),
-             CamKey(cues["reachStart"] + 40, (10.3, 9.5), 28.0),
-             CamKey(cues["slotDone"] + 1, (sx - 1.2, sy), 20.0),
-             CamKey(cues["relevo"] + 1, (sx - 1.0, sy), 16.0),
-             CamKey(len(fr), (sx - 1.0, sy), 16.0)]
+    # en la fase 2 la card PALLET ocupa arriba a la derecha: el sujeto va más abajo y a la izquierda
+    sub = (0.60, 0.64)
+    keys += [CamKey(cues["phase2Start"] + 14, (dock_x(HERO_DOCK) - 0.5, 1.0), 34.0, sub),
+             CamKey(cues["unloadStart"] + 1, (dock_x(HERO_DOCK) - 0.5, 0.5), 26.0, sub),
+             CamKey(cues["scanA"] + 1, (dock_x(HERO_DOCK) - 0.5, 4.5), 24.0, sub),
+             CamKey(cues["reachStart"] + 40, (10.3, 9.5), 28.0, sub),
+             CamKey(cues["slotDone"] + 1, (sx - 0.6, sy), 20.0, sub),
+             CamKey(cues["relevo"] + 1, (sx - 0.6, sy), 16.0, sub),
+             CamKey(len(fr), (sx - 0.6, sy), 16.0, sub)]
     return keys
 
 
