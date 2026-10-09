@@ -13,6 +13,7 @@ from pathlib import Path
 
 import bpy
 
+from kit.nla import MIXAMO_YAW_OFFSET, strip_repeat
 from kit.primitives import box, cyl, empty
 
 CLIPS = ("idle", "walk", "scan", "pickup")
@@ -51,7 +52,7 @@ def _mannequin(col):
     return root
 
 
-def _mixamo(col, d: Path):
+def _mixamo(col, d: Path, total_frames: int):
     actions = {}
     arm = None
     for clip in CLIPS:
@@ -71,12 +72,14 @@ def _mixamo(col, d: Path):
                 bpy.data.objects.remove(o, do_unlink=True)
     root = empty("PICKER", col)
     arm.parent = root
-    arm.scale = (0.01, 0.01, 0.01) if max(arm.dimensions) > 50 else arm.scale   # FBX de Mixamo vienen en cm
+    arm.rotation_euler.z += MIXAMO_YAW_OFFSET   # frente +X, como el maniquí y route.json
     arm.animation_data.action = None
     for clip, act in actions.items():
         tr = arm.animation_data.nla_tracks.new()
         tr.name = clip
         strip = tr.strips.new(clip, 1, act)
+        start, end = act.frame_range
+        strip.repeat = strip_repeat(end - start, total_frames)   # cicla en toda la película
         strip.extrapolation = "HOLD_FORWARD"
         strip.use_animated_influence = True
         strip.blend_type = "REPLACE"
@@ -84,11 +87,11 @@ def _mixamo(col, d: Path):
     return root
 
 
-def picker(col):
+def picker(col, total_frames: int = 1000):
     """Devuelve (raíz PICKER, 'mixamo' | 'mannequin')."""
     d = mixamo_dir()
     if _has_mixamo(d):
-        return _mixamo(col, d), "mixamo"
+        return _mixamo(col, d, total_frames), "mixamo"
     return _mannequin(col), "mannequin"
 
 

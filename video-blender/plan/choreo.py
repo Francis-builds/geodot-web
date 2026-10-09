@@ -158,7 +158,8 @@ def choreograph(start_frame: int, fps: int = 24) -> tuple[dict[str, list[list[fl
     reach_gone = next(i for i, s in enumerate(rc.frames) if i > ev["slotDone"] and s.p[1] >= sy + 3.0)
 
     # --- picker: preparación → misma posición del rack (relevo) ---
-    walk_path = np.array([(STAGE[0], 9.9), (STAGE[0], sy - 1.0), (sx - 1.05, sy)])
+    # espera junto a la cara de la fila 4, fuera de los recorridos de los dos equipos
+    walk_path = np.array([(8.95, 9.6), (STAGE[0], 12.0), (STAGE[0], sy - 1.0), (sx - 1.05, sy)])
     seg = np.linalg.norm(np.diff(walk_path, axis=0), axis=1)
     cum = np.concatenate([[0], np.cumsum(seg)])
     picker: list[list[float]] = []
@@ -174,7 +175,7 @@ def choreograph(start_frame: int, fps: int = 24) -> tuple[dict[str, list[list[fl
 
     ev["pickerArrive"] = t_walk + n_walk
     ev["relevo"] = ev["pickerArrive"] + 6
-    total = ev["relevo"] + 18
+    total = ev["relevo"] + 16
 
     for i in range(total):
         if i < t_walk:

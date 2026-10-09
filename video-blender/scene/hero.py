@@ -89,7 +89,7 @@ def build_phase2(cols, mats, tracks: dict) -> None:
     hl.hide_render = True
     fl = scan_flash(H, mats["teal"])
     fl.hide_render = True
-    pk, mode = picker(H)
+    pk, mode = picker(H, total_frames=len(tracks["picker"]) + 400)
     x, y, z, yaw, _ = tracks["picker"][0]
     pk.location = (x, y, z)
     pk.rotation_euler = (0, 0, yaw)

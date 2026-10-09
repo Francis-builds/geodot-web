@@ -73,3 +73,24 @@ def test_cues_order_and_budget(ch):
     n = len(tr["forklift"])
     assert all(len(v) == n for v in tr.values())
     assert (START + n) / 24 <= 31.0
+
+
+def test_picker_clears_lifts(ch):
+    """El picker (círculo r=0,3) nunca toca la huella completa de los equipos, horquillas incluidas."""
+    from plan.handling import lift_rect
+    tr, _ = ch
+    worst = 1e9
+    for pk, fl, rc in zip(tr["picker"], tr["forklift"], tr["reach"]):
+        c = np.array(pk[:2])
+        for row, spec in ((fl, FORKLIFT), (rc, REACH)):
+            poly = lift_rect(Lift(np.array(row[:2]), row[3], row[2]), spec)
+            # distancia círculo-polígono: distancia del centro al rectángulo menos el radio
+            d, signs = 1e9, []
+            for a, b in zip(poly, poly[1:] + poly[:1]):
+                ab = b - a
+                t = max(0.0, min(1.0, float((c - a) @ ab) / float(ab @ ab)))
+                d = min(d, float(np.linalg.norm(c - (a + t * ab))))
+                signs.append(float(ab[0] * (c - a)[1] - ab[1] * (c - a)[0]) >= 0)
+            inside = all(signs) or not any(signs)   # independiente del sentido de los vértices
+            worst = min(worst, (-d if inside else d) - 0.3)
+    assert worst > 0.10, worst
