@@ -102,3 +102,34 @@ def test_picker_without_mixamo(route2, tmp_path):
 def test_picker_with_mixamo(route2, tmp_path):
     out = run_hero("--mode", "check", "--route", str(route2), "--out", str(tmp_path))
     assert "PICKER mixamo" in out.stdout, out.stdout[-1500:] + out.stderr[-1500:]
+
+
+@needs_blender
+def test_technical_frames_phase2(route2, tmp_path):
+    import json
+    from PIL import Image, ImageStat
+    c = json.loads(route2.read_text())["cues"]
+    frames = (c["doorOpen"] + 11, c["slotDone"] + 1, c["relevo"] + 1)
+    for f in frames:
+        out = run_hero("--mode", "technical", "--route", str(route2), "--out", str(tmp_path),
+                       "--res", "480x270", "--frames", f"{f}-{f}", timeout=600)
+        p = tmp_path / f"f_{f:04d}.png"
+        assert p.exists(), out.stdout[-1500:] + out.stderr[-1500:]
+        assert ImageStat.Stat(Image.open(p).convert("L")).mean[0] > 2
+
+
+@needs_blender
+def test_phase2_animation_follows_tracks(route2, tmp_path):
+    """La pose en Blender de pallet_A, el autoelevador y el picker coincide con route.json en frames clave."""
+    import json, re
+    d = json.loads(route2.read_text()); c = d["cues"]; s0 = c["phase2Start"]
+    probe = [c["unloadStart"] - 1, c["scanA"], c["slotDone"] + 2, c["relevo"]]
+    out = run_hero("--mode", "probe", "--route", str(route2), "--out", str(tmp_path),
+                   "--frames", ",".join(str(f + 1) for f in probe))
+    got = {(m[0], int(m[1])): tuple(map(float, m[2:5])) for m in re.findall(r"PROBE (\S+) (\d+) (\S+) (\S+) (\S+)", out.stdout)}
+    assert got, out.stdout[-1500:] + out.stderr[-1500:]
+    for f in probe:
+        for obj, key in (("pallet_A", "pallet_A"), ("FORKLIFT", "forklift"), ("PICKER", "picker")):
+            want = d["tracks"][key][f - s0][:2]
+            x, y, _ = got[(obj, f + 1)]
+            assert abs(x - want[0]) < 0.02 and abs(y - want[1]) < 0.02, (obj, f, (x, y), want)
