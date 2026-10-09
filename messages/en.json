@@ -125,7 +125,7 @@
         ]
       },
       "film": {
-        "summary": "Animation: a truck crosses the entry gate, the system reads its plate, appointment and documents, it backs into dock 11 and docks; as the roof lifts, the warehouse racks come into view.",
+        "summary": "Animation: a truck crosses the entry gate, the system reads its plate, appointment and documents, it backs into dock 11 and docks; as the roof lifts, the warehouse racks come into view; a forklift unloads a pallet, a reach truck stores it in its rack location and a picker arrives to pick from it.",
         "truck": {
           "title": "TRUCK · TRK-114",
           "plates": "PLATES",
@@ -161,6 +161,26 @@
           "skusValue": "14",
           "cartaPorte": "CARTA PORTE",
           "cartaPorteValue": "VALIDATED ✓"
+        },
+        "pallet": {
+          "title": "PALLET · L-24-0912",
+          "lot": "LOT",
+          "lotValue": "L-24-0912",
+          "expiry": "EXPIRY",
+          "expiryValue": "12/14/2026",
+          "position": "LOCATION",
+          "positionValue": "R-05-01-A",
+          "fefo": "FEFO",
+          "fefoValue": "SHIPS FIRST ✓",
+          "status": "STATUS",
+          "stageValues": {
+            "received": "RECEIVING",
+            "scanned": "SCANNED ✓",
+            "stored": "STORED ✓",
+            "picking": "PICKING ✓"
+          },
+          "picker": "PICKER",
+          "pickerValue": "M. LÓPEZ"
         }
       }
     },

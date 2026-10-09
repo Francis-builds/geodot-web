@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Pipeline completo del hero maqueta (fase 1):
 #   plan → anchors → técnico → fotorrealista (hasta el fin del barrido) → post → encode → public/hero
-# Uso: ./render.sh --preview [--fresh]   (960x540, 1 de cada 2 frames, 12 fps, foto con 24 muestras; ~1 h)
+# Uso: ./render.sh --preview [--fresh] [--phase2]   (960x540, 1 de cada 2 frames, 12 fps, foto con 24 muestras; ~1 h)
 #      ./render.sh --final [--fresh]     (1920x1080, 24 fps, foto con 96 muestras; de noche)
 # Es retomable: relanzarlo saltea los frames ya renderizados. --fresh borra out/<modo> y arranca de cero
 # (necesario si cambió la escena).
@@ -19,7 +19,9 @@ for a in "$@"; do if [ "$a" = "--fresh" ]; then rm -rf "./out/$NAME"; fi; done
 mkdir -p "$OUT"
 ./assets/fetch_assets.sh > /dev/null
 
-python3 -m plan.route "$OUT/route.json"
+PHASE_FLAG=""
+for a in "$@"; do if [ "$a" = "--phase2" ]; then PHASE_FLAG="--phase2"; fi; done
+python3 -m plan.route "$OUT/route.json" $PHASE_FLAG
 SCAN_END=$(python3 -c "import json;print(json.load(open('$OUT/route.json'))['cues']['scanEnd'])")
 DOCKED=$(python3 -c "import json;print(json.load(open('$OUT/route.json'))['cues']['docked'])")
 hero() { "$BLENDER" -b --factory-startup -P scene/hero.py -- --route "$OUT/route.json" "$@" > "$OUT/blender-$2.log" 2>&1; }

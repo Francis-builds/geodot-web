@@ -125,7 +125,7 @@
         ]
       },
       "film": {
-        "summary": "Animación: un camión cruza la pluma de acceso, el sistema lee placa, cita y documentos, retrocede al andén 11 y queda acoplado; al levantarse el techo se ven los racks del almacén.",
+        "summary": "Animación: un camión cruza la pluma de acceso, el sistema lee placa, cita y documentos, retrocede al andén 11 y queda acoplado; al levantarse el techo se ven los racks del almacén; un autoelevador baja un pallet, una apiladora lo guarda en su posición del rack y un picker llega a tomarlo.",
         "truck": {
           "title": "CAMIÓN · TRK-114",
           "plates": "PLACAS",
@@ -161,6 +161,26 @@
           "skusValue": "14",
           "cartaPorte": "CARTA PORTE",
           "cartaPorteValue": "VALIDADA ✓"
+        },
+        "pallet": {
+          "title": "PALLET · L-24-0912",
+          "lot": "LOTE",
+          "lotValue": "L-24-0912",
+          "expiry": "CADUCIDAD",
+          "expiryValue": "14/12/2026",
+          "position": "POSICIÓN",
+          "positionValue": "R-05-01-A",
+          "fefo": "FEFO",
+          "fefoValue": "SALE PRIMERO ✓",
+          "status": "ESTADO",
+          "stageValues": {
+            "received": "EN RECEPCIÓN",
+            "scanned": "ESCANEADO ✓",
+            "stored": "ALMACENADO ✓",
+            "picking": "EN PICKING ✓"
+          },
+          "picker": "PICKER",
+          "pickerValue": "M. LÓPEZ"
         }
       }
     },

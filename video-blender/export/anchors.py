@@ -65,7 +65,8 @@ def export_anchors(scene, cam, route: dict, out: Path, size: tuple[int, int]) ->
     data = {
         "fps": route["fps"], "width": size[0], "height": size[1], "frames": rows,
         "cues": {"truckCard": cues["scanEnd"] - 8, "cargoCard": cues["scanEnd"] + 24, "docked": cues["docked"],
-                 **({"palletCard": cues["scanA"], "relevo": cues["relevo"]} if "phase2Start" in cues else {})},
+                 **({"palletCard": cues["scanA"], "slotDone": cues["slotDone"], "relevo": cues["relevo"]}
+                    if "phase2Start" in cues else {})},
     }
     out.mkdir(parents=True, exist_ok=True)
     (out / "film-anchors.json").write_text(json.dumps(data, separators=(",", ":")))
