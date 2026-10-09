@@ -21,6 +21,8 @@ mkdir -p "$OUT"
 
 PHASE_FLAG=""
 for a in "$@"; do if [ "$a" = "--phase2" ]; then PHASE_FLAG="--phase2"; fi; done
+# el interior (racks en línea fina) comprime peor: la película completa usa CRF más altos
+if [ -n "$PHASE_FLAG" ]; then CRF_X264=30; CRF_VP9=48; else CRF_X264=27; CRF_VP9=42; fi
 python3 -m plan.route "$OUT/route.json" $PHASE_FLAG
 SCAN_END=$(python3 -c "import json;print(json.load(open('$OUT/route.json'))['cues']['scanEnd'])")
 DOCKED=$(python3 -c "import json;print(json.load(open('$OUT/route.json'))['cues']['docked'])")
@@ -45,11 +47,12 @@ MID=$(printf "f_%04d.png" $(( (72 + SCAN_END) / 2 / STEP * STEP + 1 )))
 cp "$OUT/comp/$MID" "$OUT/check_barrido.png"
 
 ffmpeg -v error -y -framerate "$FPS" -pattern_type glob -i "$OUT/comp/f_*.png" \
-  -c:v libx264 -preset veryslow -crf 27 -tune animation -pix_fmt yuv420p -movflags +faststart "$OUT/film.mp4"
+  -c:v libx264 -preset veryslow -crf "$CRF_X264" -tune animation -pix_fmt yuv420p -movflags +faststart "$OUT/film.mp4"
 if [ "$NAME" = final ]; then
   ffmpeg -v error -y -framerate "$FPS" -pattern_type glob -i "$OUT/comp/f_*.png" \
-    -c:v libvpx-vp9 -crf 42 -b:v 0 -row-mt 1 -deadline good -cpu-used 2 -pix_fmt yuv420p "$OUT/film.webm"
-  POSTER=$(printf "f_%04d.png" $(( DOCKED + 11 )))
+    -c:v libvpx-vp9 -crf "$CRF_VP9" -b:v 0 -row-mt 1 -deadline good -cpu-used 2 -pix_fmt yuv420p "$OUT/film.webm"
+  # el poster es el estado final del HUD (reduced-motion muestra las cards del último frame)
+  if [ -n "$PHASE_FLAG" ]; then POSTER=$(ls "$OUT/comp" | tail -1); else POSTER=$(printf "f_%04d.png" $(( DOCKED + 11 ))); fi
   mkdir -p ../public/hero
   cp "$OUT/film.mp4" ../public/hero/film-1080.mp4
   cp "$OUT/film.webm" ../public/hero/film-1080.webm
