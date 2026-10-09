@@ -133,3 +133,21 @@ def test_phase2_animation_follows_tracks(route2, tmp_path):
             want = d["tracks"][key][f - s0][:2]
             x, y, _ = got[(obj, f + 1)]
             assert abs(x - want[0]) < 0.02 and abs(y - want[1]) < 0.02, (obj, f, (x, y), want)
+
+
+@needs_blender
+def test_anchors_phase2(route2, tmp_path):
+    import json
+    out = run_hero("--mode", "anchors", "--route", str(route2), "--out", str(tmp_path), "--res", "1920x1080")
+    d = json.loads((tmp_path / "film-anchors.json").read_text())
+    c = json.loads(route2.read_text())["cues"]
+    fr = d["frames"]
+    assert d["cues"]["palletCard"] == c["scanA"] and d["cues"]["relevo"] == c["relevo"], out.stdout[-800:]
+    for i, f in enumerate(fr):
+        if i >= c["scanA"]:
+            assert "pallet" in f and "picker" in f
+            for k in ("pallet", "picker"):
+                assert 0.0 <= f[k][0] <= 1.0 and 0.0 <= f[k][1] <= 1.0, (i, k, f[k])
+    assert fr[c["unloadStart"] + 1]["status"] == "unloading"
+    assert fr[c["reachStart"] + 5]["status"] == "storing"
+    assert fr[-1]["status"] == "relevo"
