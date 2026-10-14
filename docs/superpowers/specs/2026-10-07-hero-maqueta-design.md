@@ -92,3 +92,14 @@ El video sale **sin texto**. Las cards son HTML/SVG sobre el video:
 - Unreal Engine y humanos fotorrealistas.
 - Audio.
 - Volver a renderizar los clips viejos de `public/hero-story/` (quedan reemplazados por la fase 4).
+
+## 12. Fase 2, v2: rediseño acordado con Fran el 2026-10-09 (pendiente)
+
+El primer render de la fase 2 (PR #1, borrador) no se publica. Esto es lo que hay que cambiar:
+
+1. **Tráiler lleno:** 22 pallets (2 × 11) que viajan adentro desde la pluma (hoy el pallet de la fase 2 flota en la puerta del andén durante toda la fase 1: es un bug).
+2. **Cámara adentro del almacén:** al quedar "ACOPLADO", giro continuo de 180° alrededor del andén hasta mirar desde adentro hacia la puerta y el tráiler. Elevación de 45° para que los racks no tapen. Cuando el autoelevador sale del tráiler, **corte a una cenital alta (eagle-eye)** que lo sigue hasta el rack (decisión de Fran, 2026-10-13).
+3. **Un solo autoelevador, sin traspasos:** tráiler → **portal RFID en la puerta del andén** (escaneo) → pick face, con pasillos de 3,8 m. **Siempre hacia adelante**, salvo dos marchas atrás cortas e inevitables: salir del tráiler y salir de la posición del rack.
+4. **Autoelevador más completo:** [Forklift by Ethian74](https://sketchfab.com/3d-models/forklift-d40cae50e04145dd997cdca415cd72ad) (CC-BY, 58k triángulos, horquillas animadas). Fran lo baja en glTF a `video-blender/assets/forklift/`. Hay que dar crédito. Plan B: rehacer el modelo por script con más detalle.
+5. **Picker con carrito en OTRO pasillo:** **corte de escena** (decisión de Fran, 2026-10-13) a otro pasillo; el picker empuja el carrito, toma una caja de **otro** pallet y la carga. La card PALLET da paso a **PEDIDO** (pedido, línea 3/12, SKU, cantidad), que prepara la fase 3. Mixamo: sumar `push.fbx` (buscar "Pushing", In Place).
+6. **Menores diferidos de la revisión:** patas de la apiladora (desaparece con el punto 3), pallet que asoma 5 cm, salto de línea en el relevo, aspecto de cámara antes de la resolución, poster con `ls | tail -1`.

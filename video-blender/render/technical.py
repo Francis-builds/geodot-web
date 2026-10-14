@@ -11,7 +11,7 @@ LINE = (0.52, 0.66, 0.90)
 HIDDEN = (0.26, 0.34, 0.50)
 
 
-def _lineset(fs, name, col, vis, rgb, alpha, thick):
+def _lineset(fs, name, col, vis, rgb, alpha, thick, by_material=False):
     ls = fs.linesets.new(name)
     ls.select_by_visibility = True
     ls.visibility = vis
@@ -24,6 +24,11 @@ def _lineset(fs, name, col, vis, rgb, alpha, thick):
     st.color = rgb
     st.alpha = alpha
     st.thickness = thick
+    if by_material:
+        mod = st.color_modifiers.new(name="material", type="MATERIAL")
+        mod.material_attribute = "LINE"
+        mod.blend = "MIX"
+        mod.influence = 1.0
     ls.linestyle = st
 
 
@@ -51,5 +56,7 @@ def setup_technical(scene, cols, res: tuple[int, int]) -> None:
     teal = hexrgb(TEAL_HEX)
     _lineset(fs, "lines_vis", cols["LINES"], "VISIBLE", LINE, 0.8, 0.7)
     _lineset(fs, "lines_hid", cols["LINES"], "HIDDEN", HIDDEN, 0.35, 0.5)
-    _lineset(fs, "hero_vis", cols["HERO"], "VISIBLE", teal, 1.0, 1.0)
-    _lineset(fs, "hero_hid", cols["HERO"], "HIDDEN", tuple(c * 0.6 for c in teal), 0.7, 0.8)
+    _lineset(fs, "hero_vis", cols["HERO"], "VISIBLE", teal, 1.0, 1.0, by_material=True)
+    _lineset(fs, "hero_hid", cols["HERO"], "HIDDEN", tuple(c * 0.6 for c in teal), 0.7, 0.8, by_material=True)
+    # el color de las líneas HERO sale del material (line_color): teal o gris según quién manda
+    bpy.data.materials["occluder"].line_color = (*teal, 1.0)

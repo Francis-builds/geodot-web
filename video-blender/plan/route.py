@@ -10,7 +10,7 @@ from __future__ import annotations
 import json
 import math
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import numpy as np
@@ -18,6 +18,7 @@ import numpy as np
 from plan.controllers import drive, pure_pursuit_steer, reverse_dock_steer
 from plan.kinematics import KP, TRACTOR, State, clearance
 from plan.site import GATE, HERO_DOCK, Y_DOCK, Y_LANE, dock_x, obstacles
+from plan.timing import cumulative as _cumulative, sample as _sample, velocity_profile as _velocity_profile
 
 FPS = 24
 CUES = {"scanStart": 72, "scanEnd": 120, "barrierUp": 104, "roofStart": 96, "roofEnd": 144}
@@ -38,6 +39,7 @@ class Timeline:
     cues: dict[str, int]
     min_clearance: float
     max_art: float
+    tracks: dict[str, list[list[float]]] = field(default_factory=dict)   # fase 2: equipos, pallets, picker, puerta
 
 
 def _wrap(a: float) -> float:
@@ -48,30 +50,10 @@ def _lane_state(rear_x: float) -> State:
     return State(np.array([rear_x, Y_LANE]), math.pi, math.pi, 0.0)
 
 
-def _velocity_profile(dist: float, vmax: float, ramp: int) -> np.ndarray:
-    """Velocidad por frame (m/frame) con rampas de coseno, que suma exactamente `dist`."""
-    n = math.ceil(dist / vmax) + ramp
-    k = np.arange(n) + 0.5
-    v = np.ones(n)
-    up = k < ramp
-    v[up] = 0.5 - 0.5 * np.cos(math.pi * k[up] / ramp)
-    down = k > n - ramp
-    v[down] = 0.5 - 0.5 * np.cos(math.pi * (n - k[down]) / ramp)
-    return v * dist / v.sum()
+PHASE2_GAP = 6   # frames acoplado antes de que suba la puerta
 
 
-def _sample(dense: list[State], cum: np.ndarray, distances: np.ndarray) -> list[State]:
-    """Estado integrado más cercano a cada distancia (sin interpolar poses)."""
-    idx = np.clip(np.searchsorted(cum, distances), 0, len(dense) - 1)
-    return [dense[i] for i in idx]
-
-
-def _cumulative(states: list[State]) -> np.ndarray:
-    steps = [0.0] + [float(np.linalg.norm(b.tractor_axle - a.tractor_axle)) for a, b in zip(states, states[1:])]
-    return np.cumsum(steps)
-
-
-def plan_route(fps: int = FPS) -> Timeline:
+def plan_route(fps: int = FPS, phase: int = 1) -> Timeline:
     assert fps == FPS, "la línea de tiempo está fijada a 24 fps"
     gate_stop = _lane_state(GATE.x + 1.0 + TRACTOR[1] + KP)
     follow = lambda s: pure_pursuit_steer(s, LANE)  # noqa: E731
@@ -106,7 +88,15 @@ def plan_route(fps: int = FPS) -> Timeline:
     min_clr = min(clearance(s, obs_gate if i < BARRIER_CLEAR else obs_open) for i, s in enumerate(frames))
     max_art = max(abs(_wrap(s.phi0 - s.phi1)) for s in frames)
     cues = dict(CUES, reverseStart=reverse_start, docked=docked)
-    return Timeline(frames, cues, min_clr, max_art)
+    tracks: dict[str, list[list[float]]] = {}
+    if phase >= 2:
+        from plan.choreo import choreograph
+        start = docked + PHASE2_GAP
+        frames = frames[:start]
+        tracks, more = choreograph(start, fps)
+        frames += [frames[-1]] * len(tracks["forklift"])   # el camión queda acoplado
+        cues.update(more, phase2Start=start)
+    return Timeline(frames, cues, min_clr, max_art, tracks)
 
 
 def write_route(t: Timeline, path: Path) -> None:
@@ -117,14 +107,16 @@ def write_route(t: Timeline, path: Path) -> None:
                     "yaw": round(s.phi1 + math.pi / 2, 6), "art": round(_wrap(s.phi0 - s.phi1), 6),
                     "steer": round(s.steer, 6)} for s in t.frames],
         "cues": t.cues,
+        "tracks": {k: [[round(float(x), 5) for x in row] for row in v] for k, v in t.tracks.items()},
         "report": {"minClearance": round(t.min_clearance, 4), "maxArt": round(t.max_art, 4)},
     }
     path.write_text(json.dumps(data))
 
 
 if __name__ == "__main__":
-    t = plan_route()
-    out = Path(sys.argv[1] if len(sys.argv) > 1 else "out/route.json")
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    t = plan_route(phase=2 if "--phase2" in sys.argv else 1)
+    out = Path(args[0] if args else "out/route.json")
     write_route(t, out)
     print(f"frames {len(t.frames)} ({len(t.frames) / FPS:.1f} s) · cues {t.cues}")
     print(f"holgura mínima {t.min_clearance:.2f} m · articulación máx {math.degrees(t.max_art):.0f}° → {out}")

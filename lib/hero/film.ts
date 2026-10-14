@@ -5,7 +5,7 @@ import { z } from "zod";
  * Coordenadas 0..1 con origen arriba a la izquierda, una entrada por frame del video.
  */
 const point = z.tuple([z.number(), z.number()]);
-const status = z.enum(["gate", "yard", "maneuver", "docked"]);
+const status = z.enum(["gate", "yard", "maneuver", "docked", "unloading", "storing", "picking"]);
 
 export const filmSchema = z.object({
   fps: z.number().positive(),
@@ -13,9 +13,14 @@ export const filmSchema = z.object({
   height: z.number().int().positive(),
   frames: z.array(z.object({
     tractor: point, driver: point, trailer: point,
+    pallet: point.optional(), picker: point.optional(), cart: point.optional(),   // fase 2 (opcionales)
     dist: z.number(), art: z.number(), status,
   })).min(1),
-  cues: z.object({ truckCard: z.number().int(), cargoCard: z.number().int(), docked: z.number().int() }),
+  cues: z.object({
+    truckCard: z.number().int(), cargoCard: z.number().int(), docked: z.number().int(),
+    palletCard: z.number().int().optional(), slotDone: z.number().int().optional(),
+    orderCard: z.number().int().optional(), boxInCart: z.number().int().optional(),
+  }),
 });
 
 export type Film = z.infer<typeof filmSchema>;
@@ -25,6 +30,9 @@ export type FrameData = {
   tractor: [number, number];
   driver: [number, number];
   trailer: [number, number];
+  pallet?: [number, number];
+  picker?: [number, number];
+  cart?: [number, number];
   dist: number;
   art: number;
   status: FilmStatus;
@@ -59,6 +67,9 @@ export function frameAt(film: Film, mediaTime: number): FrameData {
     tractor: lerp2(a.tractor, b.tractor, t),
     driver: lerp2(a.driver, b.driver, t),
     trailer: lerp2(a.trailer, b.trailer, t),
+    ...(a.pallet && b.pallet ? { pallet: lerp2(a.pallet, b.pallet, t) } : a.pallet ? { pallet: a.pallet } : {}),
+    ...(a.picker && b.picker ? { picker: lerp2(a.picker, b.picker, t) } : a.picker ? { picker: a.picker } : {}),
+    ...(a.cart && b.cart ? { cart: lerp2(a.cart, b.cart, t) } : a.cart ? { cart: a.cart } : {}),
     dist: lerp(a.dist, b.dist, t),
     art: lerp(a.art, b.art, t),
     status: a.status,
@@ -80,4 +91,25 @@ export function formatHud(locale: "es" | "en", kind: "dist" | "art" | "weight", 
   const s = oneDecimal[locale].format(value);
   const v = locale === "es" ? s.replace(".", ",") : s;
   return `${v} ${kind === "dist" ? "m" : "t"}`;
+}
+
+export type CardKey = "truck" | "cargo" | "pallet" | "order";
+export type PalletStage = "received" | "scanned" | "stored";
+
+/** Qué cards están en pantalla: CAMIÓN + CARGA → PALLET (recepción) → PEDIDO (picking, tras el corte). */
+export function activeCards(frame: number, cues: Film["cues"]): CardKey[] {
+  if (cues.orderCard !== undefined && frame >= cues.orderCard) return ["order"];
+  if (cues.palletCard !== undefined && frame >= cues.palletCard) return ["pallet"];
+  return ["truck", "cargo"];
+}
+
+export function palletStage(frame: number, cues: Film["cues"]): PalletStage {
+  if (cues.palletCard === undefined || frame < cues.palletCard) return "received";
+  if (cues.slotDone === undefined || frame < cues.slotDone) return "scanned";
+  return "stored";
+}
+
+/** Línea del pedido que se está armando: pasa de la 3 a la 4 cuando la caja cae en el carrito. */
+export function orderLine(frame: number, cues: Film["cues"]): number {
+  return cues.boxInCart !== undefined && frame >= cues.boxInCart ? 4 : 3;
 }

@@ -19,6 +19,13 @@ ANCHORS = {
 }
 
 
+PALLET_ANCHOR = ("pallet_A", (0.0, 0.0, 1.4))        # tapa de la carga
+PICKING_ANCHORS = {
+    "picker": ("PICKER", (0.0, 0.0, 1.85)),            # casco
+    "cart": ("CART", (0.0, 0.0, 1.0)),                 # manija / estante de arriba
+}
+
+
 def status_at(i: int, cues: dict) -> str:
     """i = índice 0-based del frame en route.json."""
     if i < cues["barrierUp"]:
@@ -27,6 +34,13 @@ def status_at(i: int, cues: dict) -> str:
         return "yard"
     if i < cues["docked"]:
         return "maneuver"
+    if "phase2Start" in cues:
+        if i >= cues["sceneCut"]:
+            return "picking"
+        if cues["scanA"] <= i <= cues["slotDone"]:
+            return "storing"
+        if cues["unloadStart"] <= i < cues["scanA"]:
+            return "unloading"
     return "docked"
 
 
@@ -41,13 +55,20 @@ def export_anchors(scene, cam, route: dict, out: Path, size: tuple[int, int]) ->
         for key, (name, local) in ANCHORS.items():
             v = world_to_camera_view(scene, cam, bpy.data.objects[name].matrix_world @ Vector(local))
             row[key] = [round(v.x, 5), round(1.0 - v.y, 5)]
+        if "phase2Start" in cues and cues["scanA"] <= i:
+            todo = {"pallet": PALLET_ANCHOR} if i < cues["sceneCut"] else PICKING_ANCHORS
+            for key, (name, local) in todo.items():
+                v = world_to_camera_view(scene, cam, bpy.data.objects[name].matrix_world @ Vector(local))
+                row[key] = [round(v.x, 5), round(1.0 - v.y, 5)]
         row["dist"] = round(math.hypot(f["R"][0] - dock[0], f["R"][1] - dock[1]), 3)
         row["art"] = round(abs(math.degrees(f["art"])), 2)
         row["status"] = status_at(i, cues)
         rows.append(row)
     data = {
         "fps": route["fps"], "width": size[0], "height": size[1], "frames": rows,
-        "cues": {"truckCard": cues["scanEnd"] - 8, "cargoCard": cues["scanEnd"] + 24, "docked": cues["docked"]},
+        "cues": {"truckCard": cues["scanEnd"] - 8, "cargoCard": cues["scanEnd"] + 24, "docked": cues["docked"],
+                 **({"palletCard": cues["scanA"], "slotDone": cues["slotDone"], "orderCard": cues["sceneCut"],
+                     "boxInCart": cues["boxInCart"]} if "phase2Start" in cues else {})},
     }
     out.mkdir(parents=True, exist_ok=True)
     (out / "film-anchors.json").write_text(json.dumps(data, separators=(",", ":")))

@@ -2,12 +2,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { useReducedMotion } from "motion/react";
-import { cueAlpha, formatHud, frameAt, parseFilm, type Film, type FrameData } from "@/lib/hero/film";
+import { activeCards, cueAlpha, formatHud, frameAt, orderLine, palletStage, parseFilm, type Film, type FrameData, type PalletStage } from "@/lib/hero/film";
 import { cardRects, leaderPath, leaderVisible, videoToBox, type Rect, type Size } from "@/lib/hero/geometry";
 import { HudCard, type HudRow } from "./HudCard";
 
 export type HeroFilmLabels = {
   summary: string;
+  loading: string;
+  outro: { eyebrow: string; title: string; lead: string; replay: string };
   truck: {
     title: string; plates: string; platesValue: string; appointment: string; appointmentValue: string;
     documents: string; documentsValue: string; status: string;
@@ -19,7 +21,24 @@ export type HeroFilmLabels = {
     title: string; pallets: string; palletsValue: string; weight: string; weightValue: number;
     skus: string; skusValue: string; cartaPorte: string; cartaPorteValue: string;
   };
+  pallet: {
+    title: string; lot: string; lotValue: string; expiry: string; expiryValue: string; position: string;
+    positionValue: string; fefo: string; fefoValue: string; status: string;
+    stageValues: Record<PalletStage, string>;
+  };
+  order: {
+    title: string; client: string; clientValue: string; line: string; of: string; sku: string; skuValue: string;
+    qty: string; qtyValue: string; location: string; locationValue: string; picker: string; pickerValue: string;
+    status: string; statusValue: string;
+  };
 };
+
+const TRUCK_STATUS = ["gate", "yard", "maneuver", "docked"] as const;
+type TruckStatus = (typeof TRUCK_STATUS)[number];
+/** En la fase 2 el camión sigue acoplado: sus estados nuevos se muestran como "acoplado". */
+function truckStatus(s: FrameData["status"]): TruckStatus {
+  return (TRUCK_STATUS as readonly string[]).includes(s) ? (s as TruckStatus) : "docked";
+}
 
 const ASSETS = { anchors: "/hero/film-anchors.json", poster: "/hero/film-poster.webp", webm: "/hero/film-1080.webm", mp4: "/hero/film-1080.mp4" };
 type VideoWithRvfc = HTMLVideoElement & {
@@ -41,6 +60,10 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
   const [liveFrame, setFrame] = useState<FrameData | null>(null);
   const [box, setBox] = useState<Size>({ w: 0, h: 0 });
   const [mountVideo, setMountVideo] = useState(false);
+  // la película no arranca hasta tener buffer suficiente: el loader tapa el video mientras tanto
+  const [loaded, setLoaded] = useState(0);
+  const [ready, setReady] = useState(false);
+  const [ended, setEnded] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -68,6 +91,28 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
     return () => ro.disconnect();
   }, []);
 
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v || ready) return;
+    const progress = () => {
+      if (v.duration > 0 && v.buffered.length) setLoaded(Math.min(1, v.buffered.end(v.buffered.length - 1) / v.duration));
+    };
+    const start = () => { setLoaded(1); setReady(true); v.play().catch(() => {}); };
+    const fallback = setTimeout(start, 15000);  // red lenta: arranca igual, el navegador sigue cargando
+    v.addEventListener("progress", progress);
+    v.addEventListener("canplaythrough", start);
+    if (v.readyState >= 4) start();
+    return () => { clearTimeout(fallback); v.removeEventListener("progress", progress); v.removeEventListener("canplaythrough", start); };
+  }, [mountVideo, ready]);
+
+  const replay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.currentTime = 0;
+    setEnded(false);
+    v.play().catch(() => {});
+  };
+
   // sincronía: cada frame presentado (rVFC) o, si no existe, cada repintado leyendo currentTime
   useEffect(() => {
     if (!film || reduced) return;
@@ -91,7 +136,7 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
     { label: t.plates, value: t.platesValue },
     { label: t.appointment, value: t.appointmentValue, ok: true },
     { label: t.documents, value: t.documentsValue, ok: true },
-    { label: t.status, value: t.statusValues[frame.status], ok: frame.status === "docked" },
+    { label: t.status, value: t.statusValues[truckStatus(frame.status)], ok: truckStatus(frame.status) === "docked" },
     { label: t.distance, value: formatHud(locale, "dist", frame.dist) },
     { label: t.articulation, value: formatHud(locale, "art", frame.art) },
     { label: t.driverSection, value: "", section: true },
@@ -106,26 +151,66 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
     { label: c.cartaPorte, value: c.cartaPorteValue, ok: true },
   ];
 
-  const hud = film && frame && box.w > 0 ? (() => {
-    const [rTruck, rCargo] = cardRects(box, [{ rows: truckRows.length }, { rows: cargoRows.length }]);
+  const pl = labels.pallet;
+  const stage = film && frame ? palletStage(frame.index, film.cues) : "received";
+  const palletRows: HudRow[] = [
+    { label: pl.lot, value: pl.lotValue },
+    { label: pl.expiry, value: pl.expiryValue },
+    { label: pl.fefo, value: pl.fefoValue, ok: true },
+    { label: pl.position, value: pl.positionValue },
+    { label: pl.status, value: pl.stageValues[stage], ok: stage !== "received" },
+  ];
+  const od = labels.order;
+  const line = film && frame ? orderLine(frame.index, film.cues) : 3;
+  const orderRows: HudRow[] = [
+    { label: od.client, value: od.clientValue },
+    { label: od.line, value: `${line}/${od.of}`, ok: line > 3 },
+    { label: od.sku, value: od.skuValue },
+    { label: od.qty, value: od.qtyValue },
+    { label: od.location, value: od.locationValue },
+    { label: od.picker, value: od.pickerValue },
+    { label: od.status, value: od.statusValue, ok: true },
+  ];
+
+  const outro = reduced || ended;
+  const hud = film && frame && box.w > 0 && ready && !outro ? (() => {
     const video = { w: film.width, h: film.height };
-    const cards: { key: string; title: string; rows: HudRow[]; rect: Rect; cue: number; anchor: [number, number] }[] = [
-      { key: "truck", title: t.title, rows: truckRows, rect: rTruck, cue: film.cues.truckCard, anchor: frame.tractor },
-      { key: "cargo", title: c.title, rows: cargoRows, rect: rCargo, cue: film.cues.cargoCard, anchor: frame.trailer },
-    ];
+    const showing = activeCards(frame.index, film.cues);
+    const palletIn = film.cues.palletCard ?? Number.POSITIVE_INFINITY;
+    type Card = { key: string; title: string; rows: HudRow[]; rect: Rect; alpha: number; prog: number; anchor?: [number, number] };
+    let cards: Card[];
+    if (showing.includes("order")) {
+      const orderIn = film.cues.orderCard ?? Number.POSITIVE_INFINITY;
+      const [r] = cardRects(box, [{ rows: orderRows.length }]);
+      const inCart = film.cues.boxInCart !== undefined && frame.index >= film.cues.boxInCart;
+      cards = [{ key: "order", title: od.title, rows: orderRows, rect: r, alpha: cueAlpha(frame.index, orderIn),
+        prog: cueAlpha(frame.index, orderIn + 8, 14), anchor: inCart ? frame.cart : frame.picker }];
+    } else if (showing.includes("pallet")) {
+      const [r] = cardRects(box, [{ rows: palletRows.length }]);
+      cards = [{ key: "pallet", title: pl.title, rows: palletRows, rect: r, alpha: cueAlpha(frame.index, palletIn),
+        prog: cueAlpha(frame.index, palletIn + 8, 14), anchor: frame.pallet }];
+    } else {
+      const [rTruck, rCargo] = cardRects(box, [{ rows: truckRows.length }, { rows: cargoRows.length }]);
+      cards = [
+        { key: "truck", title: t.title, rows: truckRows, rect: rTruck, alpha: cueAlpha(frame.index, film.cues.truckCard),
+          prog: cueAlpha(frame.index, film.cues.truckCard + 8, 14), anchor: frame.tractor },
+        { key: "cargo", title: c.title, rows: cargoRows, rect: rCargo, alpha: cueAlpha(frame.index, film.cues.cargoCard),
+          prog: cueAlpha(frame.index, film.cues.cargoCard + 8, 14), anchor: frame.trailer },
+      ];
+    }
+    const rects = cards.map((k) => k.rect);
     return (
       <>
         <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full" viewBox={`0 0 ${box.w} ${box.h}`}>
           {cards.map((k) => {
-            const alpha = cueAlpha(frame.index, k.cue);
-            const prog = cueAlpha(frame.index, k.cue + 8, 14);
+            if (!k.anchor || k.alpha <= 0 || k.prog <= 0) return null;
             const a = videoToBox(k.anchor, video, box);
-            if (alpha <= 0 || prog <= 0 || !leaderVisible(a, [rTruck, rCargo], "R")) return null;
+            if (!leaderVisible(a, rects, "R")) return null;
             return (
-              <g key={k.key} className="text-teal-400" opacity={alpha}>
-                <path d={leaderPath(k.rect, a, "R")} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - prog}
+              <g key={k.key} className="text-teal-400" opacity={k.alpha}>
+                <path d={leaderPath(k.rect, a, "R")} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - k.prog}
                   fill="none" stroke="currentColor" strokeWidth={1.4} />
-                {prog >= 1 && (
+                {k.prog >= 1 && (
                   <>
                     <circle cx={a.x} cy={a.y} r={7} fill="none" stroke="currentColor" strokeWidth={1.4} />
                     <circle cx={a.x} cy={a.y} r={2.5} fill="currentColor" />
@@ -141,27 +226,63 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
             );
           })}
         </svg>
-        {cards.map((k) => {
-          const alpha = cueAlpha(frame.index, k.cue);
-          return alpha > 0 ? <HudCard key={k.key} title={k.title} rows={k.rows} alpha={alpha} rect={k.rect} /> : null;
-        })}
+        {cards.map((k) => (k.alpha > 0 ? <HudCard key={k.key} title={k.title} rows={k.rows} alpha={k.alpha} rect={k.rect} /> : null))}
       </>
     );
   })() : null;
 
+  const col = cardRects(box, [{ rows: 7 }])[0];
   return (
     <div ref={boxRef} className="absolute inset-0 overflow-hidden">
-      {reduced || !mountVideo ? (
+      {reduced ? (
         // eslint-disable-next-line @next/next/no-img-element -- poster decorativo fijo, sin optimización
         <img aria-hidden src={ASSETS.poster} alt="" className="absolute inset-0 h-full w-full object-cover" />
-      ) : (
-        <video ref={videoRef} aria-hidden muted loop playsInline autoPlay preload="none" poster={ASSETS.poster}
+      ) : mountVideo ? (
+        <video ref={videoRef} aria-hidden muted playsInline preload="auto" onEnded={() => setEnded(true)}
           className="absolute inset-0 h-full w-full object-cover">
           <source src={ASSETS.webm} type="video/webm" />
           <source src={ASSETS.mp4} type="video/mp4" />
         </video>
-      )}
+      ) : null}
       {hud}
+
+      {/* loader: tapa el video hasta que hay buffer, así no se ven escenas sueltas */}
+      {!reduced && (
+        <div aria-hidden className={`pointer-events-none absolute inset-0 bg-navy-950 transition-opacity duration-700 ${ready ? "opacity-0" : "opacity-100"}`}>
+          {box.w > 0 && (
+            <div className="absolute font-mono text-[11px] uppercase tracking-[0.2em] text-navy-300" style={{ left: col.x, top: box.h / 2 - 12, width: col.w }}>
+              <p className="flex justify-between">
+                <span>{labels.loading}</span>
+                <span className="tabular-nums text-teal-400">{Math.round(loaded * 100)}%</span>
+              </p>
+              <div className="mt-3 h-px w-full bg-navy-700">
+                <div className="h-px bg-teal-400 transition-[width] duration-300" style={{ width: `${Math.max(4, loaded * 100)}%` }} />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* cierre: en vez de volver a empezar, la película termina en el statement */}
+      <div className={`absolute inset-0 transition-opacity duration-1000 ${outro ? "opacity-100" : "pointer-events-none opacity-0"}`}>
+        <div aria-hidden className="absolute inset-0 bg-navy-950/80" />
+        {box.w > 0 && (
+          <div className={`absolute transition-transform duration-1000 ${outro ? "translate-y-0" : "translate-y-3"}`}
+            style={{ left: col.x + col.w - 520, top: box.h / 2, width: 520 }}>
+            <div className="-translate-y-1/2">
+              <p aria-hidden className="flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.25em] text-teal-400"><span className="h-px w-8 bg-teal-400" />{labels.outro.eyebrow}</p>
+              <p aria-hidden className="mt-5 text-balance text-[56px] font-light leading-[1.02] tracking-tight text-white">{labels.outro.title}</p>
+              <p aria-hidden className="mt-5 max-w-[30ch] text-[15px] leading-relaxed text-navy-300">{labels.outro.lead}</p>
+              {!reduced && (
+                <button type="button" onClick={replay} tabIndex={outro ? 0 : -1}
+                  className="mt-8 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-navy-300 transition-colors hover:text-teal-400 focus-visible:text-teal-400 focus-visible:outline-none">
+                  <span aria-hidden>↻</span> {labels.outro.replay}
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

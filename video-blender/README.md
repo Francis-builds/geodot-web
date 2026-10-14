@@ -30,4 +30,6 @@ Los assets de Poly Haven (CC0) se bajan con `assets/fetch_assets.sh` y no van a 
 
 Si la Mac entra en reposo, el render se frena: correr con `caffeinate -i ./render.sh --final`.
 
-**Encode:** mp4 H.264 CRF 27 `-tune animation` (3,9 MB) y WebM VP9 CRF 42 (3,2 MB), poster WebP de 1600 px (~105 KB). A simple vista no se distingue de CRF 23, que pesaba más del doble (8,5 MB).
+**Película completa (fase 1 + 2, `--phase2`, 30,8 s, 740 frames):** técnico 12,7 s/frame (~2 h 40 min), mp4 CRF 30 (6,2 MB), WebM CRF 48 (4,8 MB); el poster es el último frame (estado final del HUD).
+
+**Fase 1 sola — Encode:** mp4 H.264 CRF 27 `-tune animation` (3,9 MB) y WebM VP9 CRF 42 (3,2 MB), poster WebP de 1600 px (~105 KB). A simple vista no se distingue de CRF 23, que pesaba más del doble (8,5 MB).

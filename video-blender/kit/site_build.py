@@ -11,8 +11,9 @@ import bpy
 
 from kit.primitives import _obj, box, cyl, empty, text
 from kit.racks import RackLayout, build_racks
+from kit.handling import dock_door
 from kit.trucks import truck
-from plan.site import (BUILDING, DOCK, DOCKS, GATE, OCCUPIED, WALL_Y, Y_DOCK, Y_LANE, Y_YARD,
+from plan.site import (BUILDING, DOCK, DOCK_BUMPER_X, DOCKS, HERO_DOCK, GATE, OCCUPIED, WALL_Y, Y_DOCK, Y_LANE, Y_YARD,
                        YARD_TRACTOR, YARD_X, dock_x)
 
 FLOOR_Z = 1.25          # piso del depósito a altura de andén
@@ -26,6 +27,7 @@ class SiteObjects:
     facade: list = field(default_factory=list)
     barrier: object = None
     booth: object = None
+    door11: object = None
     racks: int = 0
     pallets: int = 0
 
@@ -76,9 +78,10 @@ def _docks(cols, mats, font, site: SiteObjects) -> None:
         f = _facade_at(site, x)
         # canopy y puerta viajan con su panel de fachada (coordenadas locales al panel)
         box("canopy", (3.5, 0.7, 0.18), (x - f.location.x, -0.05 - f.location.y, 4.7 - WALL_H / 2), L, parent=f, bev=0.02)
-        box("dockdoor", (3.0, 0.06, 3.0), (x - f.location.x, 0.38 - f.location.y, 2.7 - WALL_H / 2), L, parent=f)
+        if i != HERO_DOCK:  # la del andén 11 es propia (kit.handling.dock_door): sube en la fase 2
+            box("dockdoor", (3.0, 0.06, 3.0), (x - f.location.x, 0.38 - f.location.y, 2.7 - WALL_H / 2), L, parent=f)
         for s in (-1, 1):
-            box("bumper", (0.25, 0.3, 0.45), (x + s * 1.2, 0.2, 1.25), L, bev=0.03)
+            box("bumper", (0.25, 0.3, 0.45), (x + s * DOCK_BUMPER_X, 0.2, 1.25), L, bev=0.03)
         box("leveler", (2.2, 0.5, 0.06), (x, 0.15, 1.3), L)
         _paint_strip(cols, mats, x - DOCK / 2, 0, x - DOCK / 2, -21, 0.08)
         text(f"{i:02d}", (x, -23.4, 0.01), 1.3, cols["TEXT"], mats["paint"], font)
@@ -148,6 +151,7 @@ def build_site(cols, mats, font: str) -> SiteObjects:
     site.racks, site.pallets = build_racks(cols["LINES"], mats, RackLayout(floor_z=FLOOR_Z))
     _interior_paint(cols, mats)
     _docks(cols, mats, font, site)
+    site.door11 = dock_door(cols["LINES"], "DOOR_11", dock_x(HERO_DOCK), 0.38)
     _gate(cols, mats, site)
     _fleet(cols)
     _dust(cols, mats)
