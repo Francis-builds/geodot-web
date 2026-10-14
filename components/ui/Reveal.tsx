@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { MotionConfig, motion } from "motion/react";
 import type { ReactNode } from "react";
 
 type Direction = "up" | "down" | "left" | "right" | "none";
@@ -15,8 +15,9 @@ const OFFSET: Record<Direction, { x?: number; y?: number }> = {
 
 /**
  * Scroll-triggered reveal. Fades + slides children in once, when they enter the
- * viewport. Respects prefers-reduced-motion (renders static). transform/opacity
- * only — cheap to animate, keeps PSI healthy.
+ * viewport. Respects prefers-reduced-motion via MotionConfig (drops the slide, keeps
+ * the fade) so server and client render the same tree — no hydration mismatch.
+ * transform/opacity only — cheap to animate, keeps PSI healthy.
  */
 export function Reveal({
   children,
@@ -31,21 +32,20 @@ export function Reveal({
   className?: string;
   once?: boolean;
 }) {
-  const reduce = useReducedMotion();
   const offset = OFFSET[direction];
 
-  if (reduce) return <div className={className}>{children}</div>;
-
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, ...offset }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: [0.2, 0, 0, 1] }}
-    >
-      {children}
-    </motion.div>
+    <MotionConfig reducedMotion="user">
+      <motion.div
+        className={className}
+        initial={{ opacity: 0, ...offset }}
+        whileInView={{ opacity: 1, x: 0, y: 0 }}
+        viewport={{ once, margin: "-80px" }}
+        transition={{ duration: 0.6, delay, ease: [0.2, 0, 0, 1] }}
+      >
+        {children}
+      </motion.div>
+    </MotionConfig>
   );
 }
 
@@ -59,22 +59,26 @@ export function RevealGroup({
   className?: string;
   stagger?: number;
 }) {
-  const reduce = useReducedMotion();
-  if (reduce) return <div className={className}>{children}</div>;
   return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
-      variants={{ show: { transition: { staggerChildren: stagger } } }}
-    >
-      {children}
-    </motion.div>
+    <MotionConfig reducedMotion="user">
+      <motion.div
+        className={className}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={{ show: { transition: { staggerChildren: stagger } } }}
+      >
+        {children}
+      </motion.div>
+    </MotionConfig>
   );
 }
 
 export const revealItem = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.2, 0, 0, 1] as const } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.2, 0, 0, 1] as const },
+  },
 };
