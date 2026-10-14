@@ -25,6 +25,7 @@ from render.technical import LINE as GRAY_LINE  # noqa: E402
 from kit.materials import TEAL_HEX, hexrgb  # noqa: E402
 from plan.site import PICK_SLOT, PICK_SLOT_B, RackLayout, slot_center  # noqa: E402
 from render.camera import CamKey, cut_keys, iso_camera, orbit_keys  # noqa: E402
+from plan.camera_path import Shot, shot_keys  # noqa: E402
 from render.technical import setup_technical  # noqa: E402
 from export.anchors import export_anchors  # noqa: E402
 from render.photo import setup_photo  # noqa: E402
@@ -294,18 +295,19 @@ def camera_keys(route: dict) -> list[CamKey]:
     # ojo: CamKey.frame es frame de Blender = índice de route.json + 1
     inside = CamKey(s0 + 41, (dock_x(HERO_DOCK), 1.5), 30.0, sub, (45.0, 215.0))
     keys += orbit_keys(keys[-1], inside)
-    hold = CamKey(cues["scanA"] + 4, inside.target, inside.ortho_scale, sub, inside.rot)
+    # en la espera la cámara sigue empujando despacio hacia la puerta
+    hold = CamKey(cues["scanA"] + 4, inside.target, 26.0, sub, (42.0, 222.0))
     keys.append(hold)
-    eagle = []
-    for f in range(cues["scanA"] + 4, cues["sceneCut"], 8):   # cenital alta siguiendo al autoelevador
-        x, y = tr["forklift"][f - s0][:2]
-        eagle.append(CamKey(f + 1, (x, y), 22.0, sub, (14.0, 215.0)))
+    # cenital alta siguiendo al autoelevador con inercia, push-in y órbita lenta (paralaje)
+    a, b = cues["scanA"] + 4, cues["sceneCut"]
+    eagle = [CamKey(f + 1, tgt, sc, sub, rot) for f, tgt, sc, rot in shot_keys(
+        [tuple(tr["forklift"][f - s0][:2]) for f in range(a, b)], a, Shot((25.0, 18.0), ((12.0, 205.0), (22.0, 230.0)), follow=0.10))]
     keys += cut_keys(hold, eagle[0]) + eagle[1:]
-    pick = []
-    for f in range(cues["sceneCut"], len(fr), 8):             # otra escena: el picker con su carrito
-        x, y = tr["picker"][f - s0][:2]
-        pick.append(CamKey(f + 1, (x, y + 0.6), 12.0, sub, (16.0, 0.0)))
-    pick.append(CamKey(len(fr), pick[-1].target, 12.0, sub, (16.0, 0.0)))
+    # otra escena: el picker con su carrito; abre amplio y se acerca mientras saca la caja
+    a = cues["sceneCut"]
+    pick = [CamKey(f + 1, tgt, sc, sub, rot) for f, tgt, sc, rot in shot_keys(
+        [tuple(tr["picker"][f - s0][:2]) for f in range(a, len(fr))], a,
+        Shot((16.0, 9.5), ((14.0, -14.0), (27.0, 12.0)), offset=(0.0, 0.6), follow=0.14))]
     keys += cut_keys(eagle[-1], pick[0]) + pick[1:]
     return keys
 
