@@ -19,6 +19,7 @@ import numpy as np
 
 from plan.handling import FORKLIFT, Lift, LiftSpec, follow
 from plan.kinematics import Poly
+from plan.picker_pose import PICK_PHASES
 from plan.site import (BAY, BUILDING, DOCK_BUMPER_X, FLUE, HERO_DOCK, PICK_SLOT, PICK_SLOT_B, SIDE, WALL_Y,
                        RackLayout, Rect, dock_x, slot_center)
 from plan.timing import profile_frames
@@ -152,7 +153,7 @@ def choreograph(start_frame: int, fps: int = 24) -> tuple[dict[str, list[list[fl
     t0 = ev["sceneCut"]
     n_walk = math.ceil(cum[-1] / V_WALK)
     ev["pickStart"] = t0 + n_walk + 2
-    turn, reach, back, place = 6, 12, 6, 10
+    turn, reach, back, place = PICK_PHASES
     ev["boxInCart"] = ev["pickStart"] + turn + reach + back + place
     push_after = 1.6
     n_after = math.ceil(push_after / V_WALK)
