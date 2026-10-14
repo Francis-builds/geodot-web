@@ -161,6 +161,13 @@
           "skusValue": "14",
           "cartaPorte": "CARTA PORTE",
           "cartaPorteValue": "VALIDADA ✓"
+        },
+        "loading": "Cargando operación",
+        "outro": {
+          "eyebrow": "Geodot",
+          "title": "Logistics Operating System",
+          "lead": "Patio, andén, almacén y picking en una sola plataforma.",
+          "replay": "Ver de nuevo"
         }
       }
     },

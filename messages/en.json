@@ -161,6 +161,13 @@
           "skusValue": "14",
           "cartaPorte": "CARTA PORTE",
           "cartaPorteValue": "VALIDATED ✓"
+        },
+        "loading": "Loading operation",
+        "outro": {
+          "eyebrow": "Geodot",
+          "title": "Logistics Operating System",
+          "lead": "Yard, dock, warehouse and picking on one platform.",
+          "replay": "Replay"
         }
       }
     },
