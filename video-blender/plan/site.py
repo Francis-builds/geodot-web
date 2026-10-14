@@ -74,13 +74,15 @@ def obstacles(include_gate: bool = True) -> list[Poly]:
 # ---- racks (fuente única; kit/racks.py arma la geometría a partir de esto) ----
 # posición del pick face donde termina el pallet de la fase 2: (fila, vano, lado, nivel, posición en el vano)
 PICK_SLOT = (5, 1, -1, 0, 0)
+# pick face del que el picker saca una caja (otro pasillo, otro pallet)
+PICK_SLOT_B = (8, 3, -1, 0, 0)
 DOCK_BUMPER_X = 1.35     # topes de goma a cada lado de la puerta del andén
 BAY = 2.7            # ancho de vano (m)
 SIDE = 1.1           # profundidad de cada lado de la fila
 FLUE = 0.2           # separación entre lados
 LEVELS = (0.0, 1.7, 3.4, 5.1)   # altura de los largueros sobre el piso
 TOP = 6.6            # altura de las columnas
-AISLE = 3.2
+AISLE = 3.8          # pasillo de contrapesado (giro de 90° para estibar)
 
 
 @dataclass(frozen=True)
@@ -91,7 +93,7 @@ class RackLayout:
     bays: int = 6
     floor_z: float = 1.25
     fill: float = 0.82   # fracción de posiciones ocupadas
-    reserved: tuple = (PICK_SLOT,)   # posiciones que quedan libres para la coreografía
+    reserved: tuple = (PICK_SLOT, PICK_SLOT_B)   # posiciones que arma la coreografía (no el relleno al azar)
 
     @property
     def row_pitch(self) -> float:

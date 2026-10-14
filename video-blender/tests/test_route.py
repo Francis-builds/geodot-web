@@ -53,4 +53,4 @@ def test_phase2_chains_after_docking(tmp_path):
     assert abs(end.R[0] - dock_x(HERO_DOCK)) < 0.10 and abs(end.R[1] - Y_DOCK) < 0.10
     p = tmp_path / "route.json"; write_route(t, p)
     d = json.loads(p.read_text())
-    assert d["tracks"]["pallet_A"][-1][4] == 4 and d["cues"]["relevo"] < n
+    assert d["tracks"]["pallet_A"][-1][4] == 4 and d["cues"]["boxInCart"] < n

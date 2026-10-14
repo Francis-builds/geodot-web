@@ -1,4 +1,4 @@
-import { activeCards, cueAlpha, formatHud, frameAt, frameIndex, palletStage, parseFilm, type Film } from "./film";
+import { activeCards, cueAlpha, formatHud, frameAt, frameIndex, orderLine, palletStage, parseFilm, type Film } from "./film";
 
 const film: Film = {
   fps: 24, width: 1920, height: 1080,
@@ -46,26 +46,30 @@ test("formatHud uses locale decimals", () => {
 
 const phase2: Film = {
   ...film,
-  cues: { ...film.cues, palletCard: 460, slotDone: 615, relevo: 725 },
+  cues: { ...film.cues, palletCard: 439, slotDone: 523, orderCard: 552, boxInCart: 647 },
   frames: [
-    { tractor: [0, 0], driver: [0, 0], trailer: [0, 0], dist: 0, art: 0, status: "docked" },
-    { tractor: [0, 0], driver: [0, 0], trailer: [0, 0], dist: 0, art: 0, status: "relevo", pallet: [0.6, 0.5], picker: [0.55, 0.45] },
+    { tractor: [0, 0], driver: [0, 0], trailer: [0, 0], dist: 0, art: 0, status: "storing", pallet: [0.6, 0.5] },
+    { tractor: [0, 0], driver: [0, 0], trailer: [0, 0], dist: 0, art: 0, status: "picking", picker: [0.55, 0.45], cart: [0.6, 0.5] },
   ],
 };
 
 test("parseFilm accepts the phase-1 JSON (no phase-2 fields) and the phase-2 JSON", () => {
   expect(parseFilm(film)?.cues.palletCard).toBe(undefined);
-  expect(parseFilm(phase2)?.frames[1].pallet).toEqual([0.6, 0.5]);
+  expect(parseFilm(phase2)?.frames[1].cart).toEqual([0.6, 0.5]);
 });
-test("activeCards switches from truck+cargo to pallet at palletCard", () => {
+test("activeCards: truck+cargo → pallet at palletCard → order at orderCard", () => {
   expect(activeCards(100, phase2.cues)).toEqual(["truck", "cargo"]);
   expect(activeCards(470, phase2.cues)).toEqual(["pallet"]);
+  expect(activeCards(600, phase2.cues)).toEqual(["order"]);
 });
-test("activeCards never shows pallet with phase-1 cues", () => {
+test("activeCards never shows pallet or order with phase-1 cues", () => {
   expect(activeCards(9999, film.cues)).toEqual(["truck", "cargo"]);
 });
 test("palletStage follows the cues", () => {
-  expect(palletStage(465, phase2.cues)).toBe("scanned");
-  expect(palletStage(620, phase2.cues)).toBe("stored");
-  expect(palletStage(730, phase2.cues)).toBe("picking");
+  expect(palletStage(445, phase2.cues)).toBe("scanned");
+  expect(palletStage(530, phase2.cues)).toBe("stored");
+});
+test("orderLine advances when the box lands in the cart", () => {
+  expect(orderLine(600, phase2.cues)).toBe(3);
+  expect(orderLine(650, phase2.cues)).toBe(4);
 });

@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { useReducedMotion } from "motion/react";
-import { activeCards, cueAlpha, formatHud, frameAt, palletStage, parseFilm, type Film, type FrameData, type PalletStage } from "@/lib/hero/film";
+import { activeCards, cueAlpha, formatHud, frameAt, orderLine, palletStage, parseFilm, type Film, type FrameData, type PalletStage } from "@/lib/hero/film";
 import { cardRects, leaderPath, leaderVisible, videoToBox, type Rect, type Size } from "@/lib/hero/geometry";
 import { HudCard, type HudRow } from "./HudCard";
 
@@ -22,7 +22,12 @@ export type HeroFilmLabels = {
   pallet: {
     title: string; lot: string; lotValue: string; expiry: string; expiryValue: string; position: string;
     positionValue: string; fefo: string; fefoValue: string; status: string;
-    stageValues: Record<PalletStage, string>; picker: string; pickerValue: string;
+    stageValues: Record<PalletStage, string>;
+  };
+  order: {
+    title: string; client: string; clientValue: string; line: string; of: string; sku: string; skuValue: string;
+    qty: string; qtyValue: string; location: string; locationValue: string; picker: string; pickerValue: string;
+    status: string; statusValue: string;
   };
 };
 
@@ -126,7 +131,17 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
     { label: pl.fefo, value: pl.fefoValue, ok: true },
     { label: pl.position, value: pl.positionValue },
     { label: pl.status, value: pl.stageValues[stage], ok: stage !== "received" },
-    ...(stage === "picking" ? [{ label: pl.picker, value: pl.pickerValue }] : []),
+  ];
+  const od = labels.order;
+  const line = film && frame ? orderLine(frame.index, film.cues) : 3;
+  const orderRows: HudRow[] = [
+    { label: od.client, value: od.clientValue },
+    { label: od.line, value: `${line}/${od.of}`, ok: line > 3 },
+    { label: od.sku, value: od.skuValue },
+    { label: od.qty, value: od.qtyValue },
+    { label: od.location, value: od.locationValue },
+    { label: od.picker, value: od.pickerValue },
+    { label: od.status, value: od.statusValue, ok: true },
   ];
 
   const hud = film && frame && box.w > 0 ? (() => {
@@ -135,11 +150,16 @@ export function HeroFilm({ labels }: { labels: HeroFilmLabels }) {
     const palletIn = film.cues.palletCard ?? Number.POSITIVE_INFINITY;
     type Card = { key: string; title: string; rows: HudRow[]; rect: Rect; alpha: number; prog: number; anchor?: [number, number] };
     let cards: Card[];
-    if (showing.includes("pallet")) {
+    if (showing.includes("order")) {
+      const orderIn = film.cues.orderCard ?? Number.POSITIVE_INFINITY;
+      const [r] = cardRects(box, [{ rows: orderRows.length }]);
+      const inCart = film.cues.boxInCart !== undefined && frame.index >= film.cues.boxInCart;
+      cards = [{ key: "order", title: od.title, rows: orderRows, rect: r, alpha: cueAlpha(frame.index, orderIn),
+        prog: cueAlpha(frame.index, orderIn + 8, 14), anchor: inCart ? frame.cart : frame.picker }];
+    } else if (showing.includes("pallet")) {
       const [r] = cardRects(box, [{ rows: palletRows.length }]);
-      const relevo = film.cues.relevo !== undefined && frame.index >= film.cues.relevo;
       cards = [{ key: "pallet", title: pl.title, rows: palletRows, rect: r, alpha: cueAlpha(frame.index, palletIn),
-        prog: cueAlpha(frame.index, palletIn + 8, 14), anchor: relevo ? frame.picker : frame.pallet }];
+        prog: cueAlpha(frame.index, palletIn + 8, 14), anchor: frame.pallet }];
     } else {
       const [rTruck, rCargo] = cardRects(box, [{ rows: truckRows.length }, { rows: cargoRows.length }]);
       cards = [

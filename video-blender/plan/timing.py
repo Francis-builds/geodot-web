@@ -24,9 +24,18 @@ def sample(dense: list[State], cum: np.ndarray, distances: np.ndarray) -> list[S
     return [dense[i] for i in idx]
 
 
+TURN_LEVER = 1.3   # m: un autoelevador que gira sobre su eje mueve la carga ~1,3 m por radián
+
+
 def cumulative(states: list) -> np.ndarray:
-    steps = [0.0] + [float(np.linalg.norm(_pt(b) - _pt(a))) for a, b in zip(states, states[1:])]
-    return np.cumsum(steps)
+    """Distancia "efectiva" recorrida. En los autoelevadores suma el giro × brazo de la carga:
+    con dirección trasera pueden girar fuerte casi sin avanzar y la carga no puede saltar."""
+    def step(a, b) -> float:
+        d = float(np.linalg.norm(_pt(b) - _pt(a)))
+        if hasattr(a, "yaw") and hasattr(b, "yaw"):
+            d += TURN_LEVER * abs((b.yaw - a.yaw + math.pi) % math.tau - math.pi)
+        return d
+    return np.cumsum([0.0] + [step(a, b) for a, b in zip(states, states[1:])])
 
 
 

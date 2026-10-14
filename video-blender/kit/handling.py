@@ -105,3 +105,32 @@ def scan_flash(col, mat):
     """Haz plano de escaneo (emisión teal) que barre el pallet en scanA."""
     return box("SCAN_flash", (0.02, 1.1, 1.4), (0, 0, 0.75), col, mat=mat)
 
+
+
+def picking_cart(col, name: str = "CART"):
+    """Carrito de picking de 2 estantes, 1,0 × 0,64 m, ruedas giratorias y manija del lado del picker."""
+    root = empty(name, col)
+    for z in (0.25, 0.75):
+        box("ct_shelf", (1.0, 0.64, 0.04), (0, 0, z), col, root, bev=0.01)
+        box("ct_lip", (1.0, 0.02, 0.06), (0, 0.31, z + 0.04), col, root)
+        box("ct_lip", (1.0, 0.02, 0.06), (0, -0.31, z + 0.04), col, root)
+    for sx in (-0.48, 0.48):
+        for sy in (-0.3, 0.3):
+            box("ct_post", (0.03, 0.03, 0.85), (sx, sy, 0.5), col, root)
+            cyl("ct_caster", 0.06, 0.04, (sx, sy, 0.06), col, root, axis="y", seg=12)
+    box("ct_handle", (0.03, 0.6, 0.03), (-0.56, 0, 1.0), col, root)
+    for sy in (-0.29, 0.29):
+        box("ct_handle_post", (0.03, 0.03, 0.25), (-0.52, sy, 0.9), col, root)
+    box("ct_tote", (0.55, 0.38, 0.22), (0.18, 0, 0.38), col, root, bev=0.01)   # cubeta en el estante de abajo
+    return root
+
+
+def rfid_portal(col, name: str, x: float, y: float):
+    """Portal RFID del lado de adentro de la puerta del andén: dos columnas con antenas y un dintel."""
+    root = empty(name, col, (x, y, 1.25))
+    for s in (-1, 1):
+        box("rf_post", (0.12, 0.18, 2.6), (s * 1.6, 0, 1.3), col, root, bev=0.02)
+        box("rf_antenna", (0.05, 0.4, 0.6), (s * 1.53, 0, 1.2), col, root, bev=0.01)
+    box("rf_header", (3.32, 0.18, 0.14), (0, 0, 2.62), col, root, bev=0.02)
+    box("rf_beacon", (0.14, 0.14, 0.1), (0, 0, 2.75), col, root, bev=0.02)
+    return root

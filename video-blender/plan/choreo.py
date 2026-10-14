@@ -1,13 +1,15 @@
-"""Coreografía de la fase 2: recepción + relevo.
+"""Coreografía de la fase 2 (v2): recepción con UN autoelevador + corte a picking con carrito.
 
-Sube la puerta del andén 11 → el autoelevador saca pallet_A del tráiler y lo deja en
-la preparación → destello de escaneo → la apiladora lo lleva al pick face (PICK_SLOT),
-girando 90° sobre su eje delantero en el pasillo → sale → el picker llega a esa misma
-posición y escanea (relevo).
+Tramo 1. Sube la puerta del andén 11. El autoelevador entra al tráiler, levanta pallet_A,
+sale marcha atrás (corto e inevitable: no se gira dentro de un tráiler), pasa por el portal
+RFID de la puerta (escaneo), cruza el depósito hacia adelante, gira 90° en el pasillo y lo
+deja en el pick face (PICK_SLOT). Sale marcha atrás lo justo para liberar las horquillas.
 
-Cada pose de los equipos sale de plan.handling (integración + muestreo por distancia);
-las horquillas y el giro sobre el eje son actuadores con perfil de velocidad. El pallet
-tiene un dueño por frame y su pose sale de ese dueño, así que nunca salta.
+Tramo 2 (después del corte de escena). En otro pasillo, un picker empuja un carrito, frena
+frente a OTRO pick face (PICK_SLOT_B), saca una caja de ese pallet, la carga y sigue.
+
+Los vehículos salen de plan.handling (integración + muestreo por distancia); las horquillas,
+la puerta y la caja que pasa de mano son actuadores con perfil de velocidad.
 """
 from __future__ import annotations
 
@@ -15,58 +17,60 @@ import math
 
 import numpy as np
 
-from plan.handling import FORKLIFT, REACH, Lift, LiftSpec, follow
+from plan.handling import FORKLIFT, Lift, LiftSpec, follow
 from plan.kinematics import Poly
-from plan.site import (BUILDING, DOCK_BUMPER_X, HERO_DOCK, PICK_SLOT, WALL_Y, RackLayout, Rect,
-                       dock_x, slot_center)
+from plan.site import (BAY, BUILDING, DOCK_BUMPER_X, FLUE, HERO_DOCK, PICK_SLOT, PICK_SLOT_B, SIDE, WALL_Y,
+                       RackLayout, Rect, dock_x, slot_center)
 from plan.timing import profile_frames
 
-OWNER = {"trailer": 0, "forklift": 1, "floor": 2, "reach": 3, "rack": 4}
+OWNER = {"trailer": 0, "forklift": 1, "rack": 4}
 CLIP = {"idle": 0, "walk": 1, "scan": 2, "pickup": 3}
 
 DX = dock_x(HERO_DOCK)
 TRAILER_FLOOR = 1.30
 FLOOR = 1.25
-PALLET_A = np.array([DX - 0.52, -1.0])         # fila 1 del tráiler, lado izquierdo
-STAGE = np.array([DX - 0.52, 4.5])             # preparación frente al andén
-FORK_IN = 0.03                                 # las horquillas entran 3 cm sobre la base
-V_FL, V_RC, V_RC_SLOW, V_WALK = 0.34, 0.26, 0.12, 0.12   # m/frame (ritmo comprimido)
-REACH_EXT = 0.55    # carrera del mástil retráctil de la apiladora
+PALLET_A = np.array([DX - 0.52, -1.0])         # fila 1 del tráiler, lado izquierdo (la más cerca de la puerta)
+PORTAL_Y = 1.2                                 # portal RFID del lado de adentro de la puerta del andén
+FORK_IN = 0.03
+V_FL, V_WALK = 0.34, 0.12                      # m/frame (ritmo comprimido)
 RAMP = 8
-SOUTH, EAST = -math.pi / 2, 0.0
+SOUTH, NORTH, EAST = -math.pi / 2, math.pi / 2, 0.0
+CART_AHEAD = 1.0                               # centro del carrito delante del picker
+BOX_TOP = 2.55                                 # tapa de la carga del pallet B (z)
+
+
+def _rows() -> list[tuple[float, float]]:
+    lay = RackLayout()
+    depth = 2 * SIDE + FLUE
+    return [(lay.x0 + r * lay.row_pitch - depth / 2, lay.x0 + r * lay.row_pitch + depth / 2) for r in range(lay.rows)]
+
+
+def rack_obstacles() -> list[Poly]:
+    lay = RackLayout()
+    return [Rect(x0, lay.y0, x1, lay.y0 + lay.bays * BAY).poly() for x0, x1 in _rows()]
 
 
 def lift_obstacles() -> list[Poly]:
-    """Lo que el chasis de un equipo no puede tocar dentro del depósito y del tráiler."""
-    lay = RackLayout()
-    obs: list[Poly] = []
-    depth = 2 * 1.1 + 0.2
-    for r in range(lay.rows):
-        cx = lay.x0 + r * lay.row_pitch
-        obs.append(Rect(cx - depth / 2, lay.y0, cx + depth / 2, lay.y0 + lay.bays * 2.7).poly())
+    """Lo que el chasis del autoelevador no puede tocar dentro del depósito y del tráiler."""
+    obs = rack_obstacles()
     door0, door1 = DX - 1.5, DX + 1.5
-    obs.append(Rect(BUILDING.x0, WALL_Y, door0, WALL_Y + 0.3).poly())      # fachada a los lados de la puerta
+    obs.append(Rect(BUILDING.x0, WALL_Y, door0, WALL_Y + 0.3).poly())
     obs.append(Rect(door1, WALL_Y, BUILDING.x1, WALL_Y + 0.3).poly())
     for s in (-1, 1):
         bx = DX + s * DOCK_BUMPER_X
-        obs.append(Rect(bx - 0.125, 0.05, bx + 0.125, 0.35).poly())          # topes del andén
-        wx = DX + s * 1.25                                                  # paredes interiores del tráiler
+        obs.append(Rect(bx - 0.125, 0.05, bx + 0.125, 0.35).poly())
+        wx = DX + s * 1.25
         obs.append(Rect(wx - (0.05 if s < 0 else 0), -16.5, wx + (0.05 if s > 0 else 0), -0.35).poly())
     obs.append(Rect(BUILDING.x0, BUILDING.y1 - 0.3, BUILDING.x1, BUILDING.y1).poly())
     return obs
 
 
 class Actor:
-    """Pista de un equipo: una pose por frame (x, y, z_horquillas, yaw)."""
+    """Pista de un vehículo: una pose por frame (x, y, z_horquillas, yaw)."""
 
     def __init__(self, spec: LiftSpec, p: tuple[float, float], yaw: float, fork_z: float):
         self.spec = spec
         self.frames: list[Lift] = [Lift(np.array(p, dtype=float), yaw, fork_z)]
-        self.ext: list[float] = [0.0]      # extensión del mástil hacia adelante (solo la apiladora)
-
-    def _push(self, lift: Lift) -> None:
-        self.frames.append(lift)
-        self.ext.append(self.ext[-1])
 
     @property
     def now(self) -> Lift:
@@ -74,148 +78,159 @@ class Actor:
 
     def wait_until(self, frame: int) -> None:
         while len(self.frames) <= frame:
-            self._push(self.now)
+            self.frames.append(self.now)
 
-    def drive(self, path: list[tuple[float, float]], v_dir: float, vmax: float, until) -> None:
-        dense = follow(self.now, self.spec, np.array([tuple(self.now.p)] + path, dtype=float), v_dir, until, dt=0.01)
+    def drive(self, path: list[tuple[float, float]], v_dir: float, vmax: float, until, lookahead: float = 2.5) -> None:
+        dense = follow(self.now, self.spec, np.array([tuple(self.now.p)] + path, dtype=float), v_dir, until,
+                       dt=0.01, lookahead=lookahead)
         z = self.now.fork_h
-        for s in profile_frames(dense, vmax, RAMP)[1:]:
-            self._push(Lift(s.p, s.yaw, z))
+        self.frames += [Lift(s.p, s.yaw, z) for s in profile_frames(dense, vmax, RAMP)[1:]]
 
     def forks(self, z_to: float, rate: float = 0.025) -> None:
         z0 = self.now.fork_h
         n = max(2, math.ceil(abs(z_to - z0) / rate))
         for i in range(1, n + 1):
             t = i / n
-            self._push(Lift(self.now.p, self.now.yaw, z0 + (z_to - z0) * t * t * (3 - 2 * t)))
-
-    def extend(self, to: float, frames: int = 10) -> None:
-        """El mástil retráctil avanza o vuelve; el chasis no se mueve."""
-        e0 = self.ext[-1]
-        for i in range(1, frames + 1):
-            t = i / frames
-            self._push(self.now)
-            self.ext[-1] = e0 + (to - e0) * t * t * (3 - 2 * t)
-
-    def pivot(self, yaw_to: float, frames: int = 12) -> None:
-        """Rueda de dirección a 90°: el equipo gira sobre el centro de su eje delantero."""
-        y0 = self.now.yaw
-        for i in range(1, frames + 1):
-            t = i / frames
-            self._push(Lift(self.now.p, y0 + (yaw_to - y0) * t * t * (3 - 2 * t), self.now.fork_h))
+            self.frames.append(Lift(self.now.p, self.now.yaw, z0 + (z_to - z0) * t * t * (3 - 2 * t)))
 
 
-def _carried(lift: Lift, spec: LiftSpec, ext: float = 0.0) -> list[float]:
-    c = lift.p + (spec.front - 0.6 + ext) * np.array([math.cos(lift.yaw), math.sin(lift.yaw)])
+def _carried(lift: Lift, spec: LiftSpec) -> list[float]:
+    c = lift.p + (spec.front - 0.6) * np.array([math.cos(lift.yaw), math.sin(lift.yaw)])
     return [float(c[0]), float(c[1]), lift.fork_h - FORK_IN, lift.yaw]
+
+
+def _u(yaw: float) -> np.ndarray:
+    return np.array([math.cos(yaw), math.sin(yaw)])
 
 
 def choreograph(start_frame: int, fps: int = 24) -> tuple[dict[str, list[list[float]]], dict[str, int]]:
     sx, sy, sz = slot_center(RackLayout(), PICK_SLOT)
-    fl = Actor(FORKLIFT, (DX - 0.52, 7.0), SOUTH, FLOOR)
-    rc = Actor(REACH, (DX - 0.52, 10.6), SOUTH, FLOOR)
+    rows = _rows()
+    aisle_a = (rows[4][1] + rows[5][0]) / 2            # pasillo entre las filas 4 y 5
+    fl = Actor(FORKLIFT, (PALLET_A[0], 6.0), SOUTH, FLOOR)
     ev: dict[str, int] = {"doorOpen": 0}
 
-    # --- autoelevador: tráiler → preparación ---
-    fl.wait_until(10)                                    # la puerta ya va por la mitad
+    # --- tramo 1: tráiler → portal → pick face ---
+    fl.wait_until(10)
     fl.forks(TRAILER_FLOOR + FORK_IN)
-    pick_y = float(PALLET_A[1]) + FORKLIFT.front - 0.6        # eje delantero con el pallet entero sobre las horquillas
+    pick_y = float(PALLET_A[1]) + FORKLIFT.front - 0.6
     fl.drive([(PALLET_A[0], pick_y)], +1.0, V_FL, until=lambda s: s.p[1] <= pick_y)
-    ev["unloadStart"] = len(fl.frames)                   # primer frame de subida = toma el pallet
+    ev["unloadStart"] = len(fl.frames)
     fl.forks(TRAILER_FLOOR + 0.15)
-    fl.drive([(STAGE[0], STAGE[1] + FORKLIFT.front - 0.6)], -1.0, V_FL,
-             until=lambda s: s.p[1] >= STAGE[1] + FORKLIFT.front - 0.6)
-    fl.forks(FLOOR + FORK_IN)
-    ev["dropStage"] = len(fl.frames) - 1                 # base del pallet en el piso
-    fl.forks(FLOOR)
-    ev["scanA"] = len(fl.frames) + 2
-    fl.drive([(STAGE[0], 6.9)], -1.0, V_FL, until=lambda s: s.p[1] >= 6.9)
-    fl.drive([(STAGE[0], 7.6), (13.0, 8.3)], -1.0, V_FL, until=lambda s: s.p[0] >= 12.7)
-    clear = len(fl.frames)
+    # sale marcha atrás abriéndose hacia el oeste para quedar mirando al pasillo
+    fl.drive([(PALLET_A[0], 2.4), (9.2, 4.3)], -1.0, V_FL, until=lambda s: s.p[1] >= 4.1)
+    stop_x = sx - (FORKLIFT.front - 0.6)
+    # sube por el lado oeste del pasillo para tener radio y entrar derecho a la posición
+    fl.drive([(aisle_a - 0.6, 7.0), (aisle_a - 0.6, sy - 2.2), (aisle_a + 0.3, sy - 0.15), (stop_x, sy)], +1.0, V_FL,
+             until=lambda s: s.p[0] >= stop_x - 0.005, lookahead=1.3)
+    fl.forks(sz + FORK_IN)
+    ev["slotDone"] = len(fl.frames) - 1
+    fl.forks(sz)
+    back_x = (rows[5][0] - FORKLIFT.front) - 0.10       # puntas 10 cm fuera del frente del rack (la cola no toca la fila de enfrente)
+    fl.drive([(back_x, float(fl.now.p[1]))], -1.0, 0.15, until=lambda s: s.p[0] <= back_x)
+    ev["sceneCut"] = len(fl.frames) + 10
 
-    # --- apiladora: preparación → pick face ---
-    rc.wait_until(clear + 2)
-    ev["reachStart"] = len(rc.frames)
-    rc.forks(FLOOR + FORK_IN)
-    rc.drive([(STAGE[0], STAGE[1] + REACH.front - 0.6)], +1.0, V_RC,
-             until=lambda s: s.p[1] <= STAGE[1] + REACH.front - 0.6)
-    ev["reachPick"] = len(rc.frames)
-    rc.forks(FLOOR + 0.15)
-    aisle_x = 10.45
-    rc.drive([(STAGE[0], 9.0), (aisle_x, 11.5), (aisle_x, sy)], -1.0, V_RC, until=lambda s: s.p[1] >= sy)
-    rc.pivot(EAST)
-    # el chasis se acerca hasta el frente del rack y el mástil retráctil mete la carga
-    stop_x = sx - (REACH.front - 0.6 + REACH_EXT)
-    rc.drive([(stop_x, float(rc.now.p[1]))], +1.0, V_RC_SLOW, until=lambda s: s.p[0] >= stop_x)
-    rc.extend(REACH_EXT)
-    rc.forks(sz + FORK_IN)
-    ev["slotDone"] = len(rc.frames) - 1
-    rc.forks(sz)
-    rc.extend(0.0)
-    rc.drive([(aisle_x, float(rc.now.p[1]))], -1.0, V_RC_SLOW, until=lambda s: s.p[0] <= aisle_x)
-    rc.pivot(SOUTH)
-    rc.drive([(aisle_x, sy + 4.0)], -1.0, V_RC, until=lambda s: s.p[1] >= sy + 4.0)
-    reach_gone = next(i for i, s in enumerate(rc.frames) if i > ev["slotDone"] and s.p[1] >= sy + 3.0)
+    # escaneo: cuando el pallet cruza el portal de la puerta
+    def pallet_y(i: int) -> float:
+        return _carried(fl.frames[i], FORKLIFT)[1]
+    ev["scanA"] = next(i for i in range(ev["unloadStart"], len(fl.frames)) if pallet_y(i) >= PORTAL_Y)
 
-    # --- picker: preparación → misma posición del rack (relevo) ---
-    # espera junto a la cara de la fila 4, fuera de los recorridos de los dos equipos
-    walk_path = np.array([(8.95, 9.6), (STAGE[0], 12.0), (STAGE[0], sy - 1.0), (sx - 1.05, sy)])
-    seg = np.linalg.norm(np.diff(walk_path, axis=0), axis=1)
+    # --- tramo 2 (otra escena): picker con carrito, otro pasillo, otro pallet ---
+    bx, by, _ = slot_center(RackLayout(), PICK_SLOT_B)
+    aisle_b = (rows[7][1] + rows[8][0]) / 2
+    stand = np.array([aisle_b + 0.4, by - 0.2])
+    walk = np.array([(aisle_b, by - 7.2), (aisle_b + 0.4, by - 5.0), tuple(stand)])
+    seg = np.linalg.norm(np.diff(walk, axis=0), axis=1)
     cum = np.concatenate([[0], np.cumsum(seg)])
-    picker: list[list[float]] = []
-    t_walk = reach_gone + 2
-    n_walk = math.ceil(cum[-1] / V_WALK)
 
-    def at(d: float) -> tuple[float, float, float]:
+    def walk_at(d: float) -> tuple[np.ndarray, float]:
         i = min(len(seg) - 1, int(np.searchsorted(cum, d, side="right") - 1))
         t = (d - cum[i]) / seg[i]
-        p = walk_path[i] + (walk_path[i + 1] - walk_path[i]) * t
-        dvec = walk_path[i + 1] - walk_path[i]
-        return float(p[0]), float(p[1]), math.atan2(dvec[1], dvec[0])
+        dv = walk[i + 1] - walk[i]
+        return walk[i] + dv * t, math.atan2(dv[1], dv[0])
 
-    ev["pickerArrive"] = t_walk + n_walk
-    ev["relevo"] = ev["pickerArrive"] + 6
-    total = ev["relevo"] + 16
+    t0 = ev["sceneCut"]
+    n_walk = math.ceil(cum[-1] / V_WALK)
+    ev["pickStart"] = t0 + n_walk + 2
+    turn, reach, back, place = 6, 12, 6, 10
+    ev["boxInCart"] = ev["pickStart"] + turn + reach + back + place
+    push_after = 1.6
+    n_after = math.ceil(push_after / V_WALK)
+    total = ev["boxInCart"] + n_after + 8
 
+    picker, cart, box = [], [], []
+    box0 = np.array([bx - 0.25, by, BOX_TOP])
+    cart_stop = None
     for i in range(total):
-        if i < t_walk:
-            x, y, yaw = at(0.0)
-            picker.append([x, y, FLOOR, yaw, CLIP["idle"]])
-        elif i < ev["pickerArrive"]:
-            x, y, yaw = at(min(cum[-1], (i - t_walk) * V_WALK))
-            picker.append([x, y, FLOOR, yaw, CLIP["walk"]])
-        else:  # gira de frente al rack y escanea
-            x, y, yaw = at(cum[-1])
-            k = min(1.0, (i - ev["pickerArrive"]) / 6)
-            picker.append([x, y, FLOOR, yaw + (EAST - yaw) * k, CLIP["scan"] if i >= ev["relevo"] else CLIP["idle"]])
+        if i < t0:
+            p, yaw = walk_at(0.0)
+            pk = [p[0], p[1], FLOOR, yaw, CLIP["idle"]]
+        elif i < ev["pickStart"]:
+            p, yaw = walk_at(min(cum[-1], (i - t0) * V_WALK))
+            pk = [p[0], p[1], FLOOR, yaw, CLIP["walk"]]
+        elif i < ev["boxInCart"]:
+            p, yaw = walk_at(cum[-1])
+            k = i - ev["pickStart"]
+            face = yaw + (EAST - yaw) * min(1.0, k / turn)                        # gira hacia el rack
+            if k >= turn + reach:
+                face = EAST + (yaw - EAST) * min(1.0, (k - turn - reach) / back)   # vuelve al carrito
+            pk = [p[0], p[1], FLOOR, face, CLIP["pickup"]]
+        else:
+            d = cum[-1] + min(push_after, (i - ev["boxInCart"]) * V_WALK)
+            p0, yaw = walk_at(cum[-1])
+            p = p0 + _u(yaw) * (d - cum[-1])
+            pk = [p[0], p[1], FLOOR, yaw, CLIP["walk"]]
+        picker.append([float(v) for v in pk])
+        # carrito: delante del picker mientras empuja; quieto mientras saca la caja
+        base = np.array(pk[:2])
+        heading = pk[3] if pk[4] != CLIP["pickup"] else walk_at(cum[-1])[1]
+        if pk[4] == CLIP["pickup"]:
+            cart_stop = cart_stop if cart_stop is not None else cart[-1][:2]
+            cpos = np.array(cart_stop)
+        else:
+            cpos = base + _u(heading) * CART_AHEAD
+        cart.append([float(cpos[0]), float(cpos[1]), FLOOR, float(heading), 0.0])
+
+    hand_z = FLOOR + 1.15
+    for i in range(total):
+        k = i - ev["pickStart"]
+        cart_top = np.array([cart[i][0], cart[i][1], FLOOR + 0.95])
+        if k < turn:
+            pos = box0
+        elif k < turn + reach:                     # de la tapa del pallet a las manos (arco)
+            t = (k - turn + 1) / reach
+            hand = np.array([picker[i][0] + 0.45, picker[i][1], hand_z])
+            pos = box0 + (hand - box0) * t + np.array([0, 0, 0.25 * math.sin(math.pi * t)])
+        elif k < turn + reach + back:              # gira con la caja en las manos
+            yaw = picker[i][3]
+            pos = np.array([picker[i][0] + 0.45 * math.cos(yaw), picker[i][1] + 0.45 * math.sin(yaw), hand_z])
+        elif i < ev["boxInCart"]:                  # la apoya en el carrito
+            t = (k - turn - reach - back + 1) / place
+            yaw = picker[i][3]
+            hand = np.array([picker[i][0] + 0.45 * math.cos(yaw), picker[i][1] + 0.45 * math.sin(yaw), hand_z])
+            pos = hand + (cart_top - hand) * t
+        else:                                      # viaja en el carrito
+            pos = cart_top
+        box.append([float(pos[0]), float(pos[1]), float(pos[2]), float(cart[i][3]), 0.0])
 
     fl.wait_until(total - 1)
-    rc.wait_until(total - 1)
-    fl.frames, rc.frames, rc.ext = fl.frames[:total], rc.frames[:total], rc.ext[:total]
+    fl.frames = fl.frames[:total]
 
-    # --- pallet_A: dueño y pose por frame ---
     pallet: list[list[float]] = []
-    drop_stage = drop_rack = None
+    drop = None
     for i in range(total):
         if i < ev["unloadStart"]:
             pallet.append([float(PALLET_A[0]), float(PALLET_A[1]), TRAILER_FLOOR, SOUTH, OWNER["trailer"]])
-        elif i <= ev["dropStage"]:
-            pallet.append(_carried(fl.frames[i], FORKLIFT) + [OWNER["forklift"]])
-        elif i < ev["reachPick"]:
-            drop_stage = drop_stage or pallet[-1][:4]
-            pallet.append(list(drop_stage) + [OWNER["floor"]])
         elif i <= ev["slotDone"]:
-            pallet.append(_carried(rc.frames[i], REACH, rc.ext[i]) + [OWNER["reach"]])
+            pallet.append(_carried(fl.frames[i], FORKLIFT) + [OWNER["forklift"]])
         else:
-            drop_rack = drop_rack or pallet[-1][:4]
-            pallet.append(list(drop_rack) + [OWNER["rack"]])
+            drop = drop or pallet[-1][:4]
+            pallet.append(list(drop) + [OWNER["rack"]])
 
-    def track(a: Actor) -> list[list[float]]:
-        """extra = extensión del mástil (0 en el autoelevador)."""
-        return [[float(s.p[0]), float(s.p[1]), float(s.fork_h), float(s.yaw), float(e)] for s, e in zip(a.frames, a.ext)]
-
-    door = [[0.0, 0.0, min(1.0, i / 20), 0.0, 0.0] for i in range(total)]
-    tracks = {"forklift": track(fl), "reach": track(rc), "pallet_A": pallet, "picker": picker, "door11": door}
-    cues = {k: start_frame + v for k, v in ev.items() if k in
-            ("doorOpen", "unloadStart", "scanA", "reachStart", "slotDone", "pickerArrive", "relevo")}
+    tracks = {
+        "forklift": [[float(s.p[0]), float(s.p[1]), float(s.fork_h), float(s.yaw), 0.0] for s in fl.frames],
+        "pallet_A": pallet, "picker": picker, "cart": cart, "box_B": box,
+        "door11": [[0.0, 0.0, min(1.0, i / 20), 0.0, 0.0] for i in range(total)],
+    }
+    cues = {k: start_frame + v for k, v in ev.items()}
     return tracks, cues

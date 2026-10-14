@@ -81,6 +81,8 @@ def test_scene_builds_phase2(route2, tmp_path):
     out = run_hero("--mode", "check", "--route", str(route2), "--out", str(tmp_path))
     assert "CHECK OK" in out.stdout, out.stdout[-2000:] + out.stderr[-2000:]
     assert "PHASE2 OK" in out.stdout, out.stdout[-1500:]
+    assert "LOAD 21" in out.stdout, out.stdout[-800:]          # 22 pallets: pallet_A + 21 que quedan
+    assert "REACH" not in out.stdout.split("PHASE2 OK")[0].split("PICKER")[-1]
 
 
 MIXAMO = ROOT / "assets" / "mixamo"
@@ -109,7 +111,7 @@ def test_technical_frames_phase2(route2, tmp_path):
     import json
     from PIL import Image, ImageStat
     c = json.loads(route2.read_text())["cues"]
-    frames = (c["doorOpen"] + 11, c["slotDone"] + 1, c["relevo"] + 1)
+    frames = (c["doorOpen"] + 11, c["slotDone"] + 1, c["boxInCart"] + 1)
     for f in frames:
         out = run_hero("--mode", "technical", "--route", str(route2), "--out", str(tmp_path),
                        "--res", "480x270", "--frames", f"{f}-{f}", timeout=600)
@@ -123,13 +125,14 @@ def test_phase2_animation_follows_tracks(route2, tmp_path):
     """La pose en Blender de pallet_A, el autoelevador y el picker coincide con route.json en frames clave."""
     import json, re
     d = json.loads(route2.read_text()); c = d["cues"]; s0 = c["phase2Start"]
-    probe = [c["unloadStart"] - 1, c["scanA"], c["slotDone"] + 2, c["relevo"]]
+    probe = [c["unloadStart"] - 1, c["scanA"], c["slotDone"] + 2, c["boxInCart"] + 4]
     out = run_hero("--mode", "probe", "--route", str(route2), "--out", str(tmp_path),
                    "--frames", ",".join(str(f + 1) for f in probe))
     got = {(m[0], int(m[1])): tuple(map(float, m[2:5])) for m in re.findall(r"PROBE (\S+) (\d+) (\S+) (\S+) (\S+)", out.stdout)}
     assert got, out.stdout[-1500:] + out.stderr[-1500:]
     for f in probe:
-        for obj, key in (("pallet_A", "pallet_A"), ("FORKLIFT", "forklift"), ("PICKER", "picker")):
+        for obj, key in (("pallet_A", "pallet_A"), ("FORKLIFT", "forklift"), ("PICKER", "picker"),
+                         ("CART", "cart"), ("box_B", "box_B")):
             want = d["tracks"][key][f - s0][:2]
             x, y, _ = got[(obj, f + 1)]
             assert abs(x - want[0]) < 0.02 and abs(y - want[1]) < 0.02, (obj, f, (x, y), want)
@@ -142,12 +145,28 @@ def test_anchors_phase2(route2, tmp_path):
     d = json.loads((tmp_path / "film-anchors.json").read_text())
     c = json.loads(route2.read_text())["cues"]
     fr = d["frames"]
-    assert d["cues"]["palletCard"] == c["scanA"] and d["cues"]["relevo"] == c["relevo"], out.stdout[-800:]
+    assert d["cues"]["palletCard"] == c["scanA"] and d["cues"]["orderCard"] == c["sceneCut"], out.stdout[-800:]
     for i, f in enumerate(fr):
-        if i >= c["scanA"]:
-            assert "pallet" in f and "picker" in f
-            for k in ("pallet", "picker"):
-                assert 0.0 <= f[k][0] <= 1.0 and 0.0 <= f[k][1] <= 1.0, (i, k, f[k])
+        if c["scanA"] <= i < c["sceneCut"]:
+            assert "pallet" in f and 0 <= f["pallet"][0] <= 1 and 0 <= f["pallet"][1] <= 1, (i, f.get("pallet"))
+        if i >= c["sceneCut"]:
+            for k in ("picker", "cart"):
+                assert k in f and 0 <= f[k][0] <= 1 and 0 <= f[k][1] <= 1, (i, k, f.get(k))
     assert fr[c["unloadStart"] + 1]["status"] == "unloading"
-    assert fr[c["reachStart"] + 5]["status"] == "storing"
-    assert fr[-1]["status"] == "relevo"
+    assert fr[c["scanA"] + 5]["status"] == "storing"
+    assert fr[-1]["status"] == "picking"
+
+
+@needs_blender
+def test_pallet_rides_in_trailer_during_phase1(route2, tmp_path):
+    """Durante la fase 1 pallet_A viaja dentro del tráiler (no flota en la puerta del andén)."""
+    import json, math, re
+    d = json.loads(route2.read_text())
+    f = 250                                       # en pleno retroceso al andén
+    out = run_hero("--mode", "probe", "--route", str(route2), "--out", str(tmp_path), "--frames", str(f + 1))
+    got = {m[0]: tuple(map(float, m[2:5])) for m in re.findall(r"PROBE (\S+) (\d+) (\S+) (\S+) (\S+)", out.stdout)}
+    R, yaw = d["frames"][f]["R"], d["frames"][f]["yaw"]
+    lx, ly = -0.52, -0.65                          # posición de pallet_A en coordenadas del tráiler
+    want = (R[0] + lx * math.cos(yaw) - ly * math.sin(yaw), R[1] + lx * math.sin(yaw) + ly * math.cos(yaw))
+    x, y, _ = got["pallet_A"]
+    assert abs(x - want[0]) < 0.03 and abs(y - want[1]) < 0.03, ((x, y), want)

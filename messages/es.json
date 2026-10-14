@@ -125,7 +125,7 @@
         ]
       },
       "film": {
-        "summary": "Animación: un camión cruza la pluma de acceso, el sistema lee placa, cita y documentos, retrocede al andén 11 y queda acoplado; al levantarse el techo se ven los racks del almacén; un autoelevador baja un pallet, una apiladora lo guarda en su posición del rack y un picker llega a tomarlo.",
+        "summary": "Animación: un camión cruza la pluma de acceso, el sistema lee placa, cita y documentos, retrocede al andén 11 y queda acoplado con 22 pallets; un autoelevador baja uno, lo escanea en la puerta y lo guarda en su posición del rack; en otro pasillo, un picker con su carrito arma un pedido.",
         "truck": {
           "title": "CAMIÓN · TRK-114",
           "plates": "PLACAS",
@@ -176,11 +176,25 @@
           "stageValues": {
             "received": "EN RECEPCIÓN",
             "scanned": "ESCANEADO ✓",
-            "stored": "ALMACENADO ✓",
-            "picking": "EN PICKING ✓"
-          },
+            "stored": "ALMACENADO ✓"
+          }
+        },
+        "order": {
+          "title": "PEDIDO · 1-0482",
+          "client": "CLIENTE",
+          "clientValue": "TIENDA 114",
+          "line": "LÍNEA",
+          "of": "12",
+          "sku": "SKU",
+          "skuValue": "450-118",
+          "qty": "CANTIDAD",
+          "qtyValue": "6 CAJAS",
+          "location": "UBICACIÓN",
+          "locationValue": "R-08-03-A",
           "picker": "PICKER",
-          "pickerValue": "M. LÓPEZ"
+          "pickerValue": "M. LÓPEZ",
+          "status": "ESTADO",
+          "statusValue": "EN PICKING ✓"
         }
       }
     },

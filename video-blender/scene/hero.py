@@ -19,12 +19,12 @@ from kit.materials import tech_materials  # noqa: E402
 from kit.primitives import set_default_material  # noqa: E402
 from kit.site_build import build_site  # noqa: E402
 from kit.trucks import truck  # noqa: E402
-from kit.handling import forklift, pallet, reach_truck, scan_flash, slot_highlight  # noqa: E402
+from kit.handling import forklift, pallet, picking_cart, rfid_portal, scan_flash, slot_highlight  # noqa: E402
 from kit.picker import picker, pose_picker  # noqa: E402
 from render.technical import LINE as GRAY_LINE  # noqa: E402
 from kit.materials import TEAL_HEX, hexrgb  # noqa: E402
-from plan.site import PICK_SLOT, RackLayout, slot_center  # noqa: E402
-from render.camera import CamKey, iso_camera  # noqa: E402
+from plan.site import PICK_SLOT, PICK_SLOT_B, RackLayout, slot_center  # noqa: E402
+from render.camera import CamKey, cut_keys, iso_camera, orbit_keys  # noqa: E402
 from render.technical import setup_technical  # noqa: E402
 from export.anchors import export_anchors  # noqa: E402
 from render.photo import setup_photo  # noqa: E402
@@ -68,31 +68,52 @@ def build(route: dict):
     return scene, cols, mats, site, hero
 
 
-PHASE2_REQUIRED = ("FORKLIFT", "FORKLIFT_forks", "REACH", "REACH_mast", "REACH_forks", "pallet_A",
+PHASE2_REQUIRED = ("FORKLIFT", "FORKLIFT_forks", "pallet_A", "pallet_B", "box_B", "CART", "RFID_portal",
                    "SLOT_highlight", "SCAN_flash", "DOOR_11", "PICKER")
+TRAILER_SLOTS = [(sx, -0.65 - 1.25 * j) for j in range(11) for sx in (-0.52, 0.52)]   # 22 pallets (2 × 11)
+LOAD_COUNT: dict[str, int] = {}
 PICKER_MODE: dict[str, str] = {}
 
 
 def build_phase2(cols, mats, tracks: dict) -> None:
     """Actores de la fase 2 en su pose del primer frame (la animación los mueve)."""
-    H = cols["HERO"]
-    for name, make in (("FORKLIFT", forklift), ("REACH", reach_truck)):
-        x, y, _, yaw, _ = tracks[name.lower() if name == "FORKLIFT" else "reach"][0]
-        ob = make(H, name)
-        ob.location = (x, y, 1.25)
-        ob.rotation_euler = (0, 0, yaw)
+    import math
+    H, L = cols["HERO"], cols["LINES"]
+    x, y, _, yaw, _ = tracks["forklift"][0]
+    ob = forklift(H, "FORKLIFT")
+    ob.location, ob.rotation_euler = (x, y, 1.25), (0, 0, yaw)
+    # tráiler lleno: pallet_A (la anima la coreografía) + 21 que viajan como hijos del tráiler
     x, y, z, yaw, _ = tracks["pallet_A"][0]
     pa = pallet(H, "pallet_A", seed=3)
-    pa.location = (x, y, z)
-    pa.rotation_euler = (0, 0, yaw)
+    pa.location, pa.rotation_euler = (x, y, z), (0, 0, yaw)
+    trailer = bpy.data.objects["HERO"]
+    n_load = 0
+    for k, (lx, ly) in enumerate(TRAILER_SLOTS):
+        if (lx, ly) == TRAILER_SLOTS[0]:
+            continue                                   # ese lugar es el de pallet_A
+        ld = pallet(H, f"load_{k:02d}", seed=10 + k)
+        ld.parent = trailer
+        ld.location, ld.rotation_euler = (lx, ly, 1.30), (0, 0, -math.pi / 2)
+        n_load += 1
+    LOAD_COUNT["n"] = n_load
+    bx, by, bz = slot_center(RackLayout(), PICK_SLOT_B)
+    pb = pallet(L, "pallet_B", seed=9)
+    pb.location = (bx, by, bz)
+    x, y, z, yaw, _ = tracks["box_B"][0]
+    from kit.primitives import box as _box
+    bxo = _box("box_B", (0.4, 0.3, 0.28), (x, y, z), H, bev=0.01)
+    bxo.rotation_euler = (0, 0, yaw)
+    x, y, z, yaw, _ = tracks["cart"][0]
+    ct = picking_cart(H, "CART")
+    ct.location, ct.rotation_euler = (x, y, z), (0, 0, yaw)
+    rfid_portal(L, "RFID_portal", dock_x(HERO_DOCK), 1.2)
     hl = slot_highlight(H, slot_center(RackLayout(), PICK_SLOT))
     hl.hide_render = True
     fl = scan_flash(H, mats["teal"])
     fl.hide_render = True
     pk, mode = picker(H, total_frames=len(tracks["picker"]) + 400)
     x, y, z, yaw, _ = tracks["picker"][0]
-    pk.location = (x, y, z)
-    pk.rotation_euler = (0, 0, yaw)
+    pk.location, pk.rotation_euler = (x, y, z), (0, 0, yaw)
     PICKER_MODE["mode"] = mode
 
 
@@ -184,32 +205,34 @@ def animate_phase2(route: dict) -> None:
     F = lambda i: s0 + i + 1  # índice local de la pista -> frame de Blender  # noqa: E731
     o = bpy.data.objects
     fl, fl_forks = o["FORKLIFT"], o["FORKLIFT_forks"]
-    rc, rc_mast, rc_forks = o["REACH"], o["REACH_mast"], o["REACH_forks"]
-    pa, pk = o["pallet_A"], o["PICKER"]
+    pa, pk, ct, bx = o["pallet_A"], o["PICKER"], o["CART"], o["box_B"]
+    # fase 1: pallet_A viaja dentro del tráiler (misma pose relativa que los otros 21)
+    lx, ly = TRAILER_SLOTS[0]
+    for f in range(1, s0 + 1):
+        R, yaw = route["frames"][f - 1]["R"], route["frames"][f - 1]["yaw"]
+        pa.location = (R[0] + lx * math.cos(yaw) - ly * math.sin(yaw), R[1] + lx * math.sin(yaw) + ly * math.cos(yaw), 1.30)
+        pa.rotation_euler = (0, 0, yaw - math.pi / 2)
+        pa.keyframe_insert("location", frame=f)
+        pa.keyframe_insert("rotation_euler", frame=f)
     walked, prev = 0.0, None
     for i in range(len(tr["forklift"])):
         f = F(i)
         x, y, z, yaw, _ = tr["forklift"][i]
         fl.location, fl.rotation_euler = (x, y, 1.25), (0, 0, yaw)
         fl_forks.location = (0, 0, z - 1.25)
-        x, y, z, yaw, ext = tr["reach"][i]
-        rc.location, rc.rotation_euler = (x, y, 1.25), (0, 0, yaw)
-        rc_mast.location = (ext, 0, 0)
-        rc_forks.location = (0, 0, z - 1.25)
-        x, y, z, yaw, _ = tr["pallet_A"][i]
-        pa.location, pa.rotation_euler = (x, y, z), (0, 0, yaw)
+        for ob, key in ((pa, "pallet_A"), (ct, "cart"), (bx, "box_B")):
+            x, y, z, yaw, _ = tr[key][i]
+            ob.location, ob.rotation_euler = (x, y, z), (0, 0, yaw)
         x, y, z, yaw, clip = tr["picker"][i]
         if prev is not None:
             walked += math.hypot(x - prev[0], y - prev[1])
         prev = (x, y)
         pk.location, pk.rotation_euler = (x, y, z), (0, 0, yaw)
         pose_picker(pk, int(clip), f, walked)
-        for ob in (fl, rc, pa, pk):
+        for ob in (fl, pa, pk, ct, bx):
             ob.keyframe_insert("location", frame=f)
             ob.keyframe_insert("rotation_euler", frame=f)
         fl_forks.keyframe_insert("location", frame=f)
-        rc_mast.keyframe_insert("location", frame=f)
-        rc_forks.keyframe_insert("location", frame=f)
     # puerta enrollable: el panel se recoge hacia el rollo (arriba fijo en z = 4,25)
     door = o["DOOR_11"]
     panel = next(ch for ch in door.children if ch.name.startswith("door_panel"))
@@ -224,7 +247,7 @@ def animate_phase2(route: dict) -> None:
         for sl in slats:
             sl.hide_render = sl.location.z < 4.25 - h
             sl.keyframe_insert("hide_render", frame=f)
-    # destello de escaneo: barre el pallet en la preparación durante 8 frames
+    # escaneo RFID: el haz barre el pallet cuando cruza el portal de la puerta
     sc = o["SCAN_flash"]
     x, y, z, yaw, _ = tr["pallet_A"][c["scanA"] - s0]
     sc.rotation_euler = (0, 0, yaw)
@@ -239,12 +262,13 @@ def animate_phase2(route: dict) -> None:
     for f, hide in ((1, True), (c["slotDone"] + 1, False)):
         hl.hide_render = hide
         hl.keyframe_insert("hide_render", frame=f)
-    # el teal sigue a quien manda en cada tramo
+    # el teal sigue a quien manda: camión → autoelevador + pallet → (corte) picker + carrito + caja
     _line_color_track(o["HERO"], "truck", [(1, s0)], n)
-    _line_color_track(fl, "forklift", [(s0 + 1, c["scanA"] + 1)], n)
-    _line_color_track(pa, "pallet", [(c["unloadStart"] + 1, n)], n)
-    _line_color_track(rc, "reach", [(c["reachStart"] + 1, c["slotDone"] + 12)], n)
-    _line_color_track(pk, "picker", [(c["pickerArrive"] + 1, n)], n)
+    _line_color_track(fl, "forklift", [(s0 + 1, c["sceneCut"])], n)
+    _line_color_track(pa, "pallet", [(c["unloadStart"] + 1, c["sceneCut"])], n)
+    _line_color_track(pk, "picker", [(c["sceneCut"] + 1, n)], n)
+    _line_color_track(ct, "cart", [(c["sceneCut"] + 1, n)], n)
+    _line_color_track(bx, "box", [(c["sceneCut"] + 1, n)], n)
 
 
 def camera_keys(route: dict) -> list[CamKey]:
@@ -264,18 +288,25 @@ def camera_keys(route: dict) -> list[CamKey]:
     if "phase2Start" not in cues:
         keys.append(CamKey(len(fr), dock_target, 84.0))
         return keys
-    # fase 2: la cámara entra al depósito siguiendo la carga hasta el pick face
-    sx, sy, _ = slot_center(RackLayout(), PICK_SLOT)
-    # escalas de 16–34 m: los equipos miden ~2 m y tienen que leerse
-    # en la fase 2 la card PALLET ocupa arriba a la derecha: el sujeto va más abajo y a la izquierda
-    sub = (0.60, 0.64)
-    keys += [CamKey(cues["phase2Start"] + 14, (dock_x(HERO_DOCK) - 0.5, 1.0), 34.0, sub),
-             CamKey(cues["unloadStart"] + 1, (dock_x(HERO_DOCK) - 0.5, 0.5), 26.0, sub),
-             CamKey(cues["scanA"] + 1, (dock_x(HERO_DOCK) - 0.5, 4.5), 24.0, sub),
-             CamKey(cues["reachStart"] + 40, (10.3, 9.5), 28.0, sub),
-             CamKey(cues["slotDone"] + 1, (sx - 0.6, sy), 20.0, sub),
-             CamKey(cues["relevo"] + 1, (sx - 0.6, sy), 16.0, sub),
-             CamKey(len(fr), (sx - 0.6, sy), 16.0, sub)]
+    # fase 2: giro hacia adentro del almacén → corte a cenital siguiendo al autoelevador → corte al picking
+    tr, s0 = route["tracks"], cues["phase2Start"]
+    sub = (0.60, 0.62)                                  # la card ocupa arriba a la derecha
+    # ojo: CamKey.frame es frame de Blender = índice de route.json + 1
+    inside = CamKey(s0 + 41, (dock_x(HERO_DOCK), 1.5), 30.0, sub, (45.0, 215.0))
+    keys += orbit_keys(keys[-1], inside)
+    hold = CamKey(cues["scanA"] + 4, inside.target, inside.ortho_scale, sub, inside.rot)
+    keys.append(hold)
+    eagle = []
+    for f in range(cues["scanA"] + 4, cues["sceneCut"], 8):   # cenital alta siguiendo al autoelevador
+        x, y = tr["forklift"][f - s0][:2]
+        eagle.append(CamKey(f + 1, (x, y), 22.0, sub, (14.0, 215.0)))
+    keys += cut_keys(hold, eagle[0]) + eagle[1:]
+    pick = []
+    for f in range(cues["sceneCut"], len(fr), 8):             # otra escena: el picker con su carrito
+        x, y = tr["picker"][f - s0][:2]
+        pick.append(CamKey(f + 1, (x, y + 0.6), 12.0, sub, (16.0, 0.0)))
+    pick.append(CamKey(len(fr), pick[-1].target, 12.0, sub, (16.0, 0.0)))
+    keys += cut_keys(eagle[-1], pick[0]) + pick[1:]
     return keys
 
 
@@ -301,15 +332,16 @@ def main() -> None:
                 print("CHECK FAIL phase2 missing", miss2)
                 sys.exit(1)
             print(f"PICKER {PICKER_MODE.get('mode')}")
+            print(f"LOAD {LOAD_COUNT.get('n')}")
             print("PHASE2 OK")
         print(f"CHECK OK {len(bpy.data.objects)}")
         return
     animate(scene, route, site)
-    cam = iso_camera(scene, camera_keys(route))
+    cam = iso_camera(scene, camera_keys(route), parse_res(args.res))
     if args.mode == "probe":
         for f in (int(x) for x in args.frames.split(",")):
             scene.frame_set(f)
-            for name in ("pallet_A", "FORKLIFT", "PICKER", "REACH"):
+            for name in ("pallet_A", "FORKLIFT", "PICKER", "CART", "box_B"):
                 t = bpy.data.objects[name].matrix_world.translation
                 print(f"PROBE {name} {f} {t.x:.4f} {t.y:.4f} {t.z:.4f}")
         return
