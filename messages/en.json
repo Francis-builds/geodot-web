@@ -195,6 +195,13 @@
           "pickerValue": "M. LÓPEZ",
           "status": "STATUS",
           "statusValue": "PICKING ✓"
+        },
+        "loading": "Loading operation",
+        "outro": {
+          "eyebrow": "Geodot",
+          "title": "Logistics Operating System",
+          "lead": "Yard, dock, warehouse and picking on one platform.",
+          "replay": "Replay"
         }
       }
     },

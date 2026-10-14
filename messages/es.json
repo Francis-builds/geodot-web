@@ -195,6 +195,13 @@
           "pickerValue": "M. LÓPEZ",
           "status": "ESTADO",
           "statusValue": "EN PICKING ✓"
+        },
+        "loading": "Cargando operación",
+        "outro": {
+          "eyebrow": "Geodot",
+          "title": "Logistics Operating System",
+          "lead": "Patio, andén, almacén y picking en una sola plataforma.",
+          "replay": "Ver de nuevo"
         }
       }
     },
