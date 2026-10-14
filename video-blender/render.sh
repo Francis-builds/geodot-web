@@ -22,7 +22,7 @@ mkdir -p "$OUT"
 PHASE_FLAG=""
 for a in "$@"; do if [ "$a" = "--phase2" ]; then PHASE_FLAG="--phase2"; fi; done
 # el interior (racks en línea fina) comprime peor: la película completa usa CRF más altos
-if [ -n "$PHASE_FLAG" ]; then CRF_X264=30; CRF_VP9=48; else CRF_X264=27; CRF_VP9=42; fi
+if [ -n "$PHASE_FLAG" ]; then CRF_X264=31; CRF_VP9=51; else CRF_X264=27; CRF_VP9=42; fi
 python3 -m plan.route "$OUT/route.json" $PHASE_FLAG
 SCAN_END=$(python3 -c "import json;print(json.load(open('$OUT/route.json'))['cues']['scanEnd'])")
 DOCKED=$(python3 -c "import json;print(json.load(open('$OUT/route.json'))['cues']['docked'])")
