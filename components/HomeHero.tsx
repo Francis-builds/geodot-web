@@ -46,7 +46,7 @@ export function HomeHero({
         <span key={c} aria-hidden className={`absolute z-10 h-8 w-8 border-teal-400 ${c}`} />
       ))}
 
-      <Container className="relative z-10 py-20">
+      <Container className="relative z-10 py-20 xl:pointer-events-none xl:[&>*]:pointer-events-auto xl:[&>*]:w-fit">
         <p data-seq="1" className="mb-6 text-body-sm font-medium text-navy-300">{eyebrow}</p>
         <h1 data-seq="2" className="text-display-2xl font-medium text-white">
           {title}
